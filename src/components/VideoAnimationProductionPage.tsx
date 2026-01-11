@@ -12,12 +12,8 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import video2Img from '../assets/video2.jpg';
 import video3Img from '../assets/video3.jpg';
-import hotelVideo from '../assets/HotelVideo.mp4';
-import hotelVideo2 from '../assets/HotelVideo2.mp4';
-import hotelVideo3 from '../assets/HotelVideo3.mp4';
-import trippyAnimation from '../assets/trippy_animation.mp4';
-import flowersMen from '../assets/flowers_men.mp4';
-import sharks from '../assets/sharks.mp4';
+import video4Img from '../assets/video4.jpg';
+import videoImg from '../assets/video.jpg';
 
 function playSound(src: string) {
   if (!src) return;
@@ -293,33 +289,33 @@ export default function VideoAnimationProductionPage() {
         <motion.h2 className="text-3xl md:text-4xl font-extrabold text-blue-700 mb-12 text-center bg-gradient-to-r from-blue-500 to-gray-500 bg-clip-text text-transparent drop-shadow-lg">{language === 'el' ? 'Παραδείγματα Έργων' : 'Portfolio Highlights'}</motion.h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
           <div className="flex flex-col items-center">
-            <video src={hotelVideo} controls className="rounded-2xl shadow-xl w-full h-64 object-cover mb-4" />
+            <img src={videoImg} alt="Hotel Promotion Video" className="rounded-2xl shadow-xl w-full h-64 object-cover mb-4" />
             <h4 className="text-lg font-bold text-blue-900 mb-2">Προώθηση Ξενοδοχείου</h4>
             <p className="text-gray-600 text-base text-center">Εντυπωσιακό promo video για ξενοδοχειακή επιχείρηση με λήψεις, μοντάζ και motion graphics.</p>
           </div>
           <div className="flex flex-col items-center">
-            <video src={hotelVideo2} controls className="rounded-2xl shadow-xl w-full h-64 object-cover mb-4" />
+            <img src={video2Img} alt="Hotel Promotion Video" className="rounded-2xl shadow-xl w-full h-64 object-cover mb-4" />
             <h4 className="text-lg font-bold text-blue-900 mb-2">Προώθηση Ξενοδοχείου</h4>
             <p className="text-gray-600 text-base text-center">Εντυπωσιακό promo video για ξενοδοχειακή επιχείρηση με λήψεις, μοντάζ και motion graphics.</p>
           </div>
           <div className="flex flex-col items-center">
-            <video src={hotelVideo3} controls className="rounded-2xl shadow-xl w-full h-64 object-cover mb-4" />
+            <img src={video3Img} alt="Animation Design" className="rounded-2xl shadow-xl w-full h-64 object-cover mb-4" />
             <h4 className="text-lg font-bold text-blue-900 mb-2">Animation Design</h4>
             <p className="text-gray-600 text-base text-center">Δημιουργία custom animation για προώθηση υπηρεσιών και προϊόντων με σύγχρονη αισθητική.</p>
           </div>
           {/* Νέα videos */}
           <div className="flex flex-col items-center">
-            <video src={trippyAnimation} controls className="rounded-2xl shadow-xl w-full h-64 object-cover mb-4" />
+            <img src={video4Img} alt="Animation Design" className="rounded-2xl shadow-xl w-full h-64 object-cover mb-4" />
             <h4 className="text-lg font-bold text-blue-900 mb-2">Animation Design</h4>
             <p className="text-gray-600 text-base text-center">Ψυχεδελικό animation με έντονα χρώματα και εφέ.</p>
           </div>
           <div className="flex flex-col items-center">
-            <video src={flowersMen} controls className="rounded-2xl shadow-xl w-full h-64 object-cover mb-4" />
+            <img src={videoImg} alt="Animation Design" className="rounded-2xl shadow-xl w-full h-64 object-cover mb-4" />
             <h4 className="text-lg font-bold text-blue-900 mb-2">Animation Design</h4>
             <p className="text-gray-600 text-base text-center">Καλλιτεχνικό animation με λουλούδια και ανθρώπινες μορφές.</p>
           </div>
           <div className="flex flex-col items-center">
-            <video src={sharks} controls className="rounded-2xl shadow-xl w-full h-64 object-cover mb-4" />
+            <img src={video2Img} alt="Animation Design" className="rounded-2xl shadow-xl w-full h-64 object-cover mb-4" />
             <h4 className="text-lg font-bold text-blue-900 mb-2">Animation Design</h4>
             <p className="text-gray-600 text-base text-center">Δυναμικό animation με καρχαρίες σε κίνηση.</p>
           </div>
