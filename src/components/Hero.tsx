@@ -141,7 +141,7 @@ const Hero: React.FC = () => {
         </>
       )}
       {/* Content - Enhanced with Premium Glassmorphism Container */}
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
         {!isMobile && (
           <>
             {/* Outer Glow Effect */}
@@ -182,19 +182,20 @@ const Hero: React.FC = () => {
               className="mb-8"
             >
               <motion.h1
-                className="text-3xl sm:text-4xl font-bold mb-4 leading-tight text-shadow-luxury break-words overflow-wrap-anywhere"
+                className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 px-2 leading-tight text-shadow-luxury break-words"
                 initial={{ opacity: 0, scale: 0.95 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.5, delay: 0.1 }}
-                style={{ wordBreak: 'break-word', overflowWrap: 'anywhere' }}
+                style={{ wordBreak: 'break-word', overflowWrap: 'break-word', hyphens: 'auto' }}
               >
                 {slides[currentSlide].title}
               </motion.h1>
               <motion.p
-                className="text-base sm:text-lg mb-8 max-w-2xl mx-auto leading-relaxed opacity-95 text-shadow-luxury"
+                className="text-sm sm:text-base md:text-lg mb-8 max-w-2xl mx-auto px-2 leading-relaxed opacity-95 text-shadow-luxury break-words"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.2 }}
+                style={{ wordBreak: 'break-word', overflowWrap: 'break-word' }}
               >
                 {slides[currentSlide].subtitle}
               </motion.p>
@@ -309,19 +310,20 @@ const Hero: React.FC = () => {
                 className="mb-8"
               >
                 <motion.h1 
-                  className={`text-4xl sm:text-5xl ${language === 'fr' ? (currentSlide === 2 ? 'lg:text-4xl xl:text-5xl' : 'lg:text-5xl xl:text-6xl') : (currentSlide === 2 ? 'lg:text-5xl xl:text-6xl' : (currentSlide === 1 && language === 'en' ? 'lg:text-5xl xl:text-6xl' : (currentSlide === 0 && language === 'en' ? 'lg:text-5xl xl:text-6xl' : 'lg:text-7xl')))} font-bold mb-6 leading-tight text-shadow-premium tracking-luxury break-words overflow-wrap-anywhere`}
+                  className={`text-4xl sm:text-5xl ${language === 'fr' ? (currentSlide === 2 ? 'lg:text-4xl xl:text-5xl' : 'lg:text-5xl xl:text-6xl') : (currentSlide === 2 ? 'lg:text-5xl xl:text-6xl' : (currentSlide === 1 && language === 'en' ? 'lg:text-5xl xl:text-6xl' : (currentSlide === 0 && language === 'en' ? 'lg:text-5xl xl:text-6xl' : 'lg:text-7xl')))} font-bold mb-6 leading-tight text-shadow-premium tracking-luxury break-words px-4`}
                   initial={{ opacity: 0, scale: 0.9 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 0.8, delay: 0.2 }}
-                  style={{ wordBreak: 'break-word', overflowWrap: 'anywhere' }}
+                  style={{ wordBreak: 'break-word', overflowWrap: 'break-word', hyphens: 'auto' }}
                 >
                   {slides[currentSlide].title}
                 </motion.h1>
                 <motion.p 
-                  className="text-lg sm:text-xl lg:text-2xl mb-8 max-w-4xl mx-auto leading-relaxed opacity-95 text-shadow-luxury tracking-luxury"
+                  className="text-lg sm:text-xl lg:text-2xl mb-8 max-w-4xl mx-auto leading-relaxed opacity-95 text-shadow-luxury tracking-luxury px-4 break-words"
                   initial={{ opacity: 0, y: 30 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: 0.4 }}
+                  style={{ wordBreak: 'break-word', overflowWrap: 'break-word' }}
                 >
                   {slides[currentSlide].subtitle}
                 </motion.p>

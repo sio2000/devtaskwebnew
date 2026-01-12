@@ -155,10 +155,10 @@ export default function MobileAppDevelopmentPage() {
         <div className="relative z-20 max-w-7xl mx-auto px-4 py-32 w-full flex flex-col md:flex-row items-center justify-between gap-10">
           {/* Left: Text */}
           <motion.div className="flex-1 flex flex-col items-start md:items-start text-left" initial={{ opacity: 0, x: -40 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8 }}>
-            <motion.h1 className="text-4xl md:text-6xl font-extrabold mb-6 drop-shadow-lg tracking-tight bg-gradient-to-r from-blue-700 to-purple-600 bg-clip-text text-transparent" initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }} style={{ fontFamily: "'IBM Plex Sans', 'Inter', sans-serif" }}>
+            <motion.h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6 drop-shadow-lg tracking-tight bg-gradient-to-r from-blue-700 to-purple-600 bg-clip-text text-transparent px-4 break-words" initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }} style={{ fontFamily: "'IBM Plex Sans', 'Inter', sans-serif", wordBreak: 'break-word', overflowWrap: 'break-word' }}>
               {t.services.pages.mobileAppDevelopment.hero.title}
             </motion.h1>
-            <motion.p className="text-lg md:text-2xl text-gray-700 mb-10 font-medium max-w-2xl" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.2 }}>
+            <motion.p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-700 mb-10 font-medium max-w-2xl px-4 break-words" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.2 }} style={{ wordBreak: 'break-word', overflowWrap: 'break-word' }}>
               {t.services.pages.mobileAppDevelopment.hero.subtitle}
             </motion.p>
             <div className="flex flex-col sm:flex-row gap-4">

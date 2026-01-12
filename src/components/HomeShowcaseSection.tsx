@@ -79,11 +79,12 @@ const HomeShowcaseSection: React.FC = () => {
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center text-center">
         {/* Premium Main Heading */}
         <motion.h2
-          className="text-5xl md:text-6xl lg:text-7xl font-extrabold mb-8 gradient-text-premium"
+          className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-extrabold mb-8 gradient-text-premium px-4 break-words"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
+          style={{ wordBreak: 'break-word', overflowWrap: 'break-word' }}
         >
           {t.homeShowcase.title}
           {!isMobile && (
@@ -99,11 +100,12 @@ const HomeShowcaseSection: React.FC = () => {
 
         {/* Premium Subheading */}
         <motion.p
-          className="text-xl md:text-2xl lg:text-3xl text-gray-700 max-w-4xl mx-auto mb-20 leading-relaxed font-medium"
+          className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl text-gray-700 max-w-4xl mx-auto mb-20 leading-relaxed font-medium px-4 break-words"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.2 }}
+          style={{ wordBreak: 'break-word', overflowWrap: 'break-word' }}
         >
           {t.homeShowcase.subtitle}
         </motion.p>

@@ -116,11 +116,12 @@ const Services: React.FC = () => {
           transition={{ duration: 0.8 }}
         >
           <motion.h2
-            className="text-5xl md:text-6xl lg:text-7xl font-extrabold mb-6 gradient-text-premium"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-extrabold mb-6 gradient-text-premium px-4 break-words"
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.1 }}
+            style={{ wordBreak: 'break-word', overflowWrap: 'break-word' }}
           >
             {t.services.title}
           </motion.h2>
@@ -132,11 +133,12 @@ const Services: React.FC = () => {
             transition={{ duration: 0.8, delay: 0.3 }}
           />
           <motion.p
-            className="text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto leading-relaxed font-medium"
+            className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-600 max-w-3xl mx-auto leading-relaxed font-medium px-4 break-words"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.2 }}
+            style={{ wordBreak: 'break-word', overflowWrap: 'break-word' }}
           >
             {t.services.subtitle}
           </motion.p>

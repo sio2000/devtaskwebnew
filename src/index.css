@@ -8,9 +8,57 @@ body {
   font-family: 'Inter', 'Poppins', system-ui, -apple-system, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  /* Performance optimizations */
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior-y: contain;
+  /* Prevent text from being cut off */
+  overflow-x: hidden;
+  word-wrap: break-word;
 }
 
-/* Premium Glassmorphism */
+/* Ensure headers and navigation don't get cut off */
+header, nav {
+  overflow: visible;
+}
+
+/* Mobile-specific text handling */
+@media (max-width: 768px) {
+  h1, h2, h3, h4, h5, h6 {
+    word-break: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+  }
+  
+  p, span, div {
+    word-break: break-word;
+    overflow-wrap: break-word;
+  }
+  
+  button {
+    word-break: break-word;
+    overflow-wrap: break-word;
+    white-space: normal;
+  }
+}
+
+/* Performance optimizations for animations */
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Respect reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Premium Glassmorphism - Desktop */
 @layer utilities {
   .glass-luxury {
     background: rgba(255, 255, 255, 0.08);
@@ -40,6 +88,44 @@ body {
     -webkit-backdrop-filter: blur(24px) saturate(180%);
     border: 1px solid rgba(255, 255, 255, 0.1);
   }
+
+  /* Mobile optimizations - Reduced backdrop-filter for better performance */
+  @media (max-width: 768px) {
+    .glass-luxury {
+      backdrop-filter: blur(8px) saturate(150%);
+      -webkit-backdrop-filter: blur(8px) saturate(150%);
+      background: rgba(255, 255, 255, 0.15);
+    }
+    
+    .glass-luxury-strong {
+      backdrop-filter: blur(10px) saturate(160%);
+      -webkit-backdrop-filter: blur(10px) saturate(160%);
+      background: rgba(255, 255, 255, 0.2);
+    }
+
+    .glass-premium {
+      backdrop-filter: blur(12px) saturate(160%);
+      -webkit-backdrop-filter: blur(12px) saturate(160%);
+      background: rgba(255, 255, 255, 0.18);
+    }
+
+    .glass-dark {
+      backdrop-filter: blur(10px) saturate(150%);
+      -webkit-backdrop-filter: blur(10px) saturate(150%);
+      background: rgba(10, 10, 15, 0.85);
+    }
+  }
+
+  /* Further optimization for very small screens */
+  @media (max-width: 480px) {
+    .glass-luxury,
+    .glass-luxury-strong,
+    .glass-premium,
+    .glass-dark {
+      backdrop-filter: blur(6px) saturate(120%);
+      -webkit-backdrop-filter: blur(6px) saturate(120%);
+    }
+  }
   
   .text-shadow-luxury {
     text-shadow: 0 2px 20px rgba(0, 0, 0, 0.3), 0 4px 40px rgba(0, 0, 0, 0.2);
@@ -51,6 +137,21 @@ body {
 
   .text-shadow-glow {
     text-shadow: 0 0 20px rgba(59, 130, 246, 0.5), 0 0 40px rgba(139, 92, 246, 0.3);
+  }
+
+  /* Mobile text shadow optimization */
+  @media (max-width: 768px) {
+    .text-shadow-luxury {
+      text-shadow: 0 1px 10px rgba(0, 0, 0, 0.3), 0 2px 20px rgba(0, 0, 0, 0.2);
+    }
+    
+    .text-shadow-premium {
+      text-shadow: 0 2px 15px rgba(0, 0, 0, 0.4), 0 4px 30px rgba(0, 0, 0, 0.3);
+    }
+
+    .text-shadow-glow {
+      text-shadow: 0 0 10px rgba(59, 130, 246, 0.5), 0 0 20px rgba(139, 92, 246, 0.3);
+    }
   }
   
   .gradient-mesh {
@@ -65,6 +166,14 @@ body {
     background: linear-gradient(135deg, #667eea 0%, #764ba2 25%, #f093fb 50%, #4facfe 75%, #00f2fe 100%);
     background-size: 200% 200%;
     animation: gradient-shift 8s ease infinite;
+    will-change: background-position;
+  }
+
+  /* Reduce animation intensity on mobile */
+  @media (max-width: 768px) {
+    .gradient-ocean {
+      animation: gradient-shift 12s ease infinite;
+    }
   }
   
   .premium-gradient-text {
@@ -95,6 +204,14 @@ body {
     -webkit-text-fill-color: transparent;
     background-clip: text;
     animation: gradient-shift 8s ease infinite;
+    will-change: background-position;
+  }
+
+  /* Reduce animation intensity on mobile */
+  @media (max-width: 768px) {
+    .gradient-text-premium {
+      animation: gradient-shift 12s ease infinite;
+    }
   }
 
   .shimmer {
@@ -106,6 +223,14 @@ body {
     );
     background-size: 200% 100%;
     animation: shimmer 3s ease-in-out infinite;
+    will-change: background-position;
+  }
+
+  /* Reduce shimmer animation on mobile */
+  @media (max-width: 768px) {
+    .shimmer {
+      animation: shimmer 4s ease-in-out infinite;
+    }
   }
 
   .premium-border {
@@ -127,12 +252,25 @@ body {
   }
 
   .card-hover {
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: transform;
   }
 
   .card-hover:hover {
     transform: translateY(-8px) scale(1.02);
     box-shadow: 0 20px 60px -12px rgba(59, 130, 246, 0.4);
+  }
+
+  /* Optimize card hover on mobile */
+  @media (max-width: 768px) {
+    .card-hover {
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    
+    .card-hover:hover {
+      transform: translateY(-4px) scale(1.01);
+      box-shadow: 0 10px 30px -6px rgba(59, 130, 246, 0.3);
+    }
   }
 
   .perspective-1000 {
@@ -145,5 +283,73 @@ body {
 
   .backface-hidden {
     backface-visibility: hidden;
+  }
+
+  /* GPU acceleration for animated elements */
+  .gpu-accelerated {
+    transform: translateZ(0);
+    will-change: transform;
+  }
+
+  /* Optimize images and media for mobile */
+  img, video {
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* Performance optimizations for mobile scrolling */
+  @media (max-width: 768px) {
+    * {
+      -webkit-overflow-scrolling: touch;
+    }
+    
+    /* Reduce animation complexity on mobile */
+    .animate-float,
+    .animate-float-delayed,
+    .animate-float-gentle {
+      animation-duration: 8s !important;
+    }
+
+    /* Optimize blur effects on mobile */
+    .blur-3xl {
+      filter: blur(40px) !important;
+    }
+    
+    .blur-2xl {
+      filter: blur(24px) !important;
+    }
+  }
+
+  /* Reduce animation intensity on very small screens */
+  @media (max-width: 480px) {
+    .animate-float,
+    .animate-float-delayed,
+    .animate-float-gentle {
+      animation-duration: 10s !important;
+    }
+
+    .blur-3xl {
+      filter: blur(30px) !important;
+    }
+    
+    .blur-2xl {
+      filter: blur(20px) !important;
+    }
+  }
+}
+
+/* Additional performance optimizations */
+@media (max-width: 768px) {
+  /* Reduce box-shadow complexity on mobile for better performance */
+  .shadow-2xl {
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05) !important;
+  }
+  
+  .shadow-xl {
+    box-shadow: 0 8px 10px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05) !important;
+  }
+  
+  .shadow-lg {
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06) !important;
   }
 }

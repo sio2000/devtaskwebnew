@@ -221,10 +221,10 @@ export default function WebDevelopmentPage() {
             </>
           ) : (
             <>
-              <h1 className="text-5xl md:text-6xl font-extrabold mb-6 drop-shadow-lg tracking-tight bg-gradient-to-r from-blue-700 to-purple-600 bg-clip-text text-transparent" style={{ fontFamily: "'IBM Plex Sans', 'Inter', sans-serif" }}>
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6 drop-shadow-lg tracking-tight bg-gradient-to-r from-blue-700 to-purple-600 bg-clip-text text-transparent px-4 break-words" style={{ fontFamily: "'IBM Plex Sans', 'Inter', sans-serif", wordBreak: 'break-word', overflowWrap: 'break-word' }}>
                 {t.services.pages.webDevelopment.hero.title}
               </h1>
-              <p className="text-xl md:text-2xl text-gray-700 mb-10 font-medium max-w-2xl mx-auto">
+              <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-700 mb-10 font-medium max-w-2xl mx-auto px-4 break-words" style={{ wordBreak: 'break-word', overflowWrap: 'break-word' }}>
                 {t.services.pages.webDevelopment.hero.subtitle}
               </p>
             </>

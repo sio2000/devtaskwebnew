@@ -111,7 +111,7 @@ const ChatbotSection: React.FC = () => {
             <Zap className="w-8 h-8 text-pink-500" />
           </motion.div>
           
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold mb-6">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6 px-4 break-words" style={{ wordBreak: 'break-word', overflowWrap: 'break-word' }}>
             <span className="bg-gradient-to-r from-purple-600 via-pink-600 to-blue-600 bg-clip-text text-transparent">
               {t.chatbot.title}
             </span>
