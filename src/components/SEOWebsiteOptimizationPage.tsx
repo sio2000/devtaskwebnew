@@ -1,6 +1,8 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useMemo } from 'react';
 import { motion } from 'framer-motion';
 import { FaSearch, FaChartLine, FaCogs, FaTags, FaGoogle, FaChartBar, FaClipboardCheck, FaStar, FaChevronLeft, FaChevronRight, FaCheckCircle, FaRocket, FaRegFileAlt, FaUserTie } from 'react-icons/fa';
+import { useLanguage } from '../hooks/useLanguage';
+import { translations } from '../data/translations';
 // import seoLottie from '../assets/lottie-seo.json';
 const seoLottie = {};
 const hoverSfx = '';
@@ -16,48 +18,42 @@ function playSound(src: string) {
   audio.play();
 }
 
-const services = [
-  { icon: <FaRegFileAlt className="text-blue-500 text-3xl" />, title: 'On-page SEO', desc: 'Βελτιστοποίηση περιεχομένου, headers, meta tags.' },
-  { icon: <FaCogs className="text-purple-500 text-3xl" />, title: 'Τεχνικό SEO', desc: 'Ταχύτητα, schema, mobile optimization, crawlability.' },
-  { icon: <FaTags className="text-green-500 text-3xl" />, title: 'Keyword Research', desc: 'Έρευνα και ανάλυση λέξεων-κλειδιών.' },
-  { icon: <FaChartBar className="text-pink-500 text-3xl" />, title: 'Ανάλυση Ανταγωνισμού', desc: 'Σύγκριση με ανταγωνιστές, ευκαιρίες.' },
-  { icon: <FaGoogle className="text-yellow-500 text-3xl" />, title: 'Google Search Console & Analytics', desc: 'Σύνδεση, παρακολούθηση, insights.' },
-  { icon: <FaClipboardCheck className="text-cyan-500 text-3xl" />, title: 'Content Strategy', desc: 'Στρατηγική περιεχομένου για SEO.' },
-  { icon: <FaChartLine className="text-blue-400 text-3xl" />, title: 'SEO Αναφορές & Dashboard', desc: 'Αναλυτικά reports και dashboards.' },
+// Icon arrays
+const serviceIcons = [
+  <FaRegFileAlt className="text-blue-500 text-3xl" />,
+  <FaCogs className="text-purple-500 text-3xl" />,
+  <FaTags className="text-green-500 text-3xl" />,
+  <FaChartBar className="text-pink-500 text-3xl" />,
+  <FaGoogle className="text-yellow-500 text-3xl" />,
+  <FaClipboardCheck className="text-cyan-500 text-3xl" />,
+  <FaChartLine className="text-blue-400 text-3xl" />,
 ];
 
-const stats = [
-  { icon: <FaRocket className="text-blue-500 text-4xl" />, label: '+300% οργανική επισκεψιμότητα', desc: 'Αύξηση οργανικών επισκέψεων' },
-  { icon: <FaGoogle className="text-yellow-500 text-4xl" />, label: '1η σελίδα Google', desc: 'Κατάταξη σε ανταγωνιστικές λέξεις' },
-  { icon: <FaTags className="text-green-500 text-4xl" />, label: '+120 keywords', desc: 'Λέξεις-κλειδιά με κατάταξη' },
+const statIcons = [
+  <FaRocket className="text-blue-500 text-4xl" />,
+  <FaGoogle className="text-yellow-500 text-4xl" />,
+  <FaTags className="text-green-500 text-4xl" />,
 ];
 
-const workflow = [
-  { icon: <FaCheckCircle className="text-blue-500 text-2xl" />, title: 'SEO Audit', desc: 'Ανάλυση ιστοσελίδας & τεχνικός έλεγχος.' },
-  { icon: <FaRegFileAlt className="text-blue-400 text-2xl" />, title: 'Ανάλυση & Στρατηγική', desc: 'Έρευνα, στόχοι, πλάνο ενεργειών.' },
-  { icon: <FaCogs className="text-purple-500 text-2xl" />, title: 'Τεχνική Υλοποίηση', desc: 'Εφαρμογή βελτιώσεων & αλλαγών.' },
-  { icon: <FaChartLine className="text-green-500 text-2xl" />, title: 'Παρακολούθηση & Βελτιστοποίηση', desc: 'Συνεχής ανάλυση & προσαρμογή.' },
+const workflowIcons = [
+  <FaCheckCircle className="text-blue-500 text-2xl" />,
+  <FaRegFileAlt className="text-blue-400 text-2xl" />,
+  <FaCogs className="text-purple-500 text-2xl" />,
+  <FaChartLine className="text-green-500 text-2xl" />,
 ];
-
-const caseStudies = [
-  { before: 120, after: 480, label: 'Οργανική επισκεψιμότητα', desc: 'Αύξηση οργανικών επισκέψεων σε 6 μήνες.' },
-  { before: 8, after: 1, label: 'Κατάταξη Google', desc: 'Από 8η σε 1η σελίδα για βασική λέξη-κλειδί.' },
-];
-
-const testimonial = {
-  quote: 'Μετά το SEO, η ιστοσελίδα μας βρέθηκε στην 1η σελίδα της Google και οι πωλήσεις αυξήθηκαν θεαματικά! Επαγγελματισμός και άμεσα αποτελέσματα.',
-  name: 'Γιώργος Π.',
-  company: 'E-shop Ηλεκτρονικών'
-};
 
 export default function SEOWebsiteOptimizationPage() {
+  const { language } = useLanguage();
+  const t = translations[language];
   const [typed, setTyped] = useState('');
   const [currentCase, setCurrentCase] = useState(0);
   const [counters, setCounters] = useState([0, 0, 0]);
+  
   useEffect(() => { AOS.init({ duration: 900, once: true }); }, []);
+  
   // Typing effect για το hero
   useEffect(() => {
-    const full = 'SEO – Βελτιστοποίηση Ιστοσελίδων';
+    const full = t.services.pages.seoWebsiteOptimization.hero.title;
     let i = 0;
     setTyped('');
     const interval = setInterval(() => {
@@ -66,7 +62,37 @@ export default function SEOWebsiteOptimizationPage() {
       if (i === full.length) clearInterval(interval);
     }, 60);
     return () => clearInterval(interval);
-  }, []);
+  }, [t.services.pages.seoWebsiteOptimization.hero.title]);
+
+  // Services array with useMemo
+  const services = useMemo(() =>
+    t.services.pages.seoWebsiteOptimization.services.items.map((item, idx) => ({
+      icon: serviceIcons[idx],
+      title: item.title,
+      desc: item.desc
+    })), [t]);
+
+  // Stats array with useMemo
+  const stats = useMemo(() =>
+    t.services.pages.seoWebsiteOptimization.stats.items.map((item, idx) => ({
+      icon: statIcons[idx],
+      value: item.value,
+      suffix: item.suffix,
+      label: item.label,
+      desc: item.desc
+    })), [t]);
+
+  // Workflow array with useMemo
+  const workflow = useMemo(() =>
+    t.services.pages.seoWebsiteOptimization.workflow.items.map((item, idx) => ({
+      icon: workflowIcons[idx],
+      title: item.title,
+      desc: item.desc
+    })), [t]);
+
+  // CaseStudies array with useMemo
+  const caseStudies = useMemo(() =>
+    t.services.pages.seoWebsiteOptimization.caseStudies.items, [t]);
   // Animated counters
   useEffect(() => {
     const targets = [300, 1, 120];
@@ -119,10 +145,10 @@ export default function SEOWebsiteOptimizationPage() {
           {/* Left: Text */}
           <motion.div className="flex-1 flex flex-col items-start md:items-start text-left" initial={{ opacity: 0, x: -40 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8 }}>
             <motion.h1 className="text-4xl md:text-6xl font-extrabold mb-6 drop-shadow-lg tracking-tight bg-gradient-to-r from-blue-700 to-yellow-500 bg-clip-text text-transparent" initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }} style={{ fontFamily: "'IBM Plex Sans', 'Inter', sans-serif" }}>
-              SEO – Βελτιστοποίηση Ιστοσελίδων που Φέρνει Αποτελέσματα
+              {typed}
             </motion.h1>
             <motion.p className="text-lg md:text-2xl text-gray-700 mb-10 font-medium max-w-2xl" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.2 }}>
-              Απογειώστε την κατάταξη της ιστοσελίδας σας στη Google με τεχνικό SEO, βελτιστοποίηση περιεχομένου και σύγχρονες στρατηγικές. Επαγγελματική ανάλυση, μετρήσιμα αποτελέσματα και αύξηση οργανικής επισκεψιμότητας.
+              {t.services.pages.seoWebsiteOptimization.hero.subtitle}
             </motion.p>
             <motion.button
               className="inline-block px-10 py-4 bg-gradient-to-r from-blue-600 to-yellow-400 text-white rounded-full font-bold text-lg shadow-2xl border-2 border-transparent hover:border-blue-400 hover:shadow-[0_0_32px_0_#a78bfa] focus:outline-none focus:ring-2 focus:ring-blue-400 animate-fade-in flex items-center gap-2 relative overflow-hidden"
@@ -130,7 +156,7 @@ export default function SEOWebsiteOptimizationPage() {
               whileTap={{ scale: 0.97 }}
               onClick={() => { window.location.href = '/contactme'; }}
             >
-              <span className="relative z-10">Ζητήστε SEO Audit</span>
+              <span className="relative z-10">{t.services.pages.seoWebsiteOptimization.hero.cta}</span>
             </motion.button>
           </motion.div>
         </div>
@@ -138,7 +164,7 @@ export default function SEOWebsiteOptimizationPage() {
 
       {/* SEO Υπηρεσίες */}
       <section className="max-w-7xl mx-auto py-24 px-4">
-        <motion.h2 className="text-3xl md:text-4xl font-extrabold text-blue-700 mb-12 text-center bg-gradient-to-r from-blue-500 to-blue-400 bg-clip-text text-transparent drop-shadow-lg">SEO Υπηρεσίες</motion.h2>
+        <motion.h2 className="text-3xl md:text-4xl font-extrabold text-blue-700 mb-12 text-center bg-gradient-to-r from-blue-500 to-blue-400 bg-clip-text text-transparent drop-shadow-lg">{t.services.pages.seoWebsiteOptimization.services.title}</motion.h2>
         <motion.div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.12 } } }}>
           {services.map((s, idx) => (
             <motion.div key={s.title} className="group bg-white/80 backdrop-blur-lg rounded-3xl shadow-xl border border-blue-100/40 p-10 flex flex-col items-center text-center cursor-pointer transition-all duration-300 hover:shadow-2xl focus:outline-none focus:ring-4 focus:ring-blue-200 relative overflow-hidden" initial={{ opacity: 0, y: 40, scale: 0.97 }} whileInView={{ opacity: 1, y: 0, scale: 1 }} whileHover={{ scale: 1.08, boxShadow: '0 8px 32px 0 rgba(31, 38, 135, 0.25)' }} viewport={{ once: true }} transition={{ duration: 0.5, delay: idx * 0.07 }} onMouseEnter={() => playSound(hoverSfx)} onClick={() => playSound(clickSfx)}><div className="mb-6 flex items-center justify-center w-20 h-20 rounded-full bg-gradient-to-br from-blue-100 to-blue-50 shadow-inner group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300 border-4 border-blue-200 group-hover:border-blue-300">{s.icon}</div><h4 className="text-xl font-bold text-blue-900 mb-2 group-hover:text-blue-700 transition-colors duration-300 tracking-tight">{s.title}</h4><p className="text-gray-600 mb-6 text-base leading-relaxed">{s.desc}</p><motion.div className="absolute inset-0 rounded-3xl pointer-events-none border-2 border-transparent group-hover:border-blue-400 group-focus:border-blue-400 transition-all duration-300" initial={{ opacity: 0 }} whileHover={{ opacity: 1 }} transition={{ duration: 0.3 }} /></motion.div>
@@ -148,7 +174,7 @@ export default function SEOWebsiteOptimizationPage() {
 
       {/* Μετρήσιμα Αποτελέσματα */}
       <section className="max-w-7xl mx-auto py-24 px-4">
-        <motion.h2 className="text-3xl md:text-4xl font-extrabold text-blue-700 mb-12 text-center bg-gradient-to-r from-blue-500 to-blue-400 bg-clip-text text-transparent drop-shadow-lg">Μετρήσιμα Αποτελέσματα</motion.h2>
+        <motion.h2 className="text-3xl md:text-4xl font-extrabold text-blue-700 mb-12 text-center bg-gradient-to-r from-blue-500 to-blue-400 bg-clip-text text-transparent drop-shadow-lg">{t.services.pages.seoWebsiteOptimization.stats.title}</motion.h2>
         <motion.div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 mb-12" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.12 } } }}>
           {stats.map((s, idx) => (
             <motion.div key={s.label} className="flex flex-col items-center bg-white/80 backdrop-blur-lg rounded-2xl shadow-xl border border-blue-100/40 p-12 group hover:shadow-2xl transition-all duration-300 relative overflow-hidden" initial={{ opacity: 0, scale: 0.9 }} whileInView={{ opacity: 1, scale: 1 }} whileHover={{ scale: 1.09, boxShadow: '0 8px 32px 0 #60a5fa' }} viewport={{ once: true }} transition={{ duration: 0.7, delay: idx * 0.1 }} onMouseEnter={() => playSound(hoverSfx)}>
@@ -160,7 +186,7 @@ export default function SEOWebsiteOptimizationPage() {
         </motion.div>
         {/* Animated Line Chart (mockup) */}
         <motion.div className="w-full max-w-2xl mx-auto bg-white/80 rounded-2xl shadow-xl p-8 flex flex-col items-center mb-8 border border-blue-100/40">
-          <motion.h3 className="text-lg font-bold text-blue-700 mb-4">Εξέλιξη οργανικής επισκεψιμότητας</motion.h3>
+          <motion.h3 className="text-lg font-bold text-blue-700 mb-4">{t.services.pages.seoWebsiteOptimization.stats.chartTitle}</motion.h3>
           <svg width="100%" height="120" viewBox="0 0 400 120" fill="none" xmlns="http://www.w3.org/2000/svg">
             <motion.polyline
               points="0,100 50,90 100,80 150,60 200,40 250,30 300,20 350,10 400,8"
@@ -178,7 +204,7 @@ export default function SEOWebsiteOptimizationPage() {
 
       {/* Case Study / Example */}
       <section className="max-w-7xl mx-auto py-24 px-4">
-        <motion.h2 className="text-3xl md:text-4xl font-extrabold text-blue-700 mb-12 text-center bg-gradient-to-r from-blue-500 to-blue-400 bg-clip-text text-transparent drop-shadow-lg">Case Study</motion.h2>
+        <motion.h2 className="text-3xl md:text-4xl font-extrabold text-blue-700 mb-12 text-center bg-gradient-to-r from-blue-500 to-blue-400 bg-clip-text text-transparent drop-shadow-lg">{t.services.pages.seoWebsiteOptimization.caseStudies.title}</motion.h2>
         <div className="relative flex items-center justify-center">
           <button className="absolute left-0 z-10 p-3 bg-white/80 rounded-full shadow hover:bg-blue-100 transition-all" onClick={() => setCurrentCase((currentCase - 1 + caseStudies.length) % caseStudies.length)}><FaChevronLeft className="text-blue-500 text-2xl" /></button>
           <motion.div className="w-full max-w-lg mx-auto group bg-white/90 rounded-3xl shadow-2xl border border-blue-100/40 overflow-hidden flex flex-col hover:scale-105 hover:shadow-3xl transition-all duration-300 cursor-pointer focus:outline-none focus:ring-4 focus:ring-blue-200" key={caseStudies[currentCase].label} initial={{ opacity: 0, y: 50, scale: 0.95 }} animate={{ opacity: 1, y: 0, scale: 1 }} transition={{ duration: 0.5 }}>
@@ -187,9 +213,9 @@ export default function SEOWebsiteOptimizationPage() {
                 <h4 className="text-2xl font-bold text-blue-900 mb-2 group-hover:text-blue-500 transition-colors duration-300 tracking-tight">{caseStudies[currentCase].label}</h4>
                 <p className="text-gray-700 text-base mb-4 flex-1 leading-relaxed">{caseStudies[currentCase].desc}</p>
                 <div className="flex items-center gap-4 justify-center md:justify-start">
-                  <span className="text-sm text-blue-700 font-semibold">Πριν:</span>
+                  <span className="text-sm text-blue-700 font-semibold">{caseStudies[currentCase].beforeLabel}</span>
                   <span className="text-2xl font-bold text-blue-400">{caseStudies[currentCase].before}</span>
-                  <span className="text-sm text-blue-700 font-semibold">Μετά:</span>
+                  <span className="text-sm text-blue-700 font-semibold">{caseStudies[currentCase].afterLabel}</span>
                   <span className="text-2xl font-bold text-green-500">{caseStudies[currentCase].after}</span>
                 </div>
               </div>
@@ -212,7 +238,7 @@ export default function SEOWebsiteOptimizationPage() {
 
       {/* Ροή Εργασίας */}
       <section className="max-w-7xl mx-auto py-24 px-4">
-        <motion.h2 className="text-3xl md:text-4xl font-extrabold text-blue-700 mb-12 text-center bg-gradient-to-r from-blue-500 to-blue-400 bg-clip-text text-transparent drop-shadow-lg">Πως δουλεύουμε</motion.h2>
+        <motion.h2 className="text-3xl md:text-4xl font-extrabold text-blue-700 mb-12 text-center bg-gradient-to-r from-blue-500 to-blue-400 bg-clip-text text-transparent drop-shadow-lg">{t.services.pages.seoWebsiteOptimization.workflow.title}</motion.h2>
         <motion.div className="flex flex-col md:flex-row justify-center items-center gap-10" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.12 } } }}>
           {workflow.map((step, idx) => (
             <motion.div key={step.title} className="flex flex-col items-center bg-white/80 backdrop-blur-lg rounded-2xl shadow-xl border border-blue-100/40 p-10 group hover:shadow-2xl transition-all duration-300 relative overflow-hidden min-w-[180px]" initial={{ opacity: 0, y: 40, scale: 0.97 }} whileInView={{ opacity: 1, y: 0, scale: 1 }} whileHover={{ scale: 1.08 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: idx * 0.07 }}><div className="mb-4 flex items-center justify-center w-14 h-14 rounded-full bg-gradient-to-br from-blue-100 to-blue-50 shadow-inner group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300 border-4 border-blue-200 group-hover:border-blue-300">{step.icon}</div><h4 className="text-base font-bold text-blue-900 mb-2 group-hover:text-blue-500 transition-colors duration-300 tracking-tight">{step.title}</h4><p className="text-gray-600 mb-4 text-sm leading-relaxed">{step.desc}</p>{idx < workflow.length - 1 && <div className="w-1 h-10 bg-gradient-to-b from-blue-300 to-blue-200 mx-auto my-2 rounded-full" />}</motion.div>
@@ -223,8 +249,8 @@ export default function SEOWebsiteOptimizationPage() {
       {/* Τελικό CTA */}
       <section className="max-w-7xl mx-auto py-24 px-4 flex flex-col items-center text-center">
         <motion.div className="relative bg-gradient-to-br from-blue-100 via-white to-blue-200/80 backdrop-blur-lg rounded-3xl shadow-2xl border border-blue-100/40 p-12 flex flex-col items-center" initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
-          <h2 className="text-3xl md:text-4xl font-extrabold text-blue-900 mb-6 tracking-tight">Θέλετε να εμφανίζεστε στην 1η σελίδα της Google;</h2>
-          <motion.button className="inline-block px-12 py-5 bg-gradient-to-r from-blue-600 to-blue-400 text-white rounded-full font-bold text-xl shadow-3xl border-2 border-transparent hover:border-blue-400 hover:shadow-[0_0_32px_0_#60a5fa] focus:outline-none focus:ring-2 focus:ring-blue-400 animate-fade-in flex items-center gap-2 relative overflow-hidden mt-6" whileHover={{ scale: 1.08, boxShadow: '0 0 32px 0 #60a5fa', filter: 'brightness(1.1)', borderColor: '#60a5fa' }} whileTap={{ scale: 0.97 }} onMouseEnter={() => playSound(hoverSfx)} onClick={() => { window.location.href = '/contactme'; }}><span className="relative z-10">Ζητήστε Δωρεάν Ανάλυση SEO</span></motion.button>
+          <h2 className="text-3xl md:text-4xl font-extrabold text-blue-900 mb-6 tracking-tight">{t.services.pages.seoWebsiteOptimization.finalCta.title}</h2>
+          <motion.button className="inline-block px-12 py-5 bg-gradient-to-r from-blue-600 to-blue-400 text-white rounded-full font-bold text-xl shadow-3xl border-2 border-transparent hover:border-blue-400 hover:shadow-[0_0_32px_0_#60a5fa] focus:outline-none focus:ring-2 focus:ring-blue-400 animate-fade-in flex items-center gap-2 relative overflow-hidden mt-6" whileHover={{ scale: 1.08, boxShadow: '0 0 32px 0 #60a5fa', filter: 'brightness(1.1)', borderColor: '#60a5fa' }} whileTap={{ scale: 0.97 }} onMouseEnter={() => playSound(hoverSfx)} onClick={() => { window.location.href = '/contactme'; }}><span className="relative z-10">{t.services.pages.seoWebsiteOptimization.finalCta.button}</span></motion.button>
         </motion.div>
       </section>
     </div>

@@ -22,66 +22,57 @@ function playSound(src: string) {
   audio.play();
 }
 
-const services = [
-  { icon: <FaChartLine className="text-blue-500 text-3xl" />, title: 'Ανάλυση Δεδομένων & Προβλέψεις', desc: 'Machine learning για ανάλυση, προβλέψεις, trends.' },
-  { icon: <FaMagic className="text-purple-500 text-3xl" />, title: 'Ανίχνευση Προτύπων & Αυτοματισμοί', desc: 'Αναγνώριση patterns, αυτοματοποιημένες ροές.' },
-  { icon: <FaBrain className="text-pink-500 text-3xl" />, title: 'Ενσωμάτωση GPT & NLP Μοντέλων', desc: 'Chatbots, φυσική γλώσσα, AI agents.' },
-  { icon: <FaRegLightbulb className="text-yellow-500 text-3xl" />, title: 'Custom Recommendation Engines', desc: 'Συστάσεις προϊόντων, εξατομίκευση.' },
-  { icon: <FaUserFriends className="text-green-500 text-3xl" />, title: 'Εξατομίκευση Περιεχομένου', desc: 'AI personalization για κάθε χρήστη.' },
-  { icon: <FaRobot className="text-cyan-500 text-3xl" />, title: 'Real-time Chatbots & AI Agents', desc: 'Συνομιλία, υποστήριξη, αυτοματοποίηση.' },
+// Icon arrays
+const serviceIcons = [
+  <FaChartLine className="text-blue-500 text-3xl" />,
+  <FaMagic className="text-purple-500 text-3xl" />,
+  <FaBrain className="text-pink-500 text-3xl" />,
+  <FaRegLightbulb className="text-yellow-500 text-3xl" />,
+  <FaUserFriends className="text-green-500 text-3xl" />,
+  <FaRobot className="text-cyan-500 text-3xl" />,
 ];
 
-const techTabs = [
-  {
-    label: 'AI Frameworks',
-    icons: [
-      { icon: <SiTensorflow className="text-yellow-500 text-4xl" />, name: 'TensorFlow' },
-      { icon: <SiPytorch className="text-red-500 text-4xl" />, name: 'PyTorch' },
-      { icon: <SiOpenai className="text-blue-500 text-4xl" />, name: 'OpenAI' },
-      { icon: <SiLangchain className="text-purple-500 text-4xl" />, name: 'LangChain' },
-    ]
-  },
-  {
-    label: 'Backend',
-    icons: [
-      { icon: <FaPython className="text-blue-400 text-4xl" />, name: 'Python' },
-      { icon: <SiFlask className="text-gray-700 text-4xl" />, name: 'Flask' },
-      { icon: <SiDjango className="text-green-700 text-4xl" />, name: 'Django' },
-      { icon: <FaDatabase className="text-blue-700 text-4xl" />, name: 'Databases' },
-    ]
-  },
-  {
-    label: 'APIs',
-    icons: [
-      { icon: <FaCodeBranch className="text-pink-500 text-4xl" />, name: 'REST' },
-      { icon: <SiGraphql className="text-purple-500 text-4xl" />, name: 'GraphQL' },
-    ]
-  }
+const workflowIcons = [
+  <FaCheckCircle className="text-blue-500 text-2xl" />,
+  <FaDatabase className="text-green-500 text-2xl" />,
+  <FaBrain className="text-purple-500 text-2xl" />,
+  <FaMagic className="text-pink-500 text-2xl" />,
+  <FaCogs className="text-cyan-500 text-2xl" />,
+  <FaChartLine className="text-blue-400 text-2xl" />,
 ];
 
-const workflow = [
-  { icon: <FaCheckCircle className="text-blue-500 text-2xl" />, title: 'Ανάλυση Αναγκών', desc: 'Κατανόηση στόχων, απαιτήσεων, δεδομένων.' },
-  { icon: <FaDatabase className="text-green-500 text-2xl" />, title: 'Συλλογή & Καθαρισμός Δεδομένων', desc: 'Data gathering, cleaning, προετοιμασία.' },
-  { icon: <FaBrain className="text-purple-500 text-2xl" />, title: 'Εκπαίδευση Μοντέλων', desc: 'ML training, επιλογή αλγορίθμων.' },
-  { icon: <FaMagic className="text-pink-500 text-2xl" />, title: 'Πειραματισμός & Testing', desc: 'Evaluation, testing, fine-tuning.' },
-  { icon: <FaCogs className="text-cyan-500 text-2xl" />, title: 'Ενσωμάτωση σε UI', desc: 'API integration, frontend σύνδεση.' },
-  { icon: <FaChartLine className="text-blue-400 text-2xl" />, title: 'Monitoring & Updates', desc: 'Συνεχής παρακολούθηση, βελτιώσεις.' },
-];
-
-const caseStudies = [
-  { client: 'E-shop', use: 'AI Προτάσεις προϊόντων', tech: 'TensorFlow, Python', kpi: '+25% conversion' },
-  { client: 'Fintech', use: 'Ανίχνευση απάτης', tech: 'PyTorch, REST API', kpi: '-40% fraud rate' },
-  { client: 'Media', use: 'Αυτόματη δημιουργία περιεχομένου', tech: 'OpenAI, LangChain', kpi: '+60% content output' },
+// Tech tabs icons (static, not translated)
+const techTabsIcons = [
+  [
+    { icon: <SiTensorflow className="text-yellow-500 text-4xl" />, name: 'TensorFlow' },
+    { icon: <SiPytorch className="text-red-500 text-4xl" />, name: 'PyTorch' },
+    { icon: <SiOpenai className="text-blue-500 text-4xl" />, name: 'OpenAI' },
+    { icon: <SiLangchain className="text-purple-500 text-4xl" />, name: 'LangChain' },
+  ],
+  [
+    { icon: <FaPython className="text-blue-400 text-4xl" />, name: 'Python' },
+    { icon: <SiFlask className="text-gray-700 text-4xl" />, name: 'Flask' },
+    { icon: <SiDjango className="text-green-700 text-4xl" />, name: 'Django' },
+    { icon: <FaDatabase className="text-blue-700 text-4xl" />, name: 'Databases' },
+  ],
+  [
+    { icon: <FaCodeBranch className="text-pink-500 text-4xl" />, name: 'REST' },
+    { icon: <SiGraphql className="text-purple-500 text-4xl" />, name: 'GraphQL' },
+  ]
 ];
 
 export default function AIIntegrationApplicationsPage() {
+  const { language } = useLanguage();
+  const t = translations[language];
   const [typed, setTyped] = useState('');
   const [currentTab, setCurrentTab] = useState(0);
   const [currentCase, setCurrentCase] = useState(0);
+  
   useEffect(() => { AOS.init({ duration: 900, once: true }); }, []);
+  
   // Typing effect για το hero
   useEffect(() => {
-    const full = 'AI στις Εφαρμογές σας. Από το Όραμα στην Υλοποίηση';
+    const full = t.services.pages.aiIntegrationApplications.hero.title;
     let i = 0;
     setTyped('');
     const interval = setInterval(() => {
@@ -90,7 +81,34 @@ export default function AIIntegrationApplicationsPage() {
       if (i === full.length) clearInterval(interval);
     }, 50);
     return () => clearInterval(interval);
-  }, []);
+  }, [t.services.pages.aiIntegrationApplications.hero.title]);
+
+  // Services array with useMemo
+  const services = useMemo(() =>
+    t.services.pages.aiIntegrationApplications.services.items.map((item, idx) => ({
+      icon: serviceIcons[idx],
+      title: item.title,
+      desc: item.desc
+    })), [t]);
+
+  // TechTabs array with useMemo
+  const techTabs = useMemo(() =>
+    t.services.pages.aiIntegrationApplications.technologies.tabs.map((tab, idx) => ({
+      label: tab.label,
+      icons: techTabsIcons[idx]
+    })), [t]);
+
+  // Workflow array with useMemo
+  const workflow = useMemo(() =>
+    t.services.pages.aiIntegrationApplications.workflow.items.map((item, idx) => ({
+      icon: workflowIcons[idx],
+      title: item.title,
+      desc: item.desc
+    })), [t]);
+
+  // CaseStudies array with useMemo
+  const caseStudies = useMemo(() =>
+    t.services.pages.aiIntegrationApplications.caseStudies.items, [t]);
   return (
     <div className="bg-gradient-to-br from-white via-blue-50 to-purple-50 min-h-screen text-gray-900 font-sans">
       {/* Hero Section */}
@@ -156,17 +174,10 @@ export default function AIIntegrationApplicationsPage() {
 
       {/* AI Υπηρεσίες */}
       <section className="max-w-7xl mx-auto py-24 px-4">
-        <motion.h2 className="text-3xl md:text-4xl font-extrabold text-blue-900 mb-12 text-center bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent drop-shadow-lg">AI Υπηρεσίες</motion.h2>
+        <motion.h2 className="text-3xl md:text-4xl font-extrabold text-blue-900 mb-12 text-center bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent drop-shadow-lg">{t.services.pages.aiIntegrationApplications.services.title}</motion.h2>
         <motion.div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.12 } } }}>
-          {[
-            { icon: '📊', title: 'Ανάλυση Δεδομένων & Προβλέψεις με ML', desc: 'Εξαγωγή insights και προβλέψεων από τα δεδομένα σας.' },
-            { icon: '🔍', title: 'Ανίχνευση Προτύπων & Αυτοματισμοί', desc: 'Αναγνώριση patterns και αυτοματοποίηση διαδικασιών.' },
-            { icon: '🤖', title: 'Ενσωμάτωση GPT & NLP Μοντέλων', desc: 'AI συνομιλίες, κατανόηση κειμένου, αυτόματη παραγωγή περιεχομένου.' },
-            { icon: '🎯', title: 'Custom Recommendation Engines', desc: 'Συστάσεις προϊόντων/υπηρεσιών με AI.' },
-            { icon: '✨', title: 'Εξατομίκευση Περιεχομένου', desc: 'AI personalization για κάθε χρήστη.' },
-            { icon: '💬', title: 'Real-time Chatbots & AI Agents', desc: 'Έξυπνα bots για υποστήριξη, πωλήσεις, κρατήσεις.' },
-          ].map((s, idx) => (
-            <motion.div key={s.title} className="group bg-white/90 backdrop-blur-lg rounded-3xl shadow-xl border border-blue-100/40 p-10 flex flex-col items-center text-center cursor-pointer transition-all duration-300 hover:shadow-2xl focus:outline-none focus:ring-4 focus:ring-blue-200 relative overflow-hidden" initial={{ opacity: 0, y: 40, scale: 0.97 }} whileInView={{ opacity: 1, y: 0, scale: 1 }} whileHover={{ scale: 1.08, boxShadow: '0 8px 32px 0 rgba(31, 38, 135, 0.25)' }} viewport={{ once: true }} transition={{ duration: 0.5, delay: idx * 0.07 }}>
+          {services.map((s, idx) => (
+            <motion.div key={idx} className="group bg-white/90 backdrop-blur-lg rounded-3xl shadow-xl border border-blue-100/40 p-10 flex flex-col items-center text-center cursor-pointer transition-all duration-300 hover:shadow-2xl focus:outline-none focus:ring-4 focus:ring-blue-200 relative overflow-hidden" initial={{ opacity: 0, y: 40, scale: 0.97 }} whileInView={{ opacity: 1, y: 0, scale: 1 }} whileHover={{ scale: 1.08, boxShadow: '0 8px 32px 0 rgba(31, 38, 135, 0.25)' }} viewport={{ once: true }} transition={{ duration: 0.5, delay: idx * 0.07 }}>
               <div className="mb-6 flex items-center justify-center w-20 h-20 rounded-full bg-gradient-to-br from-blue-100 to-purple-100 shadow-inner group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300 border-4 border-blue-200 group-hover:border-purple-300 text-4xl">{s.icon}</div>
               <h4 className="text-xl font-bold text-blue-900 mb-2 group-hover:text-blue-700 transition-colors duration-300 tracking-tight">{s.title}</h4>
               <p className="text-gray-600 mb-6 text-base leading-relaxed">{s.desc}</p>
@@ -177,7 +188,7 @@ export default function AIIntegrationApplicationsPage() {
 
       {/* Τεχνολογίες & Πλατφόρμες */}
       <section className="max-w-7xl mx-auto py-24 px-4">
-        <motion.h2 className="text-3xl md:text-4xl font-extrabold text-blue-700 mb-12 text-center bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent drop-shadow-lg">Τεχνολογίες & Πλατφόρμες</motion.h2>
+        <motion.h2 className="text-3xl md:text-4xl font-extrabold text-blue-700 mb-12 text-center bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent drop-shadow-lg">{t.services.pages.aiIntegrationApplications.technologies.title}</motion.h2>
         <div className="flex justify-center mb-8 gap-4">
           {techTabs.map((tab, idx) => (
             <button key={tab.label} className={`px-6 py-3 rounded-full font-semibold text-lg transition-all duration-300 ${currentTab === idx ? 'bg-gradient-to-r from-blue-600 to-purple-400 text-white shadow-lg' : 'bg-white text-blue-700 border border-blue-100'}`} onClick={() => setCurrentTab(idx)}>{tab.label}</button>
@@ -192,26 +203,26 @@ export default function AIIntegrationApplicationsPage() {
 
       {/* Πώς Εργάζομαι / AI Workflow */}
       <section className="max-w-7xl mx-auto py-24 px-4">
-        <motion.h2 className="text-3xl md:text-4xl font-extrabold text-blue-700 mb-12 text-center bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent drop-shadow-lg">Πώς Εργάζομαι</motion.h2>
+        <motion.h2 className="text-3xl md:text-4xl font-extrabold text-blue-700 mb-12 text-center bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent drop-shadow-lg">{t.services.pages.aiIntegrationApplications.workflow.title}</motion.h2>
         <motion.div className="flex flex-col md:flex-row justify-center items-center gap-10" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.12 } } }}>
           {workflow.map((step, idx) => (
-            <motion.div key={step.title} className="flex flex-col items-center bg-white/80 backdrop-blur-lg rounded-2xl shadow-xl border border-blue-100/40 p-10 group hover:shadow-2xl transition-all duration-300 relative overflow-hidden min-w-[180px]" initial={{ opacity: 0, y: 40, scale: 0.97 }} whileInView={{ opacity: 1, y: 0, scale: 1 }} whileHover={{ scale: 1.08 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: idx * 0.07 }}><div className="mb-4 flex items-center justify-center w-14 h-14 rounded-full bg-gradient-to-br from-blue-100 to-purple-100 shadow-inner group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300 border-4 border-blue-200 group-hover:border-purple-300">{step.icon}</div><h4 className="text-base font-bold text-blue-900 mb-2 group-hover:text-blue-500 transition-colors duration-300 tracking-tight">{step.title}</h4><p className="text-gray-600 mb-4 text-sm leading-relaxed">{step.desc}</p>{idx < workflow.length - 1 && <div className="w-1 h-10 bg-gradient-to-b from-blue-300 to-purple-200 mx-auto my-2 rounded-full" />}</motion.div>
+            <motion.div key={idx} className="flex flex-col items-center bg-white/80 backdrop-blur-lg rounded-2xl shadow-xl border border-blue-100/40 p-10 group hover:shadow-2xl transition-all duration-300 relative overflow-hidden min-w-[180px]" initial={{ opacity: 0, y: 40, scale: 0.97 }} whileInView={{ opacity: 1, y: 0, scale: 1 }} whileHover={{ scale: 1.08 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: idx * 0.07 }}><div className="mb-4 flex items-center justify-center w-14 h-14 rounded-full bg-gradient-to-br from-blue-100 to-purple-100 shadow-inner group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300 border-4 border-blue-200 group-hover:border-purple-300">{step.icon}</div><h4 className="text-base font-bold text-blue-900 mb-2 group-hover:text-blue-500 transition-colors duration-300 tracking-tight">{step.title}</h4><p className="text-gray-600 mb-4 text-sm leading-relaxed">{step.desc}</p>{idx < workflow.length - 1 && <div className="w-1 h-10 bg-gradient-to-b from-blue-300 to-purple-200 mx-auto my-2 rounded-full" />}</motion.div>
           ))}
         </motion.div>
       </section>
 
       {/* Πραγματικά Παραδείγματα */}
-      <motion.h2 className="text-3xl md:text-4xl font-extrabold text-blue-700 mb-4 text-center bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent drop-shadow-lg">Πραγματικά Παραδείγματα</motion.h2>
-      <span className="uppercase tracking-widest text-xs font-bold text-blue-400 mb-8 block text-center">AI Case Studies</span>
+      <motion.h2 className="text-3xl md:text-4xl font-extrabold text-blue-700 mb-4 text-center bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent drop-shadow-lg">{t.services.pages.aiIntegrationApplications.caseStudies.title}</motion.h2>
+      <span className="uppercase tracking-widest text-xs font-bold text-blue-400 mb-8 block text-center">{t.services.pages.aiIntegrationApplications.caseStudies.subtitle}</span>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 w-full">
         {caseStudies.map((c, idx) => (
-          <div key={c.client} className={`group bg-white/80 backdrop-blur-lg rounded-3xl shadow-xl border border-blue-100/40 p-10 flex flex-col items-center text-center transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 focus:outline-none focus:ring-4 focus:ring-blue-200 relative overflow-hidden min-h-[260px] ${idx % 2 === 0 ? 'bg-gradient-to-br from-blue-50 to-purple-100' : 'bg-gradient-to-br from-purple-50 to-blue-100'} w-full`}>
+          <div key={idx} className={`group bg-white/80 backdrop-blur-lg rounded-3xl shadow-xl border border-blue-100/40 p-10 flex flex-col items-center text-center transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 focus:outline-none focus:ring-4 focus:ring-blue-200 relative overflow-hidden min-h-[260px] ${idx % 2 === 0 ? 'bg-gradient-to-br from-blue-50 to-purple-100' : 'bg-gradient-to-br from-purple-50 to-blue-100'} w-full`}>
             <div className="mb-4 flex items-center justify-center w-20 h-20 rounded-full bg-gradient-to-br from-blue-400 via-purple-300 to-cyan-400 shadow-inner border-4 border-blue-200 group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300">
               <FaMicrochip className="text-purple-400 text-5xl" />
             </div>
             <span className="inline-block px-4 py-2 rounded-full bg-gradient-to-r from-blue-500 to-purple-500 text-white font-bold text-base shadow-md mb-2 mt-2 tracking-wide">{c.client}</span>
-            <p className="text-blue-700 text-base mb-2">Χρήση AI: <span className="font-semibold">{c.use}</span></p>
-            <p className="text-gray-700 text-base mb-2">Τεχνολογίες: <span className="font-semibold">{c.tech}</span></p>
+            <p className="text-blue-700 text-base mb-2">{t.services.pages.aiIntegrationApplications.caseStudies.useLabel} <span className="font-semibold">{c.use}</span></p>
+            <p className="text-gray-700 text-base mb-2">{t.services.pages.aiIntegrationApplications.caseStudies.techLabel} <span className="font-semibold">{c.tech}</span></p>
             <p className="text-green-600 text-lg font-bold">{c.kpi}</p>
           </div>
         ))}
@@ -225,8 +236,8 @@ export default function AIIntegrationApplicationsPage() {
       {/* Τελικό CTA */}
       <section className="max-w-7xl mx-auto py-24 px-4 flex flex-col items-center text-center">
         <motion.div className="relative bg-gradient-to-br from-blue-100 via-white to-purple-100/80 backdrop-blur-lg rounded-3xl shadow-2xl border border-blue-100/40 p-12 flex flex-col items-center" initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
-          <h2 className="text-3xl md:text-4xl font-extrabold text-blue-900 mb-6 tracking-tight">Δώστε νοημοσύνη στην εφαρμογή σας</h2>
-          <motion.button className="inline-block px-12 py-5 bg-gradient-to-r from-blue-600 to-purple-400 text-white rounded-full font-bold text-xl shadow-3xl border-2 border-transparent hover:border-blue-400 hover:shadow-[0_0_32px_0_#a78bfa] focus:outline-none focus:ring-2 focus:ring-blue-400 animate-fade-in flex items-center gap-2 relative overflow-hidden mt-6" whileHover={{ scale: 1.08, boxShadow: '0 0 32px 0 #a78bfa', filter: 'brightness(1.1)', borderColor: '#a78bfa' }} whileTap={{ scale: 0.97 }} onMouseEnter={() => playSound(hoverSfx)} onClick={() => { window.location.href = '/contactme'; }}><span className="relative z-10">Ξεκινήστε τώρα</span></motion.button>
+          <h2 className="text-3xl md:text-4xl font-extrabold text-blue-900 mb-6 tracking-tight">{t.services.pages.aiIntegrationApplications.finalCta.title}</h2>
+          <motion.button className="inline-block px-12 py-5 bg-gradient-to-r from-blue-600 to-purple-400 text-white rounded-full font-bold text-xl shadow-3xl border-2 border-transparent hover:border-blue-400 hover:shadow-[0_0_32px_0_#a78bfa] focus:outline-none focus:ring-2 focus:ring-blue-400 animate-fade-in flex items-center gap-2 relative overflow-hidden mt-6" whileHover={{ scale: 1.08, boxShadow: '0 0 32px 0 #a78bfa', filter: 'brightness(1.1)', borderColor: '#a78bfa' }} whileTap={{ scale: 0.97 }} onMouseEnter={() => playSound(hoverSfx)} onClick={() => { window.location.href = '/contactme'; }}><span className="relative z-10">{t.services.pages.aiIntegrationApplications.finalCta.button}</span></motion.button>
         </motion.div>
       </section>
     </div>

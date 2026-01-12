@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { LanguageProvider } from './contexts/LanguageContext';
+import { LanguageProvider, useLanguage } from './contexts/LanguageContext';
+import { translations } from './data/translations';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import Services from './components/Services';
@@ -28,10 +29,11 @@ import { Helmet } from 'react-helmet';
 // Προσθήκη placeholders για όλες τις υπηρεσίες
 const Placeholder = ({ name }: { name: string }) => <div style={{padding:40, textAlign:'center', color:'#555'}}>Η σελίδα "{name}" δεν έχει υλοποιηθεί ακόμα.</div>;
 
-function App() {
+function AppContent() {
+  const { language } = useLanguage();
+  const t = translations[language];
   return (
-    <LanguageProvider>
-      <Router>
+    <Router>
         <ScrollToTop />
       <div className="min-h-screen">
         <Header />
@@ -40,8 +42,8 @@ function App() {
             <Route path="/" element={
               <>
                 <Helmet>
-                  <title>DevTaskHub | Κατασκευή Custom Ιστοσελίδων & Mobile Εφαρμογών</title>
-                  <meta name="description" content="Κατασκευή custom ιστοσελίδων, e-shop, mobile apps, AI και SEO από εξειδικευμένη ομάδα στη Θεσσαλονίκη. Responsive design, ταχύτητα, ασφάλεια, υποστήριξη." />
+                  <title>{t.meta.home.title}</title>
+                  <meta name="description" content={t.meta.home.description} />
                 </Helmet>
                 <Hero />
                 <HomeShowcaseSection />
@@ -57,8 +59,8 @@ function App() {
             <Route path="/services/web-development" element={
               <>
                 <Helmet>
-                  <title>Web Development | DevTaskHub Θεσσαλονίκη</title>
-                  <meta name="description" content="Κατασκευή μοντέρνων ιστοσελίδων και web εφαρμογών με ταχύτητα, ασφάλεια και responsive design από την ομάδα DevTaskHub στη Θεσσαλονίκη." />
+                  <title>{t.meta.webDevelopment.title}</title>
+                  <meta name="description" content={t.meta.webDevelopment.description} />
                 </Helmet>
                 <WebDevelopmentPage />
               </>
@@ -66,8 +68,8 @@ function App() {
             <Route path="/services/mobile-app-development" element={
               <>
                 <Helmet>
-                  <title>Mobile App Development | DevTaskHub Θεσσαλονίκη</title>
-                  <meta name="description" content="Ανάπτυξη mobile εφαρμογών για Android & iOS με έμφαση στην εμπειρία χρήστη και την απόδοση. DevTaskHub στη Θεσσαλονίκη." />
+                  <title>{t.meta.mobileAppDevelopment.title}</title>
+                  <meta name="description" content={t.meta.mobileAppDevelopment.description} />
                 </Helmet>
                 <MobileAppDevelopmentPage />
               </>
@@ -75,8 +77,8 @@ function App() {
             <Route path="/services/chatbots-ai-agents" element={
               <>
                 <Helmet>
-                  <title>Chatbots & AI Agents | DevTaskHub Θεσσαλονίκη</title>
-                  <meta name="description" content="Έξυπνα chatbots και AI agents για αυτοματοποίηση επικοινωνίας και υποστήριξη πελατών. DevTaskHub στη Θεσσαλονίκη." />
+                  <title>{t.meta.chatbotsAIAgents.title}</title>
+                  <meta name="description" content={t.meta.chatbotsAIAgents.description} />
                 </Helmet>
                 <ChatbotsAIAgentsPage />
               </>
@@ -84,8 +86,8 @@ function App() {
             <Route path="/services/social-media-management" element={
               <>
                 <Helmet>
-                  <title>Social Media Management | DevTaskHub Θεσσαλονίκη</title>
-                  <meta name="description" content="Διαχείριση social media, δημιουργία περιεχομένου και στρατηγική για επιχειρήσεις. DevTaskHub στη Θεσσαλονίκη." />
+                  <title>{t.meta.socialMediaManagement.title}</title>
+                  <meta name="description" content={t.meta.socialMediaManagement.description} />
                 </Helmet>
                 <SocialMediaManagementPage />
               </>
@@ -93,8 +95,8 @@ function App() {
             <Route path="/services/video-animation-production" element={
               <>
                 <Helmet>
-                  <title>Video & Animation Production | DevTaskHub Θεσσαλονίκη</title>
-                  <meta name="description" content="Παραγωγή επαγγελματικών βίντεο και animations για προώθηση, εκπαίδευση και διαφήμιση. DevTaskHub στη Θεσσαλονίκη." />
+                  <title>{t.meta.videoAnimationProduction.title}</title>
+                  <meta name="description" content={t.meta.videoAnimationProduction.description} />
                 </Helmet>
                 <VideoAnimationProductionPage />
               </>
@@ -102,8 +104,8 @@ function App() {
             <Route path="/services/seo-website-optimization" element={
               <>
                 <Helmet>
-                  <title>SEO Website Optimization | DevTaskHub Θεσσαλονίκη</title>
-                  <meta name="description" content="SEO, βελτιστοποίηση ιστοσελίδων και αύξηση οργανικής επισκεψιμότητας. DevTaskHub στη Θεσσαλονίκη." />
+                  <title>{t.meta.seoWebsiteOptimization.title}</title>
+                  <meta name="description" content={t.meta.seoWebsiteOptimization.description} />
                 </Helmet>
                 <SEOWebsiteOptimizationPage />
               </>
@@ -112,8 +114,8 @@ function App() {
             <Route path="/services/ux-ui-design" element={
               <>
                 <Helmet>
-                  <title>UX/UI Design | DevTaskHub Θεσσαλονίκη</title>
-                  <meta name="description" content="Σχεδιασμός φιλικών και αποδοτικών interfaces με έμφαση στη χρηστικότητα και την εμπειρία. DevTaskHub στη Θεσσαλονίκη." />
+                  <title>{t.meta.uxUIDesign.title}</title>
+                  <meta name="description" content={t.meta.uxUIDesign.description} />
                 </Helmet>
                 <UXUIDesignPage />
               </>
@@ -121,8 +123,8 @@ function App() {
             <Route path="/services/database-cloud-infrastructure" element={
               <>
                 <Helmet>
-                  <title>Database & Cloud Infrastructure | DevTaskHub Θεσσαλονίκη</title>
-                  <meta name="description" content="Διαχείριση βάσεων δεδομένων και υλοποίηση cloud λύσεων για επιχειρήσεις. DevTaskHub στη Θεσσαλονίκη." />
+                  <title>{t.meta.databaseCloudInfrastructure.title}</title>
+                  <meta name="description" content={t.meta.databaseCloudInfrastructure.description} />
                 </Helmet>
                 <DatabaseCloudInfrastructurePage />
               </>
@@ -130,8 +132,8 @@ function App() {
             <Route path="/services/ai-integration-applications" element={
               <>
                 <Helmet>
-                  <title>AI Integration Applications | DevTaskHub Θεσσαλονίκη</title>
-                  <meta name="description" content="Ενσωμάτωση AI και machine learning σε εφαρμογές για ανάλυση δεδομένων και αυτοματοποίηση. DevTaskHub στη Θεσσαλονίκη." />
+                  <title>{t.meta.aiIntegrationApplications.title}</title>
+                  <meta name="description" content={t.meta.aiIntegrationApplications.description} />
                 </Helmet>
                 <AIIntegrationApplicationsPage />
               </>
@@ -139,8 +141,8 @@ function App() {
             <Route path="/services/ecommerce-development" element={
               <>
                 <Helmet>
-                  <title>E-commerce Development | DevTaskHub Θεσσαλονίκη</title>
-                  <meta name="description" content="Κατασκευή e-shop και ηλεκτρονικών καταστημάτων με σύγχρονες δυνατότητες. DevTaskHub στη Θεσσαλονίκη." />
+                  <title>{t.meta.ecommerceDevelopment.title}</title>
+                  <meta name="description" content={t.meta.ecommerceDevelopment.description} />
                 </Helmet>
                 <EcommerceDevelopmentPage />
               </>
@@ -148,8 +150,8 @@ function App() {
             <Route path="/services/game-development" element={
               <>
                 <Helmet>
-                  <title>Game Development | DevTaskHub Θεσσαλονίκη</title>
-                  <meta name="description" content="Ανάπτυξη διαδραστικών παιχνιδιών για web, desktop και mobile πλατφόρμες. DevTaskHub στη Θεσσαλονίκη." />
+                  <title>{t.meta.gameDevelopment.title}</title>
+                  <meta name="description" content={t.meta.gameDevelopment.description} />
                 </Helmet>
                 <GameDevelopmentPage />
               </>
@@ -158,8 +160,8 @@ function App() {
             <Route path="/contact" element={
               <>
                 <Helmet>
-                  <title>Επικοινωνία | DevTaskHub Θεσσαλονίκη</title>
-                  <meta name="description" content="Επικοινωνήστε με την ομάδα DevTaskHub για προσφορά ή απορίες σχετικά με τις υπηρεσίες μας." />
+                  <title>{t.meta.contact.title}</title>
+                  <meta name="description" content={t.meta.contact.description} />
                 </Helmet>
                 <Contact />
               </>
@@ -167,8 +169,8 @@ function App() {
             <Route path="/contactme" element={
               <>
                 <Helmet>
-                  <title>Επικοινωνία | DevTaskHub Θεσσαλονίκη</title>
-                  <meta name="description" content="Επικοινωνήστε με την ομάδα DevTaskHub για προσφορά ή απορίες σχετικά με τις υπηρεσίες μας." />
+                  <title>{t.meta.contact.title}</title>
+                  <meta name="description" content={t.meta.contact.description} />
                 </Helmet>
                 <Contact />
               </>
@@ -176,8 +178,8 @@ function App() {
             <Route path="/terms" element={
               <>
                 <Helmet>
-                  <title>Όροι & Προϋποθέσεις | DevTaskHub</title>
-                  <meta name="description" content="Όροι χρήσης και προϋποθέσεις για τις υπηρεσίες της DevTaskHub." />
+                  <title>{t.meta.terms.title}</title>
+                  <meta name="description" content={t.meta.terms.description} />
                 </Helmet>
                 <TermsAndConditions />
               </>
@@ -187,6 +189,13 @@ function App() {
       <Footer />
     </div>
     </Router>
+  );
+}
+
+function App() {
+  return (
+    <LanguageProvider>
+      <AppContent />
     </LanguageProvider>
   );
 }

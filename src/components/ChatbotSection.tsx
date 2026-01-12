@@ -2,8 +2,12 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { MessageCircle, Sparkles, Zap, Bot } from 'lucide-react';
 import { useIsMobile } from '../hooks/useIsMobile';
+import { useLanguage } from '../hooks/useLanguage';
+import { translations } from '../data/translations';
 
 const ChatbotSection: React.FC = () => {
+  const { language } = useLanguage();
+  const t = translations[language];
   const isMobile = useIsMobile();
 
   return (
@@ -109,7 +113,7 @@ const ChatbotSection: React.FC = () => {
           
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold mb-6">
             <span className="bg-gradient-to-r from-purple-600 via-pink-600 to-blue-600 bg-clip-text text-transparent">
-              Chat με την Επιχείρησή μας!
+              {t.chatbot.title}
             </span>
           </h2>
           
@@ -120,9 +124,9 @@ const ChatbotSection: React.FC = () => {
             transition={{ duration: 0.8, delay: 0.2 }}
             viewport={{ once: true }}
           >
-            Έχετε απορίες; Θέλετε να μάθετε περισσότερα για τις υπηρεσίες μας;
+            {t.chatbot.subtitle}
             <br className="hidden sm:block" />
-            <span className="font-semibold text-purple-600">Μιλήστε με το AI Chatbot μας!</span>
+            <span className="font-semibold text-purple-600">{t.chatbot.cta}</span>
           </motion.p>
         </motion.div>
 

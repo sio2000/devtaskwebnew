@@ -255,15 +255,15 @@ const Contact: React.FC = () => {
         </a>
         <a href="https://www.instagram.com/devtaskhub/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 text-pink-600 text-lg font-semibold hover:text-pink-400 transition-colors group">
           <FaInstagram className="h-5 w-5 text-pink-500 group-hover:text-pink-600 transition-colors" />
-          <span>Instagram</span>
+          <span>{t.footer.social.instagram}</span>
         </a>
         <a href="https://www.facebook.com/profile.php?id=61578746165941" target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 text-blue-600 text-lg font-semibold hover:text-blue-800 transition-colors group">
           <FaFacebook className="h-5 w-5 text-blue-500 group-hover:text-blue-700 transition-colors" />
-          <span>Facebook</span>
+          <span>{t.footer.social.facebook}</span>
         </a>
         <a href="https://www.tiktok.com/@devtaskhub" target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 text-black text-lg font-semibold hover:text-gray-700 transition-colors group">
           <FaTiktok className="h-5 w-5 text-black group-hover:text-gray-700 transition-colors" />
-          <span>TikTok</span>
+          <span>{t.footer.social.tiktok}</span>
         </a>
         <div className="flex items-center gap-4 text-red-700 text-lg font-semibold">
           <FaMapMarkerAlt className="h-5 w-5 text-red-500" />

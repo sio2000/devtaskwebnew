@@ -7,7 +7,8 @@ export const translations = {
       about: 'Σχετικά',
       portfolio: 'Portfolio',
       mobileAppSamples: 'Δείγματα Mobile App',
-      contact: 'Επικοινωνία'
+      contact: 'Επικοινωνία',
+      tagline: 'Εσύ σκέφτεσαι το όραμα. Εμείς την υλοποίηση!'
     },
     // Hero Section
     hero: {
@@ -516,6 +517,160 @@ export const translations = {
             button: 'Ζητήστε Δωρεάν Συμβουλευτική'
           }
         },
+        seoWebsiteOptimization: {
+          hero: {
+            title: 'SEO – Βελτιστοποίηση Ιστοσελίδων που Φέρνει Αποτελέσματα',
+            subtitle: 'Απογειώστε την κατάταξη της ιστοσελίδας σας στη Google με τεχνικό SEO, βελτιστοποίηση περιεχομένου και σύγχρονες στρατηγικές. Επαγγελματική ανάλυση, μετρήσιμα αποτελέσματα και αύξηση οργανικής επισκεψιμότητας.',
+            cta: 'Ζητήστε SEO Audit'
+          },
+          services: {
+            title: 'SEO Υπηρεσίες',
+            items: [
+              { title: 'On-page SEO', desc: 'Βελτιστοποίηση περιεχομένου, headers, meta tags.' },
+              { title: 'Τεχνικό SEO', desc: 'Ταχύτητα, schema, mobile optimization, crawlability.' },
+              { title: 'Keyword Research', desc: 'Έρευνα και ανάλυση λέξεων-κλειδιών.' },
+              { title: 'Ανάλυση Ανταγωνισμού', desc: 'Σύγκριση με ανταγωνιστές, ευκαιρίες.' },
+              { title: 'Google Search Console & Analytics', desc: 'Σύνδεση, παρακολούθηση, insights.' },
+              { title: 'Content Strategy', desc: 'Στρατηγική περιεχομένου για SEO.' },
+              { title: 'SEO Αναφορές & Dashboard', desc: 'Αναλυτικά reports και dashboards.' }
+            ]
+          },
+          stats: {
+            title: 'Μετρήσιμα Αποτελέσματα',
+            items: [
+              { value: 300, suffix: '%', label: 'οργανική επισκεψιμότητα', desc: 'Αύξηση οργανικών επισκέψεων' },
+              { value: 1, suffix: 'η σελίδα Google', label: '', desc: 'Κατάταξη σε ανταγωνιστικές λέξεις' },
+              { value: 120, suffix: ' keywords', label: '', desc: 'Λέξεις-κλειδιά με κατάταξη' }
+            ],
+            chartTitle: 'Εξέλιξη οργανικής επισκεψιμότητας'
+          },
+          caseStudies: {
+            title: 'Case Study',
+            items: [
+              { before: 120, after: 480, label: 'Οργανική επισκεψιμότητα', desc: 'Αύξηση οργανικών επισκέψεων σε 6 μήνες.', beforeLabel: 'Πριν:', afterLabel: 'Μετά:' },
+              { before: 8, after: 1, label: 'Κατάταξη Google', desc: 'Από 8η σε 1η σελίδα για βασική λέξη-κλειδί.', beforeLabel: 'Πριν:', afterLabel: 'Μετά:' }
+            ]
+          },
+          workflow: {
+            title: 'Πως δουλεύουμε',
+            items: [
+              { title: 'SEO Audit', desc: 'Ανάλυση ιστοσελίδας & τεχνικός έλεγχος.' },
+              { title: 'Ανάλυση & Στρατηγική', desc: 'Έρευνα, στόχοι, πλάνο ενεργειών.' },
+              { title: 'Τεχνική Υλοποίηση', desc: 'Εφαρμογή βελτιώσεων & αλλαγών.' },
+              { title: 'Παρακολούθηση & Βελτιστοποίηση', desc: 'Συνεχής ανάλυση & προσαρμογή.' }
+            ]
+          },
+          finalCta: {
+            title: 'Θέλετε να εμφανίζεστε στην 1η σελίδα της Google;',
+            button: 'Ζητήστε Δωρεάν Ανάλυση SEO'
+          }
+        },
+        chatbotsAIAgents: {
+          hero: {
+            title: 'Chatbots & AI Agents για Επιχειρήσεις',
+            subtitle: 'Έξυπνοι ψηφιακοί βοηθοί που αυτοματοποιούν την επικοινωνία, βελτιώνουν την εμπειρία πελάτη και αυξάνουν την αποδοτικότητα της επιχείρησής σας. Υποστήριξη Facebook Messenger, WhatsApp, ιστοσελίδες, mobile apps & custom πλατφόρμες.',
+            cta: 'Ζητήστε Demo'
+          },
+          advantages: {
+            title: 'Πλεονεκτήματα & Εφαρμογές',
+            items: [
+              { title: 'Αυτόματη εξυπηρέτηση πελατών', desc: '24/7 απαντήσεις, χωρίς αναμονή.' },
+              { title: 'Συλλογή leads & κρατήσεων', desc: 'Αυτόματη συλλογή στοιχείων και κρατήσεων.' },
+              { title: 'Πωλήσεις μέσω chat', desc: 'Αύξηση πωλήσεων με conversational commerce.' },
+              { title: 'FAQ & Support Bots', desc: 'Άμεση απάντηση σε συχνές ερωτήσεις.' },
+              { title: 'Εσωτερικά bots', desc: 'Αυτοματοποίηση διαδικασιών για την ομάδα σας.' }
+            ]
+          },
+          technologies: {
+            title: 'Τεχνολογίες & Πλατφόρμες',
+            subtitle: 'Τα chatbots και οι AI agents συνδέονται με τις πιο σύγχρονες πλατφόρμες επικοινωνίας και τεχνολογίες, όπως Messenger, WhatsApp, Instagram, Webchat, Slack, και APIs. Έτσι, η επιχείρησή σας μπορεί να προσφέρει αυτοματοποιημένη, άμεση και προσωποποιημένη εξυπηρέτηση σε κάθε κανάλι που χρησιμοποιούν οι πελάτες σας.',
+            items: [
+              { name: 'Dialogflow' },
+              { name: 'Rasa' },
+              { name: 'OpenAI / GPT' },
+              { name: 'Twilio' },
+              { name: 'WhatsApp Business' },
+              { name: 'Meta / Messenger' },
+              { name: 'Instagram' },
+              { name: 'Webchat SDKs' },
+              { name: 'Microsoft Bot' },
+              { name: 'Slack' }
+            ]
+          },
+          future: {
+            title: 'Το μέλλον της επικοινωνίας είναι εδώ',
+            description: 'Τα chatbots και οι AI agents μεταμορφώνουν τον τρόπο που οι επιχειρήσεις επικοινωνούν με τους πελάτες τους. Παρέχουν άμεσες απαντήσεις, αυτοματοποιούν διαδικασίες, συλλέγουν leads και προσφέρουν προσωποποιημένη εμπειρία 24/7. Ενσωματώνονται εύκολα σε ιστοσελίδες, social media και εφαρμογές, προσφέροντας ανταγωνιστικό πλεονέκτημα και εξοικονόμηση χρόνου.',
+            items: [
+              'Αυτόματη εξυπηρέτηση πελατών & υποστήριξη',
+              'Συλλογή και διαχείριση leads',
+              'Εξατομικευμένες απαντήσεις με AI',
+              'Ενσωμάτωση σε κάθε πλατφόρμα',
+              'Ανάλυση συνομιλιών & στατιστικά'
+            ]
+          },
+          collaboration: {
+            title: 'Συνεργαστείτε με AI Agent',
+            description: 'Δημιουργήστε τον δικό σας ψηφιακό βοηθό ή chatbot με προηγμένες δυνατότητες AI, φυσική γλώσσα και αυτοματισμούς που ταιριάζουν στις ανάγκες της επιχείρησής σας. Ενισχύστε την εξυπηρέτηση, αυτοματοποιήστε διαδικασίες και προσφέρετε μοναδική εμπειρία στους πελάτες σας.',
+            items: [
+              'Εξατομικευμένες απαντήσεις 24/7',
+              'Ενσωμάτωση με social, site, apps',
+              'Συλλογή leads & κρατήσεων',
+              'Προηγμένη ανάλυση συνομιλιών',
+              'Εύκολη διαχείριση & εκπαίδευση'
+            ],
+            cta: 'Ζητήστε Προσφορά'
+          }
+        },
+        gameDevelopment: {
+          hero: {
+            title: 'Innovative Game Development Services',
+            subtitle: 'Αναπτύξτε το επόμενο επιτυχημένο παιχνίδι με τεχνογνωσία, φαντασία και τεχνολογία αιχμής.',
+            cta: 'Start Your Game Project'
+          },
+          services: {
+            title: 'Our Services',
+            items: [
+              { title: 'Mobile Game Development', desc: 'Δημιουργία παιχνιδιών για iOS & Android με κορυφαίο UX.' },
+              { title: 'VR/AR Experiences', desc: 'Εμβυθιστικές εμπειρίες εικονικής & επαυξημένης πραγματικότητας.' },
+              { title: 'Multiplayer Online Games', desc: 'Online multiplayer με σταθερότητα & scaling.' },
+              { title: 'Game Design & Storytelling', desc: 'Σχεδιασμός gameplay, χαρακτήρων & ιστορίας.' }
+            ]
+          },
+          process: {
+            title: 'Development Process',
+            items: [
+              { step: 'Concept & Storyboarding', desc: 'Ιδέα, σενάριο, χαρακτήρες, wireframes.' },
+              { step: 'Prototype & Design', desc: 'Δημιουργία prototype, UI/UX & art assets.' },
+              { step: 'Development & Testing', desc: 'Υλοποίηση, testing & βελτιστοποίηση.' },
+              { step: 'Launch & Support', desc: 'Λανσάρισμα, updates & υποστήριξη.' }
+            ]
+          },
+          technologies: {
+            title: 'Technologies & Tools'
+          },
+          portfolio: {
+            title: 'Portfolio Highlights',
+            items: [
+              { title: 'Fantasy Adventure', desc: '3D RPG με μοναδικό art style & engaging gameplay.' },
+              { title: 'VR Racing', desc: 'VR racing game με ρεαλιστική φυσική & γραφικά.' },
+              { title: 'Puzzle Platformer', desc: '2D puzzle platformer με καινοτόμους μηχανισμούς.' }
+            ]
+          },
+          whyUs: {
+            title: 'Why Choose Us?',
+            items: [
+              'Experienced developers & designers',
+              'Agile development methodology',
+              'Cutting-edge technology integration',
+              'Player-centric design approach'
+            ]
+          },
+          finalCta: {
+            title: 'Ready to build your next hit game?',
+            subtitle: 'Επικοινωνήστε για να ξεκινήσουμε το επόμενο gaming project σας.',
+            button: 'Contact Us Today'
+          }
+        },
         databaseCloudInfrastructure: {
           hero: {
             title: 'Βάσεις Δεδομένων & Cloud Υποδομές',
@@ -759,8 +914,126 @@ export const translations = {
       description: 'Κατασκευή μοντέρνων ιστοσελίδων και εφαρμογών στη Θεσσαλονίκη',
       rights: 'Όλα τα δικαιώματα διατηρούνται.',
       terms: 'Όροι & Προϋποθέσεις',
-      madeWith: 'Made with',
-      inThessaloniki: 'in Thessaloniki'
+      madeWith: 'Φτιαγμένο με',
+      inThessaloniki: 'στη Θεσσαλονίκη',
+      location: 'Θεσσαλονίκη, Ελλάδα',
+      social: {
+        facebook: 'Facebook',
+        instagram: 'Instagram',
+        tiktok: 'TikTok'
+      },
+      services: {
+        webDevelopment: 'Κατασκευή Ιστοσελίδων',
+        mobileAppDevelopment: 'Mobile Εφαρμογές',
+        ecommerceDevelopment: 'E-shop & Ηλεκτρονικό Εμπόριο',
+        seoWebsiteOptimization: 'SEO – Βελτιστοποίηση Ιστοσελίδων',
+        uxUIDesign: 'UX/UI Design',
+        videoAnimationProduction: 'Βίντεο & Animation',
+        socialMediaManagement: 'Διαχείριση Social Media',
+        chatbotsAIAgents: 'Chatbots & AI Agents',
+        aiIntegrationApplications: 'AI Ενσωμάτωση σε Εφαρμογές',
+        databaseCloudInfrastructure: 'Βάσεις Δεδομένων & Cloud',
+        gameDevelopment: 'Game Development'
+      }
+    },
+    // Chatbot Section
+    chatbot: {
+      title: 'Chat με την Επιχείρησή μας!',
+      subtitle: 'Έχετε απορίες; Θέλετε να μάθετε περισσότερα για τις υπηρεσίες μας;',
+      cta: 'Μιλήστε με το AI Chatbot μας!'
+    },
+    // Meta tags for pages
+    meta: {
+      home: {
+        title: 'DevTaskHub | Κατασκευή Custom Ιστοσελίδων & Mobile Εφαρμογών',
+        description: 'Κατασκευή custom ιστοσελίδων, e-shop, mobile apps, AI και SEO από εξειδικευμένη ομάδα στη Θεσσαλονίκη. Responsive design, ταχύτητα, ασφάλεια, υποστήριξη.'
+      },
+      webDevelopment: {
+        title: 'Web Development | DevTaskHub Θεσσαλονίκη',
+        description: 'Κατασκευή μοντέρνων ιστοσελίδων και web εφαρμογών με ταχύτητα, ασφάλεια και responsive design από την ομάδα DevTaskHub στη Θεσσαλονίκη.'
+      },
+      mobileAppDevelopment: {
+        title: 'Mobile App Development | DevTaskHub Θεσσαλονίκη',
+        description: 'Ανάπτυξη mobile εφαρμογών για Android & iOS με έμφαση στην εμπειρία χρήστη και την απόδοση. DevTaskHub στη Θεσσαλονίκη.'
+      },
+      chatbotsAIAgents: {
+        title: 'Chatbots & AI Agents | DevTaskHub Θεσσαλονίκη',
+        description: 'Έξυπνα chatbots και AI agents για αυτοματοποίηση επικοινωνίας και υποστήριξη πελατών. DevTaskHub στη Θεσσαλονίκη.'
+      },
+      socialMediaManagement: {
+        title: 'Social Media Management | DevTaskHub Θεσσαλονίκη',
+        description: 'Διαχείριση social media, δημιουργία περιεχομένου και στρατηγική για επιχειρήσεις. DevTaskHub στη Θεσσαλονίκη.'
+      },
+      videoAnimationProduction: {
+        title: 'Video & Animation Production | DevTaskHub Θεσσαλονίκη',
+        description: 'Παραγωγή επαγγελματικών βίντεο και animations για προώθηση, εκπαίδευση και διαφήμιση. DevTaskHub στη Θεσσαλονίκη.'
+      },
+      seoWebsiteOptimization: {
+        title: 'SEO Website Optimization | DevTaskHub Θεσσαλονίκη',
+        description: 'SEO, βελτιστοποίηση ιστοσελίδων και αύξηση οργανικής επισκεψιμότητας. DevTaskHub στη Θεσσαλονίκη.'
+      },
+      uxUIDesign: {
+        title: 'UX/UI Design | DevTaskHub Θεσσαλονίκη',
+        description: 'Σχεδιασμός φιλικών και αποδοτικών interfaces με έμφαση στη χρηστικότητα και την εμπειρία. DevTaskHub στη Θεσσαλονίκη.'
+      },
+      databaseCloudInfrastructure: {
+        title: 'Database & Cloud Infrastructure | DevTaskHub Θεσσαλονίκη',
+        description: 'Διαχείριση βάσεων δεδομένων και υλοποίηση cloud λύσεων για επιχειρήσεις. DevTaskHub στη Θεσσαλονίκη.'
+      },
+      aiIntegrationApplications: {
+        title: 'AI Integration Applications | DevTaskHub Θεσσαλονίκη',
+        description: 'Ενσωμάτωση AI και machine learning σε εφαρμογές για ανάλυση δεδομένων και αυτοματοποίηση. DevTaskHub στη Θεσσαλονίκη.'
+      },
+      ecommerceDevelopment: {
+        title: 'E-commerce Development | DevTaskHub Θεσσαλονίκη',
+        description: 'Κατασκευή e-shop και ηλεκτρονικών καταστημάτων με σύγχρονες δυνατότητες. DevTaskHub στη Θεσσαλονίκη.'
+      },
+      gameDevelopment: {
+        title: 'Game Development | DevTaskHub Θεσσαλονίκη',
+        description: 'Ανάπτυξη διαδραστικών παιχνιδιών για web, desktop και mobile πλατφόρμες. DevTaskHub στη Θεσσαλονίκη.'
+      },
+      contact: {
+        title: 'Επικοινωνία | DevTaskHub Θεσσαλονίκη',
+        description: 'Επικοινωνήστε με την ομάδα DevTaskHub για προσφορά ή απορίες σχετικά με τις υπηρεσίες μας.'
+      },
+      terms: {
+        title: 'Όροι & Προϋποθέσεις | DevTaskHub',
+        description: 'Όροι χρήσης και προϋποθέσεις για τις υπηρεσίες της DevTaskHub.'
+      }
+    },
+    // Terms and Conditions page content
+    termsAndConditions: {
+      title: 'Όροι & Προϋποθέσεις Χρήσης',
+      intro: 'Καλώς ήρθατε στο DevTaskHub (https://devtaskhub.com). Η παρούσα ιστοσελίδα δημιουργήθηκε και διαχειρίζεται από την ομάδα DevTaskHub. Η ονομασία "DevTaskHub" αποτελεί εταιρικό brand. Όλο το περιεχόμενο, οι υπηρεσίες και οι πληροφορίες που παρουσιάζονται στον παρόντα ιστότοπο διατίθενται από την ομάδα μας.',
+      sections: {
+        intellectualProperty: {
+          title: 'Πνευματικά Δικαιώματα',
+          content: 'Όλα τα δικαιώματα πνευματικής ιδιοκτησίας που σχετίζονται με το περιεχόμενο του DevTaskHub (κείμενα, εικόνες, κώδικας, λογότυπα, κ.ά.) ανήκουν στον <b>Θεοχάρη Παναγιώτη Σιώζο</b>, εκτός αν αναφέρεται διαφορετικά. Απαγορεύεται η αναπαραγωγή ή αναδημοσίευση χωρίς προηγούμενη έγγραφη άδεια.'
+        },
+        identity: {
+          title: 'Ταυτότητα & Ανάληψη Ευθύνης',
+          content: 'Ο <b>Θεοχάρης Παναγιώτης Σιώζος</b> είναι ο αποκλειστικός δημιουργός, διαχειριστής και υπεύθυνος για το DevTaskHub. Το DevTaskHub δεν αποτελεί εταιρεία ή νομική οντότητα, αλλά προσωπικό brand και portfolio του ιδιοκτήτη. Οποιαδήποτε επικοινωνία, συνεργασία ή χρήση υπηρεσιών γίνεται απευθείας με τον ίδιο τον developer.'
+        },
+        liability: {
+          title: 'Περιορισμός Ευθύνης',
+          content: 'Το DevTaskHub παρέχεται "ως έχει" χωρίς καμία εγγύηση για την ακρίβεια, πληρότητα ή καταλληλότητα του περιεχομένου του. Ο ιδιοκτήτης δεν φέρει καμία ευθύνη για τυχόν ζημιές ή απώλειες που μπορεί να προκύψουν από τη χρήση της ιστοσελίδας ή των πληροφοριών της. Επιπλέον, ο ιδιοκτήτης δεν φέρει ευθύνη για εσφαλμένες ερμηνείες, παρανοήσεις ή λανθασμένη χρήση των πληροφοριών του site από τους επισκέπτες. Η χρήση του DevTaskHub γίνεται αποκλειστικά με ευθύνη του χρήστη.',
+          additional: 'Το DevTaskHub δεν παρέχει νομικές, φορολογικές ή επαγγελματικές συμβουλές. Η χρήση του site ή η επικοινωνία με τον ιδιοκτήτη δεν δημιουργεί επαγγελματική ή συμβουλευτική σχέση.'
+        },
+        dataCollection: {
+          title: 'Συλλογή & Επεξεργασία Δεδομένων',
+          content: 'Η ιστοσελίδα ενδέχεται να συλλέγει τεχνικά δεδομένα (όπως cookies ή IP διευθύνσεις) με σκοπό την ανάλυση επισκεψιμότητας και τη βελτίωση της εμπειρίας χρήσης. Δεν γίνεται εμπορική αξιοποίηση των προσωπικών σας δεδομένων.'
+        },
+        modifications: {
+          title: 'Τροποποιήσεις',
+          content: 'Ο ιδιοκτήτης διατηρεί το δικαίωμα τροποποίησης των όρων ανά πάσα στιγμή χωρίς προηγούμενη ειδοποίηση. Συνιστάται να επισκέπτεστε τη σελίδα αυτή τακτικά για ενδεχόμενες αλλαγές.'
+        },
+        contact: {
+          title: 'Επικοινωνία',
+          content: 'Για οποιοδήποτε νομικό ή τεχνικό θέμα, μπορείτε να επικοινωνήσετε με τον ιδιοκτήτη μέσω email: <a href="mailto:Devtaskhub@gmail.com" className="text-blue-600 underline">Devtaskhub@gmail.com</a>.'
+        }
+      },
+      acceptance: 'Με τη χρήση της παρούσας ιστοσελίδας αποδέχεστε πλήρως τους παραπάνω όρους.',
+      lastUpdate: 'Τελευταία ενημέρωση: Ιούνιος 2024'
     },
     // HomeShowcase Section
     homeShowcase: {
@@ -784,7 +1057,8 @@ export const translations = {
       about: 'About',
       portfolio: 'Portfolio',
       mobileAppSamples: 'Mobile App Samples',
-      contact: 'Contact'
+      contact: 'Contact',
+      tagline: 'You envision it. We build it!'
     },
     // Hero Section
     hero: {
@@ -1292,6 +1566,110 @@ export const translations = {
             button: 'Request Free Consultation'
           }
         },
+        seoWebsiteOptimization: {
+          hero: {
+            title: 'SEO – Website Optimization That Delivers Results',
+            subtitle: 'Boost your website\'s Google ranking with technical SEO, content optimization, and modern strategies. Professional analysis, measurable results, and increased organic traffic.',
+            cta: 'Request SEO Audit'
+          },
+          services: {
+            title: 'SEO Services',
+            items: [
+              { title: 'On-page SEO', desc: 'Content optimization, headers, meta tags.' },
+              { title: 'Technical SEO', desc: 'Speed, schema, mobile optimization, crawlability.' },
+              { title: 'Keyword Research', desc: 'Research and analysis of keywords.' },
+              { title: 'Competitor Analysis', desc: 'Comparison with competitors, opportunities.' },
+              { title: 'Google Search Console & Analytics', desc: 'Connection, monitoring, insights.' },
+              { title: 'Content Strategy', desc: 'Content strategy for SEO.' },
+              { title: 'SEO Reports & Dashboard', desc: 'Detailed reports and dashboards.' }
+            ]
+          },
+          stats: {
+            title: 'Measurable Results',
+            items: [
+              { value: 300, suffix: '%', label: 'organic traffic', desc: 'Increase in organic visits' },
+              { value: 1, suffix: 'st page Google', label: '', desc: 'Ranking for competitive keywords' },
+              { value: 120, suffix: ' keywords', label: '', desc: 'Keywords with ranking' }
+            ],
+            chartTitle: 'Organic traffic evolution'
+          },
+          caseStudies: {
+            title: 'Case Study',
+            items: [
+              { before: 120, after: 480, label: 'Organic traffic', desc: 'Increase in organic visits in 6 months.', beforeLabel: 'Before:', afterLabel: 'After:' },
+              { before: 8, after: 1, label: 'Google Ranking', desc: 'From 8th to 1st page for main keyword.', beforeLabel: 'Before:', afterLabel: 'After:' }
+            ]
+          },
+          workflow: {
+            title: 'How We Work',
+            items: [
+              { title: 'SEO Audit', desc: 'Website analysis & technical review.' },
+              { title: 'Analysis & Strategy', desc: 'Research, goals, action plan.' },
+              { title: 'Technical Implementation', desc: 'Application of improvements & changes.' },
+              { title: 'Monitoring & Optimization', desc: 'Continuous analysis & adjustment.' }
+            ]
+          },
+          finalCta: {
+            title: 'Want to appear on Google\'s first page?',
+            button: 'Request Free SEO Analysis'
+          }
+        },
+        chatbotsAIAgents: {
+          hero: {
+            title: 'Chatbots & AI Agents for Businesses',
+            subtitle: 'Smart digital assistants that automate communication, improve customer experience and increase your business efficiency. Support for Facebook Messenger, WhatsApp, websites, mobile apps & custom platforms.',
+            cta: 'Request Demo'
+          },
+          advantages: {
+            title: 'Advantages & Applications',
+            items: [
+              { title: 'Automatic customer service', desc: '24/7 responses, no waiting.' },
+              { title: 'Lead & booking collection', desc: 'Automatic collection of information and bookings.' },
+              { title: 'Sales via chat', desc: 'Increase sales with conversational commerce.' },
+              { title: 'FAQ & Support Bots', desc: 'Instant response to frequent questions.' },
+              { title: 'Internal bots', desc: 'Process automation for your team.' }
+            ]
+          },
+          technologies: {
+            title: 'Technologies & Platforms',
+            subtitle: 'Chatbots and AI agents connect with the most modern communication platforms and technologies, such as Messenger, WhatsApp, Instagram, Webchat, Slack, and APIs. This way, your business can offer automated, instant and personalized service on every channel your customers use.',
+            items: [
+              { name: 'Dialogflow' },
+              { name: 'Rasa' },
+              { name: 'OpenAI / GPT' },
+              { name: 'Twilio' },
+              { name: 'WhatsApp Business' },
+              { name: 'Meta / Messenger' },
+              { name: 'Instagram' },
+              { name: 'Webchat SDKs' },
+              { name: 'Microsoft Bot' },
+              { name: 'Slack' }
+            ]
+          },
+          future: {
+            title: 'The future of communication is here',
+            description: 'Chatbots and AI agents are transforming the way businesses communicate with their customers. They provide instant responses, automate processes, collect leads and offer personalized experience 24/7. They integrate easily into websites, social media and applications, providing competitive advantage and time savings.',
+            items: [
+              'Automatic customer service & support',
+              'Lead collection and management',
+              'Personalized responses with AI',
+              'Integration on every platform',
+              'Conversation analysis & statistics'
+            ]
+          },
+          collaboration: {
+            title: 'Collaborate with AI Agent',
+            description: 'Create your own digital assistant or chatbot with advanced AI capabilities, natural language and automations that match your business needs. Enhance service, automate processes and offer unique experience to your customers.',
+            items: [
+              'Personalized responses 24/7',
+              'Integration with social, site, apps',
+              'Lead & booking collection',
+              'Advanced conversation analysis',
+              'Easy management & training'
+            ],
+            cta: 'Request a Quote'
+          }
+        },
         databaseCloudInfrastructure: {
           hero: {
             title: 'Database & Cloud Infrastructure',
@@ -1342,6 +1720,56 @@ export const translations = {
             title: 'Need secure, scalable database and cloud solutions? Contact us!',
             button: 'Request a Quote',
             backHome: 'Back to Home'
+          }
+        },
+        gameDevelopment: {
+          hero: {
+            title: 'Innovative Game Development Services',
+            subtitle: 'Develop your next successful game with expertise, creativity, and cutting-edge technology.',
+            cta: 'Start Your Game Project'
+          },
+          services: {
+            title: 'Our Services',
+            items: [
+              { title: 'Mobile Game Development', desc: 'Game creation for iOS & Android with top UX.' },
+              { title: 'VR/AR Experiences', desc: 'Immersive virtual & augmented reality experiences.' },
+              { title: 'Multiplayer Online Games', desc: 'Online multiplayer with stability & scaling.' },
+              { title: 'Game Design & Storytelling', desc: 'Gameplay, character & story design.' }
+            ]
+          },
+          process: {
+            title: 'Development Process',
+            items: [
+              { step: 'Concept & Storyboarding', desc: 'Idea, script, characters, wireframes.' },
+              { step: 'Prototype & Design', desc: 'Prototype creation, UI/UX & art assets.' },
+              { step: 'Development & Testing', desc: 'Implementation, testing & optimization.' },
+              { step: 'Launch & Support', desc: 'Launch, updates & support.' }
+            ]
+          },
+          technologies: {
+            title: 'Technologies & Tools'
+          },
+          portfolio: {
+            title: 'Portfolio Highlights',
+            items: [
+              { title: 'Fantasy Adventure', desc: '3D RPG with unique art style & engaging gameplay.' },
+              { title: 'VR Racing', desc: 'VR racing game with realistic physics & graphics.' },
+              { title: 'Puzzle Platformer', desc: '2D puzzle platformer with innovative mechanics.' }
+            ]
+          },
+          whyUs: {
+            title: 'Why Choose Us?',
+            items: [
+              'Experienced developers & designers',
+              'Agile development methodology',
+              'Cutting-edge technology integration',
+              'Player-centric design approach'
+            ]
+          },
+          finalCta: {
+            title: 'Ready to build your next hit game?',
+            subtitle: 'Contact us to start your next gaming project.',
+            button: 'Contact Us Today'
           }
         },
         aiIntegrationApplications: {
@@ -1533,8 +1961,126 @@ export const translations = {
       description: 'Building modern websites and applications in Thessaloniki',
       rights: 'All rights reserved.',
       terms: 'Terms & Conditions',
-      madeWith: 'Made with',
-      inThessaloniki: 'in Thessaloniki'
+      madeWith: 'Φτιαγμένο με',
+      inThessaloniki: 'στη Θεσσαλονίκη',
+      location: 'Thessaloniki, Greece',
+      social: {
+        facebook: 'Facebook',
+        instagram: 'Instagram',
+        tiktok: 'TikTok'
+      },
+      services: {
+        webDevelopment: 'Website Development',
+        mobileAppDevelopment: 'Mobile Apps',
+        ecommerceDevelopment: 'E-shop & E-commerce',
+        seoWebsiteOptimization: 'SEO – Website Optimization',
+        uxUIDesign: 'UX/UI Design',
+        videoAnimationProduction: 'Video & Animation',
+        socialMediaManagement: 'Social Media Management',
+        chatbotsAIAgents: 'Chatbots & AI Agents',
+        aiIntegrationApplications: 'AI Integration in Applications',
+        databaseCloudInfrastructure: 'Database & Cloud',
+        gameDevelopment: 'Game Development'
+      }
+    },
+    // Chatbot Section
+    chatbot: {
+      title: 'Chat with Our Business!',
+      subtitle: 'Have questions? Want to learn more about our services?',
+      cta: 'Talk to our AI Chatbot!'
+    },
+    // Meta tags for pages
+    meta: {
+      home: {
+        title: 'DevTaskHub | Custom Website & Mobile App Development',
+        description: 'Custom website development, e-shop, mobile apps, AI and SEO from an expert team in Thessaloniki. Responsive design, speed, security, support.'
+      },
+      webDevelopment: {
+        title: 'Web Development | DevTaskHub Thessaloniki',
+        description: 'Modern website and web application development with speed, security and responsive design from the DevTaskHub team in Thessaloniki.'
+      },
+      mobileAppDevelopment: {
+        title: 'Mobile App Development | DevTaskHub Thessaloniki',
+        description: 'Mobile app development for Android & iOS with focus on user experience and performance. DevTaskHub in Thessaloniki.'
+      },
+      chatbotsAIAgents: {
+        title: 'Chatbots & AI Agents | DevTaskHub Thessaloniki',
+        description: 'Smart chatbots and AI agents for communication automation and customer support. DevTaskHub in Thessaloniki.'
+      },
+      socialMediaManagement: {
+        title: 'Social Media Management | DevTaskHub Thessaloniki',
+        description: 'Social media management, content creation and strategy for businesses. DevTaskHub in Thessaloniki.'
+      },
+      videoAnimationProduction: {
+        title: 'Video & Animation Production | DevTaskHub Thessaloniki',
+        description: 'Professional video and animation production for promotion, education and advertising. DevTaskHub in Thessaloniki.'
+      },
+      seoWebsiteOptimization: {
+        title: 'SEO Website Optimization | DevTaskHub Thessaloniki',
+        description: 'SEO, website optimization and increased organic traffic. DevTaskHub in Thessaloniki.'
+      },
+      uxUIDesign: {
+        title: 'UX/UI Design | DevTaskHub Thessaloniki',
+        description: 'User-friendly and efficient interface design with focus on usability and experience. DevTaskHub in Thessaloniki.'
+      },
+      databaseCloudInfrastructure: {
+        title: 'Database & Cloud Infrastructure | DevTaskHub Thessaloniki',
+        description: 'Database management and cloud solution implementation for businesses. DevTaskHub in Thessaloniki.'
+      },
+      aiIntegrationApplications: {
+        title: 'AI Integration Applications | DevTaskHub Thessaloniki',
+        description: 'AI and machine learning integration in applications for data analysis and automation. DevTaskHub in Thessaloniki.'
+      },
+      ecommerceDevelopment: {
+        title: 'E-commerce Development | DevTaskHub Thessaloniki',
+        description: 'E-shop and online store development with modern capabilities. DevTaskHub in Thessaloniki.'
+      },
+      gameDevelopment: {
+        title: 'Game Development | DevTaskHub Thessaloniki',
+        description: 'Interactive game development for web, desktop and mobile platforms. DevTaskHub in Thessaloniki.'
+      },
+      contact: {
+        title: 'Contact | DevTaskHub Thessaloniki',
+        description: 'Contact the DevTaskHub team for a quote or questions about our services.'
+      },
+      terms: {
+        title: 'Terms & Conditions | DevTaskHub',
+        description: 'Terms of use and conditions for DevTaskHub services.'
+      }
+    },
+    // Terms and Conditions page content
+    termsAndConditions: {
+      title: 'Terms & Conditions of Use',
+      intro: 'Welcome to DevTaskHub (https://devtaskhub.com). This website is created and managed by the DevTaskHub team. The name "DevTaskHub" is a corporate brand. All content, services and information presented on this website are provided by our team.',
+      sections: {
+        intellectualProperty: {
+          title: 'Intellectual Property Rights',
+          content: 'All intellectual property rights related to DevTaskHub content (texts, images, code, logos, etc.) belong to <b>Theocharis Panagiotis Siozos</b>, unless otherwise stated. Reproduction or republication without prior written permission is prohibited.'
+        },
+        identity: {
+          title: 'Identity & Responsibility',
+          content: '<b>Theocharis Panagiotis Siozos</b> is the exclusive creator, manager and responsible for DevTaskHub. DevTaskHub is not a company or legal entity, but a personal brand and portfolio of the owner. Any communication, collaboration or use of services is done directly with the developer himself.'
+        },
+        liability: {
+          title: 'Liability Limitation',
+          content: 'DevTaskHub is provided "as is" without any warranty as to the accuracy, completeness or suitability of its content. The owner bears no responsibility for any damages or losses that may arise from the use of the website or its information. Furthermore, the owner is not responsible for misinterpretations, misunderstandings or misuse of the site\'s information by visitors. The use of DevTaskHub is solely at the user\'s responsibility.',
+          additional: 'DevTaskHub does not provide legal, tax or professional advice. The use of the site or communication with the owner does not create a professional or advisory relationship.'
+        },
+        dataCollection: {
+          title: 'Data Collection & Processing',
+          content: 'The website may collect technical data (such as cookies or IP addresses) for the purpose of analyzing traffic and improving the user experience. No commercial use of your personal data is made.'
+        },
+        modifications: {
+          title: 'Modifications',
+          content: 'The owner reserves the right to modify the terms at any time without prior notice. It is recommended to visit this page regularly for possible changes.'
+        },
+        contact: {
+          title: 'Contact',
+          content: 'For any legal or technical issue, you can contact the owner via email: <a href="mailto:Devtaskhub@gmail.com" className="text-blue-600 underline">Devtaskhub@gmail.com</a>.'
+        }
+      },
+      acceptance: 'By using this website, you fully accept the above terms.',
+      lastUpdate: 'Last update: June 2024'
     },
     // HomeShowcase Section
     homeShowcase: {
@@ -1558,7 +2104,8 @@ export const translations = {
       about: 'À propos',
       portfolio: 'Portfolio',
       mobileAppSamples: 'Échantillons d\'Applications Mobiles',
-      contact: 'Contact'
+      contact: 'Contact',
+      tagline: 'Vous pensez à la vision. Nous la réalisation!'
     },
     // Hero Section
     hero: {
@@ -2017,6 +2564,110 @@ export const translations = {
             button: 'Commencez Aujourd\'hui'
           }
         },
+        seoWebsiteOptimization: {
+          hero: {
+            title: 'SEO – Optimisation de Sites Web qui Apporte des Résultats',
+            subtitle: 'Boostez le classement de votre site web sur Google avec le SEO technique, l\'optimisation du contenu et des stratégies modernes. Analyse professionnelle, résultats mesurables et augmentation du trafic organique.',
+            cta: 'Demandez un Audit SEO'
+          },
+          services: {
+            title: 'Services SEO',
+            items: [
+              { title: 'SEO On-page', desc: 'Optimisation du contenu, en-têtes, balises meta.' },
+              { title: 'SEO Technique', desc: 'Vitesse, schéma, optimisation mobile, crawlabilité.' },
+              { title: 'Recherche de Mots-clés', desc: 'Recherche et analyse de mots-clés.' },
+              { title: 'Analyse de la Concurrence', desc: 'Comparaison avec les concurrents, opportunités.' },
+              { title: 'Google Search Console & Analytics', desc: 'Connexion, suivi, insights.' },
+              { title: 'Stratégie de Contenu', desc: 'Stratégie de contenu pour le SEO.' },
+              { title: 'Rapports SEO & Tableau de Bord', desc: 'Rapports détaillés et tableaux de bord.' }
+            ]
+          },
+          stats: {
+            title: 'Résultats Mesurables',
+            items: [
+              { value: 300, suffix: '%', label: 'trafic organique', desc: 'Augmentation des visites organiques' },
+              { value: 1, suffix: 'ère page Google', label: '', desc: 'Classement pour mots-clés concurrentiels' },
+              { value: 120, suffix: ' mots-clés', label: '', desc: 'Mots-clés avec classement' }
+            ],
+            chartTitle: 'Évolution du trafic organique'
+          },
+          caseStudies: {
+            title: 'Étude de Cas',
+            items: [
+              { before: 120, after: 480, label: 'Trafic organique', desc: 'Augmentation des visites organiques en 6 mois.', beforeLabel: 'Avant:', afterLabel: 'Après:' },
+              { before: 8, after: 1, label: 'Classement Google', desc: 'De la 8ème à la 1ère page pour le mot-clé principal.', beforeLabel: 'Avant:', afterLabel: 'Après:' }
+            ]
+          },
+          workflow: {
+            title: 'Comment Nous Travaillons',
+            items: [
+              { title: 'Audit SEO', desc: 'Analyse du site web & vérification technique.' },
+              { title: 'Analyse & Stratégie', desc: 'Recherche, objectifs, plan d\'action.' },
+              { title: 'Implémentation Technique', desc: 'Application des améliorations & changements.' },
+              { title: 'Suivi & Optimisation', desc: 'Analyse continue & ajustement.' }
+            ]
+          },
+          finalCta: {
+            title: 'Voulez-vous apparaître sur la première page de Google?',
+            button: 'Demandez une Analyse SEO Gratuite'
+          }
+        },
+        chatbotsAIAgents: {
+          hero: {
+            title: 'Chatbots & Agents IA pour Entreprises',
+            subtitle: 'Assistants numériques intelligents qui automatisent la communication, améliorent l\'expérience client et augmentent l\'efficacité de votre entreprise. Support pour Facebook Messenger, WhatsApp, sites web, applications mobiles & plateformes personnalisées.',
+            cta: 'Demander une Démo'
+          },
+          advantages: {
+            title: 'Avantages & Applications',
+            items: [
+              { title: 'Service client automatique', desc: 'Réponses 24/7, sans attente.' },
+              { title: 'Collecte de leads & réservations', desc: 'Collecte automatique d\'informations et de réservations.' },
+              { title: 'Ventes via chat', desc: 'Augmentation des ventes avec le commerce conversationnel.' },
+              { title: 'FAQ & Bots de Support', desc: 'Réponse instantanée aux questions fréquentes.' },
+              { title: 'Bots internes', desc: 'Automatisation des processus pour votre équipe.' }
+            ]
+          },
+          technologies: {
+            title: 'Technologies & Plateformes',
+            subtitle: 'Les chatbots et agents IA se connectent aux plateformes et technologies de communication les plus modernes, telles que Messenger, WhatsApp, Instagram, Webchat, Slack et APIs. Ainsi, votre entreprise peut offrir un service automatisé, instantané et personnalisé sur chaque canal utilisé par vos clients.',
+            items: [
+              { name: 'Dialogflow' },
+              { name: 'Rasa' },
+              { name: 'OpenAI / GPT' },
+              { name: 'Twilio' },
+              { name: 'WhatsApp Business' },
+              { name: 'Meta / Messenger' },
+              { name: 'Instagram' },
+              { name: 'Webchat SDKs' },
+              { name: 'Microsoft Bot' },
+              { name: 'Slack' }
+            ]
+          },
+          future: {
+            title: 'L\'avenir de la communication est ici',
+            description: 'Les chatbots et agents IA transforment la façon dont les entreprises communiquent avec leurs clients. Ils fournissent des réponses instantanées, automatisent les processus, collectent des leads et offrent une expérience personnalisée 24/7. Ils s\'intègrent facilement aux sites web, réseaux sociaux et applications, offrant un avantage concurrentiel et des économies de temps.',
+            items: [
+              'Service client & support automatique',
+              'Collecte et gestion de leads',
+              'Réponses personnalisées avec IA',
+              'Intégration sur chaque plateforme',
+              'Analyse de conversations & statistiques'
+            ]
+          },
+          collaboration: {
+            title: 'Collaborez avec un Agent IA',
+            description: 'Créez votre propre assistant numérique ou chatbot avec des capacités IA avancées, langage naturel et automatisations qui correspondent aux besoins de votre entreprise. Améliorez le service, automatisez les processus et offrez une expérience unique à vos clients.',
+            items: [
+              'Réponses personnalisées 24/7',
+              'Intégration avec réseaux sociaux, site, apps',
+              'Collecte de leads & réservations',
+              'Analyse avancée de conversations',
+              'Gestion & formation faciles'
+            ],
+            cta: 'Demander un Devis'
+          }
+        },
         databaseCloudInfrastructure: {
           hero: {
             title: 'Bases de Données & Infrastructure Cloud',
@@ -2256,7 +2907,125 @@ export const translations = {
       rights: 'Tous droits réservés.',
       terms: 'Termes et Conditions',
       madeWith: 'Fait avec',
-      inThessaloniki: 'à Thessalonique'
+      inThessaloniki: 'à Thessalonique',
+      location: 'Thessalonique, Grèce',
+      social: {
+        facebook: 'Facebook',
+        instagram: 'Instagram',
+        tiktok: 'TikTok'
+      },
+      services: {
+        webDevelopment: 'Développement de Sites Web',
+        mobileAppDevelopment: 'Applications Mobiles',
+        ecommerceDevelopment: 'E-shop & E-commerce',
+        seoWebsiteOptimization: 'SEO – Optimisation de Site Web',
+        uxUIDesign: 'Design UX/UI',
+        videoAnimationProduction: 'Vidéo & Animation',
+        socialMediaManagement: 'Gestion des Réseaux Sociaux',
+        chatbotsAIAgents: 'Chatbots & Agents IA',
+        aiIntegrationApplications: 'Intégration IA dans les Applications',
+        databaseCloudInfrastructure: 'Bases de Données & Cloud',
+        gameDevelopment: 'Développement de Jeux'
+      }
+    },
+    // Chatbot Section
+    chatbot: {
+      title: 'Chattez avec Notre Entreprise!',
+      subtitle: 'Vous avez des questions? Vous voulez en savoir plus sur nos services?',
+      cta: 'Parlez à notre Chatbot IA!'
+    },
+    // Meta tags for pages
+    meta: {
+      home: {
+        title: 'DevTaskHub | Développement de Sites Web Personnalisés & Applications Mobiles',
+        description: 'Développement de sites web personnalisés, e-shop, applications mobiles, IA et SEO par une équipe experte à Thessalonique. Design responsive, rapidité, sécurité, support.'
+      },
+      webDevelopment: {
+        title: 'Développement Web | DevTaskHub Thessalonique',
+        description: 'Développement de sites web et applications web modernes avec rapidité, sécurité et design responsive par l\'équipe DevTaskHub à Thessalonique.'
+      },
+      mobileAppDevelopment: {
+        title: 'Développement d\'Applications Mobiles | DevTaskHub Thessalonique',
+        description: 'Développement d\'applications mobiles pour Android & iOS avec accent sur l\'expérience utilisateur et les performances. DevTaskHub à Thessalonique.'
+      },
+      chatbotsAIAgents: {
+        title: 'Chatbots & Agents IA | DevTaskHub Thessalonique',
+        description: 'Chatbots et agents IA intelligents pour l\'automatisation de la communication et le support client. DevTaskHub à Thessalonique.'
+      },
+      socialMediaManagement: {
+        title: 'Gestion des Réseaux Sociaux | DevTaskHub Thessalonique',
+        description: 'Gestion des réseaux sociaux, création de contenu et stratégie pour les entreprises. DevTaskHub à Thessalonique.'
+      },
+      videoAnimationProduction: {
+        title: 'Production Vidéo & Animation | DevTaskHub Thessalonique',
+        description: 'Production de vidéos et animations professionnelles pour la promotion, l\'éducation et la publicité. DevTaskHub à Thessalonique.'
+      },
+      seoWebsiteOptimization: {
+        title: 'Optimisation SEO de Sites Web | DevTaskHub Thessalonique',
+        description: 'SEO, optimisation de sites web et augmentation du trafic organique. DevTaskHub à Thessalonique.'
+      },
+      uxUIDesign: {
+        title: 'Design UX/UI | DevTaskHub Thessalonique',
+        description: 'Conception d\'interfaces conviviales et efficaces avec accent sur la facilité d\'utilisation et l\'expérience. DevTaskHub à Thessalonique.'
+      },
+      databaseCloudInfrastructure: {
+        title: 'Bases de Données & Infrastructure Cloud | DevTaskHub Thessalonique',
+        description: 'Gestion de bases de données et mise en œuvre de solutions cloud pour les entreprises. DevTaskHub à Thessalonique.'
+      },
+      aiIntegrationApplications: {
+        title: 'Intégration IA dans les Applications | DevTaskHub Thessalonique',
+        description: 'Intégration de l\'IA et du machine learning dans les applications pour l\'analyse de données et l\'automatisation. DevTaskHub à Thessalonique.'
+      },
+      ecommerceDevelopment: {
+        title: 'Développement E-commerce | DevTaskHub Thessalonique',
+        description: 'Développement d\'e-shop et de magasins en ligne avec des capacités modernes. DevTaskHub à Thessalonique.'
+      },
+      gameDevelopment: {
+        title: 'Développement de Jeux | DevTaskHub Thessalonique',
+        description: 'Développement de jeux interactifs pour plateformes web, desktop et mobiles. DevTaskHub à Thessalonique.'
+      },
+      contact: {
+        title: 'Contact | DevTaskHub Thessalonique',
+        description: 'Contactez l\'équipe DevTaskHub pour un devis ou des questions sur nos services.'
+      },
+      terms: {
+        title: 'Termes & Conditions | DevTaskHub',
+        description: 'Termes d\'utilisation et conditions pour les services DevTaskHub.'
+      }
+    },
+    // Terms and Conditions page content
+    termsAndConditions: {
+      title: 'Termes & Conditions d\'Utilisation',
+      intro: 'Bienvenue sur DevTaskHub (https://devtaskhub.com). Ce site web est créé et géré par l\'équipe DevTaskHub. Le nom "DevTaskHub" est une marque d\'entreprise. Tout le contenu, les services et les informations présentés sur ce site web sont fournis par notre équipe.',
+      sections: {
+        intellectualProperty: {
+          title: 'Droits de Propriété Intellectuelle',
+          content: 'Tous les droits de propriété intellectuelle liés au contenu de DevTaskHub (textes, images, code, logos, etc.) appartiennent à <b>Theocharis Panagiotis Siozos</b>, sauf indication contraire. La reproduction ou la republication sans autorisation écrite préalable est interdite.'
+        },
+        identity: {
+          title: 'Identité & Responsabilité',
+          content: '<b>Theocharis Panagiotis Siozos</b> est le créateur, gestionnaire et responsable exclusif de DevTaskHub. DevTaskHub n\'est pas une entreprise ou une entité juridique, mais une marque personnelle et un portfolio du propriétaire. Toute communication, collaboration ou utilisation de services se fait directement avec le développeur lui-même.'
+        },
+        liability: {
+          title: 'Limitation de Responsabilité',
+          content: 'DevTaskHub est fourni "tel quel" sans aucune garantie quant à l\'exactitude, l\'exhaustivité ou l\'adéquation de son contenu. Le propriétaire n\'assume aucune responsabilité pour tout dommage ou perte pouvant résulter de l\'utilisation du site web ou de ses informations. De plus, le propriétaire n\'est pas responsable des interprétations erronées, malentendus ou mauvaise utilisation des informations du site par les visiteurs. L\'utilisation de DevTaskHub se fait uniquement sous la responsabilité de l\'utilisateur.',
+          additional: 'DevTaskHub ne fournit pas de conseils juridiques, fiscaux ou professionnels. L\'utilisation du site ou la communication avec le propriétaire ne crée pas de relation professionnelle ou consultative.'
+        },
+        dataCollection: {
+          title: 'Collecte & Traitement des Données',
+          content: 'Le site web peut collecter des données techniques (telles que les cookies ou les adresses IP) à des fins d\'analyse du trafic et d\'amélioration de l\'expérience utilisateur. Aucune utilisation commerciale de vos données personnelles n\'est faite.'
+        },
+        modifications: {
+          title: 'Modifications',
+          content: 'Le propriétaire se réserve le droit de modifier les termes à tout moment sans préavis. Il est recommandé de visiter cette page régulièrement pour d\'éventuels changements.'
+        },
+        contact: {
+          title: 'Contact',
+          content: 'Pour toute question juridique ou technique, vous pouvez contacter le propriétaire par email: <a href="mailto:Devtaskhub@gmail.com" className="text-blue-600 underline">Devtaskhub@gmail.com</a>.'
+        }
+      },
+      acceptance: 'En utilisant ce site web, vous acceptez pleinement les termes ci-dessus.',
+      lastUpdate: 'Dernière mise à jour: Juin 2024'
     },
     // HomeShowcase Section
     homeShowcase: {

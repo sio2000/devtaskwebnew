@@ -24,21 +24,19 @@ const Footer: React.FC = () => {
     }
   };
 
-  // Ορισμός υπηρεσιών με slug για routing (όλα στα ελληνικά, ισορροπημένη ταξινόμηση)
+  // Ορισμός υπηρεσιών με slug για routing (μεταφρασμένα)
   const servicesList = [
-    { label: 'Κατασκευή Ιστοσελίδων', slug: 'web-development' },
-    { label: 'Web App Development', slug: 'web-development' },
-    { label: 'Mobile Εφαρμογές', slug: 'mobile-app-development' },
-    { label: 'E-shop & Ηλεκτρονικό Εμπόριο', slug: 'ecommerce-development' },
-    { label: 'SEO – Βελτιστοποίηση Ιστοσελίδων', slug: 'seo-website-optimization' },
-    { label: 'UX/UI Design', slug: 'ux-ui-design' },
-    { label: 'Βίντεο & Animation', slug: 'video-animation-production' },
-    { label: 'Διαχείριση Social Media', slug: 'social-media-management' },
-    { label: 'Chatbots & AI Agents', slug: 'chatbots-ai-agents' },
-    { label: 'AI Ενσωμάτωση σε Εφαρμογές', slug: 'ai-integration-applications' },
-    { label: 'Δημιουργία Multimedia Περιεχομένου', slug: 'multimedia-content-creation' },
-    { label: 'Βάσεις Δεδομένων & Cloud', slug: 'database-cloud-infrastructure' },
-    { label: 'Game Development', slug: 'game-development' },
+    { label: t.footer.services.webDevelopment, slug: 'web-development' },
+    { label: t.footer.services.mobileAppDevelopment, slug: 'mobile-app-development' },
+    { label: t.footer.services.ecommerceDevelopment, slug: 'ecommerce-development' },
+    { label: t.footer.services.seoWebsiteOptimization, slug: 'seo-website-optimization' },
+    { label: t.footer.services.uxUIDesign, slug: 'ux-ui-design' },
+    { label: t.footer.services.videoAnimationProduction, slug: 'video-animation-production' },
+    { label: t.footer.services.socialMediaManagement, slug: 'social-media-management' },
+    { label: t.footer.services.chatbotsAIAgents, slug: 'chatbots-ai-agents' },
+    { label: t.footer.services.aiIntegrationApplications, slug: 'ai-integration-applications' },
+    { label: t.footer.services.databaseCloudInfrastructure, slug: 'database-cloud-infrastructure' },
+    { label: t.footer.services.gameDevelopment, slug: 'game-development' },
   ];
 
   // Υπολογισμός για balanced 2 columns
@@ -129,18 +127,18 @@ const Footer: React.FC = () => {
           <div>
             <h4 className="text-lg font-semibold mb-4 text-purple-300">{t.nav.contact}</h4>
             <div className="text-gray-300 space-y-2">
-              <p className="hover:text-blue-300 transition-colors duration-300">Thessaloniki, Greece</p>
+              <p className="hover:text-blue-300 transition-colors duration-300">{t.footer.location}</p>
               <a
                 href="tel:+306971982563"
                 className="block hover:text-green-300 transition-colors duration-300"
               >
-                +306971982563
+                {t.contact.info.phone}
               </a>
               <a
                 href="mailto:Devtaskhub@gmail.com"
                 className="block hover:text-orange-300 transition-colors duration-300"
               >
-                DevTaskHub@gmail.com
+                {t.contact.info.email}
               </a>
               <a
                 href="https://www.facebook.com/profile.php?id=61578746165941"
@@ -149,7 +147,7 @@ const Footer: React.FC = () => {
                 className="flex items-center gap-2 text-blue-600 hover:text-blue-800 transition-colors duration-300 mt-2"
               >
                 <FaFacebook className="h-5 w-5" />
-                <span>Facebook</span>
+                <span>{t.footer.social.facebook}</span>
               </a>
               <a
                 href="https://www.instagram.com/devtaskhub/"
@@ -158,7 +156,7 @@ const Footer: React.FC = () => {
                 className="flex items-center gap-2 text-pink-500 hover:text-pink-400 transition-colors duration-300 mt-2"
               >
                 <FaInstagram className="h-5 w-5" />
-                <span>Instagram</span>
+                <span>{t.footer.social.instagram}</span>
               </a>
               <a
                 href="https://www.tiktok.com/@devtaskhub"
@@ -167,7 +165,7 @@ const Footer: React.FC = () => {
                 className="flex items-center gap-2 text-white hover:text-gray-300 transition-colors duration-300 mt-2"
               >
                 <FaTiktok className="h-5 w-5" />
-                <span>TikTok</span>
+                <span>{t.footer.social.tiktok}</span>
               </a>
             </div>
           </div>

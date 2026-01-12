@@ -96,7 +96,7 @@ const Header: React.FC = () => {
         <div className="flex justify-between items-center h-16">
           {/* Logo + Name */}
           <motion.div 
-            className="flex-shrink-0 flex items-center gap-3"
+            className="flex-shrink-0 flex flex-col gap-0"
             whileHover={{ scale: 1.05 }}
             transition={{ duration: 0.2 }}
           >
@@ -108,15 +108,18 @@ const Header: React.FC = () => {
               style={{ padding: 0, background: 'none', border: 'none' }}
             >
               <img src={logo} alt="DevTaskHub Logo" className="h-12 w-auto max-w-[120px] rounded-xl shadow-md transition-all duration-300 hover:shadow-xl" />
-              <span className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent hover:from-blue-700 hover:to-purple-700 transition-all duration-300">DevTaskHub</span>
+              <div className="flex flex-col">
+                <span className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent hover:from-blue-700 hover:to-purple-700 transition-all duration-300">DevTaskHub</span>
+                <span className="text-[13px] sm:text-[14px] md:text-sm text-black font-bold italic leading-tight mt-[-2px]" style={{ fontFamily: "'Georgia', 'Times New Roman', serif" }}>{t.nav.tagline}</span>
+              </div>
             </motion.button>
           </motion.div>
 
           {/* Desktop Navigation */}
           <div className="hidden md:block">
-            <div className="ml-10 flex items-baseline space-x-8">
+            <div className="ml-10 flex items-center space-x-8">
               {Object.entries(t.nav)
-                .filter(([key]) => key !== 'mobileAppSamples') // Αφαιρούμε το mobileAppSamples από το loop
+                .filter(([key]) => key !== 'mobileAppSamples' && key !== 'tagline' && key !== 'home') // Αφαιρούμε το mobileAppSamples, tagline και home από το loop
                 .map(([key, label], index) => {
                 // Προσθήκη του "Δείγματα App" μετά το portfolio
                 if (key === 'portfolio') {
@@ -164,7 +167,7 @@ const Header: React.FC = () => {
                     <motion.button
                       key={key}
                       onClick={() => scrollToSection(key === 'home' ? 'hero' : key)}
-                      className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 relative group overflow-hidden shadow-lg hover:shadow-xl"
+                      className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 relative group overflow-hidden shadow-lg hover:shadow-xl h-10 flex items-center justify-center"
                       initial={{ opacity: 0, y: -20 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ duration: 0.5, delay: index * 0.1 }}
@@ -214,29 +217,32 @@ const Header: React.FC = () => {
           </div>
 
           {/* Language Toggle & Mobile Menu */}
-          <div className="flex items-center space-x-4">
+          <div className="flex items-center space-x-3">
             {/* Language Toggle Button */}
             <div className="relative language-dropdown">
               <motion.button
                 onClick={() => setIsLangMenuOpen(!isLangMenuOpen)}
-                className="flex items-center gap-2 px-3 py-2 rounded-lg text-gray-700 hover:text-blue-600 hover:bg-gray-100 transition-colors duration-300"
+                className="flex items-center justify-center gap-2 px-3 py-2.5 rounded-full bg-white border border-gray-200 text-gray-700 hover:text-blue-600 hover:border-blue-300 hover:bg-blue-50 transition-all duration-300 shadow-sm hover:shadow-md h-10"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 aria-label="Change language"
               >
-                <Globe className="h-5 w-5" />
-                <span className="hidden sm:inline text-sm font-medium">
-                  {languages.find(l => l.code === language)?.flag} {languages.find(l => l.code === language)?.code.toUpperCase()}
+                <span className="text-xl leading-none">
+                  {languages.find(l => l.code === language)?.flag}
                 </span>
+                <span className="hidden sm:inline text-sm font-semibold">
+                  {languages.find(l => l.code === language)?.code.toUpperCase()}
+                </span>
+                <Globe className="h-4 w-4 hidden sm:block opacity-60" />
               </motion.button>
               {/* Language Dropdown */}
               <AnimatePresence>
                 {isLangMenuOpen && (
                   <motion.div
-                    className="absolute right-0 mt-2 w-40 bg-white rounded-lg shadow-xl border border-gray-200 overflow-hidden z-50"
-                    initial={{ opacity: 0, y: -10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: -10 }}
+                    className="absolute right-0 mt-2 w-48 bg-white rounded-xl shadow-2xl border border-gray-200 overflow-hidden z-50"
+                    initial={{ opacity: 0, y: -10, scale: 0.95 }}
+                    animate={{ opacity: 1, y: 0, scale: 1 }}
+                    exit={{ opacity: 0, y: -10, scale: 0.95 }}
                     transition={{ duration: 0.2 }}
                   >
                     {languages.map((lang) => (
@@ -246,13 +252,22 @@ const Header: React.FC = () => {
                           setLanguage(lang.code);
                           setIsLangMenuOpen(false);
                         }}
-                        className={`w-full px-4 py-3 text-left hover:bg-blue-50 transition-colors duration-200 flex items-center gap-2 ${
-                          language === lang.code ? 'bg-blue-50 text-blue-600 font-semibold' : 'text-gray-700'
+                        className={`w-full px-4 py-3 text-left hover:bg-gradient-to-r hover:from-blue-50 hover:to-purple-50 transition-all duration-200 flex items-center gap-3 ${
+                          language === lang.code 
+                            ? 'bg-gradient-to-r from-blue-50 to-purple-50 text-blue-600 font-semibold border-l-4 border-blue-600' 
+                            : 'text-gray-700'
                         }`}
                         whileHover={{ x: 4 }}
                       >
-                        <span>{lang.flag}</span>
-                        <span>{lang.label}</span>
+                        <span className="text-2xl leading-none">{lang.flag}</span>
+                        <span className="flex-1">{lang.label}</span>
+                        {language === lang.code && (
+                          <motion.div
+                            initial={{ scale: 0 }}
+                            animate={{ scale: 1 }}
+                            className="w-2 h-2 bg-blue-600 rounded-full"
+                          />
+                        )}
                       </motion.button>
                     ))}
                   </motion.div>
@@ -313,7 +328,7 @@ const Header: React.FC = () => {
                 transition={{ duration: 0.3 }}
               >
                 {Object.entries(t.nav)
-                  .filter(([key]) => key !== 'mobileAppSamples') // Αφαιρούμε το mobileAppSamples από το loop
+                  .filter(([key]) => key !== 'mobileAppSamples' && key !== 'tagline' && key !== 'home') // Αφαιρούμε το mobileAppSamples, tagline και home από το loop
                   .map(([key, label], index) => {
                   // Προσθήκη του "Δείγματα App" μετά το portfolio στο mobile menu
                   if (key === 'portfolio') {

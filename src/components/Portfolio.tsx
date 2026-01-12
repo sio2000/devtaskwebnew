@@ -1,5 +1,5 @@
-import React, { useState, useEffect, useMemo } from 'react';
-import { ExternalLink, Smartphone, Monitor, BarChart3, Gamepad2, Heart } from 'lucide-react';
+import React, { useState, useEffect, useMemo, useCallback } from 'react';
+import { ExternalLink, Smartphone, Monitor, BarChart3, Gamepad2, Heart, ChevronLeft, ChevronRight } from 'lucide-react';
 import { FaApple, FaAndroid, FaCloud, FaRocket, FaHeartbeat } from 'react-icons/fa';
 import { motion } from 'framer-motion';
 import { useLanguage } from '../hooks/useLanguage';
@@ -26,38 +26,119 @@ import v11Img from '../assets/v11.png';
 import v12Img from '../assets/v12.png';
 import logoGymImg from '../assets/logoGym.png';
 
+// GetFit images array
+const getFitImages = [
+  { img: v1Img, alt: 'GetFit App Screen 1' },
+  { img: v2Img, alt: 'GetFit App Screen 2' },
+  { img: v3Img, alt: 'GetFit App Screen 3' },
+  { img: v4Img, alt: 'GetFit App Screen 4' },
+  { img: v5Img, alt: 'GetFit App Screen 5' },
+  { img: v6Img, alt: 'GetFit App Screen 6' },
+  { img: v7Img, alt: 'GetFit App Screen 7' },
+  { img: v8Img, alt: 'GetFit App Screen 8' },
+  { img: v9Img, alt: 'GetFit App Screen 9' },
+  { img: v10Img, alt: 'GetFit App Screen 10' },
+  { img: v11Img, alt: 'GetFit App Screen 11' },
+  { img: v12Img, alt: 'GetFit App Screen 12' }
+];
+
 const Portfolio: React.FC = () => {
   const { language } = useLanguage();
   const t = translations[language];
   const isMobile = useIsMobile();
   const [fullscreenImage, setFullscreenImage] = useState<string | null>(null);
   const [fullscreenAlt, setFullscreenAlt] = useState<string>('');
+  const [currentImageIndex, setCurrentImageIndex] = useState<number>(0);
+  const [isGetFitImage, setIsGetFitImage] = useState<boolean>(false);
+  const [touchStart, setTouchStart] = useState<number | null>(null);
+  const [touchEnd, setTouchEnd] = useState<number | null>(null);
   
   const openFullscreen = (imageSrc: string, alt: string) => {
-    setFullscreenImage(imageSrc);
-    setFullscreenAlt(alt);
-    document.body.style.overflow = 'hidden';
+    const index = getFitImages.findIndex(img => img.img === imageSrc);
+    if (index !== -1) {
+      setCurrentImageIndex(index);
+      setIsGetFitImage(true);
+      setFullscreenImage(imageSrc);
+      setFullscreenAlt(alt);
+      document.body.style.overflow = 'hidden';
+    } else {
+      setIsGetFitImage(false);
+      setFullscreenImage(imageSrc);
+      setFullscreenAlt(alt);
+      document.body.style.overflow = 'hidden';
+    }
   };
 
   const closeFullscreen = () => {
     setFullscreenImage(null);
     setFullscreenAlt('');
+    setCurrentImageIndex(0);
+    setIsGetFitImage(false);
     document.body.style.overflow = 'unset';
   };
 
-  // Close on escape key
+  const goToPrevious = useCallback(() => {
+    setCurrentImageIndex(prev => {
+      const newIndex = prev > 0 ? prev - 1 : getFitImages.length - 1;
+      setFullscreenImage(getFitImages[newIndex].img);
+      setFullscreenAlt(getFitImages[newIndex].alt);
+      return newIndex;
+    });
+  }, []);
+
+  const goToNext = useCallback(() => {
+    setCurrentImageIndex(prev => {
+      const newIndex = prev < getFitImages.length - 1 ? prev + 1 : 0;
+      setFullscreenImage(getFitImages[newIndex].img);
+      setFullscreenAlt(getFitImages[newIndex].alt);
+      return newIndex;
+    });
+  }, []);
+
+  // Handle touch events for swipe
+  const handleTouchStart = (e: React.TouchEvent) => {
+    if (!isGetFitImage) return;
+    setTouchEnd(null);
+    setTouchStart(e.targetTouches[0].clientX);
+  };
+
+  const handleTouchMove = (e: React.TouchEvent) => {
+    if (!isGetFitImage) return;
+    setTouchEnd(e.targetTouches[0].clientX);
+  };
+
+  const handleTouchEnd = () => {
+    if (!isGetFitImage || !touchStart || !touchEnd) return;
+    
+    const distance = touchStart - touchEnd;
+    const isLeftSwipe = distance > 50;
+    const isRightSwipe = distance < -50;
+
+    if (isLeftSwipe) {
+      goToNext();
+    }
+    if (isRightSwipe) {
+      goToPrevious();
+    }
+  };
+
+  // Keyboard navigation and close on escape
   useEffect(() => {
-    const handleEscape = (e: KeyboardEvent) => {
+    const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === 'Escape') {
         closeFullscreen();
+      } else if (isGetFitImage && e.key === 'ArrowLeft') {
+        goToPrevious();
+      } else if (isGetFitImage && e.key === 'ArrowRight') {
+        goToNext();
       }
     };
 
     if (fullscreenImage) {
-      document.addEventListener('keydown', handleEscape);
-      return () => document.removeEventListener('keydown', handleEscape);
+      document.addEventListener('keydown', handleKeyDown);
+      return () => document.removeEventListener('keydown', handleKeyDown);
     }
-  }, [fullscreenImage]);
+  }, [fullscreenImage, isGetFitImage, goToPrevious, goToNext]);
 
   const projects = useMemo(() => [
     {
@@ -328,20 +409,7 @@ const Portfolio: React.FC = () => {
             >
               <div className="relative bg-gradient-to-br from-blue-100 to-purple-100 rounded-3xl p-8 shadow-2xl">
                 <div className="grid grid-cols-3 gap-3">
-                  {[
-                    { img: v1Img, delay: 0 },
-                    { img: v2Img, delay: 0.5 },
-                    { img: v3Img, delay: 1 },
-                    { img: v4Img, delay: 1.5 },
-                    { img: v5Img, delay: 2 },
-                    { img: v6Img, delay: 2.5 },
-                    { img: v7Img, delay: 3 },
-                    { img: v8Img, delay: 3.5 },
-                    { img: v9Img, delay: 4 },
-                    { img: v10Img, delay: 4.5 },
-                    { img: v11Img, delay: 5 },
-                    { img: v12Img, delay: 5.5 }
-                  ].map((item, idx) => (
+                  {getFitImages.map((item, idx) => (
                     <motion.div 
                       key={idx}
                       className="bg-white rounded-2xl p-2 shadow-lg overflow-hidden cursor-pointer"
@@ -351,11 +419,11 @@ const Portfolio: React.FC = () => {
                         zIndex: 10
                       }}
                       whileTap={{ scale: 0.95 }}
-                      onClick={() => openFullscreen(item.img, `GetFit App Screen ${idx + 1}`)}
+                      onClick={() => openFullscreen(item.img, item.alt)}
                     >
                       <img 
                         src={item.img} 
-                        alt={`GetFit App Screen ${idx + 1}`}
+                        alt={item.alt}
                         className="w-full h-24 object-cover rounded-xl"
                       />
                     </motion.div>
@@ -383,22 +451,58 @@ const Portfolio: React.FC = () => {
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           onClick={closeFullscreen}
+          onTouchStart={handleTouchStart}
+          onTouchMove={handleTouchMove}
+          onTouchEnd={handleTouchEnd}
         >
           <motion.div 
-            className="relative max-w-4xl max-h-full"
+            className="relative max-w-4xl max-h-full w-full"
             initial={{ scale: 0.8, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             exit={{ scale: 0.8, opacity: 0 }}
             onClick={(e) => e.stopPropagation()}
           >
-            <img 
+            {/* Navigation Arrow - Previous */}
+            {isGetFitImage && (
+              <button
+                onClick={(e) => {
+                  e.stopPropagation();
+                  goToPrevious();
+                }}
+                className="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-white/90 hover:bg-white rounded-full flex items-center justify-center text-gray-800 transition-colors duration-200 shadow-lg z-10"
+                aria-label="Previous image"
+              >
+                <ChevronLeft className="w-6 h-6" />
+              </button>
+            )}
+
+            {/* Navigation Arrow - Next */}
+            {isGetFitImage && (
+              <button
+                onClick={(e) => {
+                  e.stopPropagation();
+                  goToNext();
+                }}
+                className="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-white/90 hover:bg-white rounded-full flex items-center justify-center text-gray-800 transition-colors duration-200 shadow-lg z-10"
+                aria-label="Next image"
+              >
+                <ChevronRight className="w-6 h-6" />
+              </button>
+            )}
+
+            <motion.img 
               src={fullscreenImage} 
               alt={fullscreenAlt}
-              className="max-w-full max-h-full object-contain rounded-lg shadow-2xl"
+              className="max-w-full max-h-[85vh] object-contain rounded-lg shadow-2xl mx-auto"
+              key={fullscreenImage}
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.3 }}
             />
             <button
               onClick={closeFullscreen}
-              className="absolute -top-4 -right-4 w-10 h-10 bg-white rounded-full flex items-center justify-center text-gray-800 hover:bg-gray-100 transition-colors duration-200 shadow-lg"
+              className="absolute -top-4 -right-4 w-10 h-10 bg-white rounded-full flex items-center justify-center text-gray-800 hover:bg-gray-100 transition-colors duration-200 shadow-lg z-10"
+              aria-label="Close"
             >
               <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
@@ -406,7 +510,7 @@ const Portfolio: React.FC = () => {
             </button>
             <div className="absolute bottom-4 left-4 right-4 text-center">
               <p className="text-white text-lg font-medium bg-black/50 rounded-lg px-4 py-2 backdrop-blur-sm">
-                {fullscreenAlt}
+                {fullscreenAlt} {isGetFitImage && `(${currentImageIndex + 1}/${getFitImages.length})`}
               </p>
             </div>
           </motion.div>
