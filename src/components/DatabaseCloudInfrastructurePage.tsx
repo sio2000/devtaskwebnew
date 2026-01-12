@@ -25,101 +25,54 @@ function playSound(src: string) {
   audio.play();
 }
 
-const services = [
-  {
-    icon: <FaCloud className="text-blue-500 text-3xl" />,
-    gr: 'Ρύθμιση Cloud Υποδομών',
-    en: 'Cloud Infrastructure Setup',
-  },
-  {
-    icon: <FaDatabase className="text-purple-500 text-3xl" />,
-    gr: 'Βάσεις Δεδομένων SQL & NoSQL',
-    en: 'SQL & NoSQL Database Management',
-  },
-  {
-    icon: <FaLock className="text-pink-500 text-3xl" />,
-    gr: 'Ασφάλεια Δεδομένων & Backup',
-    en: 'Data Security & Backup Solutions',
-  },
-  {
-    icon: <FaChartLine className="text-cyan-500 text-3xl" />,
-    gr: 'Κλιμάκωση & Απόδοση',
-    en: 'Scalability & Performance Optimization',
-  },
-  {
-    icon: <FaServer className="text-green-500 text-3xl" />,
-    gr: 'Υποστήριξη & Παρακολούθηση',
-    en: 'Monitoring & Support',
-  },
+// Icon arrays
+const serviceIcons = [
+  <FaCloud className="text-blue-500 text-3xl" />,
+  <FaDatabase className="text-purple-500 text-3xl" />,
+  <FaLock className="text-pink-500 text-3xl" />,
+  <FaChartLine className="text-cyan-500 text-3xl" />,
+  <FaServer className="text-green-500 text-3xl" />,
 ];
 
-const workflow = [
-  {
-    icon: <FaCloud className="text-purple-500 text-2xl" />,
-    gr: 'Σχεδιασμός Υποδομής',
-    en: 'Infrastructure Design',
-  },
-  {
-    icon: <FaDatabase className="text-blue-500 text-2xl" />,
-    gr: 'Υλοποίηση & Παραμετροποίηση',
-    en: 'Implementation & Configuration',
-  },
-  {
-    icon: <FaLock className="text-pink-500 text-2xl" />,
-    gr: 'Έλεγχος Ασφαλείας',
-    en: 'Security Auditing',
-  },
-  {
-    icon: <FaServer className="text-green-500 text-2xl" />,
-    gr: 'Παρακολούθηση & Υποστήριξη',
-    en: 'Monitoring & Support',
-  },
+const workflowIcons = [
+  <FaCloud className="text-purple-500 text-2xl" />,
+  <FaDatabase className="text-blue-500 text-2xl" />,
+  <FaLock className="text-pink-500 text-2xl" />,
+  <FaServer className="text-green-500 text-2xl" />,
 ];
 
-const clients = [
-  {
-    icon: <SiAmazon className="text-blue-500 text-3xl" />,
-    gr: 'Επιχειρήσεις με μεγάλες ανάγκες δεδομένων',
-    en: 'Businesses with large data needs',
-  },
-  {
-    icon: <FaCloud className="text-purple-500 text-3xl" />,
-    gr: 'Startups που απαιτούν ευέλικτες λύσεις',
-    en: 'Startups needing flexible solutions',
-  },
-  {
-    icon: <SiGooglecloud className="text-pink-500 text-3xl" />,
-    gr: 'Προγραμματιστές & DevOps teams',
-    en: 'Developers & DevOps teams',
-  },
-];
-
-const whyUs = [
-  {
-    gr: 'Εμπειρία σε cloud platforms (AWS, Azure, GCP)',
-    en: 'Experience with AWS, Azure, GCP',
-  },
-  {
-    gr: 'Ασφαλείς & αξιόπιστες υλοποιήσεις',
-    en: 'Secure & reliable implementations',
-  },
-  {
-    gr: 'Προσαρμογή στις ανάγκες σας',
-    en: 'Custom-tailored solutions',
-  },
-  {
-    gr: 'Υποστήριξη 24/7',
-    en: '24/7 Support',
-  },
-  {
-    gr: 'Συνεχής βελτιστοποίηση απόδοσης',
-    en: 'Continuous performance tuning',
-  },
+const clientIcons = [
+  <SiAmazon className="text-blue-500 text-3xl" />,
+  <FaCloud className="text-purple-500 text-3xl" />,
+  <SiGooglecloud className="text-pink-500 text-3xl" />,
 ];
 
 export default function DatabaseCloudInfrastructurePage() {
   const { language } = useLanguage();
+  const t = translations[language];
+  
   useEffect(() => { AOS.init({ duration: 900, once: true }); }, []);
+
+  const services = useMemo(() =>
+    t.services.pages.databaseCloudInfrastructure.services.items.map((item, idx) => ({
+      icon: serviceIcons[idx],
+      title: item.title
+    })), [t]);
+
+  const workflow = useMemo(() =>
+    t.services.pages.databaseCloudInfrastructure.workflow.items.map((item, idx) => ({
+      icon: workflowIcons[idx],
+      title: item.title
+    })), [t]);
+
+  const clients = useMemo(() =>
+    t.services.pages.databaseCloudInfrastructure.whoWeServe.items.map((item, idx) => ({
+      icon: clientIcons[idx],
+      title: item.title
+    })), [t]);
+
+  const whyUs = useMemo(() =>
+    t.services.pages.databaseCloudInfrastructure.whyUs.items, [t]);
   return (
     <div className="bg-gradient-to-br from-white via-blue-50 to-gray-50 min-h-screen text-gray-900 font-sans">
       {/* Sticky Language Toggle */}
@@ -180,16 +133,16 @@ export default function DatabaseCloudInfrastructurePage() {
           </div>
           {/* Περιεχόμενο */}
           <div className="flex-1 flex flex-col items-center md:items-start text-center md:text-left">
-            <h2 className="text-3xl md:text-4xl font-extrabold text-blue-700 mb-4 bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent drop-shadow-lg">{language === 'el' ? 'Οι Υπηρεσίες Μας' : 'Our Services'}</h2>
-            <p className="text-lg text-gray-700 mb-6 max-w-xl">{language === 'el' ? 'Υλοποιούμε cloud υποδομές, βάσεις δεδομένων και λύσεις ασφάλειας για κάθε ανάγκη.' : 'We deliver cloud infrastructure, database and security solutions for every need.'}</p>
+            <h2 className="text-3xl md:text-4xl font-extrabold text-blue-700 mb-4 bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent drop-shadow-lg">{t.services.pages.databaseCloudInfrastructure.services.title}</h2>
+            <p className="text-lg text-gray-700 mb-6 max-w-xl">{t.services.pages.databaseCloudInfrastructure.services.description}</p>
             {/* Badges/Icons row */}
             <div className="grid grid-cols-2 gap-4 w-full py-2 justify-center md:justify-start md:flex md:flex-row md:flex-wrap md:gap-3">
               {services.map((s, idx) => (
-                <div key={s.gr} className="flex flex-col items-center bg-white/80 rounded-2xl shadow-md border border-blue-100/40 px-5 py-4 min-w-[120px] max-w-[180px] flex-shrink-0 hover:shadow-xl transition-all duration-300">
+                <div key={idx} className="flex flex-col items-center bg-white/80 rounded-2xl shadow-md border border-blue-100/40 px-5 py-4 min-w-[120px] max-w-[180px] flex-shrink-0 hover:shadow-xl transition-all duration-300">
                   <div className="mb-2 flex items-center justify-center w-12 h-12 rounded-full bg-gradient-to-br from-blue-100 to-purple-100 shadow-inner border-2 border-blue-200">
                     {s.icon}
                   </div>
-                  <span className="text-sm font-semibold text-blue-900 mb-1 text-center leading-tight">{language === 'el' ? s.gr : s.en}</span>
+                  <span className="text-sm font-semibold text-blue-900 mb-1 text-center leading-tight">{s.title}</span>
                 </div>
               ))}
             </div>
@@ -228,10 +181,10 @@ export default function DatabaseCloudInfrastructurePage() {
 
       {/* Who We Serve */}
       <section className="max-w-7xl mx-auto py-24 px-4">
-        <motion.h2 className="text-3xl md:text-4xl font-extrabold text-blue-700 mb-12 text-center bg-gradient-to-r from-blue-500 to-gray-500 bg-clip-text text-transparent drop-shadow-lg">{language === 'el' ? 'Σε Ποιους Απευθυνόμαστε' : 'Who We Serve'}</motion.h2>
+        <motion.h2 className="text-3xl md:text-4xl font-extrabold text-blue-700 mb-12 text-center bg-gradient-to-r from-blue-500 to-gray-500 bg-clip-text text-transparent drop-shadow-lg">{t.services.pages.databaseCloudInfrastructure.whoWeServe.title}</motion.h2>
         <motion.div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.12 } } }}>
           {clients.map((c, idx) => (
-            <motion.div key={c.gr} className="group bg-white/80 backdrop-blur-lg rounded-3xl shadow-xl border border-blue-100/40 p-10 flex flex-col items-center text-center cursor-pointer transition-all duration-300 hover:shadow-2xl focus:outline-none focus:ring-4 focus:ring-blue-200 relative overflow-hidden" initial={{ opacity: 0, y: 40, scale: 0.97 }} whileInView={{ opacity: 1, y: 0, scale: 1 }} whileHover={{ scale: 1.08, boxShadow: '0 8px 32px 0 rgba(31, 38, 135, 0.25)' }} viewport={{ once: true }} transition={{ duration: 0.5, delay: idx * 0.07 }} onMouseEnter={() => playSound(hoverSfx)} onClick={() => playSound(clickSfx)}><div className="mb-6 flex items-center justify-center w-20 h-20 rounded-full bg-gradient-to-br from-blue-100 to-gray-100 shadow-inner group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300 border-4 border-blue-200 group-hover:border-gray-300">{c.icon}</div><h4 className="text-xl font-bold text-blue-900 mb-2 group-hover:text-blue-700 transition-colors duration-300 tracking-tight">{language === 'el' ? c.gr : c.en}</h4></motion.div>
+            <motion.div key={idx} className="group bg-white/80 backdrop-blur-lg rounded-3xl shadow-xl border border-blue-100/40 p-10 flex flex-col items-center text-center cursor-pointer transition-all duration-300 hover:shadow-2xl focus:outline-none focus:ring-4 focus:ring-blue-200 relative overflow-hidden" initial={{ opacity: 0, y: 40, scale: 0.97 }} whileInView={{ opacity: 1, y: 0, scale: 1 }} whileHover={{ scale: 1.08, boxShadow: '0 8px 32px 0 rgba(31, 38, 135, 0.25)' }} viewport={{ once: true }} transition={{ duration: 0.5, delay: idx * 0.07 }} onMouseEnter={() => playSound(hoverSfx)} onClick={() => playSound(clickSfx)}><div className="mb-6 flex items-center justify-center w-20 h-20 rounded-full bg-gradient-to-br from-blue-100 to-gray-100 shadow-inner group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300 border-4 border-blue-200 group-hover:border-gray-300">{c.icon}</div><h4 className="text-xl font-bold text-blue-900 mb-2 group-hover:text-blue-700 transition-colors duration-300 tracking-tight">{c.title}</h4></motion.div>
           ))}
         </motion.div>
       </section>
@@ -249,10 +202,10 @@ export default function DatabaseCloudInfrastructurePage() {
       {/* Contact Us */}
       <section className="max-w-7xl mx-auto py-24 px-4 flex flex-col items-center text-center">
         <motion.div className="relative bg-gradient-to-br from-blue-100 via-white to-gray-100/80 backdrop-blur-lg rounded-3xl shadow-2xl border border-blue-100/40 p-12 flex flex-col items-center" initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
-          <h2 className="text-3xl md:text-4xl font-extrabold text-blue-900 mb-6 tracking-tight">{language === 'el' ? 'Χρειάζεστε ασφαλείς, επεκτάσιμες λύσεις βάσεων δεδομένων και cloud; Επικοινωνήστε μαζί μας!' : 'Need secure, scalable database and cloud solutions? Contact us!'}</h2>
+          <h2 className="text-3xl md:text-4xl font-extrabold text-blue-900 mb-6 tracking-tight">{t.services.pages.databaseCloudInfrastructure.finalCta.title}</h2>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mt-6">
-            <motion.button className="inline-block px-10 py-4 bg-gradient-to-r from-blue-600 to-gray-400 text-white rounded-full font-bold text-lg shadow-3xl border-2 border-transparent hover:border-blue-400 hover:shadow-[0_0_32px_0_#a78bfa] focus:outline-none focus:ring-2 focus:ring-blue-400 animate-fade-in flex items-center gap-2 relative overflow-hidden" whileHover={{ scale: 1.08, boxShadow: '0 0 32px 0 #a78bfa', filter: 'brightness(1.1)', borderColor: '#a78bfa' }} whileTap={{ scale: 0.97 }} onMouseEnter={() => playSound(hoverSfx)} onClick={() => { window.location.href = '/contactme'; }}><span className="relative z-10">{language === 'el' ? 'Ζητήστε Προσφορά' : 'Request a Quote'}</span></motion.button>
-            <motion.button className="inline-block px-10 py-4 bg-gradient-to-r from-gray-400 to-blue-600 text-white rounded-full font-bold text-lg shadow-3xl border-2 border-transparent hover:border-gray-400 hover:shadow-[0_0_32px_0_#a78bfa] focus:outline-none focus:ring-2 focus:ring-blue-400 animate-fade-in flex items-center gap-2 relative overflow-hidden" whileHover={{ scale: 1.08, boxShadow: '0 0 32px 0 #a78bfa', filter: 'brightness(1.1)', borderColor: '#a78bfa' }} whileTap={{ scale: 0.97 }} onMouseEnter={() => playSound(hoverSfx)} onClick={() => { window.location.href = '/'; }}><FaCloud className="mr-2" />{language === 'el' ? 'Επιστροφή στην Αρχική' : 'Back to Home'}</motion.button>
+            <motion.button className="inline-block px-10 py-4 bg-gradient-to-r from-blue-600 to-gray-400 text-white rounded-full font-bold text-lg shadow-3xl border-2 border-transparent hover:border-blue-400 hover:shadow-[0_0_32px_0_#a78bfa] focus:outline-none focus:ring-2 focus:ring-blue-400 animate-fade-in flex items-center gap-2 relative overflow-hidden" whileHover={{ scale: 1.08, boxShadow: '0 0 32px 0 #a78bfa', filter: 'brightness(1.1)', borderColor: '#a78bfa' }} whileTap={{ scale: 0.97 }} onMouseEnter={() => playSound(hoverSfx)} onClick={() => { window.location.href = '/contactme'; }}><span className="relative z-10">{t.services.pages.databaseCloudInfrastructure.finalCta.button}</span></motion.button>
+            <motion.button className="inline-block px-10 py-4 bg-gradient-to-r from-gray-400 to-blue-600 text-white rounded-full font-bold text-lg shadow-3xl border-2 border-transparent hover:border-gray-400 hover:shadow-[0_0_32px_0_#a78bfa] focus:outline-none focus:ring-2 focus:ring-blue-400 animate-fade-in flex items-center gap-2 relative overflow-hidden" whileHover={{ scale: 1.08, boxShadow: '0 0 32px 0 #a78bfa', filter: 'brightness(1.1)', borderColor: '#a78bfa' }} whileTap={{ scale: 0.97 }} onMouseEnter={() => playSound(hoverSfx)} onClick={() => { window.location.href = '/'; }}><FaCloud className="mr-2" />{t.services.pages.databaseCloudInfrastructure.finalCta.backHome}</motion.button>
           </div>
         </motion.div>
       </section>
