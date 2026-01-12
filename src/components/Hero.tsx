@@ -255,7 +255,7 @@ const Hero: React.FC = () => {
                         backgroundSize: '200% 100%',
                       }}
                     />
-                    <span className="relative z-10">Δείγματα Ιστοσελίων</span>
+                    <span className="relative z-10">{t.hero.websiteSamples}</span>
                     <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform relative z-10" />
                   </motion.button>
                 )}
@@ -309,7 +309,7 @@ const Hero: React.FC = () => {
                 className="mb-8"
               >
                 <motion.h1 
-                  className={`text-4xl sm:text-5xl ${language === 'fr' ? (currentSlide === 2 ? 'lg:text-4xl xl:text-5xl' : 'lg:text-5xl xl:text-6xl') : (currentSlide === 2 ? 'lg:text-5xl xl:text-6xl' : 'lg:text-7xl')} font-bold mb-6 leading-tight text-shadow-premium tracking-luxury break-words overflow-wrap-anywhere`}
+                  className={`text-4xl sm:text-5xl ${language === 'fr' ? (currentSlide === 2 ? 'lg:text-4xl xl:text-5xl' : 'lg:text-5xl xl:text-6xl') : (currentSlide === 2 ? 'lg:text-5xl xl:text-6xl' : (currentSlide === 1 && language === 'en' ? 'lg:text-5xl xl:text-6xl' : (currentSlide === 0 && language === 'en' ? 'lg:text-5xl xl:text-6xl' : 'lg:text-7xl')))} font-bold mb-6 leading-tight text-shadow-premium tracking-luxury break-words overflow-wrap-anywhere`}
                   initial={{ opacity: 0, scale: 0.9 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 0.8, delay: 0.2 }}
@@ -385,7 +385,7 @@ const Hero: React.FC = () => {
                           backgroundSize: '200% 100%',
                         }}
                       />
-                      <span className="relative z-10">Δείγματα Ιστοσελίων</span>
+                      <span className="relative z-10">{t.hero.websiteSamples}</span>
                       <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform relative z-10" />
                     </motion.button>
                   )}

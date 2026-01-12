@@ -191,7 +191,7 @@ const Contact: React.FC = () => {
         {/* Θέμα */}
         <div className="relative">
           <label htmlFor="subject" className="block text-sm font-semibold text-gray-700 mb-2">
-            Θέμα
+            {t.contact.form.subjectLabel}
           </label>
           <input
             type="text"
@@ -200,14 +200,14 @@ const Contact: React.FC = () => {
             value={formData.subject}
             onChange={handleChange}
             className="w-full px-4 py-3 border rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-300 bg-white border-gray-300"
-            placeholder="Προαιρετικό θέμα για το μήνυμά σας"
+            placeholder={t.contact.form.subjectPlaceholder}
             autoComplete="off"
           />
         </div>
         {/* Μήνυμα */}
         <div className="relative">
           <label htmlFor="message" className="block text-sm font-semibold text-gray-700 mb-2">
-            Μήνυμα <span className="text-red-500">*</span>
+            {t.contact.form.messageLabel} <span className="text-red-500">{t.contact.form.required}</span>
           </label>
           <textarea
                 id="message"
@@ -217,9 +217,9 @@ const Contact: React.FC = () => {
                 required
                 rows={5}
             className={`w-full px-4 py-3 border rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-300 bg-white resize-none ${errors.message ? 'border-red-400 focus:border-red-400 focus:ring-red-400' : 'border-gray-300'}`}
-            placeholder="Γράψτε το μήνυμά σας εδώ..."
+            placeholder={t.contact.form.messagePlaceholder}
           />
-          {errors.message && <span className="text-xs text-red-500 mt-1 block">Το μήνυμα είναι υποχρεωτικό</span>}
+          {errors.message && <span className="text-xs text-red-500 mt-1 block">{t.contact.form.messageRequired}</span>}
         </div>
             <motion.button
               type="submit"
@@ -267,7 +267,7 @@ const Contact: React.FC = () => {
         </a>
         <div className="flex items-center gap-4 text-red-700 text-lg font-semibold">
           <FaMapMarkerAlt className="h-5 w-5 text-red-500" />
-          <span>Θεσσαλονίκη, Ελλάδα</span>
+          <span>{t.contact.info.location}</span>
         </div>
       </motion.div>
     </div>

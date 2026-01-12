@@ -7,4 +7,17 @@ export default defineConfig({
   optimizeDeps: {
     exclude: ['lucide-react'],
   },
+  build: {
+    cssCodeSplit: true,
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          'react-vendor': ['react', 'react-dom', 'react-router-dom'],
+          'animation-vendor': ['framer-motion', 'gsap', 'aos'],
+          'ui-vendor': ['react-icons', 'lucide-react', 'react-helmet'],
+        },
+      },
+    },
+    chunkSizeWarningLimit: 1000,
+  },
 });

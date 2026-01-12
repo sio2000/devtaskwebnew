@@ -208,7 +208,7 @@ export default function WebDevelopmentPage() {
                 animate={{ opacity: 1, x: parallax.x, y: parallax.y }}
                 transition={{ duration: 0.7, type: 'spring', stiffness: 60, damping: 18 }}
               >
-                Κατασκευή Ιστοσελίδων που Εντυπωσιάζουν
+                {t.services.pages.webDevelopment.hero.title}
               </motion.h1>
               <motion.p
                 className="text-xl md:text-2xl text-gray-700 mb-10 font-medium max-w-2xl mx-auto"
@@ -216,7 +216,7 @@ export default function WebDevelopmentPage() {
                 animate={{ opacity: 1, x: parallax.x, y: parallax.y }}
                 transition={{ duration: 0.7, type: 'spring', stiffness: 60, damping: 18 }}
               >
-                Απογειώστε την επιχείρησή σας με μια ιστοσελίδα που ξεχωρίζει για την ταχύτητα, την αισθητική και την αποτελεσματικότητά της. Δημιουργούμε premium web εμπειρίες που μετατρέπουν επισκέπτες σε πελάτες.
+                {t.services.pages.webDevelopment.hero.subtitle}
               </motion.p>
             </>
           ) : (
@@ -234,7 +234,7 @@ export default function WebDevelopmentPage() {
               className="inline-block px-12 py-5 bg-gradient-to-r from-blue-600 to-purple-400 text-white rounded-full font-bold text-xl shadow-3xl border-2 border-transparent hover:border-blue-400 hover:shadow-[0_0_32px_0_#a78bfa] focus:outline-none focus:ring-2 focus:ring-blue-400 animate-fade-in flex items-center gap-2 relative overflow-hidden"
               onClick={() => { window.location.href = '/contactme'; }}
             >
-              <span className="relative z-10">Ξεκινήστε το έργο σας</span>
+              <span className="relative z-10">{t.services.pages.webDevelopment.buttons.startProject}</span>
             </button>
             <button
               className="inline-block px-12 py-5 bg-gradient-to-r from-purple-400 to-blue-600 text-white rounded-full font-bold text-xl shadow-3xl border-2 border-transparent hover:border-purple-400 hover:shadow-[0_0_32px_0_#a78bfa] focus:outline-none focus:ring-2 focus:ring-purple-400 animate-fade-in flex items-center gap-2 relative overflow-hidden"
@@ -243,7 +243,7 @@ export default function WebDevelopmentPage() {
                 if (showcase) showcase.scrollIntoView({ behavior: 'smooth' });
               }}
             >
-              <span className="relative z-10">Δείγματα Έργων</span>
+              <span className="relative z-10">{t.services.pages.webDevelopment.buttons.viewSamples}</span>
             </button>
           </div>
         </div>
@@ -251,7 +251,7 @@ export default function WebDevelopmentPage() {
       {/* Γιατί να επιλέξετε εμένα, Χαρακτηριστικά, Δείγματα, Πορεία, Τεχνολογίες, Στατιστικά: όλα χωρίς motion/animation σε κινητό */}
       <section className="max-w-5xl mx-auto py-16 px-4 text-center flex flex-col md:flex-row items-center gap-10">
         <div className="relative w-full md:w-1/2 flex-shrink-0 flex items-center justify-center">
-          <img src={codeImg} alt={t.services.pages.webDevelopment.whyUs.title} className="rounded-3xl shadow-2xl object-cover w-full h-80 md:h-96" style={{objectPosition:'center'}} />
+          <img src={codeImg} alt={t.services.pages.webDevelopment.whyUs.title} className="rounded-3xl shadow-2xl object-cover w-full h-80 md:h-96" style={{objectPosition:'center'}} loading="lazy" />
         </div>
         <div className="relative bg-white/90 backdrop-blur-lg rounded-3xl shadow-2xl border border-blue-100/40 p-10 flex flex-col items-center w-full md:w-1/2">
           <h2 className="text-3xl md:text-4xl font-extrabold text-blue-900 mb-6 bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent drop-shadow-lg">{t.services.pages.webDevelopment.whyUs.title}</h2>

@@ -1,0 +1,28 @@
+{
+  "name": "DevTaskHub - Κατασκευή Ιστοσελίδων Θεσσαλονίκη",
+  "short_name": "DevTaskHub",
+  "description": "Κατασκευή custom ιστοσελίδων, mobile apps, AI και SEO στη Θεσσαλονίκη",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#3b82f6",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/assets/logo-ChYGESUI.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/assets/logo-ChYGESUI.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["business", "productivity"],
+  "lang": "el",
+  "dir": "ltr"
+}
+

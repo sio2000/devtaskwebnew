@@ -17,6 +17,7 @@ export const translations = {
       subtitle: 'Full-Stack Developers στη Θεσσαλονίκη με εξειδίκευση σε web εφαρμογές, mobile apps και AI λύσεις',
       cta: 'Δες τις Υπηρεσίες μας',
       contact: 'Επικοινωνήστε',
+      websiteSamples: 'Δείγματα Ιστοσελίδων',
       slides: [
         {
           title: 'Κατασκευή Μοντέρνων Ιστοσελίδων',
@@ -623,52 +624,52 @@ export const translations = {
         },
         gameDevelopment: {
           hero: {
-            title: 'Innovative Game Development Services',
+            title: 'Καινοτόμες Υπηρεσίες Ανάπτυξης Παιχνιδιών',
             subtitle: 'Αναπτύξτε το επόμενο επιτυχημένο παιχνίδι με τεχνογνωσία, φαντασία και τεχνολογία αιχμής.',
-            cta: 'Start Your Game Project'
+            cta: 'Ξεκινήστε το Έργο Παιχνιδιού σας'
           },
           services: {
-            title: 'Our Services',
+            title: 'Οι Υπηρεσίες Μας',
             items: [
-              { title: 'Mobile Game Development', desc: 'Δημιουργία παιχνιδιών για iOS & Android με κορυφαίο UX.' },
-              { title: 'VR/AR Experiences', desc: 'Εμβυθιστικές εμπειρίες εικονικής & επαυξημένης πραγματικότητας.' },
-              { title: 'Multiplayer Online Games', desc: 'Online multiplayer με σταθερότητα & scaling.' },
-              { title: 'Game Design & Storytelling', desc: 'Σχεδιασμός gameplay, χαρακτήρων & ιστορίας.' }
+              { title: 'Ανάπτυξη Παιχνιδιών Mobile', desc: 'Δημιουργία παιχνιδιών για iOS & Android με κορυφαίο UX.' },
+              { title: 'Εμπειρίες VR/AR', desc: 'Εμβυθιστικές εμπειρίες εικονικής & επαυξημένης πραγματικότητας.' },
+              { title: 'Παιχνίδια Πολλαπλών Παικτών Online', desc: 'Online multiplayer με σταθερότητα & scaling.' },
+              { title: 'Σχεδιασμός Παιχνιδιού & Αφήγηση', desc: 'Σχεδιασμός gameplay, χαρακτήρων & ιστορίας.' }
             ]
           },
           process: {
-            title: 'Development Process',
+            title: 'Διαδικασία Ανάπτυξης',
             items: [
-              { step: 'Concept & Storyboarding', desc: 'Ιδέα, σενάριο, χαρακτήρες, wireframes.' },
-              { step: 'Prototype & Design', desc: 'Δημιουργία prototype, UI/UX & art assets.' },
-              { step: 'Development & Testing', desc: 'Υλοποίηση, testing & βελτιστοποίηση.' },
-              { step: 'Launch & Support', desc: 'Λανσάρισμα, updates & υποστήριξη.' }
+              { step: 'Έννοια & Storyboarding', desc: 'Ιδέα, σενάριο, χαρακτήρες, wireframes.' },
+              { step: 'Πρωτότυπο & Σχεδιασμός', desc: 'Δημιουργία prototype, UI/UX & art assets.' },
+              { step: 'Ανάπτυξη & Δοκιμές', desc: 'Υλοποίηση, testing & βελτιστοποίηση.' },
+              { step: 'Εκκίνηση & Υποστήριξη', desc: 'Λανσάρισμα, updates & υποστήριξη.' }
             ]
           },
           technologies: {
-            title: 'Technologies & Tools'
+            title: 'Τεχνολογίες & Εργαλεία'
           },
           portfolio: {
-            title: 'Portfolio Highlights',
+            title: 'Αξιοσημείωτα Έργα Portfolio',
             items: [
-              { title: 'Fantasy Adventure', desc: '3D RPG με μοναδικό art style & engaging gameplay.' },
+              { title: 'Φανταστική Περιπέτεια', desc: '3D RPG με μοναδικό art style & engaging gameplay.' },
               { title: 'VR Racing', desc: 'VR racing game με ρεαλιστική φυσική & γραφικά.' },
               { title: 'Puzzle Platformer', desc: '2D puzzle platformer με καινοτόμους μηχανισμούς.' }
             ]
           },
           whyUs: {
-            title: 'Why Choose Us?',
+            title: 'Γιατί να Επιλέξετε Εμάς;',
             items: [
-              'Experienced developers & designers',
-              'Agile development methodology',
-              'Cutting-edge technology integration',
-              'Player-centric design approach'
+              'Έμπειροι προγραμματιστές & designers',
+              'Μεθοδολογία agile ανάπτυξης',
+              'Ενσωμάτωση τεχνολογίας αιχμής',
+              'Προσανατολισμός σχεδιασμού στον παίκτη'
             ]
           },
           finalCta: {
-            title: 'Ready to build your next hit game?',
+            title: 'Έτοιμοι να δημιουργήσετε το επόμενο επιτυχημένο παιχνίδι;',
             subtitle: 'Επικοινωνήστε για να ξεκινήσουμε το επόμενο gaming project σας.',
-            button: 'Contact Us Today'
+            button: 'Επικοινωνήστε Μαζί Μας Σήμερα'
           }
         },
         databaseCloudInfrastructure: {
@@ -860,7 +861,8 @@ export const translations = {
             ios: 'iOS App',
             android: 'Android App',
             web: 'Web App'
-          }
+          },
+          viewApp: 'Δείτε την Εφαρμογή'
         }
       }
     },
@@ -945,56 +947,56 @@ export const translations = {
     // Meta tags for pages
     meta: {
       home: {
-        title: 'DevTaskHub | Κατασκευή Custom Ιστοσελίδων & Mobile Εφαρμογών',
-        description: 'Κατασκευή custom ιστοσελίδων, e-shop, mobile apps, AI και SEO από εξειδικευμένη ομάδα στη Θεσσαλονίκη. Responsive design, ταχύτητα, ασφάλεια, υποστήριξη.'
+        title: 'Κατασκευή Ιστοσελίδων Θεσσαλονίκη | DevTaskHub - Custom Web & Mobile Apps',
+        description: 'Επαγγελματική κατασκευή ιστοσελίδων και mobile apps στη Θεσσαλονίκη. React, Next.js, Node.js. Δωρεάν προσφορά! 📱💻'
       },
       webDevelopment: {
-        title: 'Web Development | DevTaskHub Θεσσαλονίκη',
-        description: 'Κατασκευή μοντέρνων ιστοσελίδων και web εφαρμογών με ταχύτητα, ασφάλεια και responsive design από την ομάδα DevTaskHub στη Θεσσαλονίκη.'
+        title: 'Κατασκευή Ιστοσελίδων Θεσσαλονίκη | React, Next.js | DevTaskHub',
+        description: 'Σύγχρονη ανάπτυξη ιστοσελίδων με React & Next.js στη Θεσσαλονίκη. Fast, Secure, SEO-Optimized. Επικοινωνήστε για προσφορά!'
       },
       mobileAppDevelopment: {
-        title: 'Mobile App Development | DevTaskHub Θεσσαλονίκη',
-        description: 'Ανάπτυξη mobile εφαρμογών για Android & iOS με έμφαση στην εμπειρία χρήστη και την απόδοση. DevTaskHub στη Θεσσαλονίκη.'
+        title: 'Mobile Apps Θεσσαλονίκη | iOS & Android Development | DevTaskHub',
+        description: 'Ανάπτυξη mobile εφαρμογών για iOS & Android στη Θεσσαλονίκη. Native & Cross-platform. Επικοινωνήστε για προσφορά!'
       },
       chatbotsAIAgents: {
-        title: 'Chatbots & AI Agents | DevTaskHub Θεσσαλονίκη',
-        description: 'Έξυπνα chatbots και AI agents για αυτοματοποίηση επικοινωνίας και υποστήριξη πελατών. DevTaskHub στη Θεσσαλονίκη.'
+        title: 'Chatbots & AI Agents Θεσσαλονίκη | DevTaskHub',
+        description: 'Έξυπνα chatbots και AI agents για αυτοματοποίηση επικοινωνίας στη Θεσσαλονίκη. 24/7 υποστήριξη πελατών. Ζητήστε προσφορά!'
       },
       socialMediaManagement: {
-        title: 'Social Media Management | DevTaskHub Θεσσαλονίκη',
-        description: 'Διαχείριση social media, δημιουργία περιεχομένου και στρατηγική για επιχειρήσεις. DevTaskHub στη Θεσσαλονίκη.'
+        title: 'Social Media Management Θεσσαλονίκη | DevTaskHub',
+        description: 'Διαχείριση social media και δημιουργία περιεχομένου στη Θεσσαλονίκη. Αύξηση engagement & conversions. Επικοινωνήστε!'
       },
       videoAnimationProduction: {
-        title: 'Video & Animation Production | DevTaskHub Θεσσαλονίκη',
-        description: 'Παραγωγή επαγγελματικών βίντεο και animations για προώθηση, εκπαίδευση και διαφήμιση. DevTaskHub στη Θεσσαλονίκη.'
+        title: 'Video & Animation Production Θεσσαλονίκη | DevTaskHub',
+        description: 'Παραγωγή επαγγελματικών βίντεο και animations στη Θεσσαλονίκη. Προώθηση, εκπαίδευση, διαφήμιση. Ζητήστε προσφορά!'
       },
       seoWebsiteOptimization: {
-        title: 'SEO Website Optimization | DevTaskHub Θεσσαλονίκη',
-        description: 'SEO, βελτιστοποίηση ιστοσελίδων και αύξηση οργανικής επισκεψιμότητας. DevTaskHub στη Θεσσαλονίκη.'
+        title: 'SEO Θεσσαλονίκη | Βελτιστοποίηση Ιστοσελίδων | DevTaskHub',
+        description: 'SEO και βελτιστοποίηση ιστοσελίδων στη Θεσσαλονίκη. Αύξηση οργανικής επισκεψιμότητας & conversions. Επικοινωνήστε!'
       },
       uxUIDesign: {
-        title: 'UX/UI Design | DevTaskHub Θεσσαλονίκη',
-        description: 'Σχεδιασμός φιλικών και αποδοτικών interfaces με έμφαση στη χρηστικότητα και την εμπειρία. DevTaskHub στη Θεσσαλονίκη.'
+        title: 'UX/UI Design Θεσσαλονίκη | DevTaskHub',
+        description: 'Σχεδιασμός UX/UI interfaces στη Θεσσαλονίκη. User-friendly & αποδοτικά designs. Επικοινωνήστε για προσφορά!'
       },
       databaseCloudInfrastructure: {
-        title: 'Database & Cloud Infrastructure | DevTaskHub Θεσσαλονίκη',
-        description: 'Διαχείριση βάσεων δεδομένων και υλοποίηση cloud λύσεων για επιχειρήσεις. DevTaskHub στη Θεσσαλονίκη.'
+        title: 'Database & Cloud Infrastructure Θεσσαλονίκη | DevTaskHub',
+        description: 'Διαχείριση βάσεων δεδομένων & cloud solutions στη Θεσσαλονίκη. Scalable & secure. Επικοινωνήστε για προσφορά!'
       },
       aiIntegrationApplications: {
-        title: 'AI Integration Applications | DevTaskHub Θεσσαλονίκη',
-        description: 'Ενσωμάτωση AI και machine learning σε εφαρμογές για ανάλυση δεδομένων και αυτοματοποίηση. DevTaskHub στη Θεσσαλονίκη.'
+        title: 'AI Integration Applications Θεσσαλονίκη | DevTaskHub',
+        description: 'Ενσωμάτωση AI & machine learning σε εφαρμογές στη Θεσσαλονίκη. Data analysis & automation. Ζητήστε προσφορά!'
       },
       ecommerceDevelopment: {
-        title: 'E-commerce Development | DevTaskHub Θεσσαλονίκη',
-        description: 'Κατασκευή e-shop και ηλεκτρονικών καταστημάτων με σύγχρονες δυνατότητες. DevTaskHub στη Θεσσαλονίκη.'
+        title: 'E-shop & E-commerce Development Θεσσαλονίκη | DevTaskHub',
+        description: 'Κατασκευή e-shop και ηλεκτρονικών καταστημάτων στη Θεσσαλονίκη. Πλήρης λύση e-commerce. Επικοινωνήστε!'
       },
       gameDevelopment: {
-        title: 'Game Development | DevTaskHub Θεσσαλονίκη',
-        description: 'Ανάπτυξη διαδραστικών παιχνιδιών για web, desktop και mobile πλατφόρμες. DevTaskHub στη Θεσσαλονίκη.'
+        title: 'Game Development Θεσσαλονίκη | Web, Mobile Games | DevTaskHub',
+        description: 'Ανάπτυξη διαδραστικών παιχνιδιών στη Θεσσαλονίκη. Web, desktop & mobile platforms. Ζητήστε προσφορά!'
       },
       contact: {
         title: 'Επικοινωνία | DevTaskHub Θεσσαλονίκη',
-        description: 'Επικοινωνήστε με την ομάδα DevTaskHub για προσφορά ή απορίες σχετικά με τις υπηρεσίες μας.'
+        description: 'Επικοινωνήστε με την DevTaskHub στη Θεσσαλονίκη για προσφορά ή απορίες. Δωρεάν σύμβαση! 📞✉️'
       },
       terms: {
         title: 'Όροι & Προϋποθέσεις | DevTaskHub',
@@ -1067,13 +1069,14 @@ export const translations = {
       subtitle: 'Full-Stack Developers in Thessaloniki specializing in web applications, mobile apps, and AI solutions',
       cta: 'View Our Services',
       contact: 'Contact Us',
+      websiteSamples: 'Website Samples',
       slides: [
         {
           title: 'Modern Website Development',
           subtitle: 'We create responsive websites with focus on performance and UX'
         },
         {
-          title: 'Mobile-first Apps for Businesses & Startups',
+          title: 'Mobile Apps for Businesses & Startups',
           subtitle: 'Native and cross-platform solutions for Android & iOS'
         },
         {
@@ -1907,7 +1910,8 @@ export const translations = {
             ios: 'iOS App',
             android: 'Android App',
             web: 'Web App'
-          }
+          },
+          viewApp: 'View App'
         }
       }
     },
@@ -1992,56 +1996,56 @@ export const translations = {
     // Meta tags for pages
     meta: {
       home: {
-        title: 'DevTaskHub | Custom Website & Mobile App Development',
-        description: 'Custom website development, e-shop, mobile apps, AI and SEO from an expert team in Thessaloniki. Responsive design, speed, security, support.'
+        title: 'Website Development Thessaloniki | DevTaskHub - Custom Web & Mobile Apps',
+        description: 'Professional website and mobile app development in Thessaloniki. React, Next.js, Node.js. Free quote! 📱💻'
       },
       webDevelopment: {
-        title: 'Web Development | DevTaskHub Thessaloniki',
-        description: 'Modern website and web application development with speed, security and responsive design from the DevTaskHub team in Thessaloniki.'
+        title: 'Website Development Thessaloniki | React, Next.js | DevTaskHub',
+        description: 'Modern website development with React & Next.js in Thessaloniki. Fast, Secure, SEO-Optimized. Contact for a quote!'
       },
       mobileAppDevelopment: {
-        title: 'Mobile App Development | DevTaskHub Thessaloniki',
-        description: 'Mobile app development for Android & iOS with focus on user experience and performance. DevTaskHub in Thessaloniki.'
+        title: 'Mobile Apps Thessaloniki | iOS & Android Development | DevTaskHub',
+        description: 'Mobile app development for iOS & Android in Thessaloniki. Native & Cross-platform. Contact for a quote!'
       },
       chatbotsAIAgents: {
-        title: 'Chatbots & AI Agents | DevTaskHub Thessaloniki',
-        description: 'Smart chatbots and AI agents for communication automation and customer support. DevTaskHub in Thessaloniki.'
+        title: 'Chatbots & AI Agents Thessaloniki | DevTaskHub',
+        description: 'Smart chatbots and AI agents for communication automation in Thessaloniki. 24/7 customer support. Request a quote!'
       },
       socialMediaManagement: {
-        title: 'Social Media Management | DevTaskHub Thessaloniki',
-        description: 'Social media management, content creation and strategy for businesses. DevTaskHub in Thessaloniki.'
+        title: 'Social Media Management Thessaloniki | DevTaskHub',
+        description: 'Social media management and content creation in Thessaloniki. Increase engagement & conversions. Contact us!'
       },
       videoAnimationProduction: {
-        title: 'Video & Animation Production | DevTaskHub Thessaloniki',
-        description: 'Professional video and animation production for promotion, education and advertising. DevTaskHub in Thessaloniki.'
+        title: 'Video & Animation Production Thessaloniki | DevTaskHub',
+        description: 'Professional video and animation production in Thessaloniki. Promotion, education, advertising. Request a quote!'
       },
       seoWebsiteOptimization: {
-        title: 'SEO Website Optimization | DevTaskHub Thessaloniki',
-        description: 'SEO, website optimization and increased organic traffic. DevTaskHub in Thessaloniki.'
+        title: 'SEO Thessaloniki | Website Optimization | DevTaskHub',
+        description: 'SEO and website optimization in Thessaloniki. Increase organic traffic & conversions. Contact us!'
       },
       uxUIDesign: {
-        title: 'UX/UI Design | DevTaskHub Thessaloniki',
-        description: 'User-friendly and efficient interface design with focus on usability and experience. DevTaskHub in Thessaloniki.'
+        title: 'UX/UI Design Thessaloniki | DevTaskHub',
+        description: 'UX/UI interface design in Thessaloniki. User-friendly & efficient designs. Contact for a quote!'
       },
       databaseCloudInfrastructure: {
-        title: 'Database & Cloud Infrastructure | DevTaskHub Thessaloniki',
-        description: 'Database management and cloud solution implementation for businesses. DevTaskHub in Thessaloniki.'
+        title: 'Database & Cloud Infrastructure Thessaloniki | DevTaskHub',
+        description: 'Database management & cloud solutions in Thessaloniki. Scalable & secure. Contact for a quote!'
       },
       aiIntegrationApplications: {
-        title: 'AI Integration Applications | DevTaskHub Thessaloniki',
-        description: 'AI and machine learning integration in applications for data analysis and automation. DevTaskHub in Thessaloniki.'
+        title: 'AI Integration Applications Thessaloniki | DevTaskHub',
+        description: 'AI & machine learning integration in applications in Thessaloniki. Data analysis & automation. Request a quote!'
       },
       ecommerceDevelopment: {
-        title: 'E-commerce Development | DevTaskHub Thessaloniki',
-        description: 'E-shop and online store development with modern capabilities. DevTaskHub in Thessaloniki.'
+        title: 'E-shop & E-commerce Development Thessaloniki | DevTaskHub',
+        description: 'E-shop and online store development in Thessaloniki. Complete e-commerce solution. Contact us!'
       },
       gameDevelopment: {
-        title: 'Game Development | DevTaskHub Thessaloniki',
-        description: 'Interactive game development for web, desktop and mobile platforms. DevTaskHub in Thessaloniki.'
+        title: 'Game Development Thessaloniki | Web, Mobile Games | DevTaskHub',
+        description: 'Interactive game development in Thessaloniki. Web, desktop & mobile platforms. Request a quote!'
       },
       contact: {
         title: 'Contact | DevTaskHub Thessaloniki',
-        description: 'Contact the DevTaskHub team for a quote or questions about our services.'
+        description: 'Contact DevTaskHub in Thessaloniki for a quote or questions. Free consultation! 📞✉️'
       },
       terms: {
         title: 'Terms & Conditions | DevTaskHub',
@@ -2114,6 +2118,7 @@ export const translations = {
       subtitle: 'Développeurs Full-Stack à Thessalonique spécialisés dans les applications web, applications mobiles et solutions IA',
       cta: 'Voir nos Services',
       contact: 'Contactez-nous',
+      websiteSamples: 'Échantillons de Sites Web',
       slides: [
         {
           title: 'Développement de Sites Web Modernes',
@@ -2720,6 +2725,56 @@ export const translations = {
             backHome: 'Retour à l\'Accueil'
           }
         },
+        gameDevelopment: {
+          hero: {
+            title: 'Services de Développement de Jeux Innovants',
+            subtitle: 'Développez votre prochain jeu à succès avec expertise, créativité et technologie de pointe.',
+            cta: 'Démarrer Votre Projet de Jeu'
+          },
+          services: {
+            title: 'Nos Services',
+            items: [
+              { title: 'Développement de Jeux Mobiles', desc: 'Création de jeux pour iOS & Android avec UX de pointe.' },
+              { title: 'Expériences VR/AR', desc: 'Expériences immersives de réalité virtuelle & augmentée.' },
+              { title: 'Jeux Multijoueurs en Ligne', desc: 'Multijoueur en ligne avec stabilité & mise à l\'échelle.' },
+              { title: 'Design de Jeu & Narration', desc: 'Conception de gameplay, personnages & histoire.' }
+            ]
+          },
+          process: {
+            title: 'Processus de Développement',
+            items: [
+              { step: 'Concept & Storyboard', desc: 'Idée, scénario, personnages, wireframes.' },
+              { step: 'Prototype & Design', desc: 'Création de prototype, UI/UX & assets artistiques.' },
+              { step: 'Développement & Tests', desc: 'Implémentation, tests & optimisation.' },
+              { step: 'Lancement & Support', desc: 'Lancement, mises à jour & support.' }
+            ]
+          },
+          technologies: {
+            title: 'Technologies & Outils'
+          },
+          portfolio: {
+            title: 'Points Forts du Portfolio',
+            items: [
+              { title: 'Aventure Fantastique', desc: 'RPG 3D avec style artistique unique & gameplay engageant.' },
+              { title: 'Course VR', desc: 'Jeu de course VR avec physique réaliste & graphiques.' },
+              { title: 'Puzzle Platformer', desc: 'Puzzle platformer 2D avec mécaniques innovantes.' }
+            ]
+          },
+          whyUs: {
+            title: 'Pourquoi Nous Choisir?',
+            items: [
+              'Développeurs & designers expérimentés',
+              'Méthodologie de développement agile',
+              'Intégration de technologies de pointe',
+              'Approche de design centrée sur le joueur'
+            ]
+          },
+          finalCta: {
+            title: 'Prêt à créer votre prochain jeu à succès?',
+            subtitle: 'Contactez-nous pour démarrer votre prochain projet de jeu.',
+            button: 'Contactez-nous Aujourd\'hui'
+          }
+        },
         uxUIDesign: {
           hero: {
             title: 'UX/UI Design',
@@ -2767,6 +2822,58 @@ export const translations = {
           finalCta: {
             title: 'Voulez-vous impressionner vos utilisateurs avec un design parfait?',
             button: 'Demander une Consultation Gratuite'
+          }
+        },
+        aiIntegrationApplications: {
+          hero: {
+            title: 'IA dans Vos Applications — De la Vision à la Mise en Œuvre',
+            subtitle: 'Nous utilisons des techniques de machine learning pour l\'analyse de données, la création de prédictions ou des fonctionnalités d\'application intelligentes.',
+            cta: 'Demander un Devis'
+          },
+          services: {
+            title: 'Services IA',
+            items: [
+              { icon: '📊', title: 'Analyse de Données & Prédictions avec ML', desc: 'Extraire des insights et des prédictions de vos données.' },
+              { icon: '🔍', title: 'Détection de Modèles & Automatisation', desc: 'Reconnaissance de modèles et automatisation des processus.' },
+              { icon: '🤖', title: 'Intégration de Modèles GPT & NLP', desc: 'Conversations IA, compréhension de texte, génération automatique de contenu.' },
+              { icon: '🎯', title: 'Moteurs de Recommandation Personnalisés', desc: 'Recommandations de produits/services avec IA.' },
+              { icon: '✨', title: 'Personnalisation de Contenu', desc: 'Personnalisation IA pour chaque utilisateur.' },
+              { icon: '💬', title: 'Chatbots & Agents IA en Temps Réel', desc: 'Bots intelligents pour support, ventes, réservations.' }
+            ]
+          },
+          technologies: {
+            title: 'Technologies & Plateformes',
+            tabs: [
+              { label: 'Frameworks IA' },
+              { label: 'Backend' },
+              { label: 'APIs' }
+            ]
+          },
+          workflow: {
+            title: 'Comment Je Travaille',
+            items: [
+              { title: 'Analyse des Besoins', desc: 'Comprendre les objectifs, les exigences, les données.' },
+              { title: 'Collecte & Nettoyage des Données', desc: 'Collecte, nettoyage, préparation des données.' },
+              { title: 'Formation de Modèles', desc: 'Formation ML, sélection d\'algorithmes.' },
+              { title: 'Expérimentation & Tests', desc: 'Évaluation, tests, réglage fin.' },
+              { title: 'Intégration UI', desc: 'Intégration API, connexion frontend.' },
+              { title: 'Surveillance & Mises à Jour', desc: 'Surveillance continue, améliorations.' }
+            ]
+          },
+          caseStudies: {
+            title: 'Exemples Réels',
+            subtitle: 'Études de Cas IA',
+            items: [
+              { client: 'E-shop', use: 'Recommandations de Produits IA', tech: 'TensorFlow, Python', kpi: '+25% conversion' },
+              { client: 'Fintech', use: 'Détection de Fraude', tech: 'PyTorch, REST API', kpi: '-40% taux de fraude' },
+              { client: 'Média', use: 'Génération Automatique de Contenu', tech: 'OpenAI, LangChain', kpi: '+60% production de contenu' }
+            ],
+            useLabel: 'Utilisation IA:',
+            techLabel: 'Technologies:'
+          },
+          finalCta: {
+            title: 'Donnez de l\'intelligence à votre application',
+            button: 'Commencer Maintenant'
           }
         }
       }
@@ -2852,7 +2959,8 @@ export const translations = {
             ios: 'App iOS',
             android: 'App Android',
             web: 'App Web'
-          }
+          },
+          viewApp: 'Voir l\'Application'
         }
       }
     },

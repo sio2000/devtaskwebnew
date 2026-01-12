@@ -1,0 +1,17 @@
+# Robots.txt for DevTaskHub
+# https://devtaskhub.com/robots.txt
+
+User-agent: *
+Allow: /
+
+# Disallow admin and private paths
+Disallow: /admin/
+Disallow: /private/
+Disallow: /*.json$
+
+# Sitemap
+Sitemap: https://devtaskhub.com/sitemap.xml
+
+# Crawl-delay (optional, remove if not needed)
+# Crawl-delay: 1
+

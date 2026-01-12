@@ -139,10 +139,10 @@ export default function AIIntegrationApplicationsPage() {
           {/* Left: Text */}
           <motion.div className="flex-1 flex flex-col items-start md:items-start text-left" initial={{ opacity: 0, x: -40 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8 }}>
             <motion.h1 className="text-4xl md:text-6xl font-extrabold mb-6 drop-shadow-lg tracking-tight bg-gradient-to-r from-blue-700 to-purple-600 bg-clip-text text-transparent" initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }} style={{ fontFamily: "'IBM Plex Sans', 'Inter', sans-serif" }}>
-              AI στις Εφαρμογές σας — Από το Όραμα στην Υλοποίηση
+              {t.services.pages.aiIntegrationApplications.hero.title}
             </motion.h1>
             <motion.p className="text-lg md:text-2xl text-gray-700 mb-10 font-medium max-w-2xl" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.2 }}>
-              Χρησιμοποιούμε τεχνικές machine learning για ανάλυση δεδομένων, δημιουργία προβλέψεων ή έξυπνες λειτουργίες εφαρμογών.
+              {t.services.pages.aiIntegrationApplications.hero.subtitle}
             </motion.p>
             <motion.button
               className="inline-block px-10 py-4 bg-gradient-to-r from-blue-600 to-purple-400 text-white rounded-full font-bold text-lg shadow-2xl border-2 border-transparent hover:border-blue-400 hover:shadow-[0_0_32px_0_#a78bfa] focus:outline-none focus:ring-2 focus:ring-blue-400 animate-fade-in flex items-center gap-2 relative overflow-hidden"
@@ -150,7 +150,7 @@ export default function AIIntegrationApplicationsPage() {
               whileTap={{ scale: 0.97 }}
               onClick={() => { window.location.href = '/contactme'; }}
             >
-              <span className="relative z-10">Ζητήστε Προσφορά</span>
+              <span className="relative z-10">{t.services.pages.aiIntegrationApplications.hero.cta}</span>
             </motion.button>
           </motion.div>
           {/* Right: AI Image */}

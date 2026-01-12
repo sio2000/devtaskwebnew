@@ -411,24 +411,15 @@ export default function MobileAppDevelopmentPage() {
                   <h3 className="text-2xl md:text-3xl font-bold text-blue-900">GetFit</h3>
                 </div>
                 <p className="text-lg text-gray-700 leading-relaxed">
-                  Μια ολοκληρωμένη εφαρμογή διαχείρισης γυμναστηρίων που αναπτύχθηκε από την DevTaskHub. 
-                  Η εφαρμογή προσφέρει πλήρη λύση για τη διαχείριση μελών, προγραμμάτων προπόνησης, 
-                  ραντεβού και πληρωμών.
+                  {t.portfolio.appShowcase.getFit.description}
                 </p>
               </div>
 
               {/* Features */}
               <div className="space-y-4">
-                <h4 className="text-xl font-semibold text-blue-800 mb-4">Βασικά Χαρακτηριστικά:</h4>
+                <h4 className="text-xl font-semibold text-blue-800 mb-4">{t.portfolio.appShowcase.getFit.featuresTitle}</h4>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  {[
-                    'Διαχείριση Μελών',
-                    'Προγράμματα Προπόνησης',
-                    'Σύστημα Ραντεβού',
-                    'Πληρωμές Online',
-                    'Push Notifications',
-                    'Αναφορές & Στατιστικά'
-                  ].map((feature, idx) => (
+                  {t.portfolio.appShowcase.getFit.features.map((feature, idx) => (
                     <motion.div 
                       key={feature}
                       className="flex items-center gap-3 bg-white/60 rounded-xl p-3 border border-blue-100"
@@ -446,12 +437,12 @@ export default function MobileAppDevelopmentPage() {
 
               {/* Platforms */}
               <div className="space-y-4">
-                <h4 className="text-xl font-semibold text-blue-800 mb-4">Διαθέσιμη σε:</h4>
+                <h4 className="text-xl font-semibold text-blue-800 mb-4">{t.portfolio.appShowcase.getFit.platformsTitle}</h4>
                 <div className="flex flex-wrap gap-4">
                   {[
-                    { icon: <FaApple className="text-2xl" />, name: 'iOS App', color: 'from-gray-800 to-gray-600' },
-                    { icon: <FaAndroid className="text-2xl" />, name: 'Android App', color: 'from-green-500 to-green-600' },
-                    { icon: <FaCloud className="text-2xl" />, name: 'Web App', color: 'from-blue-500 to-blue-600' }
+                    { icon: <FaApple className="text-2xl" />, name: t.portfolio.appShowcase.getFit.platforms.ios, color: 'from-gray-800 to-gray-600' },
+                    { icon: <FaAndroid className="text-2xl" />, name: t.portfolio.appShowcase.getFit.platforms.android, color: 'from-green-500 to-green-600' },
+                    { icon: <FaCloud className="text-2xl" />, name: t.portfolio.appShowcase.getFit.platforms.web, color: 'from-blue-500 to-blue-600' }
                   ].map((platform, idx) => (
                     <motion.div 
                       key={platform.name}
@@ -543,8 +534,8 @@ export default function MobileAppDevelopmentPage() {
       {/* Final CTA Section */}
       <section className="max-w-7xl mx-auto py-24 px-4 flex flex-col items-center text-center">
         <motion.div className="relative bg-gradient-to-br from-blue-100 via-white to-purple-100/80 backdrop-blur-lg rounded-3xl shadow-2xl border border-blue-100/40 p-12 flex flex-col items-center" initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
-          <h2 className="text-3xl md:text-4xl font-extrabold text-blue-900 mb-6 tracking-tight">Έχεις μια Ιδέα για Mobile App; Ας την Υλοποιήσουμε Μαζί.</h2>
-          <motion.button className="inline-block px-12 py-5 bg-gradient-to-r from-blue-600 to-purple-400 text-white rounded-full font-bold text-xl shadow-3xl border-2 border-transparent hover:border-blue-400 hover:shadow-[0_0_32px_0_#a78bfa] focus:outline-none focus:ring-2 focus:ring-blue-400 animate-fade-in flex items-center gap-2 relative overflow-hidden mt-6" whileHover={{ scale: 1.08, boxShadow: '0 0 32px 0 #a78bfa', filter: 'brightness(1.1)', borderColor: '#a78bfa' }} whileTap={{ scale: 0.97 }} onMouseEnter={() => playSound(hoverSfx)} onClick={() => { window.location.href = '/contactme'; }}><span className="relative z-10">Ζήτησε Προσφορά</span></motion.button>
+          <h2 className="text-3xl md:text-4xl font-extrabold text-blue-900 mb-6 tracking-tight">{t.services.pages.mobileAppDevelopment.finalCta.title}</h2>
+          <motion.button className="inline-block px-12 py-5 bg-gradient-to-r from-blue-600 to-purple-400 text-white rounded-full font-bold text-xl shadow-3xl border-2 border-transparent hover:border-blue-400 hover:shadow-[0_0_32px_0_#a78bfa] focus:outline-none focus:ring-2 focus:ring-blue-400 animate-fade-in flex items-center gap-2 relative overflow-hidden mt-6" whileHover={{ scale: 1.08, boxShadow: '0 0 32px 0 #a78bfa', filter: 'brightness(1.1)', borderColor: '#a78bfa' }} whileTap={{ scale: 0.97 }} onMouseEnter={() => playSound(hoverSfx)} onClick={() => { window.location.href = '/contactme'; }}><span className="relative z-10">{t.services.pages.mobileAppDevelopment.finalCta.button}</span></motion.button>
         </motion.div>
       </section>
 

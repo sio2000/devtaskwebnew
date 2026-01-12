@@ -238,6 +238,7 @@ const Portfolio: React.FC = () => {
                     src={image}
                     alt={title}
                     className="w-full h-full object-cover"
+                    loading="lazy"
                   />
                   {/* Project Icon */}
                   <div className="absolute top-4 right-4 p-3 bg-white/90 backdrop-blur-sm rounded-xl shadow-lg">
@@ -321,7 +322,7 @@ const Portfolio: React.FC = () => {
               <div className="space-y-4">
                 <div className="flex items-center gap-3 mb-4">
                   <div className="w-12 h-12 bg-white rounded-xl flex items-center justify-center shadow-lg border-2 border-blue-100">
-                    <img src={logoGymImg} alt="GetFit Logo" className="w-8 h-8 object-contain" />
+                    <img src={logoGymImg} alt="GetFit Logo" className="w-8 h-8 object-contain" loading="lazy" />
                   </div>
                   <h3 className="text-2xl md:text-3xl font-bold text-blue-900">GetFit</h3>
                 </div>
@@ -395,7 +396,7 @@ const Portfolio: React.FC = () => {
                 whileTap={{ scale: 0.95 }}
               >
                 <FaRocket className="text-xl" />
-                Δείτε την Εφαρμογή
+                {t.portfolio.appShowcase.getFit.viewApp}
               </motion.a>
             </motion.div>
 
@@ -425,6 +426,7 @@ const Portfolio: React.FC = () => {
                         src={item.img} 
                         alt={item.alt}
                         className="w-full h-24 object-cover rounded-xl"
+                        loading="lazy"
                       />
                     </motion.div>
                   ))}

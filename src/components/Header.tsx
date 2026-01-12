@@ -327,6 +327,24 @@ const Header: React.FC = () => {
                 animate={{ y: 0 }}
                 transition={{ duration: 0.3 }}
               >
+                {/* Αρχική Button - Mobile Only */}
+                <motion.button
+                  onClick={() => {
+                    if (location.pathname === '/') {
+                      scrollToSection('hero');
+                    } else {
+                      navigate('/');
+                    }
+                    setIsMenuOpen(false);
+                  }}
+                  className="text-gray-700 hover:text-blue-600 hover:bg-blue-50 block px-3 py-3 text-base font-medium w-full text-left transition-all duration-300 rounded-lg"
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.3, delay: 0 }}
+                  whileHover={{ x: 5 }}
+                >
+                  {t.nav.home}
+                </motion.button>
                 {Object.entries(t.nav)
                   .filter(([key]) => key !== 'mobileAppSamples' && key !== 'tagline' && key !== 'home') // Αφαιρούμε το mobileAppSamples, tagline και home από το loop
                   .map(([key, label], index) => {
