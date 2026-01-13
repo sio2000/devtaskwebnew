@@ -287,8 +287,8 @@ export default function MobileAppDevelopmentPage() {
             ))}
           </motion.div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <img src={appsImg} alt="Ομάδα Mobile Development" className="rounded-3xl shadow-2xl object-cover object-center w-full h-64 md:h-80" />
-            <img src={unsplashUX} alt="Mobile UI/UX" className="rounded-3xl shadow-2xl object-cover object-center w-full h-64 md:h-80" />
+            <img src={appsImg} alt="Ομάδα Mobile Development" className="rounded-3xl shadow-2xl object-cover object-center w-full h-64 md:h-80" loading="lazy" />
+            <img src={unsplashUX} alt="Mobile UI/UX" className="rounded-3xl shadow-2xl object-cover object-center w-full h-64 md:h-80" loading="lazy" />
           </div>
         </div>
       </section>
@@ -589,6 +589,7 @@ export default function MobileAppDevelopmentPage() {
                         src={item.img} 
                         alt={`GetFit App Screen ${idx + 1}`}
                         className="w-full h-24 object-cover rounded-xl"
+                        loading="lazy"
                       />
             </motion.div>
           ))}

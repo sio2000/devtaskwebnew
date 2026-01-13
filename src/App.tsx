@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { lazy, Suspense } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { LanguageProvider, useLanguage } from './contexts/LanguageContext';
 import { translations } from './data/translations';
@@ -10,24 +10,33 @@ import Portfolio from './components/Portfolio';
 import ChatbotSection from './components/ChatbotSection';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
-import ServiceDetails from './components/ServiceDetails';
 import ScrollToTop from './components/ScrollToTop';
 import Breadcrumbs from './components/Breadcrumbs';
 import HomeShowcaseSection from './components/HomeShowcaseSection';
-import TermsAndConditions from './components/TermsAndConditions';
-import WebDevelopmentPage from './components/WebDevelopmentPage';
-import MobileAppDevelopmentPage from './components/MobileAppDevelopmentPage';
-import ChatbotsAIAgentsPage from './components/ChatbotsAIAgentsPage';
-import SocialMediaManagementPage from './components/SocialMediaManagementPage';
-import SEOWebsiteOptimizationPage from './components/SEOWebsiteOptimizationPage';
-import UXUIDesignPage from './components/UXUIDesignPage';
-import AIIntegrationApplicationsPage from './components/AIIntegrationApplicationsPage';
-import EcommerceDevelopmentPage from './components/EcommerceDevelopmentPage';
-import GameDevelopmentPage from './components/GameDevelopmentPage';
-import VideoAnimationProductionPage from './components/VideoAnimationProductionPage';
-import DatabaseCloudInfrastructurePage from './components/DatabaseCloudInfrastructurePage';
 import { Helmet } from 'react-helmet';
 import { OrganizationSchema, ServiceSchema } from './components/SchemaMarkup';
+
+// Lazy load service pages for better performance
+const WebDevelopmentPage = lazy(() => import('./components/WebDevelopmentPage'));
+const MobileAppDevelopmentPage = lazy(() => import('./components/MobileAppDevelopmentPage'));
+const ChatbotsAIAgentsPage = lazy(() => import('./components/ChatbotsAIAgentsPage'));
+const SocialMediaManagementPage = lazy(() => import('./components/SocialMediaManagementPage'));
+const SEOWebsiteOptimizationPage = lazy(() => import('./components/SEOWebsiteOptimizationPage'));
+const UXUIDesignPage = lazy(() => import('./components/UXUIDesignPage'));
+const AIIntegrationApplicationsPage = lazy(() => import('./components/AIIntegrationApplicationsPage'));
+const EcommerceDevelopmentPage = lazy(() => import('./components/EcommerceDevelopmentPage'));
+const GameDevelopmentPage = lazy(() => import('./components/GameDevelopmentPage'));
+const VideoAnimationProductionPage = lazy(() => import('./components/VideoAnimationProductionPage'));
+const DatabaseCloudInfrastructurePage = lazy(() => import('./components/DatabaseCloudInfrastructurePage'));
+const TermsAndConditions = lazy(() => import('./components/TermsAndConditions'));
+const ServiceDetails = lazy(() => import('./components/ServiceDetails'));
+
+// Loading component for lazy loaded pages
+const PageLoader = () => (
+  <div className="min-h-screen flex items-center justify-center">
+    <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600"></div>
+  </div>
+);
 // Προσθήκη placeholders για όλες τις υπηρεσίες
 const Placeholder = ({ name }: { name: string }) => <div style={{padding:40, textAlign:'center', color:'#555'}}>Η σελίδα "{name}" δεν έχει υλοποιηθεί ακόμα.</div>;
 
@@ -62,7 +71,7 @@ function AppContent() {
             <Route path="/services" element={<Services />} />
             {/* Εδώ θα μπουν τα νέα premium service pages, π.χ.: */}
             <Route path="/services/web-development" element={
-              <>
+              <Suspense fallback={<PageLoader />}>
                 <Helmet>
                   <title>{t.meta.webDevelopment.title}</title>
                   <meta name="description" content={t.meta.webDevelopment.description} />
@@ -70,10 +79,10 @@ function AppContent() {
                 </Helmet>
                 <ServiceSchema name={t.meta.webDevelopment.title} description={t.meta.webDevelopment.description} serviceType="Web Development" />
                 <WebDevelopmentPage />
-              </>
+              </Suspense>
             } />
             <Route path="/services/mobile-app-development" element={
-              <>
+              <Suspense fallback={<PageLoader />}>
                 <Helmet>
                   <title>{t.meta.mobileAppDevelopment.title}</title>
                   <meta name="description" content={t.meta.mobileAppDevelopment.description} />
@@ -81,10 +90,10 @@ function AppContent() {
                 </Helmet>
                 <ServiceSchema name={t.meta.mobileAppDevelopment.title} description={t.meta.mobileAppDevelopment.description} serviceType="Mobile App Development" />
                 <MobileAppDevelopmentPage />
-              </>
+              </Suspense>
             } />
             <Route path="/services/chatbots-ai-agents" element={
-              <>
+              <Suspense fallback={<PageLoader />}>
                 <Helmet>
                   <title>{t.meta.chatbotsAIAgents.title}</title>
                   <meta name="description" content={t.meta.chatbotsAIAgents.description} />
@@ -92,10 +101,10 @@ function AppContent() {
                 </Helmet>
                 <ServiceSchema name={t.meta.chatbotsAIAgents.title} description={t.meta.chatbotsAIAgents.description} serviceType="AI Chatbots" />
                 <ChatbotsAIAgentsPage />
-              </>
+              </Suspense>
             } />
             <Route path="/services/social-media-management" element={
-              <>
+              <Suspense fallback={<PageLoader />}>
                 <Helmet>
                   <title>{t.meta.socialMediaManagement.title}</title>
                   <meta name="description" content={t.meta.socialMediaManagement.description} />
@@ -103,10 +112,10 @@ function AppContent() {
                 </Helmet>
                 <ServiceSchema name={t.meta.socialMediaManagement.title} description={t.meta.socialMediaManagement.description} serviceType="Social Media Management" />
                 <SocialMediaManagementPage />
-              </>
+              </Suspense>
             } />
             <Route path="/services/video-animation-production" element={
-              <>
+              <Suspense fallback={<PageLoader />}>
                 <Helmet>
                   <title>{t.meta.videoAnimationProduction.title}</title>
                   <meta name="description" content={t.meta.videoAnimationProduction.description} />
@@ -114,10 +123,10 @@ function AppContent() {
                 </Helmet>
                 <ServiceSchema name={t.meta.videoAnimationProduction.title} description={t.meta.videoAnimationProduction.description} serviceType="Video Production" />
                 <VideoAnimationProductionPage />
-              </>
+              </Suspense>
             } />
             <Route path="/services/seo-website-optimization" element={
-              <>
+              <Suspense fallback={<PageLoader />}>
                 <Helmet>
                   <title>{t.meta.seoWebsiteOptimization.title}</title>
                   <meta name="description" content={t.meta.seoWebsiteOptimization.description} />
@@ -125,11 +134,11 @@ function AppContent() {
                 </Helmet>
                 <ServiceSchema name={t.meta.seoWebsiteOptimization.title} description={t.meta.seoWebsiteOptimization.description} serviceType="SEO Services" />
                 <SEOWebsiteOptimizationPage />
-              </>
+              </Suspense>
             } />
             <Route path="/services/multimedia-content-creation" element={<Placeholder name="Multimedia Content Creation" />} />
             <Route path="/services/ux-ui-design" element={
-              <>
+              <Suspense fallback={<PageLoader />}>
                 <Helmet>
                   <title>{t.meta.uxUIDesign.title}</title>
                   <meta name="description" content={t.meta.uxUIDesign.description} />
@@ -137,10 +146,10 @@ function AppContent() {
                 </Helmet>
                 <ServiceSchema name={t.meta.uxUIDesign.title} description={t.meta.uxUIDesign.description} serviceType="UX/UI Design" />
                 <UXUIDesignPage />
-              </>
+              </Suspense>
             } />
             <Route path="/services/database-cloud-infrastructure" element={
-              <>
+              <Suspense fallback={<PageLoader />}>
                 <Helmet>
                   <title>{t.meta.databaseCloudInfrastructure.title}</title>
                   <meta name="description" content={t.meta.databaseCloudInfrastructure.description} />
@@ -148,10 +157,10 @@ function AppContent() {
                 </Helmet>
                 <ServiceSchema name={t.meta.databaseCloudInfrastructure.title} description={t.meta.databaseCloudInfrastructure.description} serviceType="Cloud Infrastructure" />
                 <DatabaseCloudInfrastructurePage />
-              </>
+              </Suspense>
             } />
             <Route path="/services/ai-integration-applications" element={
-              <>
+              <Suspense fallback={<PageLoader />}>
                 <Helmet>
                   <title>{t.meta.aiIntegrationApplications.title}</title>
                   <meta name="description" content={t.meta.aiIntegrationApplications.description} />
@@ -159,10 +168,10 @@ function AppContent() {
                 </Helmet>
                 <ServiceSchema name={t.meta.aiIntegrationApplications.title} description={t.meta.aiIntegrationApplications.description} serviceType="AI Integration" />
                 <AIIntegrationApplicationsPage />
-              </>
+              </Suspense>
             } />
             <Route path="/services/ecommerce-development" element={
-              <>
+              <Suspense fallback={<PageLoader />}>
                 <Helmet>
                   <title>{t.meta.ecommerceDevelopment.title}</title>
                   <meta name="description" content={t.meta.ecommerceDevelopment.description} />
@@ -170,10 +179,10 @@ function AppContent() {
                 </Helmet>
                 <ServiceSchema name={t.meta.ecommerceDevelopment.title} description={t.meta.ecommerceDevelopment.description} serviceType="E-commerce Development" />
                 <EcommerceDevelopmentPage />
-              </>
+              </Suspense>
             } />
             <Route path="/services/game-development" element={
-              <>
+              <Suspense fallback={<PageLoader />}>
                 <Helmet>
                   <title>{t.meta.gameDevelopment.title}</title>
                   <meta name="description" content={t.meta.gameDevelopment.description} />
@@ -181,7 +190,7 @@ function AppContent() {
                 </Helmet>
                 <ServiceSchema name={t.meta.gameDevelopment.title} description={t.meta.gameDevelopment.description} serviceType="Game Development" />
                 <GameDevelopmentPage />
-              </>
+              </Suspense>
             } />
             {/* <Route path="/services/:slug" element={<ServiceDetails />} /> */}
             <Route path="/contact" element={
@@ -205,13 +214,13 @@ function AppContent() {
               </>
             } />
             <Route path="/terms" element={
-              <>
+              <Suspense fallback={<PageLoader />}>
                 <Helmet>
                   <title>{t.meta.terms.title}</title>
                   <meta name="description" content={t.meta.terms.description} />
                 </Helmet>
                 <TermsAndConditions />
-              </>
+              </Suspense>
             } />
           </Routes>
       </main>

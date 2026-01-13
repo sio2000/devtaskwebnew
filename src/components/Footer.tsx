@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 import { Heart, ArrowUp } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { useLanguage } from '../hooks/useLanguage';
@@ -7,7 +7,7 @@ import { useNavigate } from 'react-router-dom';
 import { useIsMobile } from '../hooks/useIsMobile';
 import { FaInstagram, FaFacebook, FaTiktok } from 'react-icons/fa';
 
-const Footer: React.FC = () => {
+const Footer = memo(() => {
   const { language } = useLanguage();
   const t = translations[language];
   const navigate = useNavigate();
@@ -188,6 +188,8 @@ const Footer: React.FC = () => {
       </div>
     </footer>
   );
-};
+});
+
+Footer.displayName = 'Footer';
 
 export default Footer;

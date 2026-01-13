@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, memo } from 'react';
 import { Menu, X, Globe } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useLanguage } from '../hooks/useLanguage';
@@ -6,7 +6,7 @@ import { translations } from '../data/translations';
 import { useNavigate, useLocation } from 'react-router-dom';
 import logo from '../assets/logo.png';
 
-const Header: React.FC = () => {
+const Header = memo(() => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [isLangMenuOpen, setIsLangMenuOpen] = useState(false);
@@ -503,6 +503,8 @@ const Header: React.FC = () => {
       </nav>
     </motion.header>
   );
-};
+});
+
+Header.displayName = 'Header';
 
 export default Header;

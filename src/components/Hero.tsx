@@ -57,6 +57,8 @@ const Hero: React.FC = () => {
                 src={webImage}
                 alt="Web Development Background"
                 className="w-full h-full object-cover"
+                loading="eager"
+                fetchPriority="high"
                 style={{
                   opacity: 0.6,
                 }}
