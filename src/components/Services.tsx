@@ -49,14 +49,20 @@ const Services: React.FC = () => {
   const { language } = useLanguage();
   const t = translations[language];
   const isMobile = useIsMobile();
-  // Φιλτράρω το servicesData ώστε να μην εμφανίζεται το multimedia-content-creation
-  // Στο mobile, αφαιρούμε επίσης: ai-integration-applications, seo-website-optimization, ux-ui-design
+  // Υπηρεσίες που δεν εμφανίζονται στο section της αρχικής σελίδας
+  // (παραμένουν διαθέσιμες ως ξεχωριστές σελίδες/υπηρεσίες, απλώς δεν εμφανίζονται εδώ)
+  const hiddenOnHome = new Set([
+    'multimedia-content-creation',
+    'ux-ui-design',
+    'database-cloud-infrastructure',
+    'social-media-management',
+    'video-animation-production',
+  ]);
   const filteredServices = servicesData.filter(service => {
-    if (service.slug === 'multimedia-content-creation') return false;
+    if (hiddenOnHome.has(service.slug)) return false;
     if (isMobile) {
-      if (service.slug === 'ai-integration-applications' || 
-          service.slug === 'seo-website-optimization' || 
-          service.slug === 'ux-ui-design') {
+      if (service.slug === 'ai-integration-applications' ||
+          service.slug === 'seo-website-optimization') {
         return false;
       }
     }

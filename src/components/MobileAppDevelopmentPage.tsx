@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { useLanguage } from '../hooks/useLanguage';
 import { translations } from '../data/translations';
 import { useIsMobile } from '../hooks/useIsMobile';
-import { FaApple, FaAndroid, FaReact, FaCloud, FaRocket, FaLock, FaPalette, FaBolt, FaStore, FaHeartbeat, FaGraduationCap, FaTruck, FaUsers, FaCode, FaSearch, FaPaintBrush, FaSyncAlt } from 'react-icons/fa';
+import { FaApple, FaAndroid, FaReact, FaCloud, FaRocket, FaLock, FaPalette, FaBolt, FaStore, FaHeartbeat, FaGraduationCap, FaTruck, FaUsers, FaCode, FaSearch, FaPaintBrush, FaSyncAlt, FaParking, FaMapMarkedAlt, FaGift } from 'react-icons/fa';
 import { SiFlutter, SiKotlin, SiSwift, SiFirebase, SiSupabase } from 'react-icons/si';
 import Lottie from 'lottie-react';
 // import mobileLottie from '../assets/lottie-mobiledev.json';
@@ -36,6 +36,12 @@ import v10Img from '../assets/v10.png';
 import v11Img from '../assets/v11.png';
 import v12Img from '../assets/v12.png';
 import logoGymImg from '../assets/logoGym.png';
+// T-Parking App Images
+import tparkingLogo from '../assets/tparkinglogo.png';
+import tparkingMap from '../assets/tparkingmap.png';
+import tparkingNavigation from '../assets/tparkingnavigation.png';
+import tparkingAwards from '../assets/tparkingawards.png';
+import tparkingHistory from '../assets/tparkingparkinghistory.png';
 // UI/UX Samples Images
 import UIBookReadingApp from '../assets/UIBookReadingApp.png';
 import UIcryptowallet from '../assets/UIcryptowallet.png';
@@ -605,6 +611,162 @@ export default function MobileAppDevelopmentPage() {
               </div>
             </motion.div>
           </div>
+          </motion.div>
+
+          {/* T-Parking App Showcase */}
+          <motion.div
+            className="relative bg-gradient-to-br from-emerald-50 via-white to-cyan-50 rounded-3xl shadow-2xl border border-emerald-100/40 p-8 md:p-12 overflow-hidden mt-12"
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
+            {/* Background decorative elements */}
+            <div className="absolute -top-20 -right-20 w-40 h-40 bg-gradient-to-br from-emerald-200/30 to-cyan-200/30 rounded-full blur-3xl"></div>
+            <div className="absolute -bottom-20 -left-20 w-32 h-32 bg-gradient-to-tr from-cyan-200/30 to-emerald-200/30 rounded-full blur-2xl"></div>
+
+            {/* Highlight Badges */}
+            <div className="relative z-10 flex flex-wrap gap-3 mb-8 justify-center">
+              <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-emerald-500 to-teal-500 text-white text-sm font-semibold shadow-lg">
+                <FaParking /> {t.portfolio.appShowcase.tParking.stats.firstInGreece}
+              </span>
+              <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-cyan-500 to-blue-500 text-white text-sm font-semibold shadow-lg">
+                <FaMapMarkedAlt /> {t.portfolio.appShowcase.tParking.stats.realTime}
+              </span>
+              <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-amber-500 to-orange-500 text-white text-sm font-semibold shadow-lg">
+                <FaGift /> {t.portfolio.appShowcase.tParking.stats.free}
+              </span>
+            </div>
+
+            <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              {/* Left: App Info */}
+              <motion.div
+                className="space-y-8"
+                initial={{ opacity: 0, x: -40 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+                viewport={{ once: true }}
+              >
+                <div className="space-y-4">
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className="w-12 h-12 bg-white rounded-xl flex items-center justify-center shadow-lg border-2 border-emerald-100">
+                      <img src={tparkingLogo} alt="T-Parking Logo" className="w-8 h-8 object-contain" />
+                    </div>
+                    <h3 className="text-2xl md:text-3xl font-bold text-emerald-900">{t.portfolio.appShowcase.tParking.name}</h3>
+                  </div>
+                  <p className="text-base md:text-lg font-semibold text-emerald-700 leading-relaxed">
+                    {t.portfolio.appShowcase.tParking.tagline}
+                  </p>
+                  <p className="text-lg text-gray-700 leading-relaxed">
+                    {t.portfolio.appShowcase.tParking.description}
+                  </p>
+                </div>
+
+                {/* Features */}
+                <div className="space-y-4">
+                  <h4 className="text-xl font-semibold text-emerald-800 mb-4">{t.portfolio.appShowcase.tParking.featuresTitle}</h4>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    {t.portfolio.appShowcase.tParking.features.map((feature, idx) => (
+                      <motion.div
+                        key={feature}
+                        className="flex items-center gap-3 bg-white/60 rounded-xl p-3 border border-emerald-100"
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.5, delay: 0.3 + idx * 0.08 }}
+                        viewport={{ once: true }}
+                      >
+                        <div className="w-2 h-2 bg-gradient-to-r from-emerald-500 to-cyan-500 rounded-full shrink-0"></div>
+                        <span className="text-gray-700 font-medium">{feature}</span>
+                      </motion.div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Platforms */}
+                <div className="space-y-4">
+                  <h4 className="text-xl font-semibold text-emerald-800 mb-4">{t.portfolio.appShowcase.tParking.platformsTitle}</h4>
+                  <div className="flex flex-wrap gap-4">
+                    {[
+                      { icon: <FaApple className="text-2xl" />, name: t.portfolio.appShowcase.tParking.platforms.ios, color: 'from-gray-800 to-gray-600', url: 'https://apps.apple.com/gr/app/t-parking/id6756634872' },
+                      { icon: <FaAndroid className="text-2xl" />, name: t.portfolio.appShowcase.tParking.platforms.android, color: 'from-green-500 to-green-600', url: 'https://play.google.com/store/apps/details?id=com.tparking.app' },
+                      { icon: <FaCloud className="text-2xl" />, name: t.portfolio.appShowcase.tParking.platforms.web, color: 'from-emerald-500 to-cyan-500', url: 'https://t-parking.com/' }
+                    ].map((platform, idx) => (
+                      <motion.a
+                        key={platform.name}
+                        href={platform.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={`flex items-center gap-3 bg-gradient-to-r ${platform.color} text-white rounded-xl px-4 py-3 shadow-lg cursor-pointer`}
+                        initial={{ opacity: 0, scale: 0.9 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        transition={{ duration: 0.5, delay: 0.5 + idx * 0.1 }}
+                        viewport={{ once: true }}
+                        whileHover={{ scale: 1.05 }}
+                      >
+                        {platform.icon}
+                        <span className="font-semibold">{platform.name}</span>
+                      </motion.a>
+                    ))}
+                  </div>
+                </div>
+
+                {/* CTA Button */}
+                <motion.a
+                  href="https://t-parking.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-3 bg-gradient-to-r from-emerald-600 to-cyan-500 text-white px-8 py-4 rounded-xl font-semibold text-lg shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  <FaParking className="text-xl" />
+                  {t.portfolio.appShowcase.tParking.viewApp}
+                </motion.a>
+              </motion.div>
+
+              {/* Right: App Screenshots/Visual */}
+              <motion.div
+                className="relative"
+                initial={{ opacity: 0, x: 40 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8, delay: 0.4 }}
+                viewport={{ once: true }}
+              >
+                <div className="relative bg-gradient-to-br from-emerald-100 to-cyan-100 rounded-3xl p-8 shadow-2xl">
+                  <div className="grid grid-cols-2 gap-4">
+                    {[
+                      { img: tparkingMap, alt: 'T-Parking Real-time Map' },
+                      { img: tparkingNavigation, alt: 'T-Parking Smart Navigation' },
+                      { img: tparkingAwards, alt: 'T-Parking Rewards & Coupons' },
+                      { img: tparkingHistory, alt: 'T-Parking Parking History' }
+                    ].map((item, idx) => (
+                      <motion.div
+                        key={idx}
+                        className="bg-white rounded-2xl p-2 shadow-lg overflow-hidden cursor-pointer"
+                        whileHover={{ scale: 1.05, zIndex: 10 }}
+                        whileTap={{ scale: 0.97 }}
+                        onClick={() => openFullscreen(item.img, item.alt)}
+                      >
+                        <img
+                          src={item.img}
+                          alt={item.alt}
+                          className="w-full h-48 md:h-56 object-cover rounded-xl"
+                          loading="lazy"
+                        />
+                      </motion.div>
+                    ))}
+                  </div>
+
+                  {/* Static decorative elements */}
+                  <div className="absolute -top-4 -right-4 w-8 h-8 bg-gradient-to-r from-emerald-500 to-cyan-500 rounded-full flex items-center justify-center text-white text-sm font-bold shadow-lg">
+                    <FaParking />
+                  </div>
+                  <div className="absolute -bottom-4 -left-4 w-6 h-6 bg-gradient-to-r from-amber-500 to-orange-500 rounded-full flex items-center justify-center text-white text-xs font-bold shadow-lg">
+                    <FaGift />
+                  </div>
+                </div>
+              </motion.div>
+            </div>
           </motion.div>
         </div>
       </section>

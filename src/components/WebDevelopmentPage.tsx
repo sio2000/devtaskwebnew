@@ -27,6 +27,11 @@ import hydrogenImg from '../assets/hydrogen.png';
 import cryptoImg from '../assets/crypto.png';
 import jewelsImg from '../assets/jewels.png';
 import cmdImg from '../assets/cmd.jpg';
+import advancedDermaImg from '../assets/advanced_derma.png';
+import barberImg from '../assets/barber.png';
+import leonidionHousesImg from '../assets/leonidionhouses.png';
+import bagImg from '../assets/bag.png';
+import tparkingSiteImg from '../assets/tparking.png';
 
 const floatingIcons = [
   { icon: <FaCode />, style: 'top-10 left-10 text-blue-400' },
@@ -382,6 +387,26 @@ export default function WebDevelopmentPage() {
               {
                 img: jewelsImg,
                 url: 'https://stsrr.netlify.app/'
+              },
+              {
+                img: advancedDermaImg,
+                url: 'https://starlit-maamoul-c1e3cb.netlify.app/'
+              },
+              {
+                img: barberImg,
+                url: 'https://ornate-gumption-e58078.netlify.app/'
+              },
+              {
+                img: leonidionHousesImg,
+                url: 'https://www.leonidionhouses.com/'
+              },
+              {
+                img: bagImg,
+                url: 'https://idyllic-mermaid-415d9f.netlify.app/'
+              },
+              {
+                img: tparkingSiteImg,
+                url: 'https://t-parking.com/'
               }
             ].map((s, idx) => {
               const sample = t.services.pages.webDevelopment.samples.items[idx];

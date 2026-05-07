@@ -136,7 +136,14 @@ const Header = memo(() => {
             transition={{ duration: 0.2 }}
           >
             <motion.button
-              onClick={() => navigate('/')}
+              onClick={() => {
+                if (location.pathname === '/') {
+                  window.scrollTo({ top: 0, behavior: 'smooth' });
+                } else {
+                  navigate('/');
+                  window.scrollTo({ top: 0, behavior: 'smooth' });
+                }
+              }}
               className="flex items-center gap-2 sm:gap-3 focus:outline-none min-w-0"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}

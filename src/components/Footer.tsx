@@ -6,6 +6,7 @@ import { translations } from '../data/translations';
 import { useNavigate } from 'react-router-dom';
 import { useIsMobile } from '../hooks/useIsMobile';
 import { FaInstagram, FaFacebook, FaTiktok } from 'react-icons/fa';
+import logo from '../assets/logo.png';
 
 const Footer = memo(() => {
   const { language } = useLanguage();
@@ -25,18 +26,13 @@ const Footer = memo(() => {
   };
 
   // Ορισμός υπηρεσιών με slug για routing (μεταφρασμένα)
+  // Εμφανίζονται μόνο: Web, Mobile, E-shop, Chatbots & AI, AI Integration
   const servicesList = [
     { label: t.footer.services.webDevelopment, slug: 'web-development' },
     { label: t.footer.services.mobileAppDevelopment, slug: 'mobile-app-development' },
     { label: t.footer.services.ecommerceDevelopment, slug: 'ecommerce-development' },
-    { label: t.footer.services.seoWebsiteOptimization, slug: 'seo-website-optimization' },
-    { label: t.footer.services.uxUIDesign, slug: 'ux-ui-design' },
-    { label: t.footer.services.videoAnimationProduction, slug: 'video-animation-production' },
-    { label: t.footer.services.socialMediaManagement, slug: 'social-media-management' },
     { label: t.footer.services.chatbotsAIAgents, slug: 'chatbots-ai-agents' },
     { label: t.footer.services.aiIntegrationApplications, slug: 'ai-integration-applications' },
-    { label: t.footer.services.databaseCloudInfrastructure, slug: 'database-cloud-infrastructure' },
-    { label: t.footer.services.gameDevelopment, slug: 'game-development' },
   ];
 
   // Υπολογισμός για balanced 2 columns
@@ -79,13 +75,16 @@ const Footer = memo(() => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Brand */}
           <div>
-            <h3 className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent mb-4">DevTaskHub</h3>
-            <p className="text-gray-300 leading-relaxed mb-4">{t.footer.description}</p>
-            <div className="flex items-center space-x-2 text-sm text-gray-400">
-              <span>{t.footer.madeWith}</span>
-              <span>❤️</span>
-              <span>{t.footer.inThessaloniki}</span>
+            <div className="flex items-center gap-3 mb-4">
+              <img
+                src={logo}
+                alt="DevTaskHub Logo"
+                className="h-12 w-auto rounded-xl shadow-md flex-shrink-0"
+                loading="lazy"
+              />
+              <h3 className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">DevTaskHub</h3>
             </div>
+            <p className="text-gray-300 leading-relaxed mb-4">{t.footer.description}</p>
           </div>
           {/* Services Quick Links */}
           <div>

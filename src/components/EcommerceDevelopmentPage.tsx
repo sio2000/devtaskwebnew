@@ -20,6 +20,11 @@ import hydrogenImg from '../assets/hydrogen.png';
 import hotelImg from '../assets/Hotel.png';
 import cryptoImg from '../assets/crypto.png';
 import jewelsImg from '../assets/jewels.png';
+import advancedDermaImg from '../assets/advanced_derma.png';
+import barberImg from '../assets/barber.png';
+import leonidionHousesImg from '../assets/leonidionhouses.png';
+import bagImg from '../assets/bag.png';
+import tparkingSiteImg from '../assets/tparking.png';
 
 function playSound(src: string) {
   if (!src) return;
@@ -138,6 +143,11 @@ export default function EcommerceDevelopmentPage() {
     { name: t.services.pages.ecommerceDevelopment.portfolio.clients[2].name, url: 'https://serenity-hotel-lux.netlify.app/', img: hotelImg, desc: t.services.pages.ecommerceDevelopment.portfolio.clients[2].desc },
     { name: t.services.pages.ecommerceDevelopment.portfolio.clients[3].name, url: 'https://panitoscryptocoin.com/', img: cryptoImg, desc: t.services.pages.ecommerceDevelopment.portfolio.clients[3].desc },
     { name: t.services.pages.ecommerceDevelopment.portfolio.clients[4].name, url: 'https://stsrr.netlify.app/', img: jewelsImg, desc: t.services.pages.ecommerceDevelopment.portfolio.clients[4].desc },
+    { name: t.services.pages.ecommerceDevelopment.portfolio.clients[5].name, url: 'https://starlit-maamoul-c1e3cb.netlify.app/', img: advancedDermaImg, desc: t.services.pages.ecommerceDevelopment.portfolio.clients[5].desc },
+    { name: t.services.pages.ecommerceDevelopment.portfolio.clients[6].name, url: 'https://ornate-gumption-e58078.netlify.app/', img: barberImg, desc: t.services.pages.ecommerceDevelopment.portfolio.clients[6].desc },
+    { name: t.services.pages.ecommerceDevelopment.portfolio.clients[7].name, url: 'https://www.leonidionhouses.com/', img: leonidionHousesImg, desc: t.services.pages.ecommerceDevelopment.portfolio.clients[7].desc },
+    { name: t.services.pages.ecommerceDevelopment.portfolio.clients[8].name, url: 'https://idyllic-mermaid-415d9f.netlify.app/', img: bagImg, desc: t.services.pages.ecommerceDevelopment.portfolio.clients[8].desc },
+    { name: t.services.pages.ecommerceDevelopment.portfolio.clients[9].name, url: 'https://t-parking.com/', img: tparkingSiteImg, desc: t.services.pages.ecommerceDevelopment.portfolio.clients[9].desc },
   ], [t]);
 
   return (

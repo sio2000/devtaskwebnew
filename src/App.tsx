@@ -13,6 +13,7 @@ import Footer from './components/Footer';
 import ScrollToTop from './components/ScrollToTop';
 import Breadcrumbs from './components/Breadcrumbs';
 import HomeShowcaseSection from './components/HomeShowcaseSection';
+import { useIsMobile } from './hooks/useIsMobile';
 import { Helmet } from 'react-helmet';
 import { OrganizationSchema, ServiceSchema } from './components/SchemaMarkup';
 
@@ -43,6 +44,7 @@ const Placeholder = ({ name }: { name: string }) => <div style={{padding:40, tex
 function AppContent() {
   const { language } = useLanguage();
   const t = translations[language];
+  const isMobile = useIsMobile();
   return (
     <Router>
         <ScrollToTop />
@@ -64,7 +66,7 @@ function AppContent() {
                 <Services />
                 <About />
                 <Portfolio />
-                <ChatbotSection />
+                {!isMobile && <ChatbotSection />}
                 <Contact />
               </>
             } />

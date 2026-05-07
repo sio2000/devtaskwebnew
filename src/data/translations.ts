@@ -5,8 +5,8 @@ export const translations = {
       home: 'Αρχική',
       services: 'Υπηρεσίες',
       about: 'Σχετικά',
-      portfolio: 'Portfolio',
-      mobileAppSamples: 'Δείγματα Mobile App',
+      portfolio: 'Οι Ιστοσελίδες μας',
+      mobileAppSamples: 'Εφαρμογές Κινητών',
       contact: 'Επικοινωνία',
       tagline: 'Εσύ σκέφτεσαι το όραμα. Εμείς την υλοποίηση!'
     },
@@ -24,7 +24,7 @@ export const translations = {
           subtitle: 'Δημιουργούμε responsive ιστοσελίδες με εστίαση στην απόδοση και UX'
         },
         {
-          title: 'Mobile Εφαρμογές για Επιχειρήσεις & Startups',
+          title: '100% Custom Mobile Εφαρμογές',
           subtitle: 'Native και cross-platform λύσεις για Android & iOS'
         },
         {
@@ -138,6 +138,26 @@ export const translations = {
               {
                 title: 'Πολυτελές Κοσμηματοπωλείο',
                 desc: 'E-commerce κοσμηματοπωλείου που εκθέτει πολύτιμα κοσμήματα και πολυτελή ρολόγια.'
+              },
+              {
+                title: 'Advanced Derma — Δερματολογία & Αισθητική Ιατρική',
+                desc: 'Σύστημα κρατήσεων ραντεβού για διάσημο δερματολογικό ιατρείο σε Αθήνα & Πειραιά, με gallery, online booking και παρουσίαση υπηρεσιών.'
+              },
+              {
+                title: "Devil's Barber — Premium Barber Studio",
+                desc: 'Barber shop στην Άρτα με street & rap αισθητική, gallery, online booking και προβολή υπηρεσιών κουρέματος & γενιών.'
+              },
+              {
+                title: 'Leonidion Houses — Booking Καταλυμάτων',
+                desc: 'Ιστοσελίδα κρατήσεων 6 καταλυμάτων στο Λεωνίδιο με online ηλεκτρονικές πληρωμές και πλήρες σύστημα διαχειριστή για κρατήσεις, ακυρώσεις & ενημερώσεις.'
+              },
+              {
+                title: 'HANDSTUFF — Χειροποίητες Δερμάτινες Τσάντες',
+                desc: 'E-shop για χειροποίητες δερμάτινες τσάντες με κατάλογο προϊόντων, gallery και branding.'
+              },
+              {
+                title: 'T-Parking — Real-time Parking Greece',
+                desc: 'Επίσημη ιστοσελίδα για την 1η εφαρμογή στην Ελλάδα που βρίσκει θέσεις parking στον δημόσιο δρόμο σε πραγματικό χρόνο, εντελώς δωρεάν.'
               }
             ]
           },
@@ -338,7 +358,12 @@ export const translations = {
               { name: 'HydrogenLife', desc: 'E-shop wellness με online κρατήσεις.' },
               { name: 'Serenity Hotel', desc: 'Online κρατήσεις & διαχείριση.' },
               { name: 'PanitosCrypto', desc: 'Προώθηση & πωλήσεις crypto.' },
-              { name: 'Πολυτελές Κοσμηματοπωλείο STSRR', desc: 'E-commerce πολυτελών κοσμημάτων και ρολόγων.' }
+              { name: 'Πολυτελές Κοσμηματοπωλείο STSRR', desc: 'E-commerce πολυτελών κοσμημάτων και ρολόγων.' },
+              { name: 'Advanced Derma — Δερματολογία & Αισθητική Ιατρική', desc: 'Σύστημα online κρατήσεων ραντεβού με gallery & παρουσίαση υπηρεσιών για δερματολογικό ιατρείο.' },
+              { name: "Devil's Barber — Premium Barber Studio", desc: 'Barber shop με street & rap αισθητική, gallery και online booking.' },
+              { name: 'Leonidion Houses — Booking Καταλυμάτων', desc: '6 καταλύματα με online πληρωμές, σύστημα διαχειριστή για κρατήσεις, ακυρώσεις & ενημερώσεις.' },
+              { name: 'HANDSTUFF — Χειροποίητες Δερμάτινες Τσάντες', desc: 'E-shop για χειροποίητες δερμάτινες τσάντες με κατάλογο, gallery και branding.' },
+              { name: 'T-Parking — Επίσημη Ιστοσελίδα Εφαρμογής', desc: 'Ιστοσελίδα για την 1η εφαρμογή στην Ελλάδα που βρίσκει parking σε πραγματικό χρόνο, εντελώς δωρεάν.' }
             ]
           },
           finalCta: {
@@ -835,6 +860,26 @@ export const translations = {
           title: 'Πολυτελές Κοσμηματοπωλείο',
           description: 'Εκλεπτυσμένο e-commerce κοσμηματοπωλείου πολυτελείας που παρουσιάζει πολύτιμα κοσμήματα και εκλεκτά ρολόγια. Η πλατφόρμα προσφέρει αναλυτικές παρουσιάσεις προϊόντων, σύστημα διαχείρισης καταλόγου και ασφαλές checkout για τους εκλεκτούς πελάτες της.'
         },
+        advancedDerma: {
+          title: 'Advanced Derma — Δερματολογία & Αισθητική Ιατρική',
+          description: 'Σύστημα κρατήσεων ραντεβού για διάσημο δερματολογικό ιατρείο σε Αθήνα & Πειραιά. Περιλαμβάνει gallery υπηρεσιών, online booking, παρουσίαση ιατρικού προφίλ και πλήρη πληροφόρηση ασθενών για δερματολογικές & αισθητικές θεραπείες.'
+        },
+        leonidionHouses: {
+          title: 'Leonidion Houses — Booking Καταλυμάτων',
+          description: 'Ολοκληρωμένη πλατφόρμα κρατήσεων για 6 καταλύματα στο Λεωνίδιο, με δυνατότητα online ηλεκτρονικών πληρωμών. Διαθέτει πλήρες σύστημα διαχειριστή για κρατήσεις, ακυρώσεις, ενημερώσεις διαθεσιμότητας και τιμολόγησης.'
+        },
+        barber: {
+          title: "Devil's Barber — Premium Barber Studio",
+          description: 'Επαγγελματικό κουρείο στην Άρτα με street & rap αισθητική. Η ιστοσελίδα προσφέρει gallery, online booking ραντεβού, παρουσίαση υπηρεσιών κουρέματος & περιποίησης γενιών και δυναμικό branding.'
+        },
+        handmadeBags: {
+          title: 'HANDSTUFF — Χειροποίητες Δερμάτινες Τσάντες',
+          description: 'E-shop παρουσίασης και πώλησης χειροποίητων δερμάτινων τσαντών. Περιλαμβάνει αναλυτικό κατάλογο προϊόντων, gallery, παρουσίαση brand και responsive σχεδιασμό για άριστη εμπειρία αγοράς.'
+        },
+        tparkingSite: {
+          title: 'T-Parking — Επίσημη Ιστοσελίδα Εφαρμογής',
+          description: 'Επίσημη ιστοσελίδα για την 1η εφαρμογή στην Ελλάδα που βρίσκει διαθέσιμες θέσεις parking στον δημόσιο δρόμο σε πραγματικό χρόνο, εντελώς δωρεάν. Παρουσιάζει την εφαρμογή, τις λειτουργίες πόντων & επιβραβεύσεων, τα οφέλη για την κοινότητα οδηγών και προωθεί downloads σε iOS & Android.'
+        },
         crypto: {
           title: 'Προώθηση Custom CryptoCoin',
           description: 'Δυναμική landing page για την προώθηση custom κρυπτονομίσματος με σύγχρονες animations, interactive elements, και conversion-optimized design. Η σελίδα παρουσιάζει το project με εντυπωσιακό τρόπο και ενθαρρύνει τους επισκέπτες να συμμετάσχουν.'
@@ -865,8 +910,6 @@ export const translations = {
             'Διαχείριση Μελών',
             'Προγράμματα Προπόνησης',
             'Σύστημα Ραντεβού',
-            'Πληρωμές Online',
-            'Push Notifications',
             'Αναφορές & Στατιστικά'
           ],
           platformsTitle: 'Διαθέσιμη σε:',
@@ -876,6 +919,34 @@ export const translations = {
             web: 'Web App'
           },
           viewApp: 'Δείτε την Εφαρμογή'
+        },
+        tParking: {
+          name: 'T-Parking',
+          tagline: 'Η 1η εφαρμογή στην Ελλάδα για εύρεση parking σε πραγματικό χρόνο — 100% δωρεάν!',
+          description: 'Η T-Parking είναι η πρώτη εφαρμογή στην Ελλάδα που βρίσκει διαθέσιμες θέσεις parking στον δημόσιο δρόμο σε πραγματικό χρόνο, εντελώς δωρεάν. Μέσα από την κοινότητα οδηγών, μοιράζεσαι τη θέση σου όταν ξεπαρκάρεις και κερδίζεις πόντους που μετατρέπονται σε κουπόνια & προσφορές σε κορυφαία καταστήματα της Ελλάδας.',
+          featuresTitle: 'Βασικά Χαρακτηριστικά:',
+          features: [
+            'Real-time θέσεις parking στον χάρτη',
+            'Έξυπνη πλοήγηση με ένα tap',
+            'Σύστημα πόντων & επιβραβεύσεων',
+            'Κουπόνια & προσφορές σε κορυφαία καταστήματα',
+            'Κρατήσεις θέσεων έως 2 ώρες',
+            'Push notifications για κοντινές θέσεις',
+            'Ιστορικό & στατιστικά εξοικονόμησης',
+            'Δίγλωσση (Ελληνικά & Αγγλικά)'
+          ],
+          platformsTitle: 'Διαθέσιμη σε:',
+          platforms: {
+            ios: 'iOS App',
+            android: 'Android App',
+            web: 'Web App'
+          },
+          viewApp: 'Δείτε την Εφαρμογή',
+          stats: {
+            free: '100% Δωρεάν',
+            firstInGreece: '1η στην Ελλάδα',
+            realTime: 'Real-time'
+          }
         }
       }
     },
@@ -1070,8 +1141,8 @@ export const translations = {
       home: 'Home',
       services: 'Services',
       about: 'About',
-      portfolio: 'Portfolio',
-      mobileAppSamples: 'Mobile App Samples',
+      portfolio: 'Our Websites',
+      mobileAppSamples: 'Mobile Apps',
       contact: 'Contact',
       tagline: 'You envision it. We build it!'
     },
@@ -1203,6 +1274,26 @@ export const translations = {
               {
                 title: 'Luxury Jewelry Store',
                 desc: 'E-commerce platform displaying precious gems and luxury watches.'
+              },
+              {
+                title: 'Advanced Derma — Dermatology & Aesthetic Medicine',
+                desc: 'Online appointment booking system for a renowned dermatology clinic in Athens & Piraeus, with gallery, online booking and service showcase.'
+              },
+              {
+                title: "Devil's Barber — Premium Barber Studio",
+                desc: 'Barber shop in Arta with a street & rap vibe, featuring gallery, online booking and full presentation of haircut & beard services.'
+              },
+              {
+                title: 'Leonidion Houses — Property Booking',
+                desc: 'Booking website for 6 accommodations in Leonidion with online payments and a full admin dashboard for bookings, cancellations and updates.'
+              },
+              {
+                title: 'HANDSTUFF — Handmade Leather Bags',
+                desc: 'E-shop for handcrafted leather bags with a detailed product catalog, gallery and branding.'
+              },
+              {
+                title: 'T-Parking — Real-time Parking Greece',
+                desc: 'Official website for the 1st app in Greece that finds parking spots on public streets in real time, completely free.'
               }
             ]
           },
@@ -1402,7 +1493,12 @@ export const translations = {
               { name: 'HydrogenLife', desc: 'Wellness e-shop with online reservations.' },
               { name: 'Serenity Hotel', desc: 'Online reservations & management.' },
               { name: 'PanitosCrypto', desc: 'Crypto promotion & sales.' },
-              { name: 'STSRR Luxury Jewelry', desc: 'E-commerce for luxury jewelry and fine watches.' }
+              { name: 'STSRR Luxury Jewelry', desc: 'E-commerce for luxury jewelry and fine watches.' },
+              { name: 'Advanced Derma — Dermatology & Aesthetic Medicine', desc: 'Online appointment booking system with gallery & service showcase for a dermatology clinic.' },
+              { name: "Devil's Barber — Premium Barber Studio", desc: 'Barber shop with a street & rap aesthetic, gallery and online booking.' },
+              { name: 'Leonidion Houses — Property Booking', desc: '6 accommodations with online payments and admin dashboard for bookings, cancellations & updates.' },
+              { name: 'HANDSTUFF — Handmade Leather Bags', desc: 'E-shop for handcrafted leather bags with catalog, gallery and branding.' },
+              { name: 'T-Parking — Official App Website', desc: 'Website for the 1st app in Greece that finds parking in real time, completely free.' }
             ]
           },
           finalCta: {
@@ -1897,6 +1993,26 @@ export const translations = {
           title: 'Luxury Jewelry Store',
           description: 'Refined luxury jewelry e-commerce platform showcasing precious gems and select timepieces. The platform offers comprehensive product presentations, catalog management system, and secure checkout for the most distinguished customers.'
         },
+        advancedDerma: {
+          title: 'Advanced Derma — Dermatology & Aesthetic Medicine',
+          description: 'Appointment booking system for a renowned dermatology clinic in Athens & Piraeus. Includes service gallery, online booking, doctor profile and complete patient information for dermatological & aesthetic treatments.'
+        },
+        leonidionHouses: {
+          title: 'Leonidion Houses — Property Booking',
+          description: 'Complete booking platform for 6 accommodations in Leonidion, featuring online electronic payments. Includes a full admin dashboard for bookings, cancellations, availability updates and pricing management.'
+        },
+        barber: {
+          title: "Devil's Barber — Premium Barber Studio",
+          description: 'Professional barber shop in Arta with a street & rap aesthetic. The website offers gallery, online appointment booking, presentation of haircut & beard grooming services and dynamic branding.'
+        },
+        handmadeBags: {
+          title: 'HANDSTUFF — Handmade Leather Bags',
+          description: 'E-shop showcasing and selling handcrafted leather bags. Includes a detailed product catalog, gallery, brand presentation and a fully responsive design for an excellent shopping experience.'
+        },
+        tparkingSite: {
+          title: 'T-Parking — Official App Website',
+          description: 'Official website for the 1st app in Greece that finds available parking spots on public streets in real time, completely free. It presents the app, the points & rewards system, the benefits for the driver community, and drives downloads on iOS & Android.'
+        },
         crypto: {
           title: 'Custom CryptoCoin Promotion',
           description: 'Dynamic landing page for promoting custom cryptocurrency with modern animations, interactive elements, and conversion-optimized design. The page presents the project in an impressive way and encourages visitors to participate.'
@@ -1927,8 +2043,6 @@ export const translations = {
             'Member Management',
             'Training Programs',
             'Appointment System',
-            'Online Payments',
-            'Push Notifications',
             'Reports & Statistics'
           ],
           platformsTitle: 'Available on:',
@@ -1938,6 +2052,34 @@ export const translations = {
             web: 'Web App'
           },
           viewApp: 'View App'
+        },
+        tParking: {
+          name: 'T-Parking',
+          tagline: 'The 1st app in Greece for real-time parking on public streets — 100% free!',
+          description: 'T-Parking is the first app in Greece that finds available parking spots on public streets in real time, completely free. Through the driver community, you share your spot when you leave and earn points that turn into coupons & offers at top stores in Greece.',
+          featuresTitle: 'Key Features:',
+          features: [
+            'Real-time parking spots on the map',
+            'Smart one-tap navigation',
+            'Points & rewards system',
+            'Coupons & offers at top stores',
+            'Spot reservations for up to 2 hours',
+            'Push notifications for nearby spots',
+            'History & savings statistics',
+            'Bilingual (Greek & English)'
+          ],
+          platformsTitle: 'Available on:',
+          platforms: {
+            ios: 'iOS App',
+            android: 'Android App',
+            web: 'Web App'
+          },
+          viewApp: 'View App',
+          stats: {
+            free: '100% Free',
+            firstInGreece: '1st in Greece',
+            realTime: 'Real-time'
+          }
         }
       }
     },
@@ -2132,8 +2274,8 @@ export const translations = {
       home: 'Accueil',
       services: 'Services',
       about: 'À propos',
-      portfolio: 'Portfolio',
-      mobileAppSamples: 'Échantillons d\'Applications Mobiles',
+      portfolio: 'Nos Sites Web',
+      mobileAppSamples: 'Applications Mobiles',
       contact: 'Contact',
       tagline: 'Vous pensez à la vision. Nous la réalisation!'
     },
@@ -2265,6 +2407,26 @@ export const translations = {
               {
                 title: 'Joaillerie Luxe',
                 desc: 'Plateforme e-commerce exposant des bijoux précieux et des montres de luxe.'
+              },
+              {
+                title: 'Advanced Derma — Dermatologie & Médecine Esthétique',
+                desc: 'Système de prise de rendez-vous en ligne pour une clinique de dermatologie renommée à Athènes & au Pirée, avec galerie, réservation en ligne et présentation des services.'
+              },
+              {
+                title: "Devil's Barber — Studio de Barbier Premium",
+                desc: 'Barbier à Arta avec une esthétique street & rap, comprenant galerie, réservation en ligne et présentation complète des services de coupe & soin de barbe.'
+              },
+              {
+                title: 'Leonidion Houses — Réservation de Logements',
+                desc: 'Site de réservation pour 6 logements à Léonidio avec paiements en ligne et tableau de bord administrateur complet pour réservations, annulations et mises à jour.'
+              },
+              {
+                title: 'HANDSTUFF — Sacs en Cuir Faits Main',
+                desc: 'Boutique en ligne pour sacs en cuir faits main avec catalogue de produits détaillé, galerie et identité de marque.'
+              },
+              {
+                title: 'T-Parking — Parking en Temps Réel Grèce',
+                desc: 'Site officiel de la 1ère application en Grèce qui trouve des places de parking dans la rue en temps réel, totalement gratuitement.'
               }
             ]
           },
@@ -2464,7 +2626,12 @@ export const translations = {
               { name: 'HydrogenLife', desc: 'Boutique wellness avec réservations en ligne.' },
               { name: 'Serenity Hotel', desc: 'Réservations en ligne et gestion.' },
               { name: 'PanitosCrypto', desc: 'Promotion et ventes crypto.' },
-              { name: 'STSRR Joaillerie Luxe', desc: 'E-commerce de bijoux de luxe et montres fines.' }
+              { name: 'STSRR Joaillerie Luxe', desc: 'E-commerce de bijoux de luxe et montres fines.' },
+              { name: 'Advanced Derma — Dermatologie & Médecine Esthétique', desc: 'Système de prise de rendez-vous en ligne avec galerie & présentation des services pour une clinique de dermatologie.' },
+              { name: "Devil's Barber — Studio de Barbier Premium", desc: 'Barbier avec esthétique street & rap, galerie et réservation en ligne.' },
+              { name: 'Leonidion Houses — Réservation de Logements', desc: '6 logements avec paiements en ligne et tableau de bord administrateur pour réservations, annulations & mises à jour.' },
+              { name: 'HANDSTUFF — Sacs en Cuir Faits Main', desc: 'Boutique en ligne pour sacs en cuir faits main avec catalogue, galerie et identité de marque.' },
+              { name: 'T-Parking — Site Officiel de l\'Application', desc: 'Site de la 1ère application en Grèce qui trouve des places de parking en temps réel, totalement gratuitement.' }
             ]
           },
           finalCta: {
@@ -2955,6 +3122,26 @@ export const translations = {
           title: 'Joaillerie de Luxe',
           description: 'Plateforme e-commerce de joaillerie de luxe raffinée présentant des pierres précieuses et des montres sélectionnées. La plateforme offre des présentations de produits complètes, un système de gestion de catalogue et un processus de paiement sécurisé pour la clientèle la plus distinguée.'
         },
+        advancedDerma: {
+          title: 'Advanced Derma — Dermatologie & Médecine Esthétique',
+          description: 'Système de prise de rendez-vous pour une clinique de dermatologie renommée à Athènes & au Pirée. Comprend une galerie de services, la réservation en ligne, le profil du médecin et toutes les informations patient pour les traitements dermatologiques & esthétiques.'
+        },
+        leonidionHouses: {
+          title: 'Leonidion Houses — Réservation de Logements',
+          description: 'Plateforme de réservation complète pour 6 logements à Léonidio, avec paiements électroniques en ligne. Inclut un tableau de bord administrateur complet pour les réservations, annulations, mises à jour de disponibilité et gestion tarifaire.'
+        },
+        barber: {
+          title: "Devil's Barber — Studio de Barbier Premium",
+          description: 'Barbier professionnel à Arta avec une esthétique street & rap. Le site web propose une galerie, la réservation de rendez-vous en ligne, la présentation des services de coupe & soin de barbe et une identité de marque dynamique.'
+        },
+        handmadeBags: {
+          title: 'HANDSTUFF — Sacs en Cuir Faits Main',
+          description: 'Boutique en ligne présentant et vendant des sacs en cuir faits main. Inclut un catalogue de produits détaillé, une galerie, la présentation de la marque et un design entièrement responsive pour une excellente expérience d\'achat.'
+        },
+        tparkingSite: {
+          title: 'T-Parking — Site Officiel de l\'Application',
+          description: 'Site officiel de la 1ère application en Grèce qui trouve des places de parking disponibles dans la rue en temps réel, totalement gratuitement. Il présente l\'application, le système de points & récompenses, les avantages pour la communauté de conducteurs et stimule les téléchargements sur iOS & Android.'
+        },
         crypto: {
           title: 'Promotion de CryptoMonnaie Personnalisée',
           description: 'Page d\'atterrissage dynamique pour promouvoir une cryptomonnaie personnalisée avec des animations modernes, des éléments interactifs et un design optimisé pour la conversion. La page présente le projet de manière impressionnante et encourage les visiteurs à participer.'
@@ -2985,8 +3172,6 @@ export const translations = {
             'Gestion des Membres',
             'Programmes d\'Entraînement',
             'Système de Rendez-vous',
-            'Paiements en Ligne',
-            'Notifications Push',
             'Rapports & Statistiques'
           ],
           platformsTitle: 'Disponible sur:',
@@ -2996,6 +3181,34 @@ export const translations = {
             web: 'App Web'
           },
           viewApp: 'Voir l\'Application'
+        },
+        tParking: {
+          name: 'T-Parking',
+          tagline: 'La 1ère application en Grèce pour trouver des places de parking en temps réel — 100% gratuite !',
+          description: 'T-Parking est la première application en Grèce qui trouve des places de parking disponibles dans la rue en temps réel, totalement gratuitement. Grâce à la communauté de conducteurs, vous partagez votre place lorsque vous partez et gagnez des points convertibles en coupons et offres dans les meilleurs magasins de Grèce.',
+          featuresTitle: 'Caractéristiques Clés:',
+          features: [
+            'Places de parking en temps réel sur la carte',
+            'Navigation intelligente en un clic',
+            'Système de points & récompenses',
+            'Coupons & offres dans les meilleurs magasins',
+            'Réservations de places jusqu\'à 2 heures',
+            'Notifications push pour places proches',
+            'Historique & statistiques d\'économies',
+            'Bilingue (Grec & Anglais)'
+          ],
+          platformsTitle: 'Disponible sur:',
+          platforms: {
+            ios: 'App iOS',
+            android: 'App Android',
+            web: 'App Web'
+          },
+          viewApp: 'Voir l\'Application',
+          stats: {
+            free: '100% Gratuit',
+            firstInGreece: '1ère en Grèce',
+            realTime: 'Temps Réel'
+          }
         }
       }
     },
