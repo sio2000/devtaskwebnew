@@ -4,8 +4,9 @@ import {
   BarChart, Bar, Cell, PieChart, Pie, Legend,
 } from 'recharts';
 import {
-  Lock, Users, Eye, Clock, Activity, Globe, Smartphone, Monitor, Tablet,
+  Lock, Users, Eye, EyeOff, Clock, Activity, Globe, Smartphone, Monitor, Tablet,
   RefreshCw, LogOut, TrendingUp, MousePointerClick, AlertCircle, Loader2,
+  ChevronLeft, ChevronRight,
 } from 'lucide-react';
 
 interface Stats {
@@ -28,6 +29,7 @@ interface Stats {
 
 const STATS_URL = '/.netlify/functions/stats';
 const PW_KEY = 'dth_admin_pw';
+const FEED_PAGE_SIZE = 10;
 const PALETTE = ['#6366f1', '#8b5cf6', '#ec4899', '#06b6d4', '#10b981', '#f59e0b', '#ef4444', '#3b82f6'];
 
 const fmtDur = (sec: number) => {
@@ -97,11 +99,13 @@ const BarList: React.FC<{ data: { name: string; value: number }[]; emptyLabel?: 
 
 const AdminPanel: React.FC = () => {
   const [password, setPassword] = useState('');
+  const [showPassword, setShowPassword] = useState(false);
   const [authed, setAuthed] = useState(false);
   const [data, setData] = useState<Stats | null>(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
   const [days, setDays] = useState(30);
+  const [feedPage, setFeedPage] = useState(0);
 
   const fetchStats = useCallback(async (pw: string, range: number, silent = false) => {
     if (!silent) setLoading(true);
@@ -120,6 +124,7 @@ const AdminPanel: React.FC = () => {
       }
       const json = (await res.json()) as Stats;
       setData(json);
+      setFeedPage(0);
       setAuthed(true);
       sessionStorage.setItem(PW_KEY, pw);
     } catch (e) {
@@ -180,15 +185,25 @@ const AdminPanel: React.FC = () => {
           <h1 className="text-xl font-bold text-white text-center mb-1">DevTaskHub Admin</h1>
           <p className="text-sm text-slate-400 text-center mb-6">Πίνακας στατιστικών & live tracking</p>
           <label htmlFor="admin-pw" className="block text-sm text-slate-300 mb-2">Κωδικός πρόσβασης</label>
-          <input
-            id="admin-pw"
-            type="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            autoFocus
-            className="w-full px-4 py-3 rounded-xl bg-slate-900/80 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 mb-4"
-            placeholder="••••••••"
-          />
+          <div className="relative mb-4">
+            <input
+              id="admin-pw"
+              type={showPassword ? 'text' : 'password'}
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              autoFocus
+              className="w-full px-4 py-3 pr-12 rounded-xl bg-slate-900/80 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+              placeholder="••••••••"
+            />
+            <button
+              type="button"
+              onClick={() => setShowPassword((v) => !v)}
+              className="absolute right-3 top-1/2 -translate-y-1/2 p-1.5 rounded-lg text-slate-400 hover:text-white hover:bg-slate-700/60 transition-colors"
+              aria-label={showPassword ? 'Απόκρυψη κωδικού' : 'Εμφάνιση κωδικού'}
+            >
+              {showPassword ? <EyeOff className="w-5 h-5" /> : <Eye className="w-5 h-5" />}
+            </button>
+          </div>
           {error && (
             <p className="flex items-start gap-2 text-sm text-red-400 mb-4">
               <AlertCircle className="w-4 h-4 mt-0.5 flex-shrink-0" /> {error}
@@ -208,6 +223,10 @@ const AdminPanel: React.FC = () => {
   }
 
   const t = data?.totals;
+  const recentAll = data?.recent ?? [];
+  const feedTotalPages = Math.max(1, Math.ceil(recentAll.length / FEED_PAGE_SIZE));
+  const safeFeedPage = Math.min(feedPage, feedTotalPages - 1);
+  const recentPage = recentAll.slice(safeFeedPage * FEED_PAGE_SIZE, safeFeedPage * FEED_PAGE_SIZE + FEED_PAGE_SIZE);
 
   // ─── Dashboard ───
   return (
@@ -351,8 +370,8 @@ const AdminPanel: React.FC = () => {
                 </tr>
               </thead>
               <tbody>
-                {(data?.recent ?? []).map((r, i) => (
-                  <tr key={i} className="border-b border-slate-800/60 hover:bg-slate-800/40">
+                {recentPage.map((r, i) => (
+                  <tr key={`${r.t}-${r.p}-${i}`} className="border-b border-slate-800/60 hover:bg-slate-800/40">
                     <td className="py-2.5 pr-4 text-slate-400 whitespace-nowrap">{fmtTime(r.t)}</td>
                     <td className="py-2.5 pr-4 text-white max-w-[200px] truncate">{r.p}</td>
                     <td className="py-2.5 pr-4"><span className="inline-flex items-center gap-1.5 text-slate-300">{deviceIcon(r.dev)} {r.dev}</span></td>
@@ -361,12 +380,40 @@ const AdminPanel: React.FC = () => {
                     <td className="py-2.5 pr-4 text-slate-400 max-w-[160px] truncate">{r.ref || 'Direct'}</td>
                   </tr>
                 ))}
-                {!data?.recent.length && (
+                {!recentAll.length && (
                   <tr><td colSpan={6} className="py-8 text-center text-slate-500">Καμία επίσκεψη ακόμη.</td></tr>
                 )}
               </tbody>
             </table>
           </div>
+          {recentAll.length > FEED_PAGE_SIZE && (
+            <div className="flex items-center justify-between gap-4 mt-4 pt-4 border-t border-slate-700/60">
+              <p className="text-sm text-slate-400">
+                {safeFeedPage * FEED_PAGE_SIZE + 1}–{Math.min((safeFeedPage + 1) * FEED_PAGE_SIZE, recentAll.length)} από {recentAll.length}
+              </p>
+              <div className="flex items-center gap-2">
+                <button
+                  type="button"
+                  onClick={() => setFeedPage((p) => Math.max(0, p - 1))}
+                  disabled={safeFeedPage === 0}
+                  className="flex items-center gap-1 px-3 py-1.5 rounded-lg text-sm bg-slate-800 border border-slate-700 text-slate-300 hover:bg-slate-700 disabled:opacity-40 disabled:cursor-not-allowed transition-colors"
+                >
+                  <ChevronLeft className="w-4 h-4" /> Προηγ.
+                </button>
+                <span className="text-sm text-slate-400 min-w-[4rem] text-center">
+                  {safeFeedPage + 1} / {feedTotalPages}
+                </span>
+                <button
+                  type="button"
+                  onClick={() => setFeedPage((p) => Math.min(feedTotalPages - 1, p + 1))}
+                  disabled={safeFeedPage >= feedTotalPages - 1}
+                  className="flex items-center gap-1 px-3 py-1.5 rounded-lg text-sm bg-slate-800 border border-slate-700 text-slate-300 hover:bg-slate-700 disabled:opacity-40 disabled:cursor-not-allowed transition-colors"
+                >
+                  Επόμ. <ChevronRight className="w-4 h-4" />
+                </button>
+              </div>
+            </div>
+          )}
         </Panel>
 
         <p className="text-xs text-slate-600 mt-6 text-center">

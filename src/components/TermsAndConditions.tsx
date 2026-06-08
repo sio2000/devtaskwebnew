@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { useLanguage } from '../hooks/useLanguage';
 import { translations } from '../data/translations';
 import { useIsMobile } from '../hooks/useIsMobile';
-import { FileText, Shield, AlertCircle, Database, Edit, Mail, CheckCircle } from 'lucide-react';
+import { FileText, Shield, AlertCircle, Database, Edit, Mail, CheckCircle, ShieldCheck, Scale, UserCheck, Cookie, Lock, Globe2, RefreshCw } from 'lucide-react';
 
 const TermsAndConditions: React.FC = () => {
   const { language } = useLanguage();
@@ -41,7 +41,70 @@ const TermsAndConditions: React.FC = () => {
       bgGradient: 'from-green-500/10 to-teal-500/10',
     },
     {
+      icon: ShieldCheck,
+      title: t.termsAndConditions.sections.privacyPolicy.title,
+      content: t.termsAndConditions.sections.privacyPolicy.content,
+      gradient: 'from-emerald-500 to-green-600',
+      bgGradient: 'from-emerald-500/10 to-green-600/10',
+    },
+    {
+      icon: Scale,
+      title: t.termsAndConditions.sections.gdprCompliance.title,
+      content: t.termsAndConditions.sections.gdprCompliance.content,
+      gradient: 'from-blue-600 to-indigo-600',
+      bgGradient: 'from-blue-600/10 to-indigo-600/10',
+    },
+    {
+      icon: Shield,
+      title: t.termsAndConditions.sections.legalBasis.title,
+      content: t.termsAndConditions.sections.legalBasis.content,
+      gradient: 'from-violet-500 to-purple-600',
+      bgGradient: 'from-violet-500/10 to-purple-600/10',
+    },
+    {
+      icon: UserCheck,
+      title: t.termsAndConditions.sections.yourRights.title,
+      content: t.termsAndConditions.sections.yourRights.content,
+      gradient: 'from-sky-500 to-blue-500',
+      bgGradient: 'from-sky-500/10 to-blue-500/10',
+    },
+    {
+      icon: Cookie,
+      title: t.termsAndConditions.sections.cookiesAnalytics.title,
+      content: t.termsAndConditions.sections.cookiesAnalytics.content,
+      gradient: 'from-amber-500 to-orange-500',
+      bgGradient: 'from-amber-500/10 to-orange-500/10',
+    },
+    {
+      icon: Lock,
+      title: t.termsAndConditions.sections.dataSecurity.title,
+      content: t.termsAndConditions.sections.dataSecurity.content,
+      gradient: 'from-rose-500 to-pink-500',
+      bgGradient: 'from-rose-500/10 to-pink-500/10',
+    },
+    {
+      icon: Globe2,
+      title: t.termsAndConditions.sections.internationalTransfers.title,
+      content: t.termsAndConditions.sections.internationalTransfers.content,
+      gradient: 'from-teal-500 to-cyan-600',
+      bgGradient: 'from-teal-500/10 to-cyan-600/10',
+    },
+    {
       icon: Edit,
+      title: t.termsAndConditions.sections.dataRetention.title,
+      content: t.termsAndConditions.sections.dataRetention.content,
+      gradient: 'from-indigo-500 to-blue-500',
+      bgGradient: 'from-indigo-500/10 to-blue-500/10',
+    },
+    {
+      icon: Mail,
+      title: t.termsAndConditions.sections.dataProtectionContact.title,
+      content: t.termsAndConditions.sections.dataProtectionContact.content,
+      gradient: 'from-cyan-500 to-blue-500',
+      bgGradient: 'from-cyan-500/10 to-blue-500/10',
+    },
+    {
+      icon: RefreshCw,
       title: t.termsAndConditions.sections.modifications.title,
       content: t.termsAndConditions.sections.modifications.content,
       gradient: 'from-indigo-500 to-blue-500',

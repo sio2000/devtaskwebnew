@@ -1,5 +1,5 @@
 import React from 'react';
-import { CheckCircle, Award, Target, Zap, Sparkles } from 'lucide-react';
+import { CheckCircle, Award, Target, Zap } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { useLanguage } from '../hooks/useLanguage';
 import { translations } from '../data/translations';
@@ -93,13 +93,6 @@ const About: React.FC = () => {
                     DevTaskHub
                   </span>
                   <span className="text-white/85 font-medium mt-1">Full-Stack Developers</span>
-                  <motion.div
-                    className="absolute inset-0 -z-10 flex items-center justify-center"
-                    animate={{ opacity: [0.4, 0.7, 0.4] }}
-                    transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut' }}
-                  >
-                    <Sparkles className="h-48 w-48 text-white/10" />
-                  </motion.div>
                 </div>
               </div>
 

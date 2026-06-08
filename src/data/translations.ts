@@ -1124,7 +1124,7 @@ export const translations = {
     // Terms and Conditions page content
     termsAndConditions: {
       title: 'Όροι & Προϋποθέσεις Χρήσης',
-      intro: 'Καλώς ήρθατε στο DevTaskHub (https://devtaskhub.com). Η παρούσα ιστοσελίδα δημιουργήθηκε και διαχειρίζεται από την ομάδα DevTaskHub. Η ονομασία "DevTaskHub" αποτελεί εταιρικό brand. Όλο το περιεχόμενο, οι υπηρεσίες και οι πληροφορίες που παρουσιάζονται στον παρόντα ιστότοπο διατίθενται από την ομάδα μας.',
+      intro: 'Καλώς ήρθατε στο DevTaskHub (https://devtaskhub.com). Η παρούσα ιστοσελίδα δημιουργήθηκε και διαχειρίζεται από την ομάδα DevTaskHub. Η ονομασία "DevTaskHub" αποτελεί εταιρικό brand. Όλο το περιεχόμενο, οι υπηρεσίες και οι πληροφορίες που παρουσιάζονται στον παρόντα ιστότοπο διατίθενται από την ομάδα μας. Η παρούσα σελίδα περιλαμβάνει τους όρους χρήσης, την Πολιτική Απορρήτου και τις διατάξεις συμμόρφωσης με τον Γενικό Κανονισμό Προστασίας Δεδομένων (GDPR — Κανονισμός (ΕΕ) 2016/679).',
       sections: {
         intellectualProperty: {
           title: 'Πνευματικά Δικαιώματα',
@@ -1141,19 +1141,55 @@ export const translations = {
         },
         dataCollection: {
           title: 'Συλλογή & Επεξεργασία Δεδομένων',
-          content: 'Η ιστοσελίδα ενδέχεται να συλλέγει τεχνικά δεδομένα (όπως cookies ή IP διευθύνσεις) με σκοπό την ανάλυση επισκεψιμότητας και τη βελτίωση της εμπειρίας χρήσης. Δεν γίνεται εμπορική αξιοποίηση των προσωπικών σας δεδομένων.'
+          content: 'Συλλέγουμε και επεξεργαζόμαστε προσωπικά δεδομένα μόνο όταν είναι απαραίτητο και με διαφάνεια:<ul class="list-disc pl-6 mt-3 space-y-2"><li><b>Φόρμα επικοινωνίας:</b> όνομα, email, θέμα, μήνυμα και προαιρετικά υπηρεσία — για να απαντήσουμε στο αίτημά σας.</li><li><b>First-party analytics:</b> ανώνυμο αναγνωριστικό επισκέπτη (localStorage), αναγνωριστικό συνεδρίας (sessionStorage), σελίδα, διάρκεια επίσκεψης, τύπος συσκευής/περιηγητή/λειτουργικού, γλώσσα, πηγή αναφοράς και προσεγγιστική γεωγραφική τοποθεσία (χώρα/πόλη από τον πάροχο hosting).</li><li><b>Τεχνικά δεδομένα:</b> IP διεύθυνση και server logs από τον πάροχο φιλοξενίας (Netlify) για ασφάλεια και λειτουργία.</li></ul><p class="mt-3">Δεν πωλούμε, ενοικιάζουμε ούτε ανταλλάσσουμε τα προσωπικά σας δεδομένα με τρίτους για εμπορικούς σκοπούς. Δεν χρησιμοποιούμε cookies τρίτων για διαφημιστική καταγραφή προφίλ.</p>'
+        },
+        privacyPolicy: {
+          title: 'Πολιτική Απορρήτου',
+          content: 'Η DevTaskHub σέβεται την ιδιωτικότητά σας. Η παρούσα Πολιτική Απορρήτου εξηγεί ποια δεδομένα συλλέγουμε, γιατί, πώς τα προστατεύουμε και ποια δικαιώματα έχετε.<p class="mt-3"><b>Υπεύθυνος Επεξεργασίας (Data Controller):</b> Θεοχάρης Παναγιώτης Σιώζος — devtaskhub@gmail.com</p><p class="mt-2">Επεξεργαζόμαστε δεδομένα σύμφωνα με τον Κανονισμό (ΕΕ) 2016/679 (GDPR), την ελληνική νομοθεσία (Ν. 4624/2019) και τις αρχές ελαχιστοποίησης, διαφάνειας και λογοδοσίας.</p>'
+        },
+        gdprCompliance: {
+          title: 'Συμμόρφωση με GDPR (ΕΕ 2016/679)',
+          content: 'Η επεξεργασία προσωπικών δεδομένων γίνεται σύμφωνα με τον Γενικό Κανονισμό Προστασίας Δεδομένων της Ευρωπαϊκής Ένωσης. Συγκεκριμένα:<ul class="list-disc pl-6 mt-3 space-y-2"><li>Επεξεργαζόμαστε δεδομένα νόμιμα, δίκαια και με διαφάνεια (άρθρο 5).</li><li>Συλλέγουμε μόνο τα απαραίτητα δεδομένα για τους σκοπούς που δηλώνουμε (data minimization).</li><li>Διατηρούμε δεδομένα μόνο για όσο χρειάζεται (storage limitation).</li><li>Εφαρμόζουμε τεχνικά και οργανωτικά μέτρα ασφαλείας (άρθρο 32).</li><li>Δεν λαμβάνουμε αυτοματοποιημένες αποφάσεις ούτε profiling με νομικές/σημαντικές επιπτώσεις (άρθρο 22).</li></ul>'
+        },
+        legalBasis: {
+          title: 'Νομική Βάση Επεξεργασίας',
+          content: 'Η επεξεργασία βασίζεται στις εξής νομικές βάσεις του GDPR (άρθρο 6):<ul class="list-disc pl-6 mt-3 space-y-2"><li><b>Συγκατάθεση (άρθρο 6(1)(α)):</b> όταν συμπληρώνετε τη φόρμα επικοινωνίας και μας στέλνετε μήνυμα.</li><li><b>Έννομο συμφέρον (άρθρο 6(1)(φ)):</b> για ανώνυμα first-party analytics, ασφάλεια ιστοσελίδας και βελτίωση εμπειρίας χρήστη — χωρίς καταγραφή ταυτότητας.</li><li><b>Νομική υποχρέωση (άρθρο 6(1)(γ)):</b> όταν απαιτείται για συμμόρφωση με εφαρμοστέο δίκαιο.</li></ul>'
+        },
+        yourRights: {
+          title: 'Δικαιώματα Υποκειμένων Δεδομένων',
+          content: 'Σύμφωνα με τα άρθρα 15–22 του GDPR, έχετε δικαίωμα:<ul class="list-disc pl-6 mt-3 space-y-2"><li><b>Πρόσβασης</b> στα δεδομένα που διατηρούμε για εσάς.</li><li><b>Διόρθωσης</b> ανακριβών ή ελλιπών δεδομένων.</li><li><b>Διαγραφής</b> («δικαίωμα στη λήθη»), όπου εφαρμόζεται.</li><li><b>Περιορισμού</b> της επεξεργασίας.</li><li><b>Φορητότητας</b> δεδομένων σε δομημένη, κοινώς χρησιμοποιούμενη μορφή.</li><li><b>Εναντίωσης</b> στην επεξεργασία βάσει έννομου συμφέροντος.</li><li><b>Ανάκλησης συγκατάθεσης</b> ανά πάσα στιγμή, χωρίς να επηρεάζεται η νομιμότητα προηγούμενης επεξεργασίας.</li></ul><p class="mt-3">Για άσκηση δικαιωμάτων, στείλτε email στο <a href="mailto:devtaskhub@gmail.com" class="text-blue-600 underline">devtaskhub@gmail.com</a>. Θα απαντήσουμε εντός <b>30 ημερών</b>. Έχετε επίσης δικαίωμα καταγγελίας στην <b>Αρχή Προστασίας Δεδομένων Προσωπικού Χαρακτήρα (ΑΠΔΠΧ)</b>: <a href="https://www.dpa.gr" class="text-blue-600 underline" target="_blank" rel="noopener noreferrer">www.dpa.gr</a>.</p>'
+        },
+        cookiesAnalytics: {
+          title: 'Cookies & Analytics',
+          content: 'Η ιστοσελίδα <b>δεν χρησιμοποιεί cookies τρίτων</b> για διαφημιστική καταγραφή ή social tracking. Χρησιμοποιούμε:<ul class="list-disc pl-6 mt-3 space-y-2"><li><b>Τοπική αποθήκευση (localStorage/sessionStorage):</b> ανώνυμο αναγνωριστικό επισκέπτη για first-party στατιστικά — όχι προσωπική ταυτοποίηση.</li><li><b>Embedded chatbot (FastBots):</b> ενδέχεται να τοποθετεί δικά του cookies όταν ανοίγετε το chat widget· ισχύει η πολιτική του παρόχου.</li></ul><p class="mt-3">Μπορείτε να διαγράψετε localStorage/sessionStorage από τις ρυθμίσεις του browser ή να χρησιμοποιήσετε λειτουργία ιδιωτικής περιήγησης.</p>'
+        },
+        dataSecurity: {
+          title: 'Ασφάλεια Δεδομένων',
+          content: 'Εφαρμόζουμε κατάλληλα τεχνικά και οργανωτικά μέτρα για την προστασία δεδομένων, συμπεριλαμβανομένων: κρυπτογράφησης HTTPS/TLS, περιορισμένης πρόσβασης στο admin panel, ασφαλούς φιλοξενίας (Netlify) και μη αποθήκευσης ευαίσθητων δεδομένων πέρα από ό,τι απαιτείται για επικοινωνία. Κανένα σύστημα δεν είναι 100% ασφαλές· σε περίπτωση παραβίασης θα ενημερώσουμε τους χρήστες και την ΑΠΔΠΧ όπου απαιτείται από το GDPR (άρθρο 33–34).'
+        },
+        internationalTransfers: {
+          title: 'Διαβίβαση Δεδομένων εκτός ΕΕ',
+          content: 'Η φιλοξενία γίνεται μέσω Netlify (ΗΠΑ/ΕΕ). Όπου δεδομένα διαβιβάζονται εκτός ΕΟΧ, βασιζόμαστε σε κατάλληλες εγγυήσεις, όπως οι <b>Standard Contractual Clauses (SCCs)</b> της Ευρωπαϊκής Επιτροπής και τα μέτρα του παρόχου. Για analytics, αποθηκεύουμε μόνο ανώνυμα στατιστικά στο Netlify Blobs — χωρίς ονόματα, emails ή άλλα άμεα προσωπικά στοιχεία.'
+        },
+        dataRetention: {
+          title: 'Διάρκεια Διατήρησης',
+          content: '<ul class="list-disc pl-6 space-y-2"><li><b>Μηνύματα επικοινωνίας:</b> διατηρούνται όσο απαιτείται για την εξυπηρέτηση του αιτήματος και τυχόν νομικές υποχρεώσεις (συνήθως έως 12 μήνες, εκτός αν ζητηθεί διαγραφή).</li><li><b>Analytics:</b> ανώνυμα στατιστικά ανά ημέρα, έως 90 ημέρες rolling window.</li><li><b>Server logs:</b> σύμφωνα με την πολιτική του Netlify (συνήθως περιορισμένη διάρκεια).</li></ul>'
+        },
+        dataProtectionContact: {
+          title: 'Επικοινωνία για Προστασία Δεδομένων',
+          content: 'Για οποιοδήποτε θέμα σχετικά με προσωπικά δεδομένα, άσκηση δικαιωμάτων GDPR ή αιτήματα διαγραφής/διόρθωσης, επικοινωνήστε:<p class="mt-3"><b>Θεοχάρης Παναγιώτης Σιώζος</b><br/>Email: <a href="mailto:devtaskhub@gmail.com" class="text-blue-600 underline">devtaskhub@gmail.com</a><br/>Τηλέφωνο: <a href="tel:+306971982563" class="text-blue-600 underline">+30 697 198 2563</a></p>'
         },
         modifications: {
           title: 'Τροποποιήσεις',
-          content: 'Ο ιδιοκτήτης διατηρεί το δικαίωμα τροποποίησης των όρων ανά πάσα στιγμή χωρίς προηγούμενη ειδοποίηση. Συνιστάται να επισκέπτεστε τη σελίδα αυτή τακτικά για ενδεχόμενες αλλαγές.'
+          content: 'Ο ιδιοκτήτης διατηρεί το δικαίωμα τροποποίησης των όρων, της πολιτικής απορρήτου και των GDPR ρυθμίσεων ανά πάσα στιγμή. Σημαντικές αλλαγές θα αναρτώνται σε αυτή τη σελίδα με ενημερωμένη ημερομηνία. Συνιστάται τακτική επίσκεψη.'
         },
         contact: {
-          title: 'Επικοινωνία',
-          content: 'Για οποιοδήποτε νομικό ή τεχνικό θέμα, μπορείτε να επικοινωνήσετε με τον ιδιοκτήτη μέσω email: <a href="mailto:Devtaskhub@gmail.com" className="text-blue-600 underline">Devtaskhub@gmail.com</a>.'
+          title: 'Γενική Επικοινωνία',
+          content: 'Για οποιοδήποτε νομικό ή τεχνικό θέμα, μπορείτε να επικοινωνήσετε με τον ιδιοκτήτη μέσω email: <a href="mailto:devtaskhub@gmail.com" class="text-blue-600 underline">devtaskhub@gmail.com</a>.'
         }
       },
-      acceptance: 'Με τη χρήση της παρούσας ιστοσελίδας αποδέχεστε πλήρως τους παραπάνω όρους.',
-      lastUpdate: 'Τελευταία ενημέρωση: Ιούνιος 2024'
+      acceptance: 'Με τη χρήση της παρούσας ιστοσελίδας αποδέχεστε πλήρως τους παραπάνω όρους, την Πολιτική Απορρήτου και τις διατάξεις GDPR.',
+      lastUpdate: 'Τελευταία ενημέρωση: Ιούνιος 2026'
     },
     // HomeShowcase Section
     homeShowcase: {
@@ -2291,7 +2327,7 @@ export const translations = {
     // Terms and Conditions page content
     termsAndConditions: {
       title: 'Terms & Conditions of Use',
-      intro: 'Welcome to DevTaskHub (https://devtaskhub.com). This website is created and managed by the DevTaskHub team. The name "DevTaskHub" is a corporate brand. All content, services and information presented on this website are provided by our team.',
+      intro: 'Welcome to DevTaskHub (https://devtaskhub.com). This website is created and managed by the DevTaskHub team. The name "DevTaskHub" is a corporate brand. All content, services and information presented on this website are provided by our team. This page includes terms of use, the Privacy Policy, and GDPR compliance provisions (Regulation (EU) 2016/679).',
       sections: {
         intellectualProperty: {
           title: 'Intellectual Property Rights',
@@ -2308,19 +2344,55 @@ export const translations = {
         },
         dataCollection: {
           title: 'Data Collection & Processing',
-          content: 'The website may collect technical data (such as cookies or IP addresses) for the purpose of analyzing traffic and improving the user experience. No commercial use of your personal data is made.'
+          content: 'We collect and process personal data only when necessary and with transparency:<ul class="list-disc pl-6 mt-3 space-y-2"><li><b>Contact form:</b> name, email, subject, message and optional service — to respond to your request.</li><li><b>First-party analytics:</b> anonymous visitor ID (localStorage), session ID (sessionStorage), page, visit duration, device/browser/OS type, language, referrer and approximate geo location (country/city from hosting provider).</li><li><b>Technical data:</b> IP address and server logs from our host (Netlify) for security and operation.</li></ul><p class="mt-3">We do not sell, rent or trade your personal data to third parties for commercial purposes. We do not use third-party advertising or profiling cookies.</p>'
+        },
+        privacyPolicy: {
+          title: 'Privacy Policy',
+          content: 'DevTaskHub respects your privacy. This Privacy Policy explains what data we collect, why, how we protect it, and your rights.<p class="mt-3"><b>Data Controller:</b> Theocharis Panagiotis Siozos — devtaskhub@gmail.com</p><p class="mt-2">We process data in accordance with Regulation (EU) 2016/679 (GDPR), applicable Greek law (Law 4624/2019), and the principles of minimization, transparency and accountability.</p>'
+        },
+        gdprCompliance: {
+          title: 'GDPR Compliance (EU 2016/679)',
+          content: 'Personal data is processed in accordance with the EU General Data Protection Regulation. Specifically:<ul class="list-disc pl-6 mt-3 space-y-2"><li>We process data lawfully, fairly and transparently (Article 5).</li><li>We collect only data necessary for stated purposes (data minimization).</li><li>We retain data only as long as needed (storage limitation).</li><li>We apply appropriate technical and organizational security measures (Article 32).</li><li>We do not make automated decisions or profiling with legal/significant effects (Article 22).</li></ul>'
+        },
+        legalBasis: {
+          title: 'Legal Basis for Processing',
+          content: 'Processing is based on the following GDPR legal bases (Article 6):<ul class="list-disc pl-6 mt-3 space-y-2"><li><b>Consent (Art. 6(1)(a)):</b> when you submit the contact form and send us a message.</li><li><b>Legitimate interest (Art. 6(1)(f)):</b> for anonymous first-party analytics, website security and UX improvement — without identity tracking.</li><li><b>Legal obligation (Art. 6(1)(c)):</b> when required to comply with applicable law.</li></ul>'
+        },
+        yourRights: {
+          title: 'Data Subject Rights',
+          content: 'Under GDPR Articles 15–22, you have the right to:<ul class="list-disc pl-6 mt-3 space-y-2"><li><b>Access</b> your personal data.</li><li><b>Rectification</b> of inaccurate or incomplete data.</li><li><b>Erasure</b> ("right to be forgotten"), where applicable.</li><li><b>Restriction</b> of processing.</li><li><b>Data portability</b> in a structured, commonly used format.</li><li><b>Object</b> to processing based on legitimate interest.</li><li><b>Withdraw consent</b> at any time without affecting prior lawful processing.</li></ul><p class="mt-3">To exercise your rights, email <a href="mailto:devtaskhub@gmail.com" class="text-blue-600 underline">devtaskhub@gmail.com</a>. We respond within <b>30 days</b>. You may also lodge a complaint with the <b>Hellenic Data Protection Authority (HDPA)</b>: <a href="https://www.dpa.gr" class="text-blue-600 underline" target="_blank" rel="noopener noreferrer">www.dpa.gr</a>.</p>'
+        },
+        cookiesAnalytics: {
+          title: 'Cookies & Analytics',
+          content: 'This website <b>does not use third-party cookies</b> for advertising or social tracking. We use:<ul class="list-disc pl-6 mt-3 space-y-2"><li><b>Local storage (localStorage/sessionStorage):</b> anonymous visitor ID for first-party statistics — not personal identification.</li><li><b>Embedded chatbot (FastBots):</b> may set its own cookies when you open the chat widget; the provider\'s policy applies.</li></ul><p class="mt-3">You can clear localStorage/sessionStorage in your browser settings or use private browsing mode.</p>'
+        },
+        dataSecurity: {
+          title: 'Data Security',
+          content: 'We implement appropriate technical and organizational measures including HTTPS/TLS encryption, restricted admin access, secure hosting (Netlify), and no storage of sensitive data beyond what is needed for communication. No system is 100% secure; in case of a breach we will notify users and the HDPA as required by GDPR (Articles 33–34).'
+        },
+        internationalTransfers: {
+          title: 'International Data Transfers',
+          content: 'Hosting is provided via Netlify (USA/EU). Where data is transferred outside the EEA, we rely on appropriate safeguards such as the European Commission\'s <b>Standard Contractual Clauses (SCCs)</b> and the provider\'s measures. For analytics, we store only anonymous statistics in Netlify Blobs — no names, emails or other direct personal identifiers.'
+        },
+        dataRetention: {
+          title: 'Data Retention',
+          content: '<ul class="list-disc pl-6 space-y-2"><li><b>Contact messages:</b> kept as long as needed to handle your request and any legal obligations (typically up to 12 months, unless deletion is requested).</li><li><b>Analytics:</b> anonymous daily statistics, up to a 90-day rolling window.</li><li><b>Server logs:</b> per Netlify\'s policy (typically limited duration).</li></ul>'
+        },
+        dataProtectionContact: {
+          title: 'Data Protection Contact',
+          content: 'For any personal data matter, GDPR rights requests, or deletion/correction requests, contact:<p class="mt-3"><b>Theocharis Panagiotis Siozos</b><br/>Email: <a href="mailto:devtaskhub@gmail.com" class="text-blue-600 underline">devtaskhub@gmail.com</a><br/>Phone: <a href="tel:+306971982563" class="text-blue-600 underline">+30 697 198 2563</a></p>'
         },
         modifications: {
           title: 'Modifications',
-          content: 'The owner reserves the right to modify the terms at any time without prior notice. It is recommended to visit this page regularly for possible changes.'
+          content: 'The owner reserves the right to modify terms, privacy policy and GDPR provisions at any time. Material changes will be posted on this page with an updated date. Regular visits are recommended.'
         },
         contact: {
-          title: 'Contact',
-          content: 'For any legal or technical issue, you can contact the owner via email: <a href="mailto:Devtaskhub@gmail.com" className="text-blue-600 underline">Devtaskhub@gmail.com</a>.'
+          title: 'General Contact',
+          content: 'For any legal or technical issue, you can contact the owner via email: <a href="mailto:devtaskhub@gmail.com" class="text-blue-600 underline">devtaskhub@gmail.com</a>.'
         }
       },
-      acceptance: 'By using this website, you fully accept the above terms.',
-      lastUpdate: 'Last update: June 2024'
+      acceptance: 'By using this website, you fully accept the above terms, Privacy Policy and GDPR provisions.',
+      lastUpdate: 'Last update: June 2026'
     },
     // HomeShowcase Section
     homeShowcase: {
@@ -3454,7 +3526,7 @@ export const translations = {
     // Terms and Conditions page content
     termsAndConditions: {
       title: 'Termes & Conditions d\'Utilisation',
-      intro: 'Bienvenue sur DevTaskHub (https://devtaskhub.com). Ce site web est créé et géré par l\'équipe DevTaskHub. Le nom "DevTaskHub" est une marque d\'entreprise. Tout le contenu, les services et les informations présentés sur ce site web sont fournis par notre équipe.',
+      intro: 'Bienvenue sur DevTaskHub (https://devtaskhub.com). Ce site web est créé et géré par l\'équipe DevTaskHub. Le nom "DevTaskHub" est une marque d\'entreprise. Tout le contenu, les services et les informations présentés sur ce site web sont fournis par notre équipe. Cette page inclut les conditions d\'utilisation, la Politique de Confidentialité et les dispositions de conformité au RGPD (Règlement (UE) 2016/679).',
       sections: {
         intellectualProperty: {
           title: 'Droits de Propriété Intellectuelle',
@@ -3471,19 +3543,55 @@ export const translations = {
         },
         dataCollection: {
           title: 'Collecte & Traitement des Données',
-          content: 'Le site web peut collecter des données techniques (telles que les cookies ou les adresses IP) à des fins d\'analyse du trafic et d\'amélioration de l\'expérience utilisateur. Aucune utilisation commerciale de vos données personnelles n\'est faite.'
+          content: 'Nous collectons et traitons les données personnelles uniquement lorsque nécessaire et avec transparence :<ul class="list-disc pl-6 mt-3 space-y-2"><li><b>Formulaire de contact :</b> nom, email, sujet, message et service optionnel — pour répondre à votre demande.</li><li><b>Analytics first-party :</b> identifiant visiteur anonyme (localStorage), identifiant de session (sessionStorage), page, durée de visite, type d\'appareil/navigateur/OS, langue, référent et localisation géographique approximative (pays/ville via l\'hébergeur).</li><li><b>Données techniques :</b> adresse IP et logs serveur de l\'hébergeur (Netlify) pour la sécurité et le fonctionnement.</li></ul><p class="mt-3">Nous ne vendons, ne louons ni n\'échangeons vos données personnelles à des tiers à des fins commerciales. Nous n\'utilisons pas de cookies publicitaires ou de profilage tiers.</p>'
+        },
+        privacyPolicy: {
+          title: 'Politique de Confidentialité',
+          content: 'DevTaskHub respecte votre vie privée. Cette Politique de Confidentialité explique quelles données nous collectons, pourquoi, comment nous les protégeons et vos droits.<p class="mt-3"><b>Responsable du traitement :</b> Theocharis Panagiotis Siozos — devtaskhub@gmail.com</p><p class="mt-2">Nous traitons les données conformément au Règlement (UE) 2016/679 (RGPD), à la législation grecque applicable (Loi 4624/2019) et aux principes de minimisation, transparence et responsabilité.</p>'
+        },
+        gdprCompliance: {
+          title: 'Conformité RGPD (UE 2016/679)',
+          content: 'Les données personnelles sont traitées conformément au Règlement Général sur la Protection des Données de l\'UE. Notamment :<ul class="list-disc pl-6 mt-3 space-y-2"><li>Traitement licite, loyal et transparent (article 5).</li><li>Collecte limitée aux données nécessaires (minimisation).</li><li>Conservation limitée dans le temps (limitation du stockage).</li><li>Mesures techniques et organisationnelles de sécurité (article 32).</li><li>Pas de décisions automatisées ni de profilage à effets juridiques/significatifs (article 22).</li></ul>'
+        },
+        legalBasis: {
+          title: 'Base Légale du Traitement',
+          content: 'Le traitement repose sur les bases légales suivantes du RGPD (article 6) :<ul class="list-disc pl-6 mt-3 space-y-2"><li><b>Consentement (art. 6(1)(a)) :</b> lorsque vous soumettez le formulaire de contact.</li><li><b>Intérêt légitime (art. 6(1)(f)) :</b> pour les analytics first-party anonymes, la sécurité du site et l\'amélioration UX — sans identification.</li><li><b>Obligation légale (art. 6(1)(c)) :</b> lorsque requis par la loi applicable.</li></ul>'
+        },
+        yourRights: {
+          title: 'Droits des Personnes Concernées',
+          content: 'Conformément aux articles 15–22 du RGPD, vous avez le droit :<ul class="list-disc pl-6 mt-3 space-y-2"><li><b>D\'accès</b> à vos données personnelles.</li><li>De <b>rectification</b> des données inexactes ou incomplètes.</li><li>D\'<b>effacement</b> (« droit à l\'oubli »), le cas échéant.</li><li>De <b>limitation</b> du traitement.</li><li>À la <b>portabilité</b> des données.</li><li>D\'<b>opposition</b> au traitement fondé sur l\'intérêt légitime.</li><li>De <b>retirer votre consentement</b> à tout moment sans affecter le traitement antérieur licite.</li></ul><p class="mt-3">Pour exercer vos droits, écrivez à <a href="mailto:devtaskhub@gmail.com" class="text-blue-600 underline">devtaskhub@gmail.com</a>. Réponse sous <b>30 jours</b>. Vous pouvez aussi déposer une plainte auprès de l\'<b>Autorité hellénique de protection des données (APDPX)</b> : <a href="https://www.dpa.gr" class="text-blue-600 underline" target="_blank" rel="noopener noreferrer">www.dpa.gr</a>.</p>'
+        },
+        cookiesAnalytics: {
+          title: 'Cookies & Analytics',
+          content: 'Ce site <b>n\'utilise pas de cookies tiers</b> pour la publicité ou le tracking social. Nous utilisons :<ul class="list-disc pl-6 mt-3 space-y-2"><li><b>Stockage local (localStorage/sessionStorage) :</b> identifiant visiteur anonyme pour statistiques first-party — pas d\'identification personnelle.</li><li><b>Chatbot intégré (FastBots) :</b> peut placer ses propres cookies à l\'ouverture du widget ; la politique du fournisseur s\'applique.</li></ul><p class="mt-3">Vous pouvez effacer localStorage/sessionStorage dans les paramètres du navigateur ou utiliser la navigation privée.</p>'
+        },
+        dataSecurity: {
+          title: 'Sécurité des Données',
+          content: 'Nous appliquons des mesures techniques et organisationnelles appropriées : chiffrement HTTPS/TLS, accès admin restreint, hébergement sécurisé (Netlify), et aucun stockage de données sensibles au-delà du nécessaire. Aucun système n\'est 100 % sécurisé ; en cas de violation, nous notifierons les utilisateurs et l\'APDPX conformément au RGPD (articles 33–34).'
+        },
+        internationalTransfers: {
+          title: 'Transferts Internationaux de Données',
+          content: 'L\'hébergement est assuré via Netlify (USA/UE). Lorsque des données sont transférées hors EEE, nous nous appuyons sur des garanties appropriées telles que les <b>Clauses Contractuelles Types (CCT)</b> de la Commission européenne. Pour les analytics, nous stockons uniquement des statistiques anonymes dans Netlify Blobs — pas de noms, emails ou identifiants personnels directs.'
+        },
+        dataRetention: {
+          title: 'Durée de Conservation',
+          content: '<ul class="list-disc pl-6 space-y-2"><li><b>Messages de contact :</b> conservés le temps nécessaire pour traiter votre demande et obligations légales (généralement jusqu\'à 12 mois, sauf demande de suppression).</li><li><b>Analytics :</b> statistiques anonymes quotidiennes, fenêtre glissante de 90 jours.</li><li><b>Logs serveur :</b> selon la politique Netlify (durée limitée).</li></ul>'
+        },
+        dataProtectionContact: {
+          title: 'Contact Protection des Données',
+          content: 'Pour toute question relative aux données personnelles, exercice des droits RGPD ou demandes de suppression/correction, contactez :<p class="mt-3"><b>Theocharis Panagiotis Siozos</b><br/>Email : <a href="mailto:devtaskhub@gmail.com" class="text-blue-600 underline">devtaskhub@gmail.com</a><br/>Téléphone : <a href="tel:+306971982563" class="text-blue-600 underline">+30 697 198 2563</a></p>'
         },
         modifications: {
           title: 'Modifications',
-          content: 'Le propriétaire se réserve le droit de modifier les termes à tout moment sans préavis. Il est recommandé de visiter cette page régulièrement pour d\'éventuels changements.'
+          content: 'Le propriétaire se réserve le droit de modifier les conditions, la politique de confidentialité et les dispositions RGPD à tout moment. Les changements importants seront publiés sur cette page avec une date mise à jour. Visite régulière recommandée.'
         },
         contact: {
-          title: 'Contact',
-          content: 'Pour toute question juridique ou technique, vous pouvez contacter le propriétaire par email: <a href="mailto:Devtaskhub@gmail.com" className="text-blue-600 underline">Devtaskhub@gmail.com</a>.'
+          title: 'Contact Général',
+          content: 'Pour toute question juridique ou technique, vous pouvez contacter le propriétaire par email : <a href="mailto:devtaskhub@gmail.com" class="text-blue-600 underline">devtaskhub@gmail.com</a>.'
         }
       },
-      acceptance: 'En utilisant ce site web, vous acceptez pleinement les termes ci-dessus.',
-      lastUpdate: 'Dernière mise à jour: Juin 2024'
+      acceptance: 'En utilisant ce site web, vous acceptez pleinement les conditions ci-dessus, la Politique de Confidentialité et les dispositions RGPD.',
+      lastUpdate: 'Dernière mise à jour : Juin 2026'
     },
     // HomeShowcase Section
     homeShowcase: {
