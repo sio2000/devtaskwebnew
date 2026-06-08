@@ -35,8 +35,8 @@ export const translations = {
     },
     // Services
     services: {
-      title: 'Υπηρεσίες',
-      subtitle: 'Εξειδικευμένες λύσεις για επιχειρήσεις και επαγγελματίες που απαιτούν κορυφαία ποιότητα, τεχνογνωσία και σύγχρονο design.',
+      title: 'Υπηρεσίες Κατασκευής Ιστοσελίδων & Εφαρμογών',
+      subtitle: 'Κατασκευή ιστοσελίδων, e-shop, mobile εφαρμογών, AI chatbots και SEO στη Θεσσαλονίκη — εξειδικευμένες λύσεις για επιχειρήσεις και επαγγελματίες με κορυφαία ποιότητα και σύγχρονο design.',
       more: 'Περισσότερα',
       items: {
         web: {
@@ -1026,13 +1026,47 @@ export const translations = {
     chatbot: {
       title: 'Chat με την Επιχείρησή μας!',
       subtitle: 'Έχετε απορίες; Θέλετε να μάθετε περισσότερα για τις υπηρεσίες μας;',
-      cta: 'Μιλήστε με το AI Chatbot μας!'
+      cta: 'Μιλήστε με το AI Chatbot μας!',
+      open: 'Άνοιγμα chat',
+      close: 'Κλείσιμο chat',
+      badge: 'AI Βοηθός 24/7'
+    },
+    // FAQ
+    faq: {
+      title: 'Συχνές Ερωτήσεις',
+      subtitle: 'Ό,τι χρειάζεται να ξέρετε πριν ξεκινήσουμε το έργο σας.',
+      items: [
+        {
+          q: 'Πόσο κοστίζει η κατασκευή μιας ιστοσελίδας στη Θεσσαλονίκη;',
+          a: 'Το κόστος εξαρτάται από την έκταση και τις λειτουργίες του έργου. Μια σύγχρονη ιστοσελίδα παρουσίασης ξεκινά από προσιτά πακέτα, ενώ τα e-shop και οι custom web εφαρμογές τιμολογούνται ανά project. Δίνουμε πάντα δωρεάν, διαφανή προσφορά πριν ξεκινήσει οποιαδήποτε εργασία — χωρίς κρυφές χρεώσεις.'
+        },
+        {
+          q: 'Πόσο χρόνο χρειάζεται για να ολοκληρωθεί ένα website;',
+          a: 'Μια ιστοσελίδα παρουσίασης ολοκληρώνεται συνήθως σε 2–4 εβδομάδες, ένα e-shop σε 4–8 εβδομάδες και οι custom εφαρμογές ανάλογα με την πολυπλοκότητα. Από το πρώτο brief σας δίνουμε σαφές χρονοδιάγραμμα με ορόσημα.'
+        },
+        {
+          q: 'Οι ιστοσελίδες σας είναι βελτιστοποιημένες για κινητά και για SEO;',
+          a: 'Ναι. Όλες οι ιστοσελίδες μας είναι mobile-first, responsive και γρήγορες (περνούν τα Core Web Vitals). Χτίζονται με σωστή τεχνική SEO δομή και structured data, ώστε να ανεβαίνουν στη Google και να εμφανίζονται σε μηχανές AI αναζήτησης (ChatGPT, Perplexity, Google AI).'
+        },
+        {
+          q: 'Αναλαμβάνετε εφαρμογές για iOS και Android;',
+          a: 'Ναι, αναπτύσσουμε native και cross-platform mobile εφαρμογές για iPhone/iPad και Android, καθώς και Progressive Web Apps, με δημοσίευση και υποστήριξη σε App Store και Google Play.'
+        },
+        {
+          q: 'Προσφέρετε υποστήριξη μετά την παράδοση;',
+          a: 'Φυσικά. Παρέχουμε συνεχή τεχνική υποστήριξη, ενημερώσεις ασφαλείας, backups και βελτιώσεις μετά την παράδοση, ώστε η ψηφιακή σας παρουσία να παραμένει γρήγορη, ασφαλής και ενημερωμένη.'
+        },
+        {
+          q: 'Συνεργάζεστε με πελάτες εκτός Θεσσαλονίκης;',
+          a: 'Ναι. Εδρεύουμε στη Θεσσαλονίκη αλλά συνεργαζόμαστε εξ αποστάσεως με πελάτες σε όλη την Ελλάδα και το εξωτερικό, με ξεκάθαρη επικοινωνία σε κάθε βήμα του έργου.'
+        }
+      ]
     },
     // Meta tags for pages
     meta: {
       home: {
-        title: 'Κατασκευή Ιστοσελίδων Θεσσαλονίκη | DevTaskHub - Custom Web & Mobile Apps',
-        description: 'Επαγγελματική κατασκευή ιστοσελίδων και mobile apps στη Θεσσαλονίκη. React, Next.js, Node.js. Δωρεάν προσφορά! 📱💻'
+        title: 'Κατασκευή Ιστοσελίδων Θεσσαλονίκη | DevTaskHub – Web, E-shop & Apps',
+        description: 'Κατασκευή ιστοσελίδων, e-shop & mobile εφαρμογών στη Θεσσαλονίκη από εξειδικευμένη ομάδα developers. React, Next.js, AI chatbots & SEO. Δωρεάν προσφορά & συνεχής υποστήριξη! 📱💻'
       },
       webDevelopment: {
         title: 'Κατασκευή Ιστοσελίδων Θεσσαλονίκη | React, Next.js | DevTaskHub',
@@ -1171,8 +1205,8 @@ export const translations = {
     },
     // Services
     services: {
-      title: 'Services',
-      subtitle: 'Specialized solutions for businesses and professionals who require top quality, expertise and modern design.',
+      title: 'Web & Mobile Development Services',
+      subtitle: 'Website design, e-shops, mobile apps, AI chatbots and SEO in Thessaloniki — specialized solutions for businesses and professionals with top quality and modern design.',
       more: 'More',
       items: {
         web: {
@@ -2159,7 +2193,41 @@ export const translations = {
     chatbot: {
       title: 'Chat with Our Business!',
       subtitle: 'Have questions? Want to learn more about our services?',
-      cta: 'Talk to our AI Chatbot!'
+      cta: 'Talk to our AI Chatbot!',
+      open: 'Open chat',
+      close: 'Close chat',
+      badge: 'AI Assistant 24/7'
+    },
+    // FAQ
+    faq: {
+      title: 'Frequently Asked Questions',
+      subtitle: 'Everything you need to know before we start your project.',
+      items: [
+        {
+          q: 'How much does it cost to build a website?',
+          a: 'It depends on the scope and features of the project. A modern presentation website starts from affordable packages, while e-shops and custom web apps are priced per project. We always provide a free, transparent quote before any work begins — no hidden fees.'
+        },
+        {
+          q: 'How long does it take to complete a website?',
+          a: 'A presentation website is usually completed in 2–4 weeks, an e-shop in 4–8 weeks, and custom applications depending on complexity. We give you a clear timeline with milestones from the very first brief.'
+        },
+        {
+          q: 'Are your websites mobile- and SEO-optimized?',
+          a: 'Yes. Every website is mobile-first, responsive and fast (passing Core Web Vitals). They are built with proper technical SEO structure and structured data so they rank on Google and appear in AI search engines (ChatGPT, Perplexity, Google AI).'
+        },
+        {
+          q: 'Do you build apps for iOS and Android?',
+          a: 'Yes. We develop native and cross-platform mobile apps for iPhone/iPad and Android, as well as Progressive Web Apps, including publishing and support on the App Store and Google Play.'
+        },
+        {
+          q: 'Do you offer support after delivery?',
+          a: 'Absolutely. We provide ongoing technical support, security updates, backups and improvements after delivery, keeping your digital presence fast, secure and up to date.'
+        },
+        {
+          q: 'Do you work with clients outside Thessaloniki?',
+          a: 'Yes. We are based in Thessaloniki but work remotely with clients across Greece and abroad, with clear communication at every step of the project.'
+        }
+      ]
     },
     // Meta tags for pages
     meta: {
@@ -2304,8 +2372,8 @@ export const translations = {
     },
     // Services
     services: {
-      title: 'Services',
-      subtitle: 'Solutions spécialisées pour les entreprises et les professionnels qui exigent une qualité supérieure, une expertise et un design moderne.',
+      title: 'Services de Développement Web & Mobile',
+      subtitle: 'Création de sites web, e-shops, applications mobiles, chatbots IA et SEO à Thessalonique — solutions spécialisées pour entreprises et professionnels avec qualité supérieure et design moderne.',
       more: 'Plus',
       items: {
         web: {
@@ -3288,7 +3356,41 @@ export const translations = {
     chatbot: {
       title: 'Chattez avec Notre Entreprise!',
       subtitle: 'Vous avez des questions? Vous voulez en savoir plus sur nos services?',
-      cta: 'Parlez à notre Chatbot IA!'
+      cta: 'Parlez à notre Chatbot IA!',
+      open: 'Ouvrir le chat',
+      close: 'Fermer le chat',
+      badge: 'Assistant IA 24/7'
+    },
+    // FAQ
+    faq: {
+      title: 'Questions Fréquentes',
+      subtitle: 'Tout ce que vous devez savoir avant de démarrer votre projet.',
+      items: [
+        {
+          q: 'Combien coûte la création d\'un site web?',
+          a: 'Cela dépend de l\'ampleur et des fonctionnalités du projet. Un site vitrine moderne démarre à des forfaits abordables, tandis que les e-shops et les applications web sur mesure sont facturés au projet. Nous fournissons toujours un devis gratuit et transparent avant tout début de travail — sans frais cachés.'
+        },
+        {
+          q: 'Combien de temps faut-il pour réaliser un site web?',
+          a: 'Un site vitrine est généralement réalisé en 2 à 4 semaines, un e-shop en 4 à 8 semaines, et les applications sur mesure selon leur complexité. Nous vous donnons un calendrier clair avec des jalons dès le premier brief.'
+        },
+        {
+          q: 'Vos sites sont-ils optimisés pour le mobile et le SEO?',
+          a: 'Oui. Chaque site est mobile-first, responsive et rapide (conforme aux Core Web Vitals). Ils sont construits avec une structure SEO technique solide et des données structurées, afin de se classer sur Google et d\'apparaître dans les moteurs de recherche IA (ChatGPT, Perplexity, Google AI).'
+        },
+        {
+          q: 'Développez-vous des applications pour iOS et Android?',
+          a: 'Oui. Nous développons des applications mobiles natives et multiplateformes pour iPhone/iPad et Android, ainsi que des Progressive Web Apps, y compris la publication et le support sur l\'App Store et Google Play.'
+        },
+        {
+          q: 'Offrez-vous un support après la livraison?',
+          a: 'Absolument. Nous offrons un support technique continu, des mises à jour de sécurité, des sauvegardes et des améliorations après la livraison, pour garder votre présence numérique rapide, sécurisée et à jour.'
+        },
+        {
+          q: 'Travaillez-vous avec des clients en dehors de Thessalonique?',
+          a: 'Oui. Nous sommes basés à Thessalonique mais travaillons à distance avec des clients partout en Grèce et à l\'étranger, avec une communication claire à chaque étape du projet.'
+        }
+      ]
     },
     // Meta tags for pages
     meta: {

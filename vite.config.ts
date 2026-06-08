@@ -6,7 +6,7 @@ export default defineConfig({
   plugins: [react()],
   optimizeDeps: {
     exclude: ['lucide-react'],
-    include: ['react', 'react-dom', 'react-router-dom', 'framer-motion'],
+    include: ['react', 'react-dom', 'react-router-dom', 'framer-motion', 'recharts'],
   },
   build: {
     cssCodeSplit: true,
@@ -28,6 +28,21 @@ export default defineConfig({
           // are available before animation code runs (avoids createContext undefined).
           if (id.includes('node_modules/framer-motion')) {
             return 'react-vendor';
+          }
+          // Charts (recharts + its transitive deps) — only used by the lazy /admin panel
+          if (
+            id.includes('node_modules/recharts') ||
+            id.includes('node_modules/recharts-scale') ||
+            id.includes('node_modules/react-smooth') ||
+            id.includes('node_modules/victory-vendor') ||
+            id.includes('node_modules/d3-') ||
+            id.includes('node_modules/internmap') ||
+            id.includes('node_modules/es-toolkit') ||
+            id.includes('node_modules/decimal.js-light') ||
+            id.includes('node_modules/eventemitter3') ||
+            id.includes('node_modules/tiny-invariant')
+          ) {
+            return 'charts-vendor';
           }
           // Other animation libraries can remain separate
           if (id.includes('node_modules/gsap') || id.includes('node_modules/aos')) {

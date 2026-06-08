@@ -5,6 +5,7 @@ import { useIsMobile } from '../hooks/useIsMobile';
 import { useLanguage } from '../hooks/useLanguage';
 import { translations } from '../data/translations';
 import { ArrowRight, Sparkles } from 'lucide-react';
+import SectionEyebrow from './SectionEyebrow';
 
 const HomeShowcaseSection: React.FC = () => {
   const isMobile = useIsMobile();
@@ -13,31 +14,31 @@ const HomeShowcaseSection: React.FC = () => {
 
   const bullets = [
     {
-      icon: <FaGem className="text-cyan-500 text-3xl md:text-4xl" />,
+      icon: <FaGem className="text-cyan-500 text-2xl md:text-3xl" />,
       text: t.homeShowcase.bullets[0],
       gradient: 'from-cyan-500 to-blue-500',
       bgGradient: 'from-cyan-500/10 to-blue-500/10',
     },
     {
-      icon: <FaBolt className="text-yellow-400 text-3xl md:text-4xl" />,
+      icon: <FaBolt className="text-yellow-400 text-2xl md:text-3xl" />,
       text: t.homeShowcase.bullets[1],
       gradient: 'from-yellow-400 to-orange-500',
       bgGradient: 'from-yellow-400/10 to-orange-500/10',
     },
     {
-      icon: <FaBullseye className="text-pink-500 text-3xl md:text-4xl" />,
+      icon: <FaBullseye className="text-pink-500 text-2xl md:text-3xl" />,
       text: t.homeShowcase.bullets[2],
       gradient: 'from-pink-500 to-rose-500',
       bgGradient: 'from-pink-500/10 to-rose-500/10',
     },
     {
-      icon: <FaTools className="text-indigo-500 text-3xl md:text-4xl" />,
+      icon: <FaTools className="text-indigo-500 text-2xl md:text-3xl" />,
       text: t.homeShowcase.bullets[3],
       gradient: 'from-indigo-500 to-purple-500',
       bgGradient: 'from-indigo-500/10 to-purple-500/10',
     },
     {
-      icon: <FaRocket className="text-blue-500 text-3xl md:text-4xl" />,
+      icon: <FaRocket className="text-blue-500 text-2xl md:text-3xl" />,
       text: t.homeShowcase.bullets[4],
       gradient: 'from-blue-500 to-cyan-500',
       bgGradient: 'from-blue-500/10 to-cyan-500/10',
@@ -46,7 +47,7 @@ const HomeShowcaseSection: React.FC = () => {
 
   return (
     <section
-      className="relative py-32 md:py-40 bg-gradient-to-br from-white via-blue-50/40 to-purple-50/30 overflow-hidden"
+      className="relative py-16 md:py-24 bg-gradient-to-br from-white via-blue-50/40 to-purple-50/30 overflow-hidden"
       aria-label="Εντυπωσιακές Ιστοσελίδες"
     >
       {/* Premium Animated Background - Desktop Only */}
@@ -77,9 +78,14 @@ const HomeShowcaseSection: React.FC = () => {
       )}
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center text-center">
+        <div className="mb-6">
+          <SectionEyebrow icon={Sparkles} color="purple">
+            {language === 'el' ? 'Γιατί DevTaskHub' : language === 'fr' ? 'Pourquoi DevTaskHub' : 'Why DevTaskHub'}
+          </SectionEyebrow>
+        </div>
         {/* Premium Main Heading */}
         <motion.h2
-          className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-extrabold mb-8 gradient-text-premium px-4 break-words"
+          className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold mb-4 gradient-text-premium px-4 break-words"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -89,7 +95,7 @@ const HomeShowcaseSection: React.FC = () => {
           {t.homeShowcase.title}
           {!isMobile && (
             <motion.div
-              className="h-2 w-48 bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400 rounded-full mx-auto mt-6 shadow-lg"
+              className="h-1.5 w-40 bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400 rounded-full mx-auto mt-5 shadow-lg"
               initial={{ scaleX: 0 }}
               whileInView={{ scaleX: 1 }}
               transition={{ duration: 1, delay: 0.3 }}
@@ -100,7 +106,7 @@ const HomeShowcaseSection: React.FC = () => {
 
         {/* Premium Subheading */}
         <motion.p
-          className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl text-gray-700 max-w-4xl mx-auto mb-20 leading-relaxed font-medium px-4 break-words"
+          className="text-base sm:text-lg md:text-xl text-gray-700 max-w-3xl mx-auto mb-12 leading-relaxed font-medium px-4 break-words"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -111,7 +117,7 @@ const HomeShowcaseSection: React.FC = () => {
         </motion.p>
 
         {/* Premium Bullets Grid */}
-        <ul className="grid grid-cols-1 sm:grid-cols-2 gap-8 md:gap-10 mb-20 w-full max-w-5xl mx-auto">
+        <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6 mb-12 w-full max-w-6xl mx-auto">
           {bullets.map((b, i) => (
             <motion.li
               key={i}
@@ -122,7 +128,7 @@ const HomeShowcaseSection: React.FC = () => {
               whileHover={{ scale: 1.03, y: -8 }}
               className="relative group"
             >
-              <div className="relative h-full bg-white/80 backdrop-blur-xl rounded-3xl shadow-xl border border-white/50 hover:border-blue-200/70 px-10 py-8 text-xl font-medium text-gray-800 transition-all duration-500 overflow-hidden">
+              <div className="relative h-full bg-white/80 backdrop-blur-xl rounded-2xl shadow-lg border border-white/50 hover:border-blue-200/70 px-6 py-7 text-base font-medium text-gray-800 transition-all duration-300 overflow-hidden flex flex-col items-center">
                 {/* Animated Gradient Background */}
                 <motion.div
                   className={`absolute inset-0 bg-gradient-to-br ${b.bgGradient} opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl`}
@@ -147,7 +153,7 @@ const HomeShowcaseSection: React.FC = () => {
 
                 {/* Icon Container - Premium Design */}
                 <motion.span
-                  className="relative z-10 flex items-center justify-center w-20 h-20 rounded-2xl bg-gradient-to-br from-white to-gray-50 shadow-lg border border-gray-100/50 mb-6 mx-auto group-hover:border-blue-200/50 transition-all duration-500"
+                  className="relative z-10 flex items-center justify-center w-14 h-14 rounded-2xl bg-gradient-to-br from-white to-gray-50 shadow-md border border-gray-100/50 mb-4 mx-auto group-hover:border-blue-200/50 transition-all duration-500"
                   whileHover={{ rotate: [0, -10, 10, 0], scale: 1.1 }}
                   transition={{ duration: 0.5 }}
                 >
@@ -158,7 +164,7 @@ const HomeShowcaseSection: React.FC = () => {
                   </div>
                 </motion.span>
 
-                <span className="relative z-10 flex-1 text-left block leading-relaxed">
+                <span className="relative z-10 flex-1 text-center block leading-relaxed">
                   {b.text}
                 </span>
 
@@ -183,7 +189,7 @@ const HomeShowcaseSection: React.FC = () => {
           transition={{ duration: 0.7, delay: 0.6 }}
           whileHover={{ scale: 1.05, y: -4 }}
           whileTap={{ scale: 0.98 }}
-          className="relative inline-block px-16 py-6 rounded-2xl bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 text-white font-bold text-xl shadow-2xl hover:shadow-premium-glow-xl transition-all duration-500 focus:outline-none focus:ring-4 focus:ring-blue-400/50 overflow-hidden group"
+          className="relative inline-block px-10 py-4 rounded-2xl bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 text-white font-bold text-lg shadow-xl hover:shadow-premium-glow-xl transition-all duration-500 focus:outline-none focus:ring-4 focus:ring-blue-400/50 overflow-hidden group"
         >
           {/* Animated Gradient Overlay */}
           <motion.div

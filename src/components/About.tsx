@@ -1,9 +1,11 @@
 import React from 'react';
-import { CheckCircle, User, Award, Target, Zap, Sparkles } from 'lucide-react';
+import { CheckCircle, Award, Target, Zap, Sparkles } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { useLanguage } from '../hooks/useLanguage';
 import { translations } from '../data/translations';
 import { useIsMobile } from '../hooks/useIsMobile';
+import SectionEyebrow from './SectionEyebrow';
+import logo from '../assets/logo.png';
 
 const About: React.FC = () => {
   const { language } = useLanguage();
@@ -79,21 +81,24 @@ const About: React.FC = () => {
                     backgroundSize: '200% 200%',
                   }}
                 />
-                {/* Content */}
-                <div className="relative z-10">
-                  <User className="h-32 w-32 drop-shadow-2xl" />
+                {/* Content — branded identity */}
+                <div className="relative z-10 flex flex-col items-center text-center px-6">
+                  <img
+                    src={logo}
+                    alt="DevTaskHub"
+                    className="h-24 sm:h-28 w-auto rounded-2xl shadow-2xl mb-5"
+                    loading="lazy"
+                  />
+                  <span className="text-3xl sm:text-4xl font-extrabold text-white drop-shadow-lg tracking-tight">
+                    DevTaskHub
+                  </span>
+                  <span className="text-white/85 font-medium mt-1">Full-Stack Developers</span>
                   <motion.div
-                    className="absolute inset-0 flex items-center justify-center"
-                    animate={{
-                      opacity: [0.5, 0.8, 0.5],
-                    }}
-                    transition={{
-                      duration: 3,
-                      repeat: Infinity,
-                      ease: 'easeInOut',
-                    }}
+                    className="absolute inset-0 -z-10 flex items-center justify-center"
+                    animate={{ opacity: [0.4, 0.7, 0.4] }}
+                    transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut' }}
                   >
-                    <Sparkles className="h-40 w-40 text-white/20" />
+                    <Sparkles className="h-48 w-48 text-white/10" />
                   </motion.div>
                 </div>
               </div>
@@ -152,6 +157,11 @@ const About: React.FC = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
+            <div className="mb-5">
+              <SectionEyebrow icon={Award} color="emerald">
+                {language === 'el' ? 'Ποιοι είμαστε' : language === 'fr' ? 'Qui sommes-nous' : 'Who we are'}
+              </SectionEyebrow>
+            </div>
             <motion.h2
               className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-gray-900 mb-4 gradient-text-blue"
               initial={{ opacity: 0, y: 20 }}

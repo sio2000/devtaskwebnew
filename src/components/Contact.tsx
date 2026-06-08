@@ -7,6 +7,7 @@ import { FaLinkedin, FaGithub, FaEnvelope, FaUserCircle, FaMapMarkerAlt, FaPhone
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useIsMobile } from '../hooks/useIsMobile';
+import SectionEyebrow from './SectionEyebrow';
 
 const Contact: React.FC = () => {
   const { language } = useLanguage();
@@ -22,6 +23,7 @@ const Contact: React.FC = () => {
   const [errors, setErrors] = useState({ name: false, email: false, message: false });
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
+  const [botField, setBotField] = useState('');
 
   const validate = () => {
     const newErrors = {
@@ -38,14 +40,48 @@ const Contact: React.FC = () => {
     setErrors({ ...errors, [e.target.name]: false });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!validate()) return;
-    // Δημιουργώ το mailto link
+  const encode = (data: Record<string, string>) =>
+    Object.keys(data)
+      .map((key) => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
+      .join('&');
+
+  const openMailtoFallback = () => {
     const subject = encodeURIComponent(formData.subject || t.contact.mailtoSubject);
     const serviceText = formData.service ? `${t.contact.form.service}: ${formData.service}\n` : '';
     const body = encodeURIComponent(`${t.contact.form.name}: ${formData.name}\n${t.contact.form.email}: ${formData.email}\n${serviceText}\n${formData.message}`);
-    window.location.href = `mailto:Devtaskhub@gmail.com?subject=${subject}&body=${body}`;
+    window.location.href = `mailto:devtaskhub@gmail.com?subject=${subject}&body=${body}`;
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (botField) return; // honeypot tripped — silently drop
+    if (!validate()) return;
+    setLoading(true);
+    setSuccess(false);
+    try {
+      const response = await fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: encode({
+          'form-name': 'contact',
+          'bot-field': botField,
+          name: formData.name,
+          email: formData.email,
+          service: formData.service,
+          subject: formData.subject,
+          message: formData.message,
+        }),
+      });
+      if (!response.ok) throw new Error('Submission failed');
+      setSuccess(true);
+      toast.success(t.contact.success);
+      setFormData({ name: '', email: '', service: '', subject: '', message: '' });
+    } catch {
+      // Netlify endpoint unavailable (e.g. local dev) → fall back to email client
+      openMailtoFallback();
+    } finally {
+      setLoading(false);
+    }
   };
 
   const handleCopy = (value: string) => {
@@ -133,10 +169,15 @@ const Contact: React.FC = () => {
       <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header Section */}
         <div className="text-center mb-12">
+          <div className="mb-5">
+            <SectionEyebrow icon={MessageCircle} color="blue">
+              {language === 'el' ? 'Ας μιλήσουμε' : language === 'fr' ? 'Parlons-en' : "Let's talk"}
+            </SectionEyebrow>
+          </div>
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
             {t.contact.title}
           </h2>
-          <p className="text-gray-600 max-w-2xl mx-auto">
+          <p className="text-gray-600 max-w-2xl mx-auto whitespace-pre-line">
             {t.contact.description}
           </p>
         </div>
@@ -148,10 +189,28 @@ const Contact: React.FC = () => {
             <div>
 
               <form
+                name="contact"
+                method="POST"
+                data-netlify="true"
+                netlify-honeypot="bot-field"
                 onSubmit={handleSubmit}
                 className="relative z-10 flex flex-col gap-6"
                 autoComplete="off"
               >
+                <input type="hidden" name="form-name" value="contact" />
+                {/* Honeypot field — hidden from humans, catches bots */}
+                <p className="hidden" aria-hidden="true">
+                  <label>
+                    Don't fill this out if you're human:
+                    <input
+                      name="bot-field"
+                      tabIndex={-1}
+                      autoComplete="off"
+                      value={botField}
+                      onChange={(e) => setBotField(e.target.value)}
+                    />
+                  </label>
+                </p>
                 {/* Name */}
                 <div className="relative">
                   <label htmlFor="name" className="block text-sm font-semibold text-gray-700 mb-2">
@@ -164,11 +223,13 @@ const Contact: React.FC = () => {
                     value={formData.name}
                     onChange={handleChange}
                     required
+                    aria-invalid={errors.name}
+                    aria-describedby={errors.name ? 'name-error' : undefined}
                     className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-300 bg-white ${errors.name ? 'border-red-400 focus:border-red-400 focus:ring-red-400' : 'border-gray-300'}`}
                     placeholder={t.contact.form.namePlaceholder}
-                    autoComplete="off"
+                    autoComplete="name"
                   />
-                  {errors.name && <span className="text-xs text-red-500 mt-1 block">{t.contact.form.nameRequired}</span>}
+                  {errors.name && <span id="name-error" className="text-xs text-red-500 mt-1 block">{t.contact.form.nameRequired}</span>}
                 </div>
 
                 {/* Email */}
@@ -183,11 +244,13 @@ const Contact: React.FC = () => {
                     value={formData.email}
                     onChange={handleChange}
                     required
+                    aria-invalid={errors.email}
+                    aria-describedby={errors.email ? 'email-error' : undefined}
                     className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-300 bg-white ${errors.email ? 'border-red-400 focus:border-red-400 focus:ring-red-400' : 'border-gray-300'}`}
                     placeholder={t.contact.form.emailPlaceholder}
-                    autoComplete="off"
+                    autoComplete="email"
                   />
-                  {errors.email && <span className="text-xs text-red-500 mt-1 block">{t.contact.form.emailRequired}</span>}
+                  {errors.email && <span id="email-error" className="text-xs text-red-500 mt-1 block">{t.contact.form.emailRequired}</span>}
                 </div>
 
                 {/* Service */}
@@ -244,10 +307,12 @@ const Contact: React.FC = () => {
                     onChange={handleChange}
                     required
                     rows={5}
+                    aria-invalid={errors.message}
+                    aria-describedby={errors.message ? 'message-error' : undefined}
                     className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-300 bg-white resize-none ${errors.message ? 'border-red-400 focus:border-red-400 focus:ring-red-400' : 'border-gray-300'}`}
                     placeholder={t.contact.form.messagePlaceholder}
                   />
-                  {errors.message && <span className="text-xs text-red-500 mt-1 block">{t.contact.form.messageRequired}</span>}
+                  {errors.message && <span id="message-error" className="text-xs text-red-500 mt-1 block">{t.contact.form.messageRequired}</span>}
                 </div>
 
                 {/* Submit Button */}
@@ -297,10 +362,21 @@ const Contact: React.FC = () => {
             </div>
 
             {/* Contact Information */}
-            <div className="space-y-5 flex flex-col justify-center">
+            <div className="space-y-3 flex flex-col justify-center">
               {contactLinks.map((link, index) => {
                 const Icon = link.icon;
-                
+                const cardClass = "flex items-center gap-4 p-3.5 rounded-2xl border border-gray-100 bg-white hover:border-blue-200 hover:shadow-md transition-all duration-300";
+                const inner = (
+                  <>
+                    <span className="flex items-center justify-center w-11 h-11 rounded-xl bg-gray-50 border border-gray-100 flex-shrink-0">
+                      <Icon className={`h-5 w-5 ${link.color}`} />
+                    </span>
+                    <span className="text-base font-medium text-gray-800 break-words">
+                      {link.value}
+                    </span>
+                  </>
+                );
+
                 if (link.href) {
                   return (
                     <a
@@ -308,25 +384,16 @@ const Contact: React.FC = () => {
                       href={link.href}
                       target={link.href.startsWith('http') ? '_blank' : undefined}
                       rel={link.href.startsWith('http') ? 'noopener noreferrer' : undefined}
-                      className="flex items-center gap-3 hover:opacity-80 transition-opacity"
+                      className={cardClass}
                     >
-                      <Icon className={`h-5 w-5 ${link.color} flex-shrink-0`} />
-                      <span className={`text-base ${link.color}`}>
-                        {link.value}
-                      </span>
+                      {inner}
                     </a>
                   );
                 }
-                
+
                 return (
-                  <div
-                    key={index}
-                    className="flex items-center gap-3 hover:opacity-80 transition-opacity"
-                  >
-                    <Icon className={`h-5 w-5 ${link.color} flex-shrink-0`} />
-                    <span className={`text-base ${link.color}`}>
-                      {link.value}
-                    </span>
+                  <div key={index} className={cardClass}>
+                    {inner}
                   </div>
                 );
               })}

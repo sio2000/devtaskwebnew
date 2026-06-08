@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useMemo, useCallback } from 'react';
-import { ExternalLink, Smartphone, Monitor, BarChart3, Gamepad2, Heart, ChevronLeft, ChevronRight, Scissors, ShoppingBag, Building2 } from 'lucide-react';
+import { ExternalLink, Smartphone, Monitor, BarChart3, Gamepad2, Heart, ChevronLeft, ChevronRight, Scissors, ShoppingBag, Building2, Briefcase } from 'lucide-react';
+import SectionEyebrow from './SectionEyebrow';
 import { FaApple, FaAndroid, FaCloud, FaRocket, FaHeartbeat, FaMapMarkedAlt, FaGift, FaParking } from 'react-icons/fa';
 import { motion } from 'framer-motion';
 import { useLanguage } from '../hooks/useLanguage';
@@ -315,6 +316,11 @@ const Portfolio: React.FC = () => {
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-16">
+          <div className="mb-5">
+            <SectionEyebrow icon={Briefcase} color="purple">
+              {language === 'el' ? 'Portfolio' : language === 'fr' ? 'Portfolio' : 'Portfolio'}
+            </SectionEyebrow>
+          </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">{tp.title ?? 'Portfolio'}</h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">{tp.subtitle ?? ''}</p>
         </div>
@@ -390,6 +396,11 @@ const Portfolio: React.FC = () => {
 
       {/* Portfolio Showcase - GetFit App */}
       <section id="getfit-app-showcase" className="max-w-7xl mx-auto py-24 px-4">
+        <div className="text-center mb-5">
+          <SectionEyebrow icon={Smartphone} color="blue">
+            {language === 'el' ? 'Εφαρμογές Κινητών' : language === 'fr' ? 'Applications Mobiles' : 'Mobile Apps'}
+          </SectionEyebrow>
+        </div>
         <motion.h2 className="text-3xl md:text-4xl font-extrabold text-blue-700 mb-12 text-center bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent drop-shadow-lg">{t.portfolio.appShowcase.title}</motion.h2>
         
         {/* GetFit App Showcase */}

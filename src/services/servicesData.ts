@@ -1,5 +1,5 @@
 import { IconType } from 'react-icons';
-import { FaGlobe, FaMobileAlt, FaRobot, FaUsers, FaVideo, FaSearch, FaPhotoVideo, FaPalette, FaDatabase, FaBrain, FaShoppingCart, FaGamepad } from 'react-icons/fa';
+import { FaGlobe, FaMobileAlt, FaRobot, FaUsers, FaVideo, FaSearch, FaPalette, FaDatabase, FaBrain, FaShoppingCart, FaGamepad } from 'react-icons/fa';
 
 export interface Service {
   slug: string;
@@ -212,30 +212,6 @@ export const servicesData: Service[] = [
     },
     visual: 'seo-graph',
     ctaText: { el: 'Ζητήστε SEO Audit' },
-  },
-  {
-    slug: 'multimedia-content-creation',
-    title: {
-      el: 'Δημιουργία Multimedia Περιεχομένου',
-      en: 'Multimedia Content Creation',
-      fr: 'Création de Contenu Multimédia'
-    },
-    shortDescription: {
-      el: 'Διαδραστικό περιεχόμενο, animations & βίντεο.',
-      en: 'Interactive content, animations & videos.',
-      fr: 'Contenu interactif, animations & vidéos.'
-    },
-    description: {
-      el: 'Δημιουργώ διαδραστικό περιεχόμενο, animations και βίντεο για ιστοσελίδες, καμπάνιες και social media.',
-      en: 'I create interactive content, animations, and videos for websites, campaigns, and social media.',
-      fr: 'Je crée du contenu interactif, des animations et des vidéos pour sites web, campagnes et réseaux sociaux.'
-    },
-    icon: FaPhotoVideo,
-    breadcrumbs: {
-      el: ['Υπηρεσίες', 'Δημιουργία Multimedia Περιεχομένου'],
-      en: ['Services', 'Multimedia Content Creation'],
-      fr: ['Services', 'Création de Contenu Multimédia']
-    }
   },
   {
     slug: 'ux-ui-design',

@@ -1,0 +1,36 @@
+# DevTaskHub
+
+> DevTaskHub is a full-stack web & mobile development studio based in Thessaloniki, Greece. It builds custom websites, e-shops, mobile apps (iOS & Android), AI chatbots and SEO solutions for businesses and professionals across Greece. Languages served: Greek, English, French.
+
+## About
+- Name: DevTaskHub
+- Location: Thessaloniki (Θεσσαλονίκη), Central Macedonia, Greece
+- Serves: All of Greece and the EU, remotely
+- Email: devtaskhub@gmail.com
+- Phone: +30 697 198 2563
+- Positioning: Modern, fast, responsive, SEO-optimized digital products at fair prices. "You think the vision. We build it."
+
+## Services
+- [Website & Web App Development](https://devtaskhub.com/services/web-development): Responsive, fast, SEO-optimized custom websites and web applications.
+- [Mobile App Development](https://devtaskhub.com/services/mobile-app-development): Native and cross-platform apps for iOS and Android, plus PWAs.
+- [E-commerce Development](https://devtaskhub.com/services/ecommerce-development): Full-featured online stores (e-shops) with secure payments.
+- [Chatbots & AI Agents](https://devtaskhub.com/services/chatbots-ai-agents): AI chatbots and agents for 24/7 customer support and automation.
+- [AI Integration](https://devtaskhub.com/services/ai-integration-applications): Embedding AI and machine learning into applications.
+- [SEO & Website Optimization](https://devtaskhub.com/services/seo-website-optimization): Technical SEO, performance and organic growth.
+- [UX/UI Design](https://devtaskhub.com/services/ux-ui-design): User-centered interface design.
+- [Database & Cloud Infrastructure](https://devtaskhub.com/services/database-cloud-infrastructure): Scalable, secure data and cloud architecture.
+- [Video & Animation Production](https://devtaskhub.com/services/video-animation-production): Promotional video and motion graphics.
+- [Game Development](https://devtaskhub.com/services/game-development): Interactive games for web and mobile.
+
+## Selected Work
+- T-Parking: The first app in Greece that finds available on-street parking in real time, for free (iOS & Android).
+- Advanced Derma: Appointment booking system for a dermatology & aesthetic clinic in Athens & Piraeus.
+- Leonidion Houses: Booking platform for 6 accommodations with online payments and an admin system.
+- Devil's Barber: Premium barber studio site with online booking.
+- HANDSTUFF: E-shop for handmade leather bags.
+
+## Contact
+- Email: devtaskhub@gmail.com
+- Phone: +30 697 198 2563
+- Contact page: https://devtaskhub.com/contact
+- Free, transparent quote provided before any work begins.

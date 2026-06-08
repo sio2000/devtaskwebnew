@@ -8,6 +8,14 @@ import { useIsMobile } from '../hooks/useIsMobile';
 
 const heroImg = "https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&w=1200&q=80";
 
+// Stable showcase images for the portfolio carousel (cycled by index)
+const portfolioImgs = [
+  "https://images.unsplash.com/photo-1538481199705-c710c4e965fc?auto=format&fit=crop&w=900&q=80", // 3D RPG / fantasy
+  "https://images.unsplash.com/photo-1622979135225-d2ba269cf1ac?auto=format&fit=crop&w=900&q=80", // VR racing
+  "https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=900&q=80",   // retro / puzzle platformer
+  "https://images.unsplash.com/photo-1493711662062-fa541adb3fc8?auto=format&fit=crop&w=900&q=80", // arcade neon
+];
+
 // Icon arrays
 const serviceIcons = [
   <FaMobileAlt className="text-pink-400 text-4xl" />,
@@ -49,7 +57,7 @@ export default function GameDevelopmentPage() {
   // Portfolio array with useMemo
   const portfolio = useMemo(() =>
     (gameDev?.portfolio?.items || []).map((item, idx) => ({
-      img: `/src/assets/game${idx + 1}.jpg`,
+      img: portfolioImgs[idx % portfolioImgs.length],
       title: item.title || '',
       desc: item.desc || ''
     })), [gameDev]);

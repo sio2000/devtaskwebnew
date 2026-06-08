@@ -1,5 +1,5 @@
 import React from 'react';
-import { Helmet } from 'react-helmet';
+import { Helmet } from 'react-helmet-async';
 
 interface OrganizationSchemaProps {
   name?: string;
@@ -44,7 +44,7 @@ export const OrganizationSchema: React.FC<OrganizationSchemaProps> = ({
   url = 'https://devtaskhub.com',
   logo = 'https://devtaskhub.com/assets/logo-ChYGESUI.png',
   email = 'info@devtaskhub.com',
-  telephone = '+30 694 971 982 563',
+  telephone = '+30 697 198 2563',
   address = {
     addressLocality: 'Θεσσαλονίκη',
     addressRegion: 'Κεντρική Μακεδονία',
@@ -176,7 +176,7 @@ interface LocalBusinessSchemaProps {
 export const LocalBusinessSchema: React.FC<LocalBusinessSchemaProps> = ({
   name = 'DevTaskHub',
   url = 'https://devtaskhub.com',
-  telephone = '+30 694 971 982 563',
+  telephone = '+30 697 198 2563',
   email = 'info@devtaskhub.com',
   address = {
     addressLocality: 'Θεσσαλονίκη',

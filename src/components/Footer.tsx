@@ -3,7 +3,7 @@ import { Heart, ArrowUp } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { useLanguage } from '../hooks/useLanguage';
 import { translations } from '../data/translations';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import { useIsMobile } from '../hooks/useIsMobile';
 import { FaInstagram, FaFacebook, FaTiktok } from 'react-icons/fa';
 import logo from '../assets/logo.png';
@@ -90,26 +90,14 @@ const Footer = memo(() => {
           <div>
             <h4 className="text-lg font-semibold mb-4 text-blue-300">{t.nav.services}</h4>
             <ul className="grid grid-cols-2 gap-x-8 gap-y-2 text-gray-300">
-              {col1.map((service, index) => (
-                <li
-                  key={service.slug + service.label}
-                  className="hover:text-blue-300 transition-colors duration-300 cursor-pointer"
-                  onClick={() => navigate(`/services/${service.slug}`)}
-                  tabIndex={0}
-                  aria-label={service.label}
-                >
-                  {service.label}
-                </li>
-              ))}
-              {col2.map((service, index) => (
-                <li
-                  key={service.slug + service.label}
-                  className="hover:text-blue-300 transition-colors duration-300 cursor-pointer"
-                  onClick={() => navigate(`/services/${service.slug}`)}
-                  tabIndex={0}
-                  aria-label={service.label}
-                >
-                  {service.label}
+              {[...col1, ...col2].map((service) => (
+                <li key={service.slug + service.label}>
+                  <Link
+                    to={`/services/${service.slug}`}
+                    className="block hover:text-blue-300 transition-colors duration-300 rounded focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-400"
+                  >
+                    {service.label}
+                  </Link>
                 </li>
               ))}
             </ul>

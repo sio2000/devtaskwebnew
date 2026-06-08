@@ -5,9 +5,10 @@ import { useLanguage } from '../hooks/useLanguage';
 import { translations } from '../data/translations';
 import { useIsMobile } from '../hooks/useIsMobile';
 import {
-  FaGlobe, FaMobileAlt, FaRobot, FaUsers, FaVideo, FaSearch, FaPhotoVideo, FaPalette, FaDatabase, FaBrain, FaShoppingCart, FaGamepad
+  FaGlobe, FaMobileAlt, FaRobot, FaUsers, FaVideo, FaSearch, FaPalette, FaDatabase, FaBrain, FaShoppingCart, FaGamepad
 } from 'react-icons/fa';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, LayoutGrid } from 'lucide-react';
+import SectionEyebrow from './SectionEyebrow';
 
 const iconColorMap: Record<string, string> = {
   'web-development': 'text-sky-400',
@@ -16,7 +17,6 @@ const iconColorMap: Record<string, string> = {
   'social-media-management': 'text-emerald-400',
   'video-animation-production': 'text-orange-300',
   'seo-website-optimization': 'text-yellow-300',
-  'multimedia-content-creation': 'text-fuchsia-400',
   'ux-ui-design': 'text-cyan-400',
   'database-cloud-infrastructure': 'text-indigo-400',
   'ai-integration-applications': 'text-pink-300',
@@ -31,7 +31,6 @@ const iconMap: Record<string, React.ElementType> = {
   'social-media-management': FaUsers,
   'video-animation-production': FaVideo,
   'seo-website-optimization': FaSearch,
-  'multimedia-content-creation': FaPhotoVideo,
   'ux-ui-design': FaPalette,
   'database-cloud-infrastructure': FaDatabase,
   'ai-integration-applications': FaBrain,
@@ -52,7 +51,6 @@ const Services: React.FC = () => {
   // Υπηρεσίες που δεν εμφανίζονται στο section της αρχικής σελίδας
   // (παραμένουν διαθέσιμες ως ξεχωριστές σελίδες/υπηρεσίες, απλώς δεν εμφανίζονται εδώ)
   const hiddenOnHome = new Set([
-    'multimedia-content-creation',
     'ux-ui-design',
     'database-cloud-infrastructure',
     'social-media-management',
@@ -121,6 +119,11 @@ const Services: React.FC = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
+          <div className="mb-5">
+            <SectionEyebrow icon={LayoutGrid} color="blue">
+              {language === 'el' ? 'Τι κάνουμε' : language === 'fr' ? 'Ce que nous faisons' : 'What we do'}
+            </SectionEyebrow>
+          </div>
           <motion.h2
             className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-extrabold mb-6 gradient-text-premium px-4 break-words"
             initial={{ opacity: 0, scale: 0.95 }}

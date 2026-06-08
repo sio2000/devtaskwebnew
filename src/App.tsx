@@ -1,5 +1,5 @@
 import React, { lazy, Suspense } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import { LanguageProvider, useLanguage } from './contexts/LanguageContext';
 import { translations } from './data/translations';
 import Header from './components/Header';
@@ -7,15 +7,18 @@ import Hero from './components/Hero';
 import Services from './components/Services';
 import About from './components/About';
 import Portfolio from './components/Portfolio';
-import ChatbotSection from './components/ChatbotSection';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import ScrollToTop from './components/ScrollToTop';
 import Breadcrumbs from './components/Breadcrumbs';
 import HomeShowcaseSection from './components/HomeShowcaseSection';
-import { useIsMobile } from './hooks/useIsMobile';
-import { Helmet } from 'react-helmet';
-import { OrganizationSchema, ServiceSchema } from './components/SchemaMarkup';
+import FAQ from './components/FAQ';
+import FloatingChat from './components/FloatingChat';
+import LoadingScreen from './components/LoadingScreen';
+import Analytics from './components/Analytics';
+import ScrollProgress from './components/ScrollProgress';
+import { Helmet } from 'react-helmet-async';
+import { ServiceSchema } from './components/SchemaMarkup';
 
 // Lazy load service pages for better performance
 const WebDevelopmentPage = lazy(() => import('./components/WebDevelopmentPage'));
@@ -30,7 +33,7 @@ const GameDevelopmentPage = lazy(() => import('./components/GameDevelopmentPage'
 const VideoAnimationProductionPage = lazy(() => import('./components/VideoAnimationProductionPage'));
 const DatabaseCloudInfrastructurePage = lazy(() => import('./components/DatabaseCloudInfrastructurePage'));
 const TermsAndConditions = lazy(() => import('./components/TermsAndConditions'));
-const ServiceDetails = lazy(() => import('./components/ServiceDetails'));
+const AdminPanel = lazy(() => import('./components/AdminPanel'));
 
 // Loading component for lazy loaded pages
 const PageLoader = () => (
@@ -38,19 +41,25 @@ const PageLoader = () => (
     <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600"></div>
   </div>
 );
-// Προσθήκη placeholders για όλες τις υπηρεσίες
-const Placeholder = ({ name }: { name: string }) => <div style={{padding:40, textAlign:'center', color:'#555'}}>Η σελίδα "{name}" δεν έχει υλοποιηθεί ακόμα.</div>;
+
+// Hides marketing chrome (header/footer/chat/splash) on the standalone /admin area
+const ChromeOnly: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+  const { pathname } = useLocation();
+  return pathname.startsWith('/admin') ? null : <>{children}</>;
+};
 
 function AppContent() {
   const { language } = useLanguage();
   const t = translations[language];
-  const isMobile = useIsMobile();
   return (
     <Router>
+        <ChromeOnly><LoadingScreen /></ChromeOnly>
+        <ChromeOnly><ScrollProgress /></ChromeOnly>
         <ScrollToTop />
-      <div className="min-h-screen">
-        <Header />
-        <Breadcrumbs />
+        <Analytics />
+      <div className="min-h-screen bg-white">
+        <ChromeOnly><Header /></ChromeOnly>
+        <ChromeOnly><Breadcrumbs /></ChromeOnly>
       <main>
           <Routes>
             <Route path="/" element={
@@ -59,18 +68,30 @@ function AppContent() {
                   <title>{t.meta.home.title}</title>
                   <meta name="description" content={t.meta.home.description} />
                   <link rel="canonical" href="https://devtaskhub.com/" />
+                  <meta property="og:title" content={t.meta.home.title} />
+                  <meta property="og:description" content={t.meta.home.description} />
                 </Helmet>
-                <OrganizationSchema />
                 <Hero />
                 <HomeShowcaseSection />
                 <Services />
                 <About />
                 <Portfolio />
-                {!isMobile && <ChatbotSection />}
+                <FAQ />
                 <Contact />
               </>
             } />
-            <Route path="/services" element={<Services />} />
+            <Route path="/services" element={
+              <>
+                <Helmet>
+                  <title>{`${t.services.title} | DevTaskHub`}</title>
+                  <meta name="description" content={t.services.subtitle} />
+                  <link rel="canonical" href="https://devtaskhub.com/services" />
+                  <meta property="og:title" content={`${t.services.title} | DevTaskHub`} />
+                  <meta property="og:description" content={t.services.subtitle} />
+                </Helmet>
+                <Services />
+              </>
+            } />
             {/* Εδώ θα μπουν τα νέα premium service pages, π.χ.: */}
             <Route path="/services/web-development" element={
               <Suspense fallback={<PageLoader />}>
@@ -138,7 +159,6 @@ function AppContent() {
                 <SEOWebsiteOptimizationPage />
               </Suspense>
             } />
-            <Route path="/services/multimedia-content-creation" element={<Placeholder name="Multimedia Content Creation" />} />
             <Route path="/services/ux-ui-design" element={
               <Suspense fallback={<PageLoader />}>
                 <Helmet>
@@ -194,7 +214,6 @@ function AppContent() {
                 <GameDevelopmentPage />
               </Suspense>
             } />
-            {/* <Route path="/services/:slug" element={<ServiceDetails />} /> */}
             <Route path="/contact" element={
               <>
                 <Helmet>
@@ -215,6 +234,15 @@ function AppContent() {
                 <Contact />
               </>
             } />
+            <Route path="/admin" element={
+              <Suspense fallback={<PageLoader />}>
+                <Helmet>
+                  <title>Admin · DevTaskHub</title>
+                  <meta name="robots" content="noindex, nofollow" />
+                </Helmet>
+                <AdminPanel />
+              </Suspense>
+            } />
             <Route path="/terms" element={
               <Suspense fallback={<PageLoader />}>
                 <Helmet>
@@ -226,7 +254,8 @@ function AppContent() {
             } />
           </Routes>
       </main>
-      <Footer />
+      <ChromeOnly><Footer /></ChromeOnly>
+      <ChromeOnly><FloatingChat /></ChromeOnly>
     </div>
     </Router>
   );

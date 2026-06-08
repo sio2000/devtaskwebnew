@@ -55,9 +55,12 @@ const Hero: React.FC = () => {
             >
               <img
                 src={webImage}
-                alt="Web Development Background"
+                alt=""
+                aria-hidden="true"
                 className="w-full h-full object-cover"
                 loading="eager"
+                fetchPriority="high"
+                decoding="async"
                 style={{
                   opacity: 0.6,
                 }}
@@ -446,6 +449,7 @@ const Hero: React.FC = () => {
             <div className="flex items-center justify-center space-x-6">
               <motion.button
                 onClick={prevSlide}
+                aria-label="Προηγούμενη διαφάνεια"
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.95 }}
                 className="p-3 rounded-full glass-luxury-strong hover:bg-white/25 transition-all duration-300 backdrop-blur-md shadow-luxury border border-white/30 hover:border-white/50"
@@ -457,6 +461,8 @@ const Hero: React.FC = () => {
                   <motion.button
                     key={index}
                     onClick={() => setCurrentSlide(index)}
+                    aria-label={`Διαφάνεια ${index + 1}`}
+                    aria-current={index === currentSlide}
                     whileHover={{ scale: 1.2 }}
                     whileTap={{ scale: 0.9 }}
                     className={`rounded-full transition-all duration-300 ${
@@ -469,6 +475,7 @@ const Hero: React.FC = () => {
               </div>
               <motion.button
                 onClick={nextSlide}
+                aria-label="Επόμενη διαφάνεια"
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.95 }}
                 className="p-3 rounded-full glass-luxury-strong hover:bg-white/25 transition-all duration-300 backdrop-blur-md shadow-luxury border border-white/30 hover:border-white/50"
