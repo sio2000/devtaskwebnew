@@ -19,17 +19,10 @@ export default defineConfig({
     },
     rollupOptions: {
       output: {
-        manualChunks: (id) => {
-          // React vendor chunk
-          if (id.includes('node_modules/react') || id.includes('node_modules/react-dom') || id.includes('node_modules/react-router')) {
-            return 'react-vendor';
-          }
-          // Prefer to colocate framer-motion with React to ensure React exports
-          // are available before animation code runs (avoids createContext undefined).
-          if (id.includes('node_modules/framer-motion')) {
-            return 'react-vendor';
-          }
-          // Charts (recharts + its transitive deps) — only used by the lazy /admin panel
+        // Only split recharts (lazy /admin). Avoid splitting React/framer-motion into
+        // separate chunks — that created a circular import (react-vendor ↔ vendor)
+        // and crashed the app with "Cannot read properties of undefined (reading 'useState')".
+        manualChunks(id) {
           if (
             id.includes('node_modules/recharts') ||
             id.includes('node_modules/recharts-scale') ||
@@ -43,18 +36,6 @@ export default defineConfig({
             id.includes('node_modules/tiny-invariant')
           ) {
             return 'charts-vendor';
-          }
-          // Other animation libraries can remain separate
-          if (id.includes('node_modules/gsap') || id.includes('node_modules/aos')) {
-            return 'animation-vendor';
-          }
-          // UI libraries chunk
-          if (id.includes('node_modules/react-icons') || id.includes('node_modules/lucide-react') || id.includes('node_modules/react-helmet')) {
-            return 'ui-vendor';
-          }
-          // Other node_modules
-          if (id.includes('node_modules')) {
-            return 'vendor';
           }
         },
       },
