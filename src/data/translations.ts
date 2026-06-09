@@ -989,7 +989,7 @@ export const translations = {
       info: {
         location: 'Θεσσαλονίκη, Ελλάδα',
         phone: '+30 697 198 2563',
-        email: 'devtaskhub@gmail.com'
+        email: 'info@devtaskhub.com'
       },
       success: 'Το μήνυμά σας στάλθηκε επιτυχώς!',
       emailCopied: 'Το email αντιγράφηκε!',
@@ -1145,7 +1145,7 @@ export const translations = {
         },
         privacyPolicy: {
           title: 'Πολιτική Απορρήτου',
-          content: 'Η DevTaskHub σέβεται την ιδιωτικότητά σας. Η παρούσα Πολιτική Απορρήτου εξηγεί ποια δεδομένα συλλέγουμε, γιατί, πώς τα προστατεύουμε και ποια δικαιώματα έχετε.<p class="mt-3"><b>Υπεύθυνος Επεξεργασίας (Data Controller):</b> Θεοχάρης Παναγιώτης Σιώζος — devtaskhub@gmail.com</p><p class="mt-2">Επεξεργαζόμαστε δεδομένα σύμφωνα με τον Κανονισμό (ΕΕ) 2016/679 (GDPR), την ελληνική νομοθεσία (Ν. 4624/2019) και τις αρχές ελαχιστοποίησης, διαφάνειας και λογοδοσίας.</p>'
+          content: 'Η DevTaskHub σέβεται την ιδιωτικότητά σας. Η παρούσα Πολιτική Απορρήτου εξηγεί ποια δεδομένα συλλέγουμε, γιατί, πώς τα προστατεύουμε και ποια δικαιώματα έχετε.<p class="mt-3"><b>Υπεύθυνος Επεξεργασίας (Data Controller):</b> Θεοχάρης Παναγιώτης Σιώζος — info@devtaskhub.com</p><p class="mt-2">Επεξεργαζόμαστε δεδομένα σύμφωνα με τον Κανονισμό (ΕΕ) 2016/679 (GDPR), την ελληνική νομοθεσία (Ν. 4624/2019) και τις αρχές ελαχιστοποίησης, διαφάνειας και λογοδοσίας.</p>'
         },
         gdprCompliance: {
           title: 'Συμμόρφωση με GDPR (ΕΕ 2016/679)',
@@ -1157,7 +1157,7 @@ export const translations = {
         },
         yourRights: {
           title: 'Δικαιώματα Υποκειμένων Δεδομένων',
-          content: 'Σύμφωνα με τα άρθρα 15–22 του GDPR, έχετε δικαίωμα:<ul class="list-disc pl-6 mt-3 space-y-2"><li><b>Πρόσβασης</b> στα δεδομένα που διατηρούμε για εσάς.</li><li><b>Διόρθωσης</b> ανακριβών ή ελλιπών δεδομένων.</li><li><b>Διαγραφής</b> («δικαίωμα στη λήθη»), όπου εφαρμόζεται.</li><li><b>Περιορισμού</b> της επεξεργασίας.</li><li><b>Φορητότητας</b> δεδομένων σε δομημένη, κοινώς χρησιμοποιούμενη μορφή.</li><li><b>Εναντίωσης</b> στην επεξεργασία βάσει έννομου συμφέροντος.</li><li><b>Ανάκλησης συγκατάθεσης</b> ανά πάσα στιγμή, χωρίς να επηρεάζεται η νομιμότητα προηγούμενης επεξεργασίας.</li></ul><p class="mt-3">Για άσκηση δικαιωμάτων, στείλτε email στο <a href="mailto:devtaskhub@gmail.com" class="text-blue-600 underline">devtaskhub@gmail.com</a>. Θα απαντήσουμε εντός <b>30 ημερών</b>. Έχετε επίσης δικαίωμα καταγγελίας στην <b>Αρχή Προστασίας Δεδομένων Προσωπικού Χαρακτήρα (ΑΠΔΠΧ)</b>: <a href="https://www.dpa.gr" class="text-blue-600 underline" target="_blank" rel="noopener noreferrer">www.dpa.gr</a>.</p>'
+          content: 'Σύμφωνα με τα άρθρα 15–22 του GDPR, έχετε δικαίωμα:<ul class="list-disc pl-6 mt-3 space-y-2"><li><b>Πρόσβασης</b> στα δεδομένα που διατηρούμε για εσάς.</li><li><b>Διόρθωσης</b> ανακριβών ή ελλιπών δεδομένων.</li><li><b>Διαγραφής</b> («δικαίωμα στη λήθη»), όπου εφαρμόζεται.</li><li><b>Περιορισμού</b> της επεξεργασίας.</li><li><b>Φορητότητας</b> δεδομένων σε δομημένη, κοινώς χρησιμοποιούμενη μορφή.</li><li><b>Εναντίωσης</b> στην επεξεργασία βάσει έννομου συμφέροντος.</li><li><b>Ανάκλησης συγκατάθεσης</b> ανά πάσα στιγμή, χωρίς να επηρεάζεται η νομιμότητα προηγούμενης επεξεργασίας.</li></ul><p class="mt-3">Για άσκηση δικαιωμάτων, στείλτε email στο <a href="mailto:info@devtaskhub.com" class="text-blue-600 underline">info@devtaskhub.com</a>. Θα απαντήσουμε εντός <b>30 ημερών</b>. Έχετε επίσης δικαίωμα καταγγελίας στην <b>Αρχή Προστασίας Δεδομένων Προσωπικού Χαρακτήρα (ΑΠΔΠΧ)</b>: <a href="https://www.dpa.gr" class="text-blue-600 underline" target="_blank" rel="noopener noreferrer">www.dpa.gr</a>.</p>'
         },
         cookiesAnalytics: {
           title: 'Cookies & Analytics',
@@ -1177,7 +1177,7 @@ export const translations = {
         },
         dataProtectionContact: {
           title: 'Επικοινωνία για Προστασία Δεδομένων',
-          content: 'Για οποιοδήποτε θέμα σχετικά με προσωπικά δεδομένα, άσκηση δικαιωμάτων GDPR ή αιτήματα διαγραφής/διόρθωσης, επικοινωνήστε:<p class="mt-3"><b>Θεοχάρης Παναγιώτης Σιώζος</b><br/>Email: <a href="mailto:devtaskhub@gmail.com" class="text-blue-600 underline">devtaskhub@gmail.com</a><br/>Τηλέφωνο: <a href="tel:+306971982563" class="text-blue-600 underline">+30 697 198 2563</a></p>'
+          content: 'Για οποιοδήποτε θέμα σχετικά με προσωπικά δεδομένα, άσκηση δικαιωμάτων GDPR ή αιτήματα διαγραφής/διόρθωσης, επικοινωνήστε:<p class="mt-3"><b>Θεοχάρης Παναγιώτης Σιώζος</b><br/>Email: <a href="mailto:info@devtaskhub.com" class="text-blue-600 underline">info@devtaskhub.com</a><br/>Τηλέφωνο: <a href="tel:+306971982563" class="text-blue-600 underline">+30 697 198 2563</a></p>'
         },
         modifications: {
           title: 'Τροποποιήσεις',
@@ -1185,7 +1185,7 @@ export const translations = {
         },
         contact: {
           title: 'Γενική Επικοινωνία',
-          content: 'Για οποιοδήποτε νομικό ή τεχνικό θέμα, μπορείτε να επικοινωνήσετε με τον ιδιοκτήτη μέσω email: <a href="mailto:devtaskhub@gmail.com" class="text-blue-600 underline">devtaskhub@gmail.com</a>.'
+          content: 'Για οποιοδήποτε νομικό ή τεχνικό θέμα, μπορείτε να επικοινωνήσετε με τον ιδιοκτήτη μέσω email: <a href="mailto:info@devtaskhub.com" class="text-blue-600 underline">info@devtaskhub.com</a>.'
         }
       },
       acceptance: 'Με τη χρήση της παρούσας ιστοσελίδας αποδέχεστε πλήρως τους παραπάνω όρους, την Πολιτική Απορρήτου και τις διατάξεις GDPR.',
@@ -2192,7 +2192,7 @@ export const translations = {
       info: {
         location: 'Thessaloniki, Greece',
         phone: '+30 697 198 2563',
-        email: 'devtaskhub@gmail.com'
+        email: 'info@devtaskhub.com'
       },
       success: 'Your message was sent successfully!',
       emailCopied: 'Email copied!',
@@ -2348,7 +2348,7 @@ export const translations = {
         },
         privacyPolicy: {
           title: 'Privacy Policy',
-          content: 'DevTaskHub respects your privacy. This Privacy Policy explains what data we collect, why, how we protect it, and your rights.<p class="mt-3"><b>Data Controller:</b> Theocharis Panagiotis Siozos — devtaskhub@gmail.com</p><p class="mt-2">We process data in accordance with Regulation (EU) 2016/679 (GDPR), applicable Greek law (Law 4624/2019), and the principles of minimization, transparency and accountability.</p>'
+          content: 'DevTaskHub respects your privacy. This Privacy Policy explains what data we collect, why, how we protect it, and your rights.<p class="mt-3"><b>Data Controller:</b> Theocharis Panagiotis Siozos — info@devtaskhub.com</p><p class="mt-2">We process data in accordance with Regulation (EU) 2016/679 (GDPR), applicable Greek law (Law 4624/2019), and the principles of minimization, transparency and accountability.</p>'
         },
         gdprCompliance: {
           title: 'GDPR Compliance (EU 2016/679)',
@@ -2360,7 +2360,7 @@ export const translations = {
         },
         yourRights: {
           title: 'Data Subject Rights',
-          content: 'Under GDPR Articles 15–22, you have the right to:<ul class="list-disc pl-6 mt-3 space-y-2"><li><b>Access</b> your personal data.</li><li><b>Rectification</b> of inaccurate or incomplete data.</li><li><b>Erasure</b> ("right to be forgotten"), where applicable.</li><li><b>Restriction</b> of processing.</li><li><b>Data portability</b> in a structured, commonly used format.</li><li><b>Object</b> to processing based on legitimate interest.</li><li><b>Withdraw consent</b> at any time without affecting prior lawful processing.</li></ul><p class="mt-3">To exercise your rights, email <a href="mailto:devtaskhub@gmail.com" class="text-blue-600 underline">devtaskhub@gmail.com</a>. We respond within <b>30 days</b>. You may also lodge a complaint with the <b>Hellenic Data Protection Authority (HDPA)</b>: <a href="https://www.dpa.gr" class="text-blue-600 underline" target="_blank" rel="noopener noreferrer">www.dpa.gr</a>.</p>'
+          content: 'Under GDPR Articles 15–22, you have the right to:<ul class="list-disc pl-6 mt-3 space-y-2"><li><b>Access</b> your personal data.</li><li><b>Rectification</b> of inaccurate or incomplete data.</li><li><b>Erasure</b> ("right to be forgotten"), where applicable.</li><li><b>Restriction</b> of processing.</li><li><b>Data portability</b> in a structured, commonly used format.</li><li><b>Object</b> to processing based on legitimate interest.</li><li><b>Withdraw consent</b> at any time without affecting prior lawful processing.</li></ul><p class="mt-3">To exercise your rights, email <a href="mailto:info@devtaskhub.com" class="text-blue-600 underline">info@devtaskhub.com</a>. We respond within <b>30 days</b>. You may also lodge a complaint with the <b>Hellenic Data Protection Authority (HDPA)</b>: <a href="https://www.dpa.gr" class="text-blue-600 underline" target="_blank" rel="noopener noreferrer">www.dpa.gr</a>.</p>'
         },
         cookiesAnalytics: {
           title: 'Cookies & Analytics',
@@ -2380,7 +2380,7 @@ export const translations = {
         },
         dataProtectionContact: {
           title: 'Data Protection Contact',
-          content: 'For any personal data matter, GDPR rights requests, or deletion/correction requests, contact:<p class="mt-3"><b>Theocharis Panagiotis Siozos</b><br/>Email: <a href="mailto:devtaskhub@gmail.com" class="text-blue-600 underline">devtaskhub@gmail.com</a><br/>Phone: <a href="tel:+306971982563" class="text-blue-600 underline">+30 697 198 2563</a></p>'
+          content: 'For any personal data matter, GDPR rights requests, or deletion/correction requests, contact:<p class="mt-3"><b>Theocharis Panagiotis Siozos</b><br/>Email: <a href="mailto:info@devtaskhub.com" class="text-blue-600 underline">info@devtaskhub.com</a><br/>Phone: <a href="tel:+306971982563" class="text-blue-600 underline">+30 697 198 2563</a></p>'
         },
         modifications: {
           title: 'Modifications',
@@ -2388,7 +2388,7 @@ export const translations = {
         },
         contact: {
           title: 'General Contact',
-          content: 'For any legal or technical issue, you can contact the owner via email: <a href="mailto:devtaskhub@gmail.com" class="text-blue-600 underline">devtaskhub@gmail.com</a>.'
+          content: 'For any legal or technical issue, you can contact the owner via email: <a href="mailto:info@devtaskhub.com" class="text-blue-600 underline">info@devtaskhub.com</a>.'
         }
       },
       acceptance: 'By using this website, you fully accept the above terms, Privacy Policy and GDPR provisions.',
@@ -3391,7 +3391,7 @@ export const translations = {
       info: {
         location: 'Thessalonique, Grèce',
         phone: '+30 697 198 2563',
-        email: 'devtaskhub@gmail.com'
+        email: 'info@devtaskhub.com'
       },
       success: 'Votre message a été envoyé avec succès!',
       emailCopied: 'Email copié!',
@@ -3547,7 +3547,7 @@ export const translations = {
         },
         privacyPolicy: {
           title: 'Politique de Confidentialité',
-          content: 'DevTaskHub respecte votre vie privée. Cette Politique de Confidentialité explique quelles données nous collectons, pourquoi, comment nous les protégeons et vos droits.<p class="mt-3"><b>Responsable du traitement :</b> Theocharis Panagiotis Siozos — devtaskhub@gmail.com</p><p class="mt-2">Nous traitons les données conformément au Règlement (UE) 2016/679 (RGPD), à la législation grecque applicable (Loi 4624/2019) et aux principes de minimisation, transparence et responsabilité.</p>'
+          content: 'DevTaskHub respecte votre vie privée. Cette Politique de Confidentialité explique quelles données nous collectons, pourquoi, comment nous les protégeons et vos droits.<p class="mt-3"><b>Responsable du traitement :</b> Theocharis Panagiotis Siozos — info@devtaskhub.com</p><p class="mt-2">Nous traitons les données conformément au Règlement (UE) 2016/679 (RGPD), à la législation grecque applicable (Loi 4624/2019) et aux principes de minimisation, transparence et responsabilité.</p>'
         },
         gdprCompliance: {
           title: 'Conformité RGPD (UE 2016/679)',
@@ -3559,7 +3559,7 @@ export const translations = {
         },
         yourRights: {
           title: 'Droits des Personnes Concernées',
-          content: 'Conformément aux articles 15–22 du RGPD, vous avez le droit :<ul class="list-disc pl-6 mt-3 space-y-2"><li><b>D\'accès</b> à vos données personnelles.</li><li>De <b>rectification</b> des données inexactes ou incomplètes.</li><li>D\'<b>effacement</b> (« droit à l\'oubli »), le cas échéant.</li><li>De <b>limitation</b> du traitement.</li><li>À la <b>portabilité</b> des données.</li><li>D\'<b>opposition</b> au traitement fondé sur l\'intérêt légitime.</li><li>De <b>retirer votre consentement</b> à tout moment sans affecter le traitement antérieur licite.</li></ul><p class="mt-3">Pour exercer vos droits, écrivez à <a href="mailto:devtaskhub@gmail.com" class="text-blue-600 underline">devtaskhub@gmail.com</a>. Réponse sous <b>30 jours</b>. Vous pouvez aussi déposer une plainte auprès de l\'<b>Autorité hellénique de protection des données (APDPX)</b> : <a href="https://www.dpa.gr" class="text-blue-600 underline" target="_blank" rel="noopener noreferrer">www.dpa.gr</a>.</p>'
+          content: 'Conformément aux articles 15–22 du RGPD, vous avez le droit :<ul class="list-disc pl-6 mt-3 space-y-2"><li><b>D\'accès</b> à vos données personnelles.</li><li>De <b>rectification</b> des données inexactes ou incomplètes.</li><li>D\'<b>effacement</b> (« droit à l\'oubli »), le cas échéant.</li><li>De <b>limitation</b> du traitement.</li><li>À la <b>portabilité</b> des données.</li><li>D\'<b>opposition</b> au traitement fondé sur l\'intérêt légitime.</li><li>De <b>retirer votre consentement</b> à tout moment sans affecter le traitement antérieur licite.</li></ul><p class="mt-3">Pour exercer vos droits, écrivez à <a href="mailto:info@devtaskhub.com" class="text-blue-600 underline">info@devtaskhub.com</a>. Réponse sous <b>30 jours</b>. Vous pouvez aussi déposer une plainte auprès de l\'<b>Autorité hellénique de protection des données (APDPX)</b> : <a href="https://www.dpa.gr" class="text-blue-600 underline" target="_blank" rel="noopener noreferrer">www.dpa.gr</a>.</p>'
         },
         cookiesAnalytics: {
           title: 'Cookies & Analytics',
@@ -3579,7 +3579,7 @@ export const translations = {
         },
         dataProtectionContact: {
           title: 'Contact Protection des Données',
-          content: 'Pour toute question relative aux données personnelles, exercice des droits RGPD ou demandes de suppression/correction, contactez :<p class="mt-3"><b>Theocharis Panagiotis Siozos</b><br/>Email : <a href="mailto:devtaskhub@gmail.com" class="text-blue-600 underline">devtaskhub@gmail.com</a><br/>Téléphone : <a href="tel:+306971982563" class="text-blue-600 underline">+30 697 198 2563</a></p>'
+          content: 'Pour toute question relative aux données personnelles, exercice des droits RGPD ou demandes de suppression/correction, contactez :<p class="mt-3"><b>Theocharis Panagiotis Siozos</b><br/>Email : <a href="mailto:info@devtaskhub.com" class="text-blue-600 underline">info@devtaskhub.com</a><br/>Téléphone : <a href="tel:+306971982563" class="text-blue-600 underline">+30 697 198 2563</a></p>'
         },
         modifications: {
           title: 'Modifications',
@@ -3587,7 +3587,7 @@ export const translations = {
         },
         contact: {
           title: 'Contact Général',
-          content: 'Pour toute question juridique ou technique, vous pouvez contacter le propriétaire par email : <a href="mailto:devtaskhub@gmail.com" class="text-blue-600 underline">devtaskhub@gmail.com</a>.'
+          content: 'Pour toute question juridique ou technique, vous pouvez contacter le propriétaire par email : <a href="mailto:info@devtaskhub.com" class="text-blue-600 underline">info@devtaskhub.com</a>.'
         }
       },
       acceptance: 'En utilisant ce site web, vous acceptez pleinement les conditions ci-dessus, la Politique de Confidentialité et les dispositions RGPD.',

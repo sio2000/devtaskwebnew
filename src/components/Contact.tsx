@@ -40,16 +40,11 @@ const Contact: React.FC = () => {
     setErrors({ ...errors, [e.target.name]: false });
   };
 
-  const encode = (data: Record<string, string>) =>
-    Object.keys(data)
-      .map((key) => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
-      .join('&');
-
   const openMailtoFallback = () => {
     const subject = encodeURIComponent(formData.subject || t.contact.mailtoSubject);
     const serviceText = formData.service ? `${t.contact.form.service}: ${formData.service}\n` : '';
     const body = encodeURIComponent(`${t.contact.form.name}: ${formData.name}\n${t.contact.form.email}: ${formData.email}\n${serviceText}\n${formData.message}`);
-    window.location.href = `mailto:devtaskhub@gmail.com?subject=${subject}&body=${body}`;
+    window.location.href = `mailto:info@devtaskhub.com?subject=${subject}&body=${body}`;
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -59,11 +54,10 @@ const Contact: React.FC = () => {
     setLoading(true);
     setSuccess(false);
     try {
-      const response = await fetch('/', {
+      const response = await fetch('/.netlify/functions/send-contact', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: encode({
-          'form-name': 'contact',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
           'bot-field': botField,
           name: formData.name,
           email: formData.email,
@@ -92,8 +86,8 @@ const Contact: React.FC = () => {
   const contactLinks = [
     {
       icon: FaEnvelope,
-      value: 'Devtaskhub@gmail.com',
-      href: 'mailto:Devtaskhub@gmail.com',
+      value: 'info@devtaskhub.com',
+      href: 'mailto:info@devtaskhub.com',
       color: 'text-blue-600',
     },
     {

@@ -122,7 +122,7 @@ const Footer = memo(() => {
                 {t.contact.info.phone}
               </a>
               <a
-                href="mailto:Devtaskhub@gmail.com"
+                href="mailto:info@devtaskhub.com"
                 className="block hover:text-orange-300 transition-colors duration-300"
               >
                 {t.contact.info.email}

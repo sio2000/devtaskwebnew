@@ -6,7 +6,7 @@
 - Name: DevTaskHub
 - Location: Thessaloniki (Θεσσαλονίκη), Central Macedonia, Greece
 - Serves: All of Greece and the EU, remotely
-- Email: devtaskhub@gmail.com
+- Email: info@devtaskhub.com
 - Phone: +30 697 198 2563
 - Positioning: Modern, fast, responsive, SEO-optimized digital products at fair prices. "You think the vision. We build it."
 
@@ -30,7 +30,7 @@
 - HANDSTUFF: E-shop for handmade leather bags.
 
 ## Contact
-- Email: devtaskhub@gmail.com
+- Email: info@devtaskhub.com
 - Phone: +30 697 198 2563
 - Contact page: https://devtaskhub.com/contact
 - Free, transparent quote provided before any work begins.
