@@ -49,7 +49,8 @@ const FloatingChat: React.FC = () => {
         onClick={() => (open ? closeChat() : openChat())}
         aria-label={open ? (t.chatbot.close || 'Κλείσιμο chat') : (t.chatbot.open || 'Άνοιγμα chat')}
         aria-expanded={open}
-        className="fixed bottom-5 right-5 z-[60] w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-gradient-to-br from-blue-600 via-purple-600 to-pink-500 text-white shadow-2xl flex items-center justify-center focus:outline-none focus-visible:ring-4 focus-visible:ring-purple-300"
+        // Hide on mobile while open — the X overlapped FastBots' send button (iOS/Android)
+        className={`fixed bottom-5 right-5 z-[60] w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-gradient-to-br from-blue-600 via-purple-600 to-pink-500 text-white shadow-2xl items-center justify-center focus:outline-none focus-visible:ring-4 focus-visible:ring-purple-300 ${open ? 'hidden sm:flex' : 'flex'}`}
         initial={{ scale: 0, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
         transition={{ delay: 0.6, type: 'spring', stiffness: 260, damping: 18 }}
