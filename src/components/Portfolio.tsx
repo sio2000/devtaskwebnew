@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useMemo, useCallback } from 'react';
-import { ExternalLink, Smartphone, Monitor, BarChart3, Gamepad2, Heart, ChevronLeft, ChevronRight, Scissors, ShoppingBag, Building2, Briefcase } from 'lucide-react';
+import { ExternalLink, Smartphone, Monitor, BarChart3, Gamepad2, Heart, ChevronLeft, ChevronRight, ShoppingBag, Building2, Briefcase } from 'lucide-react';
 import SectionEyebrow from './SectionEyebrow';
 import { FaApple, FaAndroid, FaCloud, FaRocket, FaHeartbeat, FaMapMarkedAlt, FaGift, FaParking } from 'react-icons/fa';
 import { motion } from 'framer-motion';
@@ -13,7 +13,6 @@ import hotelImg from '../assets/Hotel.png';
 import clinicImg from '../assets/clinic.png';
 import jewelsImg from '../assets/jewels.png';
 import advancedDermaImg from '../assets/advanced_derma.png';
-import barberImg from '../assets/barber.png';
 import leonidionHousesImg from '../assets/leonidionhouses.png';
 import bagImg from '../assets/bag.png';
 import tparkingSiteImg from '../assets/tparking.png';
@@ -224,16 +223,6 @@ const Portfolio: React.FC = () => {
         title: p.leonidionHouses?.title ?? 'Leonidion Houses',
         description: p.leonidionHouses?.description ?? '',
         url: 'https://www.leonidionhouses.com/'
-      },
-      {
-        key: 'barber',
-        icon: Scissors,
-        image: barberImg,
-        technologies: ['Booking', 'Gallery', 'Street Style', 'Branding'],
-        gradient: 'from-zinc-700 to-amber-600',
-        title: p.barber?.title ?? "Devil's Barber",
-        description: p.barber?.description ?? '',
-        url: 'https://ornate-gumption-e58078.netlify.app/'
       },
       {
         key: 'crypto',

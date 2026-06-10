@@ -28,7 +28,6 @@ import cryptoImg from '../assets/crypto.png';
 import jewelsImg from '../assets/jewels.png';
 import cmdImg from '../assets/cmd.jpg';
 import advancedDermaImg from '../assets/advanced_derma.png';
-import barberImg from '../assets/barber.png';
 import leonidionHousesImg from '../assets/leonidionhouses.png';
 import bagImg from '../assets/bag.png';
 import tparkingSiteImg from '../assets/tparking.png';
@@ -370,46 +369,51 @@ export default function WebDevelopmentPage() {
             {[
               {
                 img: architectureImg,
-                url: 'https://in-mavridis.gr/'
+                url: 'https://in-mavridis.gr/',
+                sampleIndex: 0,
               },
               {
                 img: hydrogenImg,
-                url: 'https://hydrogenlife.eu/'
+                url: 'https://hydrogenlife.eu/',
+                sampleIndex: 1,
               },
               {
                 img: cryptoImg,
-                url: 'https://panitoscryptocoin.com/'
+                url: 'https://panitoscryptocoin.com/',
+                sampleIndex: 2,
               },
               {
                 img: hotelImg,
-                url: 'https://serenity-hotel-lux.netlify.app/'
+                url: 'https://serenity-hotel-lux.netlify.app/',
+                sampleIndex: 3,
               },
               {
                 img: jewelsImg,
-                url: 'https://stsrr.netlify.app/'
+                url: 'https://stsrr.netlify.app/',
+                sampleIndex: 4,
               },
               {
                 img: advancedDermaImg,
-                url: 'https://starlit-maamoul-c1e3cb.netlify.app/'
-              },
-              {
-                img: barberImg,
-                url: 'https://ornate-gumption-e58078.netlify.app/'
+                url: 'https://starlit-maamoul-c1e3cb.netlify.app/',
+                sampleIndex: 5,
               },
               {
                 img: leonidionHousesImg,
-                url: 'https://www.leonidionhouses.com/'
+                url: 'https://www.leonidionhouses.com/',
+                sampleIndex: 7,
               },
               {
                 img: bagImg,
-                url: 'https://idyllic-mermaid-415d9f.netlify.app/'
+                url: 'https://idyllic-mermaid-415d9f.netlify.app/',
+                sampleIndex: 8,
               },
               {
                 img: tparkingSiteImg,
-                url: 'https://t-parking.com/'
+                url: 'https://t-parking.com/',
+                sampleIndex: 9,
               }
             ].map((s, idx) => {
-              const sample = t.services.pages.webDevelopment.samples.items[idx];
+              const sample = t.services.pages.webDevelopment.samples.items[s.sampleIndex];
               return (
               <motion.div
                 key={sample.title}
