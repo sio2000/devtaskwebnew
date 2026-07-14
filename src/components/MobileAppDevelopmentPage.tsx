@@ -83,7 +83,7 @@ const tools = [
   { icon: <FaReact className="text-blue-400 text-3xl" />, name: 'React Native' },
   { icon: <SiFirebase className="text-yellow-500 text-3xl" />, name: 'Firebase' },
   { icon: <SiSupabase className="text-green-500 text-3xl" />, name: 'Supabase' },
-  { icon: <FaApple className="text-gray-900 text-3xl" />, name: 'App Store' },
+  { icon: <FaApple className="text-paper text-3xl" />, name: 'App Store' },
   { icon: <FaAndroid className="text-green-500 text-3xl" />, name: 'Play Store' },
 ];
 
@@ -147,15 +147,15 @@ export default function MobileAppDevelopmentPage() {
     }
   }, [fullscreenImage, modalImg]);
   return (
-    <div className="bg-gradient-to-br from-white via-blue-50 to-purple-50 min-h-screen text-gray-900 font-sans">
+    <div className="bg-gradient-to-br from-ink via-ink-800 to-ink-800 min-h-screen text-paper font-sans">
       {/* Hero Section */}
-      <section className="relative min-h-[80vh] flex items-center justify-center overflow-hidden pb-10 select-none bg-gradient-to-br from-blue-50 via-white to-purple-50">
+      <section className="relative min-h-[80vh] flex items-center justify-center overflow-hidden pb-10 select-none bg-gradient-to-br from-ink-800 via-ink-800 to-ink-800">
         {/* Animated Background Gradients/Particles */}
         <motion.div className="absolute inset-0 z-0 pointer-events-none">
-          <motion.div className="absolute top-[-10%] left-[-10%] w-[40vw] h-[40vw] bg-gradient-to-br from-blue-400/40 via-purple-400/30 to-white/0 rounded-full blur-3xl animate-spin-slow" animate={{ rotate: 360 }} transition={{ duration: 40, repeat: Infinity, ease: 'linear' }} />
-          <motion.div className="absolute bottom-[-10%] right-[-10%] w-[32vw] h-[32vw] bg-gradient-to-br from-purple-400/40 via-blue-400/30 to-white/0 rounded-full blur-3xl animate-spin-slow" animate={{ rotate: -360 }} transition={{ duration: 60, repeat: Infinity, ease: 'linear' }} />
-          <motion.div className="absolute top-1/4 left-1/4 w-64 h-64 bg-white/20 rounded-full blur-3xl" animate={{ y: [0, -20, 0], rotate: [0, 5, 0] }} transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut' }} />
-          <motion.div className="absolute bottom-1/4 right-1/4 w-48 h-48 bg-white/20 rounded-full blur-3xl" animate={{ y: [0, 30, 0], rotate: [0, -5, 0] }} transition={{ duration: 8, repeat: Infinity, ease: 'easeInOut', delay: 1 }} />
+          <motion.div className="absolute top-[-10%] left-[-10%] w-[40vw] h-[40vw] bg-gradient-to-br from-blue-400/40 via-purple-400/30 to-ink/0 rounded-full blur-3xl animate-spin-slow" animate={{ rotate: 360 }} transition={{ duration: 40, repeat: Infinity, ease: 'linear' }} />
+          <motion.div className="absolute bottom-[-10%] right-[-10%] w-[32vw] h-[32vw] bg-gradient-to-br from-purple-400/40 via-blue-400/30 to-ink/0 rounded-full blur-3xl animate-spin-slow" animate={{ rotate: -360 }} transition={{ duration: 60, repeat: Infinity, ease: 'linear' }} />
+          <motion.div className="absolute top-1/4 left-1/4 w-64 h-64 bg-white/[0.06] rounded-full blur-3xl" animate={{ y: [0, -20, 0], rotate: [0, 5, 0] }} transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut' }} />
+          <motion.div className="absolute bottom-1/4 right-1/4 w-48 h-48 bg-white/[0.06] rounded-full blur-3xl" animate={{ y: [0, 30, 0], rotate: [0, -5, 0] }} transition={{ duration: 8, repeat: Infinity, ease: 'easeInOut', delay: 1 }} />
         </motion.div>
         {/* HERO CONTENT SPLIT LAYOUT */}
         <div className="relative z-20 max-w-7xl mx-auto px-4 py-32 w-full flex flex-col md:flex-row items-center justify-between gap-10">
@@ -164,7 +164,7 @@ export default function MobileAppDevelopmentPage() {
             <motion.h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6 drop-shadow-lg tracking-tight bg-gradient-to-r from-blue-700 to-purple-600 bg-clip-text text-transparent px-4 break-words" initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }} style={{ fontFamily: "'IBM Plex Sans', 'Inter', sans-serif", wordBreak: 'break-word', overflowWrap: 'break-word' }}>
               {t.services.pages.mobileAppDevelopment.hero.title}
             </motion.h1>
-            <motion.p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-700 mb-10 font-medium max-w-2xl px-4 break-words" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.2 }} style={{ wordBreak: 'break-word', overflowWrap: 'break-word' }}>
+            <motion.p className="text-base sm:text-lg md:text-xl lg:text-2xl text-paper-dim mb-10 font-medium max-w-2xl px-4 break-words" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.2 }} style={{ wordBreak: 'break-word', overflowWrap: 'break-word' }}>
               {t.services.pages.mobileAppDevelopment.hero.subtitle}
             </motion.p>
             <div className="flex flex-col sm:flex-row gap-4">
@@ -189,7 +189,7 @@ export default function MobileAppDevelopmentPage() {
             <motion.img
               src={phoneImg}
               alt="Mobile Phone"
-              className="w-[160px] h-[260px] md:w-[220px] md:h-[360px] object-cover rounded-3xl shadow-2xl border-4 border-blue-100/60 bg-white/80"
+              className="w-[160px] h-[260px] md:w-[220px] md:h-[360px] object-cover rounded-3xl shadow-2xl border-4 border-white/10/60 bg-white/[0.045]"
               animate={{ y: [0, -18, 0, 18, 0] }}
               transition={{ duration: 7, repeat: Infinity, ease: 'easeInOut' }}
               style={{ boxShadow: '0 8px 48px 0 rgba(80,80,200,0.13)' }}
@@ -197,7 +197,7 @@ export default function MobileAppDevelopmentPage() {
             <motion.img
               src={smartphoneImg}
               alt="Smartphone"
-              className="w-[160px] h-[260px] md:w-[220px] md:h-[360px] object-cover rounded-3xl shadow-2xl border-4 border-blue-100/60 bg-white/80"
+              className="w-[160px] h-[260px] md:w-[220px] md:h-[360px] object-cover rounded-3xl shadow-2xl border-4 border-white/10/60 bg-white/[0.045]"
               animate={{ y: [0, 18, 0, -18, 0] }}
               transition={{ duration: 7, repeat: Infinity, ease: 'easeInOut', delay: 2 }}
               style={{ boxShadow: '0 8px 48px 0 rgba(80,80,200,0.13)' }}
@@ -209,45 +209,45 @@ export default function MobileAppDevelopmentPage() {
       {/* Types of Mobile App Development */}
       <section className="relative max-w-xl mx-auto py-20 px-4">
         {/* Floating gradient shapes */}
-        <div className="absolute -top-16 -left-16 w-60 h-60 bg-gradient-to-br from-blue-200 via-purple-200 to-white opacity-40 rounded-full blur-3xl z-0"></div>
-        <div className="absolute bottom-0 right-0 w-40 h-40 bg-gradient-to-tr from-purple-200 via-blue-100 to-white opacity-30 rounded-full blur-2xl z-0"></div>
-        <div className="relative z-10 bg-white/70 backdrop-blur-2xl rounded-3xl shadow-2xl border border-blue-100/60 p-8 flex flex-col items-center gap-8 overflow-hidden">
+        <div className="absolute -top-16 -left-16 w-60 h-60 bg-gradient-to-br from-iris/25 via-purple-200 to-ink opacity-40 rounded-full blur-3xl z-0"></div>
+        <div className="absolute bottom-0 right-0 w-40 h-40 bg-gradient-to-tr from-iris/20 via-iris/15 to-ink opacity-30 rounded-full blur-2xl z-0"></div>
+        <div className="relative z-10 bg-white/[0.04] backdrop-blur-2xl rounded-3xl shadow-2xl border border-white/10/60 p-8 flex flex-col items-center gap-8 overflow-hidden">
           <h2 className="text-3xl md:text-4xl font-extrabold bg-gradient-to-r from-blue-600 via-purple-500 to-blue-400 bg-clip-text text-transparent mb-2 drop-shadow-lg text-center">{t.services.pages.mobileAppDevelopment.appTypes.title}</h2>
           <div className="h-1 w-24 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full mb-6 mx-auto animate-pulse"></div>
-          <p className="text-base text-gray-700 mb-6 text-center max-w-lg">{t.services.pages.mobileAppDevelopment.appTypes.description}</p>
+          <p className="text-base text-paper-dim mb-6 text-center max-w-lg">{t.services.pages.mobileAppDevelopment.appTypes.description}</p>
           <div className="flex flex-col gap-8 w-full">
             {/* iPhone & iPad Apps */}
-            <div className="group bg-white/80 backdrop-blur-xl rounded-2xl shadow-2xl border border-blue-200/60 p-6 flex flex-col items-center text-center transition-all duration-300 hover:shadow-3xl hover:scale-105 hover:-rotate-1 focus:outline-none focus:ring-4 focus:ring-blue-100 relative overflow-hidden w-full">
-              <div className="absolute -top-6 -right-6 w-16 h-16 bg-gradient-to-br from-blue-200 to-purple-200 opacity-20 rounded-full blur-2xl z-0"></div>
+            <div className="group bg-white/[0.045] backdrop-blur-xl rounded-2xl shadow-2xl border border-iris/30/60 p-6 flex flex-col items-center text-center transition-all duration-300 hover:shadow-3xl hover:scale-105 hover:-rotate-1 focus:outline-none focus:ring-4 focus:ring-blue-100 relative overflow-hidden w-full">
+              <div className="absolute -top-6 -right-6 w-16 h-16 bg-gradient-to-br from-iris/25 to-iris/15 opacity-20 rounded-full blur-2xl z-0"></div>
               <div className="relative z-10 mb-3 flex items-center justify-center w-14 h-14 rounded-full bg-blue-200 shadow-inner border-2 border-blue-300">
-                <FaApple className="text-blue-700 text-3xl" />
+                <FaApple className="text-iris-bright text-3xl" />
               </div>
-              <h3 className="text-lg font-bold text-blue-900 mb-1 relative z-10">{t.services.pages.mobileAppDevelopment.appTypes.cards.ios.title}</h3>
-              <span className="inline-block px-2 py-1 rounded bg-blue-100 text-blue-700 text-xs font-semibold mb-2 relative z-10">{t.services.pages.mobileAppDevelopment.appTypes.cards.ios.badge}</span>
-              <p className="text-gray-700 text-base mb-1 relative z-10">{t.services.pages.mobileAppDevelopment.appTypes.cards.ios.description}</p>
-              <p className="text-gray-500 text-sm relative z-10">{t.services.pages.mobileAppDevelopment.appTypes.cards.ios.detail}</p>
+              <h3 className="text-lg font-bold text-paper mb-1 relative z-10">{t.services.pages.mobileAppDevelopment.appTypes.cards.ios.title}</h3>
+              <span className="inline-block px-2 py-1 rounded bg-iris/15 text-iris-bright text-xs font-semibold mb-2 relative z-10">{t.services.pages.mobileAppDevelopment.appTypes.cards.ios.badge}</span>
+              <p className="text-paper-dim text-base mb-1 relative z-10">{t.services.pages.mobileAppDevelopment.appTypes.cards.ios.description}</p>
+              <p className="text-paper-muted text-sm relative z-10">{t.services.pages.mobileAppDevelopment.appTypes.cards.ios.detail}</p>
             </div>
             {/* Android Apps */}
-            <div className="group bg-white/80 backdrop-blur-xl rounded-2xl shadow-2xl border border-green-200/60 p-6 flex flex-col items-center text-center transition-all duration-300 hover:shadow-3xl hover:scale-105 hover:rotate-1 focus:outline-none focus:ring-4 focus:ring-green-100 relative overflow-hidden w-full">
-              <div className="absolute -top-6 -left-6 w-16 h-16 bg-gradient-to-br from-green-200 to-blue-200 opacity-20 rounded-full blur-2xl z-0"></div>
+            <div className="group bg-white/[0.045] backdrop-blur-xl rounded-2xl shadow-2xl border border-green-200/60 p-6 flex flex-col items-center text-center transition-all duration-300 hover:shadow-3xl hover:scale-105 hover:rotate-1 focus:outline-none focus:ring-4 focus:ring-green-100 relative overflow-hidden w-full">
+              <div className="absolute -top-6 -left-6 w-16 h-16 bg-gradient-to-br from-green-200 to-iris/15 opacity-20 rounded-full blur-2xl z-0"></div>
               <div className="relative z-10 mb-3 flex items-center justify-center w-14 h-14 rounded-full bg-green-200 shadow-inner border-2 border-green-300">
                 <FaAndroid className="text-green-700 text-3xl" />
               </div>
               <h3 className="text-lg font-bold text-green-900 mb-1 relative z-10">{t.services.pages.mobileAppDevelopment.appTypes.cards.android.title}</h3>
               <span className="inline-block px-2 py-1 rounded bg-green-100 text-green-700 text-xs font-semibold mb-2 relative z-10">{t.services.pages.mobileAppDevelopment.appTypes.cards.android.badge}</span>
-              <p className="text-gray-700 text-base mb-1 relative z-10">{t.services.pages.mobileAppDevelopment.appTypes.cards.android.description}</p>
-              <p className="text-gray-500 text-sm relative z-10">{t.services.pages.mobileAppDevelopment.appTypes.cards.android.detail}</p>
+              <p className="text-paper-dim text-base mb-1 relative z-10">{t.services.pages.mobileAppDevelopment.appTypes.cards.android.description}</p>
+              <p className="text-paper-muted text-sm relative z-10">{t.services.pages.mobileAppDevelopment.appTypes.cards.android.detail}</p>
             </div>
             {/* Progressive Web Apps */}
-            <div className="group bg-white/80 backdrop-blur-xl rounded-2xl shadow-2xl border border-purple-200/60 p-6 flex flex-col items-center text-center transition-all duration-300 hover:shadow-3xl hover:scale-105 hover:-rotate-1 focus:outline-none focus:ring-4 focus:ring-purple-100 relative overflow-hidden w-full">
-              <div className="absolute -bottom-6 right-6 w-16 h-16 bg-gradient-to-br from-purple-200 to-blue-200 opacity-20 rounded-full blur-2xl z-0"></div>
+            <div className="group bg-white/[0.045] backdrop-blur-xl rounded-2xl shadow-2xl border border-iris/30/60 p-6 flex flex-col items-center text-center transition-all duration-300 hover:shadow-3xl hover:scale-105 hover:-rotate-1 focus:outline-none focus:ring-4 focus:ring-purple-100 relative overflow-hidden w-full">
+              <div className="absolute -bottom-6 right-6 w-16 h-16 bg-gradient-to-br from-iris/20 to-iris/15 opacity-20 rounded-full blur-2xl z-0"></div>
               <div className="relative z-10 mb-3 flex items-center justify-center w-14 h-14 rounded-full bg-purple-200 shadow-inner border-2 border-purple-300">
                 <FaCloud className="text-purple-700 text-3xl" />
               </div>
               <h3 className="text-lg font-bold text-purple-900 mb-1 relative z-10">{t.services.pages.mobileAppDevelopment.appTypes.cards.pwa.title}</h3>
-              <span className="inline-block px-2 py-1 rounded bg-purple-100 text-purple-700 text-xs font-semibold mb-2 relative z-10">{t.services.pages.mobileAppDevelopment.appTypes.cards.pwa.badge}</span>
-              <p className="text-gray-700 text-base mb-1 relative z-10">{t.services.pages.mobileAppDevelopment.appTypes.cards.pwa.description}</p>
-              <p className="text-gray-500 text-sm relative z-10">{t.services.pages.mobileAppDevelopment.appTypes.cards.pwa.detail}</p>
+              <span className="inline-block px-2 py-1 rounded bg-iris/10 text-purple-700 text-xs font-semibold mb-2 relative z-10">{t.services.pages.mobileAppDevelopment.appTypes.cards.pwa.badge}</span>
+              <p className="text-paper-dim text-base mb-1 relative z-10">{t.services.pages.mobileAppDevelopment.appTypes.cards.pwa.description}</p>
+              <p className="text-paper-muted text-sm relative z-10">{t.services.pages.mobileAppDevelopment.appTypes.cards.pwa.detail}</p>
             </div>
           </div>
         </div>
@@ -279,16 +279,16 @@ export default function MobileAppDevelopmentPage() {
           <motion.h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold mb-12 text-center gradient-text-premium" initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }}>{t.services.pages.mobileAppDevelopment.tools.title}</motion.h2>
           <motion.div className="flex flex-wrap justify-center gap-8 lg:gap-10 mb-12" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.08 } } }}>
             {tools.map((t, idx) => (
-              <motion.div key={t.name} className="group relative flex flex-col items-center gap-2 bg-white/80 backdrop-blur-xl rounded-2xl shadow-xl border border-white/50 p-6 md:p-8 hover:shadow-2xl transition-all duration-300 overflow-hidden" initial={{ opacity: 0, y: 30, scale: 0.95 }} whileInView={{ opacity: 1, y: 0, scale: 1 }} whileHover={{ scale: 1.05, y: -4, boxShadow: '0 0 24px 0 #a5b4fc' }} viewport={{ once: true }} transition={{ duration: 0.5, delay: idx * 0.1 }} onMouseEnter={() => playSound(hoverSfx)} onClick={() => playSound(clickSfx)}>
+              <motion.div key={t.name} className="group relative flex flex-col items-center gap-2 bg-white/[0.045] backdrop-blur-xl rounded-2xl shadow-xl border border-white/10 p-6 md:p-8 hover:shadow-2xl transition-all duration-300 overflow-hidden" initial={{ opacity: 0, y: 30, scale: 0.95 }} whileInView={{ opacity: 1, y: 0, scale: 1 }} whileHover={{ scale: 1.05, y: -4, boxShadow: '0 0 24px 0 #a5b4fc' }} viewport={{ once: true }} transition={{ duration: 0.5, delay: idx * 0.1 }} onMouseEnter={() => playSound(hoverSfx)} onClick={() => playSound(clickSfx)}>
                 {/* Shine Effect */}
                 <motion.div
-                  className="absolute inset-0 rounded-2xl bg-gradient-to-r from-transparent via-white/30 to-transparent opacity-0 group-hover:opacity-100"
+                  className="absolute inset-0 rounded-2xl bg-gradient-to-r from-transparent via-ink/30 to-transparent opacity-0 group-hover:opacity-100"
                   initial={{ x: '-100%' }}
                   whileHover={{ x: '100%' }}
                   transition={{ duration: 0.8 }}
                 />
                 <div className="relative z-10">{t.icon}</div>
-                <span className="relative z-10 text-base text-blue-900 font-semibold mt-2 text-center">{t.name}</span>
+                <span className="relative z-10 text-base text-paper font-semibold mt-2 text-center">{t.name}</span>
               </motion.div>
             ))}
           </motion.div>
@@ -322,62 +322,62 @@ export default function MobileAppDevelopmentPage() {
         )}
         <div className="relative z-10">
           <motion.h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold mb-12 text-center gradient-text-premium" initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }}>{t.services.pages.mobileAppDevelopment.uiSamples.title}</motion.h2>
-        <p className="text-lg text-gray-700 text-center max-w-3xl mx-auto mb-10">{t.services.pages.mobileAppDevelopment.uiSamples.description}</p>
+        <p className="text-lg text-paper-dim text-center max-w-3xl mx-auto mb-10">{t.services.pages.mobileAppDevelopment.uiSamples.description}</p>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
           {/* Finance App (UIsamples) */}
-          <div className="bg-white/90 rounded-3xl shadow-xl border border-blue-100/40 flex flex-col items-center text-center overflow-hidden">
+          <div className="bg-white/[0.05] rounded-3xl shadow-xl border border-white/10 flex flex-col items-center text-center overflow-hidden">
             <img src={UIsamples} alt="Finance App" className="w-full h-56 object-cover object-top cursor-pointer transition-transform duration-200 hover:scale-105" onClick={() => setModalImg(UIsamples)} />
             <div className="p-6 md:p-8 flex flex-col flex-1">
-              <h4 className="text-xl font-bold text-blue-900 mb-2">{t.services.pages.mobileAppDevelopment.uiSamples.apps.finance.title}</h4>
-              <p className="text-gray-600 mb-4 text-base leading-relaxed">{t.services.pages.mobileAppDevelopment.uiSamples.apps.finance.description}</p>
+              <h4 className="text-xl font-bold text-paper mb-2">{t.services.pages.mobileAppDevelopment.uiSamples.apps.finance.title}</h4>
+              <p className="text-paper-dim mb-4 text-base leading-relaxed">{t.services.pages.mobileAppDevelopment.uiSamples.apps.finance.description}</p>
             </div>
           </div>
           {/* Food Delivery App (UIrestaurant) */}
-          <div className="bg-white/90 rounded-3xl shadow-xl border border-orange-100/40 flex flex-col items-center text-center overflow-hidden">
+          <div className="bg-white/[0.05] rounded-3xl shadow-xl border border-orange-100/40 flex flex-col items-center text-center overflow-hidden">
             <img src={UIrestaurant} alt="Food Delivery App" className="w-full h-56 object-cover object-top cursor-pointer transition-transform duration-200 hover:scale-105" onClick={() => setModalImg(UIrestaurant)} />
             <div className="p-6 md:p-8 flex flex-col flex-1">
               <h4 className="text-xl font-bold text-orange-700 mb-2">{t.services.pages.mobileAppDevelopment.uiSamples.apps.food.title}</h4>
-              <p className="text-gray-600 mb-4 text-base leading-relaxed">{t.services.pages.mobileAppDevelopment.uiSamples.apps.food.description}</p>
+              <p className="text-paper-dim mb-4 text-base leading-relaxed">{t.services.pages.mobileAppDevelopment.uiSamples.apps.food.description}</p>
             </div>
           </div>
           {/* Travel Planner App (UItravellerapp) */}
-          <div className="bg-white/90 rounded-3xl shadow-xl border border-blue-100/40 flex flex-col items-center text-center overflow-hidden">
+          <div className="bg-white/[0.05] rounded-3xl shadow-xl border border-white/10 flex flex-col items-center text-center overflow-hidden">
             <img src={UItravellerapp} alt="Travel Planner App" className="w-full h-56 object-cover object-top cursor-pointer transition-transform duration-200 hover:scale-105" onClick={() => setModalImg(UItravellerapp)} />
             <div className="p-6 md:p-8 flex flex-col flex-1">
-              <h4 className="text-xl font-bold text-blue-900 mb-2">{t.services.pages.mobileAppDevelopment.uiSamples.apps.travel.title}</h4>
-              <p className="text-gray-600 mb-4 text-base leading-relaxed">{t.services.pages.mobileAppDevelopment.uiSamples.apps.travel.description}</p>
+              <h4 className="text-xl font-bold text-paper mb-2">{t.services.pages.mobileAppDevelopment.uiSamples.apps.travel.title}</h4>
+              <p className="text-paper-dim mb-4 text-base leading-relaxed">{t.services.pages.mobileAppDevelopment.uiSamples.apps.travel.description}</p>
             </div>
           </div>
           {/* Crypto Wallet App (UIcryptowallet) */}
-          <div className="bg-white/90 rounded-3xl shadow-xl border border-blue-200/40 flex flex-col items-center text-center overflow-hidden">
+          <div className="bg-white/[0.05] rounded-3xl shadow-xl border border-iris/30/40 flex flex-col items-center text-center overflow-hidden">
             <img src={UIcryptowallet} alt="Crypto Wallet App" className="w-full h-56 object-cover object-top cursor-pointer transition-transform duration-200 hover:scale-105" onClick={() => setModalImg(UIcryptowallet)} />
             <div className="p-6 md:p-8 flex flex-col flex-1">
-              <h4 className="text-xl font-bold text-blue-800 mb-2">{t.services.pages.mobileAppDevelopment.uiSamples.apps.crypto.title}</h4>
-              <p className="text-gray-600 mb-4 text-base leading-relaxed">{t.services.pages.mobileAppDevelopment.uiSamples.apps.crypto.description}</p>
+              <h4 className="text-xl font-bold text-paper mb-2">{t.services.pages.mobileAppDevelopment.uiSamples.apps.crypto.title}</h4>
+              <p className="text-paper-dim mb-4 text-base leading-relaxed">{t.services.pages.mobileAppDevelopment.uiSamples.apps.crypto.description}</p>
             </div>
           </div>
           {/* Smart Home Control App (UIsmarthome) */}
-          <div className="bg-white/90 rounded-3xl shadow-xl border border-purple-100/40 flex flex-col items-center text-center overflow-hidden">
+          <div className="bg-white/[0.05] rounded-3xl shadow-xl border border-white/10/40 flex flex-col items-center text-center overflow-hidden">
             <img src={UIsmarthome} alt="Smart Home App" className="w-full h-56 object-cover object-top cursor-pointer transition-transform duration-200 hover:scale-105" onClick={() => setModalImg(UIsmarthome)} />
             <div className="p-6 md:p-8 flex flex-col flex-1">
               <h4 className="text-xl font-bold text-purple-800 mb-2">{t.services.pages.mobileAppDevelopment.uiSamples.apps.smartHome.title}</h4>
-              <p className="text-gray-600 mb-4 text-base leading-relaxed">{t.services.pages.mobileAppDevelopment.uiSamples.apps.smartHome.description}</p>
+              <p className="text-paper-dim mb-4 text-base leading-relaxed">{t.services.pages.mobileAppDevelopment.uiSamples.apps.smartHome.description}</p>
             </div>
           </div>
           {/* Dating App (UIDatingApp) */}
-          <div className="bg-white/90 rounded-3xl shadow-xl border border-pink-100/40 flex flex-col items-center text-center overflow-hidden">
+          <div className="bg-white/[0.05] rounded-3xl shadow-xl border border-pink-100/40 flex flex-col items-center text-center overflow-hidden">
             <img src={UIDatingApp} alt="Dating App" className="w-full h-56 object-cover object-top cursor-pointer transition-transform duration-200 hover:scale-105" onClick={() => setModalImg(UIDatingApp)} />
             <div className="p-6 md:p-8 flex flex-col flex-1">
               <h4 className="text-xl font-bold text-pink-700 mb-2">{t.services.pages.mobileAppDevelopment.uiSamples.apps.dating.title}</h4>
-              <p className="text-gray-600 mb-4 text-base leading-relaxed">{t.services.pages.mobileAppDevelopment.uiSamples.apps.dating.description}</p>
+              <p className="text-paper-dim mb-4 text-base leading-relaxed">{t.services.pages.mobileAppDevelopment.uiSamples.apps.dating.description}</p>
             </div>
           </div>
           {/* Book Reading App (UIBookReadingApp) */}
-          <div className="bg-white/90 rounded-3xl shadow-xl border border-yellow-100/40 flex flex-col items-center text-center overflow-hidden">
+          <div className="bg-white/[0.05] rounded-3xl shadow-xl border border-yellow-100/40 flex flex-col items-center text-center overflow-hidden">
             <img src={UIBookReadingApp} alt="Book Reading App" className="w-full h-56 object-cover object-top cursor-pointer transition-transform duration-200 hover:scale-105" onClick={() => setModalImg(UIBookReadingApp)} />
             <div className="p-6 md:p-8 flex flex-col flex-1">
               <h4 className="text-xl font-bold text-yellow-800 mb-2">{t.services.pages.mobileAppDevelopment.uiSamples.apps.book.title}</h4>
-              <p className="text-gray-600 mb-4 text-base leading-relaxed">{t.services.pages.mobileAppDevelopment.uiSamples.apps.book.description}</p>
+              <p className="text-paper-dim mb-4 text-base leading-relaxed">{t.services.pages.mobileAppDevelopment.uiSamples.apps.book.description}</p>
             </div>
           </div>
         </div>
@@ -387,7 +387,7 @@ export default function MobileAppDevelopmentPage() {
           <div className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/80 backdrop-blur-sm" onClick={() => setModalImg(null)}>
             <div className="relative max-w-full max-h-full flex items-center justify-center" onClick={e => e.stopPropagation()}>
               <button
-                className="absolute top-2 right-2 bg-white/80 hover:bg-white text-gray-900 rounded-full p-2 shadow-lg text-2xl z-10 focus:outline-none"
+                className="absolute top-2 right-2 bg-white/[0.045] hover:bg-ink-800 text-paper rounded-full p-2 shadow-lg text-2xl z-10 focus:outline-none"
                 aria-label={t.services.pages.mobileAppDevelopment.uiSamples.modalClose}
                 onClick={() => setModalImg(null)}
               >✕</button>
@@ -404,9 +404,9 @@ export default function MobileAppDevelopmentPage() {
 
       {/* App Development Process */}
       <section className="max-w-4xl mx-auto py-24 px-4">
-        <div className="relative bg-gradient-to-br from-blue-100 via-white to-purple-100/80 backdrop-blur-lg rounded-3xl shadow-2xl border border-blue-100/40 p-10 flex flex-col items-center gap-10 overflow-hidden">
-          <h2 className="text-3xl md:text-4xl font-extrabold text-blue-700 mb-8 bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent drop-shadow-lg">{t.services.pages.mobileAppDevelopment.process.title}</h2>
-          <p className="text-lg text-gray-700 mb-10 max-w-xl text-center">{t.services.pages.mobileAppDevelopment.process.description}</p>
+        <div className="relative bg-gradient-to-br from-iris/20 via-ink-800 to-iris/10/80 backdrop-blur-lg rounded-3xl shadow-2xl border border-white/10 p-10 flex flex-col items-center gap-10 overflow-hidden">
+          <h2 className="text-3xl md:text-4xl font-extrabold text-iris-bright mb-8 bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent drop-shadow-lg">{t.services.pages.mobileAppDevelopment.process.title}</h2>
+          <p className="text-lg text-paper-dim mb-10 max-w-xl text-center">{t.services.pages.mobileAppDevelopment.process.description}</p>
             {/* Timeline */}
             <div className="relative flex flex-col items-center w-full max-w-2xl mx-auto">
               {t.services.pages.mobileAppDevelopment.process.steps.map((stepItem, idx) => {
@@ -420,16 +420,16 @@ export default function MobileAppDevelopmentPage() {
                         {idx + 1}
                       </div>
                       {idx < arr.length - 1 && (
-                        <div className="w-1 h-12 bg-gradient-to-b from-blue-300 to-purple-200 mx-auto"></div>
+                        <div className="w-1 h-12 bg-gradient-to-b from-iris/30 to-iris/15 mx-auto"></div>
                       )}
                     </div>
-                    <div className="flex-1 bg-white/80 backdrop-blur-lg rounded-2xl shadow-md border border-white/50 px-6 py-5 flex flex-col md:flex-row items-center md:items-start gap-4">
-                      <div className="flex items-center justify-center w-10 h-10 rounded-full bg-gradient-to-br from-blue-100 to-purple-100 shadow-inner border-2 border-blue-200">
+                    <div className="flex-1 bg-white/[0.045] backdrop-blur-lg rounded-2xl shadow-md border border-white/10 px-6 py-5 flex flex-col md:flex-row items-center md:items-start gap-4">
+                      <div className="flex items-center justify-center w-10 h-10 rounded-full bg-gradient-to-br from-iris/20 to-iris/10 shadow-inner border-2 border-iris/30">
                         {step.icon}
                       </div>
                       <div>
-                        <span className="text-base font-semibold text-blue-900 text-center md:text-left block">{step.title}</span>
-                        <span className="text-sm text-gray-600 text-center md:text-left block mt-1">{step.desc}</span>
+                        <span className="text-base font-semibold text-paper text-center md:text-left block">{step.title}</span>
+                        <span className="text-sm text-paper-dim text-center md:text-left block mt-1">{step.desc}</span>
                       </div>
                     </div>
                   </div>
@@ -466,15 +466,15 @@ export default function MobileAppDevelopmentPage() {
         
         {/* GetFitSKG App Showcase */}
         <motion.div 
-          className="relative bg-gradient-to-br from-blue-50 via-white to-purple-50 rounded-3xl shadow-2xl border border-blue-100/40 p-8 md:p-12 overflow-hidden"
+          className="relative bg-gradient-to-br from-ink-800 via-ink-800 to-ink-800 rounded-3xl shadow-2xl border border-white/10 p-8 md:p-12 overflow-hidden"
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
           {/* Background decorative elements */}
-          <div className="absolute -top-20 -right-20 w-40 h-40 bg-gradient-to-br from-blue-200/30 to-purple-200/30 rounded-full blur-3xl"></div>
-          <div className="absolute -bottom-20 -left-20 w-32 h-32 bg-gradient-to-tr from-purple-200/30 to-blue-200/30 rounded-full blur-2xl"></div>
+          <div className="absolute -top-20 -right-20 w-40 h-40 bg-gradient-to-br from-iris/25/30 to-iris/15/30 rounded-full blur-3xl"></div>
+          <div className="absolute -bottom-20 -left-20 w-32 h-32 bg-gradient-to-tr from-iris/20/30 to-iris/15/30 rounded-full blur-2xl"></div>
           
           <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             {/* Left: App Info */}
@@ -487,31 +487,31 @@ export default function MobileAppDevelopmentPage() {
             >
               <div className="space-y-4">
                 <div className="flex items-center gap-3 mb-4">
-                  <div className="w-12 h-12 bg-white rounded-xl flex items-center justify-center shadow-lg border-2 border-blue-100">
+                  <div className="w-12 h-12 bg-ink-800 rounded-xl flex items-center justify-center shadow-lg border-2 border-white/10">
                     <img src={logoGymImg} alt="GetFit Logo" className="w-8 h-8 object-contain" />
                   </div>
-                  <h3 className="text-2xl md:text-3xl font-bold text-blue-900">GetFit</h3>
+                  <h3 className="text-2xl md:text-3xl font-bold text-paper">GetFit</h3>
                 </div>
-                <p className="text-lg text-gray-700 leading-relaxed">
+                <p className="text-lg text-paper-dim leading-relaxed">
                   {t.portfolio.appShowcase.getFit.description}
                 </p>
               </div>
 
               {/* Features */}
               <div className="space-y-4">
-                <h4 className="text-xl font-semibold text-blue-800 mb-4">{t.portfolio.appShowcase.getFit.featuresTitle}</h4>
+                <h4 className="text-xl font-semibold text-paper mb-4">{t.portfolio.appShowcase.getFit.featuresTitle}</h4>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   {t.portfolio.appShowcase.getFit.features.map((feature, idx) => (
                     <motion.div 
                       key={feature}
-                      className="flex items-center gap-3 bg-white/60 rounded-xl p-3 border border-blue-100"
+                      className="flex items-center gap-3 bg-white/[0.035] rounded-xl p-3 border border-white/10"
                       initial={{ opacity: 0, y: 20 }}
                       whileInView={{ opacity: 1, y: 0 }}
                       transition={{ duration: 0.5, delay: 0.3 + idx * 0.1 }}
                       viewport={{ once: true }}
                     >
                       <div className="w-2 h-2 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full"></div>
-                      <span className="text-gray-700 font-medium">{feature}</span>
+                      <span className="text-paper-dim font-medium">{feature}</span>
                     </motion.div>
                   ))}
                 </div>
@@ -519,7 +519,7 @@ export default function MobileAppDevelopmentPage() {
 
               {/* Platforms */}
               <div className="space-y-4">
-                <h4 className="text-xl font-semibold text-blue-800 mb-4">{t.portfolio.appShowcase.getFit.platformsTitle}</h4>
+                <h4 className="text-xl font-semibold text-paper mb-4">{t.portfolio.appShowcase.getFit.platformsTitle}</h4>
                 <div className="flex flex-wrap gap-4">
                   {[
                     { icon: <FaApple className="text-2xl" />, name: t.portfolio.appShowcase.getFit.platforms.ios, color: 'from-gray-800 to-gray-600' },
@@ -564,7 +564,7 @@ export default function MobileAppDevelopmentPage() {
               transition={{ duration: 0.8, delay: 0.4 }}
               viewport={{ once: true }}
             >
-              <div className="relative bg-gradient-to-br from-blue-100 to-purple-100 rounded-3xl p-8 shadow-2xl">
+              <div className="relative bg-gradient-to-br from-iris/20 to-iris/10 rounded-3xl p-8 shadow-2xl">
                 <div className="grid grid-cols-3 gap-3">
                   {[
                     { img: v1Img, delay: 0 },
@@ -582,7 +582,7 @@ export default function MobileAppDevelopmentPage() {
                   ].map((item, idx) => (
                     <motion.div 
                       key={idx}
-                      className="bg-white rounded-2xl p-2 shadow-lg overflow-hidden cursor-pointer"
+                      className="bg-ink-800 rounded-2xl p-2 shadow-lg overflow-hidden cursor-pointer"
                       whileHover={{ 
                         scale: 1.1, 
                         rotate: 0,
@@ -615,7 +615,7 @@ export default function MobileAppDevelopmentPage() {
 
           {/* T-Parking App Showcase */}
           <motion.div
-            className="relative bg-gradient-to-br from-emerald-50 via-white to-cyan-50 rounded-3xl shadow-2xl border border-emerald-100/40 p-8 md:p-12 overflow-hidden mt-12"
+            className="relative bg-gradient-to-br from-ink-800 via-ink-800 to-ink-800 rounded-3xl shadow-2xl border border-emerald-100/40 p-8 md:p-12 overflow-hidden mt-12"
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
@@ -649,7 +649,7 @@ export default function MobileAppDevelopmentPage() {
               >
                 <div className="space-y-4">
                   <div className="flex items-center gap-3 mb-4">
-                    <div className="w-12 h-12 bg-white rounded-xl flex items-center justify-center shadow-lg border-2 border-emerald-100">
+                    <div className="w-12 h-12 bg-ink-800 rounded-xl flex items-center justify-center shadow-lg border-2 border-emerald-100">
                       <img src={tparkingLogo} alt="T-Parking Logo" className="w-8 h-8 object-contain" />
                     </div>
                     <h3 className="text-2xl md:text-3xl font-bold text-emerald-900">{t.portfolio.appShowcase.tParking.name}</h3>
@@ -657,7 +657,7 @@ export default function MobileAppDevelopmentPage() {
                   <p className="text-base md:text-lg font-semibold text-emerald-700 leading-relaxed">
                     {t.portfolio.appShowcase.tParking.tagline}
                   </p>
-                  <p className="text-lg text-gray-700 leading-relaxed">
+                  <p className="text-lg text-paper-dim leading-relaxed">
                     {t.portfolio.appShowcase.tParking.description}
                   </p>
                 </div>
@@ -669,14 +669,14 @@ export default function MobileAppDevelopmentPage() {
                     {t.portfolio.appShowcase.tParking.features.map((feature, idx) => (
                       <motion.div
                         key={feature}
-                        className="flex items-center gap-3 bg-white/60 rounded-xl p-3 border border-emerald-100"
+                        className="flex items-center gap-3 bg-white/[0.035] rounded-xl p-3 border border-emerald-100"
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.5, delay: 0.3 + idx * 0.08 }}
                         viewport={{ once: true }}
                       >
                         <div className="w-2 h-2 bg-gradient-to-r from-emerald-500 to-cyan-500 rounded-full shrink-0"></div>
-                        <span className="text-gray-700 font-medium">{feature}</span>
+                        <span className="text-paper-dim font-medium">{feature}</span>
                       </motion.div>
                     ))}
                   </div>
@@ -742,7 +742,7 @@ export default function MobileAppDevelopmentPage() {
                     ].map((item, idx) => (
                       <motion.div
                         key={idx}
-                        className="bg-white rounded-2xl p-2 shadow-lg overflow-hidden cursor-pointer"
+                        className="bg-ink-800 rounded-2xl p-2 shadow-lg overflow-hidden cursor-pointer"
                         whileHover={{ scale: 1.05, zIndex: 10 }}
                         whileTap={{ scale: 0.97 }}
                         onClick={() => openFullscreen(item.img, item.alt)}
@@ -793,7 +793,7 @@ export default function MobileAppDevelopmentPage() {
           </>
         )}
         <div className="relative z-10 w-full max-w-4xl">
-          <motion.div className="relative bg-white/80 backdrop-blur-xl rounded-3xl shadow-xl border border-white/50 p-8 md:p-12 flex flex-col items-center hover:shadow-2xl transition-all duration-500 overflow-hidden" initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} viewport={{ once: true }}>
+          <motion.div className="relative bg-white/[0.045] backdrop-blur-xl rounded-3xl shadow-xl border border-white/10 p-8 md:p-12 flex flex-col items-center hover:shadow-2xl transition-all duration-500 overflow-hidden" initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} viewport={{ once: true }}>
             {/* Animated Gradient Background on Hover */}
             <motion.div
               className="absolute inset-0 bg-gradient-to-br from-blue-500/5 via-purple-500/5 to-cyan-500/5 opacity-0 hover:opacity-100 transition-opacity duration-500 rounded-3xl"
@@ -812,7 +812,7 @@ export default function MobileAppDevelopmentPage() {
             />
             {/* Shine Effect */}
             <motion.div
-              className="absolute inset-0 rounded-3xl bg-gradient-to-r from-transparent via-white/30 to-transparent opacity-0 hover:opacity-100"
+              className="absolute inset-0 rounded-3xl bg-gradient-to-r from-transparent via-ink/30 to-transparent opacity-0 hover:opacity-100"
               initial={{ x: '-100%' }}
               whileHover={{ x: '100%' }}
               transition={{ duration: 0.8 }}
@@ -848,7 +848,7 @@ export default function MobileAppDevelopmentPage() {
             />
             <button
               onClick={closeFullscreen}
-              className="absolute -top-4 -right-4 w-10 h-10 bg-white rounded-full flex items-center justify-center text-gray-800 hover:bg-gray-100 transition-colors duration-200 shadow-lg"
+              className="absolute -top-4 -right-4 w-10 h-10 bg-ink-800 rounded-full flex items-center justify-center text-paper hover:bg-ink-700 transition-colors duration-200 shadow-lg"
             >
               <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />

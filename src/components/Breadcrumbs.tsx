@@ -83,25 +83,25 @@ const Breadcrumbs: React.FC = () => {
   return (
     <>
       <BreadcrumbSchema items={breadcrumbItems} />
-      <nav aria-label="Breadcrumb" className="bg-gray-50 border-b border-gray-200 py-3">
+      <nav aria-label="Breadcrumb" className="surface-ink border-b border-[var(--line)] py-3 pt-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <ol className="flex items-center space-x-2 text-sm">
             {breadcrumbs.map((crumb, index) => {
               const isLast = index === breadcrumbs.length - 1;
-              
+
               return (
                 <li key={crumb.url} className="flex items-center">
                   {index > 0 && (
-                    <ChevronRight className="h-4 w-4 text-gray-400 mx-2" aria-hidden="true" />
+                    <ChevronRight className="h-4 w-4 text-paper-muted mx-2" aria-hidden="true" />
                   )}
                   {isLast ? (
-                    <span className="text-gray-600 font-medium" aria-current="page">
+                    <span className="text-paper-dim font-medium" aria-current="page">
                       {crumb.name}
                     </span>
                   ) : (
                     <Link
                       to={crumb.url}
-                      className="text-blue-600 hover:text-blue-800 transition-colors duration-200 flex items-center"
+                      className="text-iris-bright hover:text-paper transition-colors duration-200 flex items-center"
                     >
                       {index === 0 && <Home className="h-4 w-4 mr-1" />}
                       <span>{crumb.name}</span>

@@ -1200,7 +1200,7 @@ export const translations = {
         'Ταχύτατη απόκριση και βελτιστοποίηση για κάθε συσκευή',
         'Premium αποτέλεσμα σε λογικές τιμές',
         'Απόλυτη προσαρμογή στις ανάγκες του πελάτη',
-        'Hosting, SEO και υποστήριξη — όλα σε ένα'
+        'Hosting, SEO και υποστήριξη, όλα σε ένα'
       ],
       cta: 'Δείτε Δείγματα Εργασιών'
     }
@@ -2403,7 +2403,7 @@ export const translations = {
         'Fastest response and optimization for every device',
         'Premium result at reasonable prices',
         'Absolute customization to the customer\'s needs',
-        'Hosting, SEO, and support – all in one'
+        'Hosting, SEO and support, all in one'
       ],
       cta: 'View Portfolio Samples'
     }
@@ -3602,7 +3602,7 @@ export const translations = {
         'Réponse la plus rapide et optimisation pour chaque appareil',
         'Résultat premium à des prix raisonnables',
         'Personnalisation absolue selon les besoins du client',
-        'Hébergement, SEO et support – tout en un'
+        'Hébergement, SEO et support, tout en un'
       ],
       cta: 'Voir les Échantillons du Portfolio'
     }

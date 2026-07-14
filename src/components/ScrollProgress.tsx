@@ -1,6 +1,6 @@
 import { motion, useScroll, useSpring } from 'framer-motion';
 
-/** Thin gradient progress bar pinned to the very top of the page. */
+/** Thin progress bar pinned to the very top of the page (iris → signal). */
 const ScrollProgress = () => {
   const { scrollYProgress } = useScroll();
   const scaleX = useSpring(scrollYProgress, { stiffness: 120, damping: 30, restDelta: 0.001 });
@@ -8,8 +8,8 @@ const ScrollProgress = () => {
   return (
     <motion.div
       aria-hidden="true"
-      style={{ scaleX }}
-      className="fixed top-0 left-0 right-0 z-[60] h-1 origin-left bg-gradient-to-r from-blue-600 via-purple-600 to-pink-500"
+      style={{ scaleX, background: 'linear-gradient(90deg, var(--iris), var(--signal))' }}
+      className="fixed inset-x-0 top-0 z-[60] h-[3px] origin-left"
     />
   );
 };

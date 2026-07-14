@@ -120,7 +120,7 @@ const TermsAndConditions: React.FC = () => {
   ];
 
   return (
-    <section className="relative min-h-screen py-24 md:py-32 px-4 bg-gradient-to-br from-slate-50 via-white to-blue-50/40 overflow-hidden">
+    <section className="relative min-h-screen py-24 md:py-32 px-4 bg-gradient-to-br from-ink via-ink-800 to-ink-800/40 overflow-hidden">
       {/* Premium Animated Background - Desktop Only */}
       {!isMobile && (
         <>
@@ -188,7 +188,7 @@ const TermsAndConditions: React.FC = () => {
             transition={{ duration: 0.8, delay: 0.3 }}
           />
           <motion.p
-            className="text-lg md:text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed"
+            className="text-lg md:text-xl text-paper-dim max-w-3xl mx-auto leading-relaxed"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
@@ -211,7 +211,7 @@ const TermsAndConditions: React.FC = () => {
                 transition={{ duration: 0.6, delay: index * 0.1 }}
               >
                 {/* Premium Card Container */}
-                <div className="relative bg-white/80 backdrop-blur-xl rounded-3xl p-8 md:p-10 border border-white/50 shadow-xl hover:shadow-2xl transition-all duration-500 overflow-hidden">
+                <div className="relative bg-white/[0.045] backdrop-blur-xl rounded-3xl p-8 md:p-10 border border-white/10 shadow-xl hover:shadow-2xl transition-all duration-500 overflow-hidden">
                   {/* Animated Gradient Background on Hover */}
                   <motion.div
                     className={`absolute inset-0 bg-gradient-to-br ${section.bgGradient} opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl`}
@@ -247,7 +247,7 @@ const TermsAndConditions: React.FC = () => {
                     {/* Section Content */}
                     <div className="prose prose-lg max-w-none">
                       <div
-                        className="text-gray-700 leading-relaxed text-base md:text-lg"
+                        className="text-paper-dim leading-relaxed text-base md:text-lg"
                         dangerouslySetInnerHTML={{ __html: section.content }}
                       />
                       {section.additional && (
@@ -259,7 +259,7 @@ const TermsAndConditions: React.FC = () => {
                           transition={{ duration: 0.5 }}
                         >
                           <p
-                            className="text-gray-700 leading-relaxed text-base md:text-lg"
+                            className="text-paper-dim leading-relaxed text-base md:text-lg"
                             dangerouslySetInnerHTML={{ __html: section.additional }}
                           />
                         </motion.div>
@@ -269,7 +269,7 @@ const TermsAndConditions: React.FC = () => {
 
                   {/* Shine Effect on Hover */}
                   <motion.div
-                    className="absolute inset-0 rounded-3xl bg-gradient-to-r from-transparent via-white/30 to-transparent opacity-0 group-hover:opacity-100"
+                    className="absolute inset-0 rounded-3xl bg-gradient-to-r from-transparent via-ink/30 to-transparent opacity-0 group-hover:opacity-100"
                     initial={{ x: '-100%' }}
                     whileHover={{ x: '100%' }}
                     transition={{ duration: 0.8 }}
@@ -288,7 +288,7 @@ const TermsAndConditions: React.FC = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
-          <div className="relative bg-gradient-to-br from-blue-50 via-purple-50 to-cyan-50 rounded-3xl p-8 md:p-12 border-2 border-blue-200/50 shadow-xl overflow-hidden">
+          <div className="relative bg-gradient-to-br from-ink-800 via-ink-800 to-ink-800 rounded-3xl p-8 md:p-12 border-2 border-iris/30/50 shadow-xl overflow-hidden">
             {/* Background Decorations */}
             <div className="absolute -top-20 -right-20 w-40 h-40 bg-gradient-to-br from-blue-400/20 to-purple-400/20 rounded-full blur-3xl" />
             <div className="absolute -bottom-20 -left-20 w-32 h-32 bg-gradient-to-tr from-cyan-400/20 to-blue-400/20 rounded-full blur-2xl" />
@@ -308,7 +308,7 @@ const TermsAndConditions: React.FC = () => {
                 <CheckCircle className="h-8 w-8 text-white" />
               </motion.div>
               <motion.p
-                className="text-lg md:text-xl font-bold text-gray-900 mb-4"
+                className="text-lg md:text-xl font-bold text-paper mb-4"
                 initial={{ opacity: 0, y: 10 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -317,7 +317,7 @@ const TermsAndConditions: React.FC = () => {
                 {t.termsAndConditions.acceptance}
               </motion.p>
               <motion.p
-                className="text-sm md:text-base text-gray-600"
+                className="text-sm md:text-base text-paper-dim"
                 initial={{ opacity: 0, y: 10 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}

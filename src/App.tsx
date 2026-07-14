@@ -17,6 +17,7 @@ import FloatingChat from './components/FloatingChat';
 import LoadingScreen from './components/LoadingScreen';
 import Analytics from './components/Analytics';
 import ScrollProgress from './components/ScrollProgress';
+import Grain from './components/ui/Grain';
 import { Helmet } from 'react-helmet-async';
 import { ServiceSchema } from './components/SchemaMarkup';
 
@@ -37,8 +38,8 @@ const AdminPanel = lazy(() => import('./components/AdminPanel'));
 
 // Loading component for lazy loaded pages
 const PageLoader = () => (
-  <div className="min-h-screen flex items-center justify-center">
-    <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600"></div>
+  <div className="min-h-screen flex items-center justify-center bg-ink">
+    <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-iris"></div>
   </div>
 );
 
@@ -55,6 +56,7 @@ function AppContent() {
     <Router>
         <ChromeOnly><LoadingScreen /></ChromeOnly>
         <ChromeOnly><ScrollProgress /></ChromeOnly>
+        <ChromeOnly><Grain /></ChromeOnly>
         <ScrollToTop />
         <Analytics />
       <div className="min-h-screen bg-white">

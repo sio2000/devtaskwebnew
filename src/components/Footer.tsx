@@ -1,32 +1,23 @@
-import React, { memo } from 'react';
-import { Heart, ArrowUp } from 'lucide-react';
-import { motion } from 'framer-motion';
+import { memo } from 'react';
+import { ArrowUp, ArrowUpRight } from 'lucide-react';
 import { useLanguage } from '../hooks/useLanguage';
 import { translations } from '../data/translations';
 import { useNavigate, Link } from 'react-router-dom';
-import { useIsMobile } from '../hooks/useIsMobile';
 import { FaInstagram, FaFacebook, FaTiktok } from 'react-icons/fa';
 import logo from '../assets/logo.png';
+import Marquee from './ui/Marquee';
 
 const Footer = memo(() => {
   const { language } = useLanguage();
   const t = translations[language];
   const navigate = useNavigate();
-  const isMobile = useIsMobile();
 
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+  const scrollToTop = () => window.scrollTo({ top: 0, behavior: 'smooth' });
+  const goContact = () => {
+    if (window.location.pathname === '/') document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+    else navigate('/');
   };
 
-  const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
-  // Ορισμός υπηρεσιών με slug για routing (μεταφρασμένα)
-  // Εμφανίζονται μόνο: Web, Mobile, E-shop, Chatbots & AI, AI Integration
   const servicesList = [
     { label: t.footer.services.webDevelopment, slug: 'web-development' },
     { label: t.footer.services.mobileAppDevelopment, slug: 'mobile-app-development' },
@@ -35,142 +26,93 @@ const Footer = memo(() => {
     { label: t.footer.services.aiIntegrationApplications, slug: 'ai-integration-applications' },
   ];
 
-  // Υπολογισμός για balanced 2 columns
-  const mid = Math.ceil(servicesList.length / 2);
-  const col1 = servicesList.slice(0, mid);
-  const col2 = servicesList.slice(mid);
+  const socials = [
+    { Icon: FaFacebook, label: t.footer.social.facebook, href: 'https://www.facebook.com/profile.php?id=61578746165941' },
+    { Icon: FaInstagram, label: t.footer.social.instagram, href: 'https://www.instagram.com/devtaskhub/' },
+    { Icon: FaTiktok, label: t.footer.social.tiktok, href: 'https://www.tiktok.com/@devtaskhub' },
+  ];
+
+  const ctaWord = language === 'el' ? 'ΕΧΕΙΣ ΙΔΕΑ; ΑΣ ΤΗΝ ΥΛΟΠΟΙΗΣΟΥΜΕ' : language === 'fr' ? 'UNE IDÉE ? CONSTRUISONS-LA' : "GOT AN IDEA? LET'S BUILD IT";
 
   return (
-    <footer className="bg-gradient-to-br from-gray-900 via-blue-900 to-purple-900 text-white py-12 relative overflow-hidden">
-      {/* Background Decorations: ΜΟΝΟ σε desktop */}
-      {!isMobile && (
-        <>
-          <motion.div
-            animate={{
-              scale: [1, 1.2, 1],
-              rotate: [0, 180, 360],
-            }}
-            transition={{
-              duration: 30,
-              repeat: Infinity,
-              ease: "linear"
-            }}
-            className="absolute top-10 right-10 w-32 h-32 bg-white/5 rounded-full blur-xl"
-          />
-          <motion.div
-            animate={{
-              scale: [1.2, 1, 1.2],
-              rotate: [360, 180, 0],
-            }}
-            transition={{
-              duration: 25,
-              repeat: Infinity,
-              ease: "linear"
-            }}
-            className="absolute bottom-10 left-10 w-40 h-40 bg-white/5 rounded-full blur-xl"
-          />
-        </>
-      )}
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+    <footer className="surface-ink relative overflow-hidden border-t border-[var(--line)]">
+      {/* Big CTA marquee */}
+      <button onClick={goContact} className="group block w-full border-b border-[var(--line)] py-8" aria-label={ctaWord}>
+        <Marquee duration={26} pauseOnHover={false}>
+          {Array.from({ length: 4 }).map((_, i) => (
+            <span key={i} className="flex items-center whitespace-nowrap">
+              <span className="font-display px-8 text-4xl font-bold text-paper transition-colors group-hover:text-iris-bright sm:text-6xl">{ctaWord}</span>
+              <ArrowUpRight className="h-8 w-8 text-iris-bright sm:h-12 sm:w-12" />
+            </span>
+          ))}
+        </Marquee>
+      </button>
+
+      <div className="relative z-10 mx-auto max-w-7xl px-5 py-16 sm:px-8">
+        <div className="grid grid-cols-1 gap-12 md:grid-cols-3">
           {/* Brand */}
           <div>
-            <div className="flex items-center gap-3 mb-4">
-              <img
-                src={logo}
-                alt="DevTaskHub Logo"
-                className="h-12 w-auto rounded-xl shadow-md flex-shrink-0"
-                loading="lazy"
-              />
-              <h3 className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">DevTaskHub</h3>
+            <div className="mb-5 flex items-center gap-3">
+              <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-white p-1.5">
+                <img src={logo} alt="DevTaskHub Logo" className="h-full w-full object-contain" loading="lazy" />
+              </span>
+              <span className="font-display text-2xl font-bold text-paper">DevTaskHub</span>
             </div>
-            <p className="text-gray-300 leading-relaxed mb-4">{t.footer.description}</p>
+            <p className="max-w-xs leading-relaxed text-paper-dim">{t.footer.description}</p>
+            <div className="mt-6 flex gap-3">
+              {socials.map(({ Icon, label, href }) => (
+                <a
+                  key={label}
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={label}
+                  className="flex h-11 w-11 items-center justify-center rounded-full border border-[var(--line)] bg-white/[0.02] text-paper-dim transition-colors hover:border-iris/40 hover:bg-iris/10 hover:text-paper"
+                >
+                  <Icon className="h-5 w-5" />
+                </a>
+              ))}
+            </div>
           </div>
-          {/* Services Quick Links */}
+
+          {/* Services */}
           <div>
-            <h4 className="text-lg font-semibold mb-4 text-blue-300">{t.nav.services}</h4>
-            <ul className="grid grid-cols-2 gap-x-8 gap-y-2 text-gray-300">
-              {[...col1, ...col2].map((service) => (
-                <li key={service.slug + service.label}>
-                  <Link
-                    to={`/services/${service.slug}`}
-                    className="block hover:text-blue-300 transition-colors duration-300 rounded focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-400"
-                  >
+            <h4 className="mb-5 text-sm font-semibold uppercase tracking-[0.18em] text-paper-muted">{t.nav.services}</h4>
+            <ul className="space-y-3">
+              {servicesList.map((service) => (
+                <li key={service.slug}>
+                  <Link to={`/services/${service.slug}`} className="link-underline text-paper-dim transition-colors hover:text-paper">
                     {service.label}
                   </Link>
                 </li>
               ))}
+              <li className="pt-2">
+                <button onClick={() => navigate('/terms')} className="link-underline text-paper-muted transition-colors hover:text-paper">
+                  {t.footer.terms}
+                </button>
+              </li>
             </ul>
-            <div className="mt-8 flex justify-center">
-              <button
-                onClick={() => navigate('/terms')}
-                className="text-blue-300 hover:text-blue-100 underline font-medium transition-colors duration-300 text-base px-0 py-0 bg-transparent shadow-none rounded-none focus:outline-none"
-              >
-                {t.footer.terms}
-              </button>
-            </div>
           </div>
-          {/* Contact Info */}
+
+          {/* Contact */}
           <div>
-            <h4 className="text-lg font-semibold mb-4 text-purple-300">{t.nav.contact}</h4>
-            <div className="text-gray-300 space-y-2">
-              <p className="hover:text-blue-300 transition-colors duration-300">{t.footer.location}</p>
-              <a
-                href="tel:+306971982563"
-                className="block hover:text-green-300 transition-colors duration-300"
-              >
-                {t.contact.info.phone}
-              </a>
-              <a
-                href="mailto:info@devtaskhub.com"
-                className="block hover:text-orange-300 transition-colors duration-300"
-              >
-                {t.contact.info.email}
-              </a>
-              <a
-                href="https://www.facebook.com/profile.php?id=61578746165941"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-2 text-blue-600 hover:text-blue-800 transition-colors duration-300 mt-2"
-              >
-                <FaFacebook className="h-5 w-5" />
-                <span>{t.footer.social.facebook}</span>
-              </a>
-              <a
-                href="https://www.instagram.com/devtaskhub/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-2 text-pink-500 hover:text-pink-400 transition-colors duration-300 mt-2"
-              >
-                <FaInstagram className="h-5 w-5" />
-                <span>{t.footer.social.instagram}</span>
-              </a>
-              <a
-                href="https://www.tiktok.com/@devtaskhub"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-2 text-white hover:text-gray-300 transition-colors duration-300 mt-2"
-              >
-                <FaTiktok className="h-5 w-5" />
-                <span>{t.footer.social.tiktok}</span>
-              </a>
+            <h4 className="mb-5 text-sm font-semibold uppercase tracking-[0.18em] text-paper-muted">{t.nav.contact}</h4>
+            <div className="space-y-3 text-paper-dim">
+              <p>{t.footer.location}</p>
+              <a href="tel:+306971982563" className="link-underline block transition-colors hover:text-paper">{t.contact.info.phone}</a>
+              <a href="mailto:info@devtaskhub.com" className="link-underline block transition-colors hover:text-paper">{t.contact.info.email}</a>
             </div>
           </div>
         </div>
-        {/* Copyright */}
-        <div className="border-t border-gray-700 mt-8 pt-8 text-center relative">
-          <p className="text-gray-400 flex items-center justify-center space-x-2 mb-4">
-            <span>© 2025 DevTaskHub. {t.footer.rights}</span>
-          </p>
-          {/* Scroll to Top Button: ΜΟΝΟ σε desktop */}
-          {!isMobile && (
-            <button
-              onClick={scrollToTop}
-              className="absolute right-0 top-4 p-3 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full hover:from-blue-700 hover:to-purple-700 transition-all duration-300 shadow-lg hover:shadow-xl"
-            >
-              <span>↑</span>
-            </button>
-          )}
+
+        <div className="mt-14 flex flex-col items-center justify-between gap-4 border-t border-[var(--line)] pt-8 sm:flex-row">
+          <p className="text-sm text-paper-muted">© 2025 DevTaskHub. {t.footer.rights}</p>
+          <button
+            onClick={scrollToTop}
+            className="flex items-center gap-2 rounded-full border border-[var(--line)] px-4 py-2 text-sm text-paper-dim transition-colors hover:border-iris/40 hover:text-paper"
+          >
+            <ArrowUp className="h-4 w-4" /> Top
+          </button>
         </div>
       </div>
     </footer>

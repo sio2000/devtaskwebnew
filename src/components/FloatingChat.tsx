@@ -50,7 +50,7 @@ const FloatingChat: React.FC = () => {
         aria-label={open ? (t.chatbot.close || 'Κλείσιμο chat') : (t.chatbot.open || 'Άνοιγμα chat')}
         aria-expanded={open}
         // Hide on mobile while open — the X overlapped FastBots' send button (iOS/Android)
-        className={`fixed bottom-5 right-5 z-[60] w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-gradient-to-br from-blue-600 via-purple-600 to-pink-500 text-white shadow-2xl items-center justify-center focus:outline-none focus-visible:ring-4 focus-visible:ring-purple-300 ${open ? 'hidden sm:flex' : 'flex'}`}
+        className={`fixed bottom-5 right-5 z-[60] w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-gradient-to-br from-iris via-iris-bright to-signal text-white shadow-2xl items-center justify-center focus:outline-none focus-visible:ring-4 focus-visible:ring-iris/40 ${open ? 'hidden sm:flex' : 'flex'}`}
         initial={{ scale: 0, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
         transition={{ delay: 0.6, type: 'spring', stiffness: 260, damping: 18 }}
@@ -58,7 +58,7 @@ const FloatingChat: React.FC = () => {
         whileTap={{ scale: 0.92 }}
       >
         {/* Pulsing ring */}
-        <span className="absolute inset-0 rounded-full bg-purple-500/40 animate-ping" aria-hidden="true" />
+        <span className="absolute inset-0 rounded-full bg-iris/40 animate-ping" aria-hidden="true" />
         <AnimatePresence mode="wait" initial={false}>
           {open ? (
             <motion.span key="x" initial={{ rotate: -90, opacity: 0 }} animate={{ rotate: 0, opacity: 1 }} exit={{ rotate: 90, opacity: 0 }} transition={{ duration: 0.2 }} className="relative">
@@ -102,7 +102,7 @@ const FloatingChat: React.FC = () => {
             transition={{ duration: 0.25, ease: 'easeOut' }}
           >
             {/* Slim close bar — the embedded bot provides its own title/branding */}
-            <div className="flex items-center justify-end px-2.5 py-2 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-500 text-white">
+            <div className="flex items-center justify-end px-2.5 py-2 bg-gradient-to-r from-iris via-iris-bright to-signal text-white">
               <button
                 type="button"
                 onClick={closeChat}

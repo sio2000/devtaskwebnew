@@ -76,7 +76,7 @@ export default function DatabaseCloudInfrastructurePage() {
   const whyUs = useMemo(() =>
     t.services.pages.databaseCloudInfrastructure.whyUs.items, [t]);
   return (
-    <div className="bg-gradient-to-br from-white via-blue-50 to-gray-50 min-h-screen text-gray-900 font-sans">
+    <div className="bg-gradient-to-br from-ink via-ink-800 to-ink min-h-screen text-paper font-sans">
       {/* Sticky Language Toggle */}
       <div className="fixed top-6 right-6 z-50">
         {/* Αφαιρώ το κουμπί αλλαγής γλώσσας */}
@@ -116,7 +116,7 @@ export default function DatabaseCloudInfrastructurePage() {
           <motion.h1 className="text-4xl md:text-5xl font-extrabold mb-6 drop-shadow-lg tracking-tight bg-gradient-to-r from-blue-700 to-gray-600 bg-clip-text text-transparent" initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }} style={{ fontFamily: "'Poppins', 'Roboto', 'Inter', sans-serif" }}>
             {t.services.pages.databaseCloudInfrastructure.hero.title}
           </motion.h1>
-          <motion.p className="text-xl md:text-2xl text-gray-700 mb-10 font-medium max-w-2xl mx-auto" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.2 }}>
+          <motion.p className="text-xl md:text-2xl text-paper-dim mb-10 font-medium max-w-2xl mx-auto" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.2 }}>
             {t.services.pages.databaseCloudInfrastructure.hero.subtitle}
           </motion.p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
@@ -147,7 +147,7 @@ export default function DatabaseCloudInfrastructurePage() {
             <div className="absolute inset-0 opacity-[0.015] bg-[linear-gradient(to_right,#6366f1_1px,transparent_1px),linear-gradient(to_bottom,#6366f1_1px,transparent_1px)] bg-[size:48px_48px]" />
           </>
         )}
-        <div className="relative z-10 bg-white/80 backdrop-blur-xl rounded-3xl shadow-xl border border-white/50 p-8 md:p-10 flex flex-col md:flex-row items-center gap-10 overflow-hidden hover:shadow-2xl transition-all duration-500">
+        <div className="relative z-10 bg-white/[0.045] backdrop-blur-xl rounded-3xl shadow-xl border border-white/10 p-8 md:p-10 flex flex-col md:flex-row items-center gap-10 overflow-hidden hover:shadow-2xl transition-all duration-500">
           {/* Animated Gradient Background on Hover */}
           <motion.div
             className="absolute inset-0 bg-gradient-to-br from-blue-500/5 via-purple-500/5 to-cyan-500/5 opacity-0 hover:opacity-100 transition-opacity duration-500 rounded-3xl"
@@ -166,20 +166,20 @@ export default function DatabaseCloudInfrastructurePage() {
           />
           {/* Εικόνα/Γραφικό Cloud */}
           <div className="flex-shrink-0 flex items-center justify-center w-full md:w-1/3 mb-8 md:mb-0">
-            <img src={cloudImg} alt="Cloud Design" className="w-40 h-40 md:w-56 md:h-56 object-contain rounded-2xl shadow-xl bg-white/80" />
+            <img src={cloudImg} alt="Cloud Design" className="w-40 h-40 md:w-56 md:h-56 object-contain rounded-2xl shadow-xl bg-white/[0.045]" />
           </div>
           {/* Περιεχόμενο */}
           <div className="relative z-10 flex-1 flex flex-col items-center md:items-start text-center md:text-left">
-            <h2 className="text-3xl md:text-4xl font-extrabold text-blue-700 mb-4 bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent drop-shadow-lg">{t.services.pages.databaseCloudInfrastructure.services.title}</h2>
-            <p className="text-lg text-gray-700 mb-6 max-w-xl">{t.services.pages.databaseCloudInfrastructure.services.description}</p>
+            <h2 className="text-3xl md:text-4xl font-extrabold text-iris-bright mb-4 bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent drop-shadow-lg">{t.services.pages.databaseCloudInfrastructure.services.title}</h2>
+            <p className="text-lg text-paper-dim mb-6 max-w-xl">{t.services.pages.databaseCloudInfrastructure.services.description}</p>
             {/* Badges/Icons row */}
             <div className="grid grid-cols-2 gap-4 w-full py-2 justify-center md:justify-start md:flex md:flex-row md:flex-wrap md:gap-3">
               {services.map((s, idx) => (
-                <div key={idx} className="flex flex-col items-center bg-white/80 rounded-2xl shadow-md border border-blue-100/40 px-5 py-4 min-w-[120px] max-w-[180px] flex-shrink-0 hover:shadow-xl transition-all duration-300">
-                  <div className="mb-2 flex items-center justify-center w-12 h-12 rounded-full bg-gradient-to-br from-blue-100 to-purple-100 shadow-inner border-2 border-blue-200">
+                <div key={idx} className="flex flex-col items-center bg-white/[0.045] rounded-2xl shadow-md border border-white/10 px-5 py-4 min-w-[120px] max-w-[180px] flex-shrink-0 hover:shadow-xl transition-all duration-300">
+                  <div className="mb-2 flex items-center justify-center w-12 h-12 rounded-full bg-gradient-to-br from-iris/20 to-iris/10 shadow-inner border-2 border-iris/30">
                     {s.icon}
                   </div>
-                  <span className="text-sm font-semibold text-blue-900 mb-1 text-center leading-tight">{s.title}</span>
+                  <span className="text-sm font-semibold text-paper mb-1 text-center leading-tight">{s.title}</span>
                 </div>
               ))}
             </div>
@@ -208,7 +208,7 @@ export default function DatabaseCloudInfrastructurePage() {
             <div className="absolute inset-0 opacity-[0.015] bg-[linear-gradient(to_right,#6366f1_1px,transparent_1px),linear-gradient(to_bottom,#6366f1_1px,transparent_1px)] bg-[size:48px_48px]" />
           </>
         )}
-        <div className="relative z-10 bg-white/80 backdrop-blur-xl rounded-3xl shadow-xl border border-white/50 p-8 md:p-10 flex flex-col items-center gap-10 overflow-hidden hover:shadow-2xl transition-all duration-500">
+        <div className="relative z-10 bg-white/[0.045] backdrop-blur-xl rounded-3xl shadow-xl border border-white/10 p-8 md:p-10 flex flex-col items-center gap-10 overflow-hidden hover:shadow-2xl transition-all duration-500">
           {/* Animated Gradient Background on Hover */}
           <motion.div
             className="absolute inset-0 bg-gradient-to-br from-blue-500/5 via-purple-500/5 to-cyan-500/5 opacity-0 hover:opacity-100 transition-opacity duration-500 rounded-3xl"
@@ -226,8 +226,8 @@ export default function DatabaseCloudInfrastructurePage() {
             }}
           />
           <div className="relative z-10 w-full">
-            <h2 className="text-3xl md:text-4xl font-extrabold text-blue-700 mb-8 bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent drop-shadow-lg">{t.services.pages.databaseCloudInfrastructure.workflow.title}</h2>
-            <p className="text-lg text-gray-700 mb-10 max-w-xl text-center mx-auto">{t.services.pages.databaseCloudInfrastructure.workflow.description}</p>
+            <h2 className="text-3xl md:text-4xl font-extrabold text-iris-bright mb-8 bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent drop-shadow-lg">{t.services.pages.databaseCloudInfrastructure.workflow.title}</h2>
+            <p className="text-lg text-paper-dim mb-10 max-w-xl text-center mx-auto">{t.services.pages.databaseCloudInfrastructure.workflow.description}</p>
             {/* Timeline */}
             <div className="relative flex flex-col items-center w-full max-w-2xl mx-auto">
             {workflow.map((step, idx) => (
@@ -237,14 +237,14 @@ export default function DatabaseCloudInfrastructurePage() {
                     {idx + 1}
                   </div>
                   {idx < workflow.length - 1 && (
-                    <div className="w-1 h-12 bg-gradient-to-b from-blue-300 to-purple-200 mx-auto"></div>
+                    <div className="w-1 h-12 bg-gradient-to-b from-iris/30 to-iris/15 mx-auto"></div>
                   )}
                 </div>
-                <div className="flex-1 bg-white/80 rounded-2xl shadow-md border border-blue-100/40 px-6 py-5 flex flex-col md:flex-row items-center md:items-start gap-4">
-                  <div className="flex items-center justify-center w-10 h-10 rounded-full bg-gradient-to-br from-blue-100 to-purple-100 shadow-inner border-2 border-blue-200">
+                <div className="flex-1 bg-white/[0.045] rounded-2xl shadow-md border border-white/10 px-6 py-5 flex flex-col md:flex-row items-center md:items-start gap-4">
+                  <div className="flex items-center justify-center w-10 h-10 rounded-full bg-gradient-to-br from-iris/20 to-iris/10 shadow-inner border-2 border-iris/30">
                     {step.icon}
                   </div>
-                  <span className="text-base font-semibold text-blue-900 text-center md:text-left">{step.title}</span>
+                  <span className="text-base font-semibold text-paper text-center md:text-left">{step.title}</span>
                 </div>
               </div>
             ))}
@@ -276,10 +276,10 @@ export default function DatabaseCloudInfrastructurePage() {
           </>
         )}
         <div className="relative z-10">
-        <motion.h2 className="text-3xl md:text-4xl font-extrabold text-blue-700 mb-12 text-center bg-gradient-to-r from-blue-500 to-gray-500 bg-clip-text text-transparent drop-shadow-lg">{t.services.pages.databaseCloudInfrastructure.whoWeServe.title}</motion.h2>
+        <motion.h2 className="text-3xl md:text-4xl font-extrabold text-iris-bright mb-12 text-center bg-gradient-to-r from-blue-500 to-gray-500 bg-clip-text text-transparent drop-shadow-lg">{t.services.pages.databaseCloudInfrastructure.whoWeServe.title}</motion.h2>
         <motion.div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.12 } } }}>
           {clients.map((c, idx) => (
-            <motion.div key={idx} className="group relative bg-white/80 backdrop-blur-xl rounded-3xl shadow-xl border border-white/50 p-8 md:p-10 flex flex-col items-center text-center cursor-pointer transition-all duration-300 hover:shadow-2xl focus:outline-none focus:ring-4 focus:ring-blue-200 overflow-hidden" initial={{ opacity: 0, y: 40, scale: 0.97 }} whileInView={{ opacity: 1, y: 0, scale: 1 }} whileHover={{ scale: 1.04, y: -8 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: idx * 0.07 }} onMouseEnter={() => playSound(hoverSfx)} onClick={() => playSound(clickSfx)}>
+            <motion.div key={idx} className="group relative bg-white/[0.045] backdrop-blur-xl rounded-3xl shadow-xl border border-white/10 p-8 md:p-10 flex flex-col items-center text-center cursor-pointer transition-all duration-300 hover:shadow-2xl focus:outline-none focus:ring-4 focus:ring-blue-200 overflow-hidden" initial={{ opacity: 0, y: 40, scale: 0.97 }} whileInView={{ opacity: 1, y: 0, scale: 1 }} whileHover={{ scale: 1.04, y: -8 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: idx * 0.07 }} onMouseEnter={() => playSound(hoverSfx)} onClick={() => playSound(clickSfx)}>
               {/* Animated Gradient Background on Hover */}
               <motion.div
                 className="absolute inset-0 bg-gradient-to-br from-blue-500/5 via-purple-500/5 to-cyan-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl"
@@ -298,13 +298,13 @@ export default function DatabaseCloudInfrastructurePage() {
               />
               {/* Shine Effect */}
               <motion.div
-                className="absolute inset-0 rounded-3xl bg-gradient-to-r from-transparent via-white/30 to-transparent opacity-0 group-hover:opacity-100"
+                className="absolute inset-0 rounded-3xl bg-gradient-to-r from-transparent via-ink/30 to-transparent opacity-0 group-hover:opacity-100"
                 initial={{ x: '-100%' }}
                 whileHover={{ x: '100%' }}
                 transition={{ duration: 0.8 }}
               />
-              <div className="relative z-10 mb-6 flex items-center justify-center w-20 h-20 rounded-full bg-gradient-to-br from-blue-100 to-gray-100 shadow-inner group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300 border-4 border-blue-200 group-hover:border-gray-300">{c.icon}</div>
-              <h4 className="relative z-10 text-xl font-bold text-blue-900 mb-2 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-blue-600 group-hover:to-purple-600 transition-all duration-300 tracking-tight">{c.title}</h4>
+              <div className="relative z-10 mb-6 flex items-center justify-center w-20 h-20 rounded-full bg-gradient-to-br from-iris/20 to-gray-100 shadow-inner group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300 border-4 border-iris/30 group-hover:border-white/15">{c.icon}</div>
+              <h4 className="relative z-10 text-xl font-bold text-paper mb-2 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-blue-600 group-hover:to-purple-600 transition-all duration-300 tracking-tight">{c.title}</h4>
             </motion.div>
           ))}
         </motion.div>
@@ -333,13 +333,13 @@ export default function DatabaseCloudInfrastructurePage() {
           </>
         )}
         <div className="relative z-10">
-        <motion.h2 className="text-3xl md:text-4xl font-extrabold text-blue-700 mb-12 text-center bg-gradient-to-r from-blue-500 to-gray-500 bg-clip-text text-transparent drop-shadow-lg">{t.services.pages.databaseCloudInfrastructure.whyUs.title}</motion.h2>
+        <motion.h2 className="text-3xl md:text-4xl font-extrabold text-iris-bright mb-12 text-center bg-gradient-to-r from-blue-500 to-gray-500 bg-clip-text text-transparent drop-shadow-lg">{t.services.pages.databaseCloudInfrastructure.whyUs.title}</motion.h2>
         <motion.ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.10 } } }}>
           {whyUs.map((w, idx) => (
-            <motion.li key={idx} className="group relative flex items-center gap-4 bg-white/80 backdrop-blur-xl rounded-2xl shadow-xl border border-white/50 p-6 text-lg font-medium text-gray-800 hover:shadow-2xl transition-all duration-300 overflow-hidden" initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} whileHover={{ scale: 1.04, y: -4 }} viewport={{ once: true }}>
+            <motion.li key={idx} className="group relative flex items-center gap-4 bg-white/[0.045] backdrop-blur-xl rounded-2xl shadow-xl border border-white/10 p-6 text-lg font-medium text-paper hover:shadow-2xl transition-all duration-300 overflow-hidden" initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} whileHover={{ scale: 1.04, y: -4 }} viewport={{ once: true }}>
               {/* Shine Effect */}
               <motion.div
-                className="absolute inset-0 rounded-2xl bg-gradient-to-r from-transparent via-white/30 to-transparent opacity-0 group-hover:opacity-100"
+                className="absolute inset-0 rounded-2xl bg-gradient-to-r from-transparent via-ink/30 to-transparent opacity-0 group-hover:opacity-100"
                 initial={{ x: '-100%' }}
                 whileHover={{ x: '100%' }}
                 transition={{ duration: 0.8 }}
@@ -374,8 +374,8 @@ export default function DatabaseCloudInfrastructurePage() {
           </>
         )}
         <div className="relative z-10 w-full max-w-4xl">
-          <motion.div className="relative bg-gradient-to-br from-blue-100 via-white to-gray-100/80 backdrop-blur-lg rounded-3xl shadow-2xl border border-blue-100/40 p-12 flex flex-col items-center" initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
-            <h2 className="text-3xl md:text-4xl font-extrabold text-blue-900 mb-6 tracking-tight">{t.services.pages.databaseCloudInfrastructure.finalCta.title}</h2>
+          <motion.div className="relative bg-gradient-to-br from-iris/20 via-ink-800 to-gray-100/80 backdrop-blur-lg rounded-3xl shadow-2xl border border-white/10 p-12 flex flex-col items-center" initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
+            <h2 className="text-3xl md:text-4xl font-extrabold text-paper mb-6 tracking-tight">{t.services.pages.databaseCloudInfrastructure.finalCta.title}</h2>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mt-6">
               <motion.button className="inline-block px-10 py-4 bg-gradient-to-r from-blue-600 to-gray-400 text-white rounded-full font-bold text-lg shadow-3xl border-2 border-transparent hover:border-blue-400 hover:shadow-[0_0_32px_0_#a78bfa] focus:outline-none focus:ring-2 focus:ring-blue-400 animate-fade-in flex items-center gap-2 relative overflow-hidden" whileHover={{ scale: 1.08, boxShadow: '0 0 32px 0 #a78bfa', filter: 'brightness(1.1)', borderColor: '#a78bfa' }} whileTap={{ scale: 0.97 }} onMouseEnter={() => playSound(hoverSfx)} onClick={() => { window.location.href = '/contactme'; }}><span className="relative z-10">{t.services.pages.databaseCloudInfrastructure.finalCta.button}</span></motion.button>
               <motion.button className="inline-block px-10 py-4 bg-gradient-to-r from-gray-400 to-blue-600 text-white rounded-full font-bold text-lg shadow-3xl border-2 border-transparent hover:border-gray-400 hover:shadow-[0_0_32px_0_#a78bfa] focus:outline-none focus:ring-2 focus:ring-blue-400 animate-fade-in flex items-center gap-2 relative overflow-hidden" whileHover={{ scale: 1.08, boxShadow: '0 0 32px 0 #a78bfa', filter: 'brightness(1.1)', borderColor: '#a78bfa' }} whileTap={{ scale: 0.97 }} onMouseEnter={() => playSound(hoverSfx)} onClick={() => { window.location.href = '/'; }}><FaCloud className="mr-2" />{t.services.pages.databaseCloudInfrastructure.finalCta.backHome}</motion.button>

@@ -1,25 +1,18 @@
 import React, { useState } from 'react';
-import { MapPin, Phone, Mail, Send, Linkedin, Github, CheckCircle, ChevronDown, MessageCircle } from 'lucide-react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { ChevronDown, CheckCircle, ArrowUpRight } from 'lucide-react';
+import { motion } from 'framer-motion';
 import { useLanguage } from '../hooks/useLanguage';
 import { translations } from '../data/translations';
-import { FaLinkedin, FaGithub, FaEnvelope, FaUserCircle, FaMapMarkerAlt, FaPhoneAlt, FaInstagram, FaFacebook, FaTiktok, FaPaperPlane } from 'react-icons/fa';
+import { FaEnvelope, FaMapMarkerAlt, FaPhoneAlt, FaInstagram, FaFacebook, FaTiktok, FaPaperPlane } from 'react-icons/fa';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { useIsMobile } from '../hooks/useIsMobile';
-import SectionEyebrow from './SectionEyebrow';
+import SectionHeading from './ui/SectionHeading';
+import Reveal from './ui/Reveal';
 
 const Contact: React.FC = () => {
   const { language } = useLanguage();
   const t = translations[language];
-  const isMobile = useIsMobile();
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    service: '',
-    subject: '',
-    message: ''
-  });
+  const [formData, setFormData] = useState({ name: '', email: '', service: '', subject: '', message: '' });
   const [errors, setErrors] = useState({ name: false, email: false, message: false });
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
@@ -71,331 +64,177 @@ const Contact: React.FC = () => {
       toast.success(t.contact.success);
       setFormData({ name: '', email: '', service: '', subject: '', message: '' });
     } catch {
-      // Netlify endpoint unavailable (e.g. local dev) → fall back to email client
       openMailtoFallback();
     } finally {
       setLoading(false);
     }
   };
 
-  const handleCopy = (value: string) => {
-    navigator.clipboard.writeText(value);
-    toast.info(t.contact.emailCopied);
-  };
-
   const contactLinks = [
-    {
-      icon: FaEnvelope,
-      value: 'info@devtaskhub.com',
-      href: 'mailto:info@devtaskhub.com',
-      color: 'text-blue-600',
-    },
-    {
-      icon: FaPhoneAlt,
-      value: '+30 6971982563',
-      href: 'tel:+306971982563',
-      color: 'text-green-600',
-    },
-    {
-      icon: FaInstagram,
-      value: 'Instagram',
-      href: 'https://www.instagram.com/devtaskhub/',
-      color: 'text-pink-600',
-    },
-    {
-      icon: FaFacebook,
-      value: 'Facebook',
-      href: 'https://www.facebook.com/profile.php?id=61578746165941',
-      color: 'text-blue-600',
-    },
-    {
-      icon: FaTiktok,
-      value: 'TikTok',
-      href: 'https://www.tiktok.com/@devtaskhub',
-      color: 'text-black',
-    },
-    {
-      icon: FaMapMarkerAlt,
-      value: 'Θεσσαλονίκη, Ελλάδα',
-      href: null,
-      color: 'text-red-600',
-    },
+    { icon: FaEnvelope, value: 'info@devtaskhub.com', href: 'mailto:info@devtaskhub.com' },
+    { icon: FaPhoneAlt, value: '+30 6971982563', href: 'tel:+306971982563' },
+    { icon: FaInstagram, value: 'Instagram', href: 'https://www.instagram.com/devtaskhub/' },
+    { icon: FaFacebook, value: 'Facebook', href: 'https://www.facebook.com/profile.php?id=61578746165941' },
+    { icon: FaTiktok, value: 'TikTok', href: 'https://www.tiktok.com/@devtaskhub' },
+    { icon: FaMapMarkerAlt, value: 'Θεσσαλονίκη, Ελλάδα', href: null },
   ];
 
+  const field = 'w-full rounded-xl border bg-white/[0.03] px-4 py-3 text-paper placeholder:text-paper-muted transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-iris/60';
+  const fieldOk = 'border-[var(--line)] focus:border-iris/60';
+  const fieldErr = 'border-red-400/70 focus:ring-red-400/60';
+
   return (
-    <section id="contact" className="relative min-h-screen py-24 md:py-32 bg-gradient-to-br from-slate-50 via-white to-blue-50/40 overflow-hidden">
-      {/* Premium Animated Background - Desktop Only */}
-      {!isMobile && (
-        <>
-          <motion.div
-            className="absolute top-0 right-0 w-[600px] h-[600px] bg-gradient-to-br from-blue-400/20 via-purple-400/15 to-cyan-400/20 rounded-full blur-3xl"
-            animate={{
-              scale: [1, 1.2, 1],
-              x: [0, 50, 0],
-              y: [0, -30, 0],
-            }}
-            transition={{
-              duration: 20,
-              repeat: Infinity,
-              ease: 'easeInOut',
-            }}
-          />
-          <motion.div
-            className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-gradient-to-tl from-indigo-400/20 via-pink-400/15 to-purple-400/20 rounded-full blur-3xl"
-            animate={{
-              scale: [1.1, 0.9, 1.1],
-              x: [0, -40, 0],
-              y: [0, 30, 0],
-            }}
-            transition={{
-              duration: 25,
-              repeat: Infinity,
-              ease: 'easeInOut',
-            }}
-          />
-          {/* Mesh Gradient Overlay */}
-          <div className="absolute inset-0 bg-gradient-mesh opacity-40" />
-          {/* Subtle Grid Pattern */}
-          <div className="absolute inset-0 opacity-[0.02] bg-[linear-gradient(to_right,#6366f1_1px,transparent_1px),linear-gradient(to_bottom,#6366f1_1px,transparent_1px)] bg-[size:48px_48px]" />
-        </>
-      )}
+    <section id="contact" className="surface-ink relative overflow-hidden py-24 md:py-32">
+      <div className="grid-lines pointer-events-none absolute inset-0 opacity-[0.35]" aria-hidden="true" />
+      <div className="relative z-10 mx-auto max-w-6xl px-5 sm:px-8">
+        <SectionHeading
+          index="07"
+          label={language === 'el' ? 'Ας μιλήσουμε' : language === 'fr' ? 'Parlons-en' : "Let's talk"}
+          title={t.contact.title}
+          kicker={language === 'el' ? 'σήμερα' : language === 'fr' ? "aujourd'hui" : 'today'}
+          align="center"
+          className="mb-6"
+        />
+        <Reveal className="mb-14 text-center">
+          <p className="mx-auto max-w-2xl whitespace-pre-line text-lg text-paper-dim">{t.contact.description}</p>
+        </Reveal>
 
-      <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header Section */}
-        <div className="text-center mb-12">
-          <div className="mb-5">
-            <SectionEyebrow icon={MessageCircle} color="blue">
-              {language === 'el' ? 'Ας μιλήσουμε' : language === 'fr' ? 'Parlons-en' : "Let's talk"}
-            </SectionEyebrow>
-          </div>
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            {t.contact.title}
-          </h2>
-          <p className="text-gray-600 max-w-2xl mx-auto whitespace-pre-line">
-            {t.contact.description}
-          </p>
-        </div>
+        <div className="grid grid-cols-1 gap-6 lg:grid-cols-[1.4fr_1fr]">
+          {/* Form */}
+          <Reveal className="card-ink p-7 md:p-9">
+            <form
+              name="contact"
+              method="POST"
+              data-netlify="true"
+              netlify-honeypot="bot-field"
+              onSubmit={handleSubmit}
+              className="flex flex-col gap-5"
+              autoComplete="off"
+            >
+              <input type="hidden" name="form-name" value="contact" />
+              <p className="hidden" aria-hidden="true">
+                <label>
+                  Don't fill this out if you're human:
+                  <input name="bot-field" tabIndex={-1} autoComplete="off" value={botField} onChange={(e) => setBotField(e.target.value)} />
+                </label>
+              </p>
 
-        {/* Main Content Card */}
-        <div className="bg-white rounded-2xl shadow-lg p-8 md:p-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
-            {/* Contact Form */}
-            <div>
-
-              <form
-                name="contact"
-                method="POST"
-                data-netlify="true"
-                netlify-honeypot="bot-field"
-                onSubmit={handleSubmit}
-                className="relative z-10 flex flex-col gap-6"
-                autoComplete="off"
-              >
-                <input type="hidden" name="form-name" value="contact" />
-                {/* Honeypot field — hidden from humans, catches bots */}
-                <p className="hidden" aria-hidden="true">
-                  <label>
-                    Don't fill this out if you're human:
-                    <input
-                      name="bot-field"
-                      tabIndex={-1}
-                      autoComplete="off"
-                      value={botField}
-                      onChange={(e) => setBotField(e.target.value)}
-                    />
-                  </label>
-                </p>
-                {/* Name */}
-                <div className="relative">
-                  <label htmlFor="name" className="block text-sm font-semibold text-gray-700 mb-2">
-                    {t.contact.form.nameLabel} <span className="text-red-500">{t.contact.form.required}</span>
+              <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
+                <div>
+                  <label htmlFor="name" className="mb-2 block text-sm font-medium text-paper-dim">
+                    {t.contact.form.nameLabel} <span className="text-iris-bright">{t.contact.form.required}</span>
                   </label>
                   <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    value={formData.name}
-                    onChange={handleChange}
-                    required
-                    aria-invalid={errors.name}
-                    aria-describedby={errors.name ? 'name-error' : undefined}
-                    className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-300 bg-white ${errors.name ? 'border-red-400 focus:border-red-400 focus:ring-red-400' : 'border-gray-300'}`}
-                    placeholder={t.contact.form.namePlaceholder}
-                    autoComplete="name"
+                    type="text" id="name" name="name" value={formData.name} onChange={handleChange} required
+                    aria-invalid={errors.name} aria-describedby={errors.name ? 'name-error' : undefined}
+                    className={`${field} ${errors.name ? fieldErr : fieldOk}`} placeholder={t.contact.form.namePlaceholder} autoComplete="name"
                   />
-                  {errors.name && <span id="name-error" className="text-xs text-red-500 mt-1 block">{t.contact.form.nameRequired}</span>}
+                  {errors.name && <span id="name-error" className="mt-1 block text-xs text-red-400">{t.contact.form.nameRequired}</span>}
                 </div>
-
-                {/* Email */}
-                <div className="relative">
-                  <label htmlFor="email" className="block text-sm font-semibold text-gray-700 mb-2">
-                    {t.contact.form.emailLabel} <span className="text-red-500">{t.contact.form.required}</span>
+                <div>
+                  <label htmlFor="email" className="mb-2 block text-sm font-medium text-paper-dim">
+                    {t.contact.form.emailLabel} <span className="text-iris-bright">{t.contact.form.required}</span>
                   </label>
                   <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    required
-                    aria-invalid={errors.email}
-                    aria-describedby={errors.email ? 'email-error' : undefined}
-                    className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-300 bg-white ${errors.email ? 'border-red-400 focus:border-red-400 focus:ring-red-400' : 'border-gray-300'}`}
-                    placeholder={t.contact.form.emailPlaceholder}
-                    autoComplete="email"
+                    type="email" id="email" name="email" value={formData.email} onChange={handleChange} required
+                    aria-invalid={errors.email} aria-describedby={errors.email ? 'email-error' : undefined}
+                    className={`${field} ${errors.email ? fieldErr : fieldOk}`} placeholder={t.contact.form.emailPlaceholder} autoComplete="email"
                   />
-                  {errors.email && <span id="email-error" className="text-xs text-red-500 mt-1 block">{t.contact.form.emailRequired}</span>}
+                  {errors.email && <span id="email-error" className="mt-1 block text-xs text-red-400">{t.contact.form.emailRequired}</span>}
                 </div>
+              </div>
 
-                {/* Service */}
+              <div>
+                <label htmlFor="service" className="mb-2 block text-sm font-medium text-paper-dim">{t.contact.form.serviceLabel}</label>
                 <div className="relative">
-                  <label htmlFor="service" className="block text-sm font-semibold text-gray-700 mb-2">
-                    {t.contact.form.serviceLabel}
-                  </label>
-                  <div className="relative">
-                    <select
-                      id="service"
-                      name="service"
-                      value={formData.service}
-                      onChange={handleChange}
-                      className="w-full px-4 py-3 pr-10 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-300 bg-white border-gray-300 appearance-none cursor-pointer text-gray-700"
-                    >
-                      <option value="">{t.contact.form.servicePlaceholder}</option>
-                      <option value={t.contact.services.web}>{t.contact.services.web}</option>
-                      <option value={t.contact.services.mobile}>{t.contact.services.mobile}</option>
-                      <option value={t.contact.services.eshop}>{t.contact.services.eshop}</option>
-                      <option value={t.contact.services.ai}>{t.contact.services.ai}</option>
-                      <option value={t.contact.services.social}>{t.contact.services.social}</option>
-                      <option value={t.contact.services.other}>{t.contact.services.other}</option>
-                    </select>
-                    <ChevronDown className="absolute right-4 top-1/2 -translate-y-1/2 h-5 w-5 text-gray-400 pointer-events-none" />
-                  </div>
-                </div>
-
-                {/* Subject */}
-                <div className="relative">
-                  <label htmlFor="subject" className="block text-sm font-semibold text-gray-700 mb-2">
-                    {t.contact.form.subjectLabel}
-                  </label>
-                  <input
-                    type="text"
-                    id="subject"
-                    name="subject"
-                    value={formData.subject}
-                    onChange={handleChange}
-                    className="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-300 bg-white border-gray-300"
-                    placeholder={t.contact.form.subjectPlaceholder}
-                    autoComplete="off"
-                  />
-                </div>
-
-                {/* Message */}
-                <div className="relative">
-                  <label htmlFor="message" className="block text-sm font-semibold text-gray-700 mb-2">
-                    {t.contact.form.messageLabel} <span className="text-red-500">{t.contact.form.required}</span>
-                  </label>
-                  <textarea
-                    id="message"
-                    name="message"
-                    value={formData.message}
-                    onChange={handleChange}
-                    required
-                    rows={5}
-                    aria-invalid={errors.message}
-                    aria-describedby={errors.message ? 'message-error' : undefined}
-                    className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-300 bg-white resize-none ${errors.message ? 'border-red-400 focus:border-red-400 focus:ring-red-400' : 'border-gray-300'}`}
-                    placeholder={t.contact.form.messagePlaceholder}
-                  />
-                  {errors.message && <span id="message-error" className="text-xs text-red-500 mt-1 block">{t.contact.form.messageRequired}</span>}
-                </div>
-
-                {/* Submit Button */}
-                <motion.button
-                  type="submit"
-                  className="group relative w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-4 rounded-xl font-semibold flex items-center justify-center space-x-3 shadow-lg hover:shadow-xl transition-all duration-300 disabled:opacity-60 disabled:cursor-not-allowed text-lg focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 overflow-hidden"
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
-                  disabled={loading}
-                >
-                  <motion.div
-                    className="absolute inset-0 bg-gradient-to-r from-blue-700 to-purple-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                    animate={{
-                      backgroundPosition: ['0% 50%', '100% 50%'],
-                    }}
-                    transition={{
-                      duration: 3,
-                      repeat: Infinity,
-                      repeatType: 'reverse',
-                      ease: 'linear',
-                    }}
-                    style={{
-                      backgroundSize: '200% 100%',
-                    }}
-                  />
-                  {loading ? (
-                    <svg className="animate-spin h-5 w-5 text-white relative z-10" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                      <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-                      <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8z"></path>
-                    </svg>
-                  ) : (
-                    <FaPaperPlane className="h-5 w-5 relative z-10" />
-                  )}
-                  <span className="relative z-10">{loading ? t.contact.form.sending : t.contact.form.send}</span>
-                </motion.button>
-                {success && (
-                  <motion.div
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    className="text-green-600 text-center mt-2 flex items-center justify-center gap-2"
+                  <select
+                    id="service" name="service" value={formData.service} onChange={handleChange}
+                    className={`${field} ${fieldOk} cursor-pointer appearance-none pr-10 [&>option]:bg-ink-700 [&>option]:text-paper`}
                   >
-                    <CheckCircle className="h-5 w-5" />
-                    {t.contact.success}
-                  </motion.div>
+                    <option value="">{t.contact.form.servicePlaceholder}</option>
+                    <option value={t.contact.services.web}>{t.contact.services.web}</option>
+                    <option value={t.contact.services.mobile}>{t.contact.services.mobile}</option>
+                    <option value={t.contact.services.eshop}>{t.contact.services.eshop}</option>
+                    <option value={t.contact.services.ai}>{t.contact.services.ai}</option>
+                    <option value={t.contact.services.social}>{t.contact.services.social}</option>
+                    <option value={t.contact.services.other}>{t.contact.services.other}</option>
+                  </select>
+                  <ChevronDown className="pointer-events-none absolute right-4 top-1/2 h-5 w-5 -translate-y-1/2 text-paper-muted" />
+                </div>
+              </div>
+
+              <div>
+                <label htmlFor="subject" className="mb-2 block text-sm font-medium text-paper-dim">{t.contact.form.subjectLabel}</label>
+                <input
+                  type="text" id="subject" name="subject" value={formData.subject} onChange={handleChange}
+                  className={`${field} ${fieldOk}`} placeholder={t.contact.form.subjectPlaceholder} autoComplete="off"
+                />
+              </div>
+
+              <div>
+                <label htmlFor="message" className="mb-2 block text-sm font-medium text-paper-dim">
+                  {t.contact.form.messageLabel} <span className="text-iris-bright">{t.contact.form.required}</span>
+                </label>
+                <textarea
+                  id="message" name="message" value={formData.message} onChange={handleChange} required rows={5}
+                  aria-invalid={errors.message} aria-describedby={errors.message ? 'message-error' : undefined}
+                  className={`${field} resize-none ${errors.message ? fieldErr : fieldOk}`} placeholder={t.contact.form.messagePlaceholder}
+                />
+                {errors.message && <span id="message-error" className="mt-1 block text-xs text-red-400">{t.contact.form.messageRequired}</span>}
+              </div>
+
+              <motion.button
+                type="submit"
+                className="btn-accent group mt-1 w-full justify-center px-6 py-4 text-base disabled:cursor-not-allowed disabled:opacity-60"
+                whileHover={{ scale: loading ? 1 : 1.01 }}
+                whileTap={{ scale: 0.99 }}
+                disabled={loading}
+              >
+                {loading ? (
+                  <svg className="h-5 w-5 animate-spin" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                    <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
+                    <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8z" />
+                  </svg>
+                ) : (
+                  <FaPaperPlane className="h-4 w-4" />
                 )}
-              </form>
-            </div>
+                <span>{loading ? t.contact.form.sending : t.contact.form.send}</span>
+              </motion.button>
+              {success && (
+                <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} className="mt-1 flex items-center justify-center gap-2 text-signal">
+                  <CheckCircle className="h-5 w-5" />
+                  {t.contact.success}
+                </motion.div>
+              )}
+            </form>
+          </Reveal>
 
-            {/* Contact Information */}
-            <div className="space-y-3 flex flex-col justify-center">
-              {contactLinks.map((link, index) => {
-                const Icon = link.icon;
-                const cardClass = "flex items-center gap-4 p-3.5 rounded-2xl border border-gray-100 bg-white hover:border-blue-200 hover:shadow-md transition-all duration-300";
-                const inner = (
-                  <>
-                    <span className="flex items-center justify-center w-11 h-11 rounded-xl bg-gray-50 border border-gray-100 flex-shrink-0">
-                      <Icon className={`h-5 w-5 ${link.color}`} />
-                    </span>
-                    <span className="text-base font-medium text-gray-800 break-words">
-                      {link.value}
-                    </span>
-                  </>
-                );
-
-                if (link.href) {
-                  return (
-                    <a
-                      key={index}
-                      href={link.href}
-                      target={link.href.startsWith('http') ? '_blank' : undefined}
-                      rel={link.href.startsWith('http') ? 'noopener noreferrer' : undefined}
-                      className={cardClass}
-                    >
-                      {inner}
-                    </a>
-                  );
-                }
-
-                return (
-                  <div key={index} className={cardClass}>
-                    {inner}
-                  </div>
-                );
-              })}
-            </div>
-          </div>
+          {/* Contact links */}
+          <Reveal delay={0.1} className="flex flex-col gap-3">
+            {contactLinks.map((link, index) => {
+              const Icon = link.icon;
+              const cls = 'group flex items-center gap-4 rounded-2xl border border-[var(--line)] bg-white/[0.015] p-4 transition-colors hover:border-iris/30 hover:bg-white/[0.03]';
+              const inner = (
+                <>
+                  <span className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-xl border border-[var(--line)] bg-white/[0.03] text-iris-bright">
+                    <Icon className="h-5 w-5" />
+                  </span>
+                  <span className="break-words text-base font-medium text-paper">{link.value}</span>
+                  {link.href && <ArrowUpRight className="ml-auto h-4 w-4 text-paper-muted opacity-0 transition-opacity group-hover:opacity-100" />}
+                </>
+              );
+              return link.href ? (
+                <a key={index} href={link.href} target={link.href.startsWith('http') ? '_blank' : undefined} rel={link.href.startsWith('http') ? 'noopener noreferrer' : undefined} className={cls}>
+                  {inner}
+                </a>
+              ) : (
+                <div key={index} className={cls}>{inner}</div>
+              );
+            })}
+          </Reveal>
         </div>
       </div>
-      <ToastContainer position="bottom-right" />
+      <ToastContainer position="bottom-right" theme="dark" />
     </section>
   );
 };

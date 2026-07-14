@@ -116,15 +116,15 @@ export default function SEOWebsiteOptimizationPage() {
     });
   }, []);
   return (
-    <div className="bg-gradient-to-br from-white via-blue-50 to-blue-100 min-h-screen text-gray-900 font-sans">
+    <div className="bg-gradient-to-br from-ink via-ink-800 to-iris/10 min-h-screen text-paper font-sans">
       {/* Hero Section */}
-      <section className="relative min-h-[70vh] flex items-center justify-center overflow-hidden pb-10 select-none bg-gradient-to-br from-yellow-50 via-white to-blue-50">
+      <section className="relative min-h-[70vh] flex items-center justify-center overflow-hidden pb-10 select-none bg-gradient-to-br from-yellow-50 via-ink-800 to-ink-800">
         {/* Animated Background Gradients/Particles */}
         <motion.div className="absolute inset-0 z-0 pointer-events-none">
-          <motion.div className="absolute top-[-10%] left-[-10%] w-[40vw] h-[40vw] bg-gradient-to-br from-yellow-300/40 via-blue-400/30 to-white/0 rounded-full blur-3xl animate-spin-slow" animate={{ rotate: 360 }} transition={{ duration: 40, repeat: Infinity, ease: 'linear' }} />
-          <motion.div className="absolute bottom-[-10%] right-[-10%] w-[32vw] h-[32vw] bg-gradient-to-br from-blue-400/40 via-yellow-200/30 to-white/0 rounded-full blur-3xl animate-spin-slow" animate={{ rotate: -360 }} transition={{ duration: 60, repeat: Infinity, ease: 'linear' }} />
-          <motion.div className="absolute top-1/4 left-1/4 w-64 h-64 bg-white/20 rounded-full blur-3xl" animate={{ y: [0, -20, 0], rotate: [0, 5, 0] }} transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut' }} />
-          <motion.div className="absolute bottom-1/4 right-1/4 w-48 h-48 bg-white/20 rounded-full blur-3xl" animate={{ y: [0, 30, 0], rotate: [0, -5, 0] }} transition={{ duration: 8, repeat: Infinity, ease: 'easeInOut', delay: 1 }} />
+          <motion.div className="absolute top-[-10%] left-[-10%] w-[40vw] h-[40vw] bg-gradient-to-br from-yellow-300/40 via-blue-400/30 to-ink/0 rounded-full blur-3xl animate-spin-slow" animate={{ rotate: 360 }} transition={{ duration: 40, repeat: Infinity, ease: 'linear' }} />
+          <motion.div className="absolute bottom-[-10%] right-[-10%] w-[32vw] h-[32vw] bg-gradient-to-br from-blue-400/40 via-yellow-200/30 to-ink/0 rounded-full blur-3xl animate-spin-slow" animate={{ rotate: -360 }} transition={{ duration: 60, repeat: Infinity, ease: 'linear' }} />
+          <motion.div className="absolute top-1/4 left-1/4 w-64 h-64 bg-white/[0.06] rounded-full blur-3xl" animate={{ y: [0, -20, 0], rotate: [0, 5, 0] }} transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut' }} />
+          <motion.div className="absolute bottom-1/4 right-1/4 w-48 h-48 bg-white/[0.06] rounded-full blur-3xl" animate={{ y: [0, 30, 0], rotate: [0, -5, 0] }} transition={{ duration: 8, repeat: Infinity, ease: 'easeInOut', delay: 1 }} />
           {/* Floating SEO keywords */}
           {['SEO', 'Google', '1η Σελίδα', 'Keywords', 'Analytics', 'On-Page', 'Backlinks', 'Content', 'Ranking', 'Organic'].map((kw, i) => (
             <motion.div
@@ -149,7 +149,7 @@ export default function SEOWebsiteOptimizationPage() {
             <motion.h1 className="text-4xl md:text-6xl font-extrabold mb-6 drop-shadow-lg tracking-tight bg-gradient-to-r from-blue-700 to-yellow-500 bg-clip-text text-transparent" initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }} style={{ fontFamily: "'IBM Plex Sans', 'Inter', sans-serif" }}>
               {typed}
             </motion.h1>
-            <motion.p className="text-lg md:text-2xl text-gray-700 mb-10 font-medium max-w-2xl" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.2 }}>
+            <motion.p className="text-lg md:text-2xl text-paper-dim mb-10 font-medium max-w-2xl" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.2 }}>
               {t.services.pages.seoWebsiteOptimization.hero.subtitle}
             </motion.p>
             <motion.button
@@ -190,7 +190,7 @@ export default function SEOWebsiteOptimizationPage() {
           <motion.h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold mb-12 text-center gradient-text-premium" initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }}>{t.services.pages.seoWebsiteOptimization.services.title}</motion.h2>
           <motion.div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 lg:gap-10" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.12 } } }}>
             {services.map((s, idx) => (
-              <motion.div key={s.title} className="group relative bg-white/80 backdrop-blur-xl rounded-3xl shadow-xl border border-white/50 p-8 md:p-10 flex flex-col items-center text-center cursor-pointer transition-all duration-300 hover:shadow-2xl focus:outline-none focus:ring-4 focus:ring-blue-200 overflow-hidden" initial={{ opacity: 0, y: 40, scale: 0.97 }} whileInView={{ opacity: 1, y: 0, scale: 1 }} whileHover={{ scale: 1.04, y: -8 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: idx * 0.07 }} onMouseEnter={() => playSound(hoverSfx)} onClick={() => playSound(clickSfx)}>
+              <motion.div key={s.title} className="group relative bg-white/[0.045] backdrop-blur-xl rounded-3xl shadow-xl border border-white/10 p-8 md:p-10 flex flex-col items-center text-center cursor-pointer transition-all duration-300 hover:shadow-2xl focus:outline-none focus:ring-4 focus:ring-blue-200 overflow-hidden" initial={{ opacity: 0, y: 40, scale: 0.97 }} whileInView={{ opacity: 1, y: 0, scale: 1 }} whileHover={{ scale: 1.04, y: -8 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: idx * 0.07 }} onMouseEnter={() => playSound(hoverSfx)} onClick={() => playSound(clickSfx)}>
                 {/* Animated Gradient Background on Hover */}
                 <motion.div
                   className="absolute inset-0 bg-gradient-to-br from-blue-500/5 via-purple-500/5 to-cyan-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl"
@@ -209,14 +209,14 @@ export default function SEOWebsiteOptimizationPage() {
                 />
                 {/* Shine Effect */}
                 <motion.div
-                  className="absolute inset-0 rounded-3xl bg-gradient-to-r from-transparent via-white/30 to-transparent opacity-0 group-hover:opacity-100"
+                  className="absolute inset-0 rounded-3xl bg-gradient-to-r from-transparent via-ink/30 to-transparent opacity-0 group-hover:opacity-100"
                   initial={{ x: '-100%' }}
                   whileHover={{ x: '100%' }}
                   transition={{ duration: 0.8 }}
                 />
-                <div className="relative z-10 mb-6 flex items-center justify-center w-20 h-20 rounded-full bg-gradient-to-br from-blue-100 to-blue-50 shadow-inner group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300 border-4 border-blue-200 group-hover:border-blue-300">{s.icon}</div>
-                <h4 className="relative z-10 text-xl font-bold text-blue-900 mb-2 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-blue-600 group-hover:to-purple-600 transition-all duration-300 tracking-tight">{s.title}</h4>
-                <p className="relative z-10 text-gray-600 mb-6 text-base leading-relaxed">{s.desc}</p>
+                <div className="relative z-10 mb-6 flex items-center justify-center w-20 h-20 rounded-full bg-gradient-to-br from-iris/20 to-ink-800 shadow-inner group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300 border-4 border-iris/30 group-hover:border-blue-300">{s.icon}</div>
+                <h4 className="relative z-10 text-xl font-bold text-paper mb-2 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-blue-600 group-hover:to-purple-600 transition-all duration-300 tracking-tight">{s.title}</h4>
+                <p className="relative z-10 text-paper-dim mb-6 text-base leading-relaxed">{s.desc}</p>
               </motion.div>
             ))}
           </motion.div>
@@ -248,23 +248,23 @@ export default function SEOWebsiteOptimizationPage() {
           <motion.h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold mb-12 text-center gradient-text-premium" initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }}>{t.services.pages.seoWebsiteOptimization.stats.title}</motion.h2>
           <motion.div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 lg:gap-10 mb-12" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.12 } } }}>
             {stats.map((s, idx) => (
-              <motion.div key={s.label} className="group relative flex flex-col items-center bg-white/80 backdrop-blur-xl rounded-2xl shadow-xl border border-white/50 p-8 md:p-12 hover:shadow-2xl transition-all duration-300 overflow-hidden" initial={{ opacity: 0, scale: 0.9 }} whileInView={{ opacity: 1, scale: 1 }} whileHover={{ scale: 1.04, y: -8, boxShadow: '0 8px 32px 0 #60a5fa' }} viewport={{ once: true }} transition={{ duration: 0.7, delay: idx * 0.1 }} onMouseEnter={() => playSound(hoverSfx)}>
+              <motion.div key={s.label} className="group relative flex flex-col items-center bg-white/[0.045] backdrop-blur-xl rounded-2xl shadow-xl border border-white/10 p-8 md:p-12 hover:shadow-2xl transition-all duration-300 overflow-hidden" initial={{ opacity: 0, scale: 0.9 }} whileInView={{ opacity: 1, scale: 1 }} whileHover={{ scale: 1.04, y: -8, boxShadow: '0 8px 32px 0 #60a5fa' }} viewport={{ once: true }} transition={{ duration: 0.7, delay: idx * 0.1 }} onMouseEnter={() => playSound(hoverSfx)}>
                 {/* Shine Effect */}
                 <motion.div
-                  className="absolute inset-0 rounded-2xl bg-gradient-to-r from-transparent via-white/30 to-transparent opacity-0 group-hover:opacity-100"
+                  className="absolute inset-0 rounded-2xl bg-gradient-to-r from-transparent via-ink/30 to-transparent opacity-0 group-hover:opacity-100"
                   initial={{ x: '-100%' }}
                   whileHover={{ x: '100%' }}
                   transition={{ duration: 0.8 }}
                 />
-                <div className="relative z-10 mb-4 flex items-center justify-center w-20 h-20 rounded-full bg-gradient-to-br from-blue-100 to-blue-50 shadow-inner group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300 border-4 border-blue-200 group-hover:border-blue-300">{s.icon}</div>
-                <span className="relative z-10 text-4xl md:text-5xl font-extrabold text-blue-700 mb-2 animate-pulse">{idx === 1 ? counters[idx] + 'η' : '+' + counters[idx]}{idx === 2 ? '' : ''}</span>
-                <span className="relative z-10 text-blue-900 font-semibold text-base md:text-lg text-center tracking-tight">{s.desc}</span>
+                <div className="relative z-10 mb-4 flex items-center justify-center w-20 h-20 rounded-full bg-gradient-to-br from-iris/20 to-ink-800 shadow-inner group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300 border-4 border-iris/30 group-hover:border-blue-300">{s.icon}</div>
+                <span className="relative z-10 text-4xl md:text-5xl font-extrabold text-iris-bright mb-2 animate-pulse">{idx === 1 ? counters[idx] + 'η' : '+' + counters[idx]}{idx === 2 ? '' : ''}</span>
+                <span className="relative z-10 text-paper font-semibold text-base md:text-lg text-center tracking-tight">{s.desc}</span>
               </motion.div>
             ))}
           </motion.div>
           {/* Animated Line Chart (mockup) */}
-          <motion.div className="relative w-full max-w-2xl mx-auto bg-white/80 backdrop-blur-xl rounded-2xl shadow-xl border border-white/50 p-6 md:p-8 flex flex-col items-center mb-8 hover:shadow-2xl transition-all duration-500 overflow-hidden" initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }}>
-          <motion.h3 className="text-lg font-bold text-blue-700 mb-4">{t.services.pages.seoWebsiteOptimization.stats.chartTitle}</motion.h3>
+          <motion.div className="relative w-full max-w-2xl mx-auto bg-white/[0.045] backdrop-blur-xl rounded-2xl shadow-xl border border-white/10 p-6 md:p-8 flex flex-col items-center mb-8 hover:shadow-2xl transition-all duration-500 overflow-hidden" initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }}>
+          <motion.h3 className="text-lg font-bold text-iris-bright mb-4">{t.services.pages.seoWebsiteOptimization.stats.chartTitle}</motion.h3>
           <svg width="100%" height="120" viewBox="0 0 400 120" fill="none" xmlns="http://www.w3.org/2000/svg">
             <motion.polyline
               points="0,100 50,90 100,80 150,60 200,40 250,30 300,20 350,10 400,8"
@@ -306,23 +306,23 @@ export default function SEOWebsiteOptimizationPage() {
         <div className="relative z-10">
           <motion.h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold mb-12 text-center gradient-text-premium" initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }}>{t.services.pages.seoWebsiteOptimization.caseStudies.title}</motion.h2>
           <div className="relative flex items-center justify-center">
-            <button className="absolute left-0 z-10 p-3 bg-white/80 backdrop-blur-lg rounded-full shadow hover:bg-blue-100 transition-all" onClick={() => setCurrentCase((currentCase - 1 + caseStudies.length) % caseStudies.length)}><FaChevronLeft className="text-blue-500 text-2xl" /></button>
-            <motion.div className="w-full max-w-lg mx-auto group relative bg-white/80 backdrop-blur-xl rounded-3xl shadow-xl border border-white/50 overflow-hidden flex flex-col hover:shadow-2xl transition-all duration-300 cursor-pointer focus:outline-none focus:ring-4 focus:ring-blue-200" key={caseStudies[currentCase].label} initial={{ opacity: 0, y: 50, scale: 0.95 }} animate={{ opacity: 1, y: 0, scale: 1 }} transition={{ duration: 0.5 }}>
+            <button className="absolute left-0 z-10 p-3 bg-white/[0.045] backdrop-blur-lg rounded-full shadow hover:bg-iris/15 transition-all" onClick={() => setCurrentCase((currentCase - 1 + caseStudies.length) % caseStudies.length)}><FaChevronLeft className="text-blue-500 text-2xl" /></button>
+            <motion.div className="w-full max-w-lg mx-auto group relative bg-white/[0.045] backdrop-blur-xl rounded-3xl shadow-xl border border-white/10 overflow-hidden flex flex-col hover:shadow-2xl transition-all duration-300 cursor-pointer focus:outline-none focus:ring-4 focus:ring-blue-200" key={caseStudies[currentCase].label} initial={{ opacity: 0, y: 50, scale: 0.95 }} animate={{ opacity: 1, y: 0, scale: 1 }} transition={{ duration: 0.5 }}>
               {/* Shine Effect */}
               <motion.div
-                className="absolute inset-0 rounded-3xl bg-gradient-to-r from-transparent via-white/30 to-transparent opacity-0 group-hover:opacity-100"
+                className="absolute inset-0 rounded-3xl bg-gradient-to-r from-transparent via-ink/30 to-transparent opacity-0 group-hover:opacity-100"
                 initial={{ x: '-100%' }}
                 whileHover={{ x: '100%' }}
                 transition={{ duration: 0.8 }}
               />
               <div className="relative z-10 flex flex-col md:flex-row items-center justify-between p-8 gap-8">
                 <div className="flex-1 text-center md:text-left">
-                  <h4 className="text-2xl font-bold text-blue-900 mb-2 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-blue-600 group-hover:to-purple-600 transition-all duration-300 tracking-tight">{caseStudies[currentCase].label}</h4>
-                  <p className="text-gray-700 text-base mb-4 flex-1 leading-relaxed">{caseStudies[currentCase].desc}</p>
+                  <h4 className="text-2xl font-bold text-paper mb-2 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-blue-600 group-hover:to-purple-600 transition-all duration-300 tracking-tight">{caseStudies[currentCase].label}</h4>
+                  <p className="text-paper-dim text-base mb-4 flex-1 leading-relaxed">{caseStudies[currentCase].desc}</p>
                   <div className="flex items-center gap-4 justify-center md:justify-start">
-                    <span className="text-sm text-blue-700 font-semibold">{caseStudies[currentCase].beforeLabel}</span>
+                    <span className="text-sm text-iris-bright font-semibold">{caseStudies[currentCase].beforeLabel}</span>
                     <span className="text-2xl font-bold text-blue-400">{caseStudies[currentCase].before}</span>
-                    <span className="text-sm text-blue-700 font-semibold">{caseStudies[currentCase].afterLabel}</span>
+                    <span className="text-sm text-iris-bright font-semibold">{caseStudies[currentCase].afterLabel}</span>
                     <span className="text-2xl font-bold text-green-500">{caseStudies[currentCase].after}</span>
                   </div>
                 </div>
@@ -339,7 +339,7 @@ export default function SEOWebsiteOptimizationPage() {
                 </div>
               </div>
             </motion.div>
-            <button className="absolute right-0 z-10 p-3 bg-white/80 backdrop-blur-lg rounded-full shadow hover:bg-blue-100 transition-all" onClick={() => setCurrentCase((currentCase + 1) % caseStudies.length)}><FaChevronRight className="text-blue-500 text-2xl" /></button>
+            <button className="absolute right-0 z-10 p-3 bg-white/[0.045] backdrop-blur-lg rounded-full shadow hover:bg-iris/15 transition-all" onClick={() => setCurrentCase((currentCase + 1) % caseStudies.length)}><FaChevronRight className="text-blue-500 text-2xl" /></button>
           </div>
         </div>
       </section>
@@ -370,18 +370,18 @@ export default function SEOWebsiteOptimizationPage() {
           <motion.h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold mb-12 text-center gradient-text-premium" initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }}>{t.services.pages.seoWebsiteOptimization.workflow.title}</motion.h2>
           <motion.div className="flex flex-col md:flex-row justify-center items-center gap-8 lg:gap-10" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.12 } } }}>
             {workflow.map((step, idx) => (
-              <motion.div key={step.title} className="group relative flex flex-col items-center bg-white/80 backdrop-blur-xl rounded-2xl shadow-xl border border-white/50 p-8 md:p-10 hover:shadow-2xl transition-all duration-300 overflow-hidden min-w-[180px]" initial={{ opacity: 0, y: 40, scale: 0.97 }} whileInView={{ opacity: 1, y: 0, scale: 1 }} whileHover={{ scale: 1.04, y: -8 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: idx * 0.07 }}>
+              <motion.div key={step.title} className="group relative flex flex-col items-center bg-white/[0.045] backdrop-blur-xl rounded-2xl shadow-xl border border-white/10 p-8 md:p-10 hover:shadow-2xl transition-all duration-300 overflow-hidden min-w-[180px]" initial={{ opacity: 0, y: 40, scale: 0.97 }} whileInView={{ opacity: 1, y: 0, scale: 1 }} whileHover={{ scale: 1.04, y: -8 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: idx * 0.07 }}>
                 {/* Shine Effect */}
                 <motion.div
-                  className="absolute inset-0 rounded-2xl bg-gradient-to-r from-transparent via-white/30 to-transparent opacity-0 group-hover:opacity-100"
+                  className="absolute inset-0 rounded-2xl bg-gradient-to-r from-transparent via-ink/30 to-transparent opacity-0 group-hover:opacity-100"
                   initial={{ x: '-100%' }}
                   whileHover={{ x: '100%' }}
                   transition={{ duration: 0.8 }}
                 />
-                <div className="relative z-10 mb-4 flex items-center justify-center w-14 h-14 rounded-full bg-gradient-to-br from-blue-100 to-blue-50 shadow-inner group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300 border-4 border-blue-200 group-hover:border-blue-300">{step.icon}</div>
-                <h4 className="relative z-10 text-base font-bold text-blue-900 mb-2 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-blue-600 group-hover:to-purple-600 transition-all duration-300 tracking-tight">{step.title}</h4>
-                <p className="relative z-10 text-gray-600 mb-4 text-sm leading-relaxed">{step.desc}</p>
-                {idx < workflow.length - 1 && <div className="relative z-10 w-1 h-10 bg-gradient-to-b from-blue-300 to-blue-200 mx-auto my-2 rounded-full" />}
+                <div className="relative z-10 mb-4 flex items-center justify-center w-14 h-14 rounded-full bg-gradient-to-br from-iris/20 to-ink-800 shadow-inner group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300 border-4 border-iris/30 group-hover:border-blue-300">{step.icon}</div>
+                <h4 className="relative z-10 text-base font-bold text-paper mb-2 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-blue-600 group-hover:to-purple-600 transition-all duration-300 tracking-tight">{step.title}</h4>
+                <p className="relative z-10 text-paper-dim mb-4 text-sm leading-relaxed">{step.desc}</p>
+                {idx < workflow.length - 1 && <div className="relative z-10 w-1 h-10 bg-gradient-to-b from-iris/30 to-iris/15 mx-auto my-2 rounded-full" />}
               </motion.div>
             ))}
           </motion.div>
@@ -410,7 +410,7 @@ export default function SEOWebsiteOptimizationPage() {
           </>
         )}
         <div className="relative z-10 w-full max-w-4xl">
-          <motion.div className="relative bg-white/80 backdrop-blur-xl rounded-3xl shadow-xl border border-white/50 p-8 md:p-12 flex flex-col items-center hover:shadow-2xl transition-all duration-500 overflow-hidden" initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} viewport={{ once: true }}>
+          <motion.div className="relative bg-white/[0.045] backdrop-blur-xl rounded-3xl shadow-xl border border-white/10 p-8 md:p-12 flex flex-col items-center hover:shadow-2xl transition-all duration-500 overflow-hidden" initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} viewport={{ once: true }}>
             {/* Animated Gradient Background on Hover */}
             <motion.div
               className="absolute inset-0 bg-gradient-to-br from-blue-500/5 via-purple-500/5 to-cyan-500/5 opacity-0 hover:opacity-100 transition-opacity duration-500 rounded-3xl"
@@ -429,7 +429,7 @@ export default function SEOWebsiteOptimizationPage() {
             />
             {/* Shine Effect */}
             <motion.div
-              className="absolute inset-0 rounded-3xl bg-gradient-to-r from-transparent via-white/30 to-transparent opacity-0 hover:opacity-100"
+              className="absolute inset-0 rounded-3xl bg-gradient-to-r from-transparent via-ink/30 to-transparent opacity-0 hover:opacity-100"
               initial={{ x: '-100%' }}
               whileHover={{ x: '100%' }}
               transition={{ duration: 0.8 }}

@@ -42,10 +42,10 @@ export default function ChatbotsAIAgentsPage() {
     <SiOpenai className="text-blue-500 text-4xl" />,
     <SiTwilio className="text-red-500 text-4xl" />,
     <SiWhatsapp className="text-green-500 text-4xl" />,
-    <SiMeta className="text-blue-700 text-4xl" />,
+    <SiMeta className="text-iris-bright text-4xl" />,
     <FaInstagram className="text-pink-500 text-4xl" />,
     <FaGlobe className="text-blue-400 text-4xl" />,
-    <FaWindows className="text-gray-700 text-4xl" />,
+    <FaWindows className="text-paper-dim text-4xl" />,
     <SiSlack className="text-indigo-500 text-4xl" />,
   ];
 
@@ -64,15 +64,15 @@ export default function ChatbotsAIAgentsPage() {
 
   useEffect(() => { AOS.init({ duration: 900, once: true }); }, []);
   return (
-    <div className="bg-gradient-to-br from-white via-blue-50 to-purple-50 min-h-screen text-gray-900 font-sans">
+    <div className="bg-gradient-to-br from-ink via-ink-800 to-ink-800 min-h-screen text-paper font-sans">
       {/* Hero Section */}
-      <section className="relative min-h-[70vh] flex items-center justify-center overflow-hidden pb-10 select-none bg-gradient-to-br from-blue-50 via-white to-purple-50">
+      <section className="relative min-h-[70vh] flex items-center justify-center overflow-hidden pb-10 select-none bg-gradient-to-br from-ink-800 via-ink-800 to-ink-800">
         {/* Animated Background Gradients/Particles */}
         <motion.div className="absolute inset-0 z-0 pointer-events-none">
-          <motion.div className="absolute top-[-10%] left-[-10%] w-[40vw] h-[40vw] bg-gradient-to-br from-blue-400/40 via-purple-400/30 to-white/0 rounded-full blur-3xl animate-spin-slow" animate={{ rotate: 360 }} transition={{ duration: 40, repeat: Infinity, ease: 'linear' }} />
-          <motion.div className="absolute bottom-[-10%] right-[-10%] w-[32vw] h-[32vw] bg-gradient-to-br from-purple-400/40 via-blue-400/30 to-white/0 rounded-full blur-3xl animate-spin-slow" animate={{ rotate: -360 }} transition={{ duration: 60, repeat: Infinity, ease: 'linear' }} />
-          <motion.div className="absolute top-1/4 left-1/4 w-64 h-64 bg-white/20 rounded-full blur-3xl" animate={{ y: [0, -20, 0], rotate: [0, 5, 0] }} transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut' }} />
-          <motion.div className="absolute bottom-1/4 right-1/4 w-48 h-48 bg-white/20 rounded-full blur-3xl" animate={{ y: [0, 30, 0], rotate: [0, -5, 0] }} transition={{ duration: 8, repeat: Infinity, ease: 'easeInOut', delay: 1 }} />
+          <motion.div className="absolute top-[-10%] left-[-10%] w-[40vw] h-[40vw] bg-gradient-to-br from-blue-400/40 via-purple-400/30 to-ink/0 rounded-full blur-3xl animate-spin-slow" animate={{ rotate: 360 }} transition={{ duration: 40, repeat: Infinity, ease: 'linear' }} />
+          <motion.div className="absolute bottom-[-10%] right-[-10%] w-[32vw] h-[32vw] bg-gradient-to-br from-purple-400/40 via-blue-400/30 to-ink/0 rounded-full blur-3xl animate-spin-slow" animate={{ rotate: -360 }} transition={{ duration: 60, repeat: Infinity, ease: 'linear' }} />
+          <motion.div className="absolute top-1/4 left-1/4 w-64 h-64 bg-white/[0.06] rounded-full blur-3xl" animate={{ y: [0, -20, 0], rotate: [0, 5, 0] }} transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut' }} />
+          <motion.div className="absolute bottom-1/4 right-1/4 w-48 h-48 bg-white/[0.06] rounded-full blur-3xl" animate={{ y: [0, 30, 0], rotate: [0, -5, 0] }} transition={{ duration: 8, repeat: Infinity, ease: 'easeInOut', delay: 1 }} />
         </motion.div>
         {/* HERO CONTENT SPLIT LAYOUT */}
         <div className="relative z-20 max-w-7xl mx-auto px-4 py-24 w-full flex flex-col md:flex-row items-center justify-between gap-10">
@@ -81,7 +81,7 @@ export default function ChatbotsAIAgentsPage() {
             <motion.h1 className="text-4xl md:text-6xl font-extrabold mb-6 drop-shadow-lg tracking-tight bg-gradient-to-r from-blue-700 to-purple-600 bg-clip-text text-transparent" initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }} style={{ fontFamily: "'IBM Plex Sans', 'Inter', sans-serif" }}>
               {t.services.pages.chatbotsAIAgents.hero.title}
             </motion.h1>
-            <motion.p className="text-lg md:text-2xl text-gray-700 mb-10 font-medium max-w-2xl" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.2 }}>
+            <motion.p className="text-lg md:text-2xl text-paper-dim mb-10 font-medium max-w-2xl" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.2 }}>
               {t.services.pages.chatbotsAIAgents.hero.subtitle}
             </motion.p>
             <motion.button
@@ -103,7 +103,7 @@ export default function ChatbotsAIAgentsPage() {
             <motion.img
               src={chatbotImg}
               alt="Chatbot"
-              className="w-[260px] h-[260px] md:w-[340px] md:h-[340px] object-contain rounded-3xl shadow-2xl border-4 border-blue-100/60 bg-white/80"
+              className="w-[260px] h-[260px] md:w-[340px] md:h-[340px] object-contain rounded-3xl shadow-2xl border-4 border-white/10/60 bg-white/[0.045]"
               animate={{ y: [0, -18, 0, 18, 0] }}
               transition={{ duration: 7, repeat: Infinity, ease: 'easeInOut' }}
               style={{ boxShadow: '0 8px 48px 0 rgba(80,80,200,0.13)' }}
@@ -138,7 +138,7 @@ export default function ChatbotsAIAgentsPage() {
           <motion.h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold mb-12 text-center gradient-text-premium" initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }}>{t.services.pages.chatbotsAIAgents.advantages.title}</motion.h2>
           <motion.div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-8 lg:gap-10" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.12 } } }}>
             {advantages.map((a, idx) => (
-              <motion.div key={idx} className="group relative bg-white/80 backdrop-blur-xl rounded-3xl shadow-xl border border-white/50 p-6 md:p-8 flex flex-col items-center text-center cursor-pointer transition-all duration-300 hover:shadow-2xl focus:outline-none focus:ring-4 focus:ring-blue-200 overflow-hidden" initial={{ opacity: 0, y: 40, scale: 0.97 }} whileInView={{ opacity: 1, y: 0, scale: 1 }} whileHover={{ scale: 1.04, y: -8 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: idx * 0.07 }} onMouseEnter={() => playSound(hoverSfx)} onClick={() => playSound(clickSfx)}>
+              <motion.div key={idx} className="group relative bg-white/[0.045] backdrop-blur-xl rounded-3xl shadow-xl border border-white/10 p-6 md:p-8 flex flex-col items-center text-center cursor-pointer transition-all duration-300 hover:shadow-2xl focus:outline-none focus:ring-4 focus:ring-blue-200 overflow-hidden" initial={{ opacity: 0, y: 40, scale: 0.97 }} whileInView={{ opacity: 1, y: 0, scale: 1 }} whileHover={{ scale: 1.04, y: -8 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: idx * 0.07 }} onMouseEnter={() => playSound(hoverSfx)} onClick={() => playSound(clickSfx)}>
                 {/* Animated Gradient Background on Hover */}
                 <motion.div
                   className="absolute inset-0 bg-gradient-to-br from-blue-500/5 via-purple-500/5 to-cyan-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl"
@@ -157,14 +157,14 @@ export default function ChatbotsAIAgentsPage() {
                 />
                 {/* Shine Effect */}
                 <motion.div
-                  className="absolute inset-0 rounded-3xl bg-gradient-to-r from-transparent via-white/30 to-transparent opacity-0 group-hover:opacity-100"
+                  className="absolute inset-0 rounded-3xl bg-gradient-to-r from-transparent via-ink/30 to-transparent opacity-0 group-hover:opacity-100"
                   initial={{ x: '-100%' }}
                   whileHover={{ x: '100%' }}
                   transition={{ duration: 0.8 }}
                 />
-                <div className="relative z-10 mb-6 flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-br from-blue-100 to-purple-100 shadow-inner group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300 border-4 border-blue-200 group-hover:border-purple-300">{a.icon}</div>
-                <h4 className="relative z-10 text-lg font-bold text-blue-900 mb-2 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-blue-600 group-hover:to-purple-600 transition-all duration-300 tracking-tight">{a.title}</h4>
-                <p className="relative z-10 text-gray-600 mb-4 text-base leading-relaxed">{a.desc}</p>
+                <div className="relative z-10 mb-6 flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-br from-iris/20 to-iris/10 shadow-inner group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300 border-4 border-iris/30 group-hover:border-purple-300">{a.icon}</div>
+                <h4 className="relative z-10 text-lg font-bold text-paper mb-2 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-blue-600 group-hover:to-purple-600 transition-all duration-300 tracking-tight">{a.title}</h4>
+                <p className="relative z-10 text-paper-dim mb-4 text-base leading-relaxed">{a.desc}</p>
               </motion.div>
             ))}
           </motion.div>
@@ -194,21 +194,21 @@ export default function ChatbotsAIAgentsPage() {
         )}
         <div className="relative z-10">
           <motion.h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold mb-6 text-center gradient-text-premium" initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }}>{t.services.pages.chatbotsAIAgents.technologies.title}</motion.h2>
-          <motion.p className="text-lg md:text-xl text-gray-700 text-center max-w-2xl mx-auto mb-10 leading-relaxed" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.2 }} viewport={{ once: true }}>
+          <motion.p className="text-lg md:text-xl text-paper-dim text-center max-w-2xl mx-auto mb-10 leading-relaxed" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.2 }} viewport={{ once: true }}>
             {t.services.pages.chatbotsAIAgents.technologies.subtitle}
           </motion.p>
           <motion.div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-8 lg:gap-10 justify-center" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.08 } } }}>
             {techs.map((tech, idx) => (
-              <motion.div key={idx} className="group relative flex flex-col items-center gap-3 bg-white/80 backdrop-blur-xl rounded-2xl shadow-xl border border-white/50 p-6 md:p-8 hover:shadow-2xl transition-all duration-300 overflow-hidden" initial={{ opacity: 0, y: 30, scale: 0.95 }} whileInView={{ opacity: 1, y: 0, scale: 1 }} whileHover={{ scale: 1.05, y: -4 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: idx * 0.1 }}>
+              <motion.div key={idx} className="group relative flex flex-col items-center gap-3 bg-white/[0.045] backdrop-blur-xl rounded-2xl shadow-xl border border-white/10 p-6 md:p-8 hover:shadow-2xl transition-all duration-300 overflow-hidden" initial={{ opacity: 0, y: 30, scale: 0.95 }} whileInView={{ opacity: 1, y: 0, scale: 1 }} whileHover={{ scale: 1.05, y: -4 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: idx * 0.1 }}>
                 {/* Shine Effect */}
                 <motion.div
-                  className="absolute inset-0 rounded-2xl bg-gradient-to-r from-transparent via-white/30 to-transparent opacity-0 group-hover:opacity-100"
+                  className="absolute inset-0 rounded-2xl bg-gradient-to-r from-transparent via-ink/30 to-transparent opacity-0 group-hover:opacity-100"
                   initial={{ x: '-100%' }}
                   whileHover={{ x: '100%' }}
                   transition={{ duration: 0.8 }}
                 />
                 <div className="relative z-10">{tech.icon}</div>
-                <span className="relative z-10 text-base text-blue-900 font-semibold mt-2 text-center">{tech.name}</span>
+                <span className="relative z-10 text-base text-paper font-semibold mt-2 text-center">{tech.name}</span>
               </motion.div>
             ))}
           </motion.div>
@@ -248,7 +248,7 @@ export default function ChatbotsAIAgentsPage() {
             <motion.img
               src={internetImg}
               alt="Internet Communication"
-              className="w-[320px] h-[220px] md:w-[420px] md:h-[320px] object-cover rounded-3xl shadow-2xl border-4 border-blue-100/60 bg-white/80"
+              className="w-[320px] h-[220px] md:w-[420px] md:h-[320px] object-cover rounded-3xl shadow-2xl border-4 border-white/10/60 bg-white/[0.045]"
               animate={{ y: [0, 12, 0, -12, 0] }}
               transition={{ duration: 8, repeat: Infinity, ease: 'easeInOut' }}
               style={{ boxShadow: '0 8px 48px 0 rgba(80,80,200,0.13)' }}
@@ -263,10 +263,10 @@ export default function ChatbotsAIAgentsPage() {
             viewport={{ once: true }}
           >
             <h2 className="text-2xl md:text-4xl font-extrabold mb-6 gradient-text-premium">{t.services.pages.chatbotsAIAgents.future.title}</h2>
-            <p className="text-lg md:text-xl text-gray-700 mb-6 max-w-xl leading-relaxed">
+            <p className="text-lg md:text-xl text-paper-dim mb-6 max-w-xl leading-relaxed">
               {t.services.pages.chatbotsAIAgents.future.description}
             </p>
-            <ul className="space-y-3 text-base md:text-lg text-blue-900 font-medium">
+            <ul className="space-y-3 text-base md:text-lg text-paper font-medium">
               {t.services.pages.chatbotsAIAgents.future.items.map((item, idx) => (
                 <li key={idx}>• {item}</li>
               ))}
@@ -299,7 +299,7 @@ export default function ChatbotsAIAgentsPage() {
         <div className="relative z-10 w-full">
           {/* Left: Content */}
           <motion.div
-            className="flex-1 flex flex-col items-start text-left bg-white/80 backdrop-blur-xl rounded-3xl shadow-xl border border-white/50 p-8 md:p-10 hover:shadow-2xl transition-all duration-500 overflow-hidden"
+            className="flex-1 flex flex-col items-start text-left bg-white/[0.045] backdrop-blur-xl rounded-3xl shadow-xl border border-white/10 p-8 md:p-10 hover:shadow-2xl transition-all duration-500 overflow-hidden"
             initial={{ opacity: 0, x: -40 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
@@ -323,17 +323,17 @@ export default function ChatbotsAIAgentsPage() {
             />
             {/* Shine Effect */}
             <motion.div
-              className="absolute inset-0 rounded-3xl bg-gradient-to-r from-transparent via-white/30 to-transparent opacity-0 hover:opacity-100"
+              className="absolute inset-0 rounded-3xl bg-gradient-to-r from-transparent via-ink/30 to-transparent opacity-0 hover:opacity-100"
               initial={{ x: '-100%' }}
               whileHover={{ x: '100%' }}
               transition={{ duration: 0.8 }}
             />
             <div className="relative z-10">
               <h2 className="text-2xl md:text-4xl font-extrabold mb-6 gradient-text-premium">{t.services.pages.chatbotsAIAgents.collaboration.title}</h2>
-              <p className="text-lg md:text-xl text-gray-700 mb-6 max-w-xl leading-relaxed">
+              <p className="text-lg md:text-xl text-paper-dim mb-6 max-w-xl leading-relaxed">
                 {t.services.pages.chatbotsAIAgents.collaboration.description}
               </p>
-              <ul className="space-y-3 text-base md:text-lg text-blue-900 font-medium mb-6">
+              <ul className="space-y-3 text-base md:text-lg text-paper font-medium mb-6">
                 {t.services.pages.chatbotsAIAgents.collaboration.items.map((item, idx) => (
                   <li key={idx}>• {item}</li>
                 ))}
@@ -359,7 +359,7 @@ export default function ChatbotsAIAgentsPage() {
             <motion.img
               src={aiImg}
               alt="AI Collaboration"
-              className="w-[320px] h-[320px] md:w-[400px] md:h-[400px] object-cover rounded-3xl shadow-2xl border-4 border-blue-100/60 bg-white/80"
+              className="w-[320px] h-[320px] md:w-[400px] md:h-[400px] object-cover rounded-3xl shadow-2xl border-4 border-white/10/60 bg-white/[0.045]"
               animate={{ y: [0, 18, 0, -18, 0] }}
               transition={{ duration: 8, repeat: Infinity, ease: 'easeInOut' }}
               style={{ boxShadow: '0 8px 48px 0 rgba(80,80,200,0.13)' }}

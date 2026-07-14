@@ -30,11 +30,35 @@ export default {
           surface: '#141420',
           card: '#1a1a2e',
         },
+        // — Midnight Atelier system (new radical redesign) —
+        ink: {
+          DEFAULT: '#08080B',
+          900: '#08080B',
+          800: '#0D0D12',
+          700: '#14141B',
+          600: '#1C1C25',
+          500: '#262630',
+        },
+        paper: {
+          DEFAULT: '#F5F4EF',
+          dim: '#C9C8C2',
+          muted: '#8B8B95',
+        },
+        iris: {
+          DEFAULT: '#6E56F8',
+          bright: '#8B78FF',
+          deep: '#4B37C4',
+        },
+        signal: '#34E4EA',
+        amber: {
+          soft: '#E8B15A',
+        },
       },
       fontFamily: {
-        sans: ['Inter', 'Poppins', 'system-ui', 'sans-serif'],
-        display: ['Poppins', 'Inter', 'system-ui', 'sans-serif'],
-        mono: ['JetBrains Mono', 'monospace'],
+        sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+        display: ['"Bricolage Grotesque"', 'Inter', 'system-ui', 'sans-serif'],
+        editorial: ['"Instrument Serif"', 'Georgia', 'serif'],
+        mono: ['"JetBrains Mono"', 'ui-monospace', 'monospace'],
       },
       animation: {
         'float': 'float 6s ease-in-out infinite',
@@ -51,6 +75,12 @@ export default {
         'float-gentle': 'float-gentle 6s ease-in-out infinite',
         'scale-in': 'scale-in 0.5s ease-out',
         'fade-in-up': 'fade-in-up 0.6s ease-out',
+        // — Midnight Atelier motion —
+        'marquee': 'marquee var(--marquee-duration, 40s) linear infinite',
+        'marquee-reverse': 'marquee-reverse var(--marquee-duration, 40s) linear infinite',
+        'spin-slower': 'spin 22s linear infinite',
+        'aurora': 'aurora 18s ease-in-out infinite',
+        'pulse-ring': 'pulse-ring 2.6s cubic-bezier(0.4, 0, 0.6, 1) infinite',
       },
       keyframes: {
         float: {
@@ -114,6 +144,24 @@ export default {
         glow: {
           '0%': { boxShadow: '0 0 20px rgba(59, 130, 246, 0.5), 0 0 40px rgba(139, 92, 246, 0.3)' },
           '100%': { boxShadow: '0 0 30px rgba(59, 130, 246, 0.8), 0 0 60px rgba(139, 92, 246, 0.5)' },
+        },
+        // — Midnight Atelier keyframes —
+        marquee: {
+          '0%': { transform: 'translateX(0)' },
+          '100%': { transform: 'translateX(-50%)' },
+        },
+        'marquee-reverse': {
+          '0%': { transform: 'translateX(-50%)' },
+          '100%': { transform: 'translateX(0)' },
+        },
+        aurora: {
+          '0%, 100%': { transform: 'translate3d(0,0,0) scale(1)', opacity: '0.5' },
+          '33%': { transform: 'translate3d(6%,-4%,0) scale(1.12)', opacity: '0.75' },
+          '66%': { transform: 'translate3d(-5%,5%,0) scale(0.95)', opacity: '0.55' },
+        },
+        'pulse-ring': {
+          '0%': { transform: 'scale(0.9)', opacity: '0.6' },
+          '70%, 100%': { transform: 'scale(1.7)', opacity: '0' },
         },
       },
       boxShadow: {

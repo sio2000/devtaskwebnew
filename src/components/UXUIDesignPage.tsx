@@ -121,7 +121,7 @@ export default function UXUIDesignPage() {
     return () => document.removeEventListener('keydown', onKey);
   }, [modalImg]);
   return (
-    <div className="bg-gradient-to-br from-white via-blue-50 to-purple-50 min-h-screen text-gray-900 font-sans">
+    <div className="bg-gradient-to-br from-ink via-ink-800 to-ink-800 min-h-screen text-paper font-sans">
       {/* Hero Section */}
       <section className="relative min-h-[70vh] flex items-center justify-center overflow-hidden pb-10 select-none">
         {/* Πολύχρωμο gradient background και blurred shapes */}
@@ -157,7 +157,7 @@ export default function UXUIDesignPage() {
           <h1 className="text-5xl md:text-6xl font-extrabold mb-6 drop-shadow-lg tracking-tight bg-gradient-to-r from-purple-700 to-blue-600 bg-clip-text text-transparent" style={{ fontFamily: "'IBM Plex Sans', 'Inter', sans-serif" }}>
             {typed}
           </h1>
-          <p className="text-xl md:text-2xl text-gray-700 mb-10 font-medium max-w-2xl mx-auto">
+          <p className="text-xl md:text-2xl text-paper-dim mb-10 font-medium max-w-2xl mx-auto">
             {t.services.pages.uxUIDesign.hero.subtitle}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
@@ -169,24 +169,24 @@ export default function UXUIDesignPage() {
 
       {/* Υπηρεσίες UX/UI */}
       <section className="max-w-4xl mx-auto py-24 px-4">
-        <div className="relative bg-gradient-to-br from-purple-100 via-white to-blue-100/80 backdrop-blur-lg rounded-3xl shadow-2xl border border-purple-100/40 p-10 flex flex-col md:flex-row items-center gap-10 overflow-hidden">
+        <div className="relative bg-gradient-to-br from-iris/15 via-ink-800 to-iris/10/80 backdrop-blur-lg rounded-3xl shadow-2xl border border-white/10/40 p-10 flex flex-col md:flex-row items-center gap-10 overflow-hidden">
           {/* Εικόνα/Γραφικό UI */}
           <div className="flex-shrink-0 flex items-center justify-center w-full md:w-1/3 mb-8 md:mb-0">
-            <img src={uiImg} alt="UI Design" className="w-40 h-40 md:w-56 md:h-56 object-contain rounded-2xl shadow-xl bg-white/80" />
+            <img src={uiImg} alt="UI Design" className="w-40 h-40 md:w-56 md:h-56 object-contain rounded-2xl shadow-xl bg-white/[0.045]" />
           </div>
           {/* Περιεχόμενο */}
           <div className="flex-1 flex flex-col items-center md:items-start text-center md:text-left">
             <h2 className="text-3xl md:text-4xl font-extrabold text-purple-700 mb-4 bg-gradient-to-r from-purple-500 to-blue-500 bg-clip-text text-transparent drop-shadow-lg">Υπηρεσίες UX/UI</h2>
-            <p className="text-lg text-gray-700 mb-6 max-w-xl">Σχεδιάζουμε premium interfaces για web & mobile, με έμφαση στη χρηστικότητα, την αισθητική και το αποτέλεσμα.</p>
+            <p className="text-lg text-paper-dim mb-6 max-w-xl">Σχεδιάζουμε premium interfaces για web & mobile, με έμφαση στη χρηστικότητα, την αισθητική και το αποτέλεσμα.</p>
             {/* Badges/Icons row */}
             <div className={`grid grid-cols-2 gap-4 w-full py-2 justify-center md:justify-start md:flex md:flex-row md:flex-wrap md:gap-3`}>
               {services.map((s, idx) => (
-                <div key={s.title} className="flex flex-col items-center bg-white/80 rounded-2xl shadow-md border border-purple-100/40 px-5 py-4 min-w-[120px] max-w-[180px] flex-shrink-0 hover:shadow-xl transition-all duration-300">
-                  <div className="mb-2 flex items-center justify-center w-12 h-12 rounded-full bg-gradient-to-br from-purple-100 to-blue-100 shadow-inner border-2 border-purple-200">
+                <div key={s.title} className="flex flex-col items-center bg-white/[0.045] rounded-2xl shadow-md border border-white/10/40 px-5 py-4 min-w-[120px] max-w-[180px] flex-shrink-0 hover:shadow-xl transition-all duration-300">
+                  <div className="mb-2 flex items-center justify-center w-12 h-12 rounded-full bg-gradient-to-br from-iris/15 to-iris/10 shadow-inner border-2 border-iris/30">
                     {s.icon}
                   </div>
                   <span className="text-sm font-semibold text-purple-900 mb-1 text-center leading-tight">{s.title}</span>
-                  <span className="text-xs text-gray-500 text-center leading-tight">{s.desc}</span>
+                  <span className="text-xs text-paper-muted text-center leading-tight">{s.desc}</span>
                 </div>
               ))}
             </div>
@@ -220,20 +220,20 @@ export default function UXUIDesignPage() {
           <motion.h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold mb-12 text-center gradient-text-premium" initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }}>{t.services.pages.uxUIDesign.methodology.title}</motion.h2>
           <motion.div className="flex flex-col md:flex-row justify-center items-center gap-8 lg:gap-10" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.12 } } }}>
             {methodology.map((step, idx) => (
-              <motion.div key={step.title} className="group relative flex flex-col items-center bg-white/80 backdrop-blur-xl rounded-2xl shadow-xl border border-white/50 p-8 md:p-10 hover:shadow-2xl transition-all duration-300 overflow-hidden min-w-[180px]" initial={{ opacity: 0, y: 40, scale: 0.97 }} whileInView={{ opacity: 1, y: 0, scale: 1 }} whileHover={{ scale: 1.04, y: -8 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: idx * 0.07 }}>
+              <motion.div key={step.title} className="group relative flex flex-col items-center bg-white/[0.045] backdrop-blur-xl rounded-2xl shadow-xl border border-white/10 p-8 md:p-10 hover:shadow-2xl transition-all duration-300 overflow-hidden min-w-[180px]" initial={{ opacity: 0, y: 40, scale: 0.97 }} whileInView={{ opacity: 1, y: 0, scale: 1 }} whileHover={{ scale: 1.04, y: -8 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: idx * 0.07 }}>
                 {/* Shine Effect */}
                 <motion.div
-                  className="absolute inset-0 rounded-2xl bg-gradient-to-r from-transparent via-white/30 to-transparent opacity-0 group-hover:opacity-100"
+                  className="absolute inset-0 rounded-2xl bg-gradient-to-r from-transparent via-ink/30 to-transparent opacity-0 group-hover:opacity-100"
                   initial={{ x: '-100%' }}
                   whileHover={{ x: '100%' }}
                   transition={{ duration: 0.8 }}
                 />
-                <div className="relative z-10 mb-4 flex items-center justify-center w-14 h-14 rounded-full bg-gradient-to-br from-purple-100 to-blue-100 shadow-inner group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300 border-4 border-purple-200 group-hover:border-purple-300">
+                <div className="relative z-10 mb-4 flex items-center justify-center w-14 h-14 rounded-full bg-gradient-to-br from-iris/15 to-iris/10 shadow-inner group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300 border-4 border-iris/30 group-hover:border-purple-300">
                   {step.icon}
                 </div>
                 <h4 className="relative z-10 text-base font-bold text-purple-900 mb-2 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-purple-600 group-hover:to-blue-600 transition-all duration-300 tracking-tight">{step.title}</h4>
-                <p className="relative z-10 text-gray-600 mb-4 text-sm leading-relaxed">{step.desc}</p>
-                {idx < methodology.length - 1 && <div className="relative z-10 w-1 h-10 bg-gradient-to-b from-purple-300 to-blue-200 mx-auto my-2 rounded-full" />}
+                <p className="relative z-10 text-paper-dim mb-4 text-sm leading-relaxed">{step.desc}</p>
+                {idx < methodology.length - 1 && <div className="relative z-10 w-1 h-10 bg-gradient-to-b from-iris/25 to-iris/15 mx-auto my-2 rounded-full" />}
               </motion.div>
             ))}
           </motion.div>
@@ -263,32 +263,32 @@ export default function UXUIDesignPage() {
         )}
         <div className="relative z-10">
           <motion.h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold mb-12 text-center gradient-text-premium" initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }}>{t.services.pages.uxUIDesign.samples.title}</motion.h2>
-          <p className="text-lg text-gray-700 text-center max-w-3xl mx-auto mb-10">{t.services.pages.uxUIDesign.samples.description}</p>
+          <p className="text-lg text-paper-dim text-center max-w-3xl mx-auto mb-10">{t.services.pages.uxUIDesign.samples.description}</p>
           <motion.div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.12 } } }}>
             {sampleApps.map((app, idx) => {
               const borderColors = [
-                'border-blue-100/40',
+                'border-white/10',
                 'border-orange-100/40',
-                'border-blue-100/40',
-                'border-blue-200/40',
-                'border-purple-100/40',
+                'border-white/10',
+                'border-iris/30/40',
+                'border-white/10/40',
                 'border-pink-100/40',
                 'border-yellow-100/40'
               ];
               const textColors = [
-                'text-blue-900',
+                'text-paper',
                 'text-orange-700',
-                'text-blue-900',
-                'text-blue-800',
+                'text-paper',
+                'text-paper',
                 'text-purple-800',
                 'text-pink-700',
                 'text-yellow-800'
               ];
               return (
-                <motion.div key={idx} className={`group relative bg-white/80 backdrop-blur-xl rounded-3xl shadow-xl border ${borderColors[idx]} flex flex-col items-center text-center overflow-hidden hover:shadow-2xl transition-all duration-300`} initial={{ opacity: 0, y: 40, scale: 0.97 }} whileInView={{ opacity: 1, y: 0, scale: 1 }} whileHover={{ scale: 1.02, y: -4 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: idx * 0.07 }}>
+                <motion.div key={idx} className={`group relative bg-white/[0.045] backdrop-blur-xl rounded-3xl shadow-xl border ${borderColors[idx]} flex flex-col items-center text-center overflow-hidden hover:shadow-2xl transition-all duration-300`} initial={{ opacity: 0, y: 40, scale: 0.97 }} whileInView={{ opacity: 1, y: 0, scale: 1 }} whileHover={{ scale: 1.02, y: -4 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: idx * 0.07 }}>
                   {/* Shine Effect */}
                   <motion.div
-                    className="absolute inset-0 rounded-3xl bg-gradient-to-r from-transparent via-white/30 to-transparent opacity-0 group-hover:opacity-100"
+                    className="absolute inset-0 rounded-3xl bg-gradient-to-r from-transparent via-ink/30 to-transparent opacity-0 group-hover:opacity-100"
                     initial={{ x: '-100%' }}
                     whileHover={{ x: '100%' }}
                     transition={{ duration: 0.8 }}
@@ -296,7 +296,7 @@ export default function UXUIDesignPage() {
                   <img src={app.img} alt={app.title} className="relative z-10 w-full h-56 object-cover object-top cursor-pointer transition-transform duration-200 hover:scale-105" onClick={() => setModalImg(app.img)} />
                   <div className="relative z-10 p-6 md:p-8 flex flex-col flex-1">
                     <h4 className={`text-xl font-bold ${textColors[idx]} mb-2`}>{app.title}</h4>
-                    <p className="text-gray-600 mb-4 text-base leading-relaxed">{app.desc}</p>
+                    <p className="text-paper-dim mb-4 text-base leading-relaxed">{app.desc}</p>
                   </div>
                 </motion.div>
               );
@@ -308,7 +308,7 @@ export default function UXUIDesignPage() {
           <div className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/80 backdrop-blur-sm" onClick={() => setModalImg(null)}>
             <div className="relative max-w-full max-h-full flex items-center justify-center" onClick={e => e.stopPropagation()}>
               <button
-                className="absolute top-2 right-2 bg-white/80 hover:bg-white text-gray-900 rounded-full p-2 shadow-lg text-2xl z-10 focus:outline-none"
+                className="absolute top-2 right-2 bg-white/[0.045] hover:bg-ink-800 text-paper rounded-full p-2 shadow-lg text-2xl z-10 focus:outline-none"
                 aria-label={t.services.pages.uxUIDesign.samples.closeModal}
                 onClick={() => setModalImg(null)}
               >✕</button>
@@ -345,7 +345,7 @@ export default function UXUIDesignPage() {
           </>
         )}
         <div className="relative z-10 w-full max-w-4xl">
-          <motion.div className="relative bg-white/80 backdrop-blur-xl rounded-3xl shadow-xl border border-white/50 p-8 md:p-12 flex flex-col items-center hover:shadow-2xl transition-all duration-500 overflow-hidden" initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} viewport={{ once: true }}>
+          <motion.div className="relative bg-white/[0.045] backdrop-blur-xl rounded-3xl shadow-xl border border-white/10 p-8 md:p-12 flex flex-col items-center hover:shadow-2xl transition-all duration-500 overflow-hidden" initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} viewport={{ once: true }}>
             {/* Animated Gradient Background on Hover */}
             <motion.div
               className="absolute inset-0 bg-gradient-to-br from-purple-500/5 via-blue-500/5 to-pink-500/5 opacity-0 hover:opacity-100 transition-opacity duration-500 rounded-3xl"
@@ -364,7 +364,7 @@ export default function UXUIDesignPage() {
             />
             {/* Shine Effect */}
             <motion.div
-              className="absolute inset-0 rounded-3xl bg-gradient-to-r from-transparent via-white/30 to-transparent opacity-0 hover:opacity-100"
+              className="absolute inset-0 rounded-3xl bg-gradient-to-r from-transparent via-ink/30 to-transparent opacity-0 hover:opacity-100"
               initial={{ x: '-100%' }}
               whileHover={{ x: '100%' }}
               transition={{ duration: 0.8 }}

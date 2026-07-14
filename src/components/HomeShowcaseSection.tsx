@@ -1,244 +1,58 @@
 import React from 'react';
-import { motion } from 'framer-motion';
 import { FaGem, FaBolt, FaBullseye, FaTools, FaRocket } from 'react-icons/fa';
-import { useIsMobile } from '../hooks/useIsMobile';
+import { ArrowUpRight } from 'lucide-react';
 import { useLanguage } from '../hooks/useLanguage';
 import { translations } from '../data/translations';
-import { ArrowRight, Sparkles } from 'lucide-react';
-import SectionEyebrow from './SectionEyebrow';
+import Reveal from './ui/Reveal';
+import SectionHeading from './ui/SectionHeading';
+import MagneticButton from './ui/MagneticButton';
 
 const HomeShowcaseSection: React.FC = () => {
-  const isMobile = useIsMobile();
   const { language } = useLanguage();
   const t = translations[language];
 
-  const bullets = [
-    {
-      icon: <FaGem className="text-cyan-500 text-2xl md:text-3xl" />,
-      text: t.homeShowcase.bullets[0],
-      gradient: 'from-cyan-500 to-blue-500',
-      bgGradient: 'from-cyan-500/10 to-blue-500/10',
-    },
-    {
-      icon: <FaBolt className="text-yellow-400 text-2xl md:text-3xl" />,
-      text: t.homeShowcase.bullets[1],
-      gradient: 'from-yellow-400 to-orange-500',
-      bgGradient: 'from-yellow-400/10 to-orange-500/10',
-    },
-    {
-      icon: <FaBullseye className="text-pink-500 text-2xl md:text-3xl" />,
-      text: t.homeShowcase.bullets[2],
-      gradient: 'from-pink-500 to-rose-500',
-      bgGradient: 'from-pink-500/10 to-rose-500/10',
-    },
-    {
-      icon: <FaTools className="text-indigo-500 text-2xl md:text-3xl" />,
-      text: t.homeShowcase.bullets[3],
-      gradient: 'from-indigo-500 to-purple-500',
-      bgGradient: 'from-indigo-500/10 to-purple-500/10',
-    },
-    {
-      icon: <FaRocket className="text-blue-500 text-2xl md:text-3xl" />,
-      text: t.homeShowcase.bullets[4],
-      gradient: 'from-blue-500 to-cyan-500',
-      bgGradient: 'from-blue-500/10 to-cyan-500/10',
-    },
-  ];
+  const icons = [FaGem, FaBolt, FaBullseye, FaTools, FaRocket];
+  const bullets = t.homeShowcase.bullets.map((text: string, i: number) => ({ text, Icon: icons[i] ?? FaGem }));
+
+  const label = language === 'el' ? 'Γιατί DevTaskHub' : language === 'fr' ? 'Pourquoi DevTaskHub' : 'Why DevTaskHub';
 
   return (
-    <section
-      className="relative py-16 md:py-24 bg-gradient-to-br from-white via-blue-50/40 to-purple-50/30 overflow-hidden"
-      aria-label="Εντυπωσιακές Ιστοσελίδες"
-    >
-      {/* Premium Animated Background - Desktop Only */}
-      {!isMobile && (
-        <>
-          <motion.div
-            className="absolute -top-40 -left-40 w-[600px] h-[600px] bg-gradient-to-br from-blue-400/25 via-purple-400/20 to-cyan-400/25 rounded-full blur-3xl z-0"
-            animate={{ scale: [1, 1.2, 1], rotate: [0, 180, 360] }}
-            transition={{ duration: 30, repeat: Infinity, ease: 'linear' }}
-          />
-          <motion.div
-            className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-gradient-to-tl from-indigo-400/25 via-purple-400/20 to-pink-400/25 rounded-full blur-3xl z-0"
-            animate={{ scale: [1.1, 0.9, 1.1], rotate: [360, 180, 0] }}
-            transition={{ duration: 25, repeat: Infinity, ease: 'linear' }}
-          />
-          {/* Central Radial Gradient */}
-          <motion.div
-            className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] rounded-full blur-3xl"
-            style={{
-              background: 'radial-gradient(circle, rgba(59, 130, 246, 0.15) 0%, rgba(139, 92, 246, 0.1) 50%, transparent 100%)',
-            }}
-            animate={{ scale: [1, 1.1, 1], opacity: [0.3, 0.5, 0.3] }}
-            transition={{ duration: 20, repeat: Infinity, ease: 'easeInOut' }}
-          />
-          {/* Subtle Grid Pattern */}
-          <div className="absolute inset-0 opacity-[0.02] bg-[linear-gradient(to_right,#6366f1_1px,transparent_1px),linear-gradient(to_bottom,#6366f1_1px,transparent_1px)] bg-[size:40px_40px]" />
-        </>
-      )}
-
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center text-center">
-        <div className="mb-6">
-          <SectionEyebrow icon={Sparkles} color="purple">
-            {language === 'el' ? 'Γιατί DevTaskHub' : language === 'fr' ? 'Pourquoi DevTaskHub' : 'Why DevTaskHub'}
-          </SectionEyebrow>
+    <section id="why" className="surface-ink-2 relative overflow-hidden py-24 md:py-32" aria-label={label}>
+      <div className="relative z-10 mx-auto grid max-w-7xl grid-cols-1 gap-14 px-5 sm:px-8 lg:grid-cols-[0.9fr_1.1fr] lg:gap-20">
+        {/* Left — statement */}
+        <div className="lg:sticky lg:top-32 lg:self-start">
+          <SectionHeading index="01" label={label} title={t.homeShowcase.title} />
+          <Reveal delay={0.1}>
+            <p className="mt-7 max-w-xl text-lg leading-relaxed text-paper-dim">{t.homeShowcase.subtitle}</p>
+          </Reveal>
+          <Reveal delay={0.16}>
+            <MagneticButton>
+              <a href="#portfolio" className="btn-accent group mt-9 px-7 py-4 text-base">
+                {t.homeShowcase.cta}
+                <ArrowUpRight className="h-5 w-5 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+              </a>
+            </MagneticButton>
+          </Reveal>
         </div>
-        {/* Premium Main Heading */}
-        <motion.h2
-          className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold mb-4 gradient-text-premium px-4 break-words"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          style={{ wordBreak: 'break-word', overflowWrap: 'break-word' }}
-        >
-          {t.homeShowcase.title}
-          {!isMobile && (
-            <motion.div
-              className="h-1.5 w-40 bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400 rounded-full mx-auto mt-5 shadow-lg"
-              initial={{ scaleX: 0 }}
-              whileInView={{ scaleX: 1 }}
-              transition={{ duration: 1, delay: 0.3 }}
-              viewport={{ once: true }}
-            />
-          )}
-        </motion.h2>
 
-        {/* Premium Subheading */}
-        <motion.p
-          className="text-base sm:text-lg md:text-xl text-gray-700 max-w-3xl mx-auto mb-12 leading-relaxed font-medium px-4 break-words"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          style={{ wordBreak: 'break-word', overflowWrap: 'break-word' }}
-        >
-          {t.homeShowcase.subtitle}
-        </motion.p>
-
-        {/* Premium Bullets Grid */}
-        <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6 mb-12 w-full max-w-6xl mx-auto">
-          {bullets.map((b, i) => (
-            <motion.li
-              key={i}
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.7, delay: i * 0.12 }}
-              whileHover={{ scale: 1.03, y: -8 }}
-              className="relative group"
-            >
-              <div className="relative h-full bg-white/80 backdrop-blur-xl rounded-2xl shadow-lg border border-white/50 hover:border-blue-200/70 px-6 py-7 text-base font-medium text-gray-800 transition-all duration-300 overflow-hidden flex flex-col items-center">
-                {/* Animated Gradient Background */}
-                <motion.div
-                  className={`absolute inset-0 bg-gradient-to-br ${b.bgGradient} opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl`}
-                  animate={{
-                    backgroundPosition: ['0% 50%', '100% 50%'],
-                  }}
-                  transition={{
-                    duration: 5,
-                    repeat: Infinity,
-                    repeatType: 'reverse',
-                    ease: 'linear',
-                  }}
-                  style={{
-                    backgroundSize: '200% 200%',
-                  }}
-                />
-
-                {/* Premium Border Glow */}
-                <div className="absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                  <div className={`absolute inset-0 rounded-3xl bg-gradient-to-r ${b.bgGradient} blur-xl`} />
-                </div>
-
-                {/* Icon Container - Premium Design */}
-                <motion.span
-                  className="relative z-10 flex items-center justify-center w-14 h-14 rounded-2xl bg-gradient-to-br from-white to-gray-50 shadow-md border border-gray-100/50 mb-4 mx-auto group-hover:border-blue-200/50 transition-all duration-500"
-                  whileHover={{ rotate: [0, -10, 10, 0], scale: 1.1 }}
-                  transition={{ duration: 0.5 }}
-                >
-                  {/* Icon Glow */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-white/50 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                  <div className="relative z-10 flex items-center justify-center">
-                    {b.icon}
-                  </div>
-                </motion.span>
-
-                <span className="relative z-10 flex-1 text-center block leading-relaxed">
-                  {b.text}
+        {/* Right — editorial index list */}
+        <ul className="flex flex-col">
+          {bullets.map(({ text, Icon }, i) => (
+            <Reveal as="li" key={i} delay={i * 0.08}>
+              <div className="group flex items-start gap-5 border-t border-[var(--line)] py-6 transition-colors last:border-b hover:bg-white/[0.015]">
+                <span className="eyebrow-num pt-1.5 text-paper-muted transition-colors group-hover:text-amber-soft">
+                  {String(i + 1).padStart(2, '0')}
                 </span>
-
-                {/* Shine Effect */}
-                <motion.div
-                  className="absolute inset-0 rounded-3xl bg-gradient-to-r from-transparent via-white/40 to-transparent opacity-0 group-hover:opacity-100"
-                  initial={{ x: '-100%' }}
-                  whileHover={{ x: '100%' }}
-                  transition={{ duration: 0.8 }}
-                />
+                <span className="mt-0.5 flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-xl border border-[var(--line)] bg-white/[0.02] text-iris-bright transition-all duration-500 group-hover:border-iris/40 group-hover:bg-iris/10">
+                  <Icon className="h-5 w-5" />
+                </span>
+                <p className="flex-1 pt-1 text-lg font-medium leading-snug text-paper transition-transform duration-500 group-hover:translate-x-1">
+                  {text}
+                </p>
               </div>
-            </motion.li>
+            </Reveal>
           ))}
         </ul>
-
-        {/* Premium CTA Button */}
-        <motion.a
-          href="#portfolio"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.7, delay: 0.6 }}
-          whileHover={{ scale: 1.05, y: -4 }}
-          whileTap={{ scale: 0.98 }}
-          className="relative inline-block px-10 py-4 rounded-2xl bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 text-white font-bold text-lg shadow-xl hover:shadow-premium-glow-xl transition-all duration-500 focus:outline-none focus:ring-4 focus:ring-blue-400/50 overflow-hidden group"
-        >
-          {/* Animated Gradient Overlay */}
-          <motion.div
-            className="absolute inset-0 bg-gradient-to-r from-blue-700 via-indigo-700 to-purple-700 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-            animate={{
-              backgroundPosition: ['0% 50%', '100% 50%'],
-            }}
-            transition={{
-              duration: 4,
-              repeat: Infinity,
-              repeatType: 'reverse',
-              ease: 'linear',
-            }}
-            style={{
-              backgroundSize: '200% 100%',
-            }}
-          />
-          {/* Shine Effect */}
-          <motion.div
-            className="absolute inset-0 bg-gradient-to-r from-transparent via-white/40 to-transparent opacity-0 group-hover:opacity-100"
-            initial={{ x: '-100%' }}
-            whileHover={{ x: '100%' }}
-            transition={{ duration: 0.9 }}
-          />
-          {/* Sparkle Effect */}
-          <motion.div
-            className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-            animate={{
-              opacity: [0, 0.3, 0],
-            }}
-            transition={{
-              duration: 2,
-              repeat: Infinity,
-              ease: 'easeInOut',
-            }}
-          >
-            <Sparkles className="w-full h-full text-white/20" />
-          </motion.div>
-          
-          <span className="relative z-10 flex items-center justify-center gap-3">
-            {t.homeShowcase.cta}
-            <motion.span
-              animate={{ x: [0, 6, 0] }}
-              transition={{ duration: 1.5, repeat: Infinity, repeatType: 'reverse' }}
-            >
-              <ArrowRight className="w-6 h-6" />
-            </motion.span>
-          </span>
-        </motion.a>
       </div>
     </section>
   );
