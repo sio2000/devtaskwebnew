@@ -5,7 +5,7 @@ import {
 } from 'recharts';
 import {
   Lock, Users, Eye, EyeOff, Clock, Activity, Globe, Smartphone, Monitor, Tablet,
-  RefreshCw, LogOut, TrendingUp, MousePointerClick, AlertCircle, Loader2,
+  RefreshCw, LogOut, TrendingUp, MousePointerClick, AlertCircle, Loader2, Mail, Phone,
   ChevronLeft, ChevronRight,
 } from 'lucide-react';
 
@@ -15,7 +15,10 @@ interface Stats {
   totals: {
     pageviews: number; uniqueVisitors: number; sessions: number; liveNow: number;
     avgSessionSec: number; avgTimeOnPageSec: number; bounceRate: number;
+    contacts?: number; phoneClicks?: number; emailClicks?: number;
   };
+  channels?: { name: string; value: number; contacts: number }[];
+  content?: { id: string; channel: string; sessions: number; contacts: number }[];
   timeseries: { date: string; views: number; visitors: number }[];
   devices: { name: string; value: number }[];
   browsers: { name: string; value: number }[];
@@ -280,13 +283,16 @@ const AdminPanel: React.FC = () => {
         {/* KPIs */}
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
           <Kpi icon={Activity} label="Online τώρα" value={String(t?.liveNow ?? 0)} accent="bg-emerald-600" live />
-          <Kpi icon={Users} label="Μοναδικοί επισκέπτες" value={String(t?.uniqueVisitors ?? 0)} accent="bg-indigo-600" />
+          <Kpi icon={Users} label="Επισκέψεις" value={String(t?.sessions ?? 0)} accent="bg-indigo-600" />
           <Kpi icon={Eye} label="Προβολές σελίδων" value={String(t?.pageviews ?? 0)} accent="bg-purple-600" />
-          <Kpi icon={MousePointerClick} label="Συνεδρίες" value={String(t?.sessions ?? 0)} accent="bg-pink-600" />
-          <Kpi icon={Clock} label="Μ.Ο. χρόνου / συνεδρία" value={fmtDur(t?.avgSessionSec ?? 0)} accent="bg-cyan-600" />
+          <Kpi icon={MousePointerClick} label="Σελίδες ανά επίσκεψη" value={t?.sessions ? (t.pageviews / t.sessions).toFixed(1) : '0'} accent="bg-pink-600" />
+          <Kpi icon={Clock} label="Μ.Ο. χρόνου / επίσκεψη" value={fmtDur(t?.avgSessionSec ?? 0)} accent="bg-cyan-600" />
           <Kpi icon={Clock} label="Μ.Ο. χρόνου / σελίδα" value={fmtDur(t?.avgTimeOnPageSec ?? 0)} accent="bg-blue-600" />
           <Kpi icon={TrendingUp} label="Bounce rate" value={`${t?.bounceRate ?? 0}%`} accent="bg-amber-600" />
           <Kpi icon={Globe} label="Χώρες" value={String(data?.countries.length ?? 0)} accent="bg-teal-600" />
+          <Kpi icon={Mail} label="Αιτήματα φόρμας" value={String(t?.contacts ?? 0)} accent="bg-emerald-600" />
+          <Kpi icon={Phone} label="Πατήματα τηλεφώνου" value={String(t?.phoneClicks ?? 0)} accent="bg-indigo-600" />
+          <Kpi icon={Mail} label="Πατήματα email" value={String(t?.emailClicks ?? 0)} accent="bg-purple-600" />
         </div>
 
         {/* Traffic over time */}
@@ -310,11 +316,50 @@ const AdminPanel: React.FC = () => {
                 <Tooltip contentStyle={{ background: '#0f172a', border: '1px solid #334155', borderRadius: 12, color: '#e2e8f0' }} labelStyle={{ color: '#94a3b8' }} />
                 <Legend wrapperStyle={{ fontSize: 12 }} />
                 <Area type="monotone" dataKey="views" name="Προβολές" stroke="#6366f1" fill="url(#gViews)" strokeWidth={2} />
-                <Area type="monotone" dataKey="visitors" name="Επισκέπτες" stroke="#ec4899" fill="url(#gVisitors)" strokeWidth={2} />
+                <Area type="monotone" dataKey="visitors" name="Επισκέψεις" stroke="#ec4899" fill="url(#gVisitors)" strokeWidth={2} />
               </AreaChart>
             </ResponsiveContainer>
           </div>
         </Panel>
+
+        {/* Where visits come from, and which video or post sent them */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-6">
+          <Panel title="Κανάλια (ανά επίσκεψη)">
+            <BarList data={data?.channels ?? []} emptyLabel="Καμία επίσκεψη ακόμη." />
+            {!!data?.channels?.some((c) => c.contacts) && (
+              <p className="text-xs text-slate-500 mt-4">
+                Αιτήματα: {data.channels.filter((c) => c.contacts).map((c) => `${c.name} ${c.contacts}`).join(' · ')}
+              </p>
+            )}
+          </Panel>
+          <Panel title="Βίντεο και posts που έφεραν επισκέψεις" className="lg:col-span-2">
+            <div className="overflow-x-auto max-h-72 overflow-y-auto">
+              <table className="w-full text-sm">
+                <thead>
+                  <tr className="text-left text-slate-500 border-b border-slate-700">
+                    <th className="py-2 pr-4 font-medium">Κωδικός</th>
+                    <th className="py-2 pr-4 font-medium">Κανάλι</th>
+                    <th className="py-2 pr-4 font-medium text-right">Επισκέψεις</th>
+                    <th className="py-2 pr-4 font-medium text-right">Αιτήματα</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {(data?.content ?? []).map((c) => (
+                    <tr key={`${c.id}-${c.channel}`} className="border-b border-slate-800/60">
+                      <td className="py-2 pr-4 text-white whitespace-nowrap">{c.id}</td>
+                      <td className="py-2 pr-4 text-slate-400">{c.channel}</td>
+                      <td className="py-2 pr-4 text-slate-300 text-right">{c.sessions}</td>
+                      <td className="py-2 pr-4 text-slate-300 text-right">{c.contacts}</td>
+                    </tr>
+                  ))}
+                  {!data?.content?.length && (
+                    <tr><td colSpan={4} className="py-8 text-center text-slate-500">Κανένα link καμπάνιας δεν έχει φέρει επίσκεψη ακόμη.</td></tr>
+                  )}
+                </tbody>
+              </table>
+            </div>
+          </Panel>
+        </div>
 
         {/* Devices + Top pages */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-6">

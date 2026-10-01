@@ -1,6 +1,10 @@
 // Privacy-friendly first-party analytics client.
 // Sends anonymous pageview + time-on-page events to a Netlify Function.
-// No personal data, no third-party cookies — just an anonymous random id in localStorage.
+//
+// Nothing is written to the visitor's device: no cookie, no localStorage, no
+// sessionStorage. The visit id and the campaign tags live in this page's
+// memory only, so they are gone when the tab closes or reloads, and one person
+// cannot be recognised from one visit to the next.
 
 const ENDPOINT = '/.netlify/functions/track';
 
@@ -13,38 +17,58 @@ function uuid(): string {
   return Date.now().toString(36) + Math.random().toString(36).slice(2, 10);
 }
 
-function getVisitorId(): string {
+let visitId = '';
+function getVisitId(): string {
+  if (!visitId) visitId = uuid();
+  return visitId;
+}
+
+// Earlier versions kept an id in the browser. Remove what they left behind.
+function forgetStoredIds() {
   try {
-    let id = localStorage.getItem('dth_vid');
-    if (!id) {
-      id = uuid();
-      localStorage.setItem('dth_vid', id);
-    }
-    return id;
+    localStorage.removeItem('dth_vid');
+    sessionStorage.removeItem('dth_sid');
+    sessionStorage.removeItem('dth_attr');
   } catch {
-    return 'anon';
+    /* storage unavailable: nothing to clean */
   }
 }
 
-function getSessionId(): string {
+export interface Attribution {
+  us: string; // utm_source
+  um: string; // utm_medium
+  uc: string; // utm_campaign
+  ut: string; // utm_content — the id of the video or post that sent the visitor
+}
+
+let attribution: Attribution | null = null;
+
+// The campaign tags of the link the visitor arrived on. Read once and kept for
+// the visit, so a form sent three pages later still knows where it began.
+export function getAttribution(): Attribution {
+  if (attribution) return attribution;
+  const attr: Attribution = { us: '', um: '', uc: '', ut: '' };
   try {
-    let id = sessionStorage.getItem('dth_sid');
-    if (!id) {
-      id = uuid();
-      sessionStorage.setItem('dth_sid', id);
-    }
-    return id;
+    const q = new URLSearchParams(window.location.search);
+    const pick = (k: string) => (q.get(k) || '').trim().slice(0, 64);
+    attr.us = pick('utm_source').toLowerCase();
+    attr.um = pick('utm_medium').toLowerCase();
+    attr.uc = pick('utm_campaign');
+    attr.ut = pick('utm_content');
   } catch {
-    return 'anon';
+    /* an address that cannot be parsed carries no campaign */
   }
+  attribution = attr;
+  return attr;
 }
 
 function send(payload: Record<string, unknown>) {
   try {
     const body = JSON.stringify({
       ...payload,
-      vid: getVisitorId(),
-      sid: getSessionId(),
+      ...getAttribution(),
+      vid: getVisitId(),
+      sid: getVisitId(),
       lang: typeof navigator !== 'undefined' ? navigator.language : '',
       ref: typeof document !== 'undefined' ? document.referrer : '',
     });
@@ -82,10 +106,19 @@ export function trackPageview(path: string) {
   send({ type: 'pageview', path });
 }
 
+export type SiteAction = 'contact_submit' | 'click_phone' | 'click_email';
+
+/** The things a visitor does that count as getting in touch. */
+export function trackAction(name: SiteAction) {
+  send({ type: 'event', name, path: currentPath || window.location.pathname });
+}
+
 let initialized = false;
 export function initAnalytics() {
   if (initialized || typeof window === 'undefined') return;
   initialized = true;
+  forgetStoredIds();
+  getAttribution();
   document.addEventListener('visibilitychange', () => {
     if (document.visibilityState === 'hidden') flushDuration();
   });

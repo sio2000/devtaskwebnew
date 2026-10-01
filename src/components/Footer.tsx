@@ -27,7 +27,7 @@ const Footer = memo(() => {
   ];
 
   const socials = [
-    { Icon: FaFacebook, label: t.footer.social.facebook, href: 'https://www.facebook.com/profile.php?id=61578746165941' },
+    { Icon: FaFacebook, label: t.footer.social.facebook, href: 'https://www.facebook.com/profile.php?id=61594834146080' },
     { Icon: FaInstagram, label: t.footer.social.instagram, href: 'https://www.instagram.com/devtaskhub/' },
     { Icon: FaTiktok, label: t.footer.social.tiktok, href: 'https://www.tiktok.com/@devtaskhub' },
   ];

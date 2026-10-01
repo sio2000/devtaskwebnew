@@ -51,7 +51,7 @@ export const OrganizationSchema: React.FC<OrganizationSchemaProps> = ({
     addressCountry: 'GR',
   },
   sameAs = [
-    'https://www.facebook.com/profile.php?id=61578746165941',
+    'https://www.facebook.com/profile.php?id=61594834146080',
     'https://www.instagram.com/devtaskhub/',
     'https://www.tiktok.com/@devtaskhub',
   ],

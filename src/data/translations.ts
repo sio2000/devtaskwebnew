@@ -986,7 +986,7 @@ export const translations = {
         },
         dataCollection: {
           title: 'Συλλογή & Επεξεργασία Δεδομένων',
-          content: 'Συλλέγουμε και επεξεργαζόμαστε προσωπικά δεδομένα μόνο όταν είναι απαραίτητο και με διαφάνεια:<ul class="list-disc pl-6 mt-3 space-y-2"><li><b>Φόρμα επικοινωνίας:</b> όνομα, email, θέμα, μήνυμα και προαιρετικά υπηρεσία — για να απαντήσουμε στο αίτημά σας.</li><li><b>First-party analytics:</b> ανώνυμο αναγνωριστικό επισκέπτη (localStorage), αναγνωριστικό συνεδρίας (sessionStorage), σελίδα, διάρκεια επίσκεψης, τύπος συσκευής/περιηγητή/λειτουργικού, γλώσσα, πηγή αναφοράς και προσεγγιστική γεωγραφική τοποθεσία (χώρα/πόλη από τον πάροχο hosting).</li><li><b>Τεχνικά δεδομένα:</b> IP διεύθυνση και server logs από τον πάροχο φιλοξενίας (Netlify) για ασφάλεια και λειτουργία.</li></ul><p class="mt-3">Δεν πωλούμε, ενοικιάζουμε ούτε ανταλλάσσουμε τα προσωπικά σας δεδομένα με τρίτους για εμπορικούς σκοπούς. Δεν χρησιμοποιούμε cookies τρίτων για διαφημιστική καταγραφή προφίλ.</p>'
+          content: 'Συλλέγουμε και επεξεργαζόμαστε προσωπικά δεδομένα μόνο όταν είναι απαραίτητο και με διαφάνεια:<ul class="list-disc pl-6 mt-3 space-y-2"><li><b>Φόρμα επικοινωνίας:</b> όνομα, email, θέμα, μήνυμα και προαιρετικά υπηρεσία — για να απαντήσουμε στο αίτημά σας.</li><li><b>First-party analytics:</b> τυχαίο αναγνωριστικό επίσκεψης που υπάρχει μόνο στη μνήμη της σελίδας και χάνεται όταν κλείσει η καρτέλα, σελίδα, διάρκεια επίσκεψης, τύπος συσκευής/περιηγητή/λειτουργικού, γλώσσα, πηγή αναφοράς, ετικέτες καμπάνιας του συνδέσμου από τον οποίο ήρθατε και προσεγγιστική γεωγραφική τοποθεσία (χώρα/πόλη από τον πάροχο hosting). Δεν αποθηκεύεται τίποτα στη συσκευή σας για τα στατιστικά.</li><li><b>Τεχνικά δεδομένα:</b> IP διεύθυνση και server logs από τον πάροχο φιλοξενίας (Netlify) για ασφάλεια και λειτουργία.</li></ul><p class="mt-3">Δεν πωλούμε, ενοικιάζουμε ούτε ανταλλάσσουμε τα προσωπικά σας δεδομένα με τρίτους για εμπορικούς σκοπούς. Δεν χρησιμοποιούμε cookies τρίτων για διαφημιστική καταγραφή προφίλ.</p>'
         },
         privacyPolicy: {
           title: 'Πολιτική Απορρήτου',
@@ -1006,7 +1006,7 @@ export const translations = {
         },
         cookiesAnalytics: {
           title: 'Cookies & Analytics',
-          content: 'Η ιστοσελίδα <b>δεν χρησιμοποιεί cookies τρίτων</b> για διαφημιστική καταγραφή ή social tracking. Χρησιμοποιούμε:<ul class="list-disc pl-6 mt-3 space-y-2"><li><b>Τοπική αποθήκευση (localStorage/sessionStorage):</b> ανώνυμο αναγνωριστικό επισκέπτη για first-party στατιστικά — όχι προσωπική ταυτοποίηση.</li><li><b>Embedded chatbot (FastBots):</b> ενδέχεται να τοποθετεί δικά του cookies όταν ανοίγετε το chat widget· ισχύει η πολιτική του παρόχου.</li></ul><p class="mt-3">Μπορείτε να διαγράψετε localStorage/sessionStorage από τις ρυθμίσεις του browser ή να χρησιμοποιήσετε λειτουργία ιδιωτικής περιήγησης.</p>'
+          content: 'Η ιστοσελίδα <b>δεν χρησιμοποιεί cookies τρίτων</b> για διαφημιστική καταγραφή ή social tracking. Χρησιμοποιούμε:<ul class="list-disc pl-6 mt-3 space-y-2"><li><b>Στατιστικά επισκεψιμότητας:</b> δικά μας, χωρίς cookies και χωρίς αποθήκευση στη συσκευή σας. Δεν αναγνωρίζουμε τον ίδιο επισκέπτη από τη μία επίσκεψη στην επόμενη.</li><li><b>Τοπική αποθήκευση (localStorage):</b> μόνο η γλώσσα που επιλέξατε για την ιστοσελίδα.</li><li><b>Embedded chatbot (FastBots):</b> ενδέχεται να τοποθετεί δικά του cookies όταν ανοίγετε το chat widget· ισχύει η πολιτική του παρόχου.</li></ul><p class="mt-3">Μπορείτε να διαγράψετε την τοπική αποθήκευση από τις ρυθμίσεις του browser ή να χρησιμοποιήσετε λειτουργία ιδιωτικής περιήγησης.</p>'
         },
         dataSecurity: {
           title: 'Ασφάλεια Δεδομένων',
@@ -2035,7 +2035,7 @@ export const translations = {
         },
         dataCollection: {
           title: 'Data Collection & Processing',
-          content: 'We collect and process personal data only when necessary and with transparency:<ul class="list-disc pl-6 mt-3 space-y-2"><li><b>Contact form:</b> name, email, subject, message and optional service — to respond to your request.</li><li><b>First-party analytics:</b> anonymous visitor ID (localStorage), session ID (sessionStorage), page, visit duration, device/browser/OS type, language, referrer and approximate geo location (country/city from hosting provider).</li><li><b>Technical data:</b> IP address and server logs from our host (Netlify) for security and operation.</li></ul><p class="mt-3">We do not sell, rent or trade your personal data to third parties for commercial purposes. We do not use third-party advertising or profiling cookies.</p>'
+          content: 'We collect and process personal data only when necessary and with transparency:<ul class="list-disc pl-6 mt-3 space-y-2"><li><b>Contact form:</b> name, email, subject, message and optional service — to respond to your request.</li><li><b>First-party analytics:</b> a random visit ID that exists only in the memory of the page and is gone when the tab closes, page, visit duration, device/browser/OS type, language, referrer, the campaign tags of the link you arrived on and approximate geo location (country/city from hosting provider). Nothing is stored on your device for statistics.</li><li><b>Technical data:</b> IP address and server logs from our host (Netlify) for security and operation.</li></ul><p class="mt-3">We do not sell, rent or trade your personal data to third parties for commercial purposes. We do not use third-party advertising or profiling cookies.</p>'
         },
         privacyPolicy: {
           title: 'Privacy Policy',
@@ -2055,7 +2055,7 @@ export const translations = {
         },
         cookiesAnalytics: {
           title: 'Cookies & Analytics',
-          content: 'This website <b>does not use third-party cookies</b> for advertising or social tracking. We use:<ul class="list-disc pl-6 mt-3 space-y-2"><li><b>Local storage (localStorage/sessionStorage):</b> anonymous visitor ID for first-party statistics — not personal identification.</li><li><b>Embedded chatbot (FastBots):</b> may set its own cookies when you open the chat widget; the provider\'s policy applies.</li></ul><p class="mt-3">You can clear localStorage/sessionStorage in your browser settings or use private browsing mode.</p>'
+          content: 'This website <b>does not use third-party cookies</b> for advertising or social tracking. We use:<ul class="list-disc pl-6 mt-3 space-y-2"><li><b>Visit statistics:</b> our own, with no cookies and nothing stored on your device. We do not recognise the same visitor from one visit to the next.</li><li><b>Local storage (localStorage):</b> only the language you chose for the website.</li><li><b>Embedded chatbot (FastBots):</b> may set its own cookies when you open the chat widget; the provider\'s policy applies.</li></ul><p class="mt-3">You can clear local storage in your browser settings or use private browsing mode.</p>'
         },
         dataSecurity: {
           title: 'Data Security',
@@ -3084,7 +3084,7 @@ export const translations = {
         },
         dataCollection: {
           title: 'Collecte & Traitement des Données',
-          content: 'Nous collectons et traitons les données personnelles uniquement lorsque nécessaire et avec transparence :<ul class="list-disc pl-6 mt-3 space-y-2"><li><b>Formulaire de contact :</b> nom, email, sujet, message et service optionnel — pour répondre à votre demande.</li><li><b>Analytics first-party :</b> identifiant visiteur anonyme (localStorage), identifiant de session (sessionStorage), page, durée de visite, type d\'appareil/navigateur/OS, langue, référent et localisation géographique approximative (pays/ville via l\'hébergeur).</li><li><b>Données techniques :</b> adresse IP et logs serveur de l\'hébergeur (Netlify) pour la sécurité et le fonctionnement.</li></ul><p class="mt-3">Nous ne vendons, ne louons ni n\'échangeons vos données personnelles à des tiers à des fins commerciales. Nous n\'utilisons pas de cookies publicitaires ou de profilage tiers.</p>'
+          content: 'Nous collectons et traitons les données personnelles uniquement lorsque nécessaire et avec transparence :<ul class="list-disc pl-6 mt-3 space-y-2"><li><b>Formulaire de contact :</b> nom, email, sujet, message et service optionnel — pour répondre à votre demande.</li><li><b>Analytics first-party :</b> un identifiant de visite aléatoire qui n\'existe que dans la mémoire de la page et disparaît à la fermeture de l\'onglet, page, durée de visite, type d\'appareil/navigateur/OS, langue, référent, les balises de campagne du lien par lequel vous êtes arrivé et localisation géographique approximative (pays/ville via l\'hébergeur). Rien n\'est stocké sur votre appareil pour les statistiques.</li><li><b>Données techniques :</b> adresse IP et logs serveur de l\'hébergeur (Netlify) pour la sécurité et le fonctionnement.</li></ul><p class="mt-3">Nous ne vendons, ne louons ni n\'échangeons vos données personnelles à des tiers à des fins commerciales. Nous n\'utilisons pas de cookies publicitaires ou de profilage tiers.</p>'
         },
         privacyPolicy: {
           title: 'Politique de Confidentialité',
@@ -3104,7 +3104,7 @@ export const translations = {
         },
         cookiesAnalytics: {
           title: 'Cookies & Analytics',
-          content: 'Ce site <b>n\'utilise pas de cookies tiers</b> pour la publicité ou le tracking social. Nous utilisons :<ul class="list-disc pl-6 mt-3 space-y-2"><li><b>Stockage local (localStorage/sessionStorage) :</b> identifiant visiteur anonyme pour statistiques first-party — pas d\'identification personnelle.</li><li><b>Chatbot intégré (FastBots) :</b> peut placer ses propres cookies à l\'ouverture du widget ; la politique du fournisseur s\'applique.</li></ul><p class="mt-3">Vous pouvez effacer localStorage/sessionStorage dans les paramètres du navigateur ou utiliser la navigation privée.</p>'
+          content: 'Ce site <b>n\'utilise pas de cookies tiers</b> pour la publicité ou le tracking social. Nous utilisons :<ul class="list-disc pl-6 mt-3 space-y-2"><li><b>Statistiques de visite :</b> les nôtres, sans cookies et sans rien stocker sur votre appareil. Nous ne reconnaissons pas un même visiteur d\'une visite à l\'autre.</li><li><b>Stockage local (localStorage) :</b> uniquement la langue que vous avez choisie pour le site.</li><li><b>Chatbot intégré (FastBots) :</b> peut placer ses propres cookies à l\'ouverture du widget ; la politique du fournisseur s\'applique.</li></ul><p class="mt-3">Vous pouvez effacer le stockage local dans les paramètres du navigateur ou utiliser la navigation privée.</p>'
         },
         dataSecurity: {
           title: 'Sécurité des Données',

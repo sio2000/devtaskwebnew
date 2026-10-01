@@ -37,6 +37,8 @@ export default async (req: Request, _context: Context) => {
   const service = (body.service || '').trim().slice(0, 200);
   const subject = (body.subject || '').trim().slice(0, 300);
   const message = (body.message || '').trim().slice(0, 5000);
+  // Which link brought this visitor (campaign tags kept by the site for the visit)
+  const source = [body.us, body.ut].map((v) => (v || '').trim().slice(0, 64)).filter(Boolean).join(' · ');
 
   const validEmail = /^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email);
   if (!name || !validEmail || !message) return json({ error: 'Missing or invalid fields' }, 422);
@@ -49,6 +51,7 @@ export default async (req: Request, _context: Context) => {
         <tr><td style="padding:6px 0;color:#64748b">Email</td><td style="padding:6px 0"><a href="mailto:${esc(email)}">${esc(email)}</a></td></tr>
         ${service ? `<tr><td style="padding:6px 0;color:#64748b">Υπηρεσία</td><td style="padding:6px 0">${esc(service)}</td></tr>` : ''}
         ${subject ? `<tr><td style="padding:6px 0;color:#64748b">Θέμα</td><td style="padding:6px 0">${esc(subject)}</td></tr>` : ''}
+        ${source ? `<tr><td style="padding:6px 0;color:#64748b">Ήρθε από</td><td style="padding:6px 0">${esc(source)}</td></tr>` : ''}
       </table>
       <div style="margin-top:16px;padding:16px;background:#f1f5f9;border-radius:12px;white-space:pre-wrap;font-size:14px;line-height:1.6">${esc(message)}</div>
     </div>`;

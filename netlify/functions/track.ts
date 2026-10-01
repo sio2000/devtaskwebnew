@@ -26,6 +26,9 @@ function parseOS(ua: string): string {
   return 'Other';
 }
 
+const BOT_UA = /bot\b|bot\/|crawl|spider|slurp|headless|lighthouse|pagespeed|gtmetrix|pingdom|uptimerobot|facebookexternalhit|curl\/|wget\/|python-requests|axios\/|node-fetch/i;
+const ACTIONS = new Set(['contact_submit', 'click_phone', 'click_email']);
+
 const dayKey = (d = new Date()) => `day:${d.toISOString().slice(0, 10)}`;
 const clampStr = (v: unknown, n: number) => (typeof v === 'string' ? v.slice(0, n) : '');
 
@@ -44,11 +47,22 @@ export default async (req: Request, context: Context) => {
   if (path.startsWith('/admin')) return new Response(null, { status: 204 });
 
   const ua = req.headers.get('user-agent') || '';
+  // Crawlers and monitoring tools run the page script too; they are not visitors.
+  if (BOT_UA.test(ua)) return new Response(null, { status: 204 });
   const geo = (context as unknown as { geo?: { country?: { code?: string; name?: string }; city?: string } }).geo || {};
+
+  const type = body.type === 'duration' ? 'duration' : body.type === 'event' ? 'event' : 'pageview';
+  const name = clampStr(body.name, 32);
+  if (type === 'event' && !ACTIONS.has(name)) return new Response(null, { status: 204 });
 
   const event = {
     t: Date.now(),
-    type: body.type === 'duration' ? 'duration' : 'pageview',
+    type,
+    n: type === 'event' ? name : undefined,
+    us: clampStr(body.us, 64),
+    um: clampStr(body.um, 64),
+    uc: clampStr(body.uc, 64),
+    ut: clampStr(body.ut, 64),
     p: path,
     d: typeof body.duration === 'number' ? Math.min(Math.round(body.duration), 1000 * 60 * 60) : undefined,
     dev: parseDevice(ua),

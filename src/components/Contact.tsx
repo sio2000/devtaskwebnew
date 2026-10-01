@@ -8,6 +8,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import SectionHeading from './ui/SectionHeading';
 import Reveal from './ui/Reveal';
+import { getAttribution, trackAction } from '../utils/analytics';
 
 const Contact: React.FC = () => {
   const { language } = useLanguage();
@@ -57,9 +58,11 @@ const Contact: React.FC = () => {
           service: formData.service,
           subject: formData.subject,
           message: formData.message,
+          ...getAttribution(),
         }),
       });
       if (!response.ok) throw new Error('Submission failed');
+      trackAction('contact_submit');
       setSuccess(true);
       toast.success(t.contact.success);
       setFormData({ name: '', email: '', service: '', subject: '', message: '' });
@@ -74,7 +77,7 @@ const Contact: React.FC = () => {
     { icon: FaEnvelope, value: 'info@devtaskhub.com', href: 'mailto:info@devtaskhub.com' },
     { icon: FaPhoneAlt, value: '+30 6971982563', href: 'tel:+306971982563' },
     { icon: FaInstagram, value: 'Instagram', href: 'https://www.instagram.com/devtaskhub/' },
-    { icon: FaFacebook, value: 'Facebook', href: 'https://www.facebook.com/profile.php?id=61578746165941' },
+    { icon: FaFacebook, value: 'Facebook', href: 'https://www.facebook.com/profile.php?id=61594834146080' },
     { icon: FaTiktok, value: 'TikTok', href: 'https://www.tiktok.com/@devtaskhub' },
     { icon: FaMapMarkerAlt, value: 'Θεσσαλονίκη, Ελλάδα', href: null },
   ];
@@ -224,7 +227,14 @@ const Contact: React.FC = () => {
                 </>
               );
               return link.href ? (
-                <a key={index} href={link.href} target={link.href.startsWith('http') ? '_blank' : undefined} rel={link.href.startsWith('http') ? 'noopener noreferrer' : undefined} className={cls}>
+                <a
+                  key={index}
+                  href={link.href}
+                  target={link.href.startsWith('http') ? '_blank' : undefined}
+                  rel={link.href.startsWith('http') ? 'noopener noreferrer' : undefined}
+                  onClick={link.href.startsWith('tel:') ? () => trackAction('click_phone') : link.href.startsWith('mailto:') ? () => trackAction('click_email') : undefined}
+                  className={cls}
+                >
                   {inner}
                 </a>
               ) : (
