@@ -223,7 +223,7 @@ export default function SocialMediaManagementPage() {
                   transition={{ duration: 0.8 }}
                 />
                 <div className="relative z-10 mb-6 flex items-center justify-center w-20 h-20 rounded-full bg-gradient-to-br from-pink-100 to-iris/10 shadow-inner group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300 border-4 border-pink-200 group-hover:border-blue-300">{s.icon}</div>
-                <h4 className="relative z-10 text-xl font-bold text-pink-900 mb-2 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-pink-600 group-hover:to-blue-600 transition-all duration-300 tracking-tight">{s.title}</h4>
+                <h4 className="relative z-10 text-xl font-bold text-pink-300 mb-2 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-pink-600 group-hover:to-blue-600 transition-all duration-300 tracking-tight">{s.title}</h4>
                 <p className="relative z-10 text-paper-dim mb-6 text-base leading-relaxed">{s.desc}</p>
               </motion.div>
             ))}
@@ -302,7 +302,7 @@ export default function SocialMediaManagementPage() {
         <motion.div className="bg-gradient-to-br from-ink-800 via-ink-800 to-ink-800 rounded-3xl shadow-xl border border-white/10/40 p-8 md:p-12 mb-16" initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} viewport={{ once: true }}>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
             <div>
-              <h3 className="text-2xl font-bold text-purple-800 mb-4">{t.services.pages.socialMediaManagement.logoTransformations.whyUsTitle}</h3>
+              <h3 className="text-2xl font-bold text-purple-300 mb-4">{t.services.pages.socialMediaManagement.logoTransformations.whyUsTitle}</h3>
               <ul className="space-y-3 text-paper-dim">
                 {t.services.pages.socialMediaManagement.logoTransformations.whyUsItems.map((item, idx) => (
                   <li key={idx} className="flex items-center gap-3">
@@ -314,7 +314,7 @@ export default function SocialMediaManagementPage() {
             </div>
             <div className="text-center">
               <div className="text-6xl mb-4">🚀</div>
-              <h4 className="text-xl font-bold text-purple-700 mb-2">{t.services.pages.socialMediaManagement.logoTransformations.viralSuccessTitle}</h4>
+              <h4 className="text-xl font-bold text-purple-300 mb-2">{t.services.pages.socialMediaManagement.logoTransformations.viralSuccessTitle}</h4>
               <p className="text-paper-dim">{t.services.pages.socialMediaManagement.logoTransformations.viralSuccessDesc}</p>
             </div>
           </div>
@@ -335,7 +335,7 @@ export default function SocialMediaManagementPage() {
             return (
               <motion.div key={idx} className="bg-ink-800 rounded-3xl shadow-xl border border-white/10/40 overflow-hidden group hover:shadow-2xl transition-all duration-300 cursor-pointer relative" initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: idx * 0.1 }} viewport={{ once: true }} onClick={() => setModalImg(logo.img)}>
                 <div className="p-6">
-                  <h4 className="text-lg font-bold text-purple-800 mb-3">{logo.title}</h4>
+                  <h4 className="text-lg font-bold text-purple-300 mb-3">{logo.title}</h4>
                   <p className="text-paper-dim text-sm mb-4">{logo.desc}</p>
                 </div>
                 <div className="relative overflow-hidden">
@@ -396,9 +396,9 @@ export default function SocialMediaManagementPage() {
       {/* Πως δουλεύουμε / Ροή Εργασιών */}
       <section className="max-w-7xl mx-auto py-24 px-4">
         <motion.h2 className="text-3xl md:text-4xl font-extrabold text-pink-700 mb-12 text-center bg-gradient-to-r from-pink-500 to-blue-500 bg-clip-text text-transparent drop-shadow-lg">{t.services.pages.socialMediaManagement.workflow.title}</motion.h2>
-        <motion.div className="flex flex-col md:flex-row justify-center items-center gap-10" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.12 } } }}>
+        <motion.div className="flex flex-col md:flex-row md:flex-wrap justify-center items-center gap-10" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.12 } } }}>
           {workflow.map((step, idx) => (
-            <motion.div key={step.title} className="flex flex-col items-center bg-white/[0.045] backdrop-blur-lg rounded-2xl shadow-xl border border-pink-100/40 p-10 group hover:shadow-2xl transition-all duration-300 relative overflow-hidden min-w-[180px]" initial={{ opacity: 0, y: 40, scale: 0.97 }} whileInView={{ opacity: 1, y: 0, scale: 1 }} whileHover={{ scale: 1.08 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: idx * 0.07 }}><div className="mb-4 flex items-center justify-center w-14 h-14 rounded-full bg-gradient-to-br from-pink-100 to-iris/10 shadow-inner group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300 border-4 border-pink-200 group-hover:border-blue-300">{step.icon}</div><h4 className="text-base font-bold text-pink-900 mb-2 group-hover:text-pink-500 transition-colors duration-300 tracking-tight">{step.title}</h4><p className="text-paper-dim mb-4 text-sm leading-relaxed">{step.desc}</p>{idx < workflow.length - 1 && <div className="w-1 h-10 bg-gradient-to-b from-pink-300 to-iris/15 mx-auto my-2 rounded-full" />}</motion.div>
+            <motion.div key={step.title} className="flex flex-col items-center bg-white/[0.045] backdrop-blur-lg rounded-2xl shadow-xl border border-pink-100/40 p-10 group hover:shadow-2xl transition-all duration-300 relative overflow-hidden min-w-[180px]" initial={{ opacity: 0, y: 40, scale: 0.97 }} whileInView={{ opacity: 1, y: 0, scale: 1 }} whileHover={{ scale: 1.08 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: idx * 0.07 }}><div className="mb-4 flex items-center justify-center w-14 h-14 rounded-full bg-gradient-to-br from-pink-100 to-iris/10 shadow-inner group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300 border-4 border-pink-200 group-hover:border-blue-300">{step.icon}</div><h4 className="text-base font-bold text-pink-300 mb-2 group-hover:text-pink-500 transition-colors duration-300 tracking-tight">{step.title}</h4><p className="text-paper-dim mb-4 text-sm leading-relaxed">{step.desc}</p>{idx < workflow.length - 1 && <div className="w-1 h-10 bg-gradient-to-b from-pink-300 to-iris/15 mx-auto my-2 rounded-full" />}</motion.div>
           ))}
         </motion.div>
       </section>
@@ -406,7 +406,7 @@ export default function SocialMediaManagementPage() {
       {/* Τελικό CTA */}
       <section className="max-w-7xl mx-auto py-24 px-4 flex flex-col items-center text-center">
         <motion.div className="relative bg-gradient-to-br from-pink-100 via-ink-800 to-iris/10/80 backdrop-blur-lg rounded-3xl shadow-2xl border border-pink-100/40 p-12 flex flex-col items-center" initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
-          <h2 className="text-3xl md:text-4xl font-extrabold text-pink-900 mb-6 tracking-tight">{t.services.pages.socialMediaManagement.finalCta.title}</h2>
+          <h2 className="text-3xl md:text-4xl font-extrabold text-pink-300 mb-6 tracking-tight">{t.services.pages.socialMediaManagement.finalCta.title}</h2>
           <motion.button className="inline-block px-12 py-5 bg-gradient-to-r from-pink-600 to-blue-400 text-white rounded-full font-bold text-xl shadow-3xl border-2 border-transparent hover:border-pink-400 hover:shadow-[0_0_32px_0_#a78bfa] focus:outline-none focus:ring-2 focus:ring-pink-400 animate-fade-in flex items-center gap-2 relative overflow-hidden mt-6" whileHover={{ scale: 1.08, boxShadow: '0 0 32px 0 #a78bfa', filter: 'brightness(1.1)', borderColor: '#a78bfa' }} whileTap={{ scale: 0.97 }} onMouseEnter={() => playSound(hoverSfx)} onClick={() => { window.location.href = '/contactme'; }}><span className="relative z-10">{t.services.pages.socialMediaManagement.finalCta.button}</span></motion.button>
         </motion.div>
       </section>

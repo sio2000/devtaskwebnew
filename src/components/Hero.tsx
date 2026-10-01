@@ -83,7 +83,7 @@ const Hero: React.FC = () => {
           <AnimatePresence mode="wait">
             <motion.h1
               key={current}
-              className="display-hero text-paper text-[clamp(2.2rem,7.2vw,6rem)] lg:text-[clamp(3rem,4.7vw,4.9rem)]"
+              className="display-hero text-paper text-[clamp(1.75rem,8.6vw,2.2rem)] min-[490px]:text-[clamp(2.2rem,7.2vw,6rem)] lg:text-[clamp(3rem,4.7vw,4.9rem)]"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0, transition: { duration: 0.25 } }}
@@ -142,17 +142,19 @@ const Hero: React.FC = () => {
                 onClick={() => setCurrent(i)}
                 aria-label={`Slide ${i + 1}`}
                 aria-current={i === current}
-                className="group relative h-1 flex-1 overflow-hidden rounded-full bg-white/12"
+                className="group flex h-8 flex-1 items-center"
               >
-                {i === current && (
-                  <motion.span
-                    key={`bar-${current}`}
-                    className="absolute inset-0 origin-left rounded-full bg-paper"
-                    initial={{ scaleX: 0 }}
-                    animate={{ scaleX: 1 }}
-                    transition={{ duration: SLIDE_INTERVAL / 1000, ease: 'linear' }}
-                  />
-                )}
+                <span className="relative block h-1 w-full overflow-hidden rounded-full bg-white/12">
+                  {i === current && (
+                    <motion.span
+                      key={`bar-${current}`}
+                      className="absolute inset-0 origin-left rounded-full bg-paper"
+                      initial={{ scaleX: 0 }}
+                      animate={{ scaleX: 1 }}
+                      transition={{ duration: SLIDE_INTERVAL / 1000, ease: 'linear' }}
+                    />
+                  )}
+                </span>
               </button>
             ))}
           </div>

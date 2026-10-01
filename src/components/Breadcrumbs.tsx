@@ -23,7 +23,7 @@ const Breadcrumbs: React.FC = () => {
     ];
 
     let currentPath = '';
-    paths.forEach((path, index) => {
+    paths.forEach((path) => {
       currentPath += `/${path}`;
       
       // Map paths to display names
@@ -85,25 +85,25 @@ const Breadcrumbs: React.FC = () => {
   return (
     <>
       <BreadcrumbSchema items={breadcrumbItems} />
-      <nav aria-label="Breadcrumb" className="surface-ink border-b border-[var(--line)] py-3 pt-20">
+      <nav aria-label="Breadcrumb" className="surface-ink border-b border-[var(--line)] py-1.5 pt-[4.75rem]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <ol className="flex items-center space-x-2 text-sm">
+          <ol className="flex flex-wrap items-center gap-y-1 text-sm">
             {breadcrumbs.map((crumb, index) => {
               const isLast = index === breadcrumbs.length - 1;
 
               return (
-                <li key={crumb.url} className="flex items-center">
+                <li key={crumb.url} className="flex min-w-0 items-center">
                   {index > 0 && (
-                    <ChevronRight className="h-4 w-4 text-paper-muted mx-2" aria-hidden="true" />
+                    <ChevronRight className="mx-2 h-4 w-4 flex-shrink-0 text-paper-muted" aria-hidden="true" />
                   )}
                   {isLast ? (
-                    <span className="text-paper-dim font-medium" aria-current="page">
+                    <span className="py-1.5 font-medium text-paper-dim [overflow-wrap:anywhere]" aria-current="page">
                       {crumb.name}
                     </span>
                   ) : (
                     <Link
                       to={crumb.url}
-                      className="text-iris-bright hover:text-paper transition-colors duration-200 flex items-center"
+                      className="flex items-center py-1.5 text-iris-bright transition-colors duration-200 hover:text-paper"
                     >
                       {index === 0 && <Home className="h-4 w-4 mr-1" />}
                       <span>{crumb.name}</span>

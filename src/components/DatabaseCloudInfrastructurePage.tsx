@@ -98,7 +98,7 @@ export default function DatabaseCloudInfrastructurePage() {
           ].map((kw, i) => (
             <motion.div
               key={kw}
-              className="absolute z-10 opacity-20 text-lg md:text-2xl font-bold text-blue-400"
+              className="absolute z-10 hidden opacity-20 text-2xl font-bold text-blue-400 lg:block"
               style={{
                 top: `${10 + 60 * Math.sin((i / 10) * 2 * Math.PI)}%`,
                 left: `${10 + 80 * Math.cos((i / 10) * 2 * Math.PI)}%`,

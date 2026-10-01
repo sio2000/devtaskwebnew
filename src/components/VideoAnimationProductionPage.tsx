@@ -96,8 +96,8 @@ export default function VideoAnimationProductionPage() {
         {/* Σε mobile: χωρίς motion/animation, διαφορετικό background */}
         {isMobile ? (
           <div className="relative z-10 max-w-4xl mx-auto px-4 py-24 text-center flex flex-col items-center">
-            <h1 className="text-3xl md:text-5xl font-extrabold mb-6 drop-shadow-lg tracking-wide text-purple-900">{t.services.pages.videoAnimationProduction.hero.title}</h1>
-            <p className="text-lg md:text-2xl text-purple-700 mb-10 font-medium">{t.services.pages.videoAnimationProduction.hero.subtitle}</p>
+            <h1 className="text-3xl md:text-5xl font-extrabold mb-6 drop-shadow-lg tracking-wide text-paper">{t.services.pages.videoAnimationProduction.hero.title}</h1>
+            <p className="text-lg md:text-2xl text-paper-dim mb-10 font-medium">{t.services.pages.videoAnimationProduction.hero.subtitle}</p>
             <a href="/contact" className="inline-block px-10 py-5 bg-gradient-to-r from-purple-600 to-blue-400 text-white rounded-full font-bold text-lg shadow-3xl hover:from-purple-700 hover:to-blue-500 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-purple-400 animate-fade-in flex items-center gap-2">{t.services.pages.videoAnimationProduction.hero.contact}</a>
           </div>
         ) : (
@@ -248,7 +248,7 @@ export default function VideoAnimationProductionPage() {
         )}
         <div className="relative z-10">
           <motion.h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold mb-12 text-center gradient-text-premium" initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }}>{t.services.pages.videoAnimationProduction.process.title}</motion.h2>
-          <motion.div className="flex flex-col md:flex-row justify-center items-center gap-8 lg:gap-10" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.12 } } }}>
+          <motion.div className="flex flex-col md:flex-row md:flex-wrap justify-center items-center gap-8 lg:gap-10" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.12 } } }}>
             {process.map((step, idx) => (
               <motion.div key={idx} className="group relative flex flex-col items-center bg-white/[0.045] backdrop-blur-xl rounded-2xl shadow-xl border border-white/10 p-8 md:p-10 hover:shadow-2xl transition-all duration-300 overflow-hidden min-w-[180px]" initial={{ opacity: 0, y: 40, scale: 0.97 }} whileInView={{ opacity: 1, y: 0, scale: 1 }} whileHover={{ scale: 1.04, y: -8 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: idx * 0.07 }}>
                 {/* Shine Effect */}

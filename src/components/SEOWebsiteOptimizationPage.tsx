@@ -129,7 +129,7 @@ export default function SEOWebsiteOptimizationPage() {
           {['SEO', 'Google', '1η Σελίδα', 'Keywords', 'Analytics', 'On-Page', 'Backlinks', 'Content', 'Ranking', 'Organic'].map((kw, i) => (
             <motion.div
               key={kw}
-              className="absolute z-10 opacity-20 text-lg md:text-2xl font-bold text-blue-400"
+              className="absolute z-10 hidden opacity-20 text-2xl font-bold text-blue-400 lg:block"
               style={{
                 top: `${10 + 60 * Math.sin((i / 10) * 2 * Math.PI)}%`,
                 left: `${10 + 80 * Math.cos((i / 10) * 2 * Math.PI)}%`,
@@ -368,7 +368,7 @@ export default function SEOWebsiteOptimizationPage() {
         )}
         <div className="relative z-10">
           <motion.h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold mb-12 text-center gradient-text-premium" initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }}>{t.services.pages.seoWebsiteOptimization.workflow.title}</motion.h2>
-          <motion.div className="flex flex-col md:flex-row justify-center items-center gap-8 lg:gap-10" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.12 } } }}>
+          <motion.div className="flex flex-col md:flex-row md:flex-wrap justify-center items-center gap-8 lg:gap-10" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.12 } } }}>
             {workflow.map((step, idx) => (
               <motion.div key={step.title} className="group relative flex flex-col items-center bg-white/[0.045] backdrop-blur-xl rounded-2xl shadow-xl border border-white/10 p-8 md:p-10 hover:shadow-2xl transition-all duration-300 overflow-hidden min-w-[180px]" initial={{ opacity: 0, y: 40, scale: 0.97 }} whileInView={{ opacity: 1, y: 0, scale: 1 }} whileHover={{ scale: 1.04, y: -8 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: idx * 0.07 }}>
                 {/* Shine Effect */}

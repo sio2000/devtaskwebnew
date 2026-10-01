@@ -138,7 +138,7 @@ export default function UXUIDesignPage() {
             ].map((kw, i) => (
               <motion.div
                 key={kw}
-                className="absolute z-10 opacity-20 text-lg md:text-2xl font-bold text-purple-400"
+                className="absolute z-10 hidden opacity-20 text-2xl font-bold text-purple-400 lg:block"
                 style={{
                   top: `${10 + 60 * Math.sin((i / 10) * 2 * Math.PI)}%`,
                   left: `${10 + 80 * Math.cos((i / 10) * 2 * Math.PI)}%`,
@@ -154,7 +154,7 @@ export default function UXUIDesignPage() {
         )}
         {/* Hero Content */}
         <div className="relative z-20 max-w-3xl mx-auto px-4 py-32 text-center flex flex-col items-center">
-          <h1 className="text-5xl md:text-6xl font-extrabold mb-6 drop-shadow-lg tracking-tight bg-gradient-to-r from-purple-700 to-blue-600 bg-clip-text text-transparent" style={{ fontFamily: "'IBM Plex Sans', 'Inter', sans-serif" }}>
+          <h1 className="text-5xl md:text-6xl font-extrabold mb-6 drop-shadow-lg tracking-tight bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent" style={{ fontFamily: "'IBM Plex Sans', 'Inter', sans-serif" }}>
             {typed}
           </h1>
           <p className="text-xl md:text-2xl text-paper-dim mb-10 font-medium max-w-2xl mx-auto">
@@ -185,7 +185,7 @@ export default function UXUIDesignPage() {
                   <div className="mb-2 flex items-center justify-center w-12 h-12 rounded-full bg-gradient-to-br from-iris/15 to-iris/10 shadow-inner border-2 border-iris/30">
                     {s.icon}
                   </div>
-                  <span className="text-sm font-semibold text-purple-900 mb-1 text-center leading-tight">{s.title}</span>
+                  <span className="text-sm font-semibold text-purple-200 mb-1 text-center leading-tight">{s.title}</span>
                   <span className="text-xs text-paper-muted text-center leading-tight">{s.desc}</span>
                 </div>
               ))}
@@ -218,7 +218,7 @@ export default function UXUIDesignPage() {
         )}
         <div className="relative z-10">
           <motion.h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold mb-12 text-center gradient-text-premium" initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }}>{t.services.pages.uxUIDesign.methodology.title}</motion.h2>
-          <motion.div className="flex flex-col md:flex-row justify-center items-center gap-8 lg:gap-10" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.12 } } }}>
+          <motion.div className="flex flex-col md:flex-row md:flex-wrap justify-center items-center gap-8 lg:gap-10" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.12 } } }}>
             {methodology.map((step, idx) => (
               <motion.div key={step.title} className="group relative flex flex-col items-center bg-white/[0.045] backdrop-blur-xl rounded-2xl shadow-xl border border-white/10 p-8 md:p-10 hover:shadow-2xl transition-all duration-300 overflow-hidden min-w-[180px]" initial={{ opacity: 0, y: 40, scale: 0.97 }} whileInView={{ opacity: 1, y: 0, scale: 1 }} whileHover={{ scale: 1.04, y: -8 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: idx * 0.07 }}>
                 {/* Shine Effect */}
@@ -231,7 +231,7 @@ export default function UXUIDesignPage() {
                 <div className="relative z-10 mb-4 flex items-center justify-center w-14 h-14 rounded-full bg-gradient-to-br from-iris/15 to-iris/10 shadow-inner group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300 border-4 border-iris/30 group-hover:border-purple-300">
                   {step.icon}
                 </div>
-                <h4 className="relative z-10 text-base font-bold text-purple-900 mb-2 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-purple-600 group-hover:to-blue-600 transition-all duration-300 tracking-tight">{step.title}</h4>
+                <h4 className="relative z-10 text-base font-bold text-purple-200 mb-2 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-purple-600 group-hover:to-blue-600 transition-all duration-300 tracking-tight">{step.title}</h4>
                 <p className="relative z-10 text-paper-dim mb-4 text-sm leading-relaxed">{step.desc}</p>
                 {idx < methodology.length - 1 && <div className="relative z-10 w-1 h-10 bg-gradient-to-b from-iris/25 to-iris/15 mx-auto my-2 rounded-full" />}
               </motion.div>
@@ -277,12 +277,12 @@ export default function UXUIDesignPage() {
               ];
               const textColors = [
                 'text-paper',
-                'text-orange-700',
+                'text-orange-400',
                 'text-paper',
                 'text-paper',
-                'text-purple-800',
-                'text-pink-700',
-                'text-yellow-800'
+                'text-purple-300',
+                'text-pink-400',
+                'text-yellow-300'
               ];
               return (
                 <motion.div key={idx} className={`group relative bg-white/[0.045] backdrop-blur-xl rounded-3xl shadow-xl border ${borderColors[idx]} flex flex-col items-center text-center overflow-hidden hover:shadow-2xl transition-all duration-300`} initial={{ opacity: 0, y: 40, scale: 0.97 }} whileInView={{ opacity: 1, y: 0, scale: 1 }} whileHover={{ scale: 1.02, y: -4 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: idx * 0.07 }}>
@@ -293,7 +293,7 @@ export default function UXUIDesignPage() {
                     whileHover={{ x: '100%' }}
                     transition={{ duration: 0.8 }}
                   />
-                  <img src={app.img} alt={app.title} className="relative z-10 w-full h-56 object-cover object-top cursor-pointer transition-transform duration-200 hover:scale-105" onClick={() => setModalImg(app.img)} />
+                  <img src={app.img} alt={app.title} className="relative z-10 w-full h-auto sm:h-56 object-cover object-top cursor-pointer transition-transform duration-200 hover:scale-105" onClick={() => setModalImg(app.img)} />
                   <div className="relative z-10 p-6 md:p-8 flex flex-col flex-1">
                     <h4 className={`text-xl font-bold ${textColors[idx]} mb-2`}>{app.title}</h4>
                     <p className="text-paper-dim mb-4 text-base leading-relaxed">{app.desc}</p>

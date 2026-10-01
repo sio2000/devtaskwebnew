@@ -54,7 +54,7 @@ const uxFocusIcons = [
 // TechTabs icons arrays (hardcoded as they are technology names)
 const techTabsIcons = [
   [
-    { icon: <SiWoocommerce className="text-purple-700 text-4xl" />, name: 'WooCommerce' },
+    { icon: <SiWoocommerce className="text-purple-400 text-4xl" />, name: 'WooCommerce' },
     { icon: <SiShopify className="text-green-500 text-4xl" />, name: 'Shopify' },
     { icon: <SiMagento className="text-orange-500 text-4xl" />, name: 'Magento' },
     { icon: <SiLaravel className="text-red-500 text-4xl" />, name: 'Laravel' },
@@ -145,7 +145,7 @@ export default function EcommerceDevelopmentPage() {
           {['E-shop', 'Cart', 'Checkout', 'ERP', 'CRM', 'WooCommerce', 'Shopify', 'Magento', 'Stripe', 'PayPal', 'Viva', 'SEO'].map((kw, i) => (
             <motion.div
               key={kw}
-              className="absolute z-10 opacity-20 text-lg md:text-2xl font-bold text-blue-400"
+              className="absolute z-10 hidden opacity-20 text-2xl font-bold text-blue-400 lg:block"
               style={{
                 top: `${10 + 60 * Math.sin((i / 12) * 2 * Math.PI)}%`,
                 left: `${10 + 80 * Math.cos((i / 12) * 2 * Math.PI)}%`,
@@ -278,9 +278,9 @@ export default function EcommerceDevelopmentPage() {
         )}
         <div className="relative z-10">
           <motion.h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold mb-12 text-center gradient-text-premium" initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }}>{t.services.pages.ecommerceDevelopment.technologies.title}</motion.h2>
-          <div className="flex justify-center mb-8 gap-4">
+          <div className="flex flex-wrap justify-center mb-8 gap-3 px-4 sm:gap-4">
             {techTabs.map((tab, idx) => (
-              <button key={tab.label} className={`px-6 py-3 rounded-full font-semibold text-lg transition-all duration-300 ${currentTab === idx ? 'bg-gradient-to-r from-blue-600 to-purple-400 text-white shadow-lg' : 'bg-white/[0.045] backdrop-blur-lg text-iris-bright border border-white/10 hover:shadow-md'}`} onClick={() => setCurrentTab(idx)}>{tab.label}</button>
+              <button key={tab.label} className={`px-5 py-2.5 sm:px-6 sm:py-3 rounded-full font-semibold text-base sm:text-lg transition-all duration-300 ${currentTab === idx ? 'bg-gradient-to-r from-blue-600 to-purple-400 text-white shadow-lg' : 'bg-white/[0.045] backdrop-blur-lg text-iris-bright border border-white/10 hover:shadow-md'}`} onClick={() => setCurrentTab(idx)}>{tab.label}</button>
             ))}
           </div>
           <motion.div className="flex flex-wrap justify-center gap-8 lg:gap-10 mb-12" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.08 } } }}>

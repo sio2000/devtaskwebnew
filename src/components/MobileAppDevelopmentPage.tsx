@@ -139,9 +139,9 @@ export default function MobileAppDevelopmentPage() {
           <motion.div className="absolute bottom-1/4 right-1/4 w-48 h-48 bg-white/[0.06] rounded-full blur-3xl" animate={{ y: [0, 30, 0], rotate: [0, -5, 0] }} transition={{ duration: 8, repeat: Infinity, ease: 'easeInOut', delay: 1 }} />
         </motion.div>
         {/* HERO CONTENT SPLIT LAYOUT */}
-        <div className="relative z-20 max-w-7xl mx-auto px-4 py-32 w-full flex flex-col md:flex-row items-center justify-between gap-10">
+        <div className="relative z-20 max-w-7xl mx-auto px-4 py-32 w-full flex flex-col lg:flex-row items-center justify-between gap-10">
           {/* Left: Text */}
-          <motion.div className="flex-1 flex flex-col items-start md:items-start text-left" initial={{ opacity: 0, x: -40 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8 }}>
+          <motion.div className="flex-1 min-w-0 flex flex-col items-start text-left" initial={{ opacity: 0, x: -40 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8 }}>
             <motion.h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6 drop-shadow-lg tracking-tight bg-gradient-to-r from-blue-700 to-purple-600 bg-clip-text text-transparent px-4 break-words" initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }} style={{ fontFamily: "'IBM Plex Sans', 'Inter', sans-serif", wordBreak: 'break-word', overflowWrap: 'break-word' }}>
               {t.services.pages.mobileAppDevelopment.hero.title}
             </motion.h1>
@@ -162,7 +162,7 @@ export default function MobileAppDevelopmentPage() {
           </motion.div>
           {/* Right: Animated Phone Images */}
           <motion.div
-            className="flex-1 flex items-center justify-center w-full md:w-auto mt-12 md:mt-0 gap-6"
+            className="flex-1 flex items-center justify-center w-full lg:w-auto mt-12 lg:mt-0 gap-6"
             initial={{ opacity: 0, x: 60, scale: 0.95 }}
             animate={{ opacity: 1, x: 0, scale: 1 }}
             transition={{ duration: 1, delay: 0.2 }}
@@ -170,7 +170,7 @@ export default function MobileAppDevelopmentPage() {
             <motion.img
               src={phoneImg}
               alt="Mobile Phone"
-              className="w-[160px] h-[260px] md:w-[220px] md:h-[360px] object-cover rounded-3xl shadow-2xl border-4 border-white/10/60 bg-white/[0.045]"
+              className="w-[132px] h-[215px] min-[375px]:w-[160px] min-[375px]:h-[260px] md:w-[220px] md:h-[360px] object-cover rounded-3xl shadow-2xl border-4 border-white/10/60 bg-white/[0.045]"
               animate={{ y: [0, -18, 0, 18, 0] }}
               transition={{ duration: 7, repeat: Infinity, ease: 'easeInOut' }}
               style={{ boxShadow: '0 8px 48px 0 rgba(80,80,200,0.13)' }}
@@ -178,7 +178,7 @@ export default function MobileAppDevelopmentPage() {
             <motion.img
               src={smartphoneImg}
               alt="Smartphone"
-              className="w-[160px] h-[260px] md:w-[220px] md:h-[360px] object-cover rounded-3xl shadow-2xl border-4 border-white/10/60 bg-white/[0.045]"
+              className="w-[132px] h-[215px] min-[375px]:w-[160px] min-[375px]:h-[260px] md:w-[220px] md:h-[360px] object-cover rounded-3xl shadow-2xl border-4 border-white/10/60 bg-white/[0.045]"
               animate={{ y: [0, 18, 0, -18, 0] }}
               transition={{ duration: 7, repeat: Infinity, ease: 'easeInOut', delay: 2 }}
               style={{ boxShadow: '0 8px 48px 0 rgba(80,80,200,0.13)' }}
@@ -212,9 +212,9 @@ export default function MobileAppDevelopmentPage() {
             <div className="group bg-white/[0.045] backdrop-blur-xl rounded-2xl shadow-2xl border border-green-200/60 p-6 flex flex-col items-center text-center transition-all duration-300 hover:shadow-3xl hover:scale-105 hover:rotate-1 focus:outline-none focus:ring-4 focus:ring-green-100 relative overflow-hidden w-full">
               <div className="absolute -top-6 -left-6 w-16 h-16 bg-gradient-to-br from-green-200 to-iris/15 opacity-20 rounded-full blur-2xl z-0"></div>
               <div className="relative z-10 mb-3 flex items-center justify-center w-14 h-14 rounded-full bg-green-200 shadow-inner border-2 border-green-300">
-                <FaAndroid className="text-green-700 text-3xl" />
+                <FaAndroid className="text-green-400 text-3xl" />
               </div>
-              <h3 className="text-lg font-bold text-green-900 mb-1 relative z-10">{t.services.pages.mobileAppDevelopment.appTypes.cards.android.title}</h3>
+              <h3 className="text-lg font-bold text-green-300 mb-1 relative z-10">{t.services.pages.mobileAppDevelopment.appTypes.cards.android.title}</h3>
               <span className="inline-block px-2 py-1 rounded bg-green-100 text-green-700 text-xs font-semibold mb-2 relative z-10">{t.services.pages.mobileAppDevelopment.appTypes.cards.android.badge}</span>
               <p className="text-paper-dim text-base mb-1 relative z-10">{t.services.pages.mobileAppDevelopment.appTypes.cards.android.description}</p>
               <p className="text-paper-muted text-sm relative z-10">{t.services.pages.mobileAppDevelopment.appTypes.cards.android.detail}</p>
@@ -223,10 +223,10 @@ export default function MobileAppDevelopmentPage() {
             <div className="group bg-white/[0.045] backdrop-blur-xl rounded-2xl shadow-2xl border border-iris/30/60 p-6 flex flex-col items-center text-center transition-all duration-300 hover:shadow-3xl hover:scale-105 hover:-rotate-1 focus:outline-none focus:ring-4 focus:ring-purple-100 relative overflow-hidden w-full">
               <div className="absolute -bottom-6 right-6 w-16 h-16 bg-gradient-to-br from-iris/20 to-iris/15 opacity-20 rounded-full blur-2xl z-0"></div>
               <div className="relative z-10 mb-3 flex items-center justify-center w-14 h-14 rounded-full bg-purple-200 shadow-inner border-2 border-purple-300">
-                <FaCloud className="text-purple-700 text-3xl" />
+                <FaCloud className="text-purple-400 text-3xl" />
               </div>
-              <h3 className="text-lg font-bold text-purple-900 mb-1 relative z-10">{t.services.pages.mobileAppDevelopment.appTypes.cards.pwa.title}</h3>
-              <span className="inline-block px-2 py-1 rounded bg-iris/10 text-purple-700 text-xs font-semibold mb-2 relative z-10">{t.services.pages.mobileAppDevelopment.appTypes.cards.pwa.badge}</span>
+              <h3 className="text-lg font-bold text-purple-300 mb-1 relative z-10">{t.services.pages.mobileAppDevelopment.appTypes.cards.pwa.title}</h3>
+              <span className="inline-block px-2 py-1 rounded bg-iris/10 text-purple-300 text-xs font-semibold mb-2 relative z-10">{t.services.pages.mobileAppDevelopment.appTypes.cards.pwa.badge}</span>
               <p className="text-paper-dim text-base mb-1 relative z-10">{t.services.pages.mobileAppDevelopment.appTypes.cards.pwa.description}</p>
               <p className="text-paper-muted text-sm relative z-10">{t.services.pages.mobileAppDevelopment.appTypes.cards.pwa.detail}</p>
             </div>
@@ -307,7 +307,7 @@ export default function MobileAppDevelopmentPage() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
           {/* Finance App (UIsamples) */}
           <div className="bg-white/[0.05] rounded-3xl shadow-xl border border-white/10 flex flex-col items-center text-center overflow-hidden">
-            <img src={UIsamples} alt="Finance App" className="w-full h-56 object-cover object-top cursor-pointer transition-transform duration-200 hover:scale-105" onClick={() => setModalImg(UIsamples)} />
+            <img src={UIsamples} alt="Finance App" className="w-full h-auto sm:h-56 object-cover object-top cursor-pointer transition-transform duration-200 hover:scale-105" onClick={() => setModalImg(UIsamples)} />
             <div className="p-6 md:p-8 flex flex-col flex-1">
               <h4 className="text-xl font-bold text-paper mb-2">{t.services.pages.mobileAppDevelopment.uiSamples.apps.finance.title}</h4>
               <p className="text-paper-dim mb-4 text-base leading-relaxed">{t.services.pages.mobileAppDevelopment.uiSamples.apps.finance.description}</p>
@@ -315,15 +315,15 @@ export default function MobileAppDevelopmentPage() {
           </div>
           {/* Food Delivery App (UIrestaurant) */}
           <div className="bg-white/[0.05] rounded-3xl shadow-xl border border-orange-100/40 flex flex-col items-center text-center overflow-hidden">
-            <img src={UIrestaurant} alt="Food Delivery App" className="w-full h-56 object-cover object-top cursor-pointer transition-transform duration-200 hover:scale-105" onClick={() => setModalImg(UIrestaurant)} />
+            <img src={UIrestaurant} alt="Food Delivery App" className="w-full h-auto sm:h-56 object-cover object-top cursor-pointer transition-transform duration-200 hover:scale-105" onClick={() => setModalImg(UIrestaurant)} />
             <div className="p-6 md:p-8 flex flex-col flex-1">
-              <h4 className="text-xl font-bold text-orange-700 mb-2">{t.services.pages.mobileAppDevelopment.uiSamples.apps.food.title}</h4>
+              <h4 className="text-xl font-bold text-orange-400 mb-2">{t.services.pages.mobileAppDevelopment.uiSamples.apps.food.title}</h4>
               <p className="text-paper-dim mb-4 text-base leading-relaxed">{t.services.pages.mobileAppDevelopment.uiSamples.apps.food.description}</p>
             </div>
           </div>
           {/* Travel Planner App (UItravellerapp) */}
           <div className="bg-white/[0.05] rounded-3xl shadow-xl border border-white/10 flex flex-col items-center text-center overflow-hidden">
-            <img src={UItravellerapp} alt="Travel Planner App" className="w-full h-56 object-cover object-top cursor-pointer transition-transform duration-200 hover:scale-105" onClick={() => setModalImg(UItravellerapp)} />
+            <img src={UItravellerapp} alt="Travel Planner App" className="w-full h-auto sm:h-56 object-cover object-top cursor-pointer transition-transform duration-200 hover:scale-105" onClick={() => setModalImg(UItravellerapp)} />
             <div className="p-6 md:p-8 flex flex-col flex-1">
               <h4 className="text-xl font-bold text-paper mb-2">{t.services.pages.mobileAppDevelopment.uiSamples.apps.travel.title}</h4>
               <p className="text-paper-dim mb-4 text-base leading-relaxed">{t.services.pages.mobileAppDevelopment.uiSamples.apps.travel.description}</p>
@@ -331,7 +331,7 @@ export default function MobileAppDevelopmentPage() {
           </div>
           {/* Crypto Wallet App (UIcryptowallet) */}
           <div className="bg-white/[0.05] rounded-3xl shadow-xl border border-iris/30/40 flex flex-col items-center text-center overflow-hidden">
-            <img src={UIcryptowallet} alt="Crypto Wallet App" className="w-full h-56 object-cover object-top cursor-pointer transition-transform duration-200 hover:scale-105" onClick={() => setModalImg(UIcryptowallet)} />
+            <img src={UIcryptowallet} alt="Crypto Wallet App" className="w-full h-auto sm:h-56 object-cover object-top cursor-pointer transition-transform duration-200 hover:scale-105" onClick={() => setModalImg(UIcryptowallet)} />
             <div className="p-6 md:p-8 flex flex-col flex-1">
               <h4 className="text-xl font-bold text-paper mb-2">{t.services.pages.mobileAppDevelopment.uiSamples.apps.crypto.title}</h4>
               <p className="text-paper-dim mb-4 text-base leading-relaxed">{t.services.pages.mobileAppDevelopment.uiSamples.apps.crypto.description}</p>
@@ -339,25 +339,25 @@ export default function MobileAppDevelopmentPage() {
           </div>
           {/* Smart Home Control App (UIsmarthome) */}
           <div className="bg-white/[0.05] rounded-3xl shadow-xl border border-white/10/40 flex flex-col items-center text-center overflow-hidden">
-            <img src={UIsmarthome} alt="Smart Home App" className="w-full h-56 object-cover object-top cursor-pointer transition-transform duration-200 hover:scale-105" onClick={() => setModalImg(UIsmarthome)} />
+            <img src={UIsmarthome} alt="Smart Home App" className="w-full h-auto sm:h-56 object-cover object-top cursor-pointer transition-transform duration-200 hover:scale-105" onClick={() => setModalImg(UIsmarthome)} />
             <div className="p-6 md:p-8 flex flex-col flex-1">
-              <h4 className="text-xl font-bold text-purple-800 mb-2">{t.services.pages.mobileAppDevelopment.uiSamples.apps.smartHome.title}</h4>
+              <h4 className="text-xl font-bold text-purple-300 mb-2">{t.services.pages.mobileAppDevelopment.uiSamples.apps.smartHome.title}</h4>
               <p className="text-paper-dim mb-4 text-base leading-relaxed">{t.services.pages.mobileAppDevelopment.uiSamples.apps.smartHome.description}</p>
             </div>
           </div>
           {/* Dating App (UIDatingApp) */}
           <div className="bg-white/[0.05] rounded-3xl shadow-xl border border-pink-100/40 flex flex-col items-center text-center overflow-hidden">
-            <img src={UIDatingApp} alt="Dating App" className="w-full h-56 object-cover object-top cursor-pointer transition-transform duration-200 hover:scale-105" onClick={() => setModalImg(UIDatingApp)} />
+            <img src={UIDatingApp} alt="Dating App" className="w-full h-auto sm:h-56 object-cover object-top cursor-pointer transition-transform duration-200 hover:scale-105" onClick={() => setModalImg(UIDatingApp)} />
             <div className="p-6 md:p-8 flex flex-col flex-1">
-              <h4 className="text-xl font-bold text-pink-700 mb-2">{t.services.pages.mobileAppDevelopment.uiSamples.apps.dating.title}</h4>
+              <h4 className="text-xl font-bold text-pink-400 mb-2">{t.services.pages.mobileAppDevelopment.uiSamples.apps.dating.title}</h4>
               <p className="text-paper-dim mb-4 text-base leading-relaxed">{t.services.pages.mobileAppDevelopment.uiSamples.apps.dating.description}</p>
             </div>
           </div>
           {/* Book Reading App (UIBookReadingApp) */}
           <div className="bg-white/[0.05] rounded-3xl shadow-xl border border-yellow-100/40 flex flex-col items-center text-center overflow-hidden">
-            <img src={UIBookReadingApp} alt="Book Reading App" className="w-full h-56 object-cover object-top cursor-pointer transition-transform duration-200 hover:scale-105" onClick={() => setModalImg(UIBookReadingApp)} />
+            <img src={UIBookReadingApp} alt="Book Reading App" className="w-full h-auto sm:h-56 object-cover object-top cursor-pointer transition-transform duration-200 hover:scale-105" onClick={() => setModalImg(UIBookReadingApp)} />
             <div className="p-6 md:p-8 flex flex-col flex-1">
-              <h4 className="text-xl font-bold text-yellow-800 mb-2">{t.services.pages.mobileAppDevelopment.uiSamples.apps.book.title}</h4>
+              <h4 className="text-xl font-bold text-yellow-300 mb-2">{t.services.pages.mobileAppDevelopment.uiSamples.apps.book.title}</h4>
               <p className="text-paper-dim mb-4 text-base leading-relaxed">{t.services.pages.mobileAppDevelopment.uiSamples.apps.book.description}</p>
             </div>
           </div>

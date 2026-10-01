@@ -95,14 +95,14 @@ const Header = memo(() => {
             <span className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-xl bg-white p-1.5 shadow-sm sm:h-12 sm:w-12">
               <img src={logo} alt="DevTaskHub Logo" className="h-full w-full object-contain" />
             </span>
-            <span className="flex min-w-0 flex-col leading-none">
+            <span className="flex min-w-0 flex-col items-start text-left leading-none">
               <span className="font-display whitespace-nowrap text-lg font-bold tracking-tight text-paper sm:text-xl">DevTaskHub</span>
-              <span className="font-editorial mt-0.5 hidden truncate text-[13px] italic text-paper-dim sm:block">{t.nav.tagline}</span>
+              <span className="font-editorial mt-0.5 hidden truncate text-[13px] italic text-paper-dim sm:block lg:hidden xl:block">{t.nav.tagline}</span>
             </span>
           </motion.button>
 
           {/* Desktop nav */}
-          <div className="hidden items-center gap-1 md:flex">
+          <div className="hidden items-center gap-1 lg:flex">
             {navEntries.map(([key, label]) => {
               if (key === 'contact') return null;
               const links = [
@@ -132,7 +132,7 @@ const Header = memo(() => {
           {/* Right cluster */}
           <div className="flex flex-shrink-0 items-center gap-2 sm:gap-3">
             {/* Language */}
-            <div className="language-dropdown relative hidden md:block">
+            <div className="language-dropdown relative hidden lg:block">
               <motion.button
                 onClick={() => setIsLangMenuOpen((v) => !v)}
                 className="flex h-10 items-center gap-2 rounded-full border border-[var(--line)] bg-white/[0.03] px-3 text-paper-dim transition-colors hover:border-[var(--line-strong)] hover:text-paper"
@@ -177,7 +177,7 @@ const Header = memo(() => {
             {/* Contact CTA */}
             <button
               onClick={() => scrollToSection('contact')}
-              className="btn-accent group hidden h-10 px-5 text-sm md:inline-flex"
+              className="btn-accent group !hidden h-10 px-5 text-sm lg:!inline-flex"
             >
               <span>{t.nav.contact}</span>
               <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
@@ -186,7 +186,7 @@ const Header = memo(() => {
             {/* Mobile toggle */}
             <button
               onClick={() => setIsMenuOpen((v) => !v)}
-              className="flex h-10 w-10 items-center justify-center rounded-full border border-[var(--line)] text-paper md:hidden"
+              className="flex h-10 w-10 items-center justify-center rounded-full border border-[var(--line)] text-paper lg:hidden"
               aria-label="Toggle menu"
             >
               <AnimatePresence mode="wait" initial={false}>
@@ -208,7 +208,7 @@ const Header = memo(() => {
         <AnimatePresence>
           {isMenuOpen && (
             <motion.div
-              className="md:hidden"
+              className="lg:hidden"
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: 'auto' }}
               exit={{ opacity: 0, height: 0 }}
