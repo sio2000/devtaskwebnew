@@ -62,7 +62,7 @@ const LoadingScreen: React.FC = () => {
               />
             </div>
 
-            <h1 className="font-display mb-2 text-3xl font-bold text-paper sm:text-4xl">DevTaskHub</h1>
+            <p className="font-display mb-2 text-3xl font-bold text-paper sm:text-4xl">DevTaskHub</p>
             <p className="font-editorial mb-7 px-6 text-center text-base italic text-paper-dim">{t.nav.tagline}</p>
 
             <div className="h-1 w-44 overflow-hidden rounded-full bg-white/10">

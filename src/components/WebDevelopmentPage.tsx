@@ -20,17 +20,9 @@ import codeImg from '../assets/code.jpg';
 import { useIsMobile } from '../hooks/useIsMobile';
 import { useLanguage } from '../hooks/useLanguage';
 import { translations } from '../data/translations';
+import { siteProjects } from '../data/work';
 import { motion } from 'framer-motion';
-import hotelImg from '../assets/Hotel.png';
-import architectureImg from '../assets/architecture.png';
-import hydrogenImg from '../assets/hydrogen.png';
-import cryptoImg from '../assets/crypto.png';
-import jewelsImg from '../assets/jewels.png';
 import cmdImg from '../assets/cmd.jpg';
-import advancedDermaImg from '../assets/advanced_derma.png';
-import leonidionHousesImg from '../assets/leonidionhouses.png';
-import bagImg from '../assets/bag.png';
-import tparkingSiteImg from '../assets/tparking.png';
 
 const floatingIcons = [
   { icon: <FaCode />, style: 'top-10 left-10 text-blue-400' },
@@ -366,54 +358,9 @@ export default function WebDevelopmentPage() {
         <div className="relative z-10">
           <motion.h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold mb-12 text-center gradient-text-premium" initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }}>{t.services.pages.webDevelopment.samples.title}</motion.h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
-            {[
-              {
-                img: architectureImg,
-                url: 'https://in-mavridis.gr/',
-                sampleIndex: 0,
-              },
-              {
-                img: hydrogenImg,
-                url: 'https://hydrogenlife.eu/',
-                sampleIndex: 1,
-              },
-              {
-                img: cryptoImg,
-                url: 'https://panitoscryptocoin.com/',
-                sampleIndex: 2,
-              },
-              {
-                img: hotelImg,
-                url: 'https://serenity-hotel-lux.netlify.app/',
-                sampleIndex: 3,
-              },
-              {
-                img: jewelsImg,
-                url: 'https://stsrr.netlify.app/',
-                sampleIndex: 4,
-              },
-              {
-                img: advancedDermaImg,
-                url: 'https://advanced-derma.com/',
-                sampleIndex: 5,
-              },
-              {
-                img: leonidionHousesImg,
-                url: 'https://www.leonidionhouses.com/',
-                sampleIndex: 7,
-              },
-              {
-                img: bagImg,
-                url: 'https://idyllic-mermaid-415d9f.netlify.app/',
-                sampleIndex: 8,
-              },
-              {
-                img: tparkingSiteImg,
-                url: 'https://t-parking.com/',
-                sampleIndex: 9,
-              }
-            ].map((s, idx) => {
-              const sample = t.services.pages.webDevelopment.samples.items[s.sampleIndex];
+            {siteProjects.map((p, idx) => {
+              const s = { img: p.image, url: p.url };
+              const sample = { title: p.title[language], desc: p.description[language] };
               return (
               <motion.div
                 key={sample.title}
@@ -422,7 +369,7 @@ export default function WebDevelopmentPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 whileHover={{ scale: 1.02, y: -8 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: idx * 0.1 }}
+                transition={{ duration: 0.5, delay: (idx % 3) * 0.1 }}
               >
                 {/* Shine Effect */}
                 <motion.div

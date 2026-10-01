@@ -580,8 +580,25 @@ header, nav {
   }
 }
 
+/* Hero motion graphic: slow vertical drift, compositor only */
+@keyframes hero-drift {
+  0%, 100% { transform: translate3d(0, 0, 0); }
+  50% { transform: translate3d(0, -10px, 0); }
+}
+.hero-drift { animation: hero-drift 7s ease-in-out infinite; will-change: transform; }
+.hero-drift-slow { animation-duration: 9s; animation-delay: -3s; }
+.hero-drift-fast { animation-duration: 6s; animation-delay: -1.5s; }
+
+/* Process timeline: pulse ring on the active step */
+@keyframes step-ring {
+  0% { transform: scale(1); opacity: 0.55; }
+  100% { transform: scale(1.9); opacity: 0; }
+}
+.step-ring { animation: step-ring 2.4s cubic-bezier(0.22, 1, 0.36, 1) infinite; }
+
 @media (prefers-reduced-motion: reduce) {
   .grain-overlay { display: none; }
+  .hero-drift, .step-ring { animation: none !important; }
   .marquee-track { animation: none !important; }
   .aurora-blob { animation: none !important; }
   .cursor-dot, .cursor-ring { display: none; }

@@ -55,6 +55,8 @@ const Breadcrumbs: React.FC = () => {
         displayName = t.footer.services.gameDevelopment;
       } else if (path === 'contact' || path === 'contactme') {
         displayName = t.nav.contact;
+      } else if (path === 'portfolio') {
+        displayName = 'Portfolio';
       } else if (path === 'terms') {
         displayName = t.footer.terms;
       }

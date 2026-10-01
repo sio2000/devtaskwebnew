@@ -20,23 +20,23 @@ export const translations = {
       websiteSamples: 'Δείγματα Ιστοσελίδων',
       slides: [
         {
-          title: 'Κατασκευή Μοντέρνων Ιστοσελίδων',
-          subtitle: 'Δημιουργούμε responsive ιστοσελίδες με εστίαση στην απόδοση και UX'
+          title: 'Ιστοσελίδες που φέρνουν πελάτες',
+          subtitle: 'Γρήγορες, responsive και έτοιμες για Google.'
         },
         {
-          title: '100% Custom Mobile Εφαρμογές',
-          subtitle: 'Native και cross-platform λύσεις για Android & iOS'
+          title: 'Εφαρμογές για iOS και Android',
+          subtitle: 'Από την ιδέα μέχρι το App Store και το Google Play.'
         },
         {
           title: 'Η ομάδα προγραμματιστών σας',
-          subtitle: 'AI λύσεις, e-commerce και παιχνίδια που εντυπωσιάζουν'
+          subtitle: 'Ιστοσελίδες, εφαρμογές, e-shop και AI. Από τη Θεσσαλονίκη, για όλη την Ελλάδα.'
         }
       ]
     },
     // Services
     services: {
       title: 'Υπηρεσίες Κατασκευής Ιστοσελίδων & Εφαρμογών',
-      subtitle: 'Κατασκευή ιστοσελίδων, e-shop, mobile εφαρμογών, AI chatbots και SEO στη Θεσσαλονίκη — εξειδικευμένες λύσεις για επιχειρήσεις και επαγγελματίες με κορυφαία ποιότητα και σύγχρονο design.',
+      subtitle: 'Ό,τι χρειάζεται η επιχείρησή σου online: ιστοσελίδα, e-shop, εφαρμογή, AI chatbot και SEO.',
       more: 'Περισσότερα',
       items: {
         web: {
@@ -117,49 +117,7 @@ export const translations = {
           },
           samples: {
             title: 'Δείγματα Έργων',
-            viewProject: 'Δείτε το έργο',
-            items: [
-              {
-                title: 'Αρχιτεκτονικό & Κατασκευαστικό Γραφείο',
-                desc: 'Σύγχρονη παρουσίαση υπηρεσιών και portfolio για τεχνικό γραφείο.'
-              },
-              {
-                title: 'Κέντρο Ευεξίας',
-                desc: 'Ιστοσελίδα για wellness center με online κρατήσεις και δυναμικό περιεχόμενο.'
-              },
-              {
-                title: 'Προώθηση Custom CryptoCoin',
-                desc: 'Landing page για την προώθηση custom κρυπτονομίσματος.'
-              },
-              {
-                title: 'Ξενοδοχείο',
-                desc: 'Προωθητικό site ξενοδοχείου με gallery και φόρμα επικοινωνίας.'
-              },
-              {
-                title: 'Πολυτελές Κοσμηματοπωλείο',
-                desc: 'E-commerce κοσμηματοπωλείου που εκθέτει πολύτιμα κοσμήματα και πολυτελή ρολόγια.'
-              },
-              {
-                title: 'Advanced Derma — Δερματολογία & Αισθητική Ιατρική',
-                desc: 'Σύστημα κρατήσεων ραντεβού για διάσημο δερματολογικό ιατρείο σε Αθήνα & Πειραιά, με gallery, online booking και παρουσίαση υπηρεσιών.'
-              },
-              {
-                title: "Devil's Barber — Premium Barber Studio",
-                desc: 'Barber shop στην Άρτα με street & rap αισθητική, gallery, online booking και προβολή υπηρεσιών κουρέματος & γενιών.'
-              },
-              {
-                title: 'Leonidion Houses — Booking Καταλυμάτων',
-                desc: 'Ιστοσελίδα κρατήσεων 6 καταλυμάτων στο Λεωνίδιο με online ηλεκτρονικές πληρωμές και πλήρες σύστημα διαχειριστή για κρατήσεις, ακυρώσεις & ενημερώσεις.'
-              },
-              {
-                title: 'HANDSTUFF — Χειροποίητες Δερμάτινες Τσάντες',
-                desc: 'E-shop για χειροποίητες δερμάτινες τσάντες με κατάλογο προϊόντων, gallery και branding.'
-              },
-              {
-                title: 'T-Parking — Real-time Parking Greece',
-                desc: 'Επίσημη ιστοσελίδα για την 1η εφαρμογή στην Ελλάδα που βρίσκει θέσεις parking στον δημόσιο δρόμο σε πραγματικό χρόνο, εντελώς δωρεάν.'
-              }
-            ]
+            viewProject: 'Δείτε το έργο'
           },
           process: {
             title: 'Πορεία Υλοποίησης',
@@ -352,19 +310,7 @@ export const translations = {
           },
           portfolio: {
             title: 'Πελατολόγιο & Παραδείγματα',
-            viewProject: 'Δείτε το έργο',
-            clients: [
-              { name: 'Διαδικτυακό Ιατρείο Γονέων και Εφήβων', desc: 'Πλατφόρμα τηλεϊατρικής με online ραντεβού & διαχείριση.' },
-              { name: 'HydrogenLife', desc: 'E-shop wellness με online κρατήσεις.' },
-              { name: 'Serenity Hotel', desc: 'Online κρατήσεις & διαχείριση.' },
-              { name: 'PanitosCrypto', desc: 'Προώθηση & πωλήσεις crypto.' },
-              { name: 'Πολυτελές Κοσμηματοπωλείο STSRR', desc: 'E-commerce πολυτελών κοσμημάτων και ρολόγων.' },
-              { name: 'Advanced Derma — Δερματολογία & Αισθητική Ιατρική', desc: 'Σύστημα online κρατήσεων ραντεβού με gallery & παρουσίαση υπηρεσιών για δερματολογικό ιατρείο.' },
-              { name: "Devil's Barber — Premium Barber Studio", desc: 'Barber shop με street & rap αισθητική, gallery και online booking.' },
-              { name: 'Leonidion Houses — Booking Καταλυμάτων', desc: '6 καταλύματα με online πληρωμές, σύστημα διαχειριστή για κρατήσεις, ακυρώσεις & ενημερώσεις.' },
-              { name: 'HANDSTUFF — Χειροποίητες Δερμάτινες Τσάντες', desc: 'E-shop για χειροποίητες δερμάτινες τσάντες με κατάλογο, gallery και branding.' },
-              { name: 'T-Parking — Επίσημη Ιστοσελίδα Εφαρμογής', desc: 'Ιστοσελίδα για την 1η εφαρμογή στην Ελλάδα που βρίσκει parking σε πραγματικό χρόνο, εντελώς δωρεάν.' }
-            ]
+            viewProject: 'Δείτε το έργο'
           },
           finalCta: {
             title: 'Μετατρέψτε τις επισκέψεις σε πωλήσεις',
@@ -432,7 +378,7 @@ export const translations = {
         socialMediaManagement: {
           hero: {
             title: 'Διαχείριση Social Media',
-            subtitle: 'Στρατηγική & καθημερινή διαχείριση social προφίλ για επαγγελματίες και επιχειρήσεις. Παρέχουμε δημιουργικό περιεχόμενο, προγραμματισμένες δημοσιεύσεις, στρατηγική, κοινότητα, analytics και διαφήμιση — όλα με σκοπό την ανάπτυξη του brand σας και αύξηση της αλληλεπίδρασης.',
+            subtitle: 'Στρατηγική & καθημερινή διαχείριση social προφίλ για επαγγελματίες και επιχειρήσεις. Παρέχουμε δημιουργικό περιεχόμενο, προγραμματισμένες δημοσιεύσεις, στρατηγική, κοινότητα, analytics και διαφήμιση: όλα με σκοπό την ανάπτυξη του brand σας και αύξηση της αλληλεπίδρασης.',
             cta: 'Ζητήστε Πρόταση',
             viewTransformations: 'Δείγματα Μετασχηματισμών'
           },
@@ -441,7 +387,7 @@ export const translations = {
             items: [
               { title: 'Στρατηγική Περιεχομένου & Προγραμματισμός', desc: 'Αναλυτική στρατηγική, θεματολογία, ημερολόγιο και προγραμματισμένες αναρτήσεις.' },
               { title: 'Δημιουργία Visual Περιεχομένου', desc: 'Graphics, Reels, Stories, videos και φωτογραφίες που ξεχωρίζουν.' },
-              { title: 'Social Ads', desc: 'Meta Ads, TikTok, Instagram, LinkedIn — διαφημίσεις που φέρνουν αποτελέσματα.' },
+              { title: 'Social Ads', desc: 'Meta Ads, TikTok, Instagram, LinkedIn: διαφημίσεις που φέρνουν αποτελέσματα.' },
               { title: 'Community Management', desc: 'Αλληλεπίδραση, απαντήσεις, διαχείριση σχολίων & DM.' },
               { title: 'Reports & Insights', desc: 'Αναλυτικά reports, στατιστικά και προτάσεις βελτίωσης.' },
               { title: 'AI-Enhanced Content', desc: 'Χρήση AI για ιδέες, captions, hashtags και βελτιστοποίηση.' }
@@ -495,7 +441,7 @@ export const translations = {
             ]
           },
           finalCta: {
-            title: 'Αναβαθμίστε τα social σας — Επικοινωνήστε τώρα.',
+            title: 'Αναβαθμίστε τα social σας. Επικοινωνήστε τώρα.',
             button: 'Ξεκινήστε Σήμερα'
           }
         },
@@ -756,7 +702,7 @@ export const translations = {
         },
         aiIntegrationApplications: {
           hero: {
-            title: 'AI στις Εφαρμογές σας — Από το Όραμα στην Υλοποίηση',
+            title: 'AI στις Εφαρμογές σας: Από το Όραμα στην Υλοποίηση',
             subtitle: 'Χρησιμοποιούμε τεχνικές machine learning για ανάλυση δεδομένων, δημιουργία προβλέψεων ή έξυπνες λειτουργίες εφαρμογών.',
             cta: 'Ζητήστε Προσφορά'
           },
@@ -811,8 +757,8 @@ export const translations = {
     // About
     about: {
       title: 'Σχετικά με Εμάς',
-      subtitle: 'Η ομάδα DevTaskHub - Full-Stack Developers',
-      description: 'Με πάθος για την τεχνολογία και χρόνια εμπειρία στην ανάπτυξη λογισμικού, δημιουργούμε ψηφιακές λύσεις που συνδυάζουν καινοτομία με λειτουργικότητα. Εδρεύουμε στη Θεσσαλονίκη και συνεργαζόμαστε με πελάτες από όλη την Ελλάδα και το εξωτερικό.',
+      subtitle: 'Full-stack ομάδα στη Θεσσαλονίκη.',
+      description: 'Σχεδιάζουμε και χτίζουμε ιστοσελίδες, εφαρμογές και e-shop, από την πρώτη ιδέα μέχρι το live. Δουλεύουμε με πελάτες σε όλη την Ελλάδα και το εξωτερικό.',
       experience: 'Εξειδίκευση',
       experienceItems: [
         'Κατασκευή Ιστοσελίδων',
@@ -830,124 +776,13 @@ export const translations = {
         support: 'Υποστήριξη'
       }
     },
-    // Portfolio
+    // Portfolio (projects themselves live in src/data/work.ts)
     portfolio: {
       title: 'Δείγματα Εργασιών',
-      subtitle: 'Μερικά από τα πρόσφατα projects που έχουμε υλοποιήσει',
-      viewProject: 'Δες το Project',
-      projects: {
-        clinic: {
-          title: 'Διαδικτυακό Ιατρείο Γονέων και Εφήβων',
-          description: 'Σύγχρονη πλατφόρμα τηλεϊατρικής που παρέχει διαδικτυακές συμβουλευτικές υπηρεσίες για γονείς και εφήβους. Το σύστημα προσφέρει online ραντεβού, ασφαλή επικοινωνία με ιατρούς, διαχείριση ιατρικών εγγράφων και πρόσβαση σε εκπαιδευτικό υλικό για θέματα υγείας, εφηβείας και οικογενειακής δυναμικής.'
-        },
-        architecture: {
-          title: 'Αρχιτεκτονικό & Κατασκευαστικό Γραφείο',
-          description: 'Επαγγελματική ιστοσελίδα για αρχιτεκτονικό και κατασκευαστικό γραφείο με σύγχρονο design, portfolio έργων, παρουσίαση υπηρεσιών και βελτιστοποίηση για SEO. Η πλατφόρμα επιτρέπει την αποτελεσματική παρουσίαση των τεχνικών έργων και την επικοινωνία με πελάτες.'
-        },
-        wellness: {
-          title: 'Κέντρο Ευεξίας',
-          description: 'Πλήρης ψηφιακή πλατφόρμα για κέντρο ευεξίας με σύστημα online κρατήσεων, διαχείριση περιεχομένου (CMS), παρουσίαση υπηρεσιών wellness και ενσωματωμένο booking system. Η λύση προσφέρει seamless εμπειρία για τους πελάτες και αποτελεσματική διαχείριση για το κέντρο.'
-        },
-        hotel: {
-          title: 'Ξενοδοχείο',
-          description: 'Ελκυστική ιστοσελίδα ξενοδοχείου με interactive photo gallery, σύστημα online κρατήσεων, παρουσίαση δωματίων και υπηρεσιών, και responsive design. Η πλατφόρμα δημιουργήθηκε για να προσελκύει επισκέπτες και να διευκολύνει τις κρατήσεις.'
-        },
-        blog: {
-          title: 'Blog Ευ Ζήν',
-          description: 'Αποκλειστική πλατφόρμα blog αφιερωμένη στη διάδοση γνώσης για υγιεινή διαβίωση, ευzοϊκούς τρόπους ζωής και προσωπική ανάπτυξη. Το blog παρουσιάζει άρθρα, συμβουλές και συστάσεις για ένα καλύτερο, πιο υγιές lifestyle. Σχεδιασμένη με ενδιαφέρον περιεχόμενο που ενημερώνει και εμπνέει τους αναγνώστες.'
-        },
-        jewelry: {
-          title: 'Πολυτελές Κοσμηματοπωλείο',
-          description: 'Εκλεπτυσμένο e-commerce κοσμηματοπωλείου πολυτελείας που παρουσιάζει πολύτιμα κοσμήματα και εκλεκτά ρολόγια. Η πλατφόρμα προσφέρει αναλυτικές παρουσιάσεις προϊόντων, σύστημα διαχείρισης καταλόγου και ασφαλές checkout για τους εκλεκτούς πελάτες της.'
-        },
-        advancedDerma: {
-          title: 'Advanced Derma — Δερματολογία & Αισθητική Ιατρική',
-          description: 'Σύστημα κρατήσεων ραντεβού για διάσημο δερματολογικό ιατρείο σε Αθήνα & Πειραιά. Περιλαμβάνει gallery υπηρεσιών, online booking, παρουσίαση ιατρικού προφίλ και πλήρη πληροφόρηση ασθενών για δερματολογικές & αισθητικές θεραπείες.'
-        },
-        leonidionHouses: {
-          title: 'Leonidion Houses — Booking Καταλυμάτων',
-          description: 'Ολοκληρωμένη πλατφόρμα κρατήσεων για 6 καταλύματα στο Λεωνίδιο, με δυνατότητα online ηλεκτρονικών πληρωμών. Διαθέτει πλήρες σύστημα διαχειριστή για κρατήσεις, ακυρώσεις, ενημερώσεις διαθεσιμότητας και τιμολόγησης.'
-        },
-        barber: {
-          title: "Devil's Barber — Premium Barber Studio",
-          description: 'Επαγγελματικό κουρείο στην Άρτα με street & rap αισθητική. Η ιστοσελίδα προσφέρει gallery, online booking ραντεβού, παρουσίαση υπηρεσιών κουρέματος & περιποίησης γενιών και δυναμικό branding.'
-        },
-        handmadeBags: {
-          title: 'HANDSTUFF — Χειροποίητες Δερμάτινες Τσάντες',
-          description: 'E-shop παρουσίασης και πώλησης χειροποίητων δερμάτινων τσαντών. Περιλαμβάνει αναλυτικό κατάλογο προϊόντων, gallery, παρουσίαση brand και responsive σχεδιασμό για άριστη εμπειρία αγοράς.'
-        },
-        tparkingSite: {
-          title: 'T-Parking — Επίσημη Ιστοσελίδα Εφαρμογής',
-          description: 'Επίσημη ιστοσελίδα για την 1η εφαρμογή στην Ελλάδα που βρίσκει διαθέσιμες θέσεις parking στον δημόσιο δρόμο σε πραγματικό χρόνο, εντελώς δωρεάν. Παρουσιάζει την εφαρμογή, τις λειτουργίες πόντων & επιβραβεύσεων, τα οφέλη για την κοινότητα οδηγών και προωθεί downloads σε iOS & Android.'
-        },
-        crypto: {
-          title: 'Προώθηση Custom CryptoCoin',
-          description: 'Δυναμική landing page για την προώθηση custom κρυπτονομίσματος με σύγχρονες animations, interactive elements, και conversion-optimized design. Η σελίδα παρουσιάζει το project με εντυπωσιακό τρόπο και ενθαρρύνει τους επισκέπτες να συμμετάσχουν.'
-        },
-        ecommerce: {
-          title: 'E-Shop Μόδας',
-          description: 'Ολοκληρωμένο ηλεκτρονικό κατάστημα με σύστημα πληρωμών'
-        },
-        restaurant: {
-          title: 'Restaurant App',
-          description: 'Mobile εφαρμογή παραγγελιών με real-time tracking'
-        },
-        dashboard: {
-          title: 'Analytics Dashboard',
-          description: 'Πλατφόρμα αναλυτικών δεδομένων για επιχειρήσεις'
-        },
-        game: {
-          title: 'Puzzle Game',
-          description: 'Διαδραστικό παιχνίδι με 3D γραφικά'
-        }
-      },
+      subtitle: 'Έργα που είναι live αυτή τη στιγμή. Πάτησε σε όποιο θέλεις για να το δεις.',
+      viewProject: 'Δες το',
       appShowcase: {
-        title: 'Δείγματα Εργασίας Εφαρμογών',
-        getFit: {
-          description: 'Μια ολοκληρωμένη εφαρμογή διαχείρισης γυμναστηρίων που αναπτύχθηκε από την DevTaskHub. Η εφαρμογή προσφέρει πλήρη λύση για τη διαχείριση μελών, προγραμμάτων προπόνησης, ραντεβού και πληρωμών.',
-          featuresTitle: 'Βασικά Χαρακτηριστικά:',
-          features: [
-            'Διαχείριση Μελών',
-            'Προγράμματα Προπόνησης',
-            'Σύστημα Ραντεβού',
-            'Αναφορές & Στατιστικά'
-          ],
-          platformsTitle: 'Διαθέσιμη σε:',
-          platforms: {
-            ios: 'iOS App',
-            android: 'Android App',
-            web: 'Web App'
-          },
-          viewApp: 'Δείτε την Εφαρμογή'
-        },
-        tParking: {
-          name: 'T-Parking',
-          tagline: 'Η 1η εφαρμογή στην Ελλάδα για εύρεση parking σε πραγματικό χρόνο — 100% δωρεάν!',
-          description: 'Η T-Parking είναι η πρώτη εφαρμογή στην Ελλάδα που βρίσκει διαθέσιμες θέσεις parking στον δημόσιο δρόμο σε πραγματικό χρόνο, εντελώς δωρεάν. Μέσα από την κοινότητα οδηγών, μοιράζεσαι τη θέση σου όταν ξεπαρκάρεις και κερδίζεις πόντους που μετατρέπονται σε κουπόνια & προσφορές σε κορυφαία καταστήματα της Ελλάδας.',
-          featuresTitle: 'Βασικά Χαρακτηριστικά:',
-          features: [
-            'Real-time θέσεις parking στον χάρτη',
-            'Έξυπνη πλοήγηση με ένα tap',
-            'Σύστημα πόντων & επιβραβεύσεων',
-            'Κουπόνια & προσφορές σε κορυφαία καταστήματα',
-            'Κρατήσεις θέσεων έως 2 ώρες',
-            'Push notifications για κοντινές θέσεις',
-            'Ιστορικό & στατιστικά εξοικονόμησης',
-            'Δίγλωσση (Ελληνικά & Αγγλικά)'
-          ],
-          platformsTitle: 'Διαθέσιμη σε:',
-          platforms: {
-            ios: 'iOS App',
-            android: 'Android App',
-            web: 'Web App'
-          },
-          viewApp: 'Δείτε την Εφαρμογή',
-          stats: {
-            free: '100% Δωρεάν',
-            firstInGreece: '1η στην Ελλάδα',
-            realTime: 'Real-time'
-          }
-        }
+        title: 'Εφαρμογές στα stores'
       }
     },
     // Contact
@@ -1038,35 +873,35 @@ export const translations = {
       items: [
         {
           q: 'Πόσο κοστίζει η κατασκευή μιας ιστοσελίδας στη Θεσσαλονίκη;',
-          a: 'Το κόστος εξαρτάται από την έκταση και τις λειτουργίες του έργου. Μια σύγχρονη ιστοσελίδα παρουσίασης ξεκινά από προσιτά πακέτα, ενώ τα e-shop και οι custom web εφαρμογές τιμολογούνται ανά project. Δίνουμε πάντα δωρεάν, διαφανή προσφορά πριν ξεκινήσει οποιαδήποτε εργασία — χωρίς κρυφές χρεώσεις.'
+          a: 'Εξαρτάται από το μέγεθος και τις λειτουργίες του έργου. Πριν ξεκινήσουμε παίρνετε δωρεάν, ξεκάθαρη προσφορά, χωρίς κρυφές χρεώσεις.'
         },
         {
           q: 'Πόσο χρόνο χρειάζεται για να ολοκληρωθεί ένα website;',
-          a: 'Μια ιστοσελίδα παρουσίασης ολοκληρώνεται συνήθως σε 2–4 εβδομάδες, ένα e-shop σε 4–8 εβδομάδες και οι custom εφαρμογές ανάλογα με την πολυπλοκότητα. Από το πρώτο brief σας δίνουμε σαφές χρονοδιάγραμμα με ορόσημα.'
+          a: 'Ιστοσελίδα παρουσίασης: 2 έως 4 εβδομάδες. E-shop: 4 έως 8 εβδομάδες. Custom εφαρμογές: ανάλογα με το έργο. Το χρονοδιάγραμμα το έχετε από την αρχή.'
         },
         {
           q: 'Οι ιστοσελίδες σας είναι βελτιστοποιημένες για κινητά και για SEO;',
-          a: 'Ναι. Όλες οι ιστοσελίδες μας είναι mobile-first, responsive και γρήγορες (περνούν τα Core Web Vitals). Χτίζονται με σωστή τεχνική SEO δομή και structured data, ώστε να ανεβαίνουν στη Google και να εμφανίζονται σε μηχανές AI αναζήτησης (ChatGPT, Perplexity, Google AI).'
+          a: 'Ναι. Όλες είναι mobile-first, γρήγορες και στημένες με σωστό τεχνικό SEO και structured data, για τη Google και για την AI αναζήτηση (ChatGPT, Perplexity).'
         },
         {
           q: 'Αναλαμβάνετε εφαρμογές για iOS και Android;',
-          a: 'Ναι, αναπτύσσουμε native και cross-platform mobile εφαρμογές για iPhone/iPad και Android, καθώς και Progressive Web Apps, με δημοσίευση και υποστήριξη σε App Store και Google Play.'
+          a: 'Ναι. Φτιάχνουμε εφαρμογές για iPhone, iPad και Android και τις δημοσιεύουμε σε App Store και Google Play. Δείγματα: LifeMuseum, T-Parking, GetFit.'
         },
         {
           q: 'Προσφέρετε υποστήριξη μετά την παράδοση;',
-          a: 'Φυσικά. Παρέχουμε συνεχή τεχνική υποστήριξη, ενημερώσεις ασφαλείας, backups και βελτιώσεις μετά την παράδοση, ώστε η ψηφιακή σας παρουσία να παραμένει γρήγορη, ασφαλής και ενημερωμένη.'
+          a: 'Ναι. Αναλαμβάνουμε τεχνική υποστήριξη, ενημερώσεις ασφαλείας, backups και βελτιώσεις.'
         },
         {
           q: 'Συνεργάζεστε με πελάτες εκτός Θεσσαλονίκης;',
-          a: 'Ναι. Εδρεύουμε στη Θεσσαλονίκη αλλά συνεργαζόμαστε εξ αποστάσεως με πελάτες σε όλη την Ελλάδα και το εξωτερικό, με ξεκάθαρη επικοινωνία σε κάθε βήμα του έργου.'
+          a: 'Ναι. Η έδρα μας είναι στη Θεσσαλονίκη και δουλεύουμε εξ αποστάσεως με πελάτες σε όλη την Ελλάδα και το εξωτερικό.'
         }
       ]
     },
     // Meta tags for pages
     meta: {
       home: {
-        title: 'Κατασκευή Ιστοσελίδων Θεσσαλονίκη | DevTaskHub – Web, E-shop & Apps',
-        description: 'Κατασκευή ιστοσελίδων, e-shop & mobile εφαρμογών στη Θεσσαλονίκη από εξειδικευμένη ομάδα developers. React, Next.js, AI chatbots & SEO. Δωρεάν προσφορά & συνεχής υποστήριξη! 📱💻'
+        title: 'Κατασκευή Ιστοσελίδων & Εφαρμογών Θεσσαλονίκη | DevTaskHub',
+        description: 'Κατασκευή ιστοσελίδων, e-shop και mobile εφαρμογών iOS & Android στη Θεσσαλονίκη. AI chatbots και SEO. Δείτε τα έργα μας και ζητήστε δωρεάν προσφορά.'
       },
       webDevelopment: {
         title: 'Κατασκευή Ιστοσελίδων Θεσσαλονίκη | React, Next.js | DevTaskHub',
@@ -1114,7 +949,17 @@ export const translations = {
       },
       contact: {
         title: 'Επικοινωνία | DevTaskHub Θεσσαλονίκη',
-        description: 'Επικοινωνήστε με την DevTaskHub στη Θεσσαλονίκη για προσφορά ή απορίες. Δωρεάν σύμβαση! 📞✉️'
+        description: 'Επικοινωνήστε με την DevTaskHub στη Θεσσαλονίκη για δωρεάν προσφορά. Τηλέφωνο, email ή φόρμα επικοινωνίας.'
+      },
+      portfolio: {
+        title: 'Έργα & Portfolio | Ιστοσελίδες και Εφαρμογές | DevTaskHub',
+        description: 'Live έργα της DevTaskHub: LifeMuseum, Hournook, Lumora, KLINARITI, T-Parking, Advanced Derma και άλλα. Ιστοσελίδες, e-shop και εφαρμογές iOS & Android.'
+      },
+      notFound: {
+        title: 'Η σελίδα δεν βρέθηκε | DevTaskHub',
+        heading: 'Η σελίδα δεν βρέθηκε',
+        text: 'Ο σύνδεσμος δεν υπάρχει ή έχει αλλάξει.',
+        cta: 'Πίσω στην αρχική'
       },
       terms: {
         title: 'Όροι & Προϋποθέσεις | DevTaskHub',
@@ -1192,17 +1037,18 @@ export const translations = {
       lastUpdate: 'Τελευταία ενημέρωση: Ιούνιος 2026'
     },
     // HomeShowcase Section
-    homeShowcase: {
-      title: 'Κατασκευάζουμε ιστοσελίδες που εντυπωσιάζουν.',
-      subtitle: 'Συνδυάζουμε αισθητική, ταχύτητα και λειτουργικότητα με προσιτό κόστος. Από απλές σελίδες παρουσίασης μέχρι δυναμικές web εφαρμογές.',
-      bullets: [
-        'Αριστοτεχνικός σχεδιασμός με προσοχή στη λεπτομέρεια',
-        'Ταχύτατη απόκριση και βελτιστοποίηση για κάθε συσκευή',
-        'Premium αποτέλεσμα σε λογικές τιμές',
-        'Απόλυτη προσαρμογή στις ανάγκες του πελάτη',
-        'Hosting, SEO και υποστήριξη, όλα σε ένα'
+    process: {
+      label: 'Πώς δουλεύουμε',
+      title: 'Από την ιδέα στο live,',
+      kicker: 'σε 4 βήματα',
+      subtitle: 'Από την πρώτη μέρα ξέρεις τι παίρνεις, πότε και πόσο κοστίζει.',
+      steps: [
+        { title: 'Συζήτηση', text: 'Μας λες τι χρειάζεσαι. Παίρνεις δωρεάν προσφορά και χρονοδιάγραμμα.' },
+        { title: 'Σχεδιασμός', text: 'Βλέπεις το design πριν γραφτεί η πρώτη γραμμή κώδικα.' },
+        { title: 'Ανάπτυξη', text: 'Χτίζουμε και σου δείχνουμε την πρόοδο σε κάθε βήμα.' },
+        { title: 'Παράδοση και υποστήριξη', text: 'Το έργο ανεβαίνει live. Μένουμε δίπλα σου για ό,τι χρειαστεί.' }
       ],
-      cta: 'Δείτε Δείγματα Εργασιών'
+      cta: 'Δες τα έργα μας'
     }
   },
   en: {
@@ -1226,23 +1072,23 @@ export const translations = {
       websiteSamples: 'Website Samples',
       slides: [
         {
-          title: 'Modern Website Development',
-          subtitle: 'We create responsive websites with focus on performance and UX'
+          title: 'Websites that bring customers',
+          subtitle: 'Fast, responsive and ready for Google.'
         },
         {
-          title: 'Mobile Apps for Businesses & Startups',
-          subtitle: 'Native and cross-platform solutions for Android & iOS'
+          title: 'Apps for iOS and Android',
+          subtitle: 'From the idea to the App Store and Google Play.'
         },
         {
           title: 'Your development team',
-          subtitle: 'AI solutions, e-commerce and games that impress'
+          subtitle: 'Websites, apps, e-shops and AI. Based in Thessaloniki, working everywhere.'
         }
       ]
     },
     // Services
     services: {
       title: 'Web & Mobile Development Services',
-      subtitle: 'Website design, e-shops, mobile apps, AI chatbots and SEO in Thessaloniki — specialized solutions for businesses and professionals with top quality and modern design.',
+      subtitle: 'Everything your business needs online: website, e-shop, app, AI chatbot and SEO.',
       more: 'More',
       items: {
         web: {
@@ -1323,49 +1169,7 @@ export const translations = {
           },
           samples: {
             title: 'Project Samples',
-            viewProject: 'View Project',
-            items: [
-              {
-                title: 'Architectural & Construction Office',
-                desc: 'Modern service presentation and portfolio for technical office.'
-              },
-              {
-                title: 'Wellness Center',
-                desc: 'Website for wellness center with online bookings and dynamic content.'
-              },
-              {
-                title: 'Custom CryptoCoin Promotion',
-                desc: 'Landing page for promoting custom cryptocurrency.'
-              },
-              {
-                title: 'Hotel',
-                desc: 'Promotional hotel site with gallery and contact form.'
-              },
-              {
-                title: 'Luxury Jewelry Store',
-                desc: 'E-commerce platform displaying precious gems and luxury watches.'
-              },
-              {
-                title: 'Advanced Derma — Dermatology & Aesthetic Medicine',
-                desc: 'Online appointment booking system for a renowned dermatology clinic in Athens & Piraeus, with gallery, online booking and service showcase.'
-              },
-              {
-                title: "Devil's Barber — Premium Barber Studio",
-                desc: 'Barber shop in Arta with a street & rap vibe, featuring gallery, online booking and full presentation of haircut & beard services.'
-              },
-              {
-                title: 'Leonidion Houses — Property Booking',
-                desc: 'Booking website for 6 accommodations in Leonidion with online payments and a full admin dashboard for bookings, cancellations and updates.'
-              },
-              {
-                title: 'HANDSTUFF — Handmade Leather Bags',
-                desc: 'E-shop for handcrafted leather bags with a detailed product catalog, gallery and branding.'
-              },
-              {
-                title: 'T-Parking — Real-time Parking Greece',
-                desc: 'Official website for the 1st app in Greece that finds parking spots on public streets in real time, completely free.'
-              }
-            ]
+            viewProject: 'View Project'
           },
           process: {
             title: 'Implementation Process',
@@ -1557,19 +1361,7 @@ export const translations = {
           },
           portfolio: {
             title: 'Client Portfolio & Examples',
-            viewProject: 'View Project',
-            clients: [
-              { name: 'Online Parent & Teen Clinic', desc: 'Telemedicine platform with online appointments & management.' },
-              { name: 'HydrogenLife', desc: 'Wellness e-shop with online reservations.' },
-              { name: 'Serenity Hotel', desc: 'Online reservations & management.' },
-              { name: 'PanitosCrypto', desc: 'Crypto promotion & sales.' },
-              { name: 'STSRR Luxury Jewelry', desc: 'E-commerce for luxury jewelry and fine watches.' },
-              { name: 'Advanced Derma — Dermatology & Aesthetic Medicine', desc: 'Online appointment booking system with gallery & service showcase for a dermatology clinic.' },
-              { name: "Devil's Barber — Premium Barber Studio", desc: 'Barber shop with a street & rap aesthetic, gallery and online booking.' },
-              { name: 'Leonidion Houses — Property Booking', desc: '6 accommodations with online payments and admin dashboard for bookings, cancellations & updates.' },
-              { name: 'HANDSTUFF — Handmade Leather Bags', desc: 'E-shop for handcrafted leather bags with catalog, gallery and branding.' },
-              { name: 'T-Parking — Official App Website', desc: 'Website for the 1st app in Greece that finds parking in real time, completely free.' }
-            ]
+            viewProject: 'View Project'
           },
           finalCta: {
             title: 'Turn visits into sales',
@@ -1637,7 +1429,7 @@ export const translations = {
         socialMediaManagement: {
           hero: {
             title: 'Social Media Management',
-            subtitle: 'Strategy & daily management of social profiles for professionals and businesses. We provide creative content, scheduled posts, strategy, community, analytics and advertising — all to grow your brand and increase engagement.',
+            subtitle: 'Strategy & daily management of social profiles for professionals and businesses. We provide creative content, scheduled posts, strategy, community, analytics and advertising: all to grow your brand and increase engagement.',
             cta: 'Request a Proposal',
             viewTransformations: 'Sample Transformations'
           },
@@ -1646,7 +1438,7 @@ export const translations = {
             items: [
               { title: 'Content Strategy & Planning', desc: 'Analytical strategy, themes, calendar and scheduled posts.' },
               { title: 'Visual Content Creation', desc: 'Graphics, Reels, Stories, videos and photos that stand out.' },
-              { title: 'Social Ads', desc: 'Meta Ads, TikTok, Instagram, LinkedIn — ads that deliver results.' },
+              { title: 'Social Ads', desc: 'Meta Ads, TikTok, Instagram, LinkedIn: ads that deliver results.' },
               { title: 'Community Management', desc: 'Interaction, responses, comment & DM management.' },
               { title: 'Reports & Insights', desc: 'Detailed reports, statistics and improvement suggestions.' },
               { title: 'AI-Enhanced Content', desc: 'Using AI for ideas, captions, hashtags and optimization.' }
@@ -1700,7 +1492,7 @@ export const translations = {
             ]
           },
           finalCta: {
-            title: 'Upgrade your socials — Contact us now.',
+            title: 'Upgrade your socials. Contact us now.',
             button: 'Get Started Today'
           }
         },
@@ -1961,7 +1753,7 @@ export const translations = {
         },
         aiIntegrationApplications: {
           hero: {
-            title: 'AI in Your Applications — From Vision to Implementation',
+            title: 'AI in Your Applications: From Vision to Implementation',
             subtitle: 'We use machine learning techniques for data analysis, prediction creation, or smart application features.',
             cta: 'Request a Quote'
           },
@@ -2016,8 +1808,8 @@ export const translations = {
     // About
     about: {
       title: 'About Us',
-      subtitle: 'DevTaskHub Team - Full-Stack Developers',
-      description: 'With a passion for technology and years of experience in software development, we create digital solutions that combine innovation with functionality. Based in Thessaloniki, we work with clients from Greece and internationally.',
+      subtitle: 'A full-stack team in Thessaloniki.',
+      description: 'We design and build websites, apps and e-shops, from the first idea to launch. We work with clients across Greece and abroad.',
       experience: 'Expertise',
       experienceItems: [
         'Modern JavaScript/TypeScript & React',
@@ -2033,124 +1825,13 @@ export const translations = {
         support: 'Support'
       }
     },
-    // Portfolio
+    // Portfolio (projects themselves live in src/data/work.ts)
     portfolio: {
       title: 'Portfolio',
-      subtitle: 'Some of the recent projects we have implemented',
-      viewProject: 'View Project',
-      projects: {
-        clinic: {
-          title: 'Online Parent & Teen Clinic',
-          description: 'Modern telemedicine platform providing online counseling services for parents and teens. The system offers online appointments, secure communication with doctors, medical document management, and access to educational material on health, adolescence, and family dynamics.'
-        },
-        architecture: {
-          title: 'Architectural & Construction Office',
-          description: 'Professional website for an architectural and construction office with modern design, project portfolio, service presentation, and SEO optimization. The platform enables effective presentation of technical projects and communication with clients.'
-        },
-        wellness: {
-          title: 'Wellness Center',
-          description: 'Complete digital platform for a wellness center with online booking system, content management (CMS), wellness service presentation, and integrated booking system. The solution offers a seamless experience for clients and effective management for the center.'
-        },
-        hotel: {
-          title: 'Hotel',
-          description: 'Attractive hotel website with interactive photo gallery, online booking system, room and service presentation, and responsive design. The platform was created to attract visitors and facilitate bookings.'
-        },
-        blog: {
-          title: 'Blog Eu Zin',
-          description: 'Exclusive blogging platform dedicated to spreading knowledge about healthy living, wellness lifestyle, and personal development. The blog features articles, tips and recommendations for a better, healthier lifestyle. Designed with engaging content that informs and inspires readers.'
-        },
-        jewelry: {
-          title: 'Luxury Jewelry Store',
-          description: 'Refined luxury jewelry e-commerce platform showcasing precious gems and select timepieces. The platform offers comprehensive product presentations, catalog management system, and secure checkout for the most distinguished customers.'
-        },
-        advancedDerma: {
-          title: 'Advanced Derma — Dermatology & Aesthetic Medicine',
-          description: 'Appointment booking system for a renowned dermatology clinic in Athens & Piraeus. Includes service gallery, online booking, doctor profile and complete patient information for dermatological & aesthetic treatments.'
-        },
-        leonidionHouses: {
-          title: 'Leonidion Houses — Property Booking',
-          description: 'Complete booking platform for 6 accommodations in Leonidion, featuring online electronic payments. Includes a full admin dashboard for bookings, cancellations, availability updates and pricing management.'
-        },
-        barber: {
-          title: "Devil's Barber — Premium Barber Studio",
-          description: 'Professional barber shop in Arta with a street & rap aesthetic. The website offers gallery, online appointment booking, presentation of haircut & beard grooming services and dynamic branding.'
-        },
-        handmadeBags: {
-          title: 'HANDSTUFF — Handmade Leather Bags',
-          description: 'E-shop showcasing and selling handcrafted leather bags. Includes a detailed product catalog, gallery, brand presentation and a fully responsive design for an excellent shopping experience.'
-        },
-        tparkingSite: {
-          title: 'T-Parking — Official App Website',
-          description: 'Official website for the 1st app in Greece that finds available parking spots on public streets in real time, completely free. It presents the app, the points & rewards system, the benefits for the driver community, and drives downloads on iOS & Android.'
-        },
-        crypto: {
-          title: 'Custom CryptoCoin Promotion',
-          description: 'Dynamic landing page for promoting custom cryptocurrency with modern animations, interactive elements, and conversion-optimized design. The page presents the project in an impressive way and encourages visitors to participate.'
-        },
-        ecommerce: {
-          title: 'Fashion E-Shop',
-          description: 'Complete e-commerce store with payment system'
-        },
-        restaurant: {
-          title: 'Restaurant App',
-          description: 'Mobile ordering app with real-time tracking'
-        },
-        dashboard: {
-          title: 'Analytics Dashboard',
-          description: 'Data analytics platform for businesses'
-        },
-        game: {
-          title: 'Puzzle Game',
-          description: 'Interactive game with 3D graphics'
-        }
-      },
+      subtitle: 'Projects that are live right now. Tap any of them to see it.',
+      viewProject: 'Visit',
       appShowcase: {
-        title: 'Mobile App Samples',
-        getFit: {
-          description: 'A comprehensive gym management application developed by DevTaskHub. The application offers a complete solution for managing members, training programs, appointments, and payments.',
-          featuresTitle: 'Key Features:',
-          features: [
-            'Member Management',
-            'Training Programs',
-            'Appointment System',
-            'Reports & Statistics'
-          ],
-          platformsTitle: 'Available on:',
-          platforms: {
-            ios: 'iOS App',
-            android: 'Android App',
-            web: 'Web App'
-          },
-          viewApp: 'View App'
-        },
-        tParking: {
-          name: 'T-Parking',
-          tagline: 'The 1st app in Greece for real-time parking on public streets — 100% free!',
-          description: 'T-Parking is the first app in Greece that finds available parking spots on public streets in real time, completely free. Through the driver community, you share your spot when you leave and earn points that turn into coupons & offers at top stores in Greece.',
-          featuresTitle: 'Key Features:',
-          features: [
-            'Real-time parking spots on the map',
-            'Smart one-tap navigation',
-            'Points & rewards system',
-            'Coupons & offers at top stores',
-            'Spot reservations for up to 2 hours',
-            'Push notifications for nearby spots',
-            'History & savings statistics',
-            'Bilingual (Greek & English)'
-          ],
-          platformsTitle: 'Available on:',
-          platforms: {
-            ios: 'iOS App',
-            android: 'Android App',
-            web: 'Web App'
-          },
-          viewApp: 'View App',
-          stats: {
-            free: '100% Free',
-            firstInGreece: '1st in Greece',
-            realTime: 'Real-time'
-          }
-        }
+        title: 'Apps in the stores'
       }
     },
     // Contact
@@ -2241,35 +1922,35 @@ export const translations = {
       items: [
         {
           q: 'How much does it cost to build a website?',
-          a: 'It depends on the scope and features of the project. A modern presentation website starts from affordable packages, while e-shops and custom web apps are priced per project. We always provide a free, transparent quote before any work begins — no hidden fees.'
+          a: 'It depends on the size and features of the project. Before we start you get a free, clear quote with no hidden fees.'
         },
         {
           q: 'How long does it take to complete a website?',
-          a: 'A presentation website is usually completed in 2–4 weeks, an e-shop in 4–8 weeks, and custom applications depending on complexity. We give you a clear timeline with milestones from the very first brief.'
+          a: 'A presentation website: 2 to 4 weeks. An e-shop: 4 to 8 weeks. Custom apps: depends on the project. You get the timeline up front.'
         },
         {
           q: 'Are your websites mobile- and SEO-optimized?',
-          a: 'Yes. Every website is mobile-first, responsive and fast (passing Core Web Vitals). They are built with proper technical SEO structure and structured data so they rank on Google and appear in AI search engines (ChatGPT, Perplexity, Google AI).'
+          a: 'Yes. Every site is mobile-first, fast and built with proper technical SEO and structured data, for Google and for AI search (ChatGPT, Perplexity).'
         },
         {
           q: 'Do you build apps for iOS and Android?',
-          a: 'Yes. We develop native and cross-platform mobile apps for iPhone/iPad and Android, as well as Progressive Web Apps, including publishing and support on the App Store and Google Play.'
+          a: 'Yes. We build apps for iPhone, iPad and Android and publish them on the App Store and Google Play. Examples: LifeMuseum, T-Parking, GetFit.'
         },
         {
           q: 'Do you offer support after delivery?',
-          a: 'Absolutely. We provide ongoing technical support, security updates, backups and improvements after delivery, keeping your digital presence fast, secure and up to date.'
+          a: 'Yes. We handle technical support, security updates, backups and improvements.'
         },
         {
           q: 'Do you work with clients outside Thessaloniki?',
-          a: 'Yes. We are based in Thessaloniki but work remotely with clients across Greece and abroad, with clear communication at every step of the project.'
+          a: 'Yes. We are based in Thessaloniki and work remotely with clients across Greece and abroad.'
         }
       ]
     },
     // Meta tags for pages
     meta: {
       home: {
-        title: 'Website Development Thessaloniki | DevTaskHub - Custom Web & Mobile Apps',
-        description: 'Professional website and mobile app development in Thessaloniki. React, Next.js, Node.js. Free quote! 📱💻'
+        title: 'Website & App Development Thessaloniki | DevTaskHub',
+        description: 'Websites, e-shops and iOS & Android apps built in Thessaloniki, Greece. AI chatbots and SEO. See our live work and get a free quote.'
       },
       webDevelopment: {
         title: 'Website Development Thessaloniki | React, Next.js | DevTaskHub',
@@ -2317,7 +1998,17 @@ export const translations = {
       },
       contact: {
         title: 'Contact | DevTaskHub Thessaloniki',
-        description: 'Contact DevTaskHub in Thessaloniki for a quote or questions. Free consultation! 📞✉️'
+        description: 'Contact DevTaskHub in Thessaloniki for a free quote. Phone, email or contact form.'
+      },
+      portfolio: {
+        title: 'Work & Portfolio | Websites and Apps | DevTaskHub',
+        description: 'Live work by DevTaskHub: LifeMuseum, Hournook, Lumora, KLINARITI, T-Parking, Advanced Derma and more. Websites, e-shops and iOS & Android apps.'
+      },
+      notFound: {
+        title: 'Page not found | DevTaskHub',
+        heading: 'Page not found',
+        text: 'This link does not exist or has moved.',
+        cta: 'Back to home'
       },
       terms: {
         title: 'Terms & Conditions | DevTaskHub',
@@ -2395,17 +2086,18 @@ export const translations = {
       lastUpdate: 'Last update: June 2026'
     },
     // HomeShowcase Section
-    homeShowcase: {
-      title: 'We build websites that impress.',
-      subtitle: 'We combine aesthetics, speed, and functionality with affordable cost. From simple presentation pages to dynamic web applications.',
-      bullets: [
-        'Masterful design with attention to detail',
-        'Fastest response and optimization for every device',
-        'Premium result at reasonable prices',
-        'Absolute customization to the customer\'s needs',
-        'Hosting, SEO and support, all in one'
+    process: {
+      label: 'How we work',
+      title: 'From idea to live,',
+      kicker: 'in 4 steps',
+      subtitle: 'From day one you know what you get, when, and what it costs.',
+      steps: [
+        { title: 'Talk', text: 'Tell us what you need. You get a free quote and a timeline.' },
+        { title: 'Design', text: 'You see the design before the first line of code.' },
+        { title: 'Build', text: 'We build it and show you progress at every step.' },
+        { title: 'Launch and support', text: 'The project goes live. We stay with you for whatever comes next.' }
       ],
-      cta: 'View Portfolio Samples'
+      cta: 'See our work'
     }
   },
   fr: {
@@ -2429,23 +2121,23 @@ export const translations = {
       websiteSamples: 'Échantillons de Sites Web',
       slides: [
         {
-          title: 'Développement de Sites Web Modernes',
-          subtitle: 'Nous créons des sites web réactifs axés sur les performances et l\'UX'
+          title: 'Des sites qui amènent des clients',
+          subtitle: 'Rapides, responsives et prêts pour Google.'
         },
         {
-          title: 'Applications Mobiles pour Entreprises & Startups',
-          subtitle: 'Solutions natives et multiplateformes pour Android et iOS'
+          title: 'Des applications iOS et Android',
+          subtitle: 'De l\'idée à l\'App Store et à Google Play.'
         },
         {
           title: 'Votre équipe de développement',
-          subtitle: 'Solutions IA, e-commerce et jeux qui impressionnent'
+          subtitle: 'Sites, applications, e-shops et IA. Basés à Thessalonique, nous travaillons partout.'
         }
       ]
     },
     // Services
     services: {
       title: 'Services de Développement Web & Mobile',
-      subtitle: 'Création de sites web, e-shops, applications mobiles, chatbots IA et SEO à Thessalonique — solutions spécialisées pour entreprises et professionnels avec qualité supérieure et design moderne.',
+      subtitle: 'Tout ce dont votre entreprise a besoin en ligne : site web, e-shop, application, chatbot IA et SEO.',
       more: 'Plus',
       items: {
         web: {
@@ -2526,49 +2218,7 @@ export const translations = {
           },
           samples: {
             title: 'Échantillons de Projets',
-            viewProject: 'Voir le Projet',
-            items: [
-              {
-                title: 'Bureau d\'Architecture et de Construction',
-                desc: 'Présentation moderne des services et portfolio pour bureau technique.'
-              },
-              {
-                title: 'Centre de Bien-être',
-                desc: 'Site web pour centre de bien-être avec réservations en ligne et contenu dynamique.'
-              },
-              {
-                title: 'Promotion de CryptoMonnaie Personnalisée',
-                desc: 'Page d\'atterrissage pour promouvoir une cryptomonnaie personnalisée.'
-              },
-              {
-                title: 'Hôtel',
-                desc: 'Site promotionnel d\'hôtel avec galerie et formulaire de contact.'
-              },
-              {
-                title: 'Joaillerie Luxe',
-                desc: 'Plateforme e-commerce exposant des bijoux précieux et des montres de luxe.'
-              },
-              {
-                title: 'Advanced Derma — Dermatologie & Médecine Esthétique',
-                desc: 'Système de prise de rendez-vous en ligne pour une clinique de dermatologie renommée à Athènes & au Pirée, avec galerie, réservation en ligne et présentation des services.'
-              },
-              {
-                title: "Devil's Barber — Studio de Barbier Premium",
-                desc: 'Barbier à Arta avec une esthétique street & rap, comprenant galerie, réservation en ligne et présentation complète des services de coupe & soin de barbe.'
-              },
-              {
-                title: 'Leonidion Houses — Réservation de Logements',
-                desc: 'Site de réservation pour 6 logements à Léonidio avec paiements en ligne et tableau de bord administrateur complet pour réservations, annulations et mises à jour.'
-              },
-              {
-                title: 'HANDSTUFF — Sacs en Cuir Faits Main',
-                desc: 'Boutique en ligne pour sacs en cuir faits main avec catalogue de produits détaillé, galerie et identité de marque.'
-              },
-              {
-                title: 'T-Parking — Parking en Temps Réel Grèce',
-                desc: 'Site officiel de la 1ère application en Grèce qui trouve des places de parking dans la rue en temps réel, totalement gratuitement.'
-              }
-            ]
+            viewProject: 'Voir le Projet'
           },
           process: {
             title: 'Processus d\'Implémentation',
@@ -2760,19 +2410,7 @@ export const translations = {
           },
           portfolio: {
             title: 'Portfolio et Exemples',
-            viewProject: 'Voir le Projet',
-            clients: [
-              { name: 'Clinique en Ligne pour Parents et Adolescents', desc: 'Plateforme de télémedecine avec rendez-vous en ligne et gestion.' },
-              { name: 'HydrogenLife', desc: 'Boutique wellness avec réservations en ligne.' },
-              { name: 'Serenity Hotel', desc: 'Réservations en ligne et gestion.' },
-              { name: 'PanitosCrypto', desc: 'Promotion et ventes crypto.' },
-              { name: 'STSRR Joaillerie Luxe', desc: 'E-commerce de bijoux de luxe et montres fines.' },
-              { name: 'Advanced Derma — Dermatologie & Médecine Esthétique', desc: 'Système de prise de rendez-vous en ligne avec galerie & présentation des services pour une clinique de dermatologie.' },
-              { name: "Devil's Barber — Studio de Barbier Premium", desc: 'Barbier avec esthétique street & rap, galerie et réservation en ligne.' },
-              { name: 'Leonidion Houses — Réservation de Logements', desc: '6 logements avec paiements en ligne et tableau de bord administrateur pour réservations, annulations & mises à jour.' },
-              { name: 'HANDSTUFF — Sacs en Cuir Faits Main', desc: 'Boutique en ligne pour sacs en cuir faits main avec catalogue, galerie et identité de marque.' },
-              { name: 'T-Parking — Site Officiel de l\'Application', desc: 'Site de la 1ère application en Grèce qui trouve des places de parking en temps réel, totalement gratuitement.' }
-            ]
+            viewProject: 'Voir le Projet'
           },
           finalCta: {
             title: 'Transformez les visites en ventes',
@@ -2840,7 +2478,7 @@ export const translations = {
         socialMediaManagement: {
           hero: {
             title: 'Gestion des Réseaux Sociaux',
-            subtitle: 'Stratégie et gestion quotidienne des profils sociaux pour professionnels et entreprises. Nous fournissons du contenu créatif, des publications programmées, de la stratégie, de la communauté, des analyses et de la publicité — tout pour développer votre marque et augmenter l\'engagement.',
+            subtitle: 'Stratégie et gestion quotidienne des profils sociaux pour professionnels et entreprises. Nous fournissons du contenu créatif, des publications programmées, de la stratégie, de la communauté, des analyses et de la publicité: tout pour développer votre marque et augmenter l\'engagement.',
             cta: 'Demander une Proposition',
             viewTransformations: 'Échantillons de Transformations'
           },
@@ -2849,7 +2487,7 @@ export const translations = {
             items: [
               { title: 'Stratégie de Contenu et Planification', desc: 'Stratégie analytique, thèmes, calendrier et publications programmées.' },
               { title: 'Création de Contenu Visuel', desc: 'Graphiques, Reels, Stories, vidéos et photos qui se démarquent.' },
-              { title: 'Publicités Sociales', desc: 'Meta Ads, TikTok, Instagram, LinkedIn — publicités qui produisent des résultats.' },
+              { title: 'Publicités Sociales', desc: 'Meta Ads, TikTok, Instagram, LinkedIn: publicités qui produisent des résultats.' },
               { title: 'Gestion de Communauté', desc: 'Interaction, réponses, gestion des commentaires et DM.' },
               { title: 'Rapports et Analyses', desc: 'Rapports détaillés, statistiques et suggestions d\'amélioration.' },
               { title: 'Contenu Amélioré par IA', desc: 'Utilisation de l\'IA pour idées, légendes, hashtags et optimisation.' }
@@ -2903,7 +2541,7 @@ export const translations = {
             ]
           },
           finalCta: {
-            title: 'Améliorez vos réseaux sociaux — Contactez-nous maintenant.',
+            title: 'Améliorez vos réseaux sociaux. Contactez-nous maintenant.',
             button: 'Commencez Aujourd\'hui'
           }
         },
@@ -3164,7 +2802,7 @@ export const translations = {
         },
         aiIntegrationApplications: {
           hero: {
-            title: 'IA dans Vos Applications — De la Vision à la Mise en Œuvre',
+            title: 'IA dans Vos Applications: De la Vision à la Mise en Œuvre',
             subtitle: 'Nous utilisons des techniques de machine learning pour l\'analyse de données, la création de prédictions ou des fonctionnalités d\'application intelligentes.',
             cta: 'Demander un Devis'
           },
@@ -3219,8 +2857,8 @@ export const translations = {
     // About
     about: {
       title: 'À propos de nous',
-      subtitle: 'L\'équipe DevTaskHub - Développeurs Full-Stack',
-      description: 'Avec une passion pour la technologie et des années d\'expérience dans le développement de logiciels, nous créons des solutions numériques qui combinent innovation et fonctionnalité. Basés à Thessalonique, nous travaillons avec des clients de Grèce et à l\'étranger.',
+      subtitle: 'Une équipe full-stack à Thessalonique.',
+      description: 'Nous concevons et développons des sites, des applications et des e-shops, de la première idée à la mise en ligne. Nous travaillons avec des clients en Grèce et à l\'étranger.',
       experience: 'Expertise',
       experienceItems: [
         'Développement JavaScript/TypeScript et React moderne',
@@ -3236,120 +2874,13 @@ export const translations = {
         support: 'Support'
       }
     },
-    // Portfolio
+    // Portfolio (projects themselves live in src/data/work.ts)
     portfolio: {
       title: 'Portfolio',
-      subtitle: 'Quelques-uns des projets récents que nous avons réalisés',
-      viewProject: 'Voir le projet',
-      projects: {
-        clinic: {
-          title: 'Clinique en Ligne pour Parents et Adolescents',
-          description: 'Plateforme de télémedecine moderne offrant des services de conseil en ligne pour les parents et les adolescents. Le système propose des rendez-vous en ligne, une communication sécurisée avec les médecins, la gestion des documents médicaux et l\'accès à du matériel éducatif sur la santé, l\'adolescence et la dynamique familiale.'
-        },
-        architecture: {
-          title: 'Bureau d\'Architecture et de Construction',
-          description: 'Site web professionnel pour un bureau d\'architecture et de construction avec un design moderne, un portfolio de projets, une présentation de services et une optimisation SEO. La plateforme permet une présentation efficace des projets techniques et la communication avec les clients.'
-        },
-        wellness: {
-          title: 'Centre de Bien-être',
-          description: 'Plateforme numérique complète pour un centre de bien-être avec système de réservation en ligne, gestion de contenu (CMS), présentation des services de bien-être et système de réservation intégré. La solution offre une expérience fluide aux clients et une gestion efficace pour le centre.'
-        },
-        hotel: {
-          title: 'Hôtel',
-          description: 'Site web attractif d\'hôtel avec galerie photo interactive, système de réservation en ligne, présentation des chambres et services, et design responsive. La plateforme a été créée pour attirer les visiteurs et faciliter les réservations.'
-        },
-        jewelry: {
-          title: 'Joaillerie de Luxe',
-          description: 'Plateforme e-commerce de joaillerie de luxe raffinée présentant des pierres précieuses et des montres sélectionnées. La plateforme offre des présentations de produits complètes, un système de gestion de catalogue et un processus de paiement sécurisé pour la clientèle la plus distinguée.'
-        },
-        advancedDerma: {
-          title: 'Advanced Derma — Dermatologie & Médecine Esthétique',
-          description: 'Système de prise de rendez-vous pour une clinique de dermatologie renommée à Athènes & au Pirée. Comprend une galerie de services, la réservation en ligne, le profil du médecin et toutes les informations patient pour les traitements dermatologiques & esthétiques.'
-        },
-        leonidionHouses: {
-          title: 'Leonidion Houses — Réservation de Logements',
-          description: 'Plateforme de réservation complète pour 6 logements à Léonidio, avec paiements électroniques en ligne. Inclut un tableau de bord administrateur complet pour les réservations, annulations, mises à jour de disponibilité et gestion tarifaire.'
-        },
-        barber: {
-          title: "Devil's Barber — Studio de Barbier Premium",
-          description: 'Barbier professionnel à Arta avec une esthétique street & rap. Le site web propose une galerie, la réservation de rendez-vous en ligne, la présentation des services de coupe & soin de barbe et une identité de marque dynamique.'
-        },
-        handmadeBags: {
-          title: 'HANDSTUFF — Sacs en Cuir Faits Main',
-          description: 'Boutique en ligne présentant et vendant des sacs en cuir faits main. Inclut un catalogue de produits détaillé, une galerie, la présentation de la marque et un design entièrement responsive pour une excellente expérience d\'achat.'
-        },
-        tparkingSite: {
-          title: 'T-Parking — Site Officiel de l\'Application',
-          description: 'Site officiel de la 1ère application en Grèce qui trouve des places de parking disponibles dans la rue en temps réel, totalement gratuitement. Il présente l\'application, le système de points & récompenses, les avantages pour la communauté de conducteurs et stimule les téléchargements sur iOS & Android.'
-        },
-        crypto: {
-          title: 'Promotion de CryptoMonnaie Personnalisée',
-          description: 'Page d\'atterrissage dynamique pour promouvoir une cryptomonnaie personnalisée avec des animations modernes, des éléments interactifs et un design optimisé pour la conversion. La page présente le projet de manière impressionnante et encourage les visiteurs à participer.'
-        },
-        ecommerce: {
-          title: 'Boutique de Mode en Ligne',
-          description: 'Boutique e-commerce complète avec système de paiement'
-        },
-        restaurant: {
-          title: 'Application Restaurant',
-          description: 'Application mobile de commande avec suivi en temps réel'
-        },
-        dashboard: {
-          title: 'Tableau de bord Analytics',
-          description: 'Plateforme d\'analyse de données pour les entreprises'
-        },
-        game: {
-          title: 'Jeu Puzzle',
-          description: 'Jeu interactif avec graphiques 3D'
-        }
-      },
+      subtitle: 'Des projets en ligne en ce moment. Cliquez sur celui que vous voulez voir.',
+      viewProject: 'Voir',
       appShowcase: {
-        title: 'Échantillons d\'Applications Mobiles',
-        getFit: {
-          description: 'Une application complète de gestion de salle de sport développée par DevTaskHub. L\'application offre une solution complète pour gérer les membres, les programmes d\'entraînement, les rendez-vous et les paiements.',
-          featuresTitle: 'Caractéristiques Clés:',
-          features: [
-            'Gestion des Membres',
-            'Programmes d\'Entraînement',
-            'Système de Rendez-vous',
-            'Rapports & Statistiques'
-          ],
-          platformsTitle: 'Disponible sur:',
-          platforms: {
-            ios: 'App iOS',
-            android: 'App Android',
-            web: 'App Web'
-          },
-          viewApp: 'Voir l\'Application'
-        },
-        tParking: {
-          name: 'T-Parking',
-          tagline: 'La 1ère application en Grèce pour trouver des places de parking en temps réel — 100% gratuite !',
-          description: 'T-Parking est la première application en Grèce qui trouve des places de parking disponibles dans la rue en temps réel, totalement gratuitement. Grâce à la communauté de conducteurs, vous partagez votre place lorsque vous partez et gagnez des points convertibles en coupons et offres dans les meilleurs magasins de Grèce.',
-          featuresTitle: 'Caractéristiques Clés:',
-          features: [
-            'Places de parking en temps réel sur la carte',
-            'Navigation intelligente en un clic',
-            'Système de points & récompenses',
-            'Coupons & offres dans les meilleurs magasins',
-            'Réservations de places jusqu\'à 2 heures',
-            'Notifications push pour places proches',
-            'Historique & statistiques d\'économies',
-            'Bilingue (Grec & Anglais)'
-          ],
-          platformsTitle: 'Disponible sur:',
-          platforms: {
-            ios: 'App iOS',
-            android: 'App Android',
-            web: 'App Web'
-          },
-          viewApp: 'Voir l\'Application',
-          stats: {
-            free: '100% Gratuit',
-            firstInGreece: '1ère en Grèce',
-            realTime: 'Temps Réel'
-          }
-        }
+        title: 'Nos applications sur les stores'
       }
     },
     // Contact
@@ -3440,35 +2971,35 @@ export const translations = {
       items: [
         {
           q: 'Combien coûte la création d\'un site web?',
-          a: 'Cela dépend de l\'ampleur et des fonctionnalités du projet. Un site vitrine moderne démarre à des forfaits abordables, tandis que les e-shops et les applications web sur mesure sont facturés au projet. Nous fournissons toujours un devis gratuit et transparent avant tout début de travail — sans frais cachés.'
+          a: 'Cela dépend de la taille et des fonctionnalités du projet. Avant de commencer, vous recevez un devis gratuit et clair, sans frais cachés.'
         },
         {
           q: 'Combien de temps faut-il pour réaliser un site web?',
-          a: 'Un site vitrine est généralement réalisé en 2 à 4 semaines, un e-shop en 4 à 8 semaines, et les applications sur mesure selon leur complexité. Nous vous donnons un calendrier clair avec des jalons dès le premier brief.'
+          a: 'Site vitrine : 2 à 4 semaines. E-shop : 4 à 8 semaines. Applications sur mesure : selon le projet. Vous avez le calendrier dès le départ.'
         },
         {
           q: 'Vos sites sont-ils optimisés pour le mobile et le SEO?',
-          a: 'Oui. Chaque site est mobile-first, responsive et rapide (conforme aux Core Web Vitals). Ils sont construits avec une structure SEO technique solide et des données structurées, afin de se classer sur Google et d\'apparaître dans les moteurs de recherche IA (ChatGPT, Perplexity, Google AI).'
+          a: 'Oui. Chaque site est mobile-first, rapide et construit avec un SEO technique solide et des données structurées, pour Google et pour la recherche IA (ChatGPT, Perplexity).'
         },
         {
           q: 'Développez-vous des applications pour iOS et Android?',
-          a: 'Oui. Nous développons des applications mobiles natives et multiplateformes pour iPhone/iPad et Android, ainsi que des Progressive Web Apps, y compris la publication et le support sur l\'App Store et Google Play.'
+          a: 'Oui. Nous créons des applications pour iPhone, iPad et Android et les publions sur l\'App Store et Google Play. Exemples : LifeMuseum, T-Parking, GetFit.'
         },
         {
           q: 'Offrez-vous un support après la livraison?',
-          a: 'Absolument. Nous offrons un support technique continu, des mises à jour de sécurité, des sauvegardes et des améliorations après la livraison, pour garder votre présence numérique rapide, sécurisée et à jour.'
+          a: 'Oui. Nous assurons le support technique, les mises à jour de sécurité, les sauvegardes et les améliorations.'
         },
         {
           q: 'Travaillez-vous avec des clients en dehors de Thessalonique?',
-          a: 'Oui. Nous sommes basés à Thessalonique mais travaillons à distance avec des clients partout en Grèce et à l\'étranger, avec une communication claire à chaque étape du projet.'
+          a: 'Oui. Nous sommes basés à Thessalonique et travaillons à distance avec des clients en Grèce et à l\'étranger.'
         }
       ]
     },
     // Meta tags for pages
     meta: {
       home: {
-        title: 'DevTaskHub | Développement de Sites Web Personnalisés & Applications Mobiles',
-        description: 'Développement de sites web personnalisés, e-shop, applications mobiles, IA et SEO par une équipe experte à Thessalonique. Design responsive, rapidité, sécurité, support.'
+        title: 'Création de Sites Web & Applications à Thessalonique | DevTaskHub',
+        description: 'Sites web, e-shops et applications iOS & Android créés à Thessalonique. Chatbots IA et SEO. Découvrez nos projets en ligne et demandez un devis gratuit.'
       },
       webDevelopment: {
         title: 'Développement Web | DevTaskHub Thessalonique',
@@ -3517,6 +3048,16 @@ export const translations = {
       contact: {
         title: 'Contact | DevTaskHub Thessalonique',
         description: 'Contactez l\'équipe DevTaskHub pour un devis ou des questions sur nos services.'
+      },
+      portfolio: {
+        title: 'Réalisations & Portfolio | Sites et Applications | DevTaskHub',
+        description: 'Projets en ligne de DevTaskHub : LifeMuseum, Hournook, Lumora, KLINARITI, T-Parking, Advanced Derma et plus. Sites web, e-shops et applications iOS & Android.'
+      },
+      notFound: {
+        title: 'Page introuvable | DevTaskHub',
+        heading: 'Page introuvable',
+        text: 'Ce lien n\'existe pas ou a été déplacé.',
+        cta: 'Retour à l\'accueil'
       },
       terms: {
         title: 'Termes & Conditions | DevTaskHub',
@@ -3594,17 +3135,18 @@ export const translations = {
       lastUpdate: 'Dernière mise à jour : Juin 2026'
     },
     // HomeShowcase Section
-    homeShowcase: {
-      title: 'Nous construisons des sites web qui impressionnent.',
-      subtitle: 'Nous combinons esthétique, rapidité et fonctionnalité à un prix abordable. Des pages de présentation simples aux applications web dynamiques.',
-      bullets: [
-        'Design magistral avec attention aux détails',
-        'Réponse la plus rapide et optimisation pour chaque appareil',
-        'Résultat premium à des prix raisonnables',
-        'Personnalisation absolue selon les besoins du client',
-        'Hébergement, SEO et support, tout en un'
+    process: {
+      label: 'Notre méthode',
+      title: 'De l\'idée à la mise en ligne,',
+      kicker: 'en 4 étapes',
+      subtitle: 'Dès le premier jour, vous savez ce que vous obtenez, quand et à quel prix.',
+      steps: [
+        { title: 'Échange', text: 'Dites-nous ce dont vous avez besoin. Vous recevez un devis gratuit et un calendrier.' },
+        { title: 'Design', text: 'Vous voyez le design avant la première ligne de code.' },
+        { title: 'Développement', text: 'Nous construisons et vous montrons l\'avancement à chaque étape.' },
+        { title: 'Livraison et support', text: 'Le projet est en ligne. Nous restons à vos côtés pour la suite.' }
       ],
-      cta: 'Voir les Échantillons du Portfolio'
+      cta: 'Voir nos réalisations'
     }
   }
 };

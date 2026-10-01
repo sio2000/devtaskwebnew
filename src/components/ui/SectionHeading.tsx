@@ -9,6 +9,8 @@ type SectionHeadingProps = {
   align?: 'left' | 'center';
   className?: string;
   titleClassName?: string;
+  /** heading level: h1 only when the section is the page's main heading */
+  as?: 'h1' | 'h2';
 };
 
 /** Numbered editorial section header: mono index · hairline · label, then a large display title. */
@@ -20,6 +22,7 @@ const SectionHeading: React.FC<SectionHeadingProps> = ({
   align = 'left',
   className = '',
   titleClassName = '',
+  as: Tag = 'h2',
 }) => {
   const centered = align === 'center';
   return (
@@ -30,10 +33,10 @@ const SectionHeading: React.FC<SectionHeadingProps> = ({
         <span className="text-[0.72rem] font-medium uppercase tracking-[0.22em] text-paper-muted">{label}</span>
       </Reveal>
       <Reveal delay={0.06}>
-        <h2 className={`display-hero text-paper text-[clamp(2.1rem,5.6vw,4.4rem)] ${titleClassName}`}>
+        <Tag className={`display-hero text-paper text-[clamp(2.1rem,5.6vw,4.4rem)] ${titleClassName}`}>
           {title}
           {kicker && <span className="font-editorial italic font-normal text-iris-gradient"> {kicker}</span>}
-        </h2>
+        </Tag>
       </Reveal>
     </div>
   );

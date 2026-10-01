@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useCallback } from 'react';
-import { ArrowUpRight, ArrowDown, Phone } from 'lucide-react';
+import { ArrowUpRight, Phone } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useLanguage } from '../hooks/useLanguage';
 import { translations } from '../data/translations';
@@ -7,8 +7,9 @@ import { useIsMobile } from '../hooks/useIsMobile';
 import WordReveal from './ui/WordReveal';
 import Marquee from './ui/Marquee';
 import MagneticButton from './ui/MagneticButton';
-import SpinningBadge from './ui/SpinningBadge';
 import AuroraField from './ui/AuroraField';
+import HeroVisual, { type HeroFocus } from './ui/HeroVisual';
+import { newSiteProjects } from '../data/work';
 
 const SLIDE_INTERVAL = 6500;
 
@@ -16,6 +17,7 @@ const Hero: React.FC = () => {
   const { language } = useLanguage();
   const t = translations[language];
   const isMobile = useIsMobile();
+  const isCompact = useIsMobile(1024);
   const [current, setCurrent] = useState(0);
   const raw = t.hero.slides;
 
@@ -27,8 +29,10 @@ const Hero: React.FC = () => {
   };
   // Display order requested: team first, then mobile, then websites
   const displayOrder = raw.length >= 3 ? [2, 1, 0] : raw.map((_, i: number) => i);
+  const focusByIndex: HeroFocus[] = ['web', 'mobile', 'team'];
   const slides = displayOrder.map((idx) => ({
     ...raw[idx],
+    focus: focusByIndex[idx] ?? 'team',
     cta: ctaByIndex[idx] ?? { label: t.hero.cta, target: 'services' },
   }));
 
@@ -49,6 +53,7 @@ const Hero: React.FC = () => {
     fr: ['Sites Web', 'Applications Mobiles', 'Automatisation', 'SEO', 'IA', 'E-shop', 'Android & iOS', 'Web Apps', 'Design UX/UI', 'Chatbots'],
   };
   const marqueeItems = marqueeByLang[language] ?? marqueeByLang.en;
+  const latestLabel = language === 'el' ? 'Νέα έργα' : language === 'fr' ? 'Nouveautés' : 'Latest work';
 
   return (
     <section
@@ -73,13 +78,14 @@ const Hero: React.FC = () => {
         style={{ background: 'linear-gradient(to top, var(--ink), transparent)' }}
       />
 
-      <div className="relative z-10 mx-auto flex w-full max-w-7xl flex-1 flex-col justify-center px-5 pt-28 pb-10 sm:px-8 lg:pt-32">
-        {/* Headline — rotates per slide */}
-        <div className="max-w-5xl">
+      <div className="relative z-10 mx-auto grid w-full max-w-7xl flex-1 grid-cols-1 items-center gap-10 px-5 pt-28 pb-10 sm:px-8 lg:grid-cols-[1.08fr_0.92fr] lg:pt-32">
+        <div>
+        {/* Headline: rotates per slide */}
+        <div className="min-h-[13.5rem] max-w-5xl sm:min-h-[14.5rem] lg:min-h-[17rem]">
           <AnimatePresence mode="wait">
             <motion.h1
               key={current}
-              className="display-hero text-paper text-[clamp(2rem,7.2vw,6rem)]"
+              className="display-hero text-paper text-[clamp(2.2rem,7.2vw,6rem)] lg:text-[clamp(3rem,4.7vw,4.9rem)]"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0, transition: { duration: 0.25 } }}
@@ -102,7 +108,7 @@ const Hero: React.FC = () => {
         </div>
 
         {/* CTAs + rotating badge */}
-        <div className="mt-11 flex flex-col items-start gap-8 sm:flex-row sm:items-center sm:justify-between">
+        <div className="mt-6 flex flex-col items-start gap-8 sm:flex-row sm:items-center sm:justify-between">
           <div className="flex flex-col gap-4 sm:flex-row sm:items-center">
             <MagneticButton>
               <button
@@ -124,19 +130,6 @@ const Hero: React.FC = () => {
             </MagneticButton>
           </div>
 
-          {!isMobile && (
-            <button
-              onClick={() => window.scrollTo({ top: window.innerHeight - 80, behavior: 'smooth' })}
-              className="text-paper-dim transition-colors hover:text-paper"
-              aria-label="Scroll"
-            >
-              <SpinningBadge size={132} className="text-paper-muted">
-                <span className="flex h-12 w-12 items-center justify-center rounded-full border border-[var(--line-strong)] bg-white/[0.03] backdrop-blur-sm">
-                  <ArrowDown className="h-5 w-5 text-paper" />
-                </span>
-              </SpinningBadge>
-            </button>
-          )}
         </div>
 
         {/* Slide progress */}
@@ -166,6 +159,26 @@ const Hero: React.FC = () => {
             ))}
           </div>
         </div>
+
+        {/* Latest work: direct links to the newest live projects */}
+        <div className="mt-9 flex flex-wrap items-center gap-2.5">
+          <span className="mr-1 text-[0.72rem] font-medium uppercase tracking-[0.22em] text-paper-muted">{latestLabel}</span>
+          {newSiteProjects.map((p) => (
+            <a
+              key={p.key}
+              href={p.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="tag-ink transition-colors hover:border-iris/40 hover:bg-iris/10 hover:text-paper"
+            >
+              {p.title[language]}
+              <ArrowUpRight className="h-3 w-3" />
+            </a>
+          ))}
+        </div>
+        </div>
+
+        {!isCompact && <HeroVisual focus={slides[current].focus} />}
       </div>
 
       {/* Bottom marquee band */}

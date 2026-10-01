@@ -4,6 +4,7 @@ import { FaShoppingCart, FaMobileAlt, FaCogs, FaSyncAlt, FaCreditCard, FaBoxes, 
 import { SiWoocommerce, SiShopify, SiMagento, SiLaravel, SiNextdotjs, SiStripe, SiPaypal, SiVuedotjs, SiGraphql, SiContentful } from 'react-icons/si';
 import { useLanguage } from '../hooks/useLanguage';
 import { translations } from '../data/translations';
+import { siteProjects } from '../data/work';
 import { useIsMobile } from '../hooks/useIsMobile';
 // import cartLottie from '../assets/lottie-cart.json';
 const cartLottie = {};
@@ -15,15 +16,6 @@ import 'aos/dist/aos.css';
 // Εισαγωγές εικόνων/εικονιδίων αν χρειάζεται
 import cartImg from '../assets/apps.jpg';
 import appsImg from '../assets/e-shop.jpg';
-import clinicImg from '../assets/clinic.png';
-import hydrogenImg from '../assets/hydrogen.png';
-import hotelImg from '../assets/Hotel.png';
-import cryptoImg from '../assets/crypto.png';
-import jewelsImg from '../assets/jewels.png';
-import advancedDermaImg from '../assets/advanced_derma.png';
-import leonidionHousesImg from '../assets/leonidionhouses.png';
-import bagImg from '../assets/bag.png';
-import tparkingSiteImg from '../assets/tparking.png';
 
 function playSound(src: string) {
   if (!src) return;
@@ -136,17 +128,10 @@ export default function EcommerceDevelopmentPage() {
     })), [t]);
 
   // Clients array with useMemo
-  const clients = useMemo(() => [
-    { name: t.services.pages.ecommerceDevelopment.portfolio.clients[0].name, url: 'https://onlineparentteenclinic.com/', img: clinicImg, desc: t.services.pages.ecommerceDevelopment.portfolio.clients[0].desc },
-    { name: t.services.pages.ecommerceDevelopment.portfolio.clients[1].name, url: 'https://hydrogenlife.eu/', img: hydrogenImg, desc: t.services.pages.ecommerceDevelopment.portfolio.clients[1].desc },
-    { name: t.services.pages.ecommerceDevelopment.portfolio.clients[2].name, url: 'https://serenity-hotel-lux.netlify.app/', img: hotelImg, desc: t.services.pages.ecommerceDevelopment.portfolio.clients[2].desc },
-    { name: t.services.pages.ecommerceDevelopment.portfolio.clients[3].name, url: 'https://panitoscryptocoin.com/', img: cryptoImg, desc: t.services.pages.ecommerceDevelopment.portfolio.clients[3].desc },
-    { name: t.services.pages.ecommerceDevelopment.portfolio.clients[4].name, url: 'https://stsrr.netlify.app/', img: jewelsImg, desc: t.services.pages.ecommerceDevelopment.portfolio.clients[4].desc },
-    { name: t.services.pages.ecommerceDevelopment.portfolio.clients[5].name, url: 'https://advanced-derma.com/', img: advancedDermaImg, desc: t.services.pages.ecommerceDevelopment.portfolio.clients[5].desc },
-    { name: t.services.pages.ecommerceDevelopment.portfolio.clients[7].name, url: 'https://www.leonidionhouses.com/', img: leonidionHousesImg, desc: t.services.pages.ecommerceDevelopment.portfolio.clients[7].desc },
-    { name: t.services.pages.ecommerceDevelopment.portfolio.clients[8].name, url: 'https://idyllic-mermaid-415d9f.netlify.app/', img: bagImg, desc: t.services.pages.ecommerceDevelopment.portfolio.clients[8].desc },
-    { name: t.services.pages.ecommerceDevelopment.portfolio.clients[9].name, url: 'https://t-parking.com/', img: tparkingSiteImg, desc: t.services.pages.ecommerceDevelopment.portfolio.clients[9].desc },
-  ], [t]);
+  const clients = useMemo(() =>
+    siteProjects
+      .filter((p) => p.commerce)
+      .map((p) => ({ name: p.title[language], url: p.url, img: p.image, desc: p.description[language] })), [language]);
 
   return (
     <div className="bg-gradient-to-br from-ink via-ink-800 to-ink-800 min-h-screen text-paper font-sans">

@@ -86,6 +86,11 @@ const Footer = memo(() => {
                   </Link>
                 </li>
               ))}
+              <li>
+                <Link to="/portfolio" className="link-underline text-paper-dim transition-colors hover:text-paper">
+                  Portfolio
+                </Link>
+              </li>
               <li className="pt-2">
                 <button onClick={() => navigate('/terms')} className="link-underline text-paper-muted transition-colors hover:text-paper">
                   {t.footer.terms}
@@ -106,7 +111,7 @@ const Footer = memo(() => {
         </div>
 
         <div className="mt-14 flex flex-col items-center justify-between gap-4 border-t border-[var(--line)] pt-8 sm:flex-row">
-          <p className="text-sm text-paper-muted">© 2025 DevTaskHub. {t.footer.rights}</p>
+          <p className="text-sm text-paper-muted">© {new Date().getFullYear()} DevTaskHub. {t.footer.rights}</p>
           <button
             onClick={scrollToTop}
             className="flex items-center gap-2 rounded-full border border-[var(--line)] px-4 py-2 text-sm text-paper-dim transition-colors hover:border-iris/40 hover:text-paper"

@@ -18,7 +18,8 @@ import LoadingScreen from './components/LoadingScreen';
 import Analytics from './components/Analytics';
 import ScrollProgress from './components/ScrollProgress';
 import Grain from './components/ui/Grain';
-import { Helmet } from 'react-helmet-async';
+import Seo from './components/Seo';
+import NotFound from './components/NotFound';
 import { ServiceSchema } from './components/SchemaMarkup';
 
 // Lazy load service pages for better performance
@@ -35,6 +36,22 @@ const VideoAnimationProductionPage = lazy(() => import('./components/VideoAnimat
 const DatabaseCloudInfrastructurePage = lazy(() => import('./components/DatabaseCloudInfrastructurePage'));
 const TermsAndConditions = lazy(() => import('./components/TermsAndConditions'));
 const AdminPanel = lazy(() => import('./components/AdminPanel'));
+
+// Service routes: slug, key into translations.meta, schema.org serviceType, page component.
+// Keep in sync with scripts/prerender-meta.mjs and public/sitemap.xml.
+const serviceRoutes = [
+  { slug: 'web-development', meta: 'webDevelopment', serviceType: 'Web Development', Page: WebDevelopmentPage },
+  { slug: 'mobile-app-development', meta: 'mobileAppDevelopment', serviceType: 'Mobile App Development', Page: MobileAppDevelopmentPage },
+  { slug: 'chatbots-ai-agents', meta: 'chatbotsAIAgents', serviceType: 'AI Chatbots', Page: ChatbotsAIAgentsPage },
+  { slug: 'social-media-management', meta: 'socialMediaManagement', serviceType: 'Social Media Management', Page: SocialMediaManagementPage },
+  { slug: 'video-animation-production', meta: 'videoAnimationProduction', serviceType: 'Video Production', Page: VideoAnimationProductionPage },
+  { slug: 'seo-website-optimization', meta: 'seoWebsiteOptimization', serviceType: 'SEO Services', Page: SEOWebsiteOptimizationPage },
+  { slug: 'ux-ui-design', meta: 'uxUIDesign', serviceType: 'UX/UI Design', Page: UXUIDesignPage },
+  { slug: 'database-cloud-infrastructure', meta: 'databaseCloudInfrastructure', serviceType: 'Cloud Infrastructure', Page: DatabaseCloudInfrastructurePage },
+  { slug: 'ai-integration-applications', meta: 'aiIntegrationApplications', serviceType: 'AI Integration', Page: AIIntegrationApplicationsPage },
+  { slug: 'ecommerce-development', meta: 'ecommerceDevelopment', serviceType: 'E-commerce Development', Page: EcommerceDevelopmentPage },
+  { slug: 'game-development', meta: 'gameDevelopment', serviceType: 'Game Development', Page: GameDevelopmentPage },
+] as const;
 
 // Loading component for lazy loaded pages
 const PageLoader = () => (
@@ -59,201 +76,65 @@ function AppContent() {
         <ChromeOnly><Grain /></ChromeOnly>
         <ScrollToTop />
         <Analytics />
-      <div className="min-h-screen bg-white">
+      <div className="min-h-screen bg-ink">
         <ChromeOnly><Header /></ChromeOnly>
         <ChromeOnly><Breadcrumbs /></ChromeOnly>
       <main>
           <Routes>
             <Route path="/" element={
               <>
-                <Helmet>
-                  <title>{t.meta.home.title}</title>
-                  <meta name="description" content={t.meta.home.description} />
-                  <link rel="canonical" href="https://devtaskhub.com/" />
-                  <meta property="og:title" content={t.meta.home.title} />
-                  <meta property="og:description" content={t.meta.home.description} />
-                </Helmet>
+                <Seo title={t.meta.home.title} description={t.meta.home.description} path="/" />
                 <Hero />
                 <HomeShowcaseSection />
                 <Services />
-                <About />
                 <Portfolio />
+                <About />
                 <FAQ />
                 <Contact />
               </>
             } />
             <Route path="/services" element={
               <>
-                <Helmet>
-                  <title>{`${t.services.title} | DevTaskHub`}</title>
-                  <meta name="description" content={t.services.subtitle} />
-                  <link rel="canonical" href="https://devtaskhub.com/services" />
-                  <meta property="og:title" content={`${t.services.title} | DevTaskHub`} />
-                  <meta property="og:description" content={t.services.subtitle} />
-                </Helmet>
+                <Seo title={`${t.services.title} | DevTaskHub`} description={t.services.subtitle} path="/services" />
                 <Services />
               </>
             } />
-            {/* Εδώ θα μπουν τα νέα premium service pages, π.χ.: */}
-            <Route path="/services/web-development" element={
-              <Suspense fallback={<PageLoader />}>
-                <Helmet>
-                  <title>{t.meta.webDevelopment.title}</title>
-                  <meta name="description" content={t.meta.webDevelopment.description} />
-                  <link rel="canonical" href="https://devtaskhub.com/services/web-development" />
-                </Helmet>
-                <ServiceSchema name={t.meta.webDevelopment.title} description={t.meta.webDevelopment.description} serviceType="Web Development" />
-                <WebDevelopmentPage />
-              </Suspense>
-            } />
-            <Route path="/services/mobile-app-development" element={
-              <Suspense fallback={<PageLoader />}>
-                <Helmet>
-                  <title>{t.meta.mobileAppDevelopment.title}</title>
-                  <meta name="description" content={t.meta.mobileAppDevelopment.description} />
-                  <link rel="canonical" href="https://devtaskhub.com/services/mobile-app-development" />
-                </Helmet>
-                <ServiceSchema name={t.meta.mobileAppDevelopment.title} description={t.meta.mobileAppDevelopment.description} serviceType="Mobile App Development" />
-                <MobileAppDevelopmentPage />
-              </Suspense>
-            } />
-            <Route path="/services/chatbots-ai-agents" element={
-              <Suspense fallback={<PageLoader />}>
-                <Helmet>
-                  <title>{t.meta.chatbotsAIAgents.title}</title>
-                  <meta name="description" content={t.meta.chatbotsAIAgents.description} />
-                  <link rel="canonical" href="https://devtaskhub.com/services/chatbots-ai-agents" />
-                </Helmet>
-                <ServiceSchema name={t.meta.chatbotsAIAgents.title} description={t.meta.chatbotsAIAgents.description} serviceType="AI Chatbots" />
-                <ChatbotsAIAgentsPage />
-              </Suspense>
-            } />
-            <Route path="/services/social-media-management" element={
-              <Suspense fallback={<PageLoader />}>
-                <Helmet>
-                  <title>{t.meta.socialMediaManagement.title}</title>
-                  <meta name="description" content={t.meta.socialMediaManagement.description} />
-                  <link rel="canonical" href="https://devtaskhub.com/services/social-media-management" />
-                </Helmet>
-                <ServiceSchema name={t.meta.socialMediaManagement.title} description={t.meta.socialMediaManagement.description} serviceType="Social Media Management" />
-                <SocialMediaManagementPage />
-              </Suspense>
-            } />
-            <Route path="/services/video-animation-production" element={
-              <Suspense fallback={<PageLoader />}>
-                <Helmet>
-                  <title>{t.meta.videoAnimationProduction.title}</title>
-                  <meta name="description" content={t.meta.videoAnimationProduction.description} />
-                  <link rel="canonical" href="https://devtaskhub.com/services/video-animation-production" />
-                </Helmet>
-                <ServiceSchema name={t.meta.videoAnimationProduction.title} description={t.meta.videoAnimationProduction.description} serviceType="Video Production" />
-                <VideoAnimationProductionPage />
-              </Suspense>
-            } />
-            <Route path="/services/seo-website-optimization" element={
-              <Suspense fallback={<PageLoader />}>
-                <Helmet>
-                  <title>{t.meta.seoWebsiteOptimization.title}</title>
-                  <meta name="description" content={t.meta.seoWebsiteOptimization.description} />
-                  <link rel="canonical" href="https://devtaskhub.com/services/seo-website-optimization" />
-                </Helmet>
-                <ServiceSchema name={t.meta.seoWebsiteOptimization.title} description={t.meta.seoWebsiteOptimization.description} serviceType="SEO Services" />
-                <SEOWebsiteOptimizationPage />
-              </Suspense>
-            } />
-            <Route path="/services/ux-ui-design" element={
-              <Suspense fallback={<PageLoader />}>
-                <Helmet>
-                  <title>{t.meta.uxUIDesign.title}</title>
-                  <meta name="description" content={t.meta.uxUIDesign.description} />
-                  <link rel="canonical" href="https://devtaskhub.com/services/ux-ui-design" />
-                </Helmet>
-                <ServiceSchema name={t.meta.uxUIDesign.title} description={t.meta.uxUIDesign.description} serviceType="UX/UI Design" />
-                <UXUIDesignPage />
-              </Suspense>
-            } />
-            <Route path="/services/database-cloud-infrastructure" element={
-              <Suspense fallback={<PageLoader />}>
-                <Helmet>
-                  <title>{t.meta.databaseCloudInfrastructure.title}</title>
-                  <meta name="description" content={t.meta.databaseCloudInfrastructure.description} />
-                  <link rel="canonical" href="https://devtaskhub.com/services/database-cloud-infrastructure" />
-                </Helmet>
-                <ServiceSchema name={t.meta.databaseCloudInfrastructure.title} description={t.meta.databaseCloudInfrastructure.description} serviceType="Cloud Infrastructure" />
-                <DatabaseCloudInfrastructurePage />
-              </Suspense>
-            } />
-            <Route path="/services/ai-integration-applications" element={
-              <Suspense fallback={<PageLoader />}>
-                <Helmet>
-                  <title>{t.meta.aiIntegrationApplications.title}</title>
-                  <meta name="description" content={t.meta.aiIntegrationApplications.description} />
-                  <link rel="canonical" href="https://devtaskhub.com/services/ai-integration-applications" />
-                </Helmet>
-                <ServiceSchema name={t.meta.aiIntegrationApplications.title} description={t.meta.aiIntegrationApplications.description} serviceType="AI Integration" />
-                <AIIntegrationApplicationsPage />
-              </Suspense>
-            } />
-            <Route path="/services/ecommerce-development" element={
-              <Suspense fallback={<PageLoader />}>
-                <Helmet>
-                  <title>{t.meta.ecommerceDevelopment.title}</title>
-                  <meta name="description" content={t.meta.ecommerceDevelopment.description} />
-                  <link rel="canonical" href="https://devtaskhub.com/services/ecommerce-development" />
-                </Helmet>
-                <ServiceSchema name={t.meta.ecommerceDevelopment.title} description={t.meta.ecommerceDevelopment.description} serviceType="E-commerce Development" />
-                <EcommerceDevelopmentPage />
-              </Suspense>
-            } />
-            <Route path="/services/game-development" element={
-              <Suspense fallback={<PageLoader />}>
-                <Helmet>
-                  <title>{t.meta.gameDevelopment.title}</title>
-                  <meta name="description" content={t.meta.gameDevelopment.description} />
-                  <link rel="canonical" href="https://devtaskhub.com/services/game-development" />
-                </Helmet>
-                <ServiceSchema name={t.meta.gameDevelopment.title} description={t.meta.gameDevelopment.description} serviceType="Game Development" />
-                <GameDevelopmentPage />
-              </Suspense>
-            } />
-            <Route path="/contact" element={
+            <Route path="/portfolio" element={
               <>
-                <Helmet>
-                  <title>{t.meta.contact.title}</title>
-                  <meta name="description" content={t.meta.contact.description} />
-                  <link rel="canonical" href="https://devtaskhub.com/contact" />
-                </Helmet>
-                <Contact />
+                <Seo title={t.meta.portfolio.title} description={t.meta.portfolio.description} path="/portfolio" />
+                <Portfolio standalone />
               </>
             } />
-            <Route path="/contactme" element={
-              <>
-                <Helmet>
-                  <title>{t.meta.contact.title}</title>
-                  <meta name="description" content={t.meta.contact.description} />
-                  <link rel="canonical" href="https://devtaskhub.com/contact" />
-                </Helmet>
-                <Contact />
-              </>
-            } />
+            {serviceRoutes.map(({ slug, meta, serviceType, Page }) => (
+              <Route key={slug} path={`/services/${slug}`} element={
+                <Suspense fallback={<PageLoader />}>
+                  <Seo title={t.meta[meta].title} description={t.meta[meta].description} path={`/services/${slug}`} />
+                  <ServiceSchema name={t.meta[meta].title} description={t.meta[meta].description} serviceType={serviceType} />
+                  <Page />
+                </Suspense>
+              } />
+            ))}
+            {['/contact', '/contactme'].map((path) => (
+              <Route key={path} path={path} element={
+                <>
+                  <Seo title={t.meta.contact.title} description={t.meta.contact.description} path="/contact" />
+                  <Contact />
+                </>
+              } />
+            ))}
             <Route path="/admin" element={
               <Suspense fallback={<PageLoader />}>
-                <Helmet>
-                  <title>Admin · DevTaskHub</title>
-                  <meta name="robots" content="noindex, nofollow" />
-                </Helmet>
+                <Seo title="Admin · DevTaskHub" noindex />
                 <AdminPanel />
               </Suspense>
             } />
             <Route path="/terms" element={
               <Suspense fallback={<PageLoader />}>
-                <Helmet>
-                  <title>{t.meta.terms.title}</title>
-                  <meta name="description" content={t.meta.terms.description} />
-                </Helmet>
+                <Seo title={t.meta.terms.title} description={t.meta.terms.description} path="/terms" />
                 <TermsAndConditions />
               </Suspense>
             } />
+            <Route path="*" element={<NotFound />} />
           </Routes>
       </main>
       <ChromeOnly><Footer /></ChromeOnly>

@@ -8,39 +8,43 @@
     <meta name="theme-color" content="#08080B" />
     <meta name="color-scheme" content="dark light" />
 
-    <!-- Primary SEO -->
-    <title>Κατασκευή Ιστοσελίδων Θεσσαλονίκη | DevTaskHub — Web & Mobile Apps, AI, SEO</title>
-    <meta name="description" content="Η DevTaskHub κατασκευάζει custom ιστοσελίδες, e-shop, mobile εφαρμογές (iOS & Android), AI chatbots και SEO στη Θεσσαλονίκη. Full-stack ομάδα developers, responsive design, ταχύτητα, ασφάλεια & συνεχής υποστήριξη. Ζητήστε δωρεάν προσφορά." />
-    <meta name="keywords" content="κατασκευή ιστοσελίδων Θεσσαλονίκη, web developer Θεσσαλονίκη, κατασκευή eshop, mobile apps, AI chatbots, SEO Θεσσαλονίκη, devtaskhub, δημιουργία site, επαγγελματική ιστοσελίδα, web development" />
+    <!-- Primary SEO. Tags marked data-rh are taken over by react-helmet-async per route
+         (see src/components/Seo.tsx) and rewritten per page by scripts/prerender-meta.mjs. -->
+    <title>Κατασκευή Ιστοσελίδων &amp; Εφαρμογών Θεσσαλονίκη | DevTaskHub</title>
+    <meta name="description" content="Κατασκευή ιστοσελίδων, e-shop και mobile εφαρμογών iOS &amp; Android στη Θεσσαλονίκη. AI chatbots και SEO. Δείτε τα έργα μας και ζητήστε δωρεάν προσφορά." data-rh="true" />
+    <meta name="keywords" content="κατασκευή ιστοσελίδων Θεσσαλονίκη, κατασκευή ιστοσελίδων, κατασκευή eshop, κατασκευή εφαρμογών, mobile apps iOS Android, web developer Θεσσαλονίκη, AI chatbots, SEO Θεσσαλονίκη, devtaskhub" />
     <meta name="author" content="DevTaskHub" />
-    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
-    <meta name="googlebot" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" data-rh="true" />
     <meta name="geo.region" content="GR-B" />
     <meta name="geo.placename" content="Θεσσαλονίκη" />
     <meta name="geo.position" content="40.6401;22.9444" />
     <meta name="ICBM" content="40.6401, 22.9444" />
-    <link rel="canonical" href="https://devtaskhub.com/" />
+    <link rel="canonical" href="https://devtaskhub.com/" data-rh="true" />
+
+    <!-- Google Search Console: the DNS (TXT) method needs no tag here. If you choose the
+         "HTML tag" method instead, paste the tag Google gives you on the next line.
+    <meta name="google-site-verification" content="PASTE_CODE_HERE" />
+    -->
 
     <!-- Open Graph -->
     <meta property="og:site_name" content="DevTaskHub" />
-    <meta property="og:title" content="Κατασκευή Ιστοσελίδων Θεσσαλονίκη | DevTaskHub — Web & Mobile Apps, AI, SEO" />
-    <meta property="og:description" content="Custom ιστοσελίδες, e-shop, mobile apps, AI και SEO από εξειδικευμένη full-stack ομάδα στη Θεσσαλονίκη. Responsive design, ταχύτητα, ασφάλεια, υποστήριξη." />
+    <meta property="og:title" content="Κατασκευή Ιστοσελίδων &amp; Εφαρμογών Θεσσαλονίκη | DevTaskHub" data-rh="true" />
+    <meta property="og:description" content="Κατασκευή ιστοσελίδων, e-shop και mobile εφαρμογών iOS &amp; Android στη Θεσσαλονίκη. AI chatbots και SEO. Δείτε τα έργα μας και ζητήστε δωρεάν προσφορά." data-rh="true" />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://devtaskhub.com/" />
-    <meta property="og:image" content="https://devtaskhub.com/og-image.jpg" />
+    <meta property="og:url" content="https://devtaskhub.com/" data-rh="true" />
+    <meta property="og:image" content="https://devtaskhub.com/og-cover.jpg" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
-    <meta property="og:image:alt" content="DevTaskHub — Κατασκευή ιστοσελίδων & εφαρμογών στη Θεσσαλονίκη" />
+    <meta property="og:image:alt" content="DevTaskHub: κατασκευή ιστοσελίδων και εφαρμογών στη Θεσσαλονίκη" />
     <meta property="og:locale" content="el_GR" />
     <meta property="og:locale:alternate" content="en_US" />
     <meta property="og:locale:alternate" content="fr_FR" />
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:url" content="https://devtaskhub.com/" />
-    <meta name="twitter:title" content="Κατασκευή Ιστοσελίδων Θεσσαλονίκη | DevTaskHub" />
-    <meta name="twitter:description" content="Custom ιστοσελίδες, e-shop, mobile apps, AI και SEO από εξειδικευμένη full-stack ομάδα στη Θεσσαλονίκη." />
-    <meta name="twitter:image" content="https://devtaskhub.com/og-image.jpg" />
+    <meta name="twitter:title" content="Κατασκευή Ιστοσελίδων &amp; Εφαρμογών Θεσσαλονίκη | DevTaskHub" data-rh="true" />
+    <meta name="twitter:description" content="Κατασκευή ιστοσελίδων, e-shop και mobile εφαρμογών iOS &amp; Android στη Θεσσαλονίκη. AI chatbots και SEO. Δείτε τα έργα μας και ζητήστε δωρεάν προσφορά." data-rh="true" />
+    <meta name="twitter:image" content="https://devtaskhub.com/og-cover.jpg" />
 
     <link rel="manifest" href="/manifest.json" />
 
@@ -62,8 +66,8 @@
           "name": "DevTaskHub",
           "url": "https://devtaskhub.com/",
           "logo": "https://devtaskhub.com/logo.png",
-          "image": "https://devtaskhub.com/og-image.jpg",
-          "description": "Κατασκευή custom ιστοσελίδων, e-shop, mobile εφαρμογών, AI chatbots και SEO στη Θεσσαλονίκη.",
+          "image": "https://devtaskhub.com/og-cover.jpg",
+          "description": "Κατασκευή ιστοσελίδων, e-shop, mobile εφαρμογών iOS και Android, AI chatbots και SEO στη Θεσσαλονίκη.",
           "email": "info@devtaskhub.com",
           "telephone": "+306971982563",
           "foundingDate": "2022",
@@ -92,9 +96,10 @@
         {
           "@type": "ProfessionalService",
           "@id": "https://devtaskhub.com/#localbusiness",
-          "name": "DevTaskHub — Κατασκευή Ιστοσελίδων & Εφαρμογών",
+          "name": "DevTaskHub",
+          "description": "Κατασκευή ιστοσελίδων και εφαρμογών στη Θεσσαλονίκη",
           "url": "https://devtaskhub.com/",
-          "image": "https://devtaskhub.com/og-image.jpg",
+          "image": "https://devtaskhub.com/og-cover.jpg",
           "logo": "https://devtaskhub.com/logo.png",
           "telephone": "+306971982563",
           "email": "info@devtaskhub.com",
@@ -129,12 +134,7 @@
           "url": "https://devtaskhub.com/",
           "name": "DevTaskHub",
           "inLanguage": "el",
-          "publisher": { "@id": "https://devtaskhub.com/#organization" },
-          "potentialAction": {
-            "@type": "SearchAction",
-            "target": "https://devtaskhub.com/?s={search_term_string}",
-            "query-input": "required name=search_term_string"
-          }
+          "publisher": { "@id": "https://devtaskhub.com/#organization" }
         },
         {
           "@type": "OfferCatalog",
@@ -148,12 +148,157 @@
             { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "SEO & Βελτιστοποίηση Ιστοσελίδων", "url": "https://devtaskhub.com/services/seo-website-optimization" } },
             { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "AI Integration σε Εφαρμογές", "url": "https://devtaskhub.com/services/ai-integration-applications" } }
           ]
+        },
+        {
+          "@type": "ItemList",
+          "@id": "https://devtaskhub.com/#work",
+          "name": "Έργα της DevTaskHub",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "item": {
+                "@type": "MobileApplication",
+                "name": "LifeMuseum",
+                "url": "https://lifemuseumapp.com/",
+                "description": "Εφαρμογή που κάνει τις στιγμές της ζωής σου εκθέματα και τη χρονιά σου ταινία.",
+                "creator": {
+                  "@id": "https://devtaskhub.com/#organization"
+                },
+                "operatingSystem": "iOS, Android",
+                "applicationCategory": "MobileApplication",
+                "sameAs": [
+                  "https://apps.apple.com/us/app/lifemuseum/id6799032000",
+                  "https://play.google.com/store/apps/details?id=com.lifemuseum.app"
+                ]
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "item": {
+                "@type": "MobileApplication",
+                "name": "T-Parking",
+                "url": "https://t-parking.com/",
+                "description": "Η πρώτη εφαρμογή στην Ελλάδα που δείχνει ελεύθερες θέσεις parking στον δρόμο σε πραγματικό χρόνο.",
+                "creator": {
+                  "@id": "https://devtaskhub.com/#organization"
+                },
+                "operatingSystem": "iOS, Android",
+                "applicationCategory": "MobileApplication",
+                "sameAs": [
+                  "https://apps.apple.com/gr/app/t-parking/id6756634872",
+                  "https://play.google.com/store/apps/details?id=com.tparking.app"
+                ]
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "item": {
+                "@type": "MobileApplication",
+                "name": "GetFit SKG",
+                "url": "https://getfitskg.com/",
+                "description": "Εφαρμογή γυμναστηρίου για μέλη, προγράμματα, ραντεβού και πληρωμές.",
+                "creator": {
+                  "@id": "https://devtaskhub.com/#organization"
+                },
+                "operatingSystem": "iOS",
+                "applicationCategory": "MobileApplication",
+                "sameAs": [
+                  "https://apps.apple.com/us/app/getfit-skg/id6753928093"
+                ]
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": 4,
+              "item": {
+                "@type": "WebApplication",
+                "name": "Hournook",
+                "url": "https://www.hournook.com/",
+                "description": "Πλατφόρμα online ραντεβού για επαγγελματίες, σε 15 γλώσσες.",
+                "creator": {
+                  "@id": "https://devtaskhub.com/#organization"
+                },
+                "applicationCategory": "BusinessApplication",
+                "operatingSystem": "Web"
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": 5,
+              "item": {
+                "@type": "WebApplication",
+                "name": "Lumora Predictions",
+                "url": "https://lumorapredictions.com/",
+                "description": "Web εφαρμογή προβλέψεων με ταρώ, φλιτζάνι και κρυστάλλινη σφαίρα.",
+                "creator": {
+                  "@id": "https://devtaskhub.com/#organization"
+                },
+                "applicationCategory": "EntertainmentApplication",
+                "operatingSystem": "Web"
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": 6,
+              "item": {
+                "@type": "WebSite",
+                "name": "KLINARITI",
+                "url": "https://klinariti.com/",
+                "description": "Ιστοσελίδα για αστρολόγο και κλινική ψυχολόγο, με κράτηση συνεδρίας.",
+                "creator": {
+                  "@id": "https://devtaskhub.com/#organization"
+                }
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": 7,
+              "item": {
+                "@type": "WebSite",
+                "name": "Advanced Derma",
+                "url": "https://advanced-derma.com/",
+                "description": "Ιστοσελίδα δερματολογικού ιατρείου σε Αθήνα και Πειραιά, με online ραντεβού.",
+                "creator": {
+                  "@id": "https://devtaskhub.com/#organization"
+                }
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": 8,
+              "item": {
+                "@type": "WebSite",
+                "name": "Leonidion Houses",
+                "url": "https://www.leonidionhouses.com/",
+                "description": "Πλατφόρμα κρατήσεων για 6 καταλύματα, με online πληρωμές.",
+                "creator": {
+                  "@id": "https://devtaskhub.com/#organization"
+                }
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": 9,
+              "item": {
+                "@type": "WebSite",
+                "name": "Διαδικτυακό Ιατρείο Γονέων και Εφήβων",
+                "url": "https://onlineparentteenclinic.com/",
+                "description": "Πλατφόρμα τηλεϊατρικής με online ραντεβού.",
+                "creator": {
+                  "@id": "https://devtaskhub.com/#organization"
+                }
+              }
+            }
+          ]
         }
       ]
     }
     </script>
-    <!-- Structured Data: FAQ (eligible for rich results & AI citations) -->
-    <script type="application/ld+json">
+    <!-- Structured Data: FAQ (same text as the on-page FAQ in translations.ts) -->
+    <script type="application/ld+json" id="ld-faq">
     {
       "@context": "https://schema.org",
       "@type": "FAQPage",
@@ -161,33 +306,56 @@
         {
           "@type": "Question",
           "name": "Πόσο κοστίζει η κατασκευή μιας ιστοσελίδας στη Θεσσαλονίκη;",
-          "acceptedAnswer": { "@type": "Answer", "text": "Το κόστος εξαρτάται από την έκταση και τις λειτουργίες του έργου. Μια σύγχρονη ιστοσελίδα παρουσίασης ξεκινά από προσιτά πακέτα, ενώ e-shop και custom web εφαρμογές τιμολογούνται ανά project. Η DevTaskHub δίνει πάντα δωρεάν, διαφανή προσφορά πριν ξεκινήσει οποιαδήποτε εργασία." }
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Εξαρτάται από το μέγεθος και τις λειτουργίες του έργου. Πριν ξεκινήσουμε παίρνετε δωρεάν, ξεκάθαρη προσφορά, χωρίς κρυφές χρεώσεις."
+          }
         },
         {
           "@type": "Question",
           "name": "Πόσο χρόνο χρειάζεται για να ολοκληρωθεί ένα website;",
-          "acceptedAnswer": { "@type": "Answer", "text": "Μια ιστοσελίδα παρουσίασης ολοκληρώνεται συνήθως σε 2–4 εβδομάδες, ένα e-shop σε 4–8 εβδομάδες και οι custom εφαρμογές ανάλογα με την πολυπλοκότητα. Σας δίνουμε σαφές χρονοδιάγραμμα από το πρώτο brief." }
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ιστοσελίδα παρουσίασης: 2 έως 4 εβδομάδες. E-shop: 4 έως 8 εβδομάδες. Custom εφαρμογές: ανάλογα με το έργο. Το χρονοδιάγραμμα το έχετε από την αρχή."
+          }
         },
         {
           "@type": "Question",
           "name": "Οι ιστοσελίδες σας είναι βελτιστοποιημένες για κινητά και για SEO;",
-          "acceptedAnswer": { "@type": "Answer", "text": "Ναι. Όλες οι ιστοσελίδες μας είναι mobile-first, responsive, γρήγορες (Core Web Vitals) και χτίζονται με σωστή τεχνική SEO δομή ώστε να ανεβαίνουν στη Google και να εμφανίζονται σε AI μηχανές αναζήτησης." }
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ναι. Όλες είναι mobile-first, γρήγορες και στημένες με σωστό τεχνικό SEO και structured data, για τη Google και για την AI αναζήτηση (ChatGPT, Perplexity)."
+          }
         },
         {
           "@type": "Question",
           "name": "Αναλαμβάνετε εφαρμογές για iOS και Android;",
-          "acceptedAnswer": { "@type": "Answer", "text": "Ναι, αναπτύσσουμε native και cross-platform mobile εφαρμογές για iPhone/iPad και Android, καθώς και Progressive Web Apps, με δημοσίευση σε App Store και Google Play." }
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ναι. Φτιάχνουμε εφαρμογές για iPhone, iPad και Android και τις δημοσιεύουμε σε App Store και Google Play. Δείγματα: LifeMuseum, T-Parking, GetFit."
+          }
         },
         {
           "@type": "Question",
           "name": "Προσφέρετε υποστήριξη μετά την παράδοση;",
-          "acceptedAnswer": { "@type": "Answer", "text": "Ναι. Παρέχουμε συνεχή τεχνική υποστήριξη, ενημερώσεις, ασφάλεια και βελτιώσεις μετά την παράδοση, ώστε η ψηφιακή σας παρουσία να παραμένει γρήγορη και ασφαλής." }
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ναι. Αναλαμβάνουμε τεχνική υποστήριξη, ενημερώσεις ασφαλείας, backups και βελτιώσεις."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Συνεργάζεστε με πελάτες εκτός Θεσσαλονίκης;",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ναι. Η έδρα μας είναι στη Θεσσαλονίκη και δουλεύουμε εξ αποστάσεως με πελάτες σε όλη την Ελλάδα και το εξωτερικό."
+          }
         }
       ]
     }
     </script>
   </head>
-  <body style="background-color:#0a0a18">
+  <body style="background-color:#08080B">
     <div id="root"></div>
     <!-- Hidden static form so Netlify's build bot can register the form (SPA forms are JS-rendered) -->
     <form name="contact" data-netlify="true" netlify-honeypot="bot-field" hidden>
@@ -200,16 +368,17 @@
     </form>
     <!-- Crawler & no-JS fallback: core business content for engines that don't execute JavaScript -->
     <noscript>
+      <!--route-content-start-->
       <header>
-        <h1>DevTaskHub — Κατασκευή Ιστοσελίδων &amp; Εφαρμογών στη Θεσσαλονίκη</h1>
+        <h1>Κατασκευή Ιστοσελίδων &amp; Εφαρμογών στη Θεσσαλονίκη | DevTaskHub</h1>
         <p>
-          Η DevTaskHub είναι μια full-stack ομάδα developers στη Θεσσαλονίκη που κατασκευάζει
-          σύγχρονες, γρήγορες και responsive ιστοσελίδες, e-shop, mobile εφαρμογές για iOS &amp;
-          Android, AI chatbots και υπηρεσίες SEO για επιχειρήσεις και επαγγελματίες σε όλη την Ελλάδα.
+          Η DevTaskHub είναι full-stack ομάδα στη Θεσσαλονίκη. Φτιάχνουμε ιστοσελίδες, e-shop,
+          εφαρμογές για iOS και Android, AI chatbots και SEO, για επιχειρήσεις σε όλη την Ελλάδα.
         </p>
       </header>
+      <!--route-content-end-->
       <nav aria-label="Υπηρεσίες">
-        <h2>Υπηρεσίες</h2>
+        <h2><a href="/services">Υπηρεσίες</a></h2>
         <ul>
           <li><a href="/services/web-development">Κατασκευή Ιστοσελίδων &amp; Web Εφαρμογών</a></li>
           <li><a href="/services/mobile-app-development">Κατασκευή Mobile Εφαρμογών (iOS &amp; Android)</a></li>
@@ -217,6 +386,7 @@
           <li><a href="/services/chatbots-ai-agents">Chatbots &amp; AI Agents</a></li>
           <li><a href="/services/ai-integration-applications">AI Integration σε Εφαρμογές</a></li>
           <li><a href="/services/seo-website-optimization">SEO &amp; Βελτιστοποίηση Ιστοσελίδων</a></li>
+          <li><a href="/services/social-media-management">Διαχείριση Social Media</a></li>
           <li><a href="/services/ux-ui-design">UX/UI Design</a></li>
           <li><a href="/services/database-cloud-infrastructure">Βάσεις Δεδομένων &amp; Cloud</a></li>
           <li><a href="/services/video-animation-production">Βίντεο &amp; Animation</a></li>
@@ -224,7 +394,20 @@
         </ul>
       </nav>
       <section>
-        <h2>Επικοινωνία</h2>
+        <h2><a href="/portfolio">Έργα</a></h2>
+        <ul>
+          <li><a href="https://lifemuseumapp.com/">LifeMuseum</a>: εφαρμογή iOS και Android. Η ζωή σου, σαν μουσείο.</li>
+          <li><a href="https://www.hournook.com/">Hournook</a>: πλατφόρμα online ραντεβού για επαγγελματίες.</li>
+          <li><a href="https://lumorapredictions.com/">Lumora Predictions</a>: web εφαρμογή προβλέψεων.</li>
+          <li><a href="https://klinariti.com/">KLINARITI</a>: ιστοσελίδα για αστρολόγο και κλινική ψυχολόγο.</li>
+          <li><a href="https://t-parking.com/">T-Parking</a>: εφαρμογή εύρεσης parking σε πραγματικό χρόνο.</li>
+          <li><a href="https://getfitskg.com/">GetFit</a>: εφαρμογή γυμναστηρίου.</li>
+          <li><a href="https://advanced-derma.com/">Advanced Derma</a>: δερματολογικό ιατρείο με online ραντεβού.</li>
+          <li><a href="https://www.leonidionhouses.com/">Leonidion Houses</a>: κρατήσεις καταλυμάτων με online πληρωμές.</li>
+        </ul>
+      </section>
+      <section>
+        <h2><a href="/contact">Επικοινωνία</a></h2>
         <p>Τηλέφωνο: <a href="tel:+306971982563">+30 697 198 2563</a></p>
         <p>Email: <a href="mailto:info@devtaskhub.com">info@devtaskhub.com</a></p>
         <p>Περιοχή: Θεσσαλονίκη, Ελλάδα</p>

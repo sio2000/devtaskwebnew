@@ -23,7 +23,7 @@ const About: React.FC = () => {
       <div className="relative z-10 mx-auto grid max-w-7xl grid-cols-1 gap-14 px-5 sm:px-8 lg:grid-cols-[1.1fr_0.9fr] lg:gap-20">
         {/* Left — narrative */}
         <div>
-          <SectionHeading index="03" label={label} title={t.about.title} />
+          <SectionHeading index="05" label={label} title={t.about.title} />
           <Reveal delay={0.08}>
             <p className="font-editorial mt-6 text-2xl italic leading-snug text-iris-gradient">{t.about.subtitle}</p>
           </Reveal>
