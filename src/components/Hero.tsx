@@ -9,7 +9,6 @@ import Marquee from './ui/Marquee';
 import MagneticButton from './ui/MagneticButton';
 import AuroraField from './ui/AuroraField';
 import HeroVisual, { type HeroFocus } from './ui/HeroVisual';
-import { newSiteProjects } from '../data/work';
 
 const SLIDE_INTERVAL = 6500;
 
@@ -53,7 +52,6 @@ const Hero: React.FC = () => {
     fr: ['Sites Web', 'Applications Mobiles', 'Automatisation', 'SEO', 'IA', 'E-shop', 'Android & iOS', 'Web Apps', 'Design UX/UI', 'Chatbots'],
   };
   const marqueeItems = marqueeByLang[language] ?? marqueeByLang.en;
-  const latestLabel = language === 'el' ? 'Νέα έργα' : language === 'fr' ? 'Nouveautés' : 'Latest work';
 
   return (
     <section
@@ -158,23 +156,6 @@ const Hero: React.FC = () => {
               </button>
             ))}
           </div>
-        </div>
-
-        {/* Latest work: direct links to the newest live projects */}
-        <div className="mt-9 flex flex-wrap items-center gap-2.5">
-          <span className="mr-1 text-[0.72rem] font-medium uppercase tracking-[0.22em] text-paper-muted">{latestLabel}</span>
-          {newSiteProjects.map((p) => (
-            <a
-              key={p.key}
-              href={p.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="tag-ink transition-colors hover:border-iris/40 hover:bg-iris/10 hover:text-paper"
-            >
-              {p.title[language]}
-              <ArrowUpRight className="h-3 w-3" />
-            </a>
-          ))}
         </div>
         </div>
 
