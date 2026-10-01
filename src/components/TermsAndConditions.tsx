@@ -1,333 +1,106 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import {
+  AlertCircle, Briefcase, Building2, CheckCircle, Cookie, Database, FileText, Gavel, Globe2, Lock, Mail,
+  MousePointerClick, RefreshCw, Scale, Share2, ShieldCheck, Timer, UserCheck, Users, type LucideIcon,
+} from 'lucide-react';
 import { useLanguage } from '../hooks/useLanguage';
-import { translations } from '../data/translations';
-import { useIsMobile } from '../hooks/useIsMobile';
-import { FileText, Shield, AlertCircle, Database, Edit, Mail, CheckCircle, ShieldCheck, Scale, UserCheck, Cookie, Lock, Globe2, RefreshCw } from 'lucide-react';
+import { legal, type LegalSectionId } from '../data/legal';
+
+const look: Record<LegalSectionId, { icon: LucideIcon; gradient: string }> = {
+  company: { icon: Building2, gradient: 'from-blue-500 to-cyan-500' },
+  identity: { icon: Users, gradient: 'from-purple-500 to-pink-500' },
+  siteUse: { icon: MousePointerClick, gradient: 'from-sky-500 to-blue-500' },
+  services: { icon: Briefcase, gradient: 'from-violet-500 to-purple-600' },
+  intellectualProperty: { icon: FileText, gradient: 'from-blue-500 to-cyan-500' },
+  liability: { icon: AlertCircle, gradient: 'from-orange-500 to-red-500' },
+  controller: { icon: ShieldCheck, gradient: 'from-emerald-500 to-green-600' },
+  dataCollection: { icon: Database, gradient: 'from-green-500 to-teal-500' },
+  legalBasis: { icon: Scale, gradient: 'from-blue-600 to-indigo-600' },
+  recipients: { icon: Share2, gradient: 'from-teal-500 to-cyan-600' },
+  internationalTransfers: { icon: Globe2, gradient: 'from-teal-500 to-cyan-600' },
+  dataRetention: { icon: Timer, gradient: 'from-indigo-500 to-blue-500' },
+  yourRights: { icon: UserCheck, gradient: 'from-sky-500 to-blue-500' },
+  cookies: { icon: Cookie, gradient: 'from-amber-500 to-orange-500' },
+  dataSecurity: { icon: Lock, gradient: 'from-rose-500 to-pink-500' },
+  disputes: { icon: Gavel, gradient: 'from-violet-500 to-purple-600' },
+  modifications: { icon: RefreshCw, gradient: 'from-indigo-500 to-blue-500' },
+  contact: { icon: Mail, gradient: 'from-cyan-500 to-blue-500' },
+};
 
 const TermsAndConditions: React.FC = () => {
   const { language } = useLanguage();
-  const t = translations[language];
-  const isMobile = useIsMobile();
-
-  const sections = [
-    {
-      icon: FileText,
-      title: t.termsAndConditions.sections.intellectualProperty.title,
-      content: t.termsAndConditions.sections.intellectualProperty.content,
-      gradient: 'from-blue-500 to-cyan-500',
-      bgGradient: 'from-blue-500/10 to-cyan-500/10',
-    },
-    {
-      icon: Shield,
-      title: t.termsAndConditions.sections.identity.title,
-      content: t.termsAndConditions.sections.identity.content,
-      gradient: 'from-purple-500 to-pink-500',
-      bgGradient: 'from-purple-500/10 to-pink-500/10',
-    },
-    {
-      icon: AlertCircle,
-      title: t.termsAndConditions.sections.liability.title,
-      content: t.termsAndConditions.sections.liability.content,
-      additional: t.termsAndConditions.sections.liability.additional,
-      gradient: 'from-orange-500 to-red-500',
-      bgGradient: 'from-orange-500/10 to-red-500/10',
-    },
-    {
-      icon: Database,
-      title: t.termsAndConditions.sections.dataCollection.title,
-      content: t.termsAndConditions.sections.dataCollection.content,
-      gradient: 'from-green-500 to-teal-500',
-      bgGradient: 'from-green-500/10 to-teal-500/10',
-    },
-    {
-      icon: ShieldCheck,
-      title: t.termsAndConditions.sections.privacyPolicy.title,
-      content: t.termsAndConditions.sections.privacyPolicy.content,
-      gradient: 'from-emerald-500 to-green-600',
-      bgGradient: 'from-emerald-500/10 to-green-600/10',
-    },
-    {
-      icon: Scale,
-      title: t.termsAndConditions.sections.gdprCompliance.title,
-      content: t.termsAndConditions.sections.gdprCompliance.content,
-      gradient: 'from-blue-600 to-indigo-600',
-      bgGradient: 'from-blue-600/10 to-indigo-600/10',
-    },
-    {
-      icon: Shield,
-      title: t.termsAndConditions.sections.legalBasis.title,
-      content: t.termsAndConditions.sections.legalBasis.content,
-      gradient: 'from-violet-500 to-purple-600',
-      bgGradient: 'from-violet-500/10 to-purple-600/10',
-    },
-    {
-      icon: UserCheck,
-      title: t.termsAndConditions.sections.yourRights.title,
-      content: t.termsAndConditions.sections.yourRights.content,
-      gradient: 'from-sky-500 to-blue-500',
-      bgGradient: 'from-sky-500/10 to-blue-500/10',
-    },
-    {
-      icon: Cookie,
-      title: t.termsAndConditions.sections.cookiesAnalytics.title,
-      content: t.termsAndConditions.sections.cookiesAnalytics.content,
-      gradient: 'from-amber-500 to-orange-500',
-      bgGradient: 'from-amber-500/10 to-orange-500/10',
-    },
-    {
-      icon: Lock,
-      title: t.termsAndConditions.sections.dataSecurity.title,
-      content: t.termsAndConditions.sections.dataSecurity.content,
-      gradient: 'from-rose-500 to-pink-500',
-      bgGradient: 'from-rose-500/10 to-pink-500/10',
-    },
-    {
-      icon: Globe2,
-      title: t.termsAndConditions.sections.internationalTransfers.title,
-      content: t.termsAndConditions.sections.internationalTransfers.content,
-      gradient: 'from-teal-500 to-cyan-600',
-      bgGradient: 'from-teal-500/10 to-cyan-600/10',
-    },
-    {
-      icon: Edit,
-      title: t.termsAndConditions.sections.dataRetention.title,
-      content: t.termsAndConditions.sections.dataRetention.content,
-      gradient: 'from-indigo-500 to-blue-500',
-      bgGradient: 'from-indigo-500/10 to-blue-500/10',
-    },
-    {
-      icon: Mail,
-      title: t.termsAndConditions.sections.dataProtectionContact.title,
-      content: t.termsAndConditions.sections.dataProtectionContact.content,
-      gradient: 'from-cyan-500 to-blue-500',
-      bgGradient: 'from-cyan-500/10 to-blue-500/10',
-    },
-    {
-      icon: RefreshCw,
-      title: t.termsAndConditions.sections.modifications.title,
-      content: t.termsAndConditions.sections.modifications.content,
-      gradient: 'from-indigo-500 to-blue-500',
-      bgGradient: 'from-indigo-500/10 to-blue-500/10',
-    },
-    {
-      icon: Mail,
-      title: t.termsAndConditions.sections.contact.title,
-      content: t.termsAndConditions.sections.contact.content,
-      gradient: 'from-cyan-500 to-blue-500',
-      bgGradient: 'from-cyan-500/10 to-blue-500/10',
-    },
-  ];
+  const t = legal[language];
 
   return (
-    <section className="relative min-h-screen py-24 md:py-32 px-4 bg-gradient-to-br from-ink via-ink-800 to-ink-800/40 overflow-hidden">
-      {/* Premium Animated Background - Desktop Only */}
-      {!isMobile && (
-        <>
-          <motion.div
-            className="absolute top-0 right-0 w-[600px] h-[600px] bg-gradient-to-br from-blue-400/20 via-purple-400/15 to-cyan-400/20 rounded-full blur-3xl"
-            animate={{
-              scale: [1, 1.2, 1],
-              x: [0, 50, 0],
-              y: [0, -30, 0],
-            }}
-            transition={{
-              duration: 20,
-              repeat: Infinity,
-              ease: 'easeInOut',
-            }}
-          />
-          <motion.div
-            className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-gradient-to-tl from-indigo-400/20 via-pink-400/15 to-purple-400/20 rounded-full blur-3xl"
-            animate={{
-              scale: [1.1, 0.9, 1.1],
-              x: [0, -40, 0],
-              y: [0, 30, 0],
-            }}
-            transition={{
-              duration: 25,
-              repeat: Infinity,
-              ease: 'easeInOut',
-            }}
-          />
-          {/* Mesh Gradient Overlay */}
-          <div className="absolute inset-0 bg-gradient-mesh opacity-40" />
-          {/* Subtle Grid Pattern */}
-          <div className="absolute inset-0 opacity-[0.02] bg-[linear-gradient(to_right,#6366f1_1px,transparent_1px),linear-gradient(to_bottom,#6366f1_1px,transparent_1px)] bg-[size:48px_48px]" />
-        </>
-      )}
+    <section className="relative min-h-screen overflow-hidden bg-gradient-to-br from-ink via-ink-800 to-ink-800/40 px-4 py-24 md:py-32">
+      {/* Background glow, desktop only */}
+      <div className="pointer-events-none absolute right-0 top-0 hidden h-[600px] w-[600px] rounded-full bg-gradient-to-br from-blue-400/20 via-purple-400/15 to-cyan-400/20 blur-3xl md:block" aria-hidden="true" />
+      <div className="pointer-events-none absolute bottom-0 left-0 hidden h-[500px] w-[500px] rounded-full bg-gradient-to-tl from-indigo-400/20 via-pink-400/15 to-purple-400/20 blur-3xl md:block" aria-hidden="true" />
 
-      <div className="relative z-10 max-w-5xl mx-auto">
-        {/* Premium Header Section */}
+      <div className="relative z-10 mx-auto max-w-4xl">
         <motion.div
-          className="text-center mb-16"
-          initial={{ opacity: 0, y: 30 }}
+          className="mb-12 text-center md:mb-16"
+          initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.6 }}
         >
-          <motion.div
-            className="inline-flex items-center justify-center w-20 h-20 rounded-3xl bg-gradient-to-br from-blue-500 via-purple-500 to-cyan-500 shadow-2xl mb-6"
-            initial={{ scale: 0, rotate: -180 }}
-            animate={{ scale: 1, rotate: 0 }}
-            transition={{ duration: 0.8, type: 'spring', stiffness: 200 }}
-          >
-            <FileText className="h-10 w-10 text-white drop-shadow-lg" />
-          </motion.div>
-          <motion.h1
-            className="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6 gradient-text-premium"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.1 }}
-          >
-            {t.termsAndConditions.title}
-          </motion.h1>
-          <motion.div
-            className="h-1.5 w-32 bg-gradient-to-r from-blue-500 via-purple-500 to-cyan-500 rounded-full mx-auto mb-6"
-            initial={{ scaleX: 0 }}
-            animate={{ scaleX: 1 }}
-            transition={{ duration: 0.8, delay: 0.3 }}
-          />
-          <motion.p
-            className="text-lg md:text-xl text-paper-dim max-w-3xl mx-auto leading-relaxed"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-          >
-            {t.termsAndConditions.intro}
-          </motion.p>
+          <div className="mb-6 inline-flex h-16 w-16 items-center justify-center rounded-3xl bg-gradient-to-br from-blue-500 via-purple-500 to-cyan-500 shadow-2xl md:h-20 md:w-20">
+            <FileText className="h-8 w-8 text-white md:h-10 md:w-10" />
+          </div>
+          <h1 className="gradient-text-premium mb-6 text-3xl font-extrabold [overflow-wrap:anywhere] sm:text-4xl md:text-5xl">
+            {t.title}
+          </h1>
+          <div className="mx-auto mb-6 h-1.5 w-32 rounded-full bg-gradient-to-r from-blue-500 via-purple-500 to-cyan-500" />
+          <p className="mx-auto max-w-3xl text-base leading-relaxed text-paper-dim md:text-lg">{t.intro}</p>
         </motion.div>
 
-        {/* Premium Content Sections */}
-        <div className="space-y-8">
-          {sections.map((section, index) => {
-            const Icon = section.icon;
+        <div className="space-y-5 md:space-y-8">
+          {t.sections.map((section) => {
+            const { icon: Icon, gradient } = look[section.id];
             return (
-              <motion.div
-                key={index}
-                className="group relative"
-                initial={{ opacity: 0, y: 40 }}
+              <motion.article
+                key={section.id}
+                id={section.id}
+                className="scroll-mt-28 rounded-3xl border border-white/10 bg-white/[0.045] p-5 shadow-xl sm:p-8 md:p-10"
+                initial={{ opacity: 0, y: 24 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: '-50px' }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
+                viewport={{ once: true, margin: '-40px' }}
+                transition={{ duration: 0.5 }}
               >
-                {/* Premium Card Container */}
-                <div className="relative bg-white/[0.045] backdrop-blur-xl rounded-3xl p-8 md:p-10 border border-white/10 shadow-xl hover:shadow-2xl transition-all duration-500 overflow-hidden">
-                  {/* Animated Gradient Background on Hover */}
-                  <motion.div
-                    className={`absolute inset-0 bg-gradient-to-br ${section.bgGradient} opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl`}
-                    animate={{
-                      backgroundPosition: ['0% 50%', '100% 50%'],
-                    }}
-                    transition={{
-                      duration: 5,
-                      repeat: Infinity,
-                      repeatType: 'reverse',
-                      ease: 'linear',
-                    }}
-                    style={{
-                      backgroundSize: '200% 200%',
-                    }}
-                  />
-
-                  {/* Content */}
-                  <div className="relative z-10">
-                    {/* Section Header */}
-                    <div className="flex items-start gap-4 md:gap-6 mb-6">
-                      <div className={`flex-shrink-0 w-14 h-14 md:w-16 md:h-16 rounded-2xl bg-gradient-to-br ${section.gradient} flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-500`}>
-                        <Icon className="h-7 w-7 md:h-8 md:w-8 text-white drop-shadow-lg" />
-                      </div>
-                      <div className="flex-1">
-                        <h2 className={`text-2xl md:text-3xl font-bold mb-3 bg-gradient-to-r ${section.gradient} bg-clip-text text-transparent`}>
-                          {section.title}
-                        </h2>
-                        <div className={`h-1 w-24 bg-gradient-to-r ${section.gradient} rounded-full`} />
-                      </div>
-                    </div>
-
-                    {/* Section Content */}
-                    <div className="prose prose-lg max-w-none">
-                      <div
-                        className="text-paper-dim leading-relaxed text-base md:text-lg"
-                        dangerouslySetInnerHTML={{ __html: section.content }}
-                      />
-                      {section.additional && (
-                        <motion.div
-                          className="mt-4 p-4 rounded-xl bg-gradient-to-r from-orange-50 to-red-50 border border-orange-200/50"
-                          initial={{ opacity: 0, y: 10 }}
-                          whileInView={{ opacity: 1, y: 0 }}
-                          viewport={{ once: true }}
-                          transition={{ duration: 0.5 }}
-                        >
-                          <p
-                            className="text-paper-dim leading-relaxed text-base md:text-lg"
-                            dangerouslySetInnerHTML={{ __html: section.additional }}
-                          />
-                        </motion.div>
-                      )}
-                    </div>
+                <div className="mb-5 flex items-center gap-4 md:mb-6 md:gap-6">
+                  <div className={`flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br ${gradient} shadow-lg md:h-16 md:w-16`}>
+                    <Icon className="h-5 w-5 text-white md:h-8 md:w-8" />
                   </div>
-
-                  {/* Shine Effect on Hover */}
-                  <motion.div
-                    className="absolute inset-0 rounded-3xl bg-gradient-to-r from-transparent via-ink/30 to-transparent opacity-0 group-hover:opacity-100"
-                    initial={{ x: '-100%' }}
-                    whileHover={{ x: '100%' }}
-                    transition={{ duration: 0.8 }}
-                  />
+                  <div className="min-w-0 flex-1">
+                    <h2 className={`bg-gradient-to-r ${gradient} bg-clip-text text-xl font-bold leading-snug text-transparent [overflow-wrap:anywhere] md:text-3xl`}>
+                      {section.title}
+                    </h2>
+                    <div className={`mt-2 h-1 w-16 rounded-full bg-gradient-to-r ${gradient} md:mt-3 md:w-24`} />
+                  </div>
                 </div>
-              </motion.div>
+
+                <div
+                  className="text-[15px] leading-relaxed text-paper-dim [overflow-wrap:anywhere] md:text-lg [&_b]:font-semibold [&_b]:text-paper"
+                  dangerouslySetInnerHTML={{ __html: section.content }}
+                />
+                {section.note && (
+                  <p className="mt-4 rounded-xl border border-orange-400/25 bg-orange-400/10 p-4 text-[15px] leading-relaxed text-paper-dim md:text-lg">
+                    {section.note}
+                  </p>
+                )}
+              </motion.article>
             );
           })}
         </div>
 
-        {/* Premium Acceptance Section */}
-        <motion.div
-          className="mt-16 text-center"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-        >
-          <div className="relative bg-gradient-to-br from-ink-800 via-ink-800 to-ink-800 rounded-3xl p-8 md:p-12 border-2 border-iris/30/50 shadow-xl overflow-hidden">
-            {/* Background Decorations */}
-            <div className="absolute -top-20 -right-20 w-40 h-40 bg-gradient-to-br from-blue-400/20 to-purple-400/20 rounded-full blur-3xl" />
-            <div className="absolute -bottom-20 -left-20 w-32 h-32 bg-gradient-to-tr from-cyan-400/20 to-blue-400/20 rounded-full blur-2xl" />
-
-            <div className="relative z-10">
-              <motion.div
-                className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-br from-green-500 to-emerald-500 shadow-lg mb-6"
-                animate={{
-                  scale: [1, 1.1, 1],
-                }}
-                transition={{
-                  duration: 2,
-                  repeat: Infinity,
-                  ease: 'easeInOut',
-                }}
-              >
-                <CheckCircle className="h-8 w-8 text-white" />
-              </motion.div>
-              <motion.p
-                className="text-lg md:text-xl font-bold text-paper mb-4"
-                initial={{ opacity: 0, y: 10 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6 }}
-              >
-                {t.termsAndConditions.acceptance}
-              </motion.p>
-              <motion.p
-                className="text-sm md:text-base text-paper-dim"
-                initial={{ opacity: 0, y: 10 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.1 }}
-              >
-                {t.termsAndConditions.lastUpdate}
-              </motion.p>
-            </div>
+        <div className="relative mt-12 overflow-hidden rounded-3xl border border-iris/30 bg-ink-800 p-6 text-center shadow-xl sm:p-8 md:mt-16 md:p-12">
+          <div className="mb-6 inline-flex h-14 w-14 items-center justify-center rounded-full bg-gradient-to-br from-green-500 to-emerald-500 shadow-lg md:h-16 md:w-16">
+            <CheckCircle className="h-7 w-7 text-white md:h-8 md:w-8" />
           </div>
-        </motion.div>
+          <p className="mb-4 text-base font-bold text-paper md:text-xl">{t.acceptance}</p>
+          <p className="text-sm text-paper-dim md:text-base">{t.lastUpdate}</p>
+        </div>
       </div>
     </section>
   );

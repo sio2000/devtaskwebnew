@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { ChevronDown, CheckCircle, ArrowUpRight } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import { useLanguage } from '../hooks/useLanguage';
 import { translations } from '../data/translations';
 import { FaEnvelope, FaMapMarkerAlt, FaPhoneAlt, FaInstagram, FaFacebook, FaTiktok, FaPaperPlane } from 'react-icons/fa';
@@ -104,7 +105,7 @@ const Contact: React.FC = () => {
 
         <div className="grid grid-cols-1 gap-6 lg:grid-cols-[1.4fr_1fr]">
           {/* Form */}
-          <Reveal className="card-ink p-7 md:p-9">
+          <Reveal className="card-ink p-5 sm:p-7 md:p-9">
             <form
               name="contact"
               method="POST"
@@ -203,6 +204,16 @@ const Contact: React.FC = () => {
                 )}
                 <span>{loading ? t.contact.form.sending : t.contact.form.send}</span>
               </motion.button>
+              <p className="text-center text-xs leading-relaxed text-paper-muted">
+                {language === 'el'
+                  ? 'Χρησιμοποιούμε τα στοιχεία σας μόνο για να σας απαντήσουμε. '
+                  : language === 'fr'
+                    ? 'Nous utilisons vos informations uniquement pour vous répondre. '
+                    : 'We use your details only to reply to you. '}
+                <Link to="/terms" className="underline underline-offset-2 transition-colors hover:text-paper">
+                  {language === 'el' ? 'Πολιτική Απορρήτου' : language === 'fr' ? 'Politique de confidentialité' : 'Privacy Policy'}
+                </Link>
+              </p>
               {success && (
                 <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} className="mt-1 flex items-center justify-center gap-2 text-signal">
                   <CheckCircle className="h-5 w-5" />
