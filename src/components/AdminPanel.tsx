@@ -6,8 +6,9 @@ import {
 import {
   Lock, Users, Eye, EyeOff, Clock, Activity, Globe, Smartphone, Monitor, Tablet,
   RefreshCw, LogOut, TrendingUp, MousePointerClick, AlertCircle, Loader2, Mail, Phone,
-  ChevronLeft, ChevronRight,
+  ChevronLeft, ChevronRight, Gauge,
 } from 'lucide-react';
+import UsagePanel from './UsagePanel';
 
 interface Stats {
   generatedAt: number;
@@ -109,6 +110,7 @@ const AdminPanel: React.FC = () => {
   const [error, setError] = useState('');
   const [days, setDays] = useState(30);
   const [feedPage, setFeedPage] = useState(0);
+  const [tab, setTab] = useState<'analytics' | 'usage'>('analytics');
 
   const fetchStats = useCallback(async (pw: string, range: number, silent = false) => {
     if (!silent) setLoading(true);
@@ -239,13 +241,16 @@ const AdminPanel: React.FC = () => {
         <div className="flex flex-wrap items-center justify-between gap-4 mb-8">
           <div>
             <h1 className="text-2xl font-bold text-white flex items-center gap-2">
-              <Activity className="w-6 h-6 text-indigo-400" /> Analytics Dashboard
+              {tab === 'usage' ? <Gauge className="w-6 h-6 text-indigo-400" /> : <Activity className="w-6 h-6 text-indigo-400" />}
+              {tab === 'usage' ? 'Όρια πλάνων' : 'Analytics Dashboard'}
             </h1>
             <p className="text-sm text-slate-400">
-              Live tracking · Τελευταία ενημέρωση {data ? new Date(data.generatedAt).toLocaleTimeString('el-GR') : '—'}
+              {tab === 'usage'
+                ? 'Πόσο γεμάτο είναι το πλάνο κάθε εφαρμογής'
+                : `Live tracking · Τελευταία ενημέρωση ${data ? new Date(data.generatedAt).toLocaleTimeString('el-GR') : '—'}`}
             </p>
           </div>
-          <div className="flex items-center gap-2">
+          <div className={`flex items-center gap-2 ${tab === 'usage' ? 'hidden' : ''}`}>
             <div className="flex bg-slate-800 rounded-xl p-1 border border-slate-700">
               {[7, 30, 90].map((r) => (
                 <button
@@ -274,6 +279,35 @@ const AdminPanel: React.FC = () => {
           </div>
         </div>
 
+        {/* Tabs */}
+        <div className="flex items-center justify-between gap-3 mb-6">
+          <div role="tablist" aria-label="Ενότητες" className="flex bg-slate-800 rounded-xl p-1 border border-slate-700">
+            {([['analytics', 'Στατιστικά', Activity], ['usage', 'Όρια πλάνων', Gauge]] as const).map(([id, label, Icon]) => (
+              <button
+                key={id}
+                role="tab"
+                aria-selected={tab === id}
+                onClick={() => setTab(id)}
+                className={`flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-indigo-500 ${tab === id ? 'bg-indigo-600 text-white' : 'text-slate-400 hover:text-white'}`}
+              >
+                <Icon className="w-4 h-4" /> {label}
+              </button>
+            ))}
+          </div>
+          {tab === 'usage' && (
+            <button
+              onClick={logout}
+              className="w-10 h-10 rounded-xl bg-slate-800 border border-slate-700 flex items-center justify-center hover:bg-red-600/80 transition-colors"
+              aria-label="Αποσύνδεση"
+            >
+              <LogOut className="w-4 h-4" />
+            </button>
+          )}
+        </div>
+
+        {tab === 'usage' && <UsagePanel password={password} onUnauthorized={logout} />}
+
+        {tab === 'analytics' && (<>
         {error && (
           <div className="flex items-start gap-2 text-sm text-amber-300 bg-amber-500/10 border border-amber-500/30 rounded-xl p-4 mb-6">
             <AlertCircle className="w-5 h-5 flex-shrink-0" /> {error}
@@ -464,6 +498,7 @@ const AdminPanel: React.FC = () => {
         <p className="text-xs text-slate-600 mt-6 text-center">
           Ανώνυμα, first-party analytics · χωρίς cookies τρίτων · GDPR-friendly
         </p>
+        </>)}
       </div>
     </div>
   );

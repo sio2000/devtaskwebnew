@@ -47,5 +47,9 @@ export default defineConfig({
     hmr: {
       overlay: true,
     },
+    // Local functions (`netlify dev` listens on 8888) for the /admin area.
+    proxy: {
+      '/.netlify/functions': 'http://localhost:8888',
+    },
   },
 });
