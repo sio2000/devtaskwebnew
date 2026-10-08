@@ -250,16 +250,6 @@ interface NeonProject {
   consumption_period_end?: string;
 }
 
-const neonDbSize = async (connectionString: string) => {
-  const host = new URL(connectionString.replace(/^postgres(ql)?:/, 'https:')).hostname;
-  const data = await getJson<{ rows: { bytes: string }[] }>(`https://${host}/sql`, {
-    method: 'POST',
-    headers: { 'Neon-Connection-String': connectionString, 'content-type': 'application/json' },
-    body: JSON.stringify({ query: 'select sum(pg_database_size(datname))::bigint as bytes from pg_database', params: [] }),
-  });
-  return Number(data.rows[0]?.bytes ?? 0);
-};
-
 const neonProjects = async (apiKey: string): Promise<NeonProject[]> => {
   const base = 'https://console.neon.tech/api/v2';
   const headers = { Authorization: `Bearer ${apiKey}`, accept: 'application/json' };
@@ -281,7 +271,6 @@ const neonProjects = async (apiKey: string): Promise<NeonProject[]> => {
 
 const neonService = async (app: AppConfig): Promise<Service> => {
   const L = LIMITS.neon;
-  const cs = env(`${app.env}_DATABASE_URL`);
   const apiKey = env(`${app.env}_NEON_API_KEY`);
   const needApi = `Λείπει το ${app.env}_NEON_API_KEY (Neon Console, Account settings, API keys).`;
 
@@ -297,18 +286,15 @@ const neonService = async (app: AppConfig): Promise<Service> => {
   // Limits are per project, so the busiest project is the one that matters.
   const top = [...projects].sort((a, b) => (b.compute_time_seconds || 0) - (a.compute_time_seconds || 0))[0];
 
-  const storage = async (): Promise<Metric> => {
+  // Everything here comes from the Neon API. This tab never queries the database itself:
+  // a query wakes its compute, and a tab refreshing every minute would keep it awake all
+  // month and burn the free CU-hours it is supposed to watch.
+  const storage = (): Metric => {
     const label = 'Αποθηκευτικός χώρος';
+    if (!apiKey) return missing('storage', label, 'bytes', L.storageBytes, needApi);
+    if (apiError || !top) return failed('storage', label, 'bytes', L.storageBytes, apiError || new Error('Δεν βρέθηκε project στον λογαριασμό.'));
     const measured = Math.max(0, ...projects.map((p) => p.synthetic_storage_size || 0));
-    if (measured > 0) return ok('storage', label, 'bytes', measured, top?.branch_logical_size_limit_bytes || L.storageBytes);
-    if (!cs) return missing('storage', label, 'bytes', L.storageBytes, apiKey ? `Λείπει το ${app.env}_DATABASE_URL (connection string της Neon).` : needApi);
-    try {
-      return ok('storage', label, 'bytes', await neonDbSize(cs), L.storageBytes, {
-        note: 'Μέγεθος δεδομένων της βάσης. Η Neon μετράει και το ιστορικό αλλαγών, άρα το dashboard μπορεί να δείχνει λίγο παραπάνω.',
-      });
-    } catch (e) {
-      return failed('storage', label, 'bytes', L.storageBytes, e);
-    }
+    return ok('storage', label, 'bytes', measured, top.branch_logical_size_limit_bytes || L.storageBytes);
   };
 
   const consumption = (): Metric[] => {
@@ -329,7 +315,7 @@ const neonService = async (app: AppConfig): Promise<Service> => {
     ];
   };
 
-  return { provider: 'neon', plan: L.plan, upgradeUrl: UPGRADE.neon, metrics: [await storage(), ...consumption()] };
+  return { provider: 'neon', plan: L.plan, upgradeUrl: UPGRADE.neon, metrics: [storage(), ...consumption()] };
 };
 
 // ─── Resend ─────────────────────────────────────────────────
