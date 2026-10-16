@@ -133,7 +133,7 @@ export default function AIIntegrationApplicationsPage() {
               {p.hero.title}
             </h1>
             <p className="mb-7 text-[17px] font-medium leading-relaxed text-paper-dim">{p.hero.subtitle}</p>
-            <a href="/contactme" className="flex h-12 w-full items-center justify-center rounded-full bg-gradient-to-r from-blue-600 to-iris text-base font-bold text-white shadow-[0_10px_30px_-12px_rgba(110,86,248,0.8)] transition-transform active:scale-[0.98] focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-400">
+            <a href="/contact" className="flex h-12 w-full items-center justify-center rounded-full bg-gradient-to-r from-blue-600 to-iris text-base font-bold text-white shadow-[0_10px_30px_-12px_rgba(110,86,248,0.8)] transition-transform active:scale-[0.98] focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-400">
               {p.hero.cta}
             </a>
             <img src={aiImg} alt="AI Hero" className="mt-8 aspect-[21/9] w-full rounded-2xl border border-white/10 object-cover" />
@@ -227,7 +227,7 @@ export default function AIIntegrationApplicationsPage() {
         <section className="px-4 pt-2 pb-14">
           <Reveal className="card-ink px-5 py-8 text-center">
             <h2 className="text-[26px] font-extrabold leading-tight tracking-tight gradient-text-premium">{p.finalCta.title}</h2>
-            <a href="/contactme" className="mt-6 flex h-12 w-full items-center justify-center rounded-full bg-gradient-to-r from-blue-600 to-iris text-base font-bold text-white shadow-[0_10px_30px_-12px_rgba(110,86,248,0.8)] transition-transform active:scale-[0.98] focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-400">
+            <a href="/contact" className="mt-6 flex h-12 w-full items-center justify-center rounded-full bg-gradient-to-r from-blue-600 to-iris text-base font-bold text-white shadow-[0_10px_30px_-12px_rgba(110,86,248,0.8)] transition-transform active:scale-[0.98] focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-400">
               {p.finalCta.button}
             </a>
           </Reveal>
@@ -275,7 +275,7 @@ export default function AIIntegrationApplicationsPage() {
               className="inline-block px-10 py-4 bg-gradient-to-r from-blue-600 to-purple-400 text-white rounded-full font-bold text-lg shadow-2xl border-2 border-transparent hover:border-blue-400 hover:shadow-[0_0_32px_0_#a78bfa] focus:outline-none focus:ring-2 focus:ring-blue-400 animate-fade-in flex items-center gap-2 relative overflow-hidden"
               whileHover={{ scale: 1.08, boxShadow: '0 0 32px 0 #a78bfa', filter: 'brightness(1.1)', borderColor: '#a78bfa' }}
               whileTap={{ scale: 0.97 }}
-              onClick={() => { window.location.href = '/contactme'; }}
+              onClick={() => { window.location.href = '/contact'; }}
             >
               <span className="relative z-10">{t.services.pages.aiIntegrationApplications.hero.cta}</span>
             </motion.button>
@@ -549,7 +549,7 @@ export default function AIIntegrationApplicationsPage() {
             />
             <div className="relative z-10">
               <h2 className="text-3xl md:text-4xl font-extrabold mb-6 tracking-tight gradient-text-premium">{t.services.pages.aiIntegrationApplications.finalCta.title}</h2>
-              <motion.button className="inline-block px-12 py-5 bg-gradient-to-r from-blue-600 to-purple-400 text-white rounded-full font-bold text-xl shadow-3xl border-2 border-transparent hover:border-blue-400 hover:shadow-[0_0_32px_0_#a78bfa] focus:outline-none focus:ring-2 focus:ring-blue-400 animate-fade-in flex items-center gap-2 relative overflow-hidden mt-6" whileHover={{ scale: 1.08, boxShadow: '0 0 32px 0 #a78bfa', filter: 'brightness(1.1)', borderColor: '#a78bfa' }} whileTap={{ scale: 0.97 }} onMouseEnter={() => playSound(hoverSfx)} onClick={() => { window.location.href = '/contactme'; }}><span className="relative z-10">{t.services.pages.aiIntegrationApplications.finalCta.button}</span></motion.button>
+              <motion.button className="inline-block px-12 py-5 bg-gradient-to-r from-blue-600 to-purple-400 text-white rounded-full font-bold text-xl shadow-3xl border-2 border-transparent hover:border-blue-400 hover:shadow-[0_0_32px_0_#a78bfa] focus:outline-none focus:ring-2 focus:ring-blue-400 animate-fade-in flex items-center gap-2 relative overflow-hidden mt-6" whileHover={{ scale: 1.08, boxShadow: '0 0 32px 0 #a78bfa', filter: 'brightness(1.1)', borderColor: '#a78bfa' }} whileTap={{ scale: 0.97 }} onMouseEnter={() => playSound(hoverSfx)} onClick={() => { window.location.href = '/contact'; }}><span className="relative z-10">{t.services.pages.aiIntegrationApplications.finalCta.button}</span></motion.button>
             </div>
           </motion.div>
         </div>

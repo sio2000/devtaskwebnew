@@ -25,7 +25,12 @@ const iconMap: Record<string, React.ElementType> = {
   'game-development': FaGamepad,
 };
 
-const Services: React.FC = () => {
+type ServicesProps = {
+  /** /services page: every service listed (no home filter), heading rendered as h1 */
+  standalone?: boolean;
+};
+
+const Services: React.FC<ServicesProps> = ({ standalone = false }) => {
   const { language } = useLanguage();
   const t = translations[language];
   const isMobile = useIsMobile();
@@ -37,6 +42,7 @@ const Services: React.FC = () => {
     'video-animation-production',
   ]);
   const filteredServices = servicesData.filter((service) => {
+    if (standalone) return true;
     if (hiddenOnHome.has(service.slug)) return false;
     if (isMobile && (service.slug === 'ai-integration-applications' || service.slug === 'seo-website-optimization')) {
       return false;
@@ -51,7 +57,7 @@ const Services: React.FC = () => {
       <div className="grid-lines pointer-events-none absolute inset-0 opacity-[0.4]" aria-hidden="true" />
       <div className="relative z-10 mx-auto max-w-7xl px-5 sm:px-8">
         <div className="mb-8 md:mb-16">
-          <SectionHeading index="02" label={label} title={t.services.title} kicker={language === 'el' ? 'από άκρη σε άκρη' : language === 'fr' ? 'de bout en bout' : 'end to end'} />
+          <SectionHeading as={standalone ? 'h1' : 'h2'} index="02" label={label} title={t.services.title} kicker={language === 'el' ? 'από άκρη σε άκρη' : language === 'fr' ? 'de bout en bout' : 'end to end'} />
           <Reveal delay={0.1}>
             <p className="mt-4 max-w-2xl text-base leading-relaxed text-paper-dim md:mt-6 md:text-lg md:leading-relaxed">{t.services.subtitle}</p>
           </Reveal>

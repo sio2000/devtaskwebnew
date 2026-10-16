@@ -1,1 +1,13 @@
-/*    /index.html   200 
+# Every public route has its own prerendered file in dist/ (scripts/prerender-meta.mjs), which
+# Netlify serves before these rules. Order matters: first match wins.
+
+# Old or duplicate URLs: one canonical address each
+/contactme                              /contact                               301
+/services/multimedia-content-creation   /services/video-animation-production   301
+
+# Client-only area (noindex, password protected)
+/admin      /index.html   200
+/admin/*    /index.html   200
+
+# Anything else: the SPA still loads and shows its 404 page, with a real 404 status (no soft 404s)
+/*          /404.html     404

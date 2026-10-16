@@ -1,217 +1,73 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
+import { SITE_URL } from './Seo';
 
-interface OrganizationSchemaProps {
-  name?: string;
-  url?: string;
-  logo?: string;
-  email?: string;
-  telephone?: string;
-  address?: {
-    streetAddress?: string;
-    addressLocality: string;
-    addressRegion?: string;
-    postalCode?: string;
-    addressCountry: string;
-  };
-  sameAs?: string[];
-}
+// Route-level JSON-LD. scripts/prerender-meta.mjs imports these same builders for the static
+// HTML (tagged data-rh), and Helmet swaps those copies for identical ones on mount, so
+// crawlers with and without JavaScript read the same data. The site-wide Organization graph
+// lives in index.html.
 
-interface ServiceSchemaProps {
+/** Owner decision: only the city and the service area, never a street address. */
+export const AREA_SERVED = [
+  { '@type': 'City', name: 'Θεσσαλονίκη' },
+  { '@type': 'AdministrativeArea', name: 'Κεντρική Μακεδονία' },
+  { '@type': 'Country', name: 'Ελλάδα' },
+];
+
+type ServiceInput = {
+  /** route path, e.g. "/services/web-development" */
+  path: string;
   name: string;
   description: string;
-  provider?: string;
-  areaServed?: string;
-  serviceType?: string;
-}
-
-interface FAQSchemaProps {
-  questions: Array<{
-    question: string;
-    answer: string;
-  }>;
-}
-
-interface BreadcrumbSchemaProps {
-  items: Array<{
-    name: string;
-    url: string;
-  }>;
-}
-
-export const OrganizationSchema: React.FC<OrganizationSchemaProps> = ({
-  name = 'DevTaskHub',
-  url = 'https://devtaskhub.com',
-  logo = 'https://devtaskhub.com/assets/logo-ChYGESUI.png',
-  email = 'info@devtaskhub.com',
-  telephone = '+30 697 198 2563',
-  address = {
-    addressLocality: 'Θεσσαλονίκη',
-    addressRegion: 'Κεντρική Μακεδονία',
-    addressCountry: 'GR',
-  },
-  sameAs = [
-    'https://www.facebook.com/profile.php?id=61594834146080',
-    'https://www.instagram.com/devtaskhub/',
-    'https://www.tiktok.com/@devtaskhub',
-    'https://www.youtube.com/@Devtaskhub',
-  ],
-}) => {
-  const schema = {
-    '@context': 'https://schema.org',
-    '@type': 'Organization',
-    name,
-    url,
-    logo,
-    contactPoint: {
-      '@type': 'ContactPoint',
-      telephone,
-      contactType: 'customer service',
-      email,
-      areaServed: 'GR',
-      availableLanguage: ['el', 'en', 'fr'],
-    },
-    address: {
-      '@type': 'PostalAddress',
-      addressLocality: address.addressLocality,
-      addressRegion: address.addressRegion,
-      addressCountry: address.addressCountry,
-    },
-    sameAs,
-  };
-
-  return (
-    <Helmet>
-      <script type="application/ld+json">{JSON.stringify(schema)}</script>
-    </Helmet>
-  );
+  serviceType: string;
 };
 
-export const ServiceSchema: React.FC<ServiceSchemaProps> = ({
+export const serviceJsonLd = ({ path, name, description, serviceType }: ServiceInput) => ({
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  '@id': `${SITE_URL}${path}#service`,
   name,
   description,
-  provider = 'DevTaskHub',
-  areaServed = 'Θεσσαλονίκη, Ελλάδα',
   serviceType,
-}) => {
-  const schema = {
-    '@context': 'https://schema.org',
-    '@type': 'Service',
-    name,
-    description,
-    provider: {
-      '@type': 'Organization',
-      name: provider,
-      url: 'https://devtaskhub.com',
-    },
-    areaServed: {
-      '@type': 'City',
-      name: areaServed,
-    },
-    ...(serviceType && { serviceType }),
-  };
+  url: `${SITE_URL}${path}`,
+  provider: { '@id': `${SITE_URL}/#organization` },
+  areaServed: AREA_SERVED,
+});
 
-  return (
-    <Helmet>
-      <script type="application/ld+json">{JSON.stringify(schema)}</script>
-    </Helmet>
-  );
-};
+export const breadcrumbJsonLd = (items: Array<{ name: string; url: string }>) => ({
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: items.map((item, index) => ({
+    '@type': 'ListItem',
+    position: index + 1,
+    name: item.name,
+    item: item.url,
+  })),
+});
 
-export const FAQSchema: React.FC<FAQSchemaProps> = ({ questions }) => {
-  const schema = {
-    '@context': 'https://schema.org',
-    '@type': 'FAQPage',
-    mainEntity: questions.map((item) => ({
-      '@type': 'Question',
-      name: item.question,
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: item.answer,
-      },
-    })),
-  };
+/** Only for questions that are visible on the same page. */
+export const faqJsonLd = (items: Array<{ q: string; a: string }>) => ({
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: items.map(({ q, a }) => ({
+    '@type': 'Question',
+    name: q,
+    acceptedAnswer: { '@type': 'Answer', text: a },
+  })),
+});
 
-  return (
-    <Helmet>
-      <script type="application/ld+json">{JSON.stringify(schema)}</script>
-    </Helmet>
-  );
-};
+const JsonLd: React.FC<{ data: object }> = ({ data }) => (
+  <Helmet>
+    <script type="application/ld+json">{JSON.stringify(data)}</script>
+  </Helmet>
+);
 
-export const BreadcrumbSchema: React.FC<BreadcrumbSchemaProps> = ({ items }) => {
-  const schema = {
-    '@context': 'https://schema.org',
-    '@type': 'BreadcrumbList',
-    itemListElement: items.map((item, index) => ({
-      '@type': 'ListItem',
-      position: index + 1,
-      name: item.name,
-      item: item.url,
-    })),
-  };
+export const ServiceSchema: React.FC<ServiceInput> = (props) => <JsonLd data={serviceJsonLd(props)} />;
 
-  return (
-    <Helmet>
-      <script type="application/ld+json">{JSON.stringify(schema)}</script>
-    </Helmet>
-  );
-};
+export const BreadcrumbSchema: React.FC<{ items: Array<{ name: string; url: string }> }> = ({ items }) => (
+  <JsonLd data={breadcrumbJsonLd(items)} />
+);
 
-interface LocalBusinessSchemaProps {
-  name?: string;
-  url?: string;
-  telephone?: string;
-  email?: string;
-  address?: {
-    streetAddress?: string;
-    addressLocality: string;
-    addressRegion?: string;
-    postalCode?: string;
-    addressCountry: string;
-  };
-  priceRange?: string;
-  openingHours?: string[];
-}
-
-export const LocalBusinessSchema: React.FC<LocalBusinessSchemaProps> = ({
-  name = 'DevTaskHub',
-  url = 'https://devtaskhub.com',
-  telephone = '+30 697 198 2563',
-  email = 'info@devtaskhub.com',
-  address = {
-    addressLocality: 'Θεσσαλονίκη',
-    addressRegion: 'Κεντρική Μακεδονία',
-    addressCountry: 'GR',
-  },
-  priceRange = '$$',
-  openingHours = ['Mo-Su 09:00-21:00'],
-}) => {
-  const schema = {
-    '@context': 'https://schema.org',
-    '@type': 'ProfessionalService',
-    name,
-    url,
-    telephone,
-    email,
-    address: {
-      '@type': 'PostalAddress',
-      addressLocality: address.addressLocality,
-      addressRegion: address.addressRegion,
-      addressCountry: address.addressCountry,
-    },
-    priceRange,
-    openingHours,
-    areaServed: {
-      '@type': 'City',
-      name: 'Θεσσαλονίκη',
-    },
-  };
-
-  return (
-    <Helmet>
-      <script type="application/ld+json">{JSON.stringify(schema)}</script>
-    </Helmet>
-  );
-};
-
+export const FAQSchema: React.FC<{ items: Array<{ q: string; a: string }> }> = ({ items }) => (
+  <JsonLd data={faqJsonLd(items)} />
+);

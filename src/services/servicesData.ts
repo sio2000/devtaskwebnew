@@ -181,9 +181,9 @@ export const servicesData: Service[] = [
   {
     slug: 'seo-website-optimization',
     title: {
-      el: 'SEO – Βελτιστοποίηση Ιστοσελίδων',
-      en: 'SEO – Website Optimization',
-      fr: 'SEO – Optimisation de Site Web'
+      el: 'SEO και Βελτιστοποίηση Ιστοσελίδων',
+      en: 'SEO and Website Optimization',
+      fr: 'SEO et Optimisation de Site Web'
     },
     shortDescription: {
       el: 'Βελτίωση κατάταξης με τεχνικό SEO & περιεχόμενο.',
@@ -197,9 +197,9 @@ export const servicesData: Service[] = [
     },
     icon: FaSearch,
     breadcrumbs: {
-      el: ['Υπηρεσίες', 'SEO – Βελτιστοποίηση Ιστοσελίδων'],
-      en: ['Services', 'SEO – Website Optimization'],
-      fr: ['Services', 'SEO – Optimisation de Site Web']
+      el: ['Υπηρεσίες', 'SEO και Βελτιστοποίηση Ιστοσελίδων'],
+      en: ['Services', 'SEO and Website Optimization'],
+      fr: ['Services', 'SEO et Optimisation de Site Web']
     },
     features: {
       el: [

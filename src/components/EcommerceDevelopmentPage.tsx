@@ -154,7 +154,7 @@ export default function EcommerceDevelopmentPage() {
           <div className="relative">
             <h1 className="font-display text-[34px] font-bold leading-[1.08] tracking-tight text-iris-gradient">{e.hero.title}</h1>
             <p className="mt-4 text-base leading-relaxed text-paper-dim">{e.hero.subtitle}</p>
-            <a href="/contactme" className="btn-accent mt-6 h-12 w-full justify-center text-base">
+            <a href="/contact" className="btn-accent mt-6 h-12 w-full justify-center text-base">
               {e.hero.cta}
               <ArrowRight className="h-4 w-4" aria-hidden="true" />
             </a>
@@ -282,7 +282,7 @@ export default function EcommerceDevelopmentPage() {
               <div aria-hidden="true" className="pointer-events-none absolute -right-16 -top-16 h-48 w-48 rounded-full bg-iris/30 blur-3xl" />
               <div className="relative">
                 <h2 className="font-display text-[26px] font-bold leading-tight tracking-tight text-paper">{e.finalCta.title}</h2>
-                <a href="/contactme" className="btn-accent mt-6 h-12 w-full justify-center text-base">
+                <a href="/contact" className="btn-accent mt-6 h-12 w-full justify-center text-base">
                   {e.finalCta.button}
                   <ArrowRight className="h-4 w-4" aria-hidden="true" />
                 </a>
@@ -333,7 +333,7 @@ export default function EcommerceDevelopmentPage() {
               className="inline-block px-10 py-4 bg-gradient-to-r from-blue-600 to-purple-400 text-white rounded-full font-bold text-lg shadow-2xl border-2 border-transparent hover:border-blue-400 hover:shadow-[0_0_32px_0_#a78bfa] focus:outline-none focus:ring-2 focus:ring-blue-400 animate-fade-in flex items-center gap-2 relative overflow-hidden"
               whileHover={{ scale: 1.08, boxShadow: '0 0 32px 0 #a78bfa', filter: 'brightness(1.1)', borderColor: '#a78bfa' }}
               whileTap={{ scale: 0.97 }}
-              onClick={() => { window.location.href = '/contactme'; }}
+              onClick={() => { window.location.href = '/contact'; }}
             >
               <span className="relative z-10">{t.services.pages.ecommerceDevelopment.hero.cta}</span>
             </motion.button>
@@ -643,7 +643,7 @@ export default function EcommerceDevelopmentPage() {
             />
             <div className="relative z-10">
               <h2 className="text-3xl md:text-4xl font-extrabold mb-6 tracking-tight gradient-text-premium">{t.services.pages.ecommerceDevelopment.finalCta.title}</h2>
-              <motion.button className="inline-block px-12 py-5 bg-gradient-to-r from-blue-600 to-purple-400 text-white rounded-full font-bold text-xl shadow-3xl border-2 border-transparent hover:border-blue-400 hover:shadow-[0_0_32px_0_#a78bfa] focus:outline-none focus:ring-2 focus:ring-blue-400 animate-fade-in flex items-center gap-2 relative overflow-hidden mt-6" whileHover={{ scale: 1.08, boxShadow: '0 0 32px 0 #a78bfa', filter: 'brightness(1.1)', borderColor: '#a78bfa' }} whileTap={{ scale: 0.97 }} onMouseEnter={() => playSound(hoverSfx)} onClick={() => { window.location.href = '/contactme'; }}><span className="relative z-10">{t.services.pages.ecommerceDevelopment.finalCta.button}</span></motion.button>
+              <motion.button className="inline-block px-12 py-5 bg-gradient-to-r from-blue-600 to-purple-400 text-white rounded-full font-bold text-xl shadow-3xl border-2 border-transparent hover:border-blue-400 hover:shadow-[0_0_32px_0_#a78bfa] focus:outline-none focus:ring-2 focus:ring-blue-400 animate-fade-in flex items-center gap-2 relative overflow-hidden mt-6" whileHover={{ scale: 1.08, boxShadow: '0 0 32px 0 #a78bfa', filter: 'brightness(1.1)', borderColor: '#a78bfa' }} whileTap={{ scale: 0.97 }} onMouseEnter={() => playSound(hoverSfx)} onClick={() => { window.location.href = '/contact'; }}><span className="relative z-10">{t.services.pages.ecommerceDevelopment.finalCta.button}</span></motion.button>
             </div>
           </motion.div>
         </div>

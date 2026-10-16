@@ -179,7 +179,7 @@ export default function MobileAppDevelopmentPage() {
           <div className="relative z-10">
             <h1 className="font-display text-[32px] font-extrabold leading-[1.12] tracking-tight text-iris-gradient break-words">{p.hero.title}</h1>
             <p className="mt-4 text-base leading-relaxed text-paper-dim">{p.hero.subtitle}</p>
-            <a href="/contactme" className={`mt-6 ${mCta}`}>{p.hero.cta}</a>
+            <a href="/contact" className={`mt-6 ${mCta}`}>{p.hero.cta}</a>
             <div className="mt-8 grid grid-cols-2 gap-3">
               <img src={phoneImg} alt="Mobile Phone" className="aspect-[4/5] w-full rounded-2xl border border-[var(--line-strong)] object-cover shadow-xl" />
               <img src={smartphoneImg} alt="Smartphone" className="aspect-[4/5] w-full rounded-2xl border border-[var(--line-strong)] object-cover shadow-xl" />
@@ -211,7 +211,7 @@ export default function MobileAppDevelopmentPage() {
                 whileHover={{ scale: 1.08, boxShadow: '0 0 32px 0 #a78bfa', filter: 'brightness(1.1)', borderColor: '#a78bfa' }}
                 whileTap={{ scale: 0.97 }}
                 onMouseEnter={() => playSound(hoverSfx)}
-                onClick={() => { window.location.href = '/contactme'; }}
+                onClick={() => { window.location.href = '/contact'; }}
               >
                 <span className="relative z-10">{t.services.pages.mobileAppDevelopment.hero.cta}</span>
               </motion.button>
@@ -593,7 +593,7 @@ export default function MobileAppDevelopmentPage() {
         <section className="px-4 pb-12 pt-2">
           <div className="card-ink p-6 text-center">
             <h2 className="font-display text-2xl font-bold leading-tight text-iris-gradient">{p.finalCta.title}</h2>
-            <a href="/contactme" className={`mt-5 ${mCta}`}>{p.finalCta.button}</a>
+            <a href="/contact" className={`mt-5 ${mCta}`}>{p.finalCta.button}</a>
           </div>
         </section>
       ) : (
@@ -644,7 +644,7 @@ export default function MobileAppDevelopmentPage() {
             />
             <div className="relative z-10">
               <h2 className="text-3xl md:text-4xl font-extrabold mb-6 tracking-tight gradient-text-premium">{t.services.pages.mobileAppDevelopment.finalCta.title}</h2>
-              <motion.button className="inline-block px-12 py-5 bg-gradient-to-r from-blue-600 to-purple-400 text-white rounded-full font-bold text-xl shadow-3xl border-2 border-transparent hover:border-blue-400 hover:shadow-[0_0_32px_0_#a78bfa] focus:outline-none focus:ring-2 focus:ring-blue-400 animate-fade-in flex items-center gap-2 relative overflow-hidden mt-6" whileHover={{ scale: 1.08, boxShadow: '0 0 32px 0 #a78bfa', filter: 'brightness(1.1)', borderColor: '#a78bfa' }} whileTap={{ scale: 0.97 }} onMouseEnter={() => playSound(hoverSfx)} onClick={() => { window.location.href = '/contactme'; }}><span className="relative z-10">{t.services.pages.mobileAppDevelopment.finalCta.button}</span></motion.button>
+              <motion.button className="inline-block px-12 py-5 bg-gradient-to-r from-blue-600 to-purple-400 text-white rounded-full font-bold text-xl shadow-3xl border-2 border-transparent hover:border-blue-400 hover:shadow-[0_0_32px_0_#a78bfa] focus:outline-none focus:ring-2 focus:ring-blue-400 animate-fade-in flex items-center gap-2 relative overflow-hidden mt-6" whileHover={{ scale: 1.08, boxShadow: '0 0 32px 0 #a78bfa', filter: 'brightness(1.1)', borderColor: '#a78bfa' }} whileTap={{ scale: 0.97 }} onMouseEnter={() => playSound(hoverSfx)} onClick={() => { window.location.href = '/contact'; }}><span className="relative z-10">{t.services.pages.mobileAppDevelopment.finalCta.button}</span></motion.button>
             </div>
           </motion.div>
         </div>

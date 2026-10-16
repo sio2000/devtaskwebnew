@@ -20,7 +20,7 @@ import ScrollProgress from './components/ScrollProgress';
 import Grain from './components/ui/Grain';
 import Seo from './components/Seo';
 import NotFound from './components/NotFound';
-import { ServiceSchema } from './components/SchemaMarkup';
+import { ServiceSchema, FAQSchema } from './components/SchemaMarkup';
 
 // Lazy load service pages for better performance
 const WebDevelopmentPage = lazy(() => import('./components/WebDevelopmentPage'));
@@ -84,6 +84,7 @@ function AppContent() {
             <Route path="/" element={
               <>
                 <Seo title={t.meta.home.title} description={t.meta.home.description} path="/" />
+                <FAQSchema items={t.faq.items} />
                 <Hero />
                 <HomeShowcaseSection />
                 <Services />
@@ -95,8 +96,8 @@ function AppContent() {
             } />
             <Route path="/services" element={
               <>
-                <Seo title={`${t.services.title} | DevTaskHub`} description={t.services.subtitle} path="/services" />
-                <Services />
+                <Seo title={t.meta.services.title} description={t.meta.services.description} path="/services" />
+                <Services standalone />
               </>
             } />
             <Route path="/portfolio" element={
@@ -109,7 +110,7 @@ function AppContent() {
               <Route key={slug} path={`/services/${slug}`} element={
                 <Suspense fallback={<PageLoader />}>
                   <Seo title={t.meta[meta].title} description={t.meta[meta].description} path={`/services/${slug}`} />
-                  <ServiceSchema name={t.meta[meta].title} description={t.meta[meta].description} serviceType={serviceType} />
+                  <ServiceSchema path={`/services/${slug}`} name={t.footer.services[meta]} description={t.meta[meta].description} serviceType={serviceType} />
                   <Page />
                 </Suspense>
               } />
@@ -118,7 +119,7 @@ function AppContent() {
               <Route key={path} path={path} element={
                 <>
                   <Seo title={t.meta.contact.title} description={t.meta.contact.description} path="/contact" />
-                  <Contact />
+                  <Contact standalone />
                 </>
               } />
             ))}

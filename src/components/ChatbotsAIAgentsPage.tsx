@@ -106,7 +106,7 @@ export default function ChatbotsAIAgentsPage() {
             </div>
             <h1 className="font-display text-[34px] font-bold leading-[1.1] tracking-tight text-iris-gradient">{p.hero.title}</h1>
             <p className="mt-4 text-base leading-relaxed text-paper-dim">{p.hero.subtitle}</p>
-            <a href="/contactme" className="btn-accent mt-6 h-12 w-full justify-center text-base">
+            <a href="/contact" className="btn-accent mt-6 h-12 w-full justify-center text-base">
               {p.hero.cta}
               <ArrowRight className="h-4 w-4" aria-hidden="true" />
             </a>
@@ -161,7 +161,7 @@ export default function ChatbotsAIAgentsPage() {
             <h2 className={`${h2} mb-3`}>{p.collaboration.title}</h2>
             <p className="mb-5 text-[15px] leading-relaxed text-paper-dim">{p.collaboration.description}</p>
             {checklist(p.collaboration.items)}
-            <a href="/contactme" className="btn-accent mt-6 h-12 w-full justify-center text-base">
+            <a href="/contact" className="btn-accent mt-6 h-12 w-full justify-center text-base">
               {p.collaboration.cta}
               <ArrowRight className="h-4 w-4" aria-hidden="true" />
             </a>
@@ -196,7 +196,7 @@ export default function ChatbotsAIAgentsPage() {
               className="inline-block px-10 py-4 bg-gradient-to-r from-blue-600 to-purple-400 text-white rounded-full font-bold text-lg shadow-2xl border-2 border-transparent hover:border-blue-400 hover:shadow-[0_0_32px_0_#a78bfa] focus:outline-none focus:ring-2 focus:ring-blue-400 animate-fade-in flex items-center gap-2 relative overflow-hidden"
               whileHover={{ scale: 1.08, boxShadow: '0 0 32px 0 #a78bfa', filter: 'brightness(1.1)', borderColor: '#a78bfa' }}
               whileTap={{ scale: 0.97 }}
-              onClick={() => { window.location.href = '/contactme'; }}
+              onClick={() => { window.location.href = '/contact'; }}
             >
               <span className="relative z-10">{t.services.pages.chatbotsAIAgents.hero.cta}</span>
             </motion.button>
@@ -450,7 +450,7 @@ export default function ChatbotsAIAgentsPage() {
                 className="inline-block px-10 py-4 bg-gradient-to-r from-blue-600 to-purple-400 text-white rounded-full font-bold text-lg shadow-2xl border-2 border-transparent hover:border-blue-400 hover:shadow-[0_0_32px_0_#a78bfa] focus:outline-none focus:ring-2 focus:ring-blue-400 animate-fade-in flex items-center gap-2 relative overflow-hidden"
                 whileHover={{ scale: 1.08, boxShadow: '0 0 32px 0 #a78bfa', filter: 'brightness(1.1)', borderColor: '#a78bfa' }}
                 whileTap={{ scale: 0.97 }}
-                onClick={() => { window.location.href = '/contactme'; }}
+                onClick={() => { window.location.href = '/contact'; }}
               >
                 <span className="relative z-10">{t.services.pages.chatbotsAIAgents.collaboration.cta}</span>
               </motion.button>

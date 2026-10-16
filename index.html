@@ -11,14 +11,12 @@
     <!-- Primary SEO. Tags marked data-rh are taken over by react-helmet-async per route
          (see src/components/Seo.tsx) and rewritten per page by scripts/prerender-meta.mjs. -->
     <title>Κατασκευή Ιστοσελίδων &amp; Εφαρμογών Θεσσαλονίκη | DevTaskHub</title>
-    <meta name="description" content="Κατασκευή ιστοσελίδων, e-shop και mobile εφαρμογών iOS &amp; Android στη Θεσσαλονίκη. AI chatbots και SEO. Δείτε τα έργα μας και ζητήστε δωρεάν προσφορά." data-rh="true" />
+    <meta name="description" content="Κατασκευή ιστοσελίδων, e-shop και εφαρμογών iOS &amp; Android στη Θεσσαλονίκη, για όλη την Ελλάδα. Δείτε live έργα και ζητήστε δωρεάν προσφορά." data-rh="true" />
     <meta name="keywords" content="κατασκευή ιστοσελίδων Θεσσαλονίκη, κατασκευή ιστοσελίδων, κατασκευή eshop, κατασκευή εφαρμογών, mobile apps iOS Android, web developer Θεσσαλονίκη, AI chatbots, SEO Θεσσαλονίκη, devtaskhub" />
     <meta name="author" content="DevTaskHub" />
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" data-rh="true" />
     <meta name="geo.region" content="GR-B" />
     <meta name="geo.placename" content="Θεσσαλονίκη" />
-    <meta name="geo.position" content="40.6401;22.9444" />
-    <meta name="ICBM" content="40.6401, 22.9444" />
     <link rel="canonical" href="https://devtaskhub.com/" data-rh="true" />
 
     <!-- Google Search Console: the DNS (TXT) method needs no tag here. If you choose the
@@ -29,7 +27,7 @@
     <!-- Open Graph -->
     <meta property="og:site_name" content="DevTaskHub" />
     <meta property="og:title" content="Κατασκευή Ιστοσελίδων &amp; Εφαρμογών Θεσσαλονίκη | DevTaskHub" data-rh="true" />
-    <meta property="og:description" content="Κατασκευή ιστοσελίδων, e-shop και mobile εφαρμογών iOS &amp; Android στη Θεσσαλονίκη. AI chatbots και SEO. Δείτε τα έργα μας και ζητήστε δωρεάν προσφορά." data-rh="true" />
+    <meta property="og:description" content="Κατασκευή ιστοσελίδων, e-shop και εφαρμογών iOS &amp; Android στη Θεσσαλονίκη, για όλη την Ελλάδα. Δείτε live έργα και ζητήστε δωρεάν προσφορά." data-rh="true" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://devtaskhub.com/" data-rh="true" />
     <meta property="og:image" content="https://devtaskhub.com/og-cover.jpg" />
@@ -43,7 +41,7 @@
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Κατασκευή Ιστοσελίδων &amp; Εφαρμογών Θεσσαλονίκη | DevTaskHub" data-rh="true" />
-    <meta name="twitter:description" content="Κατασκευή ιστοσελίδων, e-shop και mobile εφαρμογών iOS &amp; Android στη Θεσσαλονίκη. AI chatbots και SEO. Δείτε τα έργα μας και ζητήστε δωρεάν προσφορά." data-rh="true" />
+    <meta name="twitter:description" content="Κατασκευή ιστοσελίδων, e-shop και εφαρμογών iOS &amp; Android στη Θεσσαλονίκη, για όλη την Ελλάδα. Δείτε live έργα και ζητήστε δωρεάν προσφορά." data-rh="true" />
     <meta name="twitter:image" content="https://devtaskhub.com/og-cover.jpg" />
 
     <link rel="manifest" href="/manifest.json" />
@@ -54,30 +52,74 @@
     <link rel="preload" href="/logo.png" as="image" type="image/png" />
     <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Inter:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
     <link rel="dns-prefetch" href="https://app.fastbots.ai" />
+    <!-- Pre-JS route text (see #root): readable in the site's colours until React mounts -->
+    <style>
+      .pr{max-width:72rem;margin:0 auto;padding:6rem 1.25rem 3rem;color:#C9C8C2;font:16px/1.65 Inter,system-ui,-apple-system,"Segoe UI",sans-serif}
+      .pr h1,.pr h2,.pr h3,.pr strong{color:#F5F4EF;line-height:1.2}
+      .pr h1{font-size:clamp(2rem,6vw,3.6rem);margin:.4em 0}
+      .pr h2{font-size:1.5rem;margin:2em 0 .5em}
+      .pr h3{font-size:1.1rem;margin:1.2em 0 .3em}
+      .pr a{color:#8B78FF}
+      .pr nav a{display:inline-block;margin:0 1rem .5rem 0}
+      .pr ol,.pr ul{padding-left:1.2rem}
+      .pr nav ol{list-style:none;padding:0;display:flex;flex-wrap:wrap;gap:.5rem}
+      /* Boot splash: same look as the app's LoadingScreen, covers the crawler text until React mounts
+         (src/main.tsx removes it). Visitors keep seeing the logo screen, never the plain text. */
+      #boot-splash{position:fixed;inset:0;z-index:101;display:flex;flex-direction:column;align-items:center;justify-content:center;background:#08080B}
+      #boot-splash img{width:96px;height:96px;border-radius:1rem;background:#fff;padding:12px;object-fit:contain;margin-bottom:24px;box-shadow:0 25px 50px -12px rgba(0,0,0,.6)}
+      #boot-splash b{font:700 30px/36px "Bricolage Grotesque",Inter,system-ui,sans-serif;color:#F5F4EF;margin-bottom:8px}
+      #boot-splash i{display:block;height:24px;margin-bottom:28px}
+      #boot-splash span{display:block;width:176px;height:4px;border-radius:999px;background:rgba(255,255,255,.1);overflow:hidden}
+      #boot-splash span::after{content:"";display:block;height:100%;width:100%;border-radius:999px;background:linear-gradient(90deg,#6E56F8,#34E4EA);animation:boot-bar 1.6s ease-in-out infinite}
+      @keyframes boot-bar{from{transform:translateX(-100%)}to{transform:translateX(100%)}}
+    </style>
+    <noscript><style>#boot-splash{display:none}</style></noscript>
 
-    <!-- Structured Data: Organization + LocalBusiness (crawlable without JS, for Google & AI engines) -->
+    <!-- Structured Data: the business as one LocalBusiness entity (crawlable without JS, for Google
+         and AI engines). Owner decision: city and service area only, no street address and no map pin.
+         Route-level Service / BreadcrumbList / FAQPage come from src/components/SchemaMarkup.tsx. -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@graph": [
         {
-          "@type": "Organization",
+          "@type": "LocalBusiness",
           "@id": "https://devtaskhub.com/#organization",
           "name": "DevTaskHub",
+          "alternateName": "DevTaskHub.com",
           "url": "https://devtaskhub.com/",
           "logo": "https://devtaskhub.com/logo.png",
           "image": "https://devtaskhub.com/og-cover.jpg",
-          "description": "Κατασκευή ιστοσελίδων, e-shop, mobile εφαρμογών iOS και Android, AI chatbots και SEO στη Θεσσαλονίκη.",
+          "description": "Κατασκευή ιστοσελίδων, e-shop, εφαρμογών iOS και Android, AI chatbots και SEO στη Θεσσαλονίκη, για όλη την Ελλάδα.",
           "email": "info@devtaskhub.com",
           "telephone": "+306971982563",
           "foundingDate": "2022",
+          "founder": {
+            "@type": "Person",
+            "@id": "https://devtaskhub.com/#founder",
+            "name": "Θεοχάρης Σιώζος",
+            "alternateName": "Theocharis Siozos",
+            "jobTitle": "Full-stack developer",
+            "worksFor": { "@id": "https://devtaskhub.com/#organization" }
+          },
           "knowsLanguage": ["el", "en", "fr"],
-          "areaServed": ["GR", "EU"],
+          "knowsAbout": ["Κατασκευή ιστοσελίδων", "Κατασκευή e-shop", "Εφαρμογές iOS και Android", "AI chatbots", "SEO", "React", "Next.js"],
           "address": {
             "@type": "PostalAddress",
             "addressLocality": "Θεσσαλονίκη",
             "addressRegion": "Κεντρική Μακεδονία",
             "addressCountry": "GR"
+          },
+          "areaServed": [
+            { "@type": "City", "name": "Θεσσαλονίκη" },
+            { "@type": "AdministrativeArea", "name": "Κεντρική Μακεδονία" },
+            { "@type": "Country", "name": "Ελλάδα" }
+          ],
+          "openingHoursSpecification": {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+            "opens": "09:00",
+            "closes": "21:00"
           },
           "contactPoint": {
             "@type": "ContactPoint",
@@ -92,48 +134,15 @@
             "https://www.instagram.com/devtaskhub/",
             "https://www.tiktok.com/@devtaskhub",
             "https://www.youtube.com/@Devtaskhub"
-          ]
-        },
-        {
-          "@type": "ProfessionalService",
-          "@id": "https://devtaskhub.com/#localbusiness",
-          "name": "DevTaskHub",
-          "description": "Κατασκευή ιστοσελίδων και εφαρμογών στη Θεσσαλονίκη",
-          "url": "https://devtaskhub.com/",
-          "image": "https://devtaskhub.com/og-cover.jpg",
-          "logo": "https://devtaskhub.com/logo.png",
-          "telephone": "+306971982563",
-          "email": "info@devtaskhub.com",
-          "priceRange": "€€",
-          "currenciesAccepted": "EUR",
-          "address": {
-            "@type": "PostalAddress",
-            "addressLocality": "Θεσσαλονίκη",
-            "addressRegion": "Κεντρική Μακεδονία",
-            "addressCountry": "GR"
-          },
-          "geo": {
-            "@type": "GeoCoordinates",
-            "latitude": 40.6401,
-            "longitude": 22.9444
-          },
-          "areaServed": {
-            "@type": "Country",
-            "name": "Ελλάδα"
-          },
-          "openingHoursSpecification": {
-            "@type": "OpeningHoursSpecification",
-            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
-            "opens": "09:00",
-            "closes": "21:00"
-          },
-          "parentOrganization": { "@id": "https://devtaskhub.com/#organization" }
+          ],
+          "hasOfferCatalog": { "@id": "https://devtaskhub.com/#services" }
         },
         {
           "@type": "WebSite",
           "@id": "https://devtaskhub.com/#website",
           "url": "https://devtaskhub.com/",
           "name": "DevTaskHub",
+          "alternateName": ["DevTaskHub.com", "Dev Task Hub"],
           "inLanguage": "el",
           "publisher": { "@id": "https://devtaskhub.com/#organization" }
         },
@@ -142,12 +151,17 @@
           "@id": "https://devtaskhub.com/#services",
           "name": "Υπηρεσίες DevTaskHub",
           "itemListElement": [
-            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Κατασκευή Ιστοσελίδων & Web Εφαρμογών", "url": "https://devtaskhub.com/services/web-development" } },
-            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Κατασκευή Mobile Εφαρμογών iOS & Android", "url": "https://devtaskhub.com/services/mobile-app-development" } },
-            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "E-shop & E-commerce Development", "url": "https://devtaskhub.com/services/ecommerce-development" } },
-            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Chatbots & AI Agents", "url": "https://devtaskhub.com/services/chatbots-ai-agents" } },
-            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "SEO & Βελτιστοποίηση Ιστοσελίδων", "url": "https://devtaskhub.com/services/seo-website-optimization" } },
-            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "AI Integration σε Εφαρμογές", "url": "https://devtaskhub.com/services/ai-integration-applications" } }
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "@id": "https://devtaskhub.com/services/web-development#service", "name": "Κατασκευή Ιστοσελίδων", "url": "https://devtaskhub.com/services/web-development" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "@id": "https://devtaskhub.com/services/mobile-app-development#service", "name": "Κατασκευή Εφαρμογών iOS και Android", "url": "https://devtaskhub.com/services/mobile-app-development" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "@id": "https://devtaskhub.com/services/ecommerce-development#service", "name": "Κατασκευή E-shop", "url": "https://devtaskhub.com/services/ecommerce-development" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "@id": "https://devtaskhub.com/services/chatbots-ai-agents#service", "name": "Chatbots & AI Agents", "url": "https://devtaskhub.com/services/chatbots-ai-agents" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "@id": "https://devtaskhub.com/services/ai-integration-applications#service", "name": "Ενσωμάτωση AI σε Εφαρμογές", "url": "https://devtaskhub.com/services/ai-integration-applications" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "@id": "https://devtaskhub.com/services/seo-website-optimization#service", "name": "SEO και Βελτιστοποίηση Ιστοσελίδων", "url": "https://devtaskhub.com/services/seo-website-optimization" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "@id": "https://devtaskhub.com/services/social-media-management#service", "name": "Διαχείριση Social Media", "url": "https://devtaskhub.com/services/social-media-management" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "@id": "https://devtaskhub.com/services/ux-ui-design#service", "name": "UX/UI Design", "url": "https://devtaskhub.com/services/ux-ui-design" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "@id": "https://devtaskhub.com/services/database-cloud-infrastructure#service", "name": "Βάσεις Δεδομένων & Cloud", "url": "https://devtaskhub.com/services/database-cloud-infrastructure" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "@id": "https://devtaskhub.com/services/video-animation-production#service", "name": "Βίντεο & Animation", "url": "https://devtaskhub.com/services/video-animation-production" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "@id": "https://devtaskhub.com/services/game-development#service", "name": "Game Development", "url": "https://devtaskhub.com/services/game-development" } }
           ]
         },
         {
@@ -298,66 +312,12 @@
       ]
     }
     </script>
-    <!-- Structured Data: FAQ (same text as the on-page FAQ in translations.ts) -->
-    <script type="application/ld+json" id="ld-faq">
-    {
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "Πόσο κοστίζει η κατασκευή μιας ιστοσελίδας στη Θεσσαλονίκη;",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Εξαρτάται από το μέγεθος και τις λειτουργίες του έργου. Πριν ξεκινήσουμε παίρνετε δωρεάν, ξεκάθαρη προσφορά, χωρίς κρυφές χρεώσεις."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Πόσο χρόνο χρειάζεται για να ολοκληρωθεί ένα website;",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Ιστοσελίδα παρουσίασης: 2 έως 4 εβδομάδες. E-shop: 4 έως 8 εβδομάδες. Custom εφαρμογές: ανάλογα με το έργο. Το χρονοδιάγραμμα το έχετε από την αρχή."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Οι ιστοσελίδες σας είναι βελτιστοποιημένες για κινητά και για SEO;",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Ναι. Όλες είναι mobile-first, γρήγορες και στημένες με σωστό τεχνικό SEO και structured data, για τη Google και για την AI αναζήτηση (ChatGPT, Perplexity)."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Αναλαμβάνετε εφαρμογές για iOS και Android;",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Ναι. Φτιάχνουμε εφαρμογές για iPhone, iPad και Android και τις δημοσιεύουμε σε App Store και Google Play. Δείγματα: LifeMuseum, T-Parking, GetFit."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Προσφέρετε υποστήριξη μετά την παράδοση;",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Ναι. Αναλαμβάνουμε τεχνική υποστήριξη, ενημερώσεις ασφαλείας, backups και βελτιώσεις."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Συνεργάζεστε με πελάτες εκτός Θεσσαλονίκης;",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Ναι. Η έδρα μας είναι στη Θεσσαλονίκη και δουλεύουμε εξ αποστάσεως με πελάτες σε όλη την Ελλάδα και το εξωτερικό."
-          }
-        }
-      ]
-    }
-    </script>
   </head>
   <body style="background-color:#08080B">
-    <div id="root"></div>
+    <!-- scripts/prerender-meta.mjs puts each route's real text (same strings as the app) in place of the
+         marker below. React's createRoot clears it on mount, so it only shows before JS runs. -->
+    <div id="boot-splash" aria-hidden="true"><img src="/logo.png" alt="" width="96" height="96" /><b>DevTaskHub</b><i></i><span></span></div>
+    <div id="root"><!--prerender--></div>
     <!-- Hidden static form so Netlify's build bot can register the form (SPA forms are JS-rendered) -->
     <form name="contact" data-netlify="true" netlify-honeypot="bot-field" hidden>
       <input type="text" name="name" />
@@ -367,54 +327,7 @@
       <textarea name="message"></textarea>
       <input type="text" name="bot-field" />
     </form>
-    <!-- Crawler & no-JS fallback: core business content for engines that don't execute JavaScript -->
-    <noscript>
-      <!--route-content-start-->
-      <header>
-        <h1>Κατασκευή Ιστοσελίδων &amp; Εφαρμογών στη Θεσσαλονίκη | DevTaskHub</h1>
-        <p>
-          Η DevTaskHub είναι full-stack ομάδα στη Θεσσαλονίκη. Φτιάχνουμε ιστοσελίδες, e-shop,
-          εφαρμογές για iOS και Android, AI chatbots και SEO, για επιχειρήσεις σε όλη την Ελλάδα.
-        </p>
-      </header>
-      <!--route-content-end-->
-      <nav aria-label="Υπηρεσίες">
-        <h2><a href="/services">Υπηρεσίες</a></h2>
-        <ul>
-          <li><a href="/services/web-development">Κατασκευή Ιστοσελίδων &amp; Web Εφαρμογών</a></li>
-          <li><a href="/services/mobile-app-development">Κατασκευή Mobile Εφαρμογών (iOS &amp; Android)</a></li>
-          <li><a href="/services/ecommerce-development">E-shop &amp; Ηλεκτρονικό Εμπόριο</a></li>
-          <li><a href="/services/chatbots-ai-agents">Chatbots &amp; AI Agents</a></li>
-          <li><a href="/services/ai-integration-applications">AI Integration σε Εφαρμογές</a></li>
-          <li><a href="/services/seo-website-optimization">SEO &amp; Βελτιστοποίηση Ιστοσελίδων</a></li>
-          <li><a href="/services/social-media-management">Διαχείριση Social Media</a></li>
-          <li><a href="/services/ux-ui-design">UX/UI Design</a></li>
-          <li><a href="/services/database-cloud-infrastructure">Βάσεις Δεδομένων &amp; Cloud</a></li>
-          <li><a href="/services/video-animation-production">Βίντεο &amp; Animation</a></li>
-          <li><a href="/services/game-development">Game Development</a></li>
-        </ul>
-      </nav>
-      <section>
-        <h2><a href="/portfolio">Έργα</a></h2>
-        <ul>
-          <li><a href="https://lifemuseumapp.com/">LifeMuseum</a>: εφαρμογή iOS και Android. Η ζωή σου, σαν μουσείο.</li>
-          <li><a href="https://www.hournook.com/">Hournook</a>: πλατφόρμα online ραντεβού για επαγγελματίες.</li>
-          <li><a href="https://lumorapredictions.com/">Lumora Predictions</a>: web εφαρμογή προβλέψεων.</li>
-          <li><a href="https://klinariti.com/">KLINARITI</a>: ιστοσελίδα για αστρολόγο και κλινική ψυχολόγο.</li>
-          <li><a href="https://t-parking.com/">T-Parking</a>: εφαρμογή εύρεσης parking σε πραγματικό χρόνο.</li>
-          <li><a href="https://getfitskg.com/">GetFit</a>: εφαρμογή γυμναστηρίου.</li>
-          <li><a href="https://advanced-derma.com/">Advanced Derma</a>: δερματολογικό ιατρείο με online ραντεβού.</li>
-          <li><a href="https://www.leonidionhouses.com/">Leonidion Houses</a>: κρατήσεις καταλυμάτων με online πληρωμές.</li>
-        </ul>
-      </section>
-      <section>
-        <h2><a href="/contact">Επικοινωνία</a></h2>
-        <p>Τηλέφωνο: <a href="tel:+306971982563">+30 697 198 2563</a></p>
-        <p>Email: <a href="mailto:info@devtaskhub.com">info@devtaskhub.com</a></p>
-        <p>Περιοχή: Θεσσαλονίκη, Ελλάδα</p>
-      </section>
-      <p>Η ιστοσελίδα λειτουργεί καλύτερα με ενεργοποιημένη JavaScript.</p>
-    </noscript>
+    <noscript><p style="color:#e9e6f0;text-align:center">Η ιστοσελίδα λειτουργεί καλύτερα με ενεργοποιημένη JavaScript.</p></noscript>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

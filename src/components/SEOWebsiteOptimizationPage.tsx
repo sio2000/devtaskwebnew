@@ -133,10 +133,11 @@ export default function SEOWebsiteOptimizationPage() {
           <div aria-hidden="true" className="pointer-events-none absolute -bottom-20 -right-16 h-48 w-48 rounded-full bg-gradient-to-br from-blue-400/25 via-yellow-200/15 to-transparent blur-3xl" />
           <motion.div className="relative z-10 px-4 pb-12 pt-10" initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
             <h1 className="mb-4 bg-gradient-to-r from-blue-400 to-yellow-300 bg-clip-text text-[2rem] font-extrabold leading-[1.12] tracking-tight text-transparent" style={{ fontFamily: "'IBM Plex Sans', 'Inter', sans-serif" }}>
-              {typed}
+              <span className="sr-only">{t.services.pages.seoWebsiteOptimization.hero.title}</span>
+              <span aria-hidden="true">{typed}</span>
             </h1>
             <p className="mb-7 text-base leading-relaxed text-paper-dim">{p.hero.subtitle}</p>
-            <a href="/contactme" className={cta}>{p.hero.cta}</a>
+            <a href="/contact" className={cta}>{p.hero.cta}</a>
           </motion.div>
         </section>
 
@@ -232,7 +233,7 @@ export default function SEOWebsiteOptimizationPage() {
         <section className="px-4 pb-14 pt-2">
           <div className="card-ink p-6 text-center">
             <h2 className="mb-5 text-2xl font-extrabold leading-tight tracking-tight gradient-text-premium">{p.finalCta.title}</h2>
-            <a href="/contactme" className={cta}>{p.finalCta.button}</a>
+            <a href="/contact" className={cta}>{p.finalCta.button}</a>
           </div>
         </section>
       </div>
@@ -271,7 +272,8 @@ export default function SEOWebsiteOptimizationPage() {
           {/* Left: Text */}
           <motion.div className="flex-1 flex flex-col items-start md:items-start text-left" initial={{ opacity: 0, x: -40 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8 }}>
             <motion.h1 className="text-4xl md:text-6xl font-extrabold mb-6 drop-shadow-lg tracking-tight bg-gradient-to-r from-blue-700 to-yellow-500 bg-clip-text text-transparent" initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }} style={{ fontFamily: "'IBM Plex Sans', 'Inter', sans-serif" }}>
-              {typed}
+              <span className="sr-only">{t.services.pages.seoWebsiteOptimization.hero.title}</span>
+              <span aria-hidden="true">{typed}</span>
             </motion.h1>
             <motion.p className="text-lg md:text-2xl text-paper-dim mb-10 font-medium max-w-2xl" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.2 }}>
               {t.services.pages.seoWebsiteOptimization.hero.subtitle}
@@ -280,7 +282,7 @@ export default function SEOWebsiteOptimizationPage() {
               className="inline-block px-10 py-4 bg-gradient-to-r from-blue-600 to-yellow-400 text-white rounded-full font-bold text-lg shadow-2xl border-2 border-transparent hover:border-blue-400 hover:shadow-[0_0_32px_0_#a78bfa] focus:outline-none focus:ring-2 focus:ring-blue-400 animate-fade-in flex items-center gap-2 relative overflow-hidden"
               whileHover={{ scale: 1.08, boxShadow: '0 0 32px 0 #a78bfa', filter: 'brightness(1.1)', borderColor: '#a78bfa' }}
               whileTap={{ scale: 0.97 }}
-              onClick={() => { window.location.href = '/contactme'; }}
+              onClick={() => { window.location.href = '/contact'; }}
             >
               <span className="relative z-10">{t.services.pages.seoWebsiteOptimization.hero.cta}</span>
             </motion.button>
@@ -560,7 +562,7 @@ export default function SEOWebsiteOptimizationPage() {
             />
             <div className="relative z-10">
               <h2 className="text-3xl md:text-4xl font-extrabold mb-6 tracking-tight gradient-text-premium">{t.services.pages.seoWebsiteOptimization.finalCta.title}</h2>
-              <motion.button className="inline-block px-12 py-5 bg-gradient-to-r from-blue-600 to-blue-400 text-white rounded-full font-bold text-xl shadow-3xl border-2 border-transparent hover:border-blue-400 hover:shadow-[0_0_32px_0_#60a5fa] focus:outline-none focus:ring-2 focus:ring-blue-400 animate-fade-in flex items-center gap-2 relative overflow-hidden mt-6" whileHover={{ scale: 1.08, boxShadow: '0 0 32px 0 #60a5fa', filter: 'brightness(1.1)', borderColor: '#60a5fa' }} whileTap={{ scale: 0.97 }} onMouseEnter={() => playSound(hoverSfx)} onClick={() => { window.location.href = '/contactme'; }}><span className="relative z-10">{t.services.pages.seoWebsiteOptimization.finalCta.button}</span></motion.button>
+              <motion.button className="inline-block px-12 py-5 bg-gradient-to-r from-blue-600 to-blue-400 text-white rounded-full font-bold text-xl shadow-3xl border-2 border-transparent hover:border-blue-400 hover:shadow-[0_0_32px_0_#60a5fa] focus:outline-none focus:ring-2 focus:ring-blue-400 animate-fade-in flex items-center gap-2 relative overflow-hidden mt-6" whileHover={{ scale: 1.08, boxShadow: '0 0 32px 0 #60a5fa', filter: 'brightness(1.1)', borderColor: '#60a5fa' }} whileTap={{ scale: 0.97 }} onMouseEnter={() => playSound(hoverSfx)} onClick={() => { window.location.href = '/contact'; }}><span className="relative z-10">{t.services.pages.seoWebsiteOptimization.finalCta.button}</span></motion.button>
             </div>
           </motion.div>
         </div>

@@ -170,7 +170,7 @@ export default function WebDevelopmentPage() {
             <h1 className="pb-1 font-display text-[2rem] font-bold leading-[1.1] tracking-tight text-iris-gradient">{w.hero.title}</h1>
             <p className="mx-auto mt-4 max-w-md text-base leading-relaxed text-paper-dim">{w.hero.subtitle}</p>
             <div className="mt-7 flex flex-col gap-3">
-              <a href="/contactme" className="btn-accent h-12 w-full justify-center text-base">{w.buttons.startProject}</a>
+              <a href="/contact" className="btn-accent h-12 w-full justify-center text-base">{w.buttons.startProject}</a>
               <button
                 type="button"
                 className="btn-ghost h-12 w-full justify-center bg-ink/40 text-base"
@@ -285,7 +285,7 @@ export default function WebDevelopmentPage() {
           <section className="card-ink p-6 text-center">
             <h2 className="font-display text-2xl font-bold leading-tight text-iris-gradient">{finalCta[language].title}</h2>
             <a
-              href="/contactme"
+              href="/contact"
               className="mt-5 flex h-12 w-full items-center justify-center rounded-full bg-gradient-to-r from-iris-deep to-iris px-6 text-base font-bold text-white shadow-lg shadow-iris/25 transition-transform active:scale-[0.98] focus:outline-none focus-visible:ring-2 focus-visible:ring-iris-bright"
             >
               {finalCta[language].button}
@@ -382,7 +382,7 @@ export default function WebDevelopmentPage() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <button
               className="inline-block px-12 py-5 bg-gradient-to-r from-blue-600 to-purple-400 text-white rounded-full font-bold text-xl shadow-3xl border-2 border-transparent hover:border-blue-400 hover:shadow-[0_0_32px_0_#a78bfa] focus:outline-none focus:ring-2 focus:ring-blue-400 animate-fade-in flex items-center gap-2 relative overflow-hidden"
-              onClick={() => { window.location.href = '/contactme'; }}
+              onClick={() => { window.location.href = '/contact'; }}
             >
               <span className="relative z-10">{t.services.pages.webDevelopment.buttons.startProject}</span>
             </button>
@@ -757,7 +757,7 @@ export default function WebDevelopmentPage() {
         >
           <h2 className="text-3xl md:text-4xl font-extrabold mb-6 tracking-tight gradient-text-premium">{finalCta[language].title}</h2>
           <motion.a
-            href="/contactme"
+            href="/contact"
             className="inline-flex items-center gap-2 px-12 py-5 mt-6 bg-gradient-to-r from-iris-deep to-iris text-white rounded-full font-bold text-xl shadow-lg shadow-iris/30 border-2 border-transparent hover:border-iris-bright focus:outline-none focus-visible:ring-2 focus-visible:ring-iris-bright"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.97 }}

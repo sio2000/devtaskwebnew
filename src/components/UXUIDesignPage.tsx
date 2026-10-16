@@ -161,7 +161,7 @@ export default function UXUIDesignPage() {
             {t.services.pages.uxUIDesign.hero.subtitle}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <button className="inline-block px-12 py-5 bg-gradient-to-r from-purple-600 to-blue-400 text-white rounded-full font-bold text-xl shadow-3xl border-2 border-transparent hover:border-purple-400 hover:shadow-[0_0_32px_0_#a78bfa] focus:outline-none focus:ring-2 focus:ring-purple-400 animate-fade-in flex items-center gap-2 relative overflow-hidden" onClick={() => { window.location.href = '/contactme'; }}><span className="relative z-10">{t.services.pages.uxUIDesign.hero.cta}</span></button>
+            <button className="inline-block px-12 py-5 bg-gradient-to-r from-purple-600 to-blue-400 text-white rounded-full font-bold text-xl shadow-3xl border-2 border-transparent hover:border-purple-400 hover:shadow-[0_0_32px_0_#a78bfa] focus:outline-none focus:ring-2 focus:ring-purple-400 animate-fade-in flex items-center gap-2 relative overflow-hidden" onClick={() => { window.location.href = '/contact'; }}><span className="relative z-10">{t.services.pages.uxUIDesign.hero.cta}</span></button>
             <button className="inline-block px-12 py-5 bg-gradient-to-r from-blue-400 to-purple-400 text-white rounded-full font-bold text-xl shadow-3xl border-2 border-transparent hover:border-blue-400 hover:shadow-[0_0_32px_0_#a78bfa] focus:outline-none focus:ring-2 focus:ring-blue-400 animate-fade-in flex items-center gap-2 relative overflow-hidden" onClick={() => { document.getElementById('uiux-samples')?.scrollIntoView({ behavior: 'smooth' }); }}><span className="relative z-10">{t.services.pages.uxUIDesign.hero.viewSamples}</span></button>
           </div>
         </div>
@@ -371,7 +371,7 @@ export default function UXUIDesignPage() {
             />
             <div className="relative z-10">
               <h2 className="text-3xl md:text-4xl font-extrabold mb-6 tracking-tight gradient-text-premium">{t.services.pages.uxUIDesign.finalCta.title}</h2>
-              <motion.button className="inline-block px-12 py-5 bg-gradient-to-r from-purple-600 to-blue-400 text-white rounded-full font-bold text-xl shadow-3xl border-2 border-transparent hover:border-purple-400 hover:shadow-[0_0_32px_0_#a78bfa] focus:outline-none focus:ring-2 focus:ring-purple-400 animate-fade-in flex items-center gap-2 relative overflow-hidden mt-6" whileHover={{ scale: 1.08, boxShadow: '0 0 32px 0 #a78bfa', filter: 'brightness(1.1)', borderColor: '#a78bfa' }} whileTap={{ scale: 0.97 }} onClick={() => { window.location.href = '/contactme'; }}><span className="relative z-10">{t.services.pages.uxUIDesign.finalCta.button}</span></motion.button>
+              <motion.button className="inline-block px-12 py-5 bg-gradient-to-r from-purple-600 to-blue-400 text-white rounded-full font-bold text-xl shadow-3xl border-2 border-transparent hover:border-purple-400 hover:shadow-[0_0_32px_0_#a78bfa] focus:outline-none focus:ring-2 focus:ring-purple-400 animate-fade-in flex items-center gap-2 relative overflow-hidden mt-6" whileHover={{ scale: 1.08, boxShadow: '0 0 32px 0 #a78bfa', filter: 'brightness(1.1)', borderColor: '#a78bfa' }} whileTap={{ scale: 0.97 }} onClick={() => { window.location.href = '/contact'; }}><span className="relative z-10">{t.services.pages.uxUIDesign.finalCta.button}</span></motion.button>
             </div>
           </motion.div>
         </div>

@@ -19,7 +19,12 @@ const isValidPhone = (value: string) => {
   return /^\+?[\d\s().-]+$/.test(v) && digits >= 7 && digits <= 15;
 };
 
-const Contact: React.FC = () => {
+type ContactProps = {
+  /** /contact page: heading rendered as h1 */
+  standalone?: boolean;
+};
+
+const Contact: React.FC<ContactProps> = ({ standalone = false }) => {
   const { language } = useLanguage();
   const t = translations[language];
   const [formData, setFormData] = useState({ name: '', email: '', phone: '', service: '', subject: '', message: '' });
@@ -105,6 +110,7 @@ const Contact: React.FC = () => {
       <div className="grid-lines pointer-events-none absolute inset-0 opacity-[0.35]" aria-hidden="true" />
       <div className="relative z-10 mx-auto max-w-6xl px-5 sm:px-8">
         <SectionHeading
+          as={standalone ? 'h1' : 'h2'}
           index="07"
           label={language === 'el' ? 'Ας μιλήσουμε' : language === 'fr' ? 'Parlons-en' : "Let's talk"}
           title={t.contact.title}

@@ -28,8 +28,8 @@ export const translations = {
           subtitle: 'Από την ιδέα μέχρι το App Store και το Google Play.'
         },
         {
-          title: 'Η ομάδα προγραμματιστών σας',
-          subtitle: 'Ιστοσελίδες, εφαρμογές, e-shop και AI. Από τη Θεσσαλονίκη, για όλη την Ελλάδα.'
+          title: 'Κατασκευή ιστοσελίδων και εφαρμογών',
+          subtitle: 'Η ομάδα προγραμματιστών σας στη Θεσσαλονίκη: ιστοσελίδες, εφαρμογές, e-shop και AI για όλη την Ελλάδα.'
         }
       ]
     },
@@ -79,8 +79,8 @@ export const translations = {
       pages: {
         webDevelopment: {
           hero: {
-            title: 'Κατασκευή Ιστοσελίδων που Εντυπωσιάζουν',
-            subtitle: 'Απογειώστε την επιχείρησή σας με μια ιστοσελίδα που ξεχωρίζει για την ταχύτητα, την αισθητική και την αποτελεσματικότητά της. Δημιουργούμε premium web εμπειρίες που μετατρέπουν επισκέπτες σε πελάτες.'
+            title: 'Κατασκευή Ιστοσελίδων στη Θεσσαλονίκη',
+            subtitle: 'Γρήγορες, mobile-first ιστοσελίδες, έτοιμες για Google, για επιχειρήσεις στη Θεσσαλονίκη και σε όλη την Ελλάδα. Βλέπετε το design πριν γραφτεί κώδικας και παίρνετε δωρεάν προσφορά.'
           },
           buttons: {
             startProject: 'Ξεκινήστε το έργο σας',
@@ -111,7 +111,7 @@ export const translations = {
               },
               {
                 title: 'Συνεχής Υποστήριξη',
-                desc: 'Είμαι δίπλα σας σε κάθε βήμα, με άμεση τεχνική υποστήριξη.'
+                desc: 'Είμαστε δίπλα σας σε κάθε βήμα, με άμεση τεχνική υποστήριξη.'
               }
             ]
           },
@@ -143,8 +143,8 @@ export const translations = {
         },
         mobileAppDevelopment: {
           hero: {
-            title: 'Κατασκευή Mobile Εφαρμογών για Επιχειρήσεις & Startups',
-            subtitle: 'Από την ιδέα στο App Store & Google Play. Εξειδίκευση σε iOS, Android & cross-platform λύσεις με έμφαση στην ταχύτητα, το design και την ασφάλεια.',
+            title: 'Κατασκευή Εφαρμογών Κινητών για iOS και Android',
+            subtitle: 'Δημιουργία εφαρμογής για iPhone και Android, από την ιδέα μέχρι το App Store και το Google Play. Από τη Θεσσαλονίκη, με live εφαρμογές όπως LifeMuseum, T-Parking και GetFit.',
             cta: 'Ζητήστε Προσφορά'
           },
           appTypes: {
@@ -266,8 +266,8 @@ export const translations = {
         },
         ecommerceDevelopment: {
           hero: {
-            title: 'Το Ηλεκτρονικό σας Κατάστημα, Όπως το Ονειρευτήκατε',
-            subtitle: 'Custom E-shops για κάθε ανάγκη και συσκευή',
+            title: 'Κατασκευή E-shop στη Θεσσαλονίκη',
+            subtitle: 'Custom e-shop με online πληρωμές, γρήγορο checkout και εύκολη διαχείριση προϊόντων, για επιχειρήσεις σε όλη την Ελλάδα.',
             cta: 'Ζητήστε Προσφορά'
           },
           offers: {
@@ -431,7 +431,7 @@ export const translations = {
             ]
           },
           workflow: {
-            title: 'Πως δουλεύουμε',
+            title: 'Πώς δουλεύουμε',
             items: [
               { title: 'Ανάλυση Προφίλ', desc: 'Έλεγχος παρουσίας & στόχων.' },
               { title: 'Δημιουργία Στρατηγικής', desc: 'Σχεδιασμός πλάνου & θεματολογίας.' },
@@ -496,7 +496,7 @@ export const translations = {
         },
         seoWebsiteOptimization: {
           hero: {
-            title: 'SEO – Βελτιστοποίηση Ιστοσελίδων που Φέρνει Αποτελέσματα',
+            title: 'SEO στη Θεσσαλονίκη: Βελτιστοποίηση Ιστοσελίδων για Google και AI',
             subtitle: 'Απογειώστε την κατάταξη της ιστοσελίδας σας στη Google με τεχνικό SEO, βελτιστοποίηση περιεχομένου και σύγχρονες στρατηγικές. Επαγγελματική ανάλυση, μετρήσιμα αποτελέσματα και αύξηση οργανικής επισκεψιμότητας.',
             cta: 'Ζητήστε SEO Audit'
           },
@@ -529,7 +529,7 @@ export const translations = {
             ]
           },
           workflow: {
-            title: 'Πως δουλεύουμε',
+            title: 'Πώς δουλεύουμε',
             items: [
               { title: 'SEO Audit', desc: 'Ανάλυση ιστοσελίδας & τεχνικός έλεγχος.' },
               { title: 'Ανάλυση & Στρατηγική', desc: 'Έρευνα, στόχοι, πλάνο ενεργειών.' },
@@ -600,8 +600,8 @@ export const translations = {
         },
         gameDevelopment: {
           hero: {
-            title: 'Καινοτόμες Υπηρεσίες Ανάπτυξης Παιχνιδιών',
-            subtitle: 'Αναπτύξτε το επόμενο επιτυχημένο παιχνίδι με τεχνογνωσία, φαντασία και τεχνολογία αιχμής.',
+            title: 'Ανάπτυξη Παιχνιδιών για Web και Κινητά',
+            subtitle: 'Σχεδιάζουμε και αναπτύσσουμε διαδραστικά παιχνίδια για web, desktop και κινητά, από την ιδέα μέχρι την κυκλοφορία.',
             cta: 'Ξεκινήστε το Έργο Παιχνιδιού σας'
           },
           services: {
@@ -702,8 +702,8 @@ export const translations = {
         },
         aiIntegrationApplications: {
           hero: {
-            title: 'AI στις Εφαρμογές σας: Από το Όραμα στην Υλοποίηση',
-            subtitle: 'Χρησιμοποιούμε τεχνικές machine learning για ανάλυση δεδομένων, δημιουργία προβλέψεων ή έξυπνες λειτουργίες εφαρμογών.',
+            title: 'Ενσωμάτωση AI σε Εφαρμογές και Ιστοσελίδες',
+            subtitle: 'Προσθέτουμε AI στην εφαρμογή ή την ιστοσελίδα σας: GPT και NLP, προτάσεις προϊόντων, αυτοματισμούς και ανάλυση δεδομένων.',
             cta: 'Ζητήστε Προσφορά'
           },
           services: {
@@ -726,7 +726,7 @@ export const translations = {
             ]
           },
           workflow: {
-            title: 'Πώς Εργάζομαι',
+            title: 'Πώς δουλεύουμε',
             items: [
               { title: 'Ανάλυση Αναγκών', desc: 'Κατανόηση στόχων, απαιτήσεων, δεδομένων.' },
               { title: 'Συλλογή & Καθαρισμός Δεδομένων', desc: 'Data gathering, cleaning, προετοιμασία.' },
@@ -851,7 +851,7 @@ export const translations = {
         webDevelopment: 'Κατασκευή Ιστοσελίδων',
         mobileAppDevelopment: 'Mobile Εφαρμογές',
         ecommerceDevelopment: 'E-shop & Ηλεκτρονικό Εμπόριο',
-        seoWebsiteOptimization: 'SEO – Βελτιστοποίηση Ιστοσελίδων',
+        seoWebsiteOptimization: 'SEO και Βελτιστοποίηση Ιστοσελίδων',
         uxUIDesign: 'UX/UI Design',
         videoAnimationProduction: 'Βίντεο & Animation',
         socialMediaManagement: 'Διαχείριση Social Media',
@@ -892,12 +892,20 @@ export const translations = {
           a: 'Ναι. Φτιάχνουμε εφαρμογές για iPhone, iPad και Android και τις δημοσιεύουμε σε App Store και Google Play. Δείγματα: LifeMuseum, T-Parking, GetFit.'
         },
         {
+          q: 'Φτιάχνετε e-shop με online πληρωμές;',
+          a: 'Ναι. Φτιάχνουμε e-shop και πλατφόρμες κρατήσεων με online πληρωμές και admin panel. Δείγματα: Hournook, Lumora Predictions, Leonidion Houses.'
+        },
+        {
           q: 'Προσφέρετε υποστήριξη μετά την παράδοση;',
           a: 'Ναι. Αναλαμβάνουμε τεχνική υποστήριξη, ενημερώσεις ασφαλείας, backups και βελτιώσεις.'
         },
         {
           q: 'Συνεργάζεστε με πελάτες εκτός Θεσσαλονίκης;',
           a: 'Ναι. Η έδρα μας είναι στη Θεσσαλονίκη και δουλεύουμε εξ αποστάσεως με πελάτες σε όλη την Ελλάδα και το εξωτερικό.'
+        },
+        {
+          q: 'Πώς ξεκινάμε;',
+          a: 'Μας λέτε τι χρειάζεστε με τηλέφωνο, email ή τη φόρμα. Παίρνετε δωρεάν προσφορά και χρονοδιάγραμμα και βλέπετε το design πριν γραφτεί η πρώτη γραμμή κώδικα.'
         }
       ]
     },
@@ -905,59 +913,63 @@ export const translations = {
     meta: {
       home: {
         title: 'Κατασκευή Ιστοσελίδων & Εφαρμογών Θεσσαλονίκη | DevTaskHub',
-        description: 'Κατασκευή ιστοσελίδων, e-shop και mobile εφαρμογών iOS & Android στη Θεσσαλονίκη. AI chatbots και SEO. Δείτε τα έργα μας και ζητήστε δωρεάν προσφορά.'
+        description: 'Κατασκευή ιστοσελίδων, e-shop και εφαρμογών iOS & Android στη Θεσσαλονίκη, για όλη την Ελλάδα. Δείτε live έργα και ζητήστε δωρεάν προσφορά.'
+      },
+      services: {
+        title: 'Υπηρεσίες Κατασκευής Ιστοσελίδων & Εφαρμογών | DevTaskHub',
+        description: 'Κατασκευή ιστοσελίδων, e-shop, εφαρμογών iOS και Android, AI chatbots και SEO από τη Θεσσαλονίκη. Δείτε τι κάνουμε και ζητήστε δωρεάν προσφορά.'
       },
       webDevelopment: {
-        title: 'Κατασκευή Ιστοσελίδων Θεσσαλονίκη | React, Next.js | DevTaskHub',
-        description: 'Σύγχρονη ανάπτυξη ιστοσελίδων με React & Next.js στη Θεσσαλονίκη. Fast, Secure, SEO-Optimized. Επικοινωνήστε για προσφορά!'
+        title: 'Κατασκευή Ιστοσελίδων Θεσσαλονίκη | Web Developer | DevTaskHub',
+        description: 'Κατασκευή ιστοσελίδων στη Θεσσαλονίκη: γρήγορες, mobile-first και έτοιμες για Google. Βλέπετε το design πριν τον κώδικα. Ζητήστε δωρεάν προσφορά.'
       },
       mobileAppDevelopment: {
-        title: 'Mobile Apps Θεσσαλονίκη | iOS & Android Development | DevTaskHub',
-        description: 'Ανάπτυξη mobile εφαρμογών για iOS & Android στη Θεσσαλονίκη. Native & Cross-platform. Επικοινωνήστε για προσφορά!'
+        title: 'Κατασκευή Εφαρμογών Κινητών iOS & Android | DevTaskHub',
+        description: 'Δημιουργία εφαρμογής για iOS και Android, από την ιδέα μέχρι το App Store και το Google Play. Από τη Θεσσαλονίκη, με έργα όπως LifeMuseum και T-Parking.'
       },
       chatbotsAIAgents: {
-        title: 'Chatbots & AI Agents Θεσσαλονίκη | DevTaskHub',
-        description: 'Έξυπνα chatbots και AI agents για αυτοματοποίηση επικοινωνίας στη Θεσσαλονίκη. 24/7 υποστήριξη πελατών. Ζητήστε προσφορά!'
+        title: 'AI Chatbot για Επιχειρήσεις & AI Agents | DevTaskHub',
+        description: 'AI chatbots και agents για ιστοσελίδα, Messenger και WhatsApp, που απαντούν στους πελάτες σας όλο το 24ωρο. Από τη Θεσσαλονίκη. Ζητήστε δωρεάν προσφορά.'
       },
       socialMediaManagement: {
-        title: 'Social Media Management Θεσσαλονίκη | DevTaskHub',
-        description: 'Διαχείριση social media και δημιουργία περιεχομένου στη Θεσσαλονίκη. Αύξηση engagement & conversions. Επικοινωνήστε!'
+        title: 'Διαχείριση Social Media Θεσσαλονίκη | DevTaskHub',
+        description: 'Στρατηγική και καθημερινή διαχείριση social media για επιχειρήσεις: περιεχόμενο, προγραμματισμένες δημοσιεύσεις, κοινότητα και analytics. Ζητήστε προσφορά.'
       },
       videoAnimationProduction: {
-        title: 'Video & Animation Production Θεσσαλονίκη | DevTaskHub',
-        description: 'Παραγωγή επαγγελματικών βίντεο και animations στη Θεσσαλονίκη. Προώθηση, εκπαίδευση, διαφήμιση. Ζητήστε προσφορά!'
+        title: 'Παραγωγή Βίντεο & Animation για Επιχειρήσεις | DevTaskHub',
+        description: 'Δημιουργία και επεξεργασία βίντεο και animation για προώθηση, εκπαίδευση και διαφήμιση. Από τη Θεσσαλονίκη, για όλη την Ελλάδα. Ζητήστε προσφορά.'
       },
       seoWebsiteOptimization: {
         title: 'SEO Θεσσαλονίκη | Βελτιστοποίηση Ιστοσελίδων | DevTaskHub',
-        description: 'SEO και βελτιστοποίηση ιστοσελίδων στη Θεσσαλονίκη. Αύξηση οργανικής επισκεψιμότητας & conversions. Επικοινωνήστε!'
+        description: 'SEO στη Θεσσαλονίκη: τεχνικό SEO, ταχύτητα, structured data και περιεχόμενο, για τη Google και για την AI αναζήτηση. Ζητήστε δωρεάν ανάλυση SEO.'
       },
       uxUIDesign: {
-        title: 'UX/UI Design Θεσσαλονίκη | DevTaskHub',
-        description: 'Σχεδιασμός UX/UI interfaces στη Θεσσαλονίκη. User-friendly & αποδοτικά designs. Επικοινωνήστε για προσφορά!'
+        title: 'UX/UI Design για Ιστοσελίδες & Εφαρμογές | DevTaskHub',
+        description: 'Σχεδιασμός UX/UI για ιστοσελίδες και εφαρμογές κινητών: wireframes, πρωτότυπα και interfaces εύκολα στη χρήση. Βλέπετε το design πριν τον κώδικα.'
       },
       databaseCloudInfrastructure: {
-        title: 'Database & Cloud Infrastructure Θεσσαλονίκη | DevTaskHub',
-        description: 'Διαχείριση βάσεων δεδομένων & cloud solutions στη Θεσσαλονίκη. Scalable & secure. Επικοινωνήστε για προσφορά!'
+        title: 'Βάσεις Δεδομένων & Cloud Υποδομές | DevTaskHub',
+        description: 'Σχεδιασμός και διαχείριση βάσεων δεδομένων και cloud υποδομών για εφαρμογές και e-shop. Ασφαλείς, επεκτάσιμες λύσεις με backups. Ζητήστε προσφορά.'
       },
       aiIntegrationApplications: {
-        title: 'AI Integration Applications Θεσσαλονίκη | DevTaskHub',
-        description: 'Ενσωμάτωση AI & machine learning σε εφαρμογές στη Θεσσαλονίκη. Data analysis & automation. Ζητήστε προσφορά!'
+        title: 'Ενσωμάτωση AI σε Εφαρμογές & Ιστοσελίδες | DevTaskHub',
+        description: 'Ενσωματώνουμε AI στην εφαρμογή ή την ιστοσελίδα σας: GPT και NLP, προτάσεις προϊόντων, αυτοματισμοί και ανάλυση δεδομένων. Ζητήστε προσφορά.'
       },
       ecommerceDevelopment: {
-        title: 'E-shop & E-commerce Development Θεσσαλονίκη | DevTaskHub',
-        description: 'Κατασκευή e-shop και ηλεκτρονικών καταστημάτων στη Θεσσαλονίκη. Πλήρης λύση e-commerce. Επικοινωνήστε!'
+        title: 'Κατασκευή E-shop Θεσσαλονίκη | Ηλεκτρονικό Κατάστημα | DevTaskHub',
+        description: 'Κατασκευή e-shop και ηλεκτρονικών καταστημάτων με online πληρωμές, κρατήσεις και admin panel. Γρήγορα στο κινητό και έτοιμα για Google. Δωρεάν προσφορά.'
       },
       gameDevelopment: {
-        title: 'Game Development Θεσσαλονίκη | Web, Mobile Games | DevTaskHub',
-        description: 'Ανάπτυξη διαδραστικών παιχνιδιών στη Θεσσαλονίκη. Web, desktop & mobile platforms. Ζητήστε προσφορά!'
+        title: 'Ανάπτυξη Παιχνιδιών για Web & Κινητά | DevTaskHub',
+        description: 'Ανάπτυξη διαδραστικών παιχνιδιών για web, desktop και κινητά, από την ιδέα και το design μέχρι την κυκλοφορία. Ζητήστε προσφορά για το παιχνίδι σας.'
       },
       contact: {
-        title: 'Επικοινωνία | DevTaskHub Θεσσαλονίκη',
-        description: 'Επικοινωνήστε με την DevTaskHub στη Θεσσαλονίκη για δωρεάν προσφορά. Τηλέφωνο, email ή φόρμα επικοινωνίας.'
+        title: 'Επικοινωνία & Δωρεάν Προσφορά | DevTaskHub Θεσσαλονίκη',
+        description: 'Μιλήστε με την DevTaskHub στη Θεσσαλονίκη για ιστοσελίδα, e-shop ή εφαρμογή. Τηλέφωνο +30 697 198 2563, email info@devtaskhub.com ή φόρμα επικοινωνίας.'
       },
       portfolio: {
-        title: 'Έργα & Portfolio | Ιστοσελίδες και Εφαρμογές | DevTaskHub',
-        description: 'Live έργα της DevTaskHub: LifeMuseum, Hournook, Lumora, KLINARITI, T-Parking, Advanced Derma και άλλα. Ιστοσελίδες, e-shop και εφαρμογές iOS & Android.'
+        title: 'Έργα: Ιστοσελίδες, E-shop & Εφαρμογές | DevTaskHub',
+        description: 'Live έργα της DevTaskHub: LifeMuseum, T-Parking, GetFit, Hournook, Lumora, KLINARITI, Advanced Derma. Ιστοσελίδες, e-shop και εφαρμογές iOS και Android.'
       },
       notFound: {
         title: 'Η σελίδα δεν βρέθηκε | DevTaskHub',
@@ -1014,8 +1026,8 @@ export const translations = {
           subtitle: 'From the idea to the App Store and Google Play.'
         },
         {
-          title: 'Your development team',
-          subtitle: 'Websites, apps, e-shops and AI. Based in Thessaloniki, working everywhere.'
+          title: 'Website and app development',
+          subtitle: 'Your development team in Thessaloniki: websites, apps, e-shops and AI for all of Greece.'
         }
       ]
     },
@@ -1065,7 +1077,7 @@ export const translations = {
       pages: {
         webDevelopment: {
           hero: {
-            title: 'Website Development that Impresses',
+            title: 'Website Development in Thessaloniki',
             subtitle: 'Elevate your business with a website that stands out for its speed, aesthetics, and effectiveness. We create premium web experiences that turn visitors into customers.'
           },
           buttons: {
@@ -1129,7 +1141,7 @@ export const translations = {
         },
         mobileAppDevelopment: {
           hero: {
-            title: 'Mobile App Development for Businesses & Startups',
+            title: 'Mobile App Development for iOS and Android',
             subtitle: 'From idea to App Store & Google Play. Expertise in iOS, Android & cross-platform solutions with focus on speed, design and security.',
             cta: 'Request a Quote'
           },
@@ -1251,7 +1263,7 @@ export const translations = {
         },
         ecommerceDevelopment: {
           hero: {
-            title: 'Your Online Store, Just As You Dreamed It',
+            title: 'E-shop Development in Thessaloniki',
             subtitle: 'Custom E-shops for every need and device',
             cta: 'Request a Quote'
           },
@@ -1481,7 +1493,7 @@ export const translations = {
         },
         seoWebsiteOptimization: {
           hero: {
-            title: 'SEO – Website Optimization That Delivers Results',
+            title: 'SEO in Thessaloniki: Website Optimization for Google and AI',
             subtitle: 'Boost your website\'s Google ranking with technical SEO, content optimization, and modern strategies. Professional analysis, measurable results, and increased organic traffic.',
             cta: 'Request SEO Audit'
           },
@@ -1834,7 +1846,7 @@ export const translations = {
         webDevelopment: 'Website Development',
         mobileAppDevelopment: 'Mobile Apps',
         ecommerceDevelopment: 'E-shop & E-commerce',
-        seoWebsiteOptimization: 'SEO – Website Optimization',
+        seoWebsiteOptimization: 'SEO and Website Optimization',
         uxUIDesign: 'UX/UI Design',
         videoAnimationProduction: 'Video & Animation',
         socialMediaManagement: 'Social Media Management',
@@ -1875,12 +1887,20 @@ export const translations = {
           a: 'Yes. We build apps for iPhone, iPad and Android and publish them on the App Store and Google Play. Examples: LifeMuseum, T-Parking, GetFit.'
         },
         {
+          q: 'Do you build e-shops with online payments?',
+          a: 'Yes. We build e-shops and booking platforms with online payments and an admin panel. Examples: Hournook, Lumora Predictions, Leonidion Houses.'
+        },
+        {
           q: 'Do you offer support after delivery?',
           a: 'Yes. We handle technical support, security updates, backups and improvements.'
         },
         {
           q: 'Do you work with clients outside Thessaloniki?',
           a: 'Yes. We are based in Thessaloniki and work remotely with clients across Greece and abroad.'
+        },
+        {
+          q: 'How do we get started?',
+          a: 'Tell us what you need by phone, email or the form. You get a free quote and a timeline, and you see the design before the first line of code is written.'
         }
       ]
     },
@@ -1889,6 +1909,10 @@ export const translations = {
       home: {
         title: 'Website & App Development Thessaloniki | DevTaskHub',
         description: 'Websites, e-shops and iOS & Android apps built in Thessaloniki, Greece. AI chatbots and SEO. See our live work and get a free quote.'
+      },
+      services: {
+        title: 'Website & App Development Services | DevTaskHub',
+        description: 'Websites, e-shops, iOS and Android apps, AI chatbots and SEO from Thessaloniki, Greece. See what we do and get a free quote.'
       },
       webDevelopment: {
         title: 'Website Development Thessaloniki | React, Next.js | DevTaskHub',
@@ -1997,8 +2021,8 @@ export const translations = {
           subtitle: 'De l\'idée à l\'App Store et à Google Play.'
         },
         {
-          title: 'Votre équipe de développement',
-          subtitle: 'Sites, applications, e-shops et IA. Basés à Thessalonique, nous travaillons partout.'
+          title: 'Création de sites et d\'applications',
+          subtitle: 'Votre équipe de développeurs à Thessalonique : sites, applications, e-shops et IA pour toute la Grèce.'
         }
       ]
     },
@@ -2048,7 +2072,7 @@ export const translations = {
       pages: {
         webDevelopment: {
           hero: {
-            title: 'Développement de Sites Web qui Impressionne',
+            title: 'Création de Sites Web à Thessalonique',
             subtitle: 'Élevez votre entreprise avec un site web qui se distingue par sa rapidité, son esthétique et son efficacité. Nous créons des expériences web premium qui transforment les visiteurs en clients.'
           },
           buttons: {
@@ -2112,7 +2136,7 @@ export const translations = {
         },
         mobileAppDevelopment: {
           hero: {
-            title: 'Développement d\'Applications Mobiles pour Entreprises et Startups',
+            title: 'Développement d\'Applications Mobiles iOS et Android',
             subtitle: 'De l\'idée à l\'App Store et Google Play. Expertise en iOS, Android et solutions multiplateformes avec un focus sur la vitesse, le design et la sécurité.',
             cta: 'Demander un Devis'
           },
@@ -2234,7 +2258,7 @@ export const translations = {
         },
         ecommerceDevelopment: {
           hero: {
-            title: 'Votre Boutique en Ligne, Exactement Comme Vous l\'Avez Rêvée',
+            title: 'Création d\'E-shop à Thessalonique',
             subtitle: 'Boutiques en ligne personnalisées pour chaque besoin et appareil',
             cta: 'Demander un Devis'
           },
@@ -2415,7 +2439,7 @@ export const translations = {
         },
         seoWebsiteOptimization: {
           hero: {
-            title: 'SEO – Optimisation de Sites Web qui Apporte des Résultats',
+            title: 'SEO à Thessalonique : Optimisation de Sites Web pour Google et l\'IA',
             subtitle: 'Boostez le classement de votre site web sur Google avec le SEO technique, l\'optimisation du contenu et des stratégies modernes. Analyse professionnelle, résultats mesurables et augmentation du trafic organique.',
             cta: 'Demandez un Audit SEO'
           },
@@ -2817,7 +2841,7 @@ export const translations = {
         webDevelopment: 'Développement de Sites Web',
         mobileAppDevelopment: 'Applications Mobiles',
         ecommerceDevelopment: 'E-shop & E-commerce',
-        seoWebsiteOptimization: 'SEO – Optimisation de Site Web',
+        seoWebsiteOptimization: 'SEO et Optimisation de Site Web',
         uxUIDesign: 'Design UX/UI',
         videoAnimationProduction: 'Vidéo & Animation',
         socialMediaManagement: 'Gestion des Réseaux Sociaux',
@@ -2858,12 +2882,20 @@ export const translations = {
           a: 'Oui. Nous créons des applications pour iPhone, iPad et Android et les publions sur l\'App Store et Google Play. Exemples : LifeMuseum, T-Parking, GetFit.'
         },
         {
+          q: 'Créez-vous des e-shops avec paiement en ligne?',
+          a: 'Oui. Nous créons des e-shops et des plateformes de réservation avec paiement en ligne et panneau d\'administration. Exemples : Hournook, Lumora Predictions, Leonidion Houses.'
+        },
+        {
           q: 'Offrez-vous un support après la livraison?',
           a: 'Oui. Nous assurons le support technique, les mises à jour de sécurité, les sauvegardes et les améliorations.'
         },
         {
           q: 'Travaillez-vous avec des clients en dehors de Thessalonique?',
           a: 'Oui. Nous sommes basés à Thessalonique et travaillons à distance avec des clients en Grèce et à l\'étranger.'
+        },
+        {
+          q: 'Comment commencer?',
+          a: 'Dites-nous ce dont vous avez besoin par téléphone, e-mail ou via le formulaire. Vous recevez un devis gratuit et un calendrier, et vous voyez le design avant la première ligne de code.'
         }
       ]
     },
@@ -2872,6 +2904,10 @@ export const translations = {
       home: {
         title: 'Création de Sites Web & Applications à Thessalonique | DevTaskHub',
         description: 'Sites web, e-shops et applications iOS & Android créés à Thessalonique. Chatbots IA et SEO. Découvrez nos projets en ligne et demandez un devis gratuit.'
+      },
+      services: {
+        title: 'Création de Sites Web & Applications : nos Services | DevTaskHub',
+        description: 'Sites web, e-shops, applications iOS et Android, chatbots IA et SEO depuis Thessalonique. Découvrez nos services et demandez un devis gratuit.'
       },
       webDevelopment: {
         title: 'Développement Web | DevTaskHub Thessalonique',

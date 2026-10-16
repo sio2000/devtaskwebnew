@@ -1,50 +1,55 @@
 # DevTaskHub
 
-> DevTaskHub is a full-stack web and mobile development studio based in Thessaloniki, Greece. It builds websites, e-shops, web apps, iOS and Android apps, AI chatbots and SEO for businesses across Greece and abroad. Languages served: Greek, English, French.
+> DevTaskHub (devtaskhub.com) is a web and mobile development studio in Thessaloniki, Greece, founded and run by full-stack developer Theocharis Siozos (Θεοχάρης Σιώζος). It builds websites, e-shops, web apps, iOS and Android apps, AI chatbots and SEO for businesses across Greece and abroad. Greek name of the main service: «Κατασκευή ιστοσελίδων και εφαρμογών στη Θεσσαλονίκη».
 
 ## About
 - Name: DevTaskHub
-- Location: Thessaloniki (Θεσσαλονίκη), Central Macedonia, Greece
-- Serves: All of Greece and the EU, remotely
-- Email: info@devtaskhub.com
+- Founder: Theocharis Siozos (Θεοχάρης Σιώζος), full-stack developer
+- Based in: Thessaloniki (Θεσσαλονίκη), Central Macedonia, Greece. Works remotely with clients across Greece and abroad.
+- Languages: Greek, English, French
 - Phone: +30 697 198 2563
-- How it works: free quote and timeline first, design before code, progress shown at every step, support after launch.
+- Email: info@devtaskhub.com
+- How it works: free quote and timeline first, design shown before any code, progress shown at every step, support after launch.
+- Typical timelines (from the site FAQ): presentation website 2 to 4 weeks, e-shop 4 to 8 weeks, custom apps depend on the project.
+- Prices: quoted per project, free and before any work starts. No fixed price list.
 
-## Services
-- [Website & Web App Development](https://devtaskhub.com/services/web-development): Responsive, fast, SEO-ready websites and web applications.
-- [Mobile App Development](https://devtaskhub.com/services/mobile-app-development): iOS and Android apps, published on the App Store and Google Play.
-- [E-commerce Development](https://devtaskhub.com/services/ecommerce-development): Online stores and booking platforms with online payments.
-- [Chatbots & AI Agents](https://devtaskhub.com/services/chatbots-ai-agents): AI chatbots and agents for customer support and automation.
-- [AI Integration](https://devtaskhub.com/services/ai-integration-applications): AI and machine learning inside applications.
-- [SEO & Website Optimization](https://devtaskhub.com/services/seo-website-optimization): Technical SEO, performance and organic growth.
-- [Social Media Management](https://devtaskhub.com/services/social-media-management): Strategy and day to day management of social profiles.
-- [UX/UI Design](https://devtaskhub.com/services/ux-ui-design): User-centered interface design.
-- [Database & Cloud Infrastructure](https://devtaskhub.com/services/database-cloud-infrastructure): Scalable, secure data and cloud architecture.
-- [Video & Animation Production](https://devtaskhub.com/services/video-animation-production): Promotional video and motion graphics.
-- [Game Development](https://devtaskhub.com/services/game-development): Interactive games for web and mobile.
+## Services (Υπηρεσίες)
+- [Website development, Κατασκευή ιστοσελίδων](https://devtaskhub.com/services/web-development): fast, mobile-first, SEO-ready websites and web apps.
+- [Mobile app development, Κατασκευή εφαρμογών κινητών iOS και Android](https://devtaskhub.com/services/mobile-app-development): iOS and Android apps, published on the App Store and Google Play.
+- [E-shop development, Κατασκευή e-shop](https://devtaskhub.com/services/ecommerce-development): online stores and booking platforms with online payments and an admin panel.
+- [AI chatbots and agents](https://devtaskhub.com/services/chatbots-ai-agents): chatbots for websites, Messenger and WhatsApp, for support, leads and bookings.
+- [AI integration, Ενσωμάτωση AI](https://devtaskhub.com/services/ai-integration-applications): GPT and NLP features, recommendations, automation and data analysis inside apps.
+- [SEO, Βελτιστοποίηση ιστοσελίδων](https://devtaskhub.com/services/seo-website-optimization): technical SEO, speed, structured data and content, for Google and AI search.
+- [Social media management, Διαχείριση social media](https://devtaskhub.com/services/social-media-management): strategy, content, scheduling, community and analytics.
+- [UX/UI design](https://devtaskhub.com/services/ux-ui-design): wireframes, prototypes and interface design for web and mobile.
+- [Databases and cloud, Βάσεις δεδομένων και cloud](https://devtaskhub.com/services/database-cloud-infrastructure): secure, scalable data and cloud setups with backups.
+- [Video and animation, Βίντεο και animation](https://devtaskhub.com/services/video-animation-production): promotional, educational and product video, motion graphics.
+- [Game development](https://devtaskhub.com/services/game-development): games for web, desktop and mobile.
 
-## Selected Work
+## Selected work
 Full list: https://devtaskhub.com/portfolio
 
 ### Mobile apps
 - [LifeMuseum](https://lifemuseumapp.com/): iOS and Android app that turns the moments of your life into museum exhibits and your year into a film. [App Store](https://apps.apple.com/us/app/lifemuseum/id6799032000), [Google Play](https://play.google.com/store/apps/details?id=com.lifemuseum.app).
-- [T-Parking](https://t-parking.com/): The first app in Greece that shows free on-street parking spots in real time. Free, iOS and Android.
-- [GetFit SKG](https://getfitskg.com/): Gym app for members, training programs, bookings and payments.
+- [T-Parking](https://t-parking.com/): the first app in Greece that shows free on-street parking spots in real time. Free, iOS and Android. [App Store](https://apps.apple.com/gr/app/t-parking/id6756634872), [Google Play](https://play.google.com/store/apps/details?id=com.tparking.app).
+- [GetFit SKG](https://getfitskg.com/): gym app for members, training programs, bookings and payments. [App Store](https://apps.apple.com/us/app/getfit-skg/id6753928093).
 
 ### Web apps and platforms
-- [Hournook](https://www.hournook.com/): Online booking SaaS for professionals. A booking page in minutes, in 15 languages.
-- [Lumora Predictions](https://lumorapredictions.com/): Prediction web app (tarot, coffee cup, crystal ball) with accounts, online payments and an admin panel.
-- [Leonidion Houses](https://www.leonidionhouses.com/): Booking platform for 6 properties with online payments and an admin panel.
+- [Hournook](https://www.hournook.com/): online booking SaaS for professionals. A booking page in minutes, in 15 languages.
+- [Lumora Predictions](https://lumorapredictions.com/): prediction web app (tarot, coffee cup, crystal ball) with accounts, online payments and an admin panel.
+- [Leonidion Houses](https://www.leonidionhouses.com/): booking platform for 6 properties with online payments and an admin panel.
+- [Online Parent & Teen Clinic](https://onlineparentteenclinic.com/): telemedicine platform with online appointments.
 
 ### Websites
-- [KLINARITI](https://klinariti.com/): Personal brand website for an astrologer and clinical psychologist.
-- [LifeMuseum website](https://lifemuseumapp.com/): Official app website in six languages.
-- [Advanced Derma](https://advanced-derma.com/): Dermatology clinic in Athens and Piraeus, with online appointments.
-- [Online Parent & Teen Clinic](https://onlineparentteenclinic.com/): Telemedicine platform with online appointments.
-- HANDSTUFF: E-shop for handmade leather bags.
+- [KLINARITI](https://klinariti.com/): website for an astrologer and clinical psychologist, with session booking.
+- [Advanced Derma](https://advanced-derma.com/): dermatology clinic in Athens and Piraeus, with online appointments.
+- [Architecture and construction office](https://in-mavridis.gr/): company website with services and project portfolio, built for SEO.
+- [HydrogenLife](https://hydrogenlife.eu/): wellness center with services and online bookings.
+- [LifeMuseum website](https://lifemuseumapp.com/): official app website in six languages.
+- HANDSTUFF: e-shop for handmade leather bags.
 
 ## Contact
-- Email: info@devtaskhub.com
-- Phone: +30 697 198 2563
 - Contact page: https://devtaskhub.com/contact
+- Phone: +30 697 198 2563
+- Email: info@devtaskhub.com
 - A free, clear quote is provided before any work begins.
