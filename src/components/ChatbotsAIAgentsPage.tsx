@@ -8,6 +8,7 @@ import aiImg from '../assets/AI.jpg';
 import { useLanguage } from '../hooks/useLanguage';
 import { translations } from '../data/translations';
 import { useIsMobile } from '../hooks/useIsMobile';
+import { ArrowRight, Check } from 'lucide-react';
 // import chatbotLottie from '../assets/lottie-chatbot.json';
 const chatbotLottie = {};
 const hoverSfx = '';
@@ -63,6 +64,113 @@ export default function ChatbotsAIAgentsPage() {
     })), [t]);
 
   useEffect(() => { AOS.init({ duration: 900, once: true }); }, []);
+
+  if (isMobile) {
+    // Phones only: same text and links, compact layout (decorative stock photos dropped)
+    const p = t.services.pages.chatbotsAIAgents;
+    const advIcons = [FaComments, FaChartLine, FaCogs, FaQuestionCircle, FaUserShield];
+    const techMobile = [
+      <SiDialogflow className="h-6 w-6 text-yellow-400" />,
+      <SiRasa className="h-6 w-6 text-purple-400" />,
+      <SiOpenai className="h-6 w-6 text-sky-400" />,
+      <SiTwilio className="h-6 w-6 text-red-400" />,
+      <SiWhatsapp className="h-6 w-6 text-green-400" />,
+      <SiMeta className="h-6 w-6 text-iris-bright" />,
+      <FaInstagram className="h-6 w-6 text-pink-400" />,
+      <FaGlobe className="h-6 w-6 text-blue-400" />,
+      <FaWindows className="h-6 w-6 text-paper-dim" />,
+      <SiSlack className="h-6 w-6 text-indigo-300" />,
+    ];
+    const h2 = 'font-display text-[28px] font-bold leading-tight gradient-text-premium';
+    const checklist = (items: string[]) => (
+      <ul className="space-y-2.5">
+        {items.map((item, idx) => (
+          <li key={idx} className="flex items-start gap-2.5 text-[15px] leading-snug text-paper">
+            <span className="mt-0.5 flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-iris/20 text-iris-bright">
+              <Check className="h-3.5 w-3.5" aria-hidden="true" />
+            </span>
+            {item}
+          </li>
+        ))}
+      </ul>
+    );
+    return (
+      <div className="bg-gradient-to-br from-ink via-ink-800 to-ink-800 min-h-screen text-paper font-sans overflow-x-hidden">
+        {/* Hero */}
+        <section className="relative overflow-hidden px-4 pt-8 pb-12">
+          <div className="pointer-events-none absolute -top-16 -left-16 h-56 w-56 rounded-full bg-iris/25 blur-3xl" aria-hidden="true" />
+          <motion.div className="relative" initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
+            <div className="relative mb-5 inline-block">
+              <img src={chatbotImg} alt="Chatbot" width={64} height={64} className="h-16 w-16 rounded-2xl border border-[var(--line)] bg-white/[0.045] object-contain" />
+              <span className="absolute -right-1 -bottom-1 h-3.5 w-3.5 rounded-full border-2 border-ink bg-signal" aria-hidden="true" />
+            </div>
+            <h1 className="font-display text-[34px] font-bold leading-[1.1] tracking-tight text-iris-gradient">{p.hero.title}</h1>
+            <p className="mt-4 text-base leading-relaxed text-paper-dim">{p.hero.subtitle}</p>
+            <a href="/contactme" className="btn-accent mt-6 h-12 w-full justify-center text-base">
+              {p.hero.cta}
+              <ArrowRight className="h-4 w-4" aria-hidden="true" />
+            </a>
+          </motion.div>
+        </section>
+
+        {/* Πλεονεκτήματα & Εφαρμογές */}
+        <section className="px-4 py-12">
+          <h2 className={`${h2} mb-6`}>{p.advantages.title}</h2>
+          <ul className="card-ink divide-y divide-[var(--line)] overflow-hidden">
+            {advantages.map((a, idx) => {
+              const Icon = advIcons[idx] ?? FaComments;
+              return (
+                <li key={idx} className="flex items-start gap-3.5 px-4 py-4">
+                  <span className="mt-0.5 flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-iris-bright to-iris-deep text-white shadow-[0_6px_18px_-8px_rgba(110,86,248,0.7)]">
+                    <Icon className="h-5 w-5" aria-hidden="true" />
+                  </span>
+                  <span className="min-w-0 flex-1">
+                    <span className="block font-display text-[17px] font-semibold leading-snug text-paper">{a.title}</span>
+                    <span className="mt-0.5 block text-sm leading-snug text-paper-dim">{a.desc}</span>
+                  </span>
+                </li>
+              );
+            })}
+          </ul>
+        </section>
+
+        {/* Τεχνολογίες & Πλατφόρμες */}
+        <section className="px-4 py-12">
+          <h2 className={`${h2} mb-3`}>{p.technologies.title}</h2>
+          <p className="mb-6 text-sm leading-relaxed text-paper-dim">{p.technologies.subtitle}</p>
+          <ul className="grid grid-cols-2 gap-2">
+            {techs.map((tech, idx) => (
+              <li key={idx} className="flex min-h-[48px] items-center gap-2.5 rounded-xl border border-[var(--line)] bg-white/[0.03] px-3 py-2">
+                <span className="flex-shrink-0" aria-hidden="true">{techMobile[idx]}</span>
+                <span className="min-w-0 text-[13px] font-medium leading-tight text-paper">{tech.name}</span>
+              </li>
+            ))}
+          </ul>
+        </section>
+
+        {/* Το μέλλον της επικοινωνίας */}
+        <section className="px-4 py-12">
+          <h2 className={`${h2} mb-3`}>{p.future.title}</h2>
+          <p className="mb-5 text-[15px] leading-relaxed text-paper-dim">{p.future.description}</p>
+          {checklist(p.future.items)}
+        </section>
+
+        {/* Συνεργαστείτε με AI Agent */}
+        <section className="px-4 pt-4 pb-12">
+          <div className="card-ink p-5">
+            <h2 className={`${h2} mb-3`}>{p.collaboration.title}</h2>
+            <p className="mb-5 text-[15px] leading-relaxed text-paper-dim">{p.collaboration.description}</p>
+            {checklist(p.collaboration.items)}
+            <a href="/contactme" className="btn-accent mt-6 h-12 w-full justify-center text-base">
+              {p.collaboration.cta}
+              <ArrowRight className="h-4 w-4" aria-hidden="true" />
+            </a>
+          </div>
+        </section>
+      </div>
+    );
+  }
+
   return (
     <div className="bg-gradient-to-br from-ink via-ink-800 to-ink-800 min-h-screen text-paper font-sans">
       {/* Hero Section */}

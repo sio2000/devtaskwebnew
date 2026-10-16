@@ -6,6 +6,9 @@ import { useLanguage } from '../hooks/useLanguage';
 import { translations } from '../data/translations';
 import { siteProjects } from '../data/work';
 import { useIsMobile } from '../hooks/useIsMobile';
+import { ArrowRight } from 'lucide-react';
+import MobileRail from './ui/MobileRail';
+import Reveal from './ui/Reveal';
 // import cartLottie from '../assets/lottie-cart.json';
 const cartLottie = {};
 const hoverSfx = '';
@@ -50,6 +53,13 @@ const uxFocusIcons = [
   <FaBoxes className="text-green-500 text-2xl" />,
   <FaCheckCircle className="text-pink-500 text-2xl" />
 ];
+
+// Phones: same icons as components, so they can sit white on the iris tile
+const offerMobileIcons = [FaStore, FaMobileAlt, FaCogs, FaSyncAlt, FaCreditCard, FaBoxes, FaSearch];
+const useCaseMobileIcons = [FaLaptop, FaUsers, FaStore, FaGlobe];
+const uxFocusMobileIcons = [FaMobileAlt, FaRocket, FaBoxes, FaCheckCircle];
+const mobileTile = 'flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-iris-bright to-iris-deep text-white shadow-[0_6px_18px_-8px_rgba(110,86,248,0.7)]';
+const mobileH2 = 'mb-6 font-display text-[28px] font-bold leading-tight tracking-tight text-paper';
 
 // TechTabs icons arrays (hardcoded as they are technology names)
 const techTabsIcons = [
@@ -132,6 +142,157 @@ export default function EcommerceDevelopmentPage() {
     siteProjects
       .filter((p) => p.commerce)
       .map((p) => ({ name: p.title[language], url: p.url, img: p.image, desc: p.description[language] })), [language]);
+
+  // Phones only: compact layout, same text and links. Desktop/tablet render the original tree below untouched.
+  if (isMobile) {
+    const e = t.services.pages.ecommerceDevelopment;
+    return (
+      <div className="bg-gradient-to-br from-ink via-ink-800 to-ink-800 min-h-screen text-paper font-sans">
+        {/* Hero */}
+        <section className="relative overflow-hidden px-4 pb-10 pt-10">
+          <div aria-hidden="true" className="pointer-events-none absolute -left-24 -top-24 h-72 w-72 rounded-full bg-iris/25 blur-3xl" />
+          <div className="relative">
+            <h1 className="font-display text-[34px] font-bold leading-[1.08] tracking-tight text-iris-gradient">{e.hero.title}</h1>
+            <p className="mt-4 text-base leading-relaxed text-paper-dim">{e.hero.subtitle}</p>
+            <a href="/contactme" className="btn-accent mt-6 h-12 w-full justify-center text-base">
+              {e.hero.cta}
+              <ArrowRight className="h-4 w-4" aria-hidden="true" />
+            </a>
+            <img src={appsImg} alt="Eshop Hero" className="mt-8 aspect-[2/1] w-full rounded-2xl border border-[var(--line-strong)] object-cover" />
+          </div>
+        </section>
+
+        {/* Τι Προσφέρουμε */}
+        <section className="px-4 py-12">
+          <h2 className={mobileH2}>{e.offers.title}</h2>
+          <Reveal y={16}>
+            <ul className="card-ink divide-y divide-[var(--line)] overflow-hidden">
+              {offers.map((o, idx) => {
+                const Icon = offerMobileIcons[idx] ?? FaStore;
+                return (
+                  <li key={o.title} className="flex items-start gap-3.5 px-4 py-4">
+                    <span className={mobileTile}><Icon className="h-5 w-5" /></span>
+                    <div className="min-w-0 flex-1">
+                      <h3 className="font-display text-[17px] font-semibold leading-snug text-paper">{o.title}</h3>
+                      <p className="mt-0.5 text-sm leading-snug text-paper-dim">{o.desc}</p>
+                    </div>
+                  </li>
+                );
+              })}
+            </ul>
+          </Reveal>
+        </section>
+
+        {/* Τεχνολογίες: all three groups at once instead of tabs */}
+        <section className="px-4 py-12">
+          <h2 className={mobileH2}>{e.technologies.title}</h2>
+          <Reveal y={16}>
+            <div className="card-ink divide-y divide-[var(--line)] overflow-hidden">
+              {techTabs.map((tab) => (
+                <div key={tab.label} className="px-4 py-4">
+                  <h3 className="text-xs font-semibold uppercase tracking-[0.14em] text-iris-bright">{tab.label}</h3>
+                  <ul className="mt-3 flex flex-wrap gap-2">
+                    {tab.icons.map((tech) => (
+                      <li key={tech.name} className="inline-flex items-center gap-2 rounded-full border border-[var(--line)] bg-white/[0.03] px-3 py-1.5 text-[13px] font-medium text-paper [&>svg]:shrink-0 [&>svg]:text-lg">
+                        {tech.icon}
+                        {tech.name}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
+          </Reveal>
+        </section>
+
+        {/* Σενάρια Χρήσης */}
+        <section className="px-4 py-12">
+          <h2 className={mobileH2}>{e.useCases.title}</h2>
+          <Reveal y={16}>
+            <ul className="card-ink divide-y divide-[var(--line)] overflow-hidden">
+              {useCases.map((u, idx) => {
+                const Icon = useCaseMobileIcons[idx] ?? FaStore;
+                return (
+                  <li key={u.title} className="flex items-start gap-3.5 px-4 py-4">
+                    <span className={mobileTile}><Icon className="h-5 w-5" /></span>
+                    <div className="min-w-0 flex-1">
+                      <h3 className="font-display text-[17px] font-semibold leading-snug text-paper">{u.title}</h3>
+                      <p className="mt-0.5 text-sm leading-snug text-paper-dim">{u.desc}</p>
+                    </div>
+                  </li>
+                );
+              })}
+            </ul>
+          </Reveal>
+        </section>
+
+        {/* UX Design Focus: short items, 2x2 tiles */}
+        <section className="px-4 py-12">
+          <h2 className={mobileH2}>{e.uxFocus.title}</h2>
+          <Reveal y={16}>
+            <ul className="grid grid-cols-2 gap-2.5">
+              {uxFocus.map((u, idx) => {
+                const Icon = uxFocusMobileIcons[idx] ?? FaCheckCircle;
+                return (
+                  <li key={u.title} className="card-ink p-3.5">
+                    <span className={mobileTile}><Icon className="h-5 w-5" /></span>
+                    <h3 className="mt-3 font-display text-base font-semibold leading-snug text-paper">{u.title}</h3>
+                    <p className="mt-1 text-sm leading-snug text-paper-dim">{u.desc}</p>
+                  </li>
+                );
+              })}
+            </ul>
+          </Reveal>
+        </section>
+
+        {/* Πελατολόγιο & Παραδείγματα: every project stays in the DOM, one swipe row */}
+        <section className="px-4 py-12">
+          <h2 className={mobileH2}>{e.portfolio.title}</h2>
+          <MobileRail label={e.portfolio.title}>
+            {clients.map((c) => (
+              <article key={c.name} className="card-ink flex h-full flex-col overflow-hidden">
+                <div className="aspect-[16/10] overflow-hidden bg-gradient-to-br from-iris/20 to-iris/10">
+                  <img src={c.img} alt={c.name} loading="lazy" className="h-full w-full object-cover object-top" />
+                </div>
+                <div className="flex flex-1 flex-col p-4">
+                  <h3 className="font-display text-lg font-semibold leading-snug text-paper">{c.name}</h3>
+                  <p className="mt-1 text-sm leading-snug text-paper-dim">{c.desc}</p>
+                  <div className="mt-auto pt-4">
+                    <a
+                      href={c.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={`${e.portfolio.viewProject}: ${c.name}`}
+                      className="btn-ghost h-11 w-full justify-center text-sm"
+                    >
+                      {e.portfolio.viewProject}
+                      <ArrowRight className="h-4 w-4" aria-hidden="true" />
+                    </a>
+                  </div>
+                </div>
+              </article>
+            ))}
+          </MobileRail>
+        </section>
+
+        {/* Τελικό CTA */}
+        <section className="px-4 pb-14 pt-4">
+          <Reveal y={16}>
+            <div className="card-ink overflow-hidden p-6 text-center">
+              <div aria-hidden="true" className="pointer-events-none absolute -right-16 -top-16 h-48 w-48 rounded-full bg-iris/30 blur-3xl" />
+              <div className="relative">
+                <h2 className="font-display text-[26px] font-bold leading-tight tracking-tight text-paper">{e.finalCta.title}</h2>
+                <a href="/contactme" className="btn-accent mt-6 h-12 w-full justify-center text-base">
+                  {e.finalCta.button}
+                  <ArrowRight className="h-4 w-4" aria-hidden="true" />
+                </a>
+              </div>
+            </div>
+          </Reveal>
+        </section>
+      </div>
+    );
+  }
 
   return (
     <div className="bg-gradient-to-br from-ink via-ink-800 to-ink-800 min-h-screen text-paper font-sans">

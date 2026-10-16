@@ -5,6 +5,7 @@ import { SiUnity, SiUnrealengine, SiGodotengine, SiBlender, SiAutodesk } from "r
 import { useLanguage } from '../hooks/useLanguage';
 import { translations } from '../data/translations';
 import { useIsMobile } from '../hooks/useIsMobile';
+import MobileRail from './ui/MobileRail';
 
 const heroImg = "https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&w=1200&q=80";
 
@@ -23,6 +24,11 @@ const serviceIcons = [
   <FaUsers className="text-green-400 text-4xl" />,
   <FaPenNib className="text-purple-400 text-4xl" />,
 ];
+
+// Phones: same service icons as components, rendered small inside iris tiles
+const serviceIconTypes = [FaMobileAlt, FaVrCardboard, FaUsers, FaPenNib];
+const mH2 = "mb-6 text-center text-[26px] font-bold leading-tight text-pink-200";
+const mReveal = { initial: { opacity: 0, y: 16 }, whileInView: { opacity: 1, y: 0 }, transition: { duration: 0.6 }, viewport: { once: true } };
 
 const techStack = [
   { icon: <SiUnity className="text-white text-3xl" />, name: "Unity" },
@@ -65,6 +71,116 @@ export default function GameDevelopmentPage() {
   // Benefits array with useMemo
   const benefits = useMemo(() =>
     gameDev?.whyUs?.items || [], [gameDev]);
+
+  // Phones (< 768px): compact layout with the same texts and links; desktop/tablet JSX below is untouched
+  if (isMobile) return (
+    <div className="bg-gradient-to-br from-gray-950 via-gray-900 to-blue-950 min-h-screen text-white font-sans">
+      {/* Hero */}
+      <section className="relative overflow-hidden">
+        <img src={heroImg} alt="Game Dev Hero" className="absolute inset-0 h-full w-full object-cover object-center opacity-60" />
+        <div className="absolute inset-0 bg-gradient-to-br from-black/80 via-blue-900/60 to-pink-800/40" />
+        <div className="relative z-10 px-4 pb-12 pt-14 text-center">
+          <motion.h1 className="text-[30px] font-extrabold leading-[1.15] text-white drop-shadow-lg" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} style={{ fontFamily: "'IBM Plex Sans', 'Inter', sans-serif" }}>{gameDev?.hero?.title || 'Innovative Game Development Services'}</motion.h1>
+          <motion.p className="mt-4 text-base font-medium leading-relaxed text-pink-200" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.6, delay: 0.15 }}>{gameDev?.hero?.subtitle || 'Develop your next successful game with expertise, creativity, and cutting-edge technology.'}</motion.p>
+          <a href="/contact" className="btn-accent mt-7 min-h-12 w-full justify-center px-5 py-3 text-center text-base leading-snug">
+            {gameDev?.hero?.cta || 'Start Your Game Project'} <FaArrowRight className="h-4 w-4 flex-shrink-0" aria-hidden="true" />
+          </a>
+        </div>
+      </section>
+
+      {/* Services: one list card */}
+      <section className="px-4 py-12">
+        <motion.h2 className={mH2} {...mReveal}>{gameDev?.services?.title || 'Our Services'}</motion.h2>
+        <ul className="card-ink divide-y divide-[var(--line)]">
+          {services.map((s, idx) => {
+            const Icon = serviceIconTypes[idx] || serviceIconTypes[0];
+            return (
+              <li key={s.title} className="flex items-start gap-3.5 px-4 py-4">
+                <span className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-iris-bright to-iris-deep text-white">
+                  <Icon className="h-5 w-5" aria-hidden="true" />
+                </span>
+                <div className="min-w-0">
+                  <h3 className="font-display text-[17px] font-semibold leading-snug text-paper">{s.title}</h3>
+                  <p className="mt-0.5 text-sm leading-snug text-paper-dim">{s.desc}</p>
+                </div>
+              </li>
+            );
+          })}
+        </ul>
+      </section>
+
+      {/* Process: vertical stepper */}
+      <section className="px-4 py-12">
+        <motion.h2 className={mH2} {...mReveal}>{gameDev?.process?.title || 'Development Process'}</motion.h2>
+        <ol className="card-ink px-4 py-5">
+          {process.map((step, idx) => (
+            <li key={step.step} className="relative flex gap-4 pb-5 last:pb-0">
+              {idx < process.length - 1 && <span aria-hidden="true" className="absolute bottom-1 left-4 top-9 w-px -translate-x-1/2 bg-[var(--line-strong)]" />}
+              <span className="relative flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-iris-bright to-iris-deep text-sm font-bold text-white">{idx + 1}</span>
+              <div className="min-w-0 pt-1">
+                <h3 className="font-semibold leading-snug text-paper">{step.step}</h3>
+                <p className="mt-0.5 text-sm leading-snug text-paper-dim">{step.desc}</p>
+              </div>
+            </li>
+          ))}
+        </ol>
+      </section>
+
+      {/* Technologies: 3 column tiles */}
+      <section className="px-4 py-12">
+        <motion.h2 className={mH2} {...mReveal}>{gameDev?.technologies?.title || 'Technologies & Tools'}</motion.h2>
+        <ul className="grid grid-cols-3 gap-2.5">
+          {techStack.map((tech) => (
+            <li key={tech.name} className="flex flex-col items-center justify-center gap-1.5 rounded-xl border border-[var(--line)] bg-white/[0.03] p-3 text-center">
+              {tech.icon}
+              <span className="text-xs leading-tight text-paper-dim">{tech.name}</span>
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      {/* Portfolio: swipe rail */}
+      <section className="px-4 py-12">
+        <motion.h2 className={mH2} {...mReveal}>{gameDev?.portfolio?.title || 'Portfolio Highlights'}</motion.h2>
+        <MobileRail label={gameDev?.portfolio?.title || 'Portfolio Highlights'}>
+          {portfolio.map((p) => (
+            <article key={p.title} className="card-ink h-full overflow-hidden">
+              <img src={p.img} alt={p.title} loading="lazy" className="aspect-[16/10] w-full object-cover" />
+              <div className="px-4 py-3.5">
+                <h3 className="font-display text-[17px] font-semibold leading-snug text-paper">{p.title}</h3>
+                <p className="mt-0.5 text-sm leading-snug text-paper-dim">{p.desc}</p>
+              </div>
+            </article>
+          ))}
+        </MobileRail>
+      </section>
+
+      {/* Why us: one checklist card (long Greek words would overflow 2 columns at 320px) */}
+      <section className="px-4 py-12">
+        <motion.h2 className={mH2} {...mReveal}>{gameDev?.whyUs?.title || 'Why Choose Us?'}</motion.h2>
+        <ul className="card-ink divide-y divide-[var(--line)]">
+          {benefits.map((b) => (
+            <li key={b} className="flex items-center gap-3 px-4 py-3.5">
+              <FaCheckCircle className="h-5 w-5 flex-shrink-0 text-signal" aria-hidden="true" />
+              <span className="text-[15px] font-medium leading-snug text-paper">{b}</span>
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      {/* Final CTA */}
+      <section className="px-4 pb-12 pt-4 text-center">
+        <div className="flex flex-col items-center rounded-3xl bg-gradient-to-br from-pink-900 via-blue-800 to-blue-400 p-6 shadow-3xl">
+          <h2 className="text-2xl font-extrabold leading-tight text-white drop-shadow-lg">{gameDev?.finalCta?.title || 'Ready to build your next hit game?'}</h2>
+          <p className="mt-3 text-base leading-relaxed text-white/90">{gameDev?.finalCta?.subtitle || 'Contact us to start your next gaming project.'}</p>
+          <a href="/contact" className="btn-accent mt-6 min-h-12 w-full justify-center px-5 py-3 text-center text-base leading-snug">
+            {gameDev?.finalCta?.button || 'Contact Us Today'} <FaArrowRight className="h-4 w-4 flex-shrink-0" aria-hidden="true" />
+          </a>
+        </div>
+      </section>
+    </div>
+  );
+
   return (
     <div className="bg-gradient-to-br from-gray-950 via-gray-900 to-blue-950 min-h-screen text-white font-sans">
       {/* Hero Section */}

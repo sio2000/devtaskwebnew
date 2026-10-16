@@ -5,6 +5,7 @@ import { SiTensorflow, SiPytorch, SiOpenai, SiLangchain, SiFlask, SiDjango, SiGr
 import { useLanguage } from '../hooks/useLanguage';
 import { translations } from '../data/translations';
 import { useIsMobile } from '../hooks/useIsMobile';
+import Reveal from './ui/Reveal';
 // import aiLottie from '../assets/lottie-ai.json';
 const aiLottie = {};
 const hoverSfx = '';
@@ -32,6 +33,9 @@ const serviceIcons = [
   <FaUserFriends className="text-green-500 text-3xl" />,
   <FaRobot className="text-cyan-500 text-3xl" />,
 ];
+
+// Same icons as components, so the phone list can size/colour them itself
+const serviceIconTypes = [FaChartLine, FaMagic, FaBrain, FaRegLightbulb, FaUserFriends, FaRobot];
 
 const workflowIcons = [
   <FaCheckCircle className="text-blue-500 text-2xl" />,
@@ -111,6 +115,127 @@ export default function AIIntegrationApplicationsPage() {
   // CaseStudies array with useMemo
   const caseStudies = useMemo(() =>
     t.services.pages.aiIntegrationApplications.caseStudies.items, [t]);
+
+  // Phones: compact single-column layout with the same text; desktop/tablet render below untouched
+  if (isMobile) {
+    const p = t.services.pages.aiIntegrationApplications;
+    const sectionTitle = 'text-3xl font-extrabold mb-6 text-center gradient-text-premium';
+    return (
+      <div className="bg-gradient-to-br from-ink via-ink-800 to-ink-800 min-h-screen text-paper font-sans">
+        {/* Hero */}
+        <section className="relative overflow-hidden select-none bg-gradient-to-br from-ink-800 via-ink-800 to-ink-800">
+          <div className="pointer-events-none absolute inset-0" aria-hidden="true">
+            <div className="absolute -left-16 -top-16 h-56 w-56 rounded-full bg-gradient-to-br from-blue-400/30 via-purple-400/20 to-ink/0 blur-3xl" />
+            <div className="absolute -bottom-16 -right-16 h-48 w-48 rounded-full bg-gradient-to-br from-purple-400/30 via-blue-400/20 to-ink/0 blur-3xl" />
+          </div>
+          <motion.div className="relative z-10 px-4 pt-10 pb-12" initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
+            <h1 className="mb-4 text-[34px] font-extrabold leading-[1.12] tracking-tight bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent" style={{ fontFamily: "'IBM Plex Sans', 'Inter', sans-serif" }}>
+              {p.hero.title}
+            </h1>
+            <p className="mb-7 text-[17px] font-medium leading-relaxed text-paper-dim">{p.hero.subtitle}</p>
+            <a href="/contactme" className="flex h-12 w-full items-center justify-center rounded-full bg-gradient-to-r from-blue-600 to-iris text-base font-bold text-white shadow-[0_10px_30px_-12px_rgba(110,86,248,0.8)] transition-transform active:scale-[0.98] focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-400">
+              {p.hero.cta}
+            </a>
+            <img src={aiImg} alt="AI Hero" className="mt-8 aspect-[21/9] w-full rounded-2xl border border-white/10 object-cover" />
+          </motion.div>
+        </section>
+
+        {/* AI Υπηρεσίες */}
+        <section className="px-4 py-12">
+          <Reveal as="h2" className={sectionTitle}>{p.services.title}</Reveal>
+          <Reveal as="ul" className="card-ink divide-y divide-[var(--line)] overflow-hidden">
+            {services.map((s, idx) => {
+              const Icon = serviceIconTypes[idx] ?? FaRobot;
+              return (
+                <li key={idx} className="flex items-start gap-3.5 px-4 py-4">
+                  <span className="mt-0.5 flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-iris-bright to-iris-deep text-white shadow-[0_6px_18px_-8px_rgba(110,86,248,0.7)]">
+                    <Icon className="h-5 w-5" aria-hidden="true" />
+                  </span>
+                  <div className="min-w-0 flex-1">
+                    <h3 className="font-display text-[17px] font-semibold leading-snug text-paper">{s.title}</h3>
+                    <p className="mt-0.5 text-sm leading-snug text-paper-dim">{s.desc}</p>
+                  </div>
+                </li>
+              );
+            })}
+          </Reveal>
+        </section>
+
+        {/* Τεχνολογίες & Πλατφόρμες: all tabs shown at once as grouped chips */}
+        <section className="px-4 py-12">
+          <Reveal as="h2" className={sectionTitle}>{p.technologies.title}</Reveal>
+          <Reveal className="card-ink divide-y divide-[var(--line)] overflow-hidden">
+            {techTabs.map((tab) => (
+              <div key={tab.label} className="px-4 py-4">
+                <h3 className="mb-2.5 text-xs font-semibold uppercase tracking-[0.14em] text-paper-muted">{tab.label}</h3>
+                <ul className="flex flex-wrap gap-2">
+                  {tab.icons.map((tech) => (
+                    <li key={tech.name} className="inline-flex items-center gap-2 rounded-full border border-[var(--line)] bg-white/[0.03] px-3 py-1.5 text-[13px] font-medium text-paper">
+                      <span className="flex [&>svg]:h-4 [&>svg]:w-4" aria-hidden="true">{tech.icon}</span>
+                      {tech.name}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </Reveal>
+        </section>
+
+        {/* Πώς Εργάζομαι: vertical stepper */}
+        <section className="px-4 py-12">
+          <Reveal as="h2" className={sectionTitle}>{p.workflow.title}</Reveal>
+          <Reveal as="ol" className="px-1">
+            {workflow.map((step, idx) => (
+              <li key={idx} className="relative flex gap-4 pb-6 last:pb-0">
+                {idx < workflow.length - 1 && (
+                  <span className="absolute left-4 top-10 bottom-1 w-px -translate-x-1/2 bg-gradient-to-b from-iris/60 to-iris/10" aria-hidden="true" />
+                )}
+                <span className="relative flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-iris-bright to-iris-deep font-display text-sm font-bold text-white">{idx + 1}</span>
+                <div className="min-w-0 pt-1">
+                  <h3 className="font-display text-[17px] font-semibold leading-snug text-paper">{step.title}</h3>
+                  <p className="mt-0.5 text-sm leading-snug text-paper-dim">{step.desc}</p>
+                </div>
+              </li>
+            ))}
+          </Reveal>
+        </section>
+
+        {/* Πραγματικά Παραδείγματα */}
+        <section className="px-4 py-12">
+          <Reveal as="h2" className="text-3xl font-extrabold mb-2 text-center gradient-text-premium">{p.caseStudies.title}</Reveal>
+          <span className="mb-6 block text-center text-xs font-bold uppercase tracking-widest text-blue-400">{p.caseStudies.subtitle}</span>
+          <Reveal as="ul" className="card-ink divide-y divide-[var(--line)] overflow-hidden">
+            {caseStudies.map((c, idx) => (
+              <li key={idx} className="px-4 py-4">
+                <div className="flex flex-wrap items-center justify-between gap-x-3 gap-y-2">
+                  <div className="flex min-w-0 items-center gap-3">
+                    <span className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-iris-bright to-iris-deep text-white">
+                      <FaMicrochip className="h-5 w-5" aria-hidden="true" />
+                    </span>
+                    <h3 className="font-display text-[17px] font-semibold leading-snug text-paper">{c.client}</h3>
+                  </div>
+                  <span className="flex-shrink-0 rounded-full bg-emerald-400/10 px-2.5 py-1 text-[13px] font-bold text-emerald-300">{c.kpi}</span>
+                </div>
+                <p className="mt-2.5 text-sm leading-snug text-paper-dim">{p.caseStudies.useLabel} <span className="font-semibold text-paper">{c.use}</span></p>
+                <p className="mt-1 text-sm leading-snug text-paper-dim">{p.caseStudies.techLabel} <span className="font-semibold text-paper">{c.tech}</span></p>
+              </li>
+            ))}
+          </Reveal>
+        </section>
+
+        {/* Τελικό CTA */}
+        <section className="px-4 pt-2 pb-14">
+          <Reveal className="card-ink px-5 py-8 text-center">
+            <h2 className="text-[26px] font-extrabold leading-tight tracking-tight gradient-text-premium">{p.finalCta.title}</h2>
+            <a href="/contactme" className="mt-6 flex h-12 w-full items-center justify-center rounded-full bg-gradient-to-r from-blue-600 to-iris text-base font-bold text-white shadow-[0_10px_30px_-12px_rgba(110,86,248,0.8)] transition-transform active:scale-[0.98] focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-400">
+              {p.finalCta.button}
+            </a>
+          </Reveal>
+        </section>
+      </div>
+    );
+  }
+
   return (
     <div className="bg-gradient-to-br from-ink via-ink-800 to-ink-800 min-h-screen text-paper font-sans">
       {/* Hero Section */}

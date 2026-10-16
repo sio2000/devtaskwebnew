@@ -27,10 +27,11 @@ const Footer = memo(() => {
   ];
 
   const socials = [
-    { Icon: FaFacebook, label: t.footer.social.facebook, href: 'https://www.facebook.com/profile.php?id=61594834146080' },
-    { Icon: FaInstagram, label: t.footer.social.instagram, href: 'https://www.instagram.com/devtaskhub/' },
-    { Icon: FaTiktok, label: t.footer.social.tiktok, href: 'https://www.tiktok.com/@devtaskhub' },
-    { Icon: FaYoutube, label: 'YouTube', href: 'https://www.youtube.com/@Devtaskhub' },
+    // brand tiles: same as the contact section
+    { Icon: FaFacebook, label: t.footer.social.facebook, href: 'https://www.facebook.com/profile.php?id=61594834146080', tile: 'bg-[#1877F2] text-white' },
+    { Icon: FaInstagram, label: t.footer.social.instagram, href: 'https://www.instagram.com/devtaskhub/', tile: 'bg-[linear-gradient(45deg,#F58529,#DD2A7B,#8134AF)] text-white' },
+    { Icon: FaTiktok, label: t.footer.social.tiktok, href: 'https://www.tiktok.com/@devtaskhub', tile: 'bg-white text-black' },
+    { Icon: FaYoutube, label: 'YouTube', href: 'https://www.youtube.com/@Devtaskhub', tile: 'bg-[#FF0000] text-white' },
   ];
 
   const ctaWord = language === 'el' ? 'ΕΧΕΙΣ ΙΔΕΑ; ΑΣ ΤΗΝ ΥΛΟΠΟΙΗΣΟΥΜΕ' : language === 'fr' ? 'UNE IDÉE ? CONSTRUISONS-LA' : "GOT AN IDEA? LET'S BUILD IT";
@@ -61,14 +62,14 @@ const Footer = memo(() => {
             </div>
             <p className="max-w-xs leading-relaxed text-paper-dim">{t.footer.description}</p>
             <div className="mt-6 flex gap-3">
-              {socials.map(({ Icon, label, href }) => (
+              {socials.map(({ Icon, label, href, tile }) => (
                 <a
                   key={label}
                   href={href}
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={label}
-                  className="flex h-11 w-11 items-center justify-center rounded-full border border-[var(--line)] bg-white/[0.02] text-paper-dim transition-colors hover:border-iris/40 hover:bg-iris/10 hover:text-paper"
+                  className={`flex h-11 w-11 items-center justify-center rounded-xl shadow-[0_6px_18px_-8px_rgba(0,0,0,0.8)] transition-transform hover:-translate-y-0.5 focus:outline-none focus-visible:ring-2 focus-visible:ring-iris-bright ${tile}`}
                 >
                   <Icon className="h-5 w-5" />
                 </a>

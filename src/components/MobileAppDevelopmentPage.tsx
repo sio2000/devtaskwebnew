@@ -4,6 +4,8 @@ import { useLanguage } from '../hooks/useLanguage';
 import { translations } from '../data/translations';
 import { useIsMobile } from '../hooks/useIsMobile';
 import AppShowcases from './AppShowcases';
+import MobileRail from './ui/MobileRail';
+import { Check, Maximize2 } from 'lucide-react';
 import { FaApple, FaAndroid, FaReact, FaCloud, FaRocket, FaLock, FaPalette, FaBolt, FaStore, FaHeartbeat, FaGraduationCap, FaTruck, FaUsers, FaCode, FaSearch, FaPaintBrush, FaSyncAlt } from 'react-icons/fa';
 import { SiFlutter, SiKotlin, SiSwift, SiFirebase, SiSupabase } from 'react-icons/si';
 import Lottie from 'lottie-react';
@@ -127,9 +129,64 @@ export default function MobileAppDevelopmentPage() {
       return () => document.removeEventListener('keydown', handleEscape);
     }
   }, [fullscreenImage, modalImg]);
+
+  // Phones (< 768px) get compact branches below; desktop/tablet markup is untouched.
+  const p = t.services.pages.mobileAppDevelopment;
+  const mH2 = 'font-display text-[28px] font-bold leading-tight text-center text-iris-gradient';
+  const mIntro = 'mt-3 text-center text-[15px] leading-relaxed text-paper-dim';
+  const mCta = 'flex h-12 w-full items-center justify-center rounded-full bg-gradient-to-r from-iris-deep to-iris px-6 text-base font-bold text-white shadow-lg shadow-iris/25 transition-transform active:scale-[0.98] focus:outline-none focus-visible:ring-2 focus-visible:ring-iris-bright';
+  const enlarge = { el: 'Μεγέθυνση εικόνας', en: 'Enlarge image', fr: "Agrandir l'image" }[language];
+  const mAppTypes = [
+    { Icon: FaApple, card: p.appTypes.cards.ios },
+    { Icon: FaAndroid, card: p.appTypes.cards.android },
+    { Icon: FaCloud, card: p.appTypes.cards.pwa },
+  ];
+  const mUiSamples = [
+    { img: UIsamples, alt: 'Finance App', ...p.uiSamples.apps.finance },
+    { img: UIrestaurant, alt: 'Food Delivery App', ...p.uiSamples.apps.food },
+    { img: UItravellerapp, alt: 'Travel Planner App', ...p.uiSamples.apps.travel },
+    { img: UIcryptowallet, alt: 'Crypto Wallet App', ...p.uiSamples.apps.crypto },
+    { img: UIsmarthome, alt: 'Smart Home App', ...p.uiSamples.apps.smartHome },
+    { img: UIDatingApp, alt: 'Dating App', ...p.uiSamples.apps.dating },
+    { img: UIBookReadingApp, alt: 'Book Reading App', ...p.uiSamples.apps.book },
+  ];
+
+  const uiModal = modalImg && (
+    <div className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/80 backdrop-blur-sm" onClick={() => setModalImg(null)}>
+      <div className="relative max-w-full max-h-full flex items-center justify-center" onClick={e => e.stopPropagation()}>
+        <button
+          className="absolute top-2 right-2 bg-white/[0.045] hover:bg-ink-800 text-paper rounded-full p-2 shadow-lg text-2xl z-10 focus:outline-none"
+          aria-label={t.services.pages.mobileAppDevelopment.uiSamples.modalClose}
+          onClick={() => setModalImg(null)}
+        >✕</button>
+        <img
+          src={modalImg}
+          alt="UI Sample Full Size"
+          className="max-h-[80vh] max-w-[90vw] rounded-2xl shadow-2xl border-4 border-white object-contain"
+          style={{ background: 'white' }}
+        />
+      </div>
+    </div>
+  );
+
   return (
     <div className="bg-gradient-to-br from-ink via-ink-800 to-ink-800 min-h-screen text-paper font-sans">
       {/* Hero Section */}
+      {isMobile ? (
+        <section className="relative overflow-hidden bg-gradient-to-br from-ink-800 via-ink-800 to-ink-800 px-4 pb-4 pt-10">
+          <div aria-hidden="true" className="pointer-events-none absolute -left-24 -top-24 h-72 w-72 rounded-full bg-gradient-to-br from-blue-400/30 via-purple-400/20 to-transparent blur-3xl" />
+          <div aria-hidden="true" className="pointer-events-none absolute -bottom-20 -right-24 h-64 w-64 rounded-full bg-gradient-to-br from-purple-400/30 via-blue-400/20 to-transparent blur-3xl" />
+          <div className="relative z-10">
+            <h1 className="font-display text-[32px] font-extrabold leading-[1.12] tracking-tight text-iris-gradient break-words">{p.hero.title}</h1>
+            <p className="mt-4 text-base leading-relaxed text-paper-dim">{p.hero.subtitle}</p>
+            <a href="/contactme" className={`mt-6 ${mCta}`}>{p.hero.cta}</a>
+            <div className="mt-8 grid grid-cols-2 gap-3">
+              <img src={phoneImg} alt="Mobile Phone" className="aspect-[4/5] w-full rounded-2xl border border-[var(--line-strong)] object-cover shadow-xl" />
+              <img src={smartphoneImg} alt="Smartphone" className="aspect-[4/5] w-full rounded-2xl border border-[var(--line-strong)] object-cover shadow-xl" />
+            </div>
+          </div>
+        </section>
+      ) : (
       <section className="relative min-h-[80vh] flex items-center justify-center overflow-hidden pb-10 select-none bg-gradient-to-br from-ink-800 via-ink-800 to-ink-800">
         {/* Animated Background Gradients/Particles */}
         <motion.div className="absolute inset-0 z-0 pointer-events-none">
@@ -186,8 +243,35 @@ export default function MobileAppDevelopmentPage() {
           </motion.div>
         </div>
       </section>
+      )}
 
       {/* Types of Mobile App Development */}
+      {isMobile ? (
+        <section className="px-4 py-12">
+          <h2 className={mH2}>{p.appTypes.title}</h2>
+          <p className={mIntro}>{p.appTypes.description}</p>
+          <ul className="card-ink mt-6 divide-y divide-[var(--line)]">
+            {mAppTypes.map(({ Icon, card }) => (
+              <li key={card.title} className="flex items-start gap-3.5 px-4 py-4">
+                <span className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-iris-bright to-iris-deep text-white">
+                  <Icon className="h-5 w-5" aria-hidden="true" />
+                </span>
+                <div className="min-w-0">
+                  <div className="flex flex-wrap items-center gap-x-2 gap-y-1">
+                    <h3 className="font-display text-[17px] font-semibold leading-snug text-paper">{card.title}</h3>
+                    <span className="tag-ink text-paper">{card.badge}</span>
+                  </div>
+                  <p className="mt-1.5 text-sm leading-snug text-paper-dim">{card.description}</p>
+                  <p className="mt-2 flex items-start gap-1.5 text-sm leading-snug text-paper">
+                    <Check className="mt-0.5 h-4 w-4 flex-shrink-0 text-signal" aria-hidden="true" />
+                    <span>{card.detail}</span>
+                  </p>
+                </div>
+              </li>
+            ))}
+          </ul>
+        </section>
+      ) : (
       <section className="relative max-w-xl mx-auto py-20 px-4">
         {/* Floating gradient shapes */}
         <div className="absolute -top-16 -left-16 w-60 h-60 bg-gradient-to-br from-iris/25 via-purple-200 to-ink opacity-40 rounded-full blur-3xl z-0"></div>
@@ -233,8 +317,22 @@ export default function MobileAppDevelopmentPage() {
           </div>
         </div>
       </section>
+      )}
 
       {/* Tools & Technologies */}
+      {isMobile ? (
+        <section className="px-4 py-12">
+          <h2 className={mH2}>{p.tools.title}</h2>
+          <ul className="mt-6 grid grid-cols-4 gap-2">
+            {tools.map((tool) => (
+              <li key={tool.name} className="flex flex-col items-center gap-1.5 rounded-xl border border-[var(--line)] bg-white/[0.03] px-1 py-3 text-center">
+                <span className="flex h-8 items-center" aria-hidden="true">{tool.icon}</span>
+                <span className="text-xs leading-tight text-paper-dim">{tool.name}</span>
+              </li>
+            ))}
+          </ul>
+        </section>
+      ) : (
       <section className="relative max-w-7xl mx-auto py-24 md:py-32 px-4 overflow-hidden">
         {/* Premium Background - Desktop Only */}
         {!isMobile && (
@@ -279,8 +377,37 @@ export default function MobileAppDevelopmentPage() {
           </div>
         </div>
       </section>
+      )}
 
       {/* UI/UX Samples Section */}
+      {isMobile ? (
+        <section id="uiux-samples" className="px-4 py-12">
+          <h2 className={mH2}>{p.uiSamples.title}</h2>
+          <p className={mIntro}>{p.uiSamples.description}</p>
+          <MobileRail label={p.uiSamples.title} className="mt-6">
+            {mUiSamples.map((s) => (
+              <article key={s.alt} className="card-ink flex h-full flex-col overflow-hidden">
+                <button
+                  type="button"
+                  onClick={() => setModalImg(s.img)}
+                  aria-label={`${enlarge}: ${s.title}`}
+                  className="relative block aspect-[16/10] w-full bg-white/[0.04] focus:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-iris-bright"
+                >
+                  <img src={s.img} alt={s.alt} className="h-full w-full object-contain" loading="lazy" />
+                  <span className="absolute bottom-2 right-2 flex h-9 w-9 items-center justify-center rounded-full bg-ink/80 text-paper ring-1 ring-white/20 backdrop-blur-sm" aria-hidden="true">
+                    <Maximize2 className="h-4 w-4" />
+                  </span>
+                </button>
+                <div className="p-4">
+                  <h3 className="font-display text-[17px] font-semibold leading-snug text-paper">{s.title}</h3>
+                  <p className="mt-1 text-sm leading-snug text-paper-dim">{s.description}</p>
+                </div>
+              </article>
+            ))}
+          </MobileRail>
+          {uiModal}
+        </section>
+      ) : (
       <section id="uiux-samples" className="relative max-w-7xl mx-auto py-24 md:py-32 px-2 sm:px-4 overflow-hidden">
         {/* Premium Background - Desktop Only */}
         {!isMobile && (
@@ -364,26 +491,33 @@ export default function MobileAppDevelopmentPage() {
         </div>
         </div>
         {/* Modal για full size εικόνα */}
-        {modalImg && (
-          <div className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/80 backdrop-blur-sm" onClick={() => setModalImg(null)}>
-            <div className="relative max-w-full max-h-full flex items-center justify-center" onClick={e => e.stopPropagation()}>
-              <button
-                className="absolute top-2 right-2 bg-white/[0.045] hover:bg-ink-800 text-paper rounded-full p-2 shadow-lg text-2xl z-10 focus:outline-none"
-                aria-label={t.services.pages.mobileAppDevelopment.uiSamples.modalClose}
-                onClick={() => setModalImg(null)}
-              >✕</button>
-              <img
-                src={modalImg}
-                alt="UI Sample Full Size"
-                className="max-h-[80vh] max-w-[90vw] rounded-2xl shadow-2xl border-4 border-white object-contain"
-                style={{ background: 'white' }}
-              />
-            </div>
-          </div>
-        )}
+        {uiModal}
       </section>
+      )}
 
       {/* App Development Process */}
+      {isMobile ? (
+        <section className="px-4 py-12">
+          <h2 className={mH2}>{p.process.title}</h2>
+          <p className={mIntro}>{p.process.description}</p>
+          <ol className="card-ink mt-6 p-5">
+            {p.process.steps.map((step, idx, arr) => (
+              <li key={step.title} className="relative flex gap-4 pb-6 last:pb-0">
+                {idx < arr.length - 1 && (
+                  <span aria-hidden="true" className="absolute bottom-0 left-[15px] top-9 w-0.5 rounded-full bg-gradient-to-b from-iris/60 to-iris/10" />
+                )}
+                <span className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-iris to-iris-deep text-sm font-bold text-white ring-4 ring-iris/15">
+                  {idx + 1}
+                </span>
+                <div className="min-w-0 pt-1">
+                  <h3 className="font-semibold leading-snug text-paper">{step.title}</h3>
+                  <p className="mt-0.5 text-sm leading-snug text-paper-dim">{step.desc}</p>
+                </div>
+              </li>
+            ))}
+          </ol>
+        </section>
+      ) : (
       <section className="max-w-4xl mx-auto py-24 px-4">
         <div className="relative bg-gradient-to-br from-iris/20 via-ink-800 to-iris/10/80 backdrop-blur-lg rounded-3xl shadow-2xl border border-white/10 p-10 flex flex-col items-center gap-10 overflow-hidden">
           <h2 className="text-3xl md:text-4xl font-extrabold text-iris-bright mb-8 bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent drop-shadow-lg">{t.services.pages.mobileAppDevelopment.process.title}</h2>
@@ -419,9 +553,10 @@ export default function MobileAppDevelopmentPage() {
             </div>
         </div>
       </section>
+      )}
 
       {/* Portfolio Showcase */}
-      <section className="relative max-w-7xl mx-auto py-24 md:py-32 px-4 overflow-hidden">
+      <section className="relative max-w-7xl mx-auto py-12 md:py-32 px-4 overflow-hidden">
         {/* Premium Background - Desktop Only */}
         {!isMobile && (
           <>
@@ -443,13 +578,25 @@ export default function MobileAppDevelopmentPage() {
           </>
         )}
         <div className="relative z-10">
+          {isMobile ? (
+            <h2 className={`${mH2} mb-6`}>{p.portfolio.title}</h2>
+          ) : (
           <motion.h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold mb-12 text-center gradient-text-premium" initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }}>{t.services.pages.mobileAppDevelopment.portfolio.title}</motion.h2>
-        
-          <AppShowcases />
+          )}
+
+          <AppShowcases compact />
         </div>
       </section>
 
       {/* Final CTA Section */}
+      {isMobile ? (
+        <section className="px-4 pb-12 pt-2">
+          <div className="card-ink p-6 text-center">
+            <h2 className="font-display text-2xl font-bold leading-tight text-iris-gradient">{p.finalCta.title}</h2>
+            <a href="/contactme" className={`mt-5 ${mCta}`}>{p.finalCta.button}</a>
+          </div>
+        </section>
+      ) : (
       <section className="relative max-w-7xl mx-auto py-24 md:py-32 px-4 flex flex-col items-center text-center overflow-hidden">
         {/* Premium Background - Desktop Only */}
         {!isMobile && (
@@ -502,6 +649,7 @@ export default function MobileAppDevelopmentPage() {
           </motion.div>
         </div>
       </section>
+      )}
 
       {/* Fullscreen Image Modal */}
       {fullscreenImage && (

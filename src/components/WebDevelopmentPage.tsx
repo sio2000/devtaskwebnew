@@ -23,6 +23,8 @@ import { translations } from '../data/translations';
 import { siteProjects } from '../data/work';
 import { motion } from 'framer-motion';
 import cmdImg from '../assets/cmd.jpg';
+import { ArrowUpRight } from 'lucide-react';
+import MobileRail from './ui/MobileRail';
 
 const floatingIcons = [
   { icon: <FaCode />, style: 'top-10 left-10 text-blue-400' },
@@ -60,6 +62,13 @@ function playSound(src: string) {
   audio.volume = 0.18;
   audio.play();
 }
+
+// Closing call to action, same pattern as the mobile app page
+const finalCta = {
+  el: { title: 'Έχεις μια Ιδέα για Ιστοσελίδα; Ας την Υλοποιήσουμε Μαζί.', button: 'Ζήτησε Προσφορά' },
+  en: { title: 'Have an Idea for a Website? Let\'s Build It Together.', button: 'Request a Quote' },
+  fr: { title: 'Vous avez une Idée de Site Web? Construisons-le Ensemble.', button: 'Demander un Devis' },
+} as const;
 
 export default function WebDevelopmentPage() {
   const isMobile = useIsMobile();
@@ -142,6 +151,150 @@ export default function WebDevelopmentPage() {
     window.addEventListener('mousemove', handleMouseMove);
     return () => window.removeEventListener('mousemove', handleMouseMove);
   }, [isMobile]);
+
+  // Phones: compact layout with the same text and links; the desktop/tablet JSX below stays untouched.
+  if (isMobile) {
+    const w = t.services.pages.webDevelopment;
+    const featureIcons = [FaPaintBrush, FaMobileAlt, FaSearch, FaSyncAlt];
+    const and = { el: 'και', en: 'and', fr: 'et' }[language];
+    const h2 = 'font-display text-[26px] font-bold leading-tight text-paper';
+    const chip = 'rounded-md bg-iris/20 px-1.5 text-paper box-decoration-clone';
+    return (
+      <div className="bg-gradient-to-br from-ink via-ink-800 to-ink-800 min-h-screen text-paper font-sans">
+        <section className="relative overflow-hidden">
+          <div className="absolute inset-0" aria-hidden="true">
+            <img src={unsplashTech} alt="" className="h-full w-full object-cover opacity-80" style={{ mixBlendMode: 'multiply' }} />
+            <div className="absolute inset-0 bg-gradient-to-br from-ink/80 via-ink-800/80 to-ink-800/80" />
+          </div>
+          <div className="relative px-4 pt-14 pb-12 text-center">
+            <h1 className="pb-1 font-display text-[2rem] font-bold leading-[1.1] tracking-tight text-iris-gradient">{w.hero.title}</h1>
+            <p className="mx-auto mt-4 max-w-md text-base leading-relaxed text-paper-dim">{w.hero.subtitle}</p>
+            <div className="mt-7 flex flex-col gap-3">
+              <a href="/contactme" className="btn-accent h-12 w-full justify-center text-base">{w.buttons.startProject}</a>
+              <button
+                type="button"
+                className="btn-ghost h-12 w-full justify-center bg-ink/40 text-base"
+                onClick={() => document.getElementById('showcase-section')?.scrollIntoView({ behavior: 'smooth' })}
+              >
+                {w.buttons.viewSamples}
+              </button>
+            </div>
+          </div>
+        </section>
+
+        <div className="space-y-14 px-4 pt-10 pb-14">
+          <section className="card-ink p-5">
+            <h2 className={h2}>{w.whyUs.title}</h2>
+            <p className="mt-3 text-[15px] leading-relaxed text-paper-dim">{w.whyUs.description}</p>
+            <p className="mt-3 text-[15px] font-medium leading-relaxed text-iris-bright">
+              {w.whyUs.fromTo} <span className={chip}>{w.whyUs.support}</span>, <span className={chip}>{w.whyUs.transparency}</span> {and} <span className={chip}>{w.whyUs.quality}</span>.
+            </p>
+          </section>
+
+          <section>
+            <h2 className={`${h2} mb-6`}>{w.features.title}</h2>
+            <ul className="card-ink divide-y divide-[var(--line)]">
+              {w.features.items.map((f, idx) => {
+                const Icon = featureIcons[idx] ?? FaCode;
+                return (
+                  <li key={f.title} className="flex items-start gap-3.5 px-4 py-4">
+                    <span className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-iris-bright to-iris-deep text-white">
+                      <Icon className="h-5 w-5" aria-hidden="true" />
+                    </span>
+                    <div>
+                      <h3 className="font-display text-[17px] font-semibold leading-snug text-paper">{f.title}</h3>
+                      <p className="mt-0.5 text-sm leading-snug text-paper-dim">{f.desc}</p>
+                    </div>
+                  </li>
+                );
+              })}
+            </ul>
+          </section>
+
+          {/* scroll-mt clears the fixed header when the hero button jumps here */}
+          <section id="showcase-section" className="scroll-mt-20">
+            <h2 className={`${h2} mb-6`}>{w.samples.title}</h2>
+            <MobileRail label={w.samples.title} itemClassName="w-[84%] sm:w-[60%]">
+              {siteProjects.map((p) => (
+                <article key={p.key} className="card-ink flex h-full flex-col overflow-hidden">
+                  <img src={p.image} alt={p.title[language]} className="aspect-[16/10] w-full object-cover object-top" loading="lazy" />
+                  <div className="flex flex-1 flex-col p-4">
+                    <h3 className="font-display text-[17px] font-semibold leading-snug text-paper">{p.title[language]}</h3>
+                    <p className="mt-1 mb-4 text-sm leading-snug text-paper-dim">{p.description[language]}</p>
+                    <a
+                      href={p.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={`${w.samples.viewProject}: ${p.title[language]}`}
+                      className="btn-ghost mt-auto h-11 w-full justify-center text-sm"
+                    >
+                      {w.samples.viewProject}
+                      <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
+                    </a>
+                  </div>
+                </article>
+              ))}
+            </MobileRail>
+          </section>
+
+          <section>
+            <h2 className={h2}>{w.process.title}</h2>
+            <p className="mt-3 mb-6 text-[15px] leading-relaxed text-paper-dim">{w.process.description}</p>
+            <ol>
+              {w.process.steps.map((step, idx, arr) => (
+                <li key={step.title} className="relative flex gap-4 pb-6 last:pb-0">
+                  {idx < arr.length - 1 && (
+                    <span className="absolute left-4 top-9 bottom-1 w-px -translate-x-1/2 bg-gradient-to-b from-iris/60 to-iris/10" aria-hidden="true" />
+                  )}
+                  <span className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-iris-bright to-iris-deep text-sm font-semibold text-white">
+                    {idx + 1}
+                  </span>
+                  <div className="pt-1">
+                    <h3 className="font-semibold leading-snug text-paper">{step.title}</h3>
+                    <p className="mt-0.5 text-sm leading-snug text-paper-dim">{step.desc}</p>
+                  </div>
+                </li>
+              ))}
+            </ol>
+          </section>
+
+          <section>
+            <h2 className={`${h2} mb-6`}>{w.technologies.title}</h2>
+            <ul className="grid grid-cols-3 gap-2.5">
+              {techStack.map((tech) => (
+                <li key={tech.name} className="flex flex-col items-center gap-2 rounded-xl border border-[var(--line)] bg-white/[0.03] p-3 [&_svg]:h-7 [&_svg]:w-7">
+                  {tech.icon}
+                  <span className="text-center text-xs text-paper-dim">{tech.name}</span>
+                </li>
+              ))}
+            </ul>
+          </section>
+
+          <section>
+            <h2 className={`${h2} mb-6`}>{w.stats.title}</h2>
+            <ul className="card-ink grid grid-cols-3 divide-x divide-[var(--line)] py-5">
+              {w.stats.items.map((stat, idx) => (
+                <li key={stat.label} className="flex flex-col items-center px-1 text-center">
+                  <span className="font-display text-3xl font-bold text-iris-gradient">{stats[idx].value}{stats[idx].suffix}</span>
+                  <span className="mt-1 text-xs leading-snug text-paper-dim">{stat.label}</span>
+                </li>
+              ))}
+            </ul>
+          </section>
+
+          <section className="card-ink p-6 text-center">
+            <h2 className="font-display text-2xl font-bold leading-tight text-iris-gradient">{finalCta[language].title}</h2>
+            <a
+              href="/contactme"
+              className="mt-5 flex h-12 w-full items-center justify-center rounded-full bg-gradient-to-r from-iris-deep to-iris px-6 text-base font-bold text-white shadow-lg shadow-iris/25 transition-transform active:scale-[0.98] focus:outline-none focus-visible:ring-2 focus-visible:ring-iris-bright"
+            >
+              {finalCta[language].button}
+            </a>
+          </section>
+        </div>
+      </div>
+    );
+  }
 
   // Εισάγω το motion ΜΟΝΟ αν δεν είναι mobile
   // const Motion = !isMobile ? require('framer-motion').motion : undefined;
@@ -592,6 +745,27 @@ export default function WebDevelopmentPage() {
           </div>
         </div>
       </section>
+
+      {/* Final CTA Section */}
+      <section className="relative max-w-7xl mx-auto pb-24 md:pb-32 px-4 flex flex-col items-center text-center">
+        <motion.div
+          className="relative w-full max-w-4xl bg-white/[0.045] backdrop-blur-xl rounded-3xl shadow-xl border border-white/10 p-8 md:p-12 flex flex-col items-center hover:shadow-2xl transition-all duration-500"
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+        >
+          <h2 className="text-3xl md:text-4xl font-extrabold mb-6 tracking-tight gradient-text-premium">{finalCta[language].title}</h2>
+          <motion.a
+            href="/contactme"
+            className="inline-flex items-center gap-2 px-12 py-5 mt-6 bg-gradient-to-r from-iris-deep to-iris text-white rounded-full font-bold text-xl shadow-lg shadow-iris/30 border-2 border-transparent hover:border-iris-bright focus:outline-none focus-visible:ring-2 focus-visible:ring-iris-bright"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.97 }}
+          >
+            {finalCta[language].button}
+          </motion.a>
+        </motion.div>
+      </section>
     </div>
   );
-} 
+}
