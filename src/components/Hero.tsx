@@ -168,7 +168,7 @@ const Hero: React.FC = () => {
       <div className="relative z-10 border-t border-[var(--line)] py-5">
         <Marquee duration={38}>
           {marqueeItems.map((item, i) => (
-            <span key={i} className="flex items-center whitespace-nowrap px-6 text-sm font-medium uppercase tracking-[0.14em] text-paper-muted">
+            <span key={i} className="flex items-center whitespace-nowrap px-6 text-sm font-medium uppercase tracking-[0.14em] text-paper">
               {item}
               <span className="ml-6 h-1.5 w-1.5 rounded-full bg-iris" />
             </span>

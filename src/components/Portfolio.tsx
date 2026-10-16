@@ -30,7 +30,7 @@ const Portfolio: React.FC<PortfolioProps> = ({ standalone = false }) => {
   const visible = expanded ? siteProjects : siteProjects.slice(0, INITIAL_COUNT);
 
   return (
-    <section id="portfolio" className={`surface-ink relative overflow-hidden pb-24 md:pb-32 ${standalone ? 'pt-16' : 'pt-24 md:pt-32'}`}>
+    <section id="portfolio" className={`surface-ink relative overflow-hidden pb-16 md:pb-32 ${standalone ? 'pt-16' : 'pt-24 md:pt-32'}`}>
       <div className="relative z-10 mx-auto max-w-7xl px-5 sm:px-8">
         <SectionHeading
           as={standalone ? 'h1' : 'h2'}
@@ -103,9 +103,9 @@ const Portfolio: React.FC<PortfolioProps> = ({ standalone = false }) => {
       </div>
 
       {/* ===================== Mobile app showcases ===================== */}
-      <div id="getfit-app-showcase" className="mx-auto mt-28 max-w-7xl scroll-mt-24 px-5 sm:px-8">
-        <SectionHeading index="04" label={c.apps} title={t.portfolio.appShowcase.title} align="center" className="mb-14" />
-        <AppShowcases />
+      <div id="getfit-app-showcase" className="mx-auto mt-16 max-w-7xl scroll-mt-24 px-5 sm:px-8 md:mt-28">
+        <SectionHeading index="04" label={c.apps} title={t.portfolio.appShowcase.title} align="center" className="mb-8 md:mb-14" />
+        <AppShowcases compact={!standalone} />
       </div>
     </section>
   );

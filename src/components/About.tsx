@@ -2,6 +2,7 @@ import React from 'react';
 import { Check } from 'lucide-react';
 import { useLanguage } from '../hooks/useLanguage';
 import { translations } from '../data/translations';
+import { useIsMobile } from '../hooks/useIsMobile';
 import Reveal from './ui/Reveal';
 import SectionHeading from './ui/SectionHeading';
 import logo from '../assets/logo.png';
@@ -9,6 +10,7 @@ import logo from '../assets/logo.png';
 const About: React.FC = () => {
   const { language } = useLanguage();
   const t = translations[language];
+  const isMobile = useIsMobile();
 
   const stats = [
     { value: '50+', label: t.about.stats.projects },
@@ -19,18 +21,19 @@ const About: React.FC = () => {
   const label = language === 'el' ? 'Ποιοι είμαστε' : language === 'fr' ? 'Qui sommes-nous' : 'Who we are';
 
   return (
-    <section id="about" className="surface-ink-2 relative overflow-hidden py-24 md:py-32">
-      <div className="relative z-10 mx-auto grid max-w-7xl grid-cols-1 gap-14 px-5 sm:px-8 lg:grid-cols-[1.1fr_0.9fr] lg:gap-20">
+    <section id="about" className="surface-ink-2 relative overflow-hidden py-16 md:py-32">
+      <div className="relative z-10 mx-auto grid max-w-7xl grid-cols-1 gap-8 px-5 sm:px-8 md:gap-14 lg:grid-cols-[1.1fr_0.9fr] lg:gap-20">
         {/* Left — narrative */}
         <div>
           <SectionHeading index="05" label={label} title={t.about.title} />
           <Reveal delay={0.08}>
-            <p className="font-editorial mt-6 text-2xl italic leading-snug text-iris-gradient">{t.about.subtitle}</p>
+            <p className="font-editorial mt-4 text-xl italic leading-snug text-iris-gradient md:mt-6 md:text-2xl md:leading-snug">{t.about.subtitle}</p>
           </Reveal>
           <Reveal delay={0.14}>
-            <p className="mt-6 max-w-xl text-lg leading-relaxed text-paper-dim">{t.about.description}</p>
+            <p className="mt-4 max-w-xl text-base leading-relaxed text-paper-dim md:mt-6 md:text-lg md:leading-relaxed">{t.about.description}</p>
           </Reveal>
 
+          {!isMobile && (<>
           <Reveal delay={0.2}>
             <h4 className="mt-12 mb-5 text-sm font-semibold uppercase tracking-[0.18em] text-paper-muted">{t.about.experience}</h4>
           </Reveal>
@@ -46,9 +49,47 @@ const About: React.FC = () => {
               </Reveal>
             ))}
           </ul>
+          </>)}
         </div>
 
-        {/* Right — brand + stats plate */}
+        {isMobile ? (
+          // Phones: brand + stats in one short card, specialties as wrapping chips
+          <div className="space-y-7">
+            <Reveal>
+              <div className="card-ink p-5">
+                <div className="flex items-center gap-3">
+                  <span className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-xl bg-white p-1.5">
+                    <img src={logo} alt="DevTaskHub" className="h-full w-full object-contain" loading="lazy" />
+                  </span>
+                  <div>
+                    <p className="font-display text-lg font-bold leading-tight text-paper">DevTaskHub</p>
+                    <p className="text-xs text-paper-muted">Full-Stack Studio · Thessaloniki</p>
+                  </div>
+                </div>
+                <div className="mt-5 grid grid-cols-3 divide-x divide-[var(--line)] border-t border-[var(--line)] pt-5 text-center">
+                  {stats.map((s) => (
+                    <div key={s.label} className="px-1">
+                      <p className="font-display text-3xl font-bold leading-none tabular-nums text-iris-gradient">{s.value}</p>
+                      <p className="mt-2 text-xs font-medium leading-snug text-paper-dim">{s.label}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </Reveal>
+            <Reveal delay={0.08}>
+              <h3 className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-paper-muted">{t.about.experience}</h3>
+              <ul className="flex flex-wrap gap-2">
+                {t.about.experienceItems.map((item: string) => (
+                  <li key={item} className="inline-flex items-center gap-1.5 rounded-full border border-iris/30 bg-iris/[0.08] px-3 py-1.5 text-sm font-medium text-paper">
+                    <Check className="h-3.5 w-3.5 flex-shrink-0 text-iris-bright" aria-hidden="true" />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </Reveal>
+          </div>
+        ) : (
+        /* Right — brand + stats plate */
         <div className="lg:sticky lg:top-32 lg:self-start">
           <Reveal>
             <div className="card-ink overflow-hidden p-8">
@@ -73,6 +114,7 @@ const About: React.FC = () => {
             </div>
           </Reveal>
         </div>
+        )}
       </div>
     </section>
   );

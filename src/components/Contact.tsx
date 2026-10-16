@@ -4,18 +4,26 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '../hooks/useLanguage';
 import { translations } from '../data/translations';
-import { FaEnvelope, FaMapMarkerAlt, FaPhoneAlt, FaInstagram, FaFacebook, FaTiktok, FaPaperPlane } from 'react-icons/fa';
+import { FaEnvelope, FaMapMarkerAlt, FaPhoneAlt, FaInstagram, FaFacebook, FaTiktok, FaYoutube, FaPaperPlane } from 'react-icons/fa';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import SectionHeading from './ui/SectionHeading';
 import Reveal from './ui/Reveal';
 import { getAttribution, trackAction } from '../utils/analytics';
 
+// Optional field: empty is fine, otherwise 7 to 15 digits with the usual separators (same rule as send-contact.ts)
+const isValidPhone = (value: string) => {
+  const v = value.trim();
+  if (!v) return true;
+  const digits = v.replace(/\D/g, '').length;
+  return /^\+?[\d\s().-]+$/.test(v) && digits >= 7 && digits <= 15;
+};
+
 const Contact: React.FC = () => {
   const { language } = useLanguage();
   const t = translations[language];
-  const [formData, setFormData] = useState({ name: '', email: '', service: '', subject: '', message: '' });
-  const [errors, setErrors] = useState({ name: false, email: false, message: false });
+  const [formData, setFormData] = useState({ name: '', email: '', phone: '', service: '', subject: '', message: '' });
+  const [errors, setErrors] = useState({ name: false, email: false, phone: false, message: false });
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
   const [botField, setBotField] = useState('');
@@ -24,6 +32,7 @@ const Contact: React.FC = () => {
     const newErrors = {
       name: !formData.name.trim(),
       email: !formData.email.trim() || !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(formData.email),
+      phone: !isValidPhone(formData.phone),
       message: !formData.message.trim(),
     };
     setErrors(newErrors);
@@ -37,8 +46,9 @@ const Contact: React.FC = () => {
 
   const openMailtoFallback = () => {
     const subject = encodeURIComponent(formData.subject || t.contact.mailtoSubject);
+    const phoneText = formData.phone.trim() ? `${t.contact.form.phone}: ${formData.phone.trim()}\n` : '';
     const serviceText = formData.service ? `${t.contact.form.service}: ${formData.service}\n` : '';
-    const body = encodeURIComponent(`${t.contact.form.name}: ${formData.name}\n${t.contact.form.email}: ${formData.email}\n${serviceText}\n${formData.message}`);
+    const body = encodeURIComponent(`${t.contact.form.name}: ${formData.name}\n${t.contact.form.email}: ${formData.email}\n${phoneText}${serviceText}\n${formData.message}`);
     window.location.href = `mailto:info@devtaskhub.com?subject=${subject}&body=${body}`;
   };
 
@@ -56,6 +66,7 @@ const Contact: React.FC = () => {
           'bot-field': botField,
           name: formData.name,
           email: formData.email,
+          phone: formData.phone.trim(),
           service: formData.service,
           subject: formData.subject,
           message: formData.message,
@@ -66,7 +77,7 @@ const Contact: React.FC = () => {
       trackAction('contact_submit');
       setSuccess(true);
       toast.success(t.contact.success);
-      setFormData({ name: '', email: '', service: '', subject: '', message: '' });
+      setFormData({ name: '', email: '', phone: '', service: '', subject: '', message: '' });
     } catch {
       openMailtoFallback();
     } finally {
@@ -74,13 +85,15 @@ const Contact: React.FC = () => {
     }
   };
 
+  const basicTile = 'bg-gradient-to-br from-iris-bright to-iris-deep text-white';
   const contactLinks = [
-    { icon: FaEnvelope, value: 'info@devtaskhub.com', href: 'mailto:info@devtaskhub.com' },
-    { icon: FaPhoneAlt, value: '+30 6971982563', href: 'tel:+306971982563' },
-    { icon: FaInstagram, value: 'Instagram', href: 'https://www.instagram.com/devtaskhub/' },
-    { icon: FaFacebook, value: 'Facebook', href: 'https://www.facebook.com/profile.php?id=61594834146080' },
-    { icon: FaTiktok, value: 'TikTok', href: 'https://www.tiktok.com/@devtaskhub' },
-    { icon: FaMapMarkerAlt, value: 'Θεσσαλονίκη, Ελλάδα', href: null },
+    { icon: FaEnvelope, value: 'info@devtaskhub.com', href: 'mailto:info@devtaskhub.com', tile: basicTile },
+    { icon: FaPhoneAlt, value: '+30 6971982563', href: 'tel:+306971982563', tile: basicTile },
+    { icon: FaInstagram, value: 'Instagram', href: 'https://www.instagram.com/devtaskhub/', tile: 'bg-[linear-gradient(45deg,#F58529,#DD2A7B,#8134AF)] text-white' },
+    { icon: FaFacebook, value: 'Facebook', href: 'https://www.facebook.com/profile.php?id=61594834146080', tile: 'bg-[#1877F2] text-white' },
+    { icon: FaTiktok, value: 'TikTok', href: 'https://www.tiktok.com/@devtaskhub', tile: 'bg-white text-black' },
+    { icon: FaYoutube, value: 'YouTube', href: 'https://www.youtube.com/@Devtaskhub', tile: 'bg-[#FF0000] text-white' },
+    { icon: FaMapMarkerAlt, value: 'Θεσσαλονίκη, Ελλάδα', href: null, tile: basicTile },
   ];
 
   const field = 'w-full rounded-xl border bg-white/[0.03] px-4 py-3 text-paper placeholder:text-paper-muted transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-iris/60';
@@ -148,6 +161,16 @@ const Contact: React.FC = () => {
                 </div>
               </div>
 
+              <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
+              <div>
+                <label htmlFor="phone" className="mb-2 block text-sm font-medium text-paper-dim">{t.contact.form.phoneLabel}</label>
+                <input
+                  type="tel" id="phone" name="phone" value={formData.phone} onChange={handleChange} inputMode="tel"
+                  aria-invalid={errors.phone} aria-describedby={errors.phone ? 'phone-error' : undefined}
+                  className={`${field} ${errors.phone ? fieldErr : fieldOk}`} placeholder={t.contact.form.phonePlaceholder} autoComplete="tel"
+                />
+                {errors.phone && <span id="phone-error" className="mt-1 block text-xs text-red-400">{t.contact.form.phoneInvalid}</span>}
+              </div>
               <div>
                 <label htmlFor="service" className="mb-2 block text-sm font-medium text-paper-dim">{t.contact.form.serviceLabel}</label>
                 <div className="relative">
@@ -165,6 +188,7 @@ const Contact: React.FC = () => {
                   </select>
                   <ChevronDown className="pointer-events-none absolute right-4 top-1/2 h-5 w-5 -translate-y-1/2 text-paper-muted" />
                 </div>
+              </div>
               </div>
 
               <div>
@@ -230,7 +254,7 @@ const Contact: React.FC = () => {
               const cls = 'group flex items-center gap-4 rounded-2xl border border-[var(--line)] bg-white/[0.015] p-4 transition-colors hover:border-iris/30 hover:bg-white/[0.03]';
               const inner = (
                 <>
-                  <span className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-xl border border-[var(--line)] bg-white/[0.03] text-iris-bright">
+                  <span className={`flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-xl shadow-[0_6px_18px_-8px_rgba(0,0,0,0.8)] ${link.tile}`}>
                     <Icon className="h-5 w-5" />
                   </span>
                   <span className="break-words text-base font-medium text-paper">{link.value}</span>

@@ -596,6 +596,20 @@ header, nav {
 }
 .step-ring { animation: step-ring 2.4s cubic-bezier(0.22, 1, 0.36, 1) infinite; }
 
+/* Mobile app switcher: a panel eases in each time it is shown (reduced motion: fade only) */
+@keyframes panel-in {
+  from { opacity: 0; transform: translate3d(0, 10px, 0); }
+  to { opacity: 1; transform: none; }
+}
+@keyframes panel-fade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+.panel-in { animation: panel-in 0.4s cubic-bezier(0.22, 1, 0.36, 1); }
+@media (prefers-reduced-motion: reduce) {
+  .panel-in { animation-name: panel-fade; }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .grain-overlay { display: none; }
   .hero-drift, .step-ring { animation: none !important; }

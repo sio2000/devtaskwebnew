@@ -47,16 +47,43 @@ const Services: React.FC = () => {
   const label = language === 'el' ? 'Τι κάνουμε' : language === 'fr' ? 'Ce que nous faisons' : 'What we do';
 
   return (
-    <section id="services" className="surface-ink relative overflow-hidden py-24 md:py-32" aria-label={t.services.title}>
+    <section id="services" className="surface-ink relative overflow-hidden py-16 md:py-32" aria-label={t.services.title}>
       <div className="grid-lines pointer-events-none absolute inset-0 opacity-[0.4]" aria-hidden="true" />
       <div className="relative z-10 mx-auto max-w-7xl px-5 sm:px-8">
-        <div className="mb-16">
+        <div className="mb-8 md:mb-16">
           <SectionHeading index="02" label={label} title={t.services.title} kicker={language === 'el' ? 'από άκρη σε άκρη' : language === 'fr' ? 'de bout en bout' : 'end to end'} />
           <Reveal delay={0.1}>
-            <p className="mt-6 max-w-2xl text-lg leading-relaxed text-paper-dim">{t.services.subtitle}</p>
+            <p className="mt-4 max-w-2xl text-base leading-relaxed text-paper-dim md:mt-6 md:text-lg md:leading-relaxed">{t.services.subtitle}</p>
           </Reveal>
         </div>
 
+        {isMobile ? (
+          // Phones: one compact tappable list instead of tall cards, same titles, copy and links
+          <Reveal>
+            <ul className="card-ink divide-y divide-[var(--line)] overflow-hidden">
+              {filteredServices.map((service) => {
+                const Icon = iconMap[service.slug] ?? FaGlobe;
+                return (
+                  <li key={service.slug}>
+                    <a
+                      href={`/services/${service.slug}`}
+                      className="flex items-start gap-3.5 px-4 py-4 transition-colors active:bg-white/[0.05]"
+                    >
+                      <span className="mt-0.5 flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-iris-bright to-iris-deep text-white shadow-[0_6px_18px_-8px_rgba(110,86,248,0.7)]">
+                        <Icon className="h-5 w-5" />
+                      </span>
+                      <span className="min-w-0 flex-1">
+                        <span className="block font-display text-[17px] font-semibold leading-snug text-paper">{service.title[language]}</span>
+                        <span className="mt-0.5 block text-sm leading-snug text-paper-dim">{service.shortDescription[language]}</span>
+                      </span>
+                      <ArrowUpRight className="mt-1 h-4 w-4 flex-shrink-0 text-paper-muted" aria-hidden="true" />
+                    </a>
+                  </li>
+                );
+              })}
+            </ul>
+          </Reveal>
+        ) : (
         <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {filteredServices.map((service, i) => {
             const Icon = iconMap[service.slug] ?? FaGlobe;
@@ -90,6 +117,7 @@ const Services: React.FC = () => {
             );
           })}
         </div>
+        )}
       </div>
     </section>
   );

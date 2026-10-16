@@ -3,6 +3,7 @@ import { motion, useInView, useReducedMotion } from 'framer-motion';
 import { ArrowUpRight, ChevronLeft, ChevronRight, X } from 'lucide-react';
 import { FaAppStoreIos, FaGlobe } from 'react-icons/fa';
 import { useLanguage } from '../hooks/useLanguage';
+import { useIsMobile } from '../hooks/useIsMobile';
 import { appProjects, type AppProject } from '../data/work';
 import Reveal from './ui/Reveal';
 
@@ -29,7 +30,12 @@ const GooglePlayIcon: React.FC<{ className?: string }> = ({ className = '' }) =>
 type Lightbox = { app: AppProject; index: number } | null;
 
 /** Phone frame that cross-fades through an app's screens while it is on screen. */
-const PhoneCarousel: React.FC<{ app: AppProject; onOpen: (index: number) => void }> = ({ app, onOpen }) => {
+const PhoneCarousel: React.FC<{ app: AppProject; onOpen: (index: number) => void; compact?: boolean; paused?: boolean }> = ({
+  app,
+  onOpen,
+  compact = false,
+  paused = false,
+}) => {
   const ref = useRef<HTMLDivElement>(null);
   const inView = useInView(ref, { margin: '-80px' });
   const reduced = useReducedMotion();
@@ -37,17 +43,18 @@ const PhoneCarousel: React.FC<{ app: AppProject; onOpen: (index: number) => void
   const count = app.screens.length;
 
   useEffect(() => {
-    if (!inView || reduced || count < 2) return;
+    // compact (phones) keeps cross-fading under reduced motion: it is an opacity change, not movement
+    if (!inView || paused || (reduced && !compact) || count < 2) return;
     const id = setInterval(() => setIndex((p) => (p + 1) % count), SCREEN_INTERVAL);
     return () => clearInterval(id);
-  }, [inView, reduced, count]);
+  }, [inView, paused, reduced, compact, count]);
 
   const side = (offset: number) => app.screens[(index + offset + count) % count];
 
   return (
-    <div ref={ref} className="relative mx-auto flex w-full max-w-md items-center justify-center py-4">
+    <div ref={ref} className={`relative mx-auto flex w-full items-center justify-center ${compact ? 'pb-4' : 'max-w-md py-4'}`}>
       {/* Flanking screens: the previous and next ones, dimmed */}
-      {count > 2 &&
+      {count > 2 && !compact &&
         [-1, 1].map((offset) => (
           <div
             key={offset}
@@ -64,9 +71,11 @@ const PhoneCarousel: React.FC<{ app: AppProject; onOpen: (index: number) => void
         type="button"
         onClick={() => onOpen(index)}
         aria-label={app.screens[index].alt}
-        className="relative z-10 w-[52%] min-w-[190px] overflow-hidden rounded-[2rem] border border-[var(--line-strong)] bg-ink p-1.5 shadow-[0_40px_80px_-40px_rgba(110,86,248,0.6)] transition-transform duration-500 hover:scale-[1.02]"
+        className={`relative z-10 overflow-hidden border border-[var(--line-strong)] bg-ink shadow-[0_40px_80px_-40px_rgba(110,86,248,0.6)] transition-transform duration-500 hover:scale-[1.02] ${
+          compact ? 'w-full rounded-[1.5rem] p-1' : 'w-[52%] min-w-[190px] rounded-[2rem] p-1.5'
+        }`}
       >
-        <div className="relative aspect-[9/19] overflow-hidden rounded-[1.6rem] bg-ink">
+        <div className={`relative aspect-[9/19] overflow-hidden bg-ink ${compact ? 'rounded-[1.25rem]' : 'rounded-[1.6rem]'}`}>
           {app.screens.map((screen, i) => (
             <motion.img
               key={screen.src}
@@ -84,7 +93,7 @@ const PhoneCarousel: React.FC<{ app: AppProject; onOpen: (index: number) => void
 
       {/* Progress dots */}
       {count > 1 && count <= 6 && (
-        <div className="absolute -bottom-2 left-1/2 flex -translate-x-1/2 gap-1.5" aria-hidden="true">
+        <div className={`absolute left-1/2 flex -translate-x-1/2 gap-1.5 ${compact ? '-bottom-1' : '-bottom-2'}`} aria-hidden="true">
           {app.screens.map((s, i) => (
             <span key={s.src} className={`h-1 rounded-full transition-all duration-500 ${i === index ? 'w-5 bg-paper' : 'w-1.5 bg-white/20'}`} />
           ))}
@@ -94,10 +103,25 @@ const PhoneCarousel: React.FC<{ app: AppProject; onOpen: (index: number) => void
   );
 };
 
-const AppShowcases: React.FC = () => {
+type AppShowcasesProps = {
+  /** homepage: on phones show one app at a time behind a switcher instead of three tall cards */
+  compact?: boolean;
+};
+
+const AppShowcases: React.FC<AppShowcasesProps> = ({ compact = false }) => {
   const { language } = useLanguage();
+  const isMobile = useIsMobile();
   const [lightbox, setLightbox] = useState<Lightbox>(null);
+  const [active, setActive] = useState(0);
   const touchStart = useRef<number | null>(null);
+  const swipeStart = useRef<{ x: number; y: number } | null>(null);
+  const tabRefs = useRef<(HTMLButtonElement | null)[]>([]);
+
+  const selectApp = (i: number, focus = false) => {
+    const next = (i + appProjects.length) % appProjects.length;
+    setActive(next);
+    if (focus) tabRefs.current[next]?.focus();
+  };
 
   const close = useCallback(() => setLightbox(null), []);
   const step = useCallback((dir: number) => {
@@ -133,6 +157,135 @@ const AppShowcases: React.FC = () => {
           </linearGradient>
         </defs>
       </svg>
+      {compact && isMobile ? (
+        <div>
+          <div
+            role="tablist"
+            aria-label="Apps"
+            className="grid grid-cols-3 gap-1 rounded-2xl border border-[var(--line)] bg-white/[0.03] p-1"
+            onKeyDown={(e) => {
+              if (e.key === 'ArrowRight') selectApp(active + 1, true);
+              else if (e.key === 'ArrowLeft') selectApp(active - 1, true);
+            }}
+          >
+            {appProjects.map((app, i) => (
+              <button
+                key={app.key}
+                ref={(el) => { tabRefs.current[i] = el; }}
+                type="button"
+                role="tab"
+                id={`app-tab-${app.key}`}
+                aria-selected={active === i}
+                aria-controls={`app-panel-${app.key}`}
+                tabIndex={active === i ? 0 : -1}
+                onClick={() => selectApp(i)}
+                className={`relative flex min-h-[3.75rem] flex-col items-center justify-center gap-1 rounded-xl px-1 py-2 text-[13px] font-semibold leading-none transition-colors duration-300 ${
+                  active === i ? 'text-ink' : 'text-paper-dim'
+                }`}
+              >
+                {active === i && (
+                  <motion.span
+                    layoutId="app-tab-pill"
+                    className="absolute inset-0 rounded-xl bg-paper"
+                    transition={{ type: 'spring', stiffness: 420, damping: 36 }}
+                  />
+                )}
+                <span className="relative flex h-6 w-6 flex-shrink-0 items-center justify-center overflow-hidden rounded-md bg-white p-0.5 ring-1 ring-black/10">
+                  <img src={app.logo} alt="" className="h-full w-full rounded-[4px] object-contain" loading="lazy" />
+                </span>
+                <span className="relative whitespace-nowrap">{app.name}</span>
+              </button>
+            ))}
+          </div>
+
+          {/* Every panel stays in the HTML (search engines read all three); only the active one is shown */}
+          <div
+            className="mt-4"
+            onTouchStart={(e) => { swipeStart.current = { x: e.touches[0].clientX, y: e.touches[0].clientY }; }}
+            onTouchEnd={(e) => {
+              const start = swipeStart.current;
+              swipeStart.current = null;
+              if (!start) return;
+              const dx = e.changedTouches[0].clientX - start.x;
+              const dy = e.changedTouches[0].clientY - start.y;
+              if (Math.abs(dx) > 50 && Math.abs(dx) > Math.abs(dy) * 1.5) selectApp(active + (dx < 0 ? 1 : -1));
+            }}
+          >
+            {appProjects.map((app, i) => {
+              const isActive = active === i;
+              const stores = [
+                { url: app.ios, label: 'App Store', Icon: AppStoreIcon },
+                { url: app.android, label: 'Google Play', Icon: GooglePlayIcon },
+                { url: app.web, label: 'Website', Icon: FaGlobe },
+              ].filter((s) => s.url);
+              return (
+                <article
+                  key={app.key}
+                  id={`app-panel-${app.key}`}
+                  role="tabpanel"
+                  aria-labelledby={`app-tab-${app.key}`}
+                  hidden={!isActive}
+                  className="card-ink panel-in p-5"
+                >
+                  <div className="flex items-center gap-3">
+                    <span className="flex h-12 w-12 flex-shrink-0 items-center justify-center overflow-hidden rounded-xl bg-white p-1">
+                      <img src={app.logo} alt={`${app.name} logo`} className="h-full w-full rounded-lg object-contain" loading="lazy" />
+                    </span>
+                    <div className="min-w-0">
+                      <h3 className="font-display text-2xl font-bold leading-tight text-paper">{app.name}</h3>
+                      <p className="font-editorial text-lg italic leading-snug text-iris-gradient">{app.tagline[language]}</p>
+                    </div>
+                  </div>
+
+                  <p className="mt-4 text-[15px] leading-relaxed text-paper-dim">{app.description[language]}</p>
+
+                  {app.badges && (
+                    <div className="mt-3 flex flex-wrap gap-1.5">
+                      {app.badges[language].map((b) => (
+                        <span key={b} className="tag-ink border-iris/30 text-paper">{b}</span>
+                      ))}
+                    </div>
+                  )}
+
+                  <div className="mt-5 grid grid-cols-[42%_1fr] items-center gap-4">
+                    <PhoneCarousel app={app} compact paused={!isActive} onOpen={(index) => setLightbox({ app, index })} />
+                    <ul className="space-y-2.5">
+                      {app.features[language].map((feature) => (
+                        <li key={feature} className="flex items-start gap-2.5 text-sm leading-snug text-paper">
+                          <span className={`mt-[0.45em] h-1.5 w-1.5 flex-shrink-0 rounded-full ${app.dot}`} />
+                          <span>{feature}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  <div className="mt-5 grid grid-cols-2 gap-2">
+                    {stores.map(({ url, label, Icon }) => (
+                      <a
+                        key={label}
+                        href={url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label={`${app.name}: ${label}`}
+                        className="flex min-h-[2.75rem] items-center justify-center gap-2 rounded-full border border-[var(--line-strong)] bg-white/[0.04] px-3 text-sm font-medium text-paper transition-colors active:bg-iris/15 [&:nth-child(odd):last-child]:col-span-2"
+                      >
+                        <Icon className="flex-shrink-0 text-base" />
+                        <span className="whitespace-nowrap">{label}</span>
+                      </a>
+                    ))}
+                  </div>
+                </article>
+              );
+            })}
+          </div>
+
+          <div className="mt-4 flex justify-center gap-1.5" aria-hidden="true">
+            {appProjects.map((app, i) => (
+              <span key={app.key} className={`h-1 rounded-full transition-all duration-500 ${active === i ? 'w-5 bg-paper' : 'w-1.5 bg-white/25'}`} />
+            ))}
+          </div>
+        </div>
+      ) : (
       <div className="space-y-8">
         {appProjects.map((app, i) => {
           const stores = [
@@ -193,6 +346,7 @@ const AppShowcases: React.FC = () => {
           );
         })}
       </div>
+      )}
 
       {lightbox && (
         <motion.div

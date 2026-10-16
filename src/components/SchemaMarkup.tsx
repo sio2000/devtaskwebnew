@@ -54,6 +54,7 @@ export const OrganizationSchema: React.FC<OrganizationSchemaProps> = ({
     'https://www.facebook.com/profile.php?id=61594834146080',
     'https://www.instagram.com/devtaskhub/',
     'https://www.tiktok.com/@devtaskhub',
+    'https://www.youtube.com/@Devtaskhub',
   ],
 }) => {
   const schema = {

@@ -5,6 +5,7 @@ import { useLanguage } from '../hooks/useLanguage';
 import { translations } from '../data/translations';
 import { useNavigate, useLocation } from 'react-router-dom';
 import logo from '../assets/logo.png';
+import Flag from './ui/Flag';
 
 const Header = memo(() => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -17,9 +18,9 @@ const Header = memo(() => {
   const [pendingSection, setPendingSection] = useState<string | null>(null);
 
   const languages = [
-    { code: 'el' as const, label: 'Ελληνικά', flag: '🇬🇷' },
-    { code: 'en' as const, label: 'English', flag: '🇬🇧' },
-    { code: 'fr' as const, label: 'Français', flag: '🇫🇷' },
+    { code: 'el' as const, label: 'Ελληνικά' },
+    { code: 'en' as const, label: 'English' },
+    { code: 'fr' as const, label: 'Français' },
   ];
 
   useEffect(() => {
@@ -140,7 +141,7 @@ const Header = memo(() => {
                 whileTap={{ scale: 0.96 }}
                 aria-label="Change language"
               >
-                <span className="text-lg leading-none">{languages.find((l) => l.code === language)?.flag}</span>
+                <Flag code={language} className="h-3.5 w-[21px]" />
                 <span className="text-sm font-semibold">{language.toUpperCase()}</span>
                 <Globe className="hidden h-3.5 w-3.5 opacity-60 lg:block" />
               </motion.button>
@@ -164,7 +165,7 @@ const Header = memo(() => {
                           language === lang.code ? 'border-l-2 border-iris text-paper' : 'text-paper-dim'
                         }`}
                       >
-                        <span className="text-xl leading-none">{lang.flag}</span>
+                        <Flag code={lang.code} className="h-4 w-6" />
                         <span className="flex-1 text-sm">{lang.label}</span>
                         {language === lang.code && <span className="h-1.5 w-1.5 rounded-full bg-iris" />}
                       </button>
@@ -266,7 +267,7 @@ const Header = memo(() => {
                           : 'border-[var(--line)] text-paper-dim'
                       }`}
                     >
-                      <span className="text-base leading-none">{lang.flag}</span>
+                      <Flag code={lang.code} className="h-3.5 w-[21px]" />
                       {lang.code.toUpperCase()}
                     </button>
                   ))}

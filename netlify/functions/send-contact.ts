@@ -34,6 +34,7 @@ export default async (req: Request, _context: Context) => {
 
   const name = (body.name || '').trim().slice(0, 200);
   const email = (body.email || '').trim().slice(0, 200);
+  const phone = (body.phone || '').trim().slice(0, 40);
   const service = (body.service || '').trim().slice(0, 200);
   const subject = (body.subject || '').trim().slice(0, 300);
   const message = (body.message || '').trim().slice(0, 5000);
@@ -41,7 +42,10 @@ export default async (req: Request, _context: Context) => {
   const source = [body.us, body.ut].map((v) => (v || '').trim().slice(0, 64)).filter(Boolean).join(' · ');
 
   const validEmail = /^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email);
-  if (!name || !validEmail || !message) return json({ error: 'Missing or invalid fields' }, 422);
+  // Optional: 7 to 15 digits with the usual separators (same rule as Contact.tsx)
+  const phoneDigits = phone.replace(/\D/g, '');
+  const validPhone = !phone || (/^\+?[\d\s().-]+$/.test(phone) && phoneDigits.length >= 7 && phoneDigits.length <= 15);
+  if (!name || !validEmail || !validPhone || !message) return json({ error: 'Missing or invalid fields' }, 422);
 
   const html = `
     <div style="font-family:system-ui,Segoe UI,Arial,sans-serif;max-width:560px;margin:auto;color:#0f172a">
@@ -49,6 +53,7 @@ export default async (req: Request, _context: Context) => {
       <table style="width:100%;border-collapse:collapse;font-size:14px">
         <tr><td style="padding:6px 0;color:#64748b;width:120px">Όνομα</td><td style="padding:6px 0"><b>${esc(name)}</b></td></tr>
         <tr><td style="padding:6px 0;color:#64748b">Email</td><td style="padding:6px 0"><a href="mailto:${esc(email)}">${esc(email)}</a></td></tr>
+        ${phone ? `<tr><td style="padding:6px 0;color:#64748b">Τηλέφωνο</td><td style="padding:6px 0"><a href="tel:${phone.startsWith('+') ? '+' : ''}${phoneDigits}">${esc(phone)}</a></td></tr>` : ''}
         ${service ? `<tr><td style="padding:6px 0;color:#64748b">Υπηρεσία</td><td style="padding:6px 0">${esc(service)}</td></tr>` : ''}
         ${subject ? `<tr><td style="padding:6px 0;color:#64748b">Θέμα</td><td style="padding:6px 0">${esc(subject)}</td></tr>` : ''}
         ${source ? `<tr><td style="padding:6px 0;color:#64748b">Ήρθε από</td><td style="padding:6px 0">${esc(source)}</td></tr>` : ''}

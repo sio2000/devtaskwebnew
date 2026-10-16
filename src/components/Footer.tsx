@@ -3,7 +3,7 @@ import { ArrowUp, ArrowUpRight } from 'lucide-react';
 import { useLanguage } from '../hooks/useLanguage';
 import { translations } from '../data/translations';
 import { useNavigate, Link } from 'react-router-dom';
-import { FaInstagram, FaFacebook, FaTiktok } from 'react-icons/fa';
+import { FaInstagram, FaFacebook, FaTiktok, FaYoutube } from 'react-icons/fa';
 import logo from '../assets/logo.png';
 import Marquee from './ui/Marquee';
 
@@ -30,6 +30,7 @@ const Footer = memo(() => {
     { Icon: FaFacebook, label: t.footer.social.facebook, href: 'https://www.facebook.com/profile.php?id=61594834146080' },
     { Icon: FaInstagram, label: t.footer.social.instagram, href: 'https://www.instagram.com/devtaskhub/' },
     { Icon: FaTiktok, label: t.footer.social.tiktok, href: 'https://www.tiktok.com/@devtaskhub' },
+    { Icon: FaYoutube, label: 'YouTube', href: 'https://www.youtube.com/@Devtaskhub' },
   ];
 
   const ctaWord = language === 'el' ? 'ΕΧΕΙΣ ΙΔΕΑ; ΑΣ ΤΗΝ ΥΛΟΠΟΙΗΣΟΥΜΕ' : language === 'fr' ? 'UNE IDÉE ? CONSTRUISONS-LA' : "GOT AN IDEA? LET'S BUILD IT";
