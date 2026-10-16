@@ -13,11 +13,11 @@ const clickSfx = '';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 // Εισαγωγές εικόνων/εικονιδίων/animations
-import cloudImg from '../assets/internet.jpg';
-import dbImg from '../assets/code.jpg';
-import securityImg from '../assets/crypto.png';
-import architectureImg from '../assets/architecture.png';
-import databaseImg from '../assets/database.jpg';
+import cloudImg from '../assets/internet.webp';
+import dbImg from '../assets/code.webp';
+import securityImg from '../assets/crypto.webp';
+import architectureImg from '../assets/architecture.webp';
+import databaseImg from '../assets/database.webp';
 
 function playSound(src: string) {
   if (!src) return;

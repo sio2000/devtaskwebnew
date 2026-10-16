@@ -1,7 +1,6 @@
 import React, { useEffect, useState, useMemo } from 'react';
 import { motion } from 'framer-motion';
-import { ArrowRight } from 'lucide-react';
-import { FaSearch, FaChartLine, FaCogs, FaTags, FaGoogle, FaChartBar, FaClipboardCheck, FaStar, FaChevronLeft, FaChevronRight, FaCheckCircle, FaRocket, FaRegFileAlt, FaUserTie } from 'react-icons/fa';
+import { FaSearch, FaChartLine, FaCogs, FaTags, FaGoogle, FaChartBar, FaClipboardCheck, FaStar, FaCheckCircle, FaRocket, FaRegFileAlt, FaUserTie, FaRegEnvelope } from 'react-icons/fa';
 import { useLanguage } from '../hooks/useLanguage';
 import { translations } from '../data/translations';
 import { useIsMobile } from '../hooks/useIsMobile';
@@ -34,11 +33,10 @@ const serviceIcons = [
 // Same icons as serviceIcons, as components so the phone list can size them
 const serviceIconTypes = [FaRegFileAlt, FaCogs, FaTags, FaChartBar, FaGoogle, FaClipboardCheck, FaChartLine];
 
-const statIcons = [
-  <FaRocket className="text-blue-500 text-4xl" />,
-  <FaGoogle className="text-yellow-500 text-4xl" />,
-  <FaTags className="text-green-500 text-4xl" />,
-];
+// What we measure (traffic, keywords, Core Web Vitals, enquiries) and how progress is reported
+const measureIconTypes = [FaChartLine, FaTags, FaRocket, FaRegEnvelope];
+const reportIconTypes = [FaClipboardCheck, FaGoogle, FaRegFileAlt, FaCheckCircle];
+const iconColors = ['text-blue-500', 'text-green-500', 'text-yellow-500', 'text-pink-500'];
 
 const workflowIcons = [
   <FaCheckCircle className="text-blue-500 text-2xl" />,
@@ -52,9 +50,7 @@ export default function SEOWebsiteOptimizationPage() {
   const t = translations[language];
   const isMobile = useIsMobile();
   const [typed, setTyped] = useState('');
-  const [currentCase, setCurrentCase] = useState(0);
-  const [counters, setCounters] = useState([0, 0, 0]);
-  
+
   useEffect(() => { AOS.init({ duration: 900, once: true }); }, []);
   
   // Typing effect για το hero
@@ -78,15 +74,8 @@ export default function SEOWebsiteOptimizationPage() {
       desc: item.desc
     })), [t]);
 
-  // Stats array with useMemo
-  const stats = useMemo(() =>
-    t.services.pages.seoWebsiteOptimization.stats.items.map((item, idx) => ({
-      icon: statIcons[idx],
-      value: item.value,
-      suffix: item.suffix,
-      label: item.label,
-      desc: item.desc
-    })), [t]);
+  const measure = t.services.pages.seoWebsiteOptimization.measure.items;
+  const reporting = t.services.pages.seoWebsiteOptimization.reporting.items;
 
   // Workflow array with useMemo
   const workflow = useMemo(() =>
@@ -95,30 +84,6 @@ export default function SEOWebsiteOptimizationPage() {
       title: item.title,
       desc: item.desc
     })), [t]);
-
-  // CaseStudies array with useMemo
-  const caseStudies = useMemo(() =>
-    t.services.pages.seoWebsiteOptimization.caseStudies.items, [t]);
-  // Animated counters
-  useEffect(() => {
-    const targets = [300, 1, 120];
-    const delays = [0, 400, 800];
-    targets.forEach((target, idx) => {
-      setTimeout(() => {
-        let current = 0;
-        const step = Math.max(1, Math.ceil(target / 40));
-        const interval = setInterval(() => {
-          current += step;
-          if ((idx === 1 && current <= target) || (idx !== 1 && current >= target)) {
-            setCounters(prev => prev.map((v, i) => i === idx ? target : v));
-            clearInterval(interval);
-          } else {
-            setCounters(prev => prev.map((v, i) => i === idx ? current : v));
-          }
-        }, 30);
-      }, delays[idx]);
-    });
-  }, []);
 
   // Phones (< 768px): compact layout. Desktop/tablet JSX below is untouched.
   if (isMobile) {
@@ -162,20 +127,30 @@ export default function SEOWebsiteOptimizationPage() {
           </ul>
         </section>
 
-        {/* Μετρήσιμα Αποτελέσματα */}
+        {/* Τι μετράμε: icons, no promised numbers */}
         <section className="px-4 py-12">
-          <h2 className={heading}>{p.stats.title}</h2>
-          <div className="card-ink p-4">
-            <div className="grid grid-cols-3 gap-2 text-center">
-              {stats.map((s, idx) => (
-                <div key={s.desc} className="min-w-0">
-                  <p className="font-display text-3xl font-bold text-iris-gradient">{idx === 1 ? counters[idx] + 'η' : '+' + counters[idx]}</p>
-                  <p className="mt-1 text-xs leading-snug text-paper-dim">{s.desc}</p>
-                </div>
-              ))}
-            </div>
-            <div className="mt-4 border-t border-[var(--line)] pt-4">
-              <h3 className="text-sm font-semibold text-iris-bright">{p.stats.chartTitle}</h3>
+          <h2 className="mb-3 text-center text-[26px] font-extrabold leading-tight tracking-tight gradient-text-premium">{p.measure.title}</h2>
+          <p className="mb-6 text-center text-[15px] leading-relaxed text-paper-dim">{p.measure.subtitle}</p>
+          <div className="card-ink overflow-hidden">
+            <ul className="divide-y divide-[var(--line)]">
+              {measure.map((m, idx) => {
+                const Icon = measureIconTypes[idx] ?? FaChartLine;
+                return (
+                  <li key={m.title} className="flex items-start gap-3.5 px-4 py-4">
+                    <span className="mt-0.5 flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-iris-bright to-iris-deep text-white shadow-[0_6px_18px_-8px_rgba(110,86,248,0.7)]">
+                      <Icon className="h-5 w-5" aria-hidden="true" />
+                    </span>
+                    <div className="min-w-0 flex-1">
+                      <h3 className="font-display text-[17px] font-semibold leading-snug text-paper">{m.title}</h3>
+                      <p className="mt-0.5 text-sm leading-snug text-paper-dim">{m.desc}</p>
+                    </div>
+                  </li>
+                );
+              })}
+            </ul>
+            {/* Decorative trend line, no values */}
+            <div className="border-t border-[var(--line)] px-4 py-4">
+              <h3 className="text-sm font-semibold text-iris-bright">{p.measure.chartTitle}</h3>
               <svg className="mt-3 h-16 w-full" viewBox="0 0 400 120" preserveAspectRatio="none" fill="none" aria-hidden="true">
                 <defs>
                   <linearGradient id="seoMobileArea" x1="0" y1="0" x2="0" y2="1">
@@ -190,23 +165,24 @@ export default function SEOWebsiteOptimizationPage() {
           </div>
         </section>
 
-        {/* Case Study: both cases listed instead of the carousel */}
+        {/* Πώς βλέπετε την πρόοδο */}
         <section className="px-4 py-12">
-          <h2 className={heading}>{p.caseStudies.title}</h2>
+          <h2 className={heading}>{p.reporting.title}</h2>
           <ul className="card-ink divide-y divide-[var(--line)] overflow-hidden">
-            {caseStudies.map((c) => (
-              <li key={c.label} className="px-4 py-4">
-                <h3 className="font-display text-[17px] font-semibold leading-snug text-paper">{c.label}</h3>
-                <p className="mt-0.5 text-sm leading-snug text-paper-dim">{c.desc}</p>
-                <div className="mt-3 inline-flex items-center gap-2 rounded-full border border-[var(--line)] bg-white/[0.03] px-3 py-1.5">
-                  <span className="text-xs font-semibold text-paper-dim">{c.beforeLabel}</span>
-                  <span className="font-display text-lg font-bold text-blue-400">{c.before}</span>
-                  <ArrowRight className="h-4 w-4 text-paper-dim" aria-hidden="true" />
-                  <span className="text-xs font-semibold text-paper-dim">{c.afterLabel}</span>
-                  <span className="font-display text-lg font-bold text-green-400">{c.after}</span>
-                </div>
-              </li>
-            ))}
+            {reporting.map((r, idx) => {
+              const Icon = reportIconTypes[idx] ?? FaCheckCircle;
+              return (
+                <li key={r.title} className="flex items-start gap-3.5 px-4 py-4">
+                  <span className="mt-0.5 flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-iris-bright to-iris-deep text-white shadow-[0_6px_18px_-8px_rgba(110,86,248,0.7)]">
+                    <Icon className="h-5 w-5" aria-hidden="true" />
+                  </span>
+                  <div className="min-w-0 flex-1">
+                    <h3 className="font-display text-[17px] font-semibold leading-snug text-paper">{r.title}</h3>
+                    <p className="mt-0.5 text-sm leading-snug text-paper-dim">{r.desc}</p>
+                  </div>
+                </li>
+              );
+            })}
           </ul>
         </section>
 
@@ -371,10 +347,13 @@ export default function SEOWebsiteOptimizationPage() {
           </>
         )}
         <div className="relative z-10">
-          <motion.h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold mb-12 text-center gradient-text-premium" initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }}>{t.services.pages.seoWebsiteOptimization.stats.title}</motion.h2>
-          <motion.div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 lg:gap-10 mb-12" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.12 } } }}>
-            {stats.map((s, idx) => (
-              <motion.div key={s.label} className="group relative flex flex-col items-center bg-white/[0.045] backdrop-blur-xl rounded-2xl shadow-xl border border-white/10 p-8 md:p-12 hover:shadow-2xl transition-all duration-300 overflow-hidden" initial={{ opacity: 0, scale: 0.9 }} whileInView={{ opacity: 1, scale: 1 }} whileHover={{ scale: 1.04, y: -8, boxShadow: '0 8px 32px 0 #60a5fa' }} viewport={{ once: true }} transition={{ duration: 0.7, delay: idx * 0.1 }} onMouseEnter={() => playSound(hoverSfx)}>
+          <motion.h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold mb-6 text-center gradient-text-premium" initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }}>{t.services.pages.seoWebsiteOptimization.measure.title}</motion.h2>
+          <p className="text-lg md:text-xl text-paper-dim text-center max-w-3xl mx-auto mb-12 leading-relaxed">{t.services.pages.seoWebsiteOptimization.measure.subtitle}</p>
+          <motion.div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-10 mb-12" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.12 } } }}>
+            {measure.map((m, idx) => {
+              const Icon = measureIconTypes[idx] ?? FaChartLine;
+              return (
+              <motion.div key={m.title} className="group relative flex flex-col items-center text-center bg-white/[0.045] backdrop-blur-xl rounded-2xl shadow-xl border border-white/10 p-8 hover:shadow-2xl transition-all duration-300 overflow-hidden" initial={{ opacity: 0, scale: 0.9 }} whileInView={{ opacity: 1, scale: 1 }} whileHover={{ scale: 1.04, y: -8, boxShadow: '0 8px 32px 0 #60a5fa' }} viewport={{ once: true }} transition={{ duration: 0.7, delay: idx * 0.1 }} onMouseEnter={() => playSound(hoverSfx)}>
                 {/* Shine Effect */}
                 <motion.div
                   className="absolute inset-0 rounded-2xl bg-gradient-to-r from-transparent via-ink/30 to-transparent opacity-0 group-hover:opacity-100"
@@ -382,16 +361,17 @@ export default function SEOWebsiteOptimizationPage() {
                   whileHover={{ x: '100%' }}
                   transition={{ duration: 0.8 }}
                 />
-                <div className="relative z-10 mb-4 flex items-center justify-center w-20 h-20 rounded-full bg-gradient-to-br from-iris/20 to-ink-800 shadow-inner group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300 border-4 border-iris/30 group-hover:border-blue-300">{s.icon}</div>
-                <span className="relative z-10 text-4xl md:text-5xl font-extrabold text-iris-bright mb-2 animate-pulse">{idx === 1 ? counters[idx] + 'η' : '+' + counters[idx]}{idx === 2 ? '' : ''}</span>
-                <span className="relative z-10 text-paper font-semibold text-base md:text-lg text-center tracking-tight">{s.desc}</span>
+                <div className="relative z-10 mb-4 flex items-center justify-center w-20 h-20 rounded-full bg-gradient-to-br from-iris/20 to-ink-800 shadow-inner group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300 border-4 border-iris/30 group-hover:border-blue-300"><Icon className={`${iconColors[idx]} text-4xl`} /></div>
+                <h3 className="relative z-10 text-xl font-bold text-paper mb-2 tracking-tight">{m.title}</h3>
+                <p className="relative z-10 text-paper-dim text-base leading-relaxed">{m.desc}</p>
               </motion.div>
-            ))}
+              );
+            })}
           </motion.div>
-          {/* Animated Line Chart (mockup) */}
+          {/* Decorative trend line, no values */}
           <motion.div className="relative w-full max-w-2xl mx-auto bg-white/[0.045] backdrop-blur-xl rounded-2xl shadow-xl border border-white/10 p-6 md:p-8 flex flex-col items-center mb-8 hover:shadow-2xl transition-all duration-500 overflow-hidden" initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }}>
-          <motion.h3 className="text-lg font-bold text-iris-bright mb-4">{t.services.pages.seoWebsiteOptimization.stats.chartTitle}</motion.h3>
-          <svg width="100%" height="120" viewBox="0 0 400 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <motion.h3 className="text-lg font-bold text-iris-bright mb-4">{t.services.pages.seoWebsiteOptimization.measure.chartTitle}</motion.h3>
+          <svg width="100%" height="120" viewBox="0 0 400 120" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
             <motion.polyline
               points="0,100 50,90 100,80 150,60 200,40 250,30 300,20 350,10 400,8"
               fill="none"
@@ -407,7 +387,7 @@ export default function SEOWebsiteOptimizationPage() {
         </div>
       </section>
 
-      {/* Case Study / Example */}
+      {/* Πώς βλέπετε την πρόοδο */}
       <section className="relative max-w-7xl mx-auto py-24 md:py-32 px-4 overflow-hidden">
         {/* Premium Background - Desktop Only */}
         {!isMobile && (
@@ -430,42 +410,20 @@ export default function SEOWebsiteOptimizationPage() {
           </>
         )}
         <div className="relative z-10">
-          <motion.h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold mb-12 text-center gradient-text-premium" initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }}>{t.services.pages.seoWebsiteOptimization.caseStudies.title}</motion.h2>
-          <div className="relative flex items-center justify-center">
-            <button className="absolute left-0 z-10 p-3 bg-white/[0.045] backdrop-blur-lg rounded-full shadow hover:bg-iris/15 transition-all" onClick={() => setCurrentCase((currentCase - 1 + caseStudies.length) % caseStudies.length)}><FaChevronLeft className="text-blue-500 text-2xl" /></button>
-            <motion.div className="w-full max-w-lg mx-auto group relative bg-white/[0.045] backdrop-blur-xl rounded-3xl shadow-xl border border-white/10 overflow-hidden flex flex-col hover:shadow-2xl transition-all duration-300 cursor-pointer focus:outline-none focus:ring-4 focus:ring-blue-200" key={caseStudies[currentCase].label} initial={{ opacity: 0, y: 50, scale: 0.95 }} animate={{ opacity: 1, y: 0, scale: 1 }} transition={{ duration: 0.5 }}>
-              {/* Shine Effect */}
-              <motion.div
-                className="absolute inset-0 rounded-3xl bg-gradient-to-r from-transparent via-ink/30 to-transparent opacity-0 group-hover:opacity-100"
-                initial={{ x: '-100%' }}
-                whileHover={{ x: '100%' }}
-                transition={{ duration: 0.8 }}
-              />
-              <div className="relative z-10 flex flex-col md:flex-row items-center justify-between p-8 gap-8">
-                <div className="flex-1 text-center md:text-left">
-                  <h4 className="text-2xl font-bold text-paper mb-2 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-blue-600 group-hover:to-purple-600 transition-all duration-300 tracking-tight">{caseStudies[currentCase].label}</h4>
-                  <p className="text-paper-dim text-base mb-4 flex-1 leading-relaxed">{caseStudies[currentCase].desc}</p>
-                  <div className="flex items-center gap-4 justify-center md:justify-start">
-                    <span className="text-sm text-iris-bright font-semibold">{caseStudies[currentCase].beforeLabel}</span>
-                    <span className="text-2xl font-bold text-blue-400">{caseStudies[currentCase].before}</span>
-                    <span className="text-sm text-iris-bright font-semibold">{caseStudies[currentCase].afterLabel}</span>
-                    <span className="text-2xl font-bold text-green-500">{caseStudies[currentCase].after}</span>
-                  </div>
+          <motion.h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold mb-12 text-center gradient-text-premium" initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }}>{t.services.pages.seoWebsiteOptimization.reporting.title}</motion.h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+            {reporting.map((r, idx) => {
+              const Icon = reportIconTypes[idx] ?? FaCheckCircle;
+              return (
+              <motion.div key={r.title} className="group relative flex items-start gap-6 bg-white/[0.045] backdrop-blur-xl rounded-3xl shadow-xl border border-white/10 p-8 hover:shadow-2xl transition-all duration-300 overflow-hidden" initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} whileHover={{ y: -6 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: idx * 0.08 }}>
+                <div className="relative z-10 flex-shrink-0 flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-br from-iris/20 to-ink-800 shadow-inner group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300 border-4 border-iris/30 group-hover:border-blue-300"><Icon className={`${iconColors[idx]} text-2xl`} /></div>
+                <div className="relative z-10">
+                  <h3 className="text-xl font-bold text-paper mb-2 tracking-tight">{r.title}</h3>
+                  <p className="text-paper-dim text-base leading-relaxed">{r.desc}</p>
                 </div>
-                <div className="flex-1 flex items-center justify-center">
-                  <svg width="120" height="120" viewBox="0 0 120 120">
-                    <circle cx="60" cy="60" r="54" stroke="#e0e7ef" strokeWidth="8" fill="none" />
-                    <motion.circle
-                      cx="60" cy="60" r="54" stroke="#3b82f6" strokeWidth="8" fill="none"
-                      initial={{ pathLength: 0 }}
-                      whileInView={{ pathLength: 1 }}
-                      transition={{ duration: 1.2 }}
-                    />
-                  </svg>
-                </div>
-              </div>
-            </motion.div>
-            <button className="absolute right-0 z-10 p-3 bg-white/[0.045] backdrop-blur-lg rounded-full shadow hover:bg-iris/15 transition-all" onClick={() => setCurrentCase((currentCase + 1) % caseStudies.length)}><FaChevronRight className="text-blue-500 text-2xl" /></button>
+              </motion.div>
+              );
+            })}
           </div>
         </div>
       </section>

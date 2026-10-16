@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { FaCode, FaMobileAlt, FaSearch, FaSyncAlt, FaCogs, FaCloud, FaPaintBrush, FaRocket } from 'react-icons/fa';
+import { FaCode, FaMobileAlt, FaSearch, FaSyncAlt, FaCogs, FaCloud, FaPaintBrush, FaRocket, FaCheckCircle } from 'react-icons/fa';
 import { SiReact, SiNextdotjs, SiNodedotjs, SiTailwindcss, SiFigma, SiVercel } from 'react-icons/si';
 import Lottie, { LottieRefCurrentProps } from 'lottie-react';
 // import heroLottie from '../assets/lottie-webdev.json'; // Τοποθετήστε εδώ το Lottie JSON animation για το hero
@@ -16,13 +16,13 @@ const successSfx = '';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import gsap from 'gsap';
-import codeImg from '../assets/code.jpg';
+import codeImg from '../assets/code.webp';
 import { useIsMobile } from '../hooks/useIsMobile';
 import { useLanguage } from '../hooks/useLanguage';
 import { translations } from '../data/translations';
 import { siteProjects } from '../data/work';
 import { motion } from 'framer-motion';
-import cmdImg from '../assets/cmd.jpg';
+import cmdImg from '../assets/cmd.webp';
 import { ArrowUpRight } from 'lucide-react';
 import MobileRail from './ui/MobileRail';
 
@@ -49,13 +49,19 @@ const techStack = [
   { icon: <SiVercel className="text-paper text-4xl" />, name: 'Vercel' },
 ];
 
-// Stats will be loaded from translations
+// "At a glance" tiles, labels from translations. Same claims as the home About block (3+ years, 24/7);
+// the middle tile is a commitment, so it shows a check icon instead of a number.
+const glance = [
+  { value: '3+', Icon: FaRocket, color: 'text-purple-500' },
+  { value: null, Icon: FaMobileAlt, color: 'text-cyan-500' },
+  { value: '24/7', Icon: FaCogs, color: 'text-pink-500' },
+];
 
 const unsplashHero = 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1200&q=80';
 const unsplashTech = cmdImg;
 const unsplashWorkspace = 'https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=1200&q=80';
 
-// const unsplashWhyMe = require('../assets/code.jpg');
+// const unsplashWhyMe = require('../assets/code.webp');
 
 function playSound(src: string) {
   const audio = new Audio(src);
@@ -78,13 +84,6 @@ export default function WebDevelopmentPage() {
   // const [mouse, setMouse] = useState({ x: 0, y: 0 });
   // const heroControls = useAnimation();
 
-  // Stats array from translations
-  const stats = [
-    { value: 3, suffix: '', icon: <FaRocket className="text-purple-500 text-3xl" /> },
-    { value: 100, suffix: '%', icon: <FaCloud className="text-cyan-500 text-3xl" /> },
-    { value: 24, suffix: '/7', icon: <FaCogs className="text-pink-500 text-3xl" /> }
-  ];
-
   useEffect(() => { AOS.init({ duration: 800, once: true }); }, []);
 
   // GSAP parallax effect for floating icons
@@ -98,30 +97,6 @@ export default function WebDevelopmentPage() {
         ease: 'power1.inOut',
       });
     });
-  }, []);
-
-  // Animated counters for stats
-  useEffect(() => {
-    const timeouts: number[] = [];
-    stats.forEach((b, i) => {
-      timeouts.push(window.setTimeout(() => {
-        let start = 0;
-        const end = b.value;
-        const duration = 1200;
-        const step = Math.max(1, Math.ceil(end / 40));
-        let current = 0;
-        const interval = window.setInterval(() => {
-          current += step;
-          if (current >= end) {
-            // setAnimatedStats(prev => prev.map((v, idx) => idx === i ? end : v));
-            clearInterval(interval);
-          } else {
-            // setAnimatedStats(prev => prev.map((v, idx) => idx === i ? current : v));
-          }
-        }, duration / (end / step));
-      }, 400 + i * 200));
-    });
-    return () => timeouts.forEach(clearTimeout);
   }, []);
 
   // Mouse parallax for hero
@@ -275,8 +250,10 @@ export default function WebDevelopmentPage() {
             <ul className="card-ink grid grid-cols-3 divide-x divide-[var(--line)] py-5">
               {w.stats.items.map((stat, idx) => (
                 <li key={stat.label} className="flex flex-col items-center px-1 text-center">
-                  <span className="font-display text-3xl font-bold text-iris-gradient">{stats[idx].value}{stats[idx].suffix}</span>
-                  <span className="mt-1 text-xs leading-snug text-paper-dim">{stat.label}</span>
+                  {glance[idx]?.value
+                    ? <span className="font-display text-3xl font-bold text-iris-gradient">{glance[idx].value}</span>
+                    : <FaCheckCircle className="h-9 w-9 text-iris-bright" aria-hidden="true" />}
+                  <span className="mt-1 text-sm leading-snug text-paper-dim">{stat.label}</span>
                 </li>
               ))}
             </ul>
@@ -709,12 +686,7 @@ export default function WebDevelopmentPage() {
           <motion.h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold mb-12 text-center gradient-text-premium" initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }}>{t.services.pages.webDevelopment.stats.title}</motion.h2>
           <div className="grid grid-cols-2 md:grid-cols-3 gap-8 lg:gap-10">
             {t.services.pages.webDevelopment.stats.items.map((stat: any, idx: number) => {
-              const statData = [
-                { value: 3, suffix: '', icon: <FaRocket className="text-purple-500 text-3xl" /> },
-                { value: 100, suffix: '%', icon: <FaCloud className="text-cyan-500 text-3xl" /> },
-                { value: 24, suffix: '/7', icon: <FaCogs className="text-pink-500 text-3xl" /> }
-              ];
-              const s = statData[idx];
+              const s = glance[idx];
               return (
               <motion.div
                 key={stat.label}
@@ -733,10 +705,10 @@ export default function WebDevelopmentPage() {
                   transition={{ duration: 0.8 }}
                 />
                 <div className="relative z-10 mb-4 flex items-center justify-center w-20 h-20 rounded-full bg-gradient-to-br from-iris/20 to-iris/10 shadow-inner border-4 border-iris/30 group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300">
-                  {s.icon}
+                  <s.Icon className={`${s.color} text-3xl`} />
                 </div>
                 <span className="relative z-10 text-4xl md:text-5xl font-extrabold text-iris-bright mb-2 animate-pulse">
-                  {s.value}{s.suffix}
+                  {s.value ?? <FaCheckCircle aria-hidden="true" />}
                 </span>
                 <span className="relative z-10 text-paper font-semibold text-base md:text-lg text-center tracking-tight">{stat.label}</span>
               </motion.div>

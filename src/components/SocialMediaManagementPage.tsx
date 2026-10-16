@@ -12,11 +12,11 @@ const clickSfx = '';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 // ΝΕΟ: Imports για τα logo promotion images
-import logosPromotion1 from '../assets/logos_promotion.png';
-import logosPromotion2 from '../assets/logos_promotion2.png';
-import logosPromotion3 from '../assets/logos_promotion3.png';
-import logosPromotion4 from '../assets/logos_promotion4.png';
-import logosPromotion5 from '../assets/logos_promotion5.png';
+import logosPromotion1 from '../assets/logos_promotion.webp';
+import logosPromotion2 from '../assets/logos_promotion2.webp';
+import logosPromotion3 from '../assets/logos_promotion3.webp';
+import logosPromotion4 from '../assets/logos_promotion4.webp';
+import logosPromotion5 from '../assets/logos_promotion5.webp';
 
 function playSound(src: string) {
   if (!src) return;
@@ -272,7 +272,7 @@ export default function SocialMediaManagementPage() {
         </div>
       </section>
 
-      {/* ΝΕΑ ΕΝΟΤΗΤΑ: Social Media Excellence & Logo Transformation */}
+      {/* Logo σε νέα στυλ για τα social */}
       <section className="relative max-w-7xl mx-auto py-24 md:py-32 px-4 overflow-hidden" data-section="logo-transformations">
         {/* Premium Background - Desktop Only */}
         {!isMobile && (
@@ -313,9 +313,11 @@ export default function SocialMediaManagementPage() {
               </ul>
             </div>
             <div className="text-center">
-              <div className="text-6xl mb-4">🚀</div>
-              <h4 className="text-xl font-bold text-purple-300 mb-2">{t.services.pages.socialMediaManagement.logoTransformations.viralSuccessTitle}</h4>
-              <p className="text-paper-dim">{t.services.pages.socialMediaManagement.logoTransformations.viralSuccessDesc}</p>
+              <div className="mx-auto mb-4 flex h-20 w-20 items-center justify-center rounded-full border-4 border-pink-200/40 bg-gradient-to-br from-pink-500/20 to-iris/10 shadow-inner">
+                <FaChartBar className="text-purple-300 text-4xl" aria-hidden="true" />
+              </div>
+              <h4 className="text-xl font-bold text-purple-300 mb-2">{t.services.pages.socialMediaManagement.logoTransformations.promiseTitle}</h4>
+              <p className="text-paper-dim max-w-md mx-auto">{t.services.pages.socialMediaManagement.logoTransformations.promiseDesc}</p>
             </div>
           </div>
         </motion.div>

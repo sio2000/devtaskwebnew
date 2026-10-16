@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useMemo } from 'react';
 import { motion } from 'framer-motion';
-import { FaRobot, FaChartLine, FaBrain, FaMagic, FaCogs, FaUserFriends, FaChevronLeft, FaChevronRight, FaMicrochip, FaPython, FaDatabase, FaCodeBranch, FaRegLightbulb, FaCheckCircle } from 'react-icons/fa';
+import { FaRobot, FaChartLine, FaBrain, FaMagic, FaCogs, FaUserFriends, FaChevronLeft, FaChevronRight, FaPython, FaDatabase, FaCodeBranch, FaRegLightbulb, FaCheckCircle, FaShoppingCart, FaHeadset, FaPenNib } from 'react-icons/fa';
 import { SiTensorflow, SiPytorch, SiOpenai, SiLangchain, SiFlask, SiDjango, SiGraphql } from 'react-icons/si';
 import { useLanguage } from '../hooks/useLanguage';
 import { translations } from '../data/translations';
@@ -14,8 +14,8 @@ const clickSfx = '';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 // Εισαγωγές εικόνων/εικονιδίων αν χρειάζεται
-import aiImg from '../assets/AI.jpg';
-import codeImg from '../assets/code.jpg';
+import aiImg from '../assets/AI.webp';
+import codeImg from '../assets/code.webp';
 
 function playSound(src: string) {
   if (!src) return;
@@ -46,6 +46,10 @@ const workflowIcons = [
   <FaChartLine className="text-blue-400 text-2xl" />,
 ];
 
+// Use cases (e-shop, support, content, internal processes): what AI can do, not past client results
+const useCaseIconTypes = [FaShoppingCart, FaHeadset, FaPenNib, FaCogs];
+const useCaseColors = ['text-blue-500', 'text-green-500', 'text-pink-500', 'text-cyan-500'];
+
 // Tech tabs icons (static, not translated)
 const techTabsIcons = [
   [
@@ -72,8 +76,7 @@ export default function AIIntegrationApplicationsPage() {
   const isMobile = useIsMobile();
   const [typed, setTyped] = useState('');
   const [currentTab, setCurrentTab] = useState(0);
-  const [currentCase, setCurrentCase] = useState(0);
-  
+
   useEffect(() => { AOS.init({ duration: 900, once: true }); }, []);
   
   // Typing effect για το hero
@@ -112,9 +115,7 @@ export default function AIIntegrationApplicationsPage() {
       desc: item.desc
     })), [t]);
 
-  // CaseStudies array with useMemo
-  const caseStudies = useMemo(() =>
-    t.services.pages.aiIntegrationApplications.caseStudies.items, [t]);
+  const useCases = t.services.pages.aiIntegrationApplications.useCases.items;
 
   // Phones: compact single-column layout with the same text; desktop/tablet render below untouched
   if (isMobile) {
@@ -200,26 +201,26 @@ export default function AIIntegrationApplicationsPage() {
           </Reveal>
         </section>
 
-        {/* Πραγματικά Παραδείγματα */}
+        {/* Παραδείγματα χρήσης */}
         <section className="px-4 py-12">
-          <Reveal as="h2" className="text-3xl font-extrabold mb-2 text-center gradient-text-premium">{p.caseStudies.title}</Reveal>
-          <span className="mb-6 block text-center text-xs font-bold uppercase tracking-widest text-blue-400">{p.caseStudies.subtitle}</span>
+          <Reveal as="h2" className="text-3xl font-extrabold mb-2 text-center gradient-text-premium">{p.useCases.title}</Reveal>
+          <p className="mb-6 text-center text-[15px] font-semibold text-blue-400">{p.useCases.subtitle}</p>
           <Reveal as="ul" className="card-ink divide-y divide-[var(--line)] overflow-hidden">
-            {caseStudies.map((c, idx) => (
-              <li key={idx} className="px-4 py-4">
-                <div className="flex flex-wrap items-center justify-between gap-x-3 gap-y-2">
-                  <div className="flex min-w-0 items-center gap-3">
-                    <span className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-iris-bright to-iris-deep text-white">
-                      <FaMicrochip className="h-5 w-5" aria-hidden="true" />
-                    </span>
-                    <h3 className="font-display text-[17px] font-semibold leading-snug text-paper">{c.client}</h3>
+            {useCases.map((u, idx) => {
+              const Icon = useCaseIconTypes[idx] ?? FaRobot;
+              return (
+                <li key={u.title} className="flex items-start gap-3.5 px-4 py-4">
+                  <span className="mt-0.5 flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-iris-bright to-iris-deep text-white shadow-[0_6px_18px_-8px_rgba(110,86,248,0.7)]">
+                    <Icon className="h-5 w-5" aria-hidden="true" />
+                  </span>
+                  <div className="min-w-0 flex-1">
+                    <h3 className="font-display text-[17px] font-semibold leading-snug text-paper">{u.title}</h3>
+                    <p className="mt-0.5 text-sm leading-snug text-paper-dim">{u.desc}</p>
+                    <p className="mt-1.5 text-sm leading-snug text-paper-dim">{p.useCases.techLabel} <span className="font-semibold text-paper">{u.tech}</span></p>
                   </div>
-                  <span className="flex-shrink-0 rounded-full bg-emerald-400/10 px-2.5 py-1 text-[13px] font-bold text-emerald-300">{c.kpi}</span>
-                </div>
-                <p className="mt-2.5 text-sm leading-snug text-paper-dim">{p.caseStudies.useLabel} <span className="font-semibold text-paper">{c.use}</span></p>
-                <p className="mt-1 text-sm leading-snug text-paper-dim">{p.caseStudies.techLabel} <span className="font-semibold text-paper">{c.tech}</span></p>
-              </li>
-            ))}
+                </li>
+              );
+            })}
           </Reveal>
         </section>
 
@@ -448,7 +449,7 @@ export default function AIIntegrationApplicationsPage() {
         </div>
       </section>
 
-      {/* Πραγματικά Παραδείγματα */}
+      {/* Παραδείγματα χρήσης */}
       <section className="relative max-w-7xl mx-auto py-24 md:py-32 px-4 overflow-hidden">
         {/* Premium Background - Desktop Only */}
         {!isMobile && (
@@ -471,11 +472,13 @@ export default function AIIntegrationApplicationsPage() {
           </>
         )}
         <div className="relative z-10">
-          <motion.h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold mb-4 text-center gradient-text-premium" initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }}>{t.services.pages.aiIntegrationApplications.caseStudies.title}</motion.h2>
-          <span className="uppercase tracking-widest text-xs font-bold text-blue-400 mb-8 block text-center">{t.services.pages.aiIntegrationApplications.caseStudies.subtitle}</span>
-          <motion.div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 w-full" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.12 } } }}>
-            {caseStudies.map((c, idx) => (
-              <motion.div key={idx} className="group relative bg-white/[0.045] backdrop-blur-xl rounded-3xl shadow-xl border border-white/10 p-8 md:p-10 flex flex-col items-center text-center transition-all duration-300 hover:shadow-2xl focus:outline-none focus:ring-4 focus:ring-blue-200 overflow-hidden min-h-[260px] w-full" initial={{ opacity: 0, y: 40, scale: 0.97 }} whileInView={{ opacity: 1, y: 0, scale: 1 }} whileHover={{ scale: 1.02, y: -8 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: idx * 0.07 }}>
+          <motion.h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold mb-4 text-center gradient-text-premium" initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }}>{t.services.pages.aiIntegrationApplications.useCases.title}</motion.h2>
+          <p className="text-lg md:text-xl font-semibold text-blue-400 mb-10 text-center">{t.services.pages.aiIntegrationApplications.useCases.subtitle}</p>
+          <motion.div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 w-full" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.12 } } }}>
+            {useCases.map((u, idx) => {
+              const Icon = useCaseIconTypes[idx] ?? FaRobot;
+              return (
+              <motion.div key={u.title} className="group relative bg-white/[0.045] backdrop-blur-xl rounded-3xl shadow-xl border border-white/10 p-8 flex flex-col items-center text-center transition-all duration-300 hover:shadow-2xl overflow-hidden w-full" initial={{ opacity: 0, y: 40, scale: 0.97 }} whileInView={{ opacity: 1, y: 0, scale: 1 }} whileHover={{ scale: 1.02, y: -8 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: idx * 0.07 }}>
                 {/* Shine Effect */}
                 <motion.div
                   className="absolute inset-0 rounded-3xl bg-gradient-to-r from-transparent via-ink/30 to-transparent opacity-0 group-hover:opacity-100"
@@ -483,21 +486,16 @@ export default function AIIntegrationApplicationsPage() {
                   whileHover={{ x: '100%' }}
                   transition={{ duration: 0.8 }}
                 />
-                <div className="relative z-10 mb-4 flex items-center justify-center w-20 h-20 rounded-full bg-gradient-to-br from-blue-400 via-purple-300 to-cyan-400 shadow-inner border-4 border-iris/30 group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300">
-                  <FaMicrochip className="text-purple-400 text-5xl" />
+                <div className="relative z-10 mb-5 flex items-center justify-center w-20 h-20 rounded-full bg-gradient-to-br from-iris/20 to-iris/10 shadow-inner border-4 border-iris/30 group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300 group-hover:border-purple-300">
+                  <Icon className={`${useCaseColors[idx]} text-3xl`} />
                 </div>
-                <span className="relative z-10 inline-block px-4 py-2 rounded-full bg-gradient-to-r from-blue-500 to-purple-500 text-white font-bold text-base shadow-md mb-2 mt-2 tracking-wide">{c.client}</span>
-                <p className="relative z-10 text-iris-bright text-base mb-2">{t.services.pages.aiIntegrationApplications.caseStudies.useLabel} <span className="font-semibold">{c.use}</span></p>
-                <p className="relative z-10 text-paper-dim text-base mb-2">{t.services.pages.aiIntegrationApplications.caseStudies.techLabel} <span className="font-semibold">{c.tech}</span></p>
-                <p className="relative z-10 text-green-600 text-lg font-bold">{c.kpi}</p>
+                <h3 className="relative z-10 text-xl font-bold text-paper mb-2 tracking-tight">{u.title}</h3>
+                <p className="relative z-10 text-paper-dim text-base leading-relaxed mb-4 flex-1">{u.desc}</p>
+                <p className="relative z-10 text-iris-bright text-sm">{t.services.pages.aiIntegrationApplications.useCases.techLabel} <span className="font-semibold">{u.tech}</span></p>
               </motion.div>
-            ))}
+              );
+            })}
           </motion.div>
-          <div className="flex gap-2 mt-6 justify-center">
-            {caseStudies.map((_, idx) => (
-              <span key={idx} className="w-3 h-3 rounded-full bg-blue-300 opacity-60"></span>
-            ))}
-          </div>
         </div>
       </section>
 

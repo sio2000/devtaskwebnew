@@ -10,24 +10,24 @@ const clickSfx = '';
 // @ts-ignore: No types for aos
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-import uiImg from '../assets/UI.png';
-import ui2Img from '../assets/ui2.jpg';
-import ui3Img from '../assets/ui3.jpg';
-import ui4Img from '../assets/ui4.jpg';
+import uiImg from '../assets/UI.webp';
+import ui2Img from '../assets/ui2.webp';
+import ui3Img from '../assets/ui3.webp';
+import ui4Img from '../assets/ui4.webp';
 import ui5Img from '../assets/ui5.jpg';
-import ui6Img from '../assets/ui6.png';
+import ui6Img from '../assets/ui6.webp';
 import { useIsMobile } from '../hooks/useIsMobile';
-import financeImg from '../assets/ui2.jpg';
-import foodImg from '../assets/ui3.jpg';
-import travelImg from '../assets/ui4.jpg';
+import financeImg from '../assets/ui2.webp';
+import foodImg from '../assets/ui3.webp';
+import travelImg from '../assets/ui4.webp';
 import cryptoImg from '../assets/ui5.jpg';
-import smartHomeImg from '../assets/ui6.png';
-import datingImg from '../assets/ui2.jpg';
-import bookImg from '../assets/ui3.jpg';
-import UIBookReadingApp from '../assets/UIBookReadingApp.png';
+import smartHomeImg from '../assets/ui6.webp';
+import datingImg from '../assets/ui2.webp';
+import bookImg from '../assets/ui3.webp';
+import UIBookReadingApp from '../assets/UIBookReadingApp.webp';
 import UIcryptowallet from '../assets/UIcryptowallet.png';
-import UIDatingApp from '../assets/UIDatingApp.png';
-import UIrestaurant from '../assets/UIrestaurant.png';
+import UIDatingApp from '../assets/UIDatingApp.webp';
+import UIrestaurant from '../assets/UIrestaurant.webp';
 import UIsamples from '../assets/UIsamples.png';
 import UIsmarthome from '../assets/UIsmarthome.png';
 import UItravellerapp from '../assets/UItravellerapp.png';
@@ -176,8 +176,8 @@ export default function UXUIDesignPage() {
           </div>
           {/* Περιεχόμενο */}
           <div className="flex-1 flex flex-col items-center md:items-start text-center md:text-left">
-            <h2 className="text-3xl md:text-4xl font-extrabold text-purple-700 mb-4 bg-gradient-to-r from-purple-500 to-blue-500 bg-clip-text text-transparent drop-shadow-lg">Υπηρεσίες UX/UI</h2>
-            <p className="text-lg text-paper-dim mb-6 max-w-xl">Σχεδιάζουμε premium interfaces για web & mobile, με έμφαση στη χρηστικότητα, την αισθητική και το αποτέλεσμα.</p>
+            <h2 className="text-3xl md:text-4xl font-extrabold text-purple-700 mb-4 bg-gradient-to-r from-purple-500 to-blue-500 bg-clip-text text-transparent drop-shadow-lg">{t.services.pages.uxUIDesign.services.title}</h2>
+            <p className="text-lg text-paper-dim mb-6 max-w-xl">{t.services.pages.uxUIDesign.services.description}</p>
             {/* Badges/Icons row */}
             <div className={`grid grid-cols-2 gap-4 w-full py-2 justify-center md:justify-start md:flex md:flex-row md:flex-wrap md:gap-3`}>
               {services.map((s, idx) => (

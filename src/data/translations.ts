@@ -106,8 +106,8 @@ export const translations = {
                 desc: 'Απόλυτη απόδοση και ομορφιά σε κάθε συσκευή, για κάθε επισκέπτη.'
               },
               {
-                title: 'SEO που Φέρνει Αποτελέσματα',
-                desc: 'Ανεβείτε στην κορυφή της Google και αυξήστε τους πελάτες σας.'
+                title: 'SEO από την Πρώτη Μέρα',
+                desc: 'Σωστή δομή, γρήγορη φόρτωση και meta tags, ώστε η Google να βρίσκει και να καταλαβαίνει κάθε σελίδα σας.'
               },
               {
                 title: 'Συνεχής Υποστήριξη',
@@ -133,10 +133,10 @@ export const translations = {
             title: 'Τεχνολογίες & Εργαλεία'
           },
           stats: {
-            title: 'Αριθμοί που Μετράνε',
+            title: 'Με μια Ματιά',
             items: [
               { label: 'Χρόνια εμπειρίας' },
-              { label: '100% Ικανοποίηση' },
+              { label: 'Mobile-first σε κάθε έργο' },
               { label: 'Υποστήριξη' }
             ]
           }
@@ -254,14 +254,6 @@ export const translations = {
           finalCta: {
             title: 'Έχεις μια Ιδέα για Mobile App; Ας την Υλοποιήσουμε Μαζί.',
             button: 'Ζήτησε Προσφορά'
-          },
-          stats: {
-            title: 'Αριθμοί που Μετράνε',
-            items: [
-              { label: 'Χρόνια εμπειρίας' },
-              { label: '100% Ικανοποίηση' },
-              { label: 'Υποστήριξη' }
-            ]
           }
         },
         ecommerceDevelopment: {
@@ -305,11 +297,11 @@ export const translations = {
               { title: 'Mobile-first', desc: 'Προτεραιότητα στη mobile εμπειρία.' },
               { title: 'Γρήγορο Checkout', desc: 'Άμεση και φιλική διαδικασία αγοράς.' },
               { title: 'Αποθήκη σε Πραγματικό Χρόνο', desc: 'Διαχείριση αποθέματος & παρακολούθηση.' },
-              { title: 'Conversion Design', desc: 'Σχεδιασμός που αυξάνει τις πωλήσεις.' }
+              { title: 'Conversion Design', desc: 'Σχεδιασμός με στόχο να ολοκληρώνεται κάθε αγορά εύκολα.' }
             ]
           },
           portfolio: {
-            title: 'Πελατολόγιο & Παραδείγματα',
+            title: 'Live Έργα με Online Πληρωμές & Κρατήσεις',
             viewProject: 'Δείτε το έργο'
           },
           finalCta: {
@@ -322,7 +314,7 @@ export const translations = {
             title: 'Παραγωγή Video & Animation που Εντυπωσιάζουν',
             subtitle: 'Δημιουργία και επεξεργασία βίντεο και animations για προωθητική, εκπαιδευτική ή εμπορική χρήση.',
             cta: 'Ζητήστε Προσφορά',
-            viewExamples: 'Παραδείγματα Έργων',
+            viewExamples: 'Είδη Βίντεο',
             contact: 'Επικοινωνήστε'
           },
           offers: {
@@ -359,14 +351,15 @@ export const translations = {
               'Υποστήριξη μετά την παράδοση'
             ]
           },
-          portfolio: {
-            title: 'Παραδείγματα Έργων',
+          videoTypes: {
+            title: 'Είδη Βίντεο που Φτιάχνουμε',
+            subtitle: 'Οι εικόνες είναι ενδεικτικές. Κάθε βίντεο σχεδιάζεται από την αρχή για τον δικό σας στόχο.',
             items: [
-              { title: 'Προώθηση Ξενοδοχείου', desc: 'Εντυπωσιακό promo video για ξενοδοχειακή επιχείρηση με λήψεις, μοντάζ και motion graphics.' },
-              { title: 'Animation Design', desc: 'Δημιουργία custom animation για προώθηση υπηρεσιών και προϊόντων με σύγχρονη αισθητική.' },
-              { title: 'Animation Design', desc: 'Ψυχεδελικό animation με έντονα χρώματα και εφέ.' },
-              { title: 'Animation Design', desc: 'Καλλιτεχνικό animation με λουλούδια και ανθρώπινες μορφές.' },
-              { title: 'Animation Design', desc: 'Δυναμικό animation με καρχαρίες σε κίνηση.' }
+              { title: 'Promo για την επιχείρησή σας', desc: 'Λήψεις, μοντάζ και motion graphics που δείχνουν τον χώρο, τα προϊόντα ή τις υπηρεσίες σας.' },
+              { title: 'Reels, TikTok και Shorts', desc: 'Κάθετα βίντεο με υπότιτλους και ρυθμό που κρατά την προσοχή από τα πρώτα δευτερόλεπτα.' },
+              { title: '2D και 3D animation', desc: 'Animation που εξηγεί μια υπηρεσία ή παρουσιάζει ένα προϊόν με σύγχρονη αισθητική.' },
+              { title: 'Explainer και εκπαιδευτικά βίντεο', desc: 'Σύντομα βίντεο που δείχνουν βήμα βήμα πώς δουλεύει κάτι, για πελάτες ή για την ομάδα σας.' },
+              { title: 'Motion graphics για logo και τίτλους', desc: 'Κινούμενο logo, intro και τίτλοι που ταιριάζουν με την ταυτότητα του brand σας.' }
             ]
           },
           finalCta: {
@@ -387,7 +380,7 @@ export const translations = {
             items: [
               { title: 'Στρατηγική Περιεχομένου & Προγραμματισμός', desc: 'Αναλυτική στρατηγική, θεματολογία, ημερολόγιο και προγραμματισμένες αναρτήσεις.' },
               { title: 'Δημιουργία Visual Περιεχομένου', desc: 'Graphics, Reels, Stories, videos και φωτογραφίες που ξεχωρίζουν.' },
-              { title: 'Social Ads', desc: 'Meta Ads, TikTok, Instagram, LinkedIn: διαφημίσεις που φέρνουν αποτελέσματα.' },
+              { title: 'Social Ads', desc: 'Meta Ads, TikTok, Instagram, LinkedIn: καμπάνιες με ξεκάθαρο στόχο και μέτρηση.' },
               { title: 'Community Management', desc: 'Αλληλεπίδραση, απαντήσεις, διαχείριση σχολίων & DM.' },
               { title: 'Reports & Insights', desc: 'Αναλυτικά reports, στατιστικά και προτάσεις βελτίωσης.' },
               { title: 'AI-Enhanced Content', desc: 'Χρήση AI για ιδέες, captions, hashtags και βελτιστοποίηση.' }
@@ -397,17 +390,17 @@ export const translations = {
             title: 'Πλατφόρμες που υποστηρίζουμε'
           },
           logoTransformations: {
-            title: 'Social Media Excellence & Logo Transformation',
-            subtitle: 'Με τις προηγμένες στρατηγικές μας, μετατρέπουμε κάθε επιχείρηση - μικρή ή μεγάλη - σε viral social media sensation. Δείτε πώς μετατρέπουμε τα απλά logos σε powerful brand identities που απογειώνουν την παρουσία σας στα social platforms.',
-            whyUsTitle: 'Πώς κάνουμε την διαφορά στο Social Media',
+            title: 'Το Logo σας σε Νέα Στυλ για τα Social',
+            subtitle: 'Ένα logo πρέπει να ξεχωρίζει σε μια μικρή εικόνα προφίλ και μέσα σε ένα γρήγορο feed. Δείτε πώς ένα απλό logo μπορεί να πάρει διαφορετικά στυλ για posts, Reels και Stories, ώστε το brand σας να αναγνωρίζεται με μια ματιά.',
+            whyUsTitle: 'Πώς δουλεύουμε στα Social Media',
             whyUsItems: [
-              'Στρατηγική ανάλυση του target audience και των trends',
-              'Δημιουργία viral content που ξεχωρίζει',
-              'Logo transformations για maximum social impact',
-              'Data-driven optimization για continuous growth'
+              'Στρατηγική ανάλυση του κοινού σας και των trends',
+              'Περιεχόμενο φτιαγμένο για κάθε πλατφόρμα',
+              'Παραλλαγές του logo για posts, Reels και Stories',
+              'Αποφάσεις με βάση τα δεδομένα των λογαριασμών σας'
             ],
-            viralSuccessTitle: 'Viral Success Rate',
-            viralSuccessDesc: '95% των πελατών μας βλέπουν σημαντική αύξηση στο engagement',
+            promiseTitle: 'Ειλικρινείς αναφορές',
+            promiseDesc: 'Βλέπετε τα πραγματικά νούμερα των λογαριασμών σας, όπως τα δίνουν οι ίδιες οι πλατφόρμες. Δεν υποσχόμαστε viral, δουλεύουμε για σταθερή πρόοδο.',
             showcaseTitle: 'Δείγματα Logo Transformations για Social Media',
             items: [
               { title: 'Στυλ Πλεξίματος', desc: 'Το logo σε στυλ πλεξίματος με υφή και texture που θυμίζει πλεκτό ύφασμα.' },
@@ -512,20 +505,24 @@ export const translations = {
               { title: 'SEO Αναφορές & Dashboard', desc: 'Αναλυτικά reports και dashboards.' }
             ]
           },
-          stats: {
-            title: 'Μετρήσιμα Αποτελέσματα',
+          measure: {
+            title: 'Τι Μετράμε και Βελτιώνουμε',
+            subtitle: 'Δεν υποσχόμαστε νούμερα πριν δούμε την ιστοσελίδα σας. Παρακολουθούμε όσα δείχνουν αν το SEO δουλεύει και σας τα δείχνουμε με τα δικά σας δεδομένα.',
             items: [
-              { value: 300, suffix: '%', label: 'οργανική επισκεψιμότητα', desc: 'Αύξηση οργανικών επισκέψεων' },
-              { value: 1, suffix: 'η σελίδα Google', label: '', desc: 'Κατάταξη σε ανταγωνιστικές λέξεις' },
-              { value: 120, suffix: ' keywords', label: '', desc: 'Λέξεις-κλειδιά με κατάταξη' }
+              { title: 'Οργανική επισκεψιμότητα', desc: 'Πόσοι έρχονται από τη Google χωρίς διαφήμιση και σε ποιες σελίδες μπαίνουν.' },
+              { title: 'Θέσεις λέξεων κλειδιών', desc: 'Πού εμφανίζεστε στις αναζητήσεις που φέρνουν πελάτες και πώς αλλάζει αυτό με τον χρόνο.' },
+              { title: 'Core Web Vitals', desc: 'Ταχύτητα φόρτωσης, σταθερότητα και απόκριση της σελίδας, όπως τα μετράει η ίδια η Google.' },
+              { title: 'Αιτήματα από τη φόρμα', desc: 'Φόρμες, κλήσεις και κρατήσεις που έρχονται από την οργανική αναζήτηση, γιατί αυτό μετράει στο τέλος.' }
             ],
-            chartTitle: 'Εξέλιξη οργανικής επισκεψιμότητας'
+            chartTitle: 'Την πορεία τη βλέπετε σε κάθε αναφορά'
           },
-          caseStudies: {
-            title: 'Case Study',
+          reporting: {
+            title: 'Πώς Βλέπετε την Πρόοδο',
             items: [
-              { before: 120, after: 480, label: 'Οργανική επισκεψιμότητα', desc: 'Αύξηση οργανικών επισκέψεων σε 6 μήνες.', beforeLabel: 'Πριν:', afterLabel: 'Μετά:' },
-              { before: 8, after: 1, label: 'Κατάταξη Google', desc: 'Από 8η σε 1η σελίδα για βασική λέξη-κλειδί.', beforeLabel: 'Πριν:', afterLabel: 'Μετά:' }
+              { title: 'Αρχικό SEO audit', desc: 'Γραπτή λίστα με ό,τι βρήκαμε στην ιστοσελίδα σας και τι διορθώνουμε πρώτο.' },
+              { title: 'Δεδομένα από την πηγή', desc: 'Τα νούμερα έρχονται από το Google Search Console και το Google Analytics, όχι από δικές μας εκτιμήσεις.' },
+              { title: 'Αναφορές που διαβάζονται', desc: 'Τι αλλάξαμε, τι άλλαξε στα αποτελέσματα και ποιο είναι το επόμενο βήμα, σε απλή γλώσσα.' },
+              { title: 'Ρεαλιστικοί στόχοι', desc: 'Κανείς δεν μπορεί να εγγυηθεί την πρώτη θέση στη Google. Σας λέμε από την αρχή τι είναι εφικτό.' }
             ]
           },
           workflow: {
@@ -625,20 +622,22 @@ export const translations = {
           technologies: {
             title: 'Τεχνολογίες & Εργαλεία'
           },
-          portfolio: {
-            title: 'Αξιοσημείωτα Έργα Portfolio',
+          gameTypes: {
+            title: 'Τι Είδους Παιχνίδια Φτιάχνουμε',
+            subtitle: 'Οι εικόνες είναι ενδεικτικές. Κάθε παιχνίδι ξεκινά από τη δική σας ιδέα.',
             items: [
-              { title: 'Φανταστική Περιπέτεια', desc: '3D RPG με μοναδικό art style & engaging gameplay.' },
-              { title: 'VR Racing', desc: 'VR racing game με ρεαλιστική φυσική & γραφικά.' },
-              { title: 'Puzzle Platformer', desc: '2D puzzle platformer με καινοτόμους μηχανισμούς.' }
+              { title: 'Παιχνίδια για κινητά', desc: 'Casual, puzzle και arcade παιχνίδια για iOS και Android, με χειρισμό φτιαγμένο για την αφή.' },
+              { title: 'Web και HTML5 παιχνίδια', desc: 'Παίζονται κατευθείαν στον browser, χωρίς εγκατάσταση. Ταιριάζουν σε καμπάνιες, διαγωνισμούς και gamification.' },
+              { title: 'Εμπειρίες VR και AR', desc: 'Εικονική και επαυξημένη πραγματικότητα για εκθέσεις, εκπαίδευση και παρουσιάσεις προϊόντων.' },
+              { title: 'Multiplayer παιχνίδια', desc: 'Online παιχνίδια για πολλούς παίκτες, με λογαριασμούς, κατατάξεις και συγχρονισμό σε πραγματικό χρόνο.' }
             ]
           },
           whyUs: {
             title: 'Γιατί να Επιλέξετε Εμάς;',
             items: [
-              'Έμπειροι προγραμματιστές & designers',
+              'Playable πρωτότυπο νωρίς, για να δοκιμάσετε την ιδέα',
               'Μεθοδολογία agile ανάπτυξης',
-              'Ενσωμάτωση τεχνολογίας αιχμής',
+              'Σύγχρονες μηχανές όπως Unity, Godot και Unreal',
               'Προσανατολισμός σχεδιασμού στον παίκτη'
             ]
           },
@@ -736,15 +735,15 @@ export const translations = {
               { title: 'Monitoring & Updates', desc: 'Συνεχής παρακολούθηση, βελτιώσεις.' }
             ]
           },
-          caseStudies: {
-            title: 'Πραγματικά Παραδείγματα',
-            subtitle: 'AI Case Studies',
+          useCases: {
+            title: 'Παραδείγματα Χρήσης',
+            subtitle: 'Τι μπορεί να κάνει το AI για εσάς',
             items: [
-              { client: 'E-shop', use: 'AI Προτάσεις προϊόντων', tech: 'TensorFlow, Python', kpi: '+25% conversion' },
-              { client: 'Fintech', use: 'Ανίχνευση απάτης', tech: 'PyTorch, REST API', kpi: '-40% fraud rate' },
-              { client: 'Media', use: 'Αυτόματη δημιουργία περιεχομένου', tech: 'OpenAI, LangChain', kpi: '+60% content output' }
+              { title: 'Για e-shop', desc: 'Προτάσεις προϊόντων με βάση όσα βλέπει και αγοράζει κάθε πελάτης, και αναζήτηση που καταλαβαίνει τι ψάχνει.', tech: 'Python, TensorFlow' },
+              { title: 'Για εξυπηρέτηση πελατών', desc: 'Ένας βοηθός που απαντά στις συχνές ερωτήσεις από τα δικά σας κείμενα και περνά τα δύσκολα σε άνθρωπο.', tech: 'OpenAI, LangChain' },
+              { title: 'Για περιεχόμενο', desc: 'Πρώτα προσχέδια για περιγραφές προϊόντων, posts και newsletters, που τα ελέγχει πάντα άνθρωπος πριν δημοσιευτούν.', tech: 'OpenAI' },
+              { title: 'Για εσωτερικές διαδικασίες', desc: 'Αυτόματη ανάγνωση και ταξινόμηση email, παραστατικών και φορμών, για να μένει χρόνος για τη δουλειά που μετράει.', tech: 'Python, REST API' }
             ],
-            useLabel: 'Χρήση AI:',
             techLabel: 'Τεχνολογίες:'
           },
           finalCta: {
@@ -1104,8 +1103,8 @@ export const translations = {
                 desc: 'Absolute performance and beauty on every device, for every visitor.'
               },
               {
-                title: 'SEO that Delivers Results',
-                desc: 'Rise to the top of Google and increase your customers.'
+                title: 'SEO from Day One',
+                desc: 'Clean structure, fast loading and proper meta tags, so Google can find and understand every page.'
               },
               {
                 title: 'Continuous Support',
@@ -1131,10 +1130,10 @@ export const translations = {
             title: 'Technologies & Tools'
           },
           stats: {
-            title: 'Numbers that Count',
+            title: 'At a Glance',
             items: [
               { label: 'Years of Experience' },
-              { label: '100% Satisfaction' },
+              { label: 'Mobile-first on every project' },
               { label: 'Support' }
             ]
           }
@@ -1251,14 +1250,6 @@ export const translations = {
           finalCta: {
             title: 'Have an Idea for a Mobile App? Let\'s Build It Together.',
             button: 'Request a Quote'
-          },
-          stats: {
-            title: 'Numbers that Count',
-            items: [
-              { label: 'Years of Experience' },
-              { label: '100% Satisfaction' },
-              { label: 'Support' }
-            ]
           }
         },
         ecommerceDevelopment: {
@@ -1302,11 +1293,11 @@ export const translations = {
               { title: 'Mobile-first', desc: 'Priority on mobile experience.' },
               { title: 'Fast Checkout', desc: 'Instant and friendly purchase process.' },
               { title: 'Real-time Warehouse', desc: 'Inventory management & tracking.' },
-              { title: 'Conversion Design', desc: 'Design that increases sales.' }
+              { title: 'Conversion Design', desc: 'Design aimed at making every purchase easy to complete.' }
             ]
           },
           portfolio: {
-            title: 'Client Portfolio & Examples',
+            title: 'Live Projects with Online Payments & Bookings',
             viewProject: 'View Project'
           },
           finalCta: {
@@ -1319,7 +1310,7 @@ export const translations = {
             title: 'Video & Animation Production That Impresses',
             subtitle: 'Creative video and animation production for promotional, educational, or commercial purposes.',
             cta: 'Request a Quote',
-            viewExamples: 'Portfolio Highlights',
+            viewExamples: 'Video Types',
             contact: 'Contact Us'
           },
           offers: {
@@ -1356,14 +1347,15 @@ export const translations = {
               'Post-delivery support'
             ]
           },
-          portfolio: {
-            title: 'Portfolio Highlights',
+          videoTypes: {
+            title: 'Types of Video We Make',
+            subtitle: 'The images are illustrative. Every video is planned from scratch around your goal.',
             items: [
-              { title: 'Hotel Promotion', desc: 'Impressive promo video for hotel business with filming, editing and motion graphics.' },
-              { title: 'Animation Design', desc: 'Custom animation creation for promoting services and products with modern aesthetics.' },
-              { title: 'Animation Design', desc: 'Psychedelic animation with vibrant colors and effects.' },
-              { title: 'Animation Design', desc: 'Artistic animation with flowers and human forms.' },
-              { title: 'Animation Design', desc: 'Dynamic animation with sharks in motion.' }
+              { title: 'Promo for your business', desc: 'Filming, editing and motion graphics that show your space, products or services.' },
+              { title: 'Reels, TikTok and Shorts', desc: 'Vertical videos with captions and a pace that holds attention from the first seconds.' },
+              { title: '2D and 3D animation', desc: 'Animation that explains a service or presents a product with a modern look.' },
+              { title: 'Explainer and training videos', desc: 'Short videos that show step by step how something works, for customers or for your team.' },
+              { title: 'Motion graphics for logos and titles', desc: 'Animated logo, intro and titles that match your brand identity.' }
             ]
           },
           finalCta: {
@@ -1384,7 +1376,7 @@ export const translations = {
             items: [
               { title: 'Content Strategy & Planning', desc: 'Analytical strategy, themes, calendar and scheduled posts.' },
               { title: 'Visual Content Creation', desc: 'Graphics, Reels, Stories, videos and photos that stand out.' },
-              { title: 'Social Ads', desc: 'Meta Ads, TikTok, Instagram, LinkedIn: ads that deliver results.' },
+              { title: 'Social Ads', desc: 'Meta Ads, TikTok, Instagram, LinkedIn: campaigns with a clear goal and proper tracking.' },
               { title: 'Community Management', desc: 'Interaction, responses, comment & DM management.' },
               { title: 'Reports & Insights', desc: 'Detailed reports, statistics and improvement suggestions.' },
               { title: 'AI-Enhanced Content', desc: 'Using AI for ideas, captions, hashtags and optimization.' }
@@ -1394,17 +1386,17 @@ export const translations = {
             title: 'Platforms We Support'
           },
           logoTransformations: {
-            title: 'Social Media Excellence & Logo Transformation',
-            subtitle: 'With our advanced strategies, we transform every business - small or large - into a viral social media sensation. See how we transform simple logos into powerful brand identities that boost your presence on social platforms.',
-            whyUsTitle: 'How We Make a Difference in Social Media',
+            title: 'Your Logo in New Styles for Social Media',
+            subtitle: 'A logo has to stand out in a tiny profile picture and in a fast moving feed. See how one simple logo can take on different styles for posts, Reels and Stories, so people recognise your brand at a glance.',
+            whyUsTitle: 'How We Work on Social Media',
             whyUsItems: [
-              'Strategic analysis of target audience and trends',
-              'Creating viral content that stands out',
-              'Logo transformations for maximum social impact',
-              'Data-driven optimization for continuous growth'
+              'Strategic analysis of your audience and the trends',
+              'Content made for each platform',
+              'Logo variations for posts, Reels and Stories',
+              'Decisions based on your own account data'
             ],
-            viralSuccessTitle: 'Viral Success Rate',
-            viralSuccessDesc: '95% of our clients see significant increase in engagement',
+            promiseTitle: 'Honest reports',
+            promiseDesc: 'You see the real numbers of your accounts, exactly as the platforms report them. We do not promise going viral, we work for steady progress.',
             showcaseTitle: 'Logo Transformation Samples for Social Media',
             items: [
               { title: 'Knitted Style', desc: 'Logo in knitted style with texture that resembles knitted fabric.' },
@@ -1509,20 +1501,24 @@ export const translations = {
               { title: 'SEO Reports & Dashboard', desc: 'Detailed reports and dashboards.' }
             ]
           },
-          stats: {
-            title: 'Measurable Results',
+          measure: {
+            title: 'What We Measure and Improve',
+            subtitle: 'We do not promise numbers before we have seen your website. We track what shows whether SEO is working and show it to you with your own data.',
             items: [
-              { value: 300, suffix: '%', label: 'organic traffic', desc: 'Increase in organic visits' },
-              { value: 1, suffix: 'st page Google', label: '', desc: 'Ranking for competitive keywords' },
-              { value: 120, suffix: ' keywords', label: '', desc: 'Keywords with ranking' }
+              { title: 'Organic traffic', desc: 'How many people arrive from Google without ads, and which pages they land on.' },
+              { title: 'Keyword positions', desc: 'Where you appear for the searches that bring customers, and how that changes over time.' },
+              { title: 'Core Web Vitals', desc: 'Loading speed, stability and responsiveness of the page, as Google itself measures them.' },
+              { title: 'Form enquiries', desc: 'Forms, calls and bookings that come from organic search, because that is what counts in the end.' }
             ],
-            chartTitle: 'Organic traffic evolution'
+            chartTitle: 'You see the progress in every report'
           },
-          caseStudies: {
-            title: 'Case Study',
+          reporting: {
+            title: 'How You See the Progress',
             items: [
-              { before: 120, after: 480, label: 'Organic traffic', desc: 'Increase in organic visits in 6 months.', beforeLabel: 'Before:', afterLabel: 'After:' },
-              { before: 8, after: 1, label: 'Google Ranking', desc: 'From 8th to 1st page for main keyword.', beforeLabel: 'Before:', afterLabel: 'After:' }
+              { title: 'Initial SEO audit', desc: 'A written list of what we found on your website and what we fix first.' },
+              { title: 'Data from the source', desc: 'The numbers come from Google Search Console and Google Analytics, not from our own estimates.' },
+              { title: 'Reports you can read', desc: 'What we changed, what changed in the results and what the next step is, in plain language.' },
+              { title: 'Realistic goals', desc: 'Nobody can guarantee the top spot on Google. We tell you from the start what is achievable.' }
             ]
           },
           workflow: {
@@ -1674,20 +1670,22 @@ export const translations = {
           technologies: {
             title: 'Technologies & Tools'
           },
-          portfolio: {
-            title: 'Portfolio Highlights',
+          gameTypes: {
+            title: 'What Kind of Games We Build',
+            subtitle: 'The images are illustrative. Every game starts from your own idea.',
             items: [
-              { title: 'Fantasy Adventure', desc: '3D RPG with unique art style & engaging gameplay.' },
-              { title: 'VR Racing', desc: 'VR racing game with realistic physics & graphics.' },
-              { title: 'Puzzle Platformer', desc: '2D puzzle platformer with innovative mechanics.' }
+              { title: 'Mobile games', desc: 'Casual, puzzle and arcade games for iOS and Android, with controls made for touch.' },
+              { title: 'Web and HTML5 games', desc: 'Played straight in the browser, with nothing to install. A good fit for campaigns, contests and gamification.' },
+              { title: 'VR and AR experiences', desc: 'Virtual and augmented reality for exhibitions, training and product presentations.' },
+              { title: 'Multiplayer games', desc: 'Online games for many players, with accounts, leaderboards and real time sync.' }
             ]
           },
           whyUs: {
             title: 'Why Choose Us?',
             items: [
-              'Experienced developers & designers',
+              'A playable prototype early, so you can test the idea',
               'Agile development methodology',
-              'Cutting-edge technology integration',
+              'Modern engines such as Unity, Godot and Unreal',
               'Player-centric design approach'
             ]
           },
@@ -1733,15 +1731,15 @@ export const translations = {
               { title: 'Monitoring & Updates', desc: 'Continuous monitoring, improvements.' }
             ]
           },
-          caseStudies: {
-            title: 'Real Examples',
-            subtitle: 'AI Case Studies',
+          useCases: {
+            title: 'Use Cases',
+            subtitle: 'What AI can do for you',
             items: [
-              { client: 'E-shop', use: 'AI Product Recommendations', tech: 'TensorFlow, Python', kpi: '+25% conversion' },
-              { client: 'Fintech', use: 'Fraud Detection', tech: 'PyTorch, REST API', kpi: '-40% fraud rate' },
-              { client: 'Media', use: 'Automatic Content Generation', tech: 'OpenAI, LangChain', kpi: '+60% content output' }
+              { title: 'For e-shops', desc: 'Product suggestions based on what each customer views and buys, and search that understands what they are looking for.', tech: 'Python, TensorFlow' },
+              { title: 'For customer support', desc: 'An assistant that answers common questions from your own content and hands the tricky ones to a person.', tech: 'OpenAI, LangChain' },
+              { title: 'For content', desc: 'First drafts of product descriptions, posts and newsletters, always checked by a person before they go live.', tech: 'OpenAI' },
+              { title: 'For internal processes', desc: 'Automatic reading and sorting of emails, invoices and forms, so there is more time for the work that matters.', tech: 'Python, REST API' }
             ],
-            useLabel: 'AI Use:',
             techLabel: 'Technologies:'
           },
           finalCta: {
@@ -2099,8 +2097,8 @@ export const translations = {
                 desc: 'Performance absolue et beauté sur chaque appareil, pour chaque visiteur.'
               },
               {
-                title: 'SEO qui Donne des Résultats',
-                desc: 'Montez en haut de Google et augmentez vos clients.'
+                title: 'SEO dès le Premier Jour',
+                desc: 'Une structure propre, un chargement rapide et des balises meta soignées, pour que Google trouve et comprenne chaque page.'
               },
               {
                 title: 'Support Continu',
@@ -2126,10 +2124,10 @@ export const translations = {
             title: 'Technologies et Outils'
           },
           stats: {
-            title: 'Chiffres qui Comptent',
+            title: 'En un Coup d\'Œil',
             items: [
               { label: 'Années d\'Expérience' },
-              { label: '100% Satisfaction' },
+              { label: 'Mobile-first sur chaque projet' },
               { label: 'Support' }
             ]
           }
@@ -2246,14 +2244,6 @@ export const translations = {
           finalCta: {
             title: 'Vous avez une Idée d\'Application Mobile? Construisons-la Ensemble.',
             button: 'Demander un Devis'
-          },
-          stats: {
-            title: 'Chiffres qui Comptent',
-            items: [
-              { label: 'Années d\'Expérience' },
-              { label: '100% Satisfaction' },
-              { label: 'Support' }
-            ]
           }
         },
         ecommerceDevelopment: {
@@ -2297,11 +2287,11 @@ export const translations = {
               { title: 'Mobile-first', desc: 'Priorité à l\'expérience mobile.' },
               { title: 'Checkout Rapide', desc: 'Processus d\'achat immédiat et convivial.' },
               { title: 'Inventaire en Temps Réel', desc: 'Gestion des stocks et suivi.' },
-              { title: 'Design de Conversion', desc: 'Conception qui augmente les ventes.' }
+              { title: 'Design de Conversion', desc: 'Une conception pensée pour que chaque achat se termine facilement.' }
             ]
           },
           portfolio: {
-            title: 'Portfolio et Exemples',
+            title: 'Projets en Ligne avec Paiements et Réservations',
             viewProject: 'Voir le Projet'
           },
           finalCta: {
@@ -2314,7 +2304,7 @@ export const translations = {
             title: 'Production de Vidéo et d\'Animation qui Impressionne',
             subtitle: 'Création de vidéos et d\'animations pour usages promotionnels, éducatifs ou commerciaux.',
             cta: 'Demander un Devis',
-            viewExamples: 'Portfolio',
+            viewExamples: 'Types de Vidéos',
             contact: 'Contactez-nous'
           },
           offers: {
@@ -2351,14 +2341,15 @@ export const translations = {
               'Support après livraison'
             ]
           },
-          portfolio: {
-            title: 'Portfolio',
+          videoTypes: {
+            title: 'Les Types de Vidéos que Nous Réalisons',
+            subtitle: 'Les images sont illustratives. Chaque vidéo est pensée de zéro autour de votre objectif.',
             items: [
-              { title: 'Promotion Hôtel', desc: 'Vidéo promo impressionnante pour hôtel avec tournage, montage et graphiques animés.' },
-              { title: 'Design Animation', desc: 'Création d\'animation personnalisée pour promouvoir services et produits avec esthétique moderne.' },
-              { title: 'Design Animation', desc: 'Animation psychédélique avec couleurs vibrantes et effets.' },
-              { title: 'Design Animation', desc: 'Animation artistique avec fleurs et formes humaines.' },
-              { title: 'Design Animation', desc: 'Animation dynamique avec requins en mouvement.' }
+              { title: 'Promo pour votre entreprise', desc: 'Tournage, montage et graphiques animés qui montrent votre lieu, vos produits ou vos services.' },
+              { title: 'Reels, TikTok et Shorts', desc: 'Vidéos verticales avec sous-titres et un rythme qui retient l\'attention dès les premières secondes.' },
+              { title: 'Animation 2D et 3D', desc: 'Une animation qui explique un service ou présente un produit avec une esthétique moderne.' },
+              { title: 'Vidéos explicatives et de formation', desc: 'Des vidéos courtes qui montrent étape par étape comment une chose fonctionne, pour vos clients ou votre équipe.' },
+              { title: 'Motion design pour logos et titres', desc: 'Logo animé, intro et titres qui correspondent à l\'identité de votre marque.' }
             ]
           },
           finalCta: {
@@ -2379,7 +2370,7 @@ export const translations = {
             items: [
               { title: 'Stratégie de Contenu et Planification', desc: 'Stratégie analytique, thèmes, calendrier et publications programmées.' },
               { title: 'Création de Contenu Visuel', desc: 'Graphiques, Reels, Stories, vidéos et photos qui se démarquent.' },
-              { title: 'Publicités Sociales', desc: 'Meta Ads, TikTok, Instagram, LinkedIn: publicités qui produisent des résultats.' },
+              { title: 'Publicités Sociales', desc: 'Meta Ads, TikTok, Instagram, LinkedIn: des campagnes avec un objectif clair et un vrai suivi.' },
               { title: 'Gestion de Communauté', desc: 'Interaction, réponses, gestion des commentaires et DM.' },
               { title: 'Rapports et Analyses', desc: 'Rapports détaillés, statistiques et suggestions d\'amélioration.' },
               { title: 'Contenu Amélioré par IA', desc: 'Utilisation de l\'IA pour idées, légendes, hashtags et optimisation.' }
@@ -2389,17 +2380,17 @@ export const translations = {
             title: 'Plateformes que Nous Supportons'
           },
           logoTransformations: {
-            title: 'Excellence des Réseaux Sociaux et Transformation de Logo',
-            subtitle: 'Avec nos stratégies avancées, nous transformons chaque entreprise - petite ou grande - en sensation virale sur les réseaux sociaux. Voyez comment nous transformons des logos simples en identités de marque puissantes qui renforcent votre présence sur les plateformes sociales.',
-            whyUsTitle: 'Comment Nous Faisons la Différence sur les Réseaux Sociaux',
+            title: 'Votre Logo dans de Nouveaux Styles pour les Réseaux Sociaux',
+            subtitle: 'Un logo doit se démarquer dans une petite photo de profil et dans un fil qui défile vite. Voyez comment un logo simple peut prendre différents styles pour les posts, Reels et Stories, afin que votre marque soit reconnue au premier regard.',
+            whyUsTitle: 'Comment Nous Travaillons sur les Réseaux Sociaux',
             whyUsItems: [
-              'Analyse stratégique du public cible et des tendances',
-              'Création de contenu viral qui se démarque',
-              'Transformations de logos pour un impact social maximal',
-              'Optimisation basée sur les données pour une croissance continue'
+              'Analyse stratégique de votre public et des tendances',
+              'Du contenu pensé pour chaque plateforme',
+              'Des variantes du logo pour posts, Reels et Stories',
+              'Des décisions basées sur les données de vos comptes'
             ],
-            viralSuccessTitle: 'Taux de Succès Viral',
-            viralSuccessDesc: '95% de nos clients voient une augmentation significative de l\'engagement',
+            promiseTitle: 'Des rapports honnêtes',
+            promiseDesc: 'Vous voyez les vrais chiffres de vos comptes, tels que les plateformes les donnent. Nous ne promettons pas le buzz, nous travaillons pour une progression régulière.',
             showcaseTitle: 'Échantillons de Transformations de Logo pour les Réseaux Sociaux',
             items: [
               { title: 'Style Tissé', desc: 'Logo en style tissé avec texture qui rappelle un tissu tricoté.' },
@@ -2455,20 +2446,24 @@ export const translations = {
               { title: 'Rapports SEO & Tableau de Bord', desc: 'Rapports détaillés et tableaux de bord.' }
             ]
           },
-          stats: {
-            title: 'Résultats Mesurables',
+          measure: {
+            title: 'Ce que Nous Mesurons et Améliorons',
+            subtitle: 'Nous ne promettons pas de chiffres avant d\'avoir vu votre site. Nous suivons ce qui montre si le SEO fonctionne et nous vous le montrons avec vos propres données.',
             items: [
-              { value: 300, suffix: '%', label: 'trafic organique', desc: 'Augmentation des visites organiques' },
-              { value: 1, suffix: 'ère page Google', label: '', desc: 'Classement pour mots-clés concurrentiels' },
-              { value: 120, suffix: ' mots-clés', label: '', desc: 'Mots-clés avec classement' }
+              { title: 'Trafic organique', desc: 'Combien de personnes arrivent depuis Google sans publicité, et sur quelles pages.' },
+              { title: 'Positions des mots-clés', desc: 'Où vous apparaissez pour les recherches qui amènent des clients, et comment cela évolue.' },
+              { title: 'Core Web Vitals', desc: 'Vitesse de chargement, stabilité et réactivité de la page, telles que Google les mesure.' },
+              { title: 'Demandes via le formulaire', desc: 'Formulaires, appels et réservations venant de la recherche organique, car c\'est cela qui compte au final.' }
             ],
-            chartTitle: 'Évolution du trafic organique'
+            chartTitle: 'Vous voyez la progression dans chaque rapport'
           },
-          caseStudies: {
-            title: 'Étude de Cas',
+          reporting: {
+            title: 'Comment Vous Suivez la Progression',
             items: [
-              { before: 120, after: 480, label: 'Trafic organique', desc: 'Augmentation des visites organiques en 6 mois.', beforeLabel: 'Avant:', afterLabel: 'Après:' },
-              { before: 8, after: 1, label: 'Classement Google', desc: 'De la 8ème à la 1ère page pour le mot-clé principal.', beforeLabel: 'Avant:', afterLabel: 'Après:' }
+              { title: 'Audit SEO initial', desc: 'Une liste écrite de ce que nous avons trouvé sur votre site et de ce que nous corrigeons en premier.' },
+              { title: 'Des données à la source', desc: 'Les chiffres viennent de Google Search Console et Google Analytics, pas de nos estimations.' },
+              { title: 'Des rapports lisibles', desc: 'Ce que nous avons changé, ce qui a changé dans les résultats et la prochaine étape, en langage simple.' },
+              { title: 'Des objectifs réalistes', desc: 'Personne ne peut garantir la première place sur Google. Nous vous disons dès le départ ce qui est atteignable.' }
             ]
           },
           workflow: {
@@ -2620,20 +2615,22 @@ export const translations = {
           technologies: {
             title: 'Technologies & Outils'
           },
-          portfolio: {
-            title: 'Points Forts du Portfolio',
+          gameTypes: {
+            title: 'Les Types de Jeux que Nous Créons',
+            subtitle: 'Les images sont illustratives. Chaque jeu part de votre propre idée.',
             items: [
-              { title: 'Aventure Fantastique', desc: 'RPG 3D avec style artistique unique & gameplay engageant.' },
-              { title: 'Course VR', desc: 'Jeu de course VR avec physique réaliste & graphiques.' },
-              { title: 'Puzzle Platformer', desc: 'Puzzle platformer 2D avec mécaniques innovantes.' }
+              { title: 'Jeux mobiles', desc: 'Jeux casual, puzzle et arcade pour iOS et Android, avec des commandes pensées pour le tactile.' },
+              { title: 'Jeux web et HTML5', desc: 'Ils se jouent directement dans le navigateur, sans installation. Idéals pour les campagnes, concours et la gamification.' },
+              { title: 'Expériences VR et AR', desc: 'Réalité virtuelle et augmentée pour salons, formations et présentations de produits.' },
+              { title: 'Jeux multijoueurs', desc: 'Jeux en ligne pour plusieurs joueurs, avec comptes, classements et synchronisation en temps réel.' }
             ]
           },
           whyUs: {
             title: 'Pourquoi Nous Choisir?',
             items: [
-              'Développeurs & designers expérimentés',
+              'Un prototype jouable tôt, pour tester l\'idée',
               'Méthodologie de développement agile',
-              'Intégration de technologies de pointe',
+              'Des moteurs modernes comme Unity, Godot et Unreal',
               'Approche de design centrée sur le joueur'
             ]
           },
@@ -2728,15 +2725,15 @@ export const translations = {
               { title: 'Surveillance & Mises à Jour', desc: 'Surveillance continue, améliorations.' }
             ]
           },
-          caseStudies: {
-            title: 'Exemples Réels',
-            subtitle: 'Études de Cas IA',
+          useCases: {
+            title: 'Exemples d\'Utilisation',
+            subtitle: 'Ce que l\'IA peut faire pour vous',
             items: [
-              { client: 'E-shop', use: 'Recommandations de Produits IA', tech: 'TensorFlow, Python', kpi: '+25% conversion' },
-              { client: 'Fintech', use: 'Détection de Fraude', tech: 'PyTorch, REST API', kpi: '-40% taux de fraude' },
-              { client: 'Média', use: 'Génération Automatique de Contenu', tech: 'OpenAI, LangChain', kpi: '+60% production de contenu' }
+              { title: 'Pour les e-shops', desc: 'Des suggestions de produits selon ce que chaque client consulte et achète, et une recherche qui comprend ce qu\'il cherche.', tech: 'Python, TensorFlow' },
+              { title: 'Pour le service client', desc: 'Un assistant qui répond aux questions fréquentes à partir de vos propres contenus et transmet les cas difficiles à une personne.', tech: 'OpenAI, LangChain' },
+              { title: 'Pour le contenu', desc: 'Des premiers jets de fiches produits, posts et newsletters, toujours relus par une personne avant publication.', tech: 'OpenAI' },
+              { title: 'Pour les processus internes', desc: 'Lecture et tri automatiques des emails, factures et formulaires, pour garder du temps pour le travail qui compte.', tech: 'Python, REST API' }
             ],
-            useLabel: 'Utilisation IA:',
             techLabel: 'Technologies:'
           },
           finalCta: {

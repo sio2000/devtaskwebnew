@@ -11,10 +11,10 @@ const clickSfx = '';
 // @ts-ignore: No types for aos
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-import video2Img from '../assets/video2.jpg';
-import video3Img from '../assets/video3.jpg';
-import video4Img from '../assets/video4.jpg';
-import videoImg from '../assets/video.jpg';
+import video2Img from '../assets/video2.webp';
+import video3Img from '../assets/video3.webp';
+import video4Img from '../assets/video4.webp';
+import videoImg from '../assets/video.webp';
 
 function playSound(src: string) {
   if (!src) return;
@@ -46,7 +46,6 @@ export default function VideoAnimationProductionPage() {
   const { language } = useLanguage();
   const t = translations[language];
   const [typed, setTyped] = useState('');
-  const [currentPortfolio, setCurrentPortfolio] = useState(0);
   const isMobile = useIsMobile();
   
   const offers = useMemo(() => 
@@ -64,14 +63,14 @@ export default function VideoAnimationProductionPage() {
   const whyUs = useMemo(() =>
     t.services.pages.videoAnimationProduction.whyUs.items, [t]);
   
-  const portfolio = useMemo(() =>
-    t.services.pages.videoAnimationProduction.portfolio.items.map((item, idx) => {
-      const images = [videoImg, video2Img, video3Img, video4Img, videoImg, video2Img, video3Img, video4Img, videoImg];
+  // Video types; the photos are stock illustrations, not client work
+  const videoTypes = useMemo(() =>
+    t.services.pages.videoAnimationProduction.videoTypes.items.map((item, idx) => {
+      const images = [videoImg, video2Img, video3Img, video4Img];
       return {
         thumb: images[idx % images.length],
         title: item.title,
         desc: item.desc,
-        url: 'https://www.youtube.com/watch?v=' + (idx + 1),
       };
     }), [t]);
   
@@ -309,7 +308,7 @@ export default function VideoAnimationProductionPage() {
         </div>
       </section>
 
-      {/* Portfolio Highlights */}
+      {/* Video types */}
       <section id="project-examples-section" className="relative max-w-7xl mx-auto py-24 md:py-32 px-4 overflow-hidden">
         {/* Premium Background - Desktop Only */}
         {!isMobile && (
@@ -332,9 +331,10 @@ export default function VideoAnimationProductionPage() {
           </>
         )}
         <div className="relative z-10">
-          <motion.h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold mb-12 text-center gradient-text-premium" initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }}>{t.services.pages.videoAnimationProduction.portfolio.title}</motion.h2>
+          <motion.h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold mb-4 text-center gradient-text-premium" initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }}>{t.services.pages.videoAnimationProduction.videoTypes.title}</motion.h2>
+          <p className="text-base md:text-lg text-paper-dim text-center max-w-2xl mx-auto mb-12">{t.services.pages.videoAnimationProduction.videoTypes.subtitle}</p>
           <motion.div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-10" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.12 } } }}>
-            {portfolio.map((item, idx) => (
+            {videoTypes.map((item, idx) => (
               <motion.div key={idx} className="group relative flex flex-col items-center bg-white/[0.045] backdrop-blur-xl rounded-2xl shadow-xl border border-white/10 p-6 hover:shadow-2xl transition-all duration-300 overflow-hidden" initial={{ opacity: 0, y: 40, scale: 0.97 }} whileInView={{ opacity: 1, y: 0, scale: 1 }} whileHover={{ scale: 1.02, y: -8 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: idx * 0.07 }}>
                 {/* Shine Effect */}
                 <motion.div
@@ -343,7 +343,7 @@ export default function VideoAnimationProductionPage() {
                   whileHover={{ x: '100%' }}
                   transition={{ duration: 0.8 }}
                 />
-                <img src={item.thumb} alt={item.title} className="relative z-10 rounded-2xl shadow-xl w-full h-64 object-cover mb-4" />
+                <img src={item.thumb} alt="" loading="lazy" className="relative z-10 rounded-2xl shadow-xl w-full h-64 object-cover mb-4" />
                 <h4 className="relative z-10 text-lg font-bold text-paper mb-2">{item.title}</h4>
                 <p className="relative z-10 text-paper-dim text-base text-center">{item.desc}</p>
               </motion.div>

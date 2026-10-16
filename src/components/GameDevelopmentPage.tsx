@@ -1,6 +1,6 @@
-import React, { useState, useMemo } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { FaGamepad, FaMobileAlt, FaVrCardboard, FaUsers, FaPenNib, FaCheckCircle, FaArrowRight, FaCogs, FaLayerGroup } from "react-icons/fa";
+import React, { useMemo } from "react";
+import { motion } from "framer-motion";
+import { FaGamepad, FaMobileAlt, FaVrCardboard, FaUsers, FaPenNib, FaCheckCircle, FaArrowRight, FaCogs, FaLayerGroup, FaGlobe } from "react-icons/fa";
 import { SiUnity, SiUnrealengine, SiGodotengine, SiBlender, SiAutodesk } from "react-icons/si";
 import { useLanguage } from '../hooks/useLanguage';
 import { translations } from '../data/translations';
@@ -9,13 +9,14 @@ import MobileRail from './ui/MobileRail';
 
 const heroImg = "https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&w=1200&q=80";
 
-// Stable showcase images for the portfolio carousel (cycled by index)
-const portfolioImgs = [
-  "https://images.unsplash.com/photo-1538481199705-c710c4e965fc?auto=format&fit=crop&w=900&q=80", // 3D RPG / fantasy
-  "https://images.unsplash.com/photo-1622979135225-d2ba269cf1ac?auto=format&fit=crop&w=900&q=80", // VR racing
-  "https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=900&q=80",   // retro / puzzle platformer
-  "https://images.unsplash.com/photo-1493711662062-fa541adb3fc8?auto=format&fit=crop&w=900&q=80", // arcade neon
+// "Game types" (mobile, web/HTML5, VR/AR, multiplayer): stock photos as illustrations only, not client projects
+const gameTypeImgs = [
+  "https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=900&q=80",   // retro arcade gear
+  "https://images.unsplash.com/photo-1538481199705-c710c4e965fc?auto=format&fit=crop&w=900&q=80", // lit keyboard
+  "https://images.unsplash.com/photo-1622979135225-d2ba269cf1ac?auto=format&fit=crop&w=900&q=80", // VR headset
+  "https://images.unsplash.com/photo-1493711662062-fa541adb3fc8?auto=format&fit=crop&w=900&q=80", // friends with controllers
 ];
+const gameTypeIconTypes = [FaMobileAlt, FaGlobe, FaVrCardboard, FaUsers];
 
 // Icon arrays
 const serviceIcons = [
@@ -43,7 +44,6 @@ export default function GameDevelopmentPage() {
   const { language } = useLanguage();
   const t = translations[language] || translations['en'];
   const isMobile = useIsMobile();
-  const [portfolioIdx, setPortfolioIdx] = useState(0);
 
   // Get game development translations with fallback
   const gameDev = t?.services?.pages?.gameDevelopment;
@@ -60,10 +60,10 @@ export default function GameDevelopmentPage() {
   const process = useMemo(() =>
     gameDev?.process?.items || [], [gameDev]);
 
-  // Portfolio array with useMemo
-  const portfolio = useMemo(() =>
-    (gameDev?.portfolio?.items || []).map((item, idx) => ({
-      img: portfolioImgs[idx % portfolioImgs.length],
+  const gameTypes = useMemo(() =>
+    (gameDev?.gameTypes?.items || []).map((item, idx) => ({
+      img: gameTypeImgs[idx % gameTypeImgs.length],
+      Icon: gameTypeIconTypes[idx] || FaGamepad,
       title: item.title || '',
       desc: item.desc || ''
     })), [gameDev]);
@@ -139,16 +139,22 @@ export default function GameDevelopmentPage() {
         </ul>
       </section>
 
-      {/* Portfolio: swipe rail */}
+      {/* Game types: swipe rail, illustrative images */}
       <section className="px-4 py-12">
-        <motion.h2 className={mH2} {...mReveal}>{gameDev?.portfolio?.title || 'Portfolio Highlights'}</motion.h2>
-        <MobileRail label={gameDev?.portfolio?.title || 'Portfolio Highlights'}>
-          {portfolio.map((p) => (
-            <article key={p.title} className="card-ink h-full overflow-hidden">
-              <img src={p.img} alt={p.title} loading="lazy" className="aspect-[16/10] w-full object-cover" />
-              <div className="px-4 py-3.5">
-                <h3 className="font-display text-[17px] font-semibold leading-snug text-paper">{p.title}</h3>
-                <p className="mt-0.5 text-sm leading-snug text-paper-dim">{p.desc}</p>
+        <motion.h2 className="mb-3 text-center text-[26px] font-bold leading-tight text-pink-200" {...mReveal}>{gameDev?.gameTypes?.title}</motion.h2>
+        <p className="mb-6 text-center text-[15px] leading-relaxed text-paper-dim">{gameDev?.gameTypes?.subtitle}</p>
+        <MobileRail label={gameDev?.gameTypes?.title || ''}>
+          {gameTypes.map((g) => (
+            <article key={g.title} className="card-ink h-full overflow-hidden">
+              <img src={g.img} alt="" loading="lazy" className="aspect-[16/10] w-full object-cover" />
+              <div className="flex items-start gap-3.5 px-4 py-3.5">
+                <span className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-iris-bright to-iris-deep text-white">
+                  <g.Icon className="h-5 w-5" aria-hidden="true" />
+                </span>
+                <div className="min-w-0">
+                  <h3 className="font-display text-[17px] font-semibold leading-snug text-paper">{g.title}</h3>
+                  <p className="mt-0.5 text-sm leading-snug text-paper-dim">{g.desc}</p>
+                </div>
               </div>
             </article>
           ))}
@@ -237,25 +243,25 @@ export default function GameDevelopmentPage() {
         </div>
       </section>
 
-      {/* Portfolio Highlights */}
+      {/* Game types: illustrative images, not finished client projects */}
       <section className="max-w-6xl mx-auto py-20 px-4">
-        <motion.h2 className="text-3xl md:text-4xl font-bold text-pink-200 mb-12 text-center" initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} viewport={{ once: true }}>{gameDev?.portfolio?.title || 'Portfolio Highlights'}</motion.h2>
-        <div className="relative w-full max-w-2xl mx-auto mb-4">
-          <AnimatePresence mode="wait">
-            <motion.div key={portfolio[portfolioIdx].title} className="relative group rounded-3xl overflow-hidden shadow-3xl border border-pink-900/40" initial={{ opacity: 0, scale: 0.95, x: 40 }} animate={{ opacity: 1, scale: 1, x: 0 }} exit={{ opacity: 0, scale: 0.95, x: -40 }} transition={{ duration: 0.6 }}>
-              <img src={portfolio[portfolioIdx].img} alt={portfolio[portfolioIdx].title} className="w-full h-80 object-cover transition-transform duration-300 group-hover:scale-105 cursor-pointer" />
-              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-pink-900/80 to-transparent p-6">
-                <h4 className="text-lg font-bold text-white">{portfolio[portfolioIdx].title}</h4>
-                <span className="text-pink-200 text-sm">{portfolio[portfolioIdx].desc}</span>
+        <motion.h2 className="text-3xl md:text-4xl font-bold text-pink-200 mb-4 text-center" initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} viewport={{ once: true }}>{gameDev?.gameTypes?.title}</motion.h2>
+        <p className="text-lg text-blue-100 mb-12 text-center max-w-2xl mx-auto">{gameDev?.gameTypes?.subtitle}</p>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          {gameTypes.map((g, idx) => (
+            <motion.div key={g.title} className="group bg-white/5 rounded-3xl shadow-2xl border border-pink-900/30 backdrop-blur-xl overflow-hidden flex flex-col hover:shadow-3xl transition-all duration-300" initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: idx * 0.08 }} viewport={{ once: true }} whileHover={{ y: -6 }}>
+              <div className="relative h-40 overflow-hidden">
+                <img src={g.img} alt="" loading="lazy" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+                <span className="absolute bottom-3 left-3 flex h-11 w-11 items-center justify-center rounded-xl bg-gradient-to-br from-pink-600 to-blue-500 text-white shadow-lg">
+                  <g.Icon className="h-5 w-5" aria-hidden="true" />
+                </span>
+              </div>
+              <div className="p-6 flex-1">
+                <h3 className="text-lg font-bold text-pink-200 mb-2">{g.title}</h3>
+                <p className="text-blue-100 text-base">{g.desc}</p>
               </div>
             </motion.div>
-          </AnimatePresence>
-          {/* Carousel controls */}
-          <div className="absolute inset-0 flex items-center justify-between px-2">
-            <button onClick={() => setPortfolioIdx((portfolioIdx - 1 + portfolio.length) % portfolio.length)} className="bg-white/10 rounded-full p-2 shadow-3xl hover:bg-pink-900/40 transition" aria-label="Previous"><FaArrowRight className="text-2xl rotate-180" /></button>
-            <button onClick={() => setPortfolioIdx((portfolioIdx + 1) % portfolio.length)} className="bg-white/10 rounded-full p-2 shadow-3xl hover:bg-pink-900/40 transition" aria-label="Next"><FaArrowRight className="text-2xl" /></button>
-          </div>
-          <div className="absolute bottom-2 left-1/2 -translate-x-1/2 flex gap-2">{portfolio.map((_, idx) => (<span key={idx} className={`w-2 h-2 rounded-full ${idx === portfolioIdx ? 'bg-pink-400' : 'bg-pink-900'} transition`}></span>))}</div>
+          ))}
         </div>
       </section>
 

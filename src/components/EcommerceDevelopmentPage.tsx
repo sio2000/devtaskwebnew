@@ -17,7 +17,7 @@ const clickSfx = '';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 // Εισαγωγές εικόνων/εικονιδίων αν χρειάζεται
-import cartImg from '../assets/apps.jpg';
+import cartImg from '../assets/apps.webp';
 import appsImg from '../assets/e-shop.jpg';
 
 function playSound(src: string) {
